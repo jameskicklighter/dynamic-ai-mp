@@ -1,0 +1,341 @@
+# =========================
+# = = = = = = = = = = = = =
+#    USA Unit Templates
+# = = = = = = = = = = = = =
+# =========================
+
+
+# =========================
+#         Infantry
+# =========================
+
+INFANTRY_USA = {
+	available_for = { USA }
+	roles = { infantry }
+	upgrade_prio = {
+		base = 1 
+		modifier = {
+			factor = 999
+			date < 1939.1.1
+		}
+		modifier = {
+			factor = 100
+			date > 1939.1.1
+		}
+	}
+	match_to_count = 0.5
+
+	INFANTRY_USA_1 = {
+		# Weights
+		upgrade_prio = { base = 10 }
+		target_width = 18.0
+		width_weight = 100.0
+		column_swap_factor = 1.5
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				infantry = 9
+				# artillery_brigade = 1
+				# anti_air_brigade =  1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			# Line Battalion
+			infantry
+			artillery_brigade
+			anti_air_brigade
+		}
+	}
+
+	INFANTRY_USA_2 = {
+		# Weights
+		upgrade_prio = { base = 20 }
+		target_width = 18.0
+		width_weight = 100.0
+		column_swap_factor = 1.5
+		enable = {
+			NOT = { has_idea = undisturbed_isolation }
+			NOT = { has_idea = isolation }
+		}
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				recon = 1
+			}
+			regiments = {
+				infantry = 9
+				# artillery_brigade = 2
+				# anti_air_brigade =  1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			anti_tank
+			recon
+			# Line Battalion
+			infantry
+			artillery_brigade
+			anti_air_brigade
+		}
+	}
+}
+
+# =========================
+#         Armor
+# =========================
+
+# ARMOR_USA = {
+# 	available_for = { USA }
+# 	roles = { armor }
+# 	match_to_count = 0.45
+# 	upgrade_prio = {
+# 		base = 5
+# 		modifier = {
+# 			add = 20
+# 			date > 1937.1.1
+# 		}
+# 		modifier = {
+# 			add = 25
+# 			date > 1938.1.1
+# 		}
+# 		modifier = {
+# 			add = 450
+# 			date > 1939.1.1
+# 		}
+# 	}
+
+# 	ARMOR_USA_1 = {
+# 		upgrade_prio = { base = 10 }
+# 		target_width = 12.0
+# 		width_weight = 1.0
+# 		column_swap_factor = 1.0
+# 		# Design
+# 		target_template = {
+# 			weight = 100.0
+# 			match_value = 100.0
+# 			support = {
+# 				artillery = 1
+# 			}
+# 			regiments = {
+# 				light_armor = 3
+# 				motorized = 3
+# 			}
+# 		}
+# 		allowed_types = {
+# 			# Support Battalion
+# 			artillery
+# 			# Line Battalion
+# 			light_armor
+# 			motorized
+# 		}
+# 		replace_at_match = 0.4
+# 		replace_with = ARMOR_USA_2
+# 		target_min_match = 0.5
+# 	}
+
+# 	ARMOR_USA_2 = {
+# 		# Weights
+# 		upgrade_prio = { base = 10 }
+# 		target_width = 16.0
+# 		width_weight = 1.0
+# 		column_swap_factor = 1.0
+# 		# Design
+# 		target_template = {
+# 			weight = 100.0
+# 			match_value = 100.0
+# 			support = {
+# 				engineer = 1
+# 				artillery = 1
+# 			}
+# 			regiments = {
+# 				medium_armor = 3
+# 				motorized = 3
+# 			}
+# 		}
+# 		allowed_types = {
+# 			# Support Battalion
+# 			mot_recon
+# 			engineer
+# 			artillery
+# 			# Line Battalion
+# 			light_armor
+# 			medium_armor
+# 			motorized
+# 		}
+# 		replace_at_match = 0.6
+# 		replace_with = ARMOR_USA_3
+# 		target_min_match = 0.5
+# 	}
+
+# 	ARMOR_USA_3 = {
+# 		# Weights
+# 		upgrade_prio = { base = 10 }
+# 		target_width = 24.0
+# 		width_weight = 1.0
+# 		column_swap_factor = 1.0
+# 		# Design
+# 		target_template = {
+# 			weight = 100.0
+# 			match_value = 100.0
+# 			support = {
+# 				engineer = 1
+# 				artillery = 1
+# 				maintenance_company = 1
+# 				logistics_company = 1
+# 			}
+# 			regiments = {
+# 				medium_armor = 7
+# 				motorized = 5
+# 			}
+# 		}
+# 		allowed_types = {
+# 			# Support Battalion
+# 			mot_recon
+# 			engineer
+# 			artillery
+# 			maintenance_company
+# 			logistics_company
+# 			# Line Battalion
+# 			light_armor
+# 			medium_armor
+# 			motorized
+# 		}
+# 	}
+
+# 	ARMOR_USA_4 = {
+# 		# Weights
+# 		upgrade_prio = { base = 20 }
+# 		target_width = 24.0
+# 		width_weight = 1.0
+# 		column_swap_factor = 1.0
+# 		enable = { has_tech = mechanised_infantry }
+# 		# Design
+# 		target_template = {
+# 			weight = 100.0
+# 			match_value = 100.0
+# 			support = {
+# 				engineer = 1
+# 				artillery = 1
+# 				maintenance_company = 1
+# 				logistics_company = 1
+# 			}
+# 			regiments = {
+# 				medium_armor = 7
+# 				mechanized = 5
+# 			}
+# 		}
+# 		allowed_types = {
+# 			# Support Battalion
+# 			mot_recon
+# 			engineer
+# 			artillery
+# 			maintenance_company
+# 			logistics_company
+# 			# Line Battalion
+# 			light_armor
+# 			medium_armor
+# 			motorized
+# 			mechanized
+# 		}
+# 	}
+
+# 	ARMOR_USA_5 = {
+# 		# Weights
+# 		upgrade_prio = { base = 30 }
+# 		target_width = 24.0
+# 		width_weight = 1.0
+# 		column_swap_factor = 1.0
+# 		enable = {
+# 			has_tech = mechanised_infantry
+# 			OR = {
+# 				has_tech = main_battle_tank
+# 				has_tech = main_battle_tank_chassis
+# 			}
+# 		}
+# 		# Design
+# 		target_template = {
+# 			weight = 100.0
+# 			match_value = 100.0
+# 			support = {
+# 				engineer = 1
+# 				artillery = 1
+# 				maintenance_company = 1
+# 				logistics_company = 1
+# 			}
+# 			regiments = {
+# 				modern_armor = 7
+# 				mechanized = 5
+# 			}
+# 		}
+# 		allowed_types = {
+# 			# Support Battalion
+# 			mot_recon
+# 			engineer
+# 			artillery
+# 			maintenance_company
+# 			logistics_company
+# 			# Line Battalion
+# 			light_armor
+# 			medium_armor
+# 			modern_armor
+# 			motorized
+# 			mechanized
+# 		}
+# 	}
+# }
+
+
+
+# REGIMENTS:
+#infantry
+#light_armor
+#super_heavy_armor
+#modern_armor
+#heavy_armor
+#medium_armor
+#light_armor
+#anti_tank
+#cavalry
+#motorized
+#mechanized
+#marine
+#mountaineers
+#paratrooper
+#rocket_artillery
+#light_tank_destroyer
+#anti_air
+#artillery
+
+# SUPPORT:
+#engineer
+#recon
+#signal_company
+#maintenance_company
+#anti_tank_brigade
+#anti_air_brigade
+#artillery_brigade
+#field_hospital
+#logistics_company
+#military_police
+#light_sp_anti_air_brigade
+#light_sp_artillery_brigade

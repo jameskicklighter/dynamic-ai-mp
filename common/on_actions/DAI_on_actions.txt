@@ -1,0 +1,21 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			DAI_initialize_constants = yes
+		}
+	}
+
+	on_daily = {
+		effect = {
+			DAI_daily_update = yes
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			DAI_monthly_update = yes
+		}
+	}
+
+}

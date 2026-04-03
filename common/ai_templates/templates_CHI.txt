@@ -1,0 +1,228 @@
+# =========================
+# = = = = = = = = = = = = =
+# All China Unit Templates
+# = = = = = = = = = = = = =
+# =========================
+
+
+# =========================
+#         Infantry
+# =========================
+
+INFANTRY_CHI = {
+	available_for = {
+		CHI
+		PRC
+		GXC
+		YUN
+		SHX
+		XSM
+		SIK
+		MEN
+		MAN
+	}
+	roles = { infantry }
+	upgrade_prio = {
+		base = 1 
+		modifier = {
+			factor = 999
+			date < 1939.1.1
+		}
+		modifier = {
+			factor = 100
+			date > 1939.1.1
+		}
+	}
+	match_to_count = 0.10
+
+	INFANTRY_CHI_default = {
+		# Weights
+		upgrade_prio = { base = 0.1 }
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+			}
+			regiments = {
+				infantry = 6
+			}
+		}
+		allowed_types = {
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_CHI_1A = {
+		# Weights
+		upgrade_prio = { base = 10 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				artillery = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_CHI_1B = {
+		# Weights
+		upgrade_prio = { base = 15 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				artillery = 1
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_CHI_2A = {
+		# Weights
+		upgrade_prio = { base = 20 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 20 date > 1939.1.1 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_CHI_2B = {
+		# Weights
+		upgrade_prio = { base = 25 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 20 date > 1939.1.1 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_CHI_3 = {
+		# Weights
+		upgrade_prio = { base = 30 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 30 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_CHI_4 = {
+		# Weights
+		upgrade_prio = { base = 40 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 40 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			anti_tank
+			# Line Battalion
+			infantry
+		}
+	}
+}

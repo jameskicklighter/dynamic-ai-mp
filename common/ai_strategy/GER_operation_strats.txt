@@ -1,0 +1,116 @@
+GER_collaboration_on_FRA = {
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		tag = GER
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					NOT = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = DEFAULT
+					}
+				}	
+			}
+			has_country_flag = GER_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = FASCIST
+			}
+			
+			AND = {
+				has_war_with = FRA
+				NOT = { has_government = democratic }
+			}
+		}
+
+		FRA = {
+			exists = yes
+			has_capitulated = no
+			NOT = { is_ally_with = GER }
+		}
+
+		# do at most one time
+		num_finished_operations = {
+			operation = operation_collaboration_government
+			target = FRA
+			value < 1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_collaboration_government
+		value = 9999
+		operation_target = FRA
+	}
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = FRA
+	}
+}
+
+# GER_collaboration_on_SOV = {
+# 	allowed = {
+# 		tag = GER
+# 	}
+# 	enable = {
+# 		tag = GER
+# 		date > 1940.8.1
+# 		OR = {
+# 			AND = {
+# 				is_historical_focus_on = yes
+# 				OR = {
+# 					NOT = { has_dlc = "Waking the Tiger" }
+# 					has_game_rule = {
+# 						rule = GER_ai_behavior
+# 						option = DEFAULT
+# 					}
+# 				}
+# 			}
+# 			has_country_flag = GER_AI_RANDOM_FASCIST
+# 			has_game_rule = {
+# 				rule = GER_ai_behavior
+# 				option = FASCIST
+# 			}
+
+# 			AND = {
+# 				has_war_with = SOV
+# 				NOT = { has_government = democratic }
+# 			}
+# 		}
+
+# 		SOV = {
+# 			exists = yes
+# 			has_capitulated = no
+# 			NOT = { is_ally_with = GER }
+# 		}
+
+# 		# do at most three times
+# 		num_finished_operations = {
+# 			operation = operation_collaboration_government
+# 			target = SOV
+# 			value < 3
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = operative_operation
+# 		operation = operation_collaboration_government
+# 		value = 9999
+# 		operation_target = SOV
+# 	}
+# 	ai_strategy = {
+# 		type = operative_mission
+# 		mission = build_intel_network
+# 		value = 9999
+# 		mission_target = SOV
+# 	}
+# }

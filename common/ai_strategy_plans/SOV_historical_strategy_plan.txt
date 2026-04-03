@@ -1,0 +1,361 @@
+SOV_historical_plan = {
+	name = "SOV historical plan"
+	desc = ""
+
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = SOV_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = SOV_AI_RANDOM_COMMUNIST_HISTORICAL
+			has_game_rule = {
+				rule = SOV_ai_behavior
+				option = HISTORICAL
+			}
+		}
+	}
+	abort = {
+		# OR = {
+		# 	is_subject = yes
+		# 	# They will switch to a plan that excludes the trade treaty if Germany goes against Ribbentrop
+		# 	AND = {
+		# 		GER = {
+		# 			OR = {
+		# 				has_completed_focus = GER_heed_von_neuraths_concerns
+		# 				has_completed_focus = GER_monarchist_sentiment
+		# 			}
+		# 		}
+		# 		has_game_rule = {
+		# 			rule = SOV_ai_behavior
+		# 			option = DEFAULT
+		# 		}
+		# 	}
+		# }
+	}
+
+	ai_national_focuses = {
+		#-----ASAP-----
+
+		#----- The Great Patriotic War -----
+		SOV_desperate_measures					# 35
+		SOV_the_defense_of_moscow				# 35
+		#----- Big Beautiful Industry -----
+		SOV_restoration_and_development			# 35
+		SOV_fourth_five_year_plan				# 70
+		#----- Big Beautiful Opportunity -----
+		SOV_recover_the_kuril_islands			# 35
+		
+		#--------------------
+
+		#-----1936-----
+		SOV_heavy_industry # 35 -> February 5, 1936
+		SOV_the_path_of_marxism_leninism # 35 -> March 11, 1936
+		SOV_addressing_internal_affairs # 35 -> April 15, 1936
+		SOV_the_new_soviet_woman # 35 -> May 20, 1936
+		SOV_expand_the_agitprop # 35 -> June 24, 1936
+		SOV_the_centre # 35 -> July 29, 1936
+		SOV_the_stalin_constitution # 70 -> October 7, 1936
+		SOV_the_zinovyevite_terrorist_center # 35 -> November 11, 1936
+		SOV_the_comintern # 35 -> December 16, 1936
+
+		#-----1937-----
+		SOV_socialism_in_one_country # 35 -> January 20, 1937
+		SOV_send_military_advisors_to_spain # 35 -> February 24, 1937
+		SOV_the_komsomol # 35 -> March 31, 1937
+		SOV_infrastructure_effort_nsb # 35 -> May 5, 1937
+		SOV_the_anti_soviet_trotskyist_center # 35 -> June 9, 1937
+		SOV_finish_the_five_year_plan # 70 -> August 18, 1937
+		SOV_the_workers_dictatorship # 70 -> October 27, 1937
+		SOV_foreign_experts # 35 -> December 1, 1937
+
+		#-----1938-----
+		SOV_the_military_conspiracy # 35 -> January 5, 1938
+		SOV_third_five_year_plan # 70 -> March 16, 1938
+		SOV_behead_the_snake # 35 -> April 20, 1938
+		SOV_the_threat_from_the_land_of_the_rising_sun # 35 -> May 25, 1938
+		SOV_support_the_kuomintang # 35 -> June 29, 1938
+		SOV_the_bloc_of_rights_and_trotskyites # 70 -> September 7, 1938
+		SOV_reorganize_the_pc_of_heavy_industry # 70 -> November 16, 1938
+		SOV_eastern_development # 35 -> December 21, 1938
+
+		#-----1939-----
+		SOV_develop_the_urals					# 35 -> January 25, 1939
+		SOV_the_ussr_academy_of_sciences		# 70 -> April 5, 1939
+		SOV_baltic_security						# 35 -> May 10, 1939
+		SOV_industrial_modernization			# 70 -> July 19, 1939
+		SOV_claims_in_baltic					# 70 -> September 27, 1939
+		SOV_secure_leningrad					# 70 -> December 6, 1939
+			# ↳ Historically happened November 30, 1939.
+
+		#-----1940-----
+		SOV_positive_heroism					# 70 -> February 14, 1940
+		SOV_found_the_pcdi						# 35 -> March 20, 1940
+		SOV_middle_east_diplomacy				# 35 -> April 24, 1940
+		# ----- 
+		# Poland Claims -- should be bypassed in historical. Prereq to Bessarabia.
+		SOV_claims_on_poland					# 70
+		# -----
+		SOV_claim_on_bessarabia					# 70 -> July 3, 1940
+			# ↳ Historically happened June 26, 1940.
+		SOV_strengthen_the_mobilization_plan	# 35 -> August 7, 1940
+		SOV_cohesion_first						# 35 -> September 11, 1940
+		SOV_rehabilitated_military				# 70 -> November 20, 1940
+		# ----- 
+		# If Germany didn't take it, well...  -- should be bypassed in historical.
+		SOV_demand_eastern_poland				# 70
+		# -----
+
+		#-----1941-----
+		SOV_military_reorganization				# 70 -> January 29, 1941
+		SOV_support_afghan_ideology				# 35 -> March 5, 1941
+		SOV_military_engineering_university		# 35 -> April 9, 1941
+		SOV_move_industry_to_the_urals			# 70 -> June 18, 1941
+		# -- Will add 35 days for assumed Desperate Measures --
+		SOV_preemptive_invasion_of_iran			# 35 -> August 27, 1941
+		SOV_pc_of_mechanical_engineering		# 70 -> November 5, 1941
+		# -- Will add 35 days for assumed Defense of Moscow --
+
+		#-----1942-----
+		SOV_experts_in_camouflage				# 35 -> January 14, 1942
+		SOV_an_adaptable_army					# 70 -> March 25, 1942
+		# From this point do these ASAP as soon as the timer from Desperate Measures expires.
+		SOV_lessons_of_war						# 35 -> April 29, 1942
+		SOV_swap_to_political_advisors			# 70 -> July 8, 1942
+		SOV_the_glory_of_the_red_army			# 70 -> September 16, 1942 - CONDITIONAL
+		SOV_organization_of_the_partisans		# 70 -> November 25, 1942 - CONDITIONAL
+
+		#-----1943-----
+		SOV_smersh								# 70 -> February 3, 1943
+		SOV_barrier_troops						# 35 -> March 10, 1943
+		SOV_nkvd_primacy						# 35 -> April 14, 1943
+		SOV_the_means_to_wage_war				# 70 -> June 23, 1943
+		SOV_leningrad_polytechnical_institute	# 70 -> September 1, 1943
+		SOV_development_of_tankograd			# 70 -> November 10, 1943
+		SOV_the_road_of_life					# 35 -> December 15, 1943
+
+		#-----1944-----
+		SOV_transpolar_flights					# 35 -> January 19, 1944
+		SOV_foster_flying_clubs					# 70 -> March 29, 1944
+		SOV_intensify_pilot_training_program	# 70 -> June 7, 1944
+		SOV_expand_aviation_institutes			# 70 -> August 16, 1944
+		SOV_women_in_aviation					# 70 -> October 25, 1944
+
+		#-----1945-----
+		SOV_raskovas_aviation_group				# 70 -> January 3, 1945
+		SOV_ground_support						# 70 -> March 14, 1945
+		SOV_the_modern_war_in_the_skies			# 70 -> May 23, 1945
+		SOV_stalins_cult_of_personality			# 35 -> June 27, 1945
+		SOV_national_academies_of_sciences		# 35 -> August 1, 1945
+		SOV_development_aid_for_eastern_allies	# 35 -> September 5, 1945
+		SOV_patriarch_of_all_russia				# 35 -> October 10, 1945
+		SOV_war_measures_in_the_east			# 35 -> November 14, 1945
+		SOV_annex_tannu_tuva					# 35 -> December 19, 1945
+
+		#-----1946-----
+		SOV_soviet_atomic_bomb_project			# 70 -> February 27, 1946
+
+	}
+
+	research = {
+	}
+
+	ideas = {
+	}
+
+	traits = {
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+
+
+# SOV_historical_plan = {
+# 	name = "SOV historical plan"
+# 	desc = ""
+
+# 	allowed = {
+# 		original_tag = SOV
+# 	}
+# 	enable = {
+# 		OR = {
+# 			AND = {
+# 				is_historical_focus_on = yes
+# 				has_game_rule = {
+# 					rule = SOV_ai_behavior
+# 					option = DEFAULT
+# 				}
+# 			}
+# 			has_country_flag = SOV_AI_RANDOM_COMMUNIST_HISTORICAL
+# 			has_game_rule = {
+# 				rule = SOV_ai_behavior
+# 				option = HISTORICAL
+# 			}
+# 		}
+# 	}
+# 	abort = {
+# 		# OR = {
+# 		# 	is_subject = yes
+# 		# 	# They will switch to a plan that excludes the trade treaty if Germany goes against Ribbentrop
+# 		# 	AND = {
+# 		# 		GER = {
+# 		# 			OR = {
+# 		# 				has_completed_focus = GER_heed_von_neuraths_concerns
+# 		# 				has_completed_focus = GER_monarchist_sentiment
+# 		# 			}
+# 		# 		}
+# 		# 		has_game_rule = {
+# 		# 			rule = SOV_ai_behavior
+# 		# 			option = DEFAULT
+# 		# 		}
+# 		# 	}
+# 		# }
+# 	}
+
+# 	ai_national_focuses = {
+# 		# ASAP
+# 		SOV_desperate_measures					# 35
+# 		SOV_the_defense_of_moscow				# 35
+
+# 		SOV_restoration_and_development
+# 		SOV_fourth_five_year_plan
+# 		SOV_recover_the_kuril_islands			# 35
+
+# 		#-----1936-----
+# 		SOV_heavy_industry						# 35 -> February 5, 1936
+# 		SOV_the_path_of_marxism_leninism		# 35 -> March 11, 1936
+# 		SOV_addressing_internal_affairs			# 35 -> April 15, 1936
+# 		SOV_the_new_soviet_woman				# 35 -> May 20, 1936
+# 		SOV_expand_the_agitprop					# 35 -> June 24, 1936
+# 		SOV_the_centre							# 35 -> July 29, 1936
+# 		SOV_the_stalin_constitution				# 70 -> October 7, 1936
+# 		SOV_the_zinovyevite_terrorist_center	# 35 -> November 11, 1936
+
+# 		#-----1937-----
+# 		SOV_secure_the_administration			# 70 -> January 20, 1937
+# 		SOV_socialism_in_one_country			# 35 -> February 24, 1937
+# 		SOV_the_collectivization_process		# 70 -> May 5, 1937
+# 		SOV_infrastructure_effort_nsb			# 35 -> June 9, 1937
+# 		SOV_the_anti_soviet_trotskyist_center	# 35 -> July 14, 1937
+# 		SOV_finish_the_five_year_plan			# 70 -> September 22, 1937
+# 		SOV_foreign_experts						# 35 -> October 27, 1937
+
+# 		#-----1938-----
+# 		SOV_the_workers_dictatorship			# 70 -> January 5, 1938
+# 		SOV_the_military_conspiracy				# 35 -> February 9, 1938
+# 		SOV_behead_the_snake					# 35 -> March 16, 1938
+# 		SOV_third_five_year_plan				# 70 -> May 25, 1938
+# 		SOV_reorganize_the_pc_of_heavy_industry	# 70 -> August 3, 1938
+# 		SOV_the_bloc_of_rights_and_trotskyites	# 70 -> October 12, 1938
+# 		SOV_eastern_development					# 35 -> November 16, 1938
+# 		SOV_develop_the_urals					# 35 -> December 21, 1938
+
+# 		#-----1939-----
+# 		SOV_the_ussr_academy_of_sciences		# 70 -> March 1, 1939
+# 		SOV_the_comintern						# 35 -> April 5, 1939
+# 		SOV_baltic_security						# 35 -> May 10, 1939
+# 		SOV_industrial_modernization			# 70 -> July 19, 1939
+# 		SOV_claims_in_baltic					# 70 -> September 27, 1939
+# 		SOV_secure_leningrad					# 70 -> December 6, 1939
+# 			# ↳ Historically happened November 30, 1939.
+
+# 		#-----1940-----
+# 		SOV_positive_heroism					# 70 -> February 14, 1940
+# 		SOV_found_the_pcdi						# 35 -> March 20, 1940
+# 		SOV_middle_east_diplomacy				# 35 -> April 24, 1940
+# 		# ----- 
+# 		# Poland Focuses -- should be bypassed in historical. Prereq to Bessarabia.
+# 		SOV_claims_on_poland					# 70
+# 		SOV_demand_eastern_poland				# 70
+# 		# -----
+# 		SOV_claim_on_bessarabia					# 70 -> July 3, 1940
+# 			# ↳ Historically happened June 26, 1940.
+# 		SOV_strengthen_the_mobilization_plan	# 35 -> August 7, 1940
+# 		SOV_cohesion_first						# 35 -> September 11, 1940
+# 		SOV_rehabilitated_military				# 70 -> November 20, 1940
+
+# 		#-----1941-----
+# 		SOV_military_reorganization				# 70 -> January 29, 1941
+# 		SOV_support_afghan_ideology				# 35 -> March 5, 1941
+# 		SOV_military_engineering_university		# 35 -> April 9, 1941
+# 		SOV_move_industry_to_the_urals			# 70 -> June 18, 1941
+# 		# -- Will add 35 days for assumed Desperate Measures --
+# 		SOV_preemptive_invasion_of_iran			# 35 -> August 27, 1941
+# 		SOV_pc_of_mechanical_engineering		# 70 -> November 5, 1941
+# 		SOV_the_komsomol						# 35 -> December 10, 1941
+# 		# -- Will add 35 days for assumed Defense of Moscow --
+
+# 		#-----1942 & Onwards-----
+# 		SOV_experts_in_camouflage				# 35 Entrenchment goes brrrr...
+# 		SOV_an_adaptable_army					# 70
+
+# 		# From this point do these ASAP as soon as the timer from Desperate Measures expires.
+# 		SOV_lessons_of_war						# 35
+# 		SOV_swap_to_political_advisors			# 70
+# 		SOV_the_glory_of_the_red_army			# 70 - CONDITIONAL
+# 		SOV_organization_of_the_partisans		# 70 - CONDITIONAL
+# 		SOV_smersh								# 70
+# 		SOV_barrier_troops						# 35
+
+# 		SOV_nkvd_primacy						# 35
+
+# 		SOV_the_means_to_wage_war				# 70
+# 		SOV_leningrad_polytechnical_institute	# 70
+# 		SOV_development_of_tankograd			# 70
+# 		SOV_the_road_of_life 					# 35 
+
+# 		SOV_transpolar_flights					# 35
+# 		SOV_foster_flying_clubs					# 70
+# 		SOV_intensify_pilot_training_program	# 70
+# 		SOV_expand_aviation_institutes			# 70
+# 		SOV_women_in_aviation					# 70
+# 		SOV_raskovas_aviation_group				# 70
+# 		SOV_ground_support						# 70
+# 		SOV_the_modern_war_in_the_skies			# 70
+
+# 		SOV_stalins_cult_of_personality			# 35
+
+# 		SOV_national_academies_of_sciences		# 35
+
+# 		SOV_development_aid_for_eastern_allies	#35
+# 		SOV_patriarch_of_all_russia				#35
+# 		SOV_war_measures_in_the_east			# 35
+# 		SOV_annex_tannu_tuva					# 35
+
+# 		SOV_soviet_atomic_bomb_project			
+# 	}
+
+# 	research = {
+# 	}
+
+# 	ideas = {
+# 	}
+
+# 	traits = {
+# 	}
+
+# 	# Keep small, as it is used as a factor for some things (such as research needs)
+# 	# Recommended around 1.0. Useful for relation between plans
+# 	weight = {
+# 		factor = 1.0
+# 		modifier = {
+# 			factor = 1.0
+# 		}
+# 	}
+
+# }

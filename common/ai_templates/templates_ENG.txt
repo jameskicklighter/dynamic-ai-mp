@@ -1,0 +1,98 @@
+# =========================
+# = = = = = = = = = = = = =
+#  England Unit Templates
+# = = = = = = = = = = = = =
+# =========================
+
+# =========================
+#         Infantry
+# =========================
+
+infantry_ENG = {
+	available_for = { ENG }
+	roles = { infantry }
+	upgrade_prio = {
+		base = 1 
+		modifier = {
+			factor = 999
+			date < 1939.1.1
+		}
+		modifier = {
+			factor = 100
+			date > 1939.1.1
+		}
+	}
+	match_to_count = 0.5
+
+	INFANTRY_ENG_1 = {
+		# Weights
+		upgrade_prio = { base = 10 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			# Line Battalion
+			infantry
+		}
+	}
+}
+
+
+# =========================
+#          Armor
+# =========================
+
+
+
+
+
+# REGIMENTS:
+# infantry
+# light_armor
+# super_heavy_armor
+# modern_armor
+# heavy_armor
+# medium_armor
+# light_armor
+# anti_tank
+# cavalry
+# motorized
+# mechanized
+# marine
+# mountaineers
+# paratrooper
+# rocket_artillery
+# light_tank_destroyer
+# anti_air
+# artillery
+
+# SUPPORT:
+# engineer
+# recon
+# signal_company
+# maintenance_company
+# anti_tank_brigade
+# anti_air_brigade
+# artillery_brigade
+# field_hospital
+# logistics_company
+# military_police
+# light_sp_anti_air_brigade
+# light_sp_artillery_brigade

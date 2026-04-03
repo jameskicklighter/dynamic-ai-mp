@@ -1,0 +1,153 @@
+ITA_historical_plan = {
+	name = "Italy historical plan"
+	desc = "Historical behavior for Italy"
+
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = ITA_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = ITA_AI_RANDOM_FASCIST_HISTORICAL
+			has_game_rule = {
+				rule = ITA_ai_behavior
+				option = FASCIST_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		GER = {
+			OR = {
+				has_completed_focus = GER_oppose_hitler_ww
+				has_completed_focus = GER_oppose_hitler
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		#-----1936-----
+		ITA_ethiopian_war_logistics_bba			# February 5, 1936 -- 35 days
+		ITA_italian_highways_bba				# March 11, 1936 -- 35 days
+		ITA_railway_innovations					# May 20, 1936
+		ITA_investments_in_edison				# July 29, 1936
+		ITA_expand_national_universities		# October 7, 1936
+		ITA_servizio_informazione_militare		# December 16, 1936
+
+		#-----1937-----
+		ITA_triumph_in_africa_bba				# January 20, 1937 -- 35 days
+		ITA_foreign_affairs						# February 24, 1937 -- 35 days
+		ITA_corpo_di_truppe_volontarie			# March 31, 1937 -- 35 days
+		ITA_topple_amhara_rulers				# May 5, 1937 -- 35 days
+		ITA_ministry_of_italian_africa			# June 9, 1937 -- 35 days
+		ITA_the_new_emperor_of_ethiopia			# July 14, 1937 -- 35 days
+		ITA_devaluate_the_lire					# August 18, 1937 -- 35 days
+		ITA_army_primacy_bba					# September 22, 1937 -- 35 days
+		ITA_steel_industry_in_terni				# December 1, 1937
+
+		#-----1938-----
+		ITA_industria_della_gomma_sintetica		# January 5, 1938 -- 35 days
+		ITA_strengthen_northern_industry		# March 16, 1938
+		ITA_fiocchi_munizioni					# April 20, 1938 -- 35 days
+		ITA_increase_artillery_production		# June 29, 1938
+		ITA_air_innovations_bba					# August 3, 1938 -- 35 days
+		ITA_expand_rome_flying_school			# October 12, 1938
+		ITA_naval_power_projection				# November 16, 1938 -- 35 days
+		ITA_expand_naval_facilities				# December 21, 1938 -- 35 days
+
+		#-----1939-----
+		ITA_stockpile_fuel						# January 25, 1939 -- 35 days
+		# CAUTION: If replacing this or moving it past August 1939, need to remove the extra fascism given to BUL and YUG in 1939 bookmark.
+		ITA_potential_allies_in_the_balkans		# March 1, 1939 -- 35 days
+		ITA_albanian_occupation					# April 5, 1939 -- 35 days (Historically occurred April 7, 1939.)
+		ITA_pact_of_steel						# May 10, 1939 -- 35 days (Historically occurred May 22, 1939.)
+		ITA_preserve_army_traditions			# July 19, 1939
+		ITA_citta_dell_aria						# September 27, 1939
+		ITA_brescia_small_arms_industry			# November 1, 1939 -- 35 days
+
+		#-----1940-----
+		ITA_redirect_alfa_romeo_production		# January 10, 1940
+		ITA_keep_specialization					# February 14, 1940 -- 35 days
+		ITA_treaty_with_germany					# March 20, 1940 -- 35 days
+		ITA_german_military_cooperation			# April 24, 1940 -- 35 days
+		ITA_albanian_oil						# May 29, 1940 -- 35 days
+		ITA_support_albanian_irredentism		# July 3, 1940 -- 35 days
+		ITA_italian_irredentism					# September 11, 1940
+		ITA_war_with_greece						# October 16, 1940 -- 35 days (Historically occurred October 28, 1940.)
+		#ITA_war_with_france						# (Typically bypassed. Ignore for date calculations.)
+		ITA_superesercito						# November 20, 1940 -- 35 days
+		ITA_superaereo							# December 25, 1940 -- 35 days
+
+		#-----1941-----
+		ITA_supermarina							# January 29, 1941 -- 35 days
+		ITA_moschettieri_del_duce  # TODO Factor in.
+		ITA_culto_del_duce						# April 9, 1941
+		ITA_expand_foggia_farm_fields			# June 18, 1941
+		ITA_la_battaglia_per_la_terra			# August 27, 1941
+		ITA_la_battaglia_per_le_nascite			# October 1, 1941 -- 35 days
+		#ITA_albanian_oil						# November 5, 1941 -- 35 days
+		ITA_security_militias					# December 10, 1941 -- 35 days
+
+		#-----1942-----
+		ITA_army_leaders						# February 18, 1942
+		ITA_new_industrialization_program		# April 29, 1942
+		ITA_italian_tankettes					# July 8, 1942
+		ITA_self_propelled_guns					# September 16, 1942
+		ITA_modernize_ansaldo_facilities		# October 21, 1942 -- 35 days
+		ITA_ferrea_mole_ferreo_cuore			# December 30, 1942
+
+		#-----1943-----
+		ITA_thermojet_research					# March 10, 1943
+		ITA_officers_of_the_service_role		# April 14, 1943 -- 35 days
+		ITA_standardization						# May 19, 1943 -- 35 days
+		ITA_fighter_designs						# July 28, 1943
+		ITA_supremacy_in_the_skies				# October 6, 1943
+		ITA_milizia_marittima_di_artiglieria	# December 15, 1943
+
+		#-----1944-----
+		ITA_forza_navale_especiale				# February 23, 1944
+		ITA_oto_naval_guns						# March 29, 1944 -- 35 days
+		ITA_expand_naval_intelligence			# May 3, 1944 -- 35 days
+		ITA_incrociatori_pesanti				# July 12, 1944
+		ITA_ispettorato_dei_mezzi_antisommergibili	# August 16, 1944 -- 35 days
+		ITA_flotta_d_evasione					# October 25, 1944
+		ITA_navi_da_battaglia					# November 29, 1944 -- 35 days
+
+	}
+
+	#Focuses never to take
+	focus_factors = {
+		ITA_defy_the_duce = 0
+		ITA_unite_the_opposition = 0
+		ITA_liberate_gramsci = 0
+		ITA_convene_the_grand_council = 0
+		ITA_undermine_the_duce = 0
+		ITA_guarantee_austrian_independence = 0 #Italy First is okay to take if Pact of Steel is unavailable
+	}			
+
+	research = {
+
+	}
+
+	ideas = {
+		# Army Spirits
+		meticulous_preparation_spirit = 75
+		grand_battleplan_army_spirit = 100
+		static_warfare_spirit = 50
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

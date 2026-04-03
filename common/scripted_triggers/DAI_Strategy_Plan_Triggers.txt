@@ -1,0 +1,146 @@
+# ========== ENG ==========
+
+# TODO (James): this check could fail unless you disable abort in strategy plan.
+DAI_ENG_is_historical_ai = {
+	ENG = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Man the Guns" }
+					has_game_rule = {
+						rule = ENG_ai_behavior 
+						option = DEFAULT
+					}
+				}
+			}
+			has_country_flag = ENG_AI_DEMOCRATIC_HISTORICAL
+			has_game_rule = {
+				rule = ENG_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+		}
+	}
+}
+
+DAI_ENG_is_alternate_democratic_ai = {
+	ENG = {
+		OR = {
+			AND = {
+				has_completed_focus = ENG_steady_as_she_goes
+				NOT = { has_completed_focus = ENG_home_defence }
+				GER = { has_war = yes }
+				GER = { has_government = fascism }
+			}
+			OR = {
+				has_country_flag = ENG_AI_RANDOM_DEMOCRATIC_ALTERNATE
+				has_game_rule = {
+					rule = ENG_ai_behavior
+					option = DEMOCRATIC_ALTERNATE
+				}
+			}
+		}
+	}
+}
+
+DAI_ENG_is_non_aligned_ai = {
+	ENG = {
+		OR = {
+			has_country_flag = ENG_abdication_crisis_morganatic_marriage
+			has_country_flag = ENG_abdication_crisis_normal_marriage
+			has_country_flag = ENG_AI_RANDOM_NEUTRALITY
+			has_game_rule = {
+				rule = ENG_ai_behavior
+				option = NEUTRALITY
+			}
+		}
+	}
+}
+
+# ========== FRA ==========
+DAI_FRA_is_historical_ai = {
+	FRA = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = FRA_ai_behavior
+					option = DEFAULT
+				}	
+			}
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+			has_country_flag = FRA_AI_DEMOCRATIC_HISTORICAL
+		}
+	}
+}
+
+# ========== GER ==========
+DAI_GER_is_historical_ai = {
+	GER = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					NOT = { has_dlc = "Waking the Tiger" } # I have no clue what this is doing.
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = DEFAULT
+					}
+				}
+			}
+			has_country_flag = GER_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = FASCIST
+			}
+		}
+	}
+}
+
+DAI_GER_is_kaiser_ai = {
+	GER = {
+		OR = {
+			has_country_flag = GER_AI_RANDOM_KAISER
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = KAISER
+			}
+		}
+	}
+}
+
+DAI_GER_is_democratic_ai = {
+	GER = {
+		OR = {
+			has_country_flag = GER_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = DEMOCRATIC
+			}
+		}
+	}
+}
+
+# ========== SOV ==========
+
+DAI_SOV_is_historical_ai = {
+	SOV = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = SOV_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = SOV_AI_RANDOM_COMMUNIST_HISTORICAL
+			has_game_rule = {
+				rule = SOV_ai_behavior
+				option = HISTORICAL
+			}
+		}
+	}
+}

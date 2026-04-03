@@ -1,0 +1,80 @@
+# Military Flags
+
+DAI_set_wants_armor_flag = {
+	IF = { limit = { NOT = { has_country_flag = DAI_build_armor } }
+		IF = {
+			limit = { 
+				OR = {
+					original_tag = ENG
+					original_tag = FRA
+					original_tag = GER
+					original_tag = ITA
+					original_tag = JAP
+					original_tag = SOV
+					original_tag = USA
+					original_tag = CAN
+					original_tag = YUG
+					original_tag = HUN
+					original_tag = ROM
+					original_tag = CZE
+				}
+			}
+
+			set_country_flag = DAI_build_armor
+		}
+		ELSE_IF = { limit = { num_of_military_factories > 40 }
+			set_country_flag = DAI_build_armor
+		}
+	}
+}
+
+DAI_set_armor_template_flags = {
+	clr_country_flag = DAI_default_armor_template
+
+	IF = { limit = { has_country_flag = DAI_build_armor }
+		IF = {
+			limit = {
+				OR = {
+					has_tech = basic_light_tank
+					has_tech = basic_light_tank_chassis 
+				}
+				NOT = { has_tech = basic_medium_tank }
+				NOT = { has_tech = basic_medium_tank_chassis }
+			}
+
+			set_country_flag = { flag = DAI_default_armor_template value = 0 }
+		}
+		ELSE_IF = {
+			limit = {
+				OR = {
+					has_tech = basic_medium_tank
+					has_tech = basic_medium_tank_chassis 
+				}
+				date < 1939.1.1
+			}
+
+			set_country_flag = { flag = DAI_default_armor_template value = 1 }
+		}
+		ELSE_IF = {
+			limit = {
+				OR = {
+					has_tech = basic_medium_tank
+					has_tech = basic_medium_tank_chassis 
+				}
+				date < 1940.1.1
+			}
+
+			set_country_flag = { flag = DAI_default_armor_template value = 2 }
+		}
+		ELSE_IF = {
+			limit = {
+				OR = {
+					has_tech = basic_medium_tank
+					has_tech = basic_medium_tank_chassis 
+				}
+			}
+
+			set_country_flag = { flag = DAI_default_armor_template value = 3 }
+		}
+	}
+}
