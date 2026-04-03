@@ -1,0 +1,436 @@
+GER_historical_no_mefo = {
+	name = "German Historical Strategy Plan - No Mefo"
+	desc = "Essentially historical behaviour for Germany"
+
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					NOT = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = DEFAULT
+					}
+				}	
+			}
+			has_country_flag = GER_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = FASCIST
+			}
+		}
+	}
+	abort = {
+	}
+
+	ai_national_focuses = {
+
+		# PRIORITY
+		GER_the_triumphant_will					#35
+
+		#-----1936-----
+		GER_prioritize_economic_growth			#35		February 5, 1936
+		GER_remilitarize_the_rhineland			#35		March 11, 1936
+		GER_fuhrerprinzip						#35		April 15, 1936
+		GER_ascension_of_todt					#14		April 29, 1936
+		GER_reorganize_the_wehrmacht			#35		June 3, 1936
+			# ↳ The above let's us get War Economy earlier.
+		GER_currency_reforms					#35		July 8, 1936
+		GER_lower_taxes							#35		August 12, 1936
+		GER_abolish_price_controls				#35		September 16, 1936
+		GER_housing_developments				#35		October 21, 1936
+		GER_party_chancellor_hess				#14		November 4, 1936
+		GER_construct_the_reichsautobahn		#35		December 9, 1936
+
+		#-----1937-----
+		GER_kdf_wagen_factories					#35		January 13, 1937
+		GER_develop_heraeus_facilities			#70		March 24, 1937
+			# ↳ The above requires 50 civilian factories, may not be attainable yet.
+			# Listing the date for further time approximations (when to start WW2).
+		GER_legion_condor						#35		April 28, 1937
+		GER_industrial_expansion				#70		July 7, 1937
+		GER_ascension_of_goebbels				#14		July 21, 1937
+		GER_develop_modern_maneuver_warfare		#35		August 25, 1937
+		GER_adopt_new_panzer_doctrine			#35 	September 29, 1937
+		GER_expanding_the_luftwaffe				#35		November 3, 1937
+		GER_workers_rights						#35		December 8, 1937
+
+		#-----1938-----
+		GER_anti_comintern_pact					#35		January 12, 1938
+		GER_anschluss							#70 	March 23, 1938
+			# ↳ Historically happened March 12, 1938.
+		GER_strengthen_the_kriegsmarine			#35		April 27, 1938
+		GER_advanced_panzer_research			#70		July 6, 1938
+		GER_demand_sudetenland					#70 	September 14, 1938
+			# ↳ Historically happened September 29, 1938.
+		GER_first_vienna_award					#35 	October 19, 1938
+		GER_aeronautical_research_institute		#35		November 23, 1938
+		GER_bribe_senior_officers				#35		December 28, 1938
+
+		# At some point this year Speer will replace Todt via Industrailist Intrigue Event
+
+		#-----1939-----
+		GER_fate_of_czechoslovakia				#70 	March 8, 1939
+			# ↳ Historically happened March 14, 1939.
+		GER_reassert_eastern_claims				#35 	April 12, 1939
+		GER_dive_bombers						#35		May 17, 1939
+		GER_molotov_ribbentrop_pact				#35 	June 21, 1939
+			# ↳ Historically happened August 23/24, 1939.
+		GER_danzig_or_war						#70 	August 30, 1939
+			# ↳ Historically happened September 1, 1939.
+		GER_combined_arms						#35		October 4, 1939
+		GER_panzer_troops_school				#35 	November 8, 1939
+
+		#-----1940-----
+		GER_agricultural_reforms				#70		January 17, 1940
+		GER_operation_weserubung 				#28		February 14, 1940
+			# ↳ Start the above now to give us some time to commit to Norway invasion.
+			# Historically happened April 9, 1940.
+		GER_form_the_jagdwaffe					#35		March 20, 1940
+		GER_invest_in_vereinigte_stahlwerke		#70		April 24, 1940 !!!
+		GER_around_maginot 						#28		May 22, 1940
+			# ↳ Historically happened May 10, 1940.
+		GER_war_with_france 					#70
+			# ↳ The above is usually bypassed. Ignore for date calculations.
+		GER_expand_kummersdorfs_capacity		#35 	June 26, 1940
+		GER_instill_auftragstaktik				#35 	July 31, 1940
+		GER_panzergrenadier						#70 	October 9, 1940
+		GER_subjugate_romanian_economy			#35 	November 13, 1940
+
+		#-----1941-----
+		GER_befriend_japan						#35		January 22, 1941
+		GER_demands_to_sweden 					#35		February 26, 1941
+		GER_army_indoctrination					#35 	April 2, 1941
+		GER_war_with_the_ussr					#70 	June 11, 1941
+			# ↳ Historically happened June 22, 1941.
+		GER_wirtschaftswunder					#70	August 20, 1941
+		GER_build_defense_industry				#70	October 29, 1941
+
+		#-----1942-----
+		GER_mass_production						#70	January 7, 1942
+		GER_war_production						#70	March 18, 1942
+		GER_urbanization						#70	May 27, 1942
+		GER_trade_interdiction					#35	August 5, 1942
+		GER_wolfpack_tactics					#35	September 9, 1942
+		GER_develop_the_knickebein				#35	October 14, 1942
+		GER_defense_of_the_reich				#70	November 18, 1942
+
+		#-----1943-----
+		GER_construct_the_kammhuber_line		#35	January 27, 1943
+		GER_establish_the_afrikakorps			#35	March 3, 1943
+		GER_u_boat_efforts						#35	April 7, 1943
+		GER_nationalize_ford_factories			#35	May 12, 1943
+		GER_rocketry_innovations				#70	June 16, 1943
+		GER_re_establish_the_seekriegsleitung	#35	August 25, 1943
+		GER_atlantic_naval_bases				#35	September 29, 1943
+		GER_strafbataillon						#35	November 3, 1943
+		GER_aerodynamic_research_institute		#35	December 8, 1943
+		GER_ascension_of_himmler				#14	December 22, 1943
+
+	}
+
+	focus_factors = {
+		GER_remilitarize_the_rhineland = 1.0
+
+		#Focuses never to take:
+		GER_uplift_the_rosenberg_office = 0 # Puppets cause frontline issues and are pretty much useless.
+		GER_the_four_year_plan = 0
+		GER_the_prussian_legacy = 0
+		GER_heed_von_neuraths_concerns = 0
+		GER_alliance_with_the_ussr = 0
+		GER_befriend_china = 0
+		GER_oppose_hitler_ww = 0
+		GER_a_strong_successor = 0
+		GER_befriend_turkey = 0 # Turkey should not be incentivized to join an AI Axis on historical
+	}
+
+	# 100% increase to these tech ai_will_do weights, so we can progress through economic focuses.
+	ai_strategy = {
+		type = research_weight_factor
+		id = advanced_machine_tools
+		value = 100 
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = excavation3
+		value = 100 
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+
+# GER_historical_plan_mefo = {
+# 	name = "German historical plan"
+# 	desc = "Essentially historical behaviour for Germany"
+
+# 	allowed = {
+# 	}
+# 	enable = {
+# 	}
+# 	abort = {
+# 	}
+
+# 	ai_national_focuses = {
+
+# 		# PRIORITY
+# 		GER_the_triumphant_will					# 35
+
+# 		#-----1936-----
+# 		GER_the_four_year_plan					#35		February 5, 1936
+# 		GER_remilitarize_the_rhineland			#35		March 11, 1936
+# 		GER_fuhrerprinzip						#35		April 15, 1936
+# 		GER_party_chancellor_bormann			#14		April 29, 1936
+# 		GER_construct_the_reichsautobahn		#35		June 3, 1936
+# 		GER_kdf_wagen_factories					#35		July 8, 1936
+# 		GER_reorganize_the_wehrmacht			#35		August 12, 1936
+# 			# ↳ The above let's us get War Economy earlier.
+# 		GER_legion_condor						#35		September 16, 1936
+# 		GER_autarky_efforts						#35		October 21, 1936
+# 		GER_ascension_of_todt					#14		November 4, 1936
+# 		GER_institute_price_controls			#35		December 9, 1936
+
+# 		#-----1937-----
+# 		GER_develop_heraeus_facilities			#70		February 17, 1937
+# 			# ↳ The above requires 50 civilian factories, may not be attainable yet.
+# 			# Listing the date for further time approximations (when to start WW2).
+# 		GER_accelerate_the_rearmament_program	#35		March 24, 1937
+# 		GER_establish_production_targets		#35		April 28, 1937
+# 		GER_ascension_of_goebbels				#14		May 12, 1937
+# 		GER_develop_modern_maneuver_warfare		#35		June 16, 1937
+# 		GER_adopt_new_panzer_doctrine			#35 	July 21, 1937
+# 		GER_expanding_the_luftwaffe				#35		August 25, 1937
+# 		GER_strengthen_the_kriegsmarine			#35		September 29, 1937
+# 		GER_trade_interdiction					#35		November 3, 1937
+# 		GER_concentrated_armament_program		#35		December 8, 1937
+
+# 		#-----1938-----
+# 		GER_anti_comintern_pact					#35		January 12, 1938
+# 		GER_anschluss							#70 	March 23, 1938
+# 			# ↳ Historically happened March 12, 1938.
+# 		GER_establish_the_reichswerke			#35		April 27, 1938
+# 		GER_advanced_panzer_research			#70		July 6, 1938
+# 		GER_demand_sudetenland					#70 	September 14, 1938
+# 			# ↳ Historically happened September 29, 1938.
+# 		GER_first_vienna_award					#35 	October 19, 1938
+# 		GER_aeronautical_research_institute		#35		November 23, 1938
+# 		GER_bribe_senior_officers				#35		December 28, 1938
+
+# 		# At some point this year Speer will replace Todt via Industrailist Intrigue Event
+
+# 		#-----1939-----
+# 		GER_fate_of_czechoslovakia				#70 	March 8, 1939
+# 			# ↳ Historically happened March 14, 1939.
+# 		GER_reassert_eastern_claims				#35 	April 12, 1939
+# 		GER_dive_bombers						#35		May 17, 1939
+# 		GER_molotov_ribbentrop_pact				#35 	June 21, 1939
+# 			# ↳ Historically happened August 23/24, 1939.
+# 		GER_danzig_or_war						#70 	August 30, 1939
+# 			# ↳ Historically happened September 1, 1939.
+# 		GER_combined_arms						#35		October 4, 1939
+# 		GER_panzer_troops_school				#35 	November 8, 1939
+# 		GER_coal_liquefaction					#35		December 13, 1939
+
+# 		#-----1940-----
+# 		GER_establish_buna_werke				#35		January 17, 1940
+# 		GER_operation_weserubung 				#28		February 14, 1940
+# 			# ↳ Start the above now to give us some time to commit to Norway invasion.
+# 			#  Historically happened April 9, 1940.
+# 		GER_form_the_jagdwaffe					#35		March 20, 1940
+# 		GER_subsidize_hoesch_benzin				#35		April 24, 1940
+# 		GER_around_maginot 						#28		May 22, 1940
+# 			# ↳ Historically happened May 10, 1940.
+# 		GER_war_with_france 					#70
+# 			# ↳ The above is usually bypassed. Ignore for date calculations.
+# 		GER_expand_kummersdorfs_capacity		#35 	June 26, 1940
+# 		GER_instill_auftragstaktik				#35 	July 31, 1940
+# 		GER_panzergrenadier						#70 	October 9, 1940
+# 		GER_subjugate_romanian_economy			#35 	November 13, 1940
+# 		GER_wolfpack_tactics			#35 	December 18, 1940
+
+# 		#-----1941-----
+# 		GER_befriend_japan						#35		January 22, 1941
+# 		GER_demands_to_sweden 					#35		February 26, 1941
+# 		GER_army_indoctrination					#35 	April 2, 1941
+# 		GER_war_with_the_ussr					#70 	June 11, 1941
+# 			# ↳ Historically happened June 22, 1941.
+# 		GER_develop_the_knickebein				#35	July 16, 1941
+# 		GER_defense_of_the_reich				#70	August 20, 1941
+# 		GER_construct_the_kammhuber_line		#35	October 29, 1941
+# 		GER_establish_the_afrikakorps			#35	December 3, 1941
+
+# 		#-----1942-----
+# 		GER_u_boat_efforts						#35	January 7, 1942
+# 		GER_seize_foreign_industries			#35	February 11, 1942
+# 		GER_nationalize_ford_factories			#35	March 18, 1942
+# 		GER_rocketry_innovations				#70	April 22, 1942
+# 		GER_zentrale_planung					#70	June 26, 1942
+# 		GER_armament_rationalization			#70	August 30, 1942
+# 		GER_re_establish_the_seekriegsleitung	#35	November 8, 1942
+# 		GER_atlantic_naval_bases				#35	December 13, 1942
+
+# 		#-----1943-----
+# 		GER_strafbataillon						#35	January 17, 1943
+# 		GER_create_rustungsstab					#70	February 21, 1943
+# 		GER_totaler_krieg						#35	May 2, 1943
+# 		GER_aerodynamic_research_institute		#35	June 6, 1943
+# 		GER_ascension_of_himmler				#14	June 20, 1943
+# 		GER_autarky_achieved					#35	July 5, 1943
+# 	}
+
+# 	weight = {
+# 		factor = 1.0
+# 		modifier = {
+# 			factor = 1.0
+# 		}
+# 	}
+
+# 	focus_factors = {
+# 		GER_remilitarize_the_rhineland = 1.0
+
+# 		#Focuses never to take:
+# 		GER_uplift_the_rosenberg_office = 0 # Puppets cause frontline issues and are pretty much useless.
+# 		GER_prioritize_economic_growth = 0
+# 		GER_the_prussian_legacy = 0
+# 		GER_heed_von_neuraths_concerns = 0
+# 		GER_alliance_with_the_ussr = 0
+# 		GER_befriend_china = 0
+# 		GER_oppose_hitler_ww = 0
+# 		GER_a_strong_successor = 0
+# 		GER_befriend_turkey = 0 # Turkey should not be incentivized to join an AI Axis on historical
+# 	}
+
+# }
+
+
+GER_minor_allies = { #used to make minor European nations like Axis more
+	name = "Minor German Allies"
+
+	allowed = {
+		OR = {
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = BUL
+			original_tag = YUG
+			original_tag = ITA
+			original_tag = CZE
+			original_tag = DEN
+			original_tag = NOR
+			original_tag = SWE
+			original_tag = FIN
+			original_tag = SPR
+			original_tag = POR
+			original_tag = HOL
+			original_tag = BEL
+			original_tag = LUX
+			original_tag = POL
+			original_tag = LAT
+			original_tag = LIT
+			original_tag = EST
+			original_tag = CRO
+			original_tag = SLO
+			original_tag = VIC
+			original_tag = SER
+			original_tag = SWI
+			original_tag = UKR
+			original_tag = BLR
+			original_tag = UBD
+			original_tag = ALB
+			original_tag = MNT
+			original_tag = GRE
+			original_tag = IRE
+			original_tag = BRI
+			original_tag = OCC
+			original_tag = WLS
+			original_tag = SCO
+			original_tag = ICE
+			original_tag = GRN
+			original_tag = SMI
+			original_tag = KAR
+			original_tag = GEO
+			original_tag = ARM
+			original_tag = CRI
+			original_tag = MLD
+			original_tag = VGE
+		}
+	}
+	enable = {
+		OR = {
+			has_government = fascism
+			fascism > 0.5
+		}
+		is_in_faction = no
+		GER = {
+			has_government = fascism
+		}
+		OR = {
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = BUL
+			original_tag = YUG
+			original_tag = ITA
+			original_tag = CZE
+			original_tag = DEN
+			original_tag = NOR
+			original_tag = SWE
+			original_tag = FIN
+			original_tag = SPR
+			original_tag = POR
+			original_tag = HOL
+			original_tag = BEL
+			original_tag = LUX
+			original_tag = POL
+			original_tag = LAT
+			original_tag = LIT
+			original_tag = EST
+			original_tag = CRO
+			original_tag = SLO
+			original_tag = VIC
+			original_tag = SER
+			original_tag = SWI
+			original_tag = UKR
+			original_tag = BLR
+			original_tag = UBD
+			original_tag = ALB
+			original_tag = MNT
+			original_tag = GRE
+			original_tag = IRE
+			original_tag = BRI
+			original_tag = OCC
+			original_tag = WLS
+			original_tag = SCO
+			original_tag = ICE
+			original_tag = GRN
+			original_tag = SMI
+			original_tag = KAR
+			original_tag = GEO
+			original_tag = ARM
+			original_tag = CRI
+			original_tag = MLD
+			original_tag = VGE
+		}
+	}
+	abort = {
+		GER = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = JAP
+		value = -500
+	}
+}

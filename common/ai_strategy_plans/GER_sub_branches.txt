@@ -1,0 +1,461 @@
+# ========== Weltpolitik Branches ==========
+
+# Ally England.
+GER_weltpolitik_british_naval_dominance_1 = {
+	name = "Accept British Naval Dominance sub-branch 1"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		has_completed_focus = GER_weltpolitik
+		OR = {
+			AND = {
+				DAI_GER_is_kaiser_ai = yes
+				DAI_ENG_is_non_aligned_ai = yes
+			}
+			AND = {
+				DAI_GER_is_democratic_ai = yes
+				OR = {
+					DAI_ENG_is_historical_ai = yes
+					DAI_ENG_is_alternate_democratic_ai = yes
+				}
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_accept_british_naval_dominance_ww
+		GER_carve_up_congo
+		GER_anglo_germanic_defense_pact
+		GER_anglo_germanic_cooperation_program
+	}
+
+	focus_factors = {
+
+	}
+}
+
+# Go to war with France.
+GER_weltpolitik_british_naval_dominance_2 = {
+	name = "Accept British Naval Dominance sub-branch 2"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		has_completed_focus = GER_anglo_germanic_defense_pact
+		date > 1939.7.1
+		NOT = { any_enemy_country = { is_major = yes} }
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_carte_blanche_for_alsace_and_french_colonies_ww
+		GER_bypass_maginot_in_the_south_ww
+	}
+
+	focus_factors = {
+
+	}
+}
+
+GER_weltpolitik_second_naval_race_1 = {
+	name = "Second Naval Race sub-branch 1"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		has_completed_focus = GER_weltpolitik
+		NOT = {
+			OR = {
+				AND = {
+					DAI_GER_is_kaiser_ai = yes
+					DAI_ENG_is_non_aligned_ai = yes
+				}
+				AND = {
+					DAI_GER_is_democratic_ai = yes
+					OR = {
+						DAI_ENG_is_historical_ai = yes
+						DAI_ENG_is_alternate_democratic_ai = yes
+					}
+				}
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_the_second_naval_race
+		GER_rebuild_the_high_seas_fleet_ww
+	}
+
+	focus_factors = {
+
+	}
+}
+
+GER_weltpolitik_second_naval_race_2 = {
+	name = "Second Naval Race sub-branch 2"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		has_completed_focus = GER_rebuild_the_high_seas_fleet_ww
+		date > 1939.7.1
+		NOT = { any_enemy_country = { is_major = yes} }
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_break_anglo_french_colonial_hegemony_ww
+	}
+
+	focus_factors = {
+		GER_demand_the_return_of_southern_jutland = 20
+		GER_reject_the_locarno_treaty = 20
+		GER_schlieffen_once_more_ww = 20
+		GER_our_place_in_the_sun_ww = 5
+	}
+}
+
+
+# ========== Realpolitik Branches ==========
+
+GER_realpolitik_brothers_in_arms_1 = {
+	name = "Brothers in Arms sub-branch 1"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		OR = {
+			has_completed_focus = GER_accept_british_naval_dominance_ww
+			has_completed_focus = GER_rebuild_the_high_seas_fleet_ww
+		}
+		AUS = {
+			has_government = ROOT
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_realpolitik
+		GER_mitteleuropa
+		GER_brothers_in_arms
+		GER_rekindle_imperial_sentiment_ww
+		GER_align_czechoslovakia
+	}
+
+	focus_factors = {
+
+	}
+}
+
+GER_realpolitik_the_austrian_question = {
+	name = "The Austrian Question sub-branch"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		OR = {
+			has_completed_focus = GER_accept_british_naval_dominance_ww
+			has_completed_focus = GER_rebuild_the_high_seas_fleet_ww
+		}
+		NOT = {
+			AUS = {
+				has_government = ROOT
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_realpolitik
+		GER_mitteleuropa
+		GER_the_austrian_question
+		GER_carve_up_czechoslovakia
+		GER_the_first_berlin_award
+	}
+
+	focus_factors = {
+
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+# Protective branch: chosen if the following conditions are met:
+# If we are democratic:
+# - At least one of Poland and Baltic nations are not fascist/communist.
+# Else (non-aligned):
+# - At least 2 of Poland and Baltic nations share our government.
+GER_realpolitik_see_to_the_eastern_front = {
+	name = "See to the Eastern Front sub-branch"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		has_completed_focus = GER_realpolitik
+		IF = { limit = { has_government = democratic }
+			OR = {
+				EST = {
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+				}
+				LAT = {
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+				}
+				LIT = {
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+				}
+				POL = {
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+					NOT = { has_government = fascism }
+					NOT = { has_government = communism }
+				}
+			}
+		}
+		# Can only be non-aligned.
+		ELSE = {
+			count_triggers = {
+				amount = 2
+				EST = {
+					has_government = ROOT
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+				}
+				LAT = {
+					has_government = ROOT
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+				}
+				LIT = {
+					has_government = ROOT
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+				}
+				POL = {
+					has_government = ROOT
+					exists = yes
+					is_subject = no
+					NOT = {
+						is_in_faction_with = SOV
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_see_to_the_eastern_front_ww
+	}
+
+	focus_factors = {
+		GER_danzig_for_guarantees_ww = 10
+		GER_safeguard_the_baltic_ww = 10
+		GER_build_the_eastern_bulwark = 10
+		GER_hold_joint_military_drills = 10
+		GER_strike_eastward = 10
+	}
+}
+
+# Aggressive branch: chosen if see to the eastern front
+# branch conditions are NOT met.
+GER_realpolitik_restore_the_brest_litovsk_borders = {
+	name = "Restore the Brest Litovsk Borders sub-branch"
+	desc = "desc"
+
+	allowed = {
+		original_tag = GER
+		has_dlc = "Gotterdammerung"
+	}
+	enable = {
+		has_completed_focus = GER_realpolitik
+		IF = { limit = { has_government = democratic }
+			NOT = {
+				OR = {
+					EST = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+					}
+					LAT = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+					}
+					LIT = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+					}
+					POL = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+					}
+				}
+			}
+		}
+		# Can only be non-aligned.
+		ELSE = {
+			NOT = {
+				count_triggers = {
+					amount = 2
+					EST = {
+						has_government = ROOT
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+					}
+					LAT = {
+						has_government = ROOT
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+					}
+					LIT = {
+						has_government = ROOT
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+					}
+					POL = {
+						has_government = ROOT
+						exists = yes
+						is_subject = no
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		GER_restore_the_brest_litovsk_borders
+	}
+
+	focus_factors = {
+		GER_memel_ultimatum = 10
+		GER_demand_lithuanian_integration = 10
+		GER_restore_eastern_imperial_possessions = 10
+		GER_demand_further_polish_concessions = 10
+		GER_establish_eastern_grand_duchies = 10
+		GER_incorporate_the_polish_rump_state = 10
+		GER_subduing_the_baltic_states = 10
+		GER_strike_eastward = 10
+	}
+}

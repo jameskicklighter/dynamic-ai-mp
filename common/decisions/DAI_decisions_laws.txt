@@ -1,0 +1,494 @@
+# ==================== #
+# ======  Laws  ====== #
+# ==================== #
+
+# For whatever reason, many AI, I suspect those that are not predefined as majors, will NOT upgrade 
+# their economy laws unless at war (or 1940+). This is rather frustrating in the case of relevant WW2 
+# nations such as but not limited to Poland, Greece, Romania, Hungary... They do not seem to change from 
+# their pre-existing law unless via a focus or event, that is until January 1, 1940. Thus, this is an 
+# attempted workaround. Also annoying is sometimes decisions do not seem to be always evaluated for 
+# priority. So I made the cost free which should hopefully fix this. The AI still pays the PP cost, 
+# but it is more of down payment method for now.
+
+# DAI_economy_law_decisions = {
+
+# 	DAI_partial_mobilization = {
+# 		icon = rifles
+# 		visible = { is_ai = yes }
+
+# 		available = {
+# 			has_political_power > 0
+# 			# ==================================================
+# 			NOT = { has_idea = partial_economic_mobilisation }
+# 			# Use 26% instead so that when world tension depreciates, we don't accidentally
+# 			# have to demobilize (ideally a 1% extra grace consideration will avoid this).
+# 			has_war_support > 0.26
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					original_tag = HUN
+# 					has_dlc = "Death or Dishonor"
+# 					NOT = {
+# 						has_dlc = "Gotterdammerung"
+# 					}
+# 				}
+# 				IF = {
+# 					limit = {
+# 						has_dlc = "Arms Against Tyranny"
+# 					}
+# 					OR = {
+# 						has_completed_focus = HUN_secret_rearmament
+# 						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+# 					}
+# 				}
+# 				ELSE = {
+# 					has_completed_focus = HUN_secret_rearmament
+# 					NOT = { has_idea = HUN_treaty_of_triannon }
+# 				}
+# 			}
+# 			ELSE_IF = {
+# 				limit = {
+# 					original_tag = HUN
+# 					has_dlc = "Gotterdammerung"
+# 				}
+# 				IF = {
+# 					limit = {
+# 						has_dlc = "Arms Against Tyranny"
+# 					}
+# 					OR = {
+# 						has_completed_focus = wuw_HUN_secret_rearmament
+# 						NOT = { has_idea = HUN_treaty_of_triannon_aat_wuw }
+# 					}
+# 				}
+# 				ELSE = {
+# 					has_completed_focus = wuw_HUN_secret_rearmament
+# 					NOT = { has_idea = HUN_treaty_of_triannon_wuw }
+# 				}
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					has_completed_focus = USA_limited_intervention
+# 					has_defensive_war = no
+# 				}
+# 				has_war_support > 0.5
+# 				congress_high_support_trigger = yes
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					original_tag = TUR
+# 					has_dlc = "Battle for the Bosporus"
+# 				}
+# 				NOT = {
+# 					OR = {
+# 						has_active_mission = TUR_etatism_crisis_1
+# 						has_active_mission = TUR_etatism_crisis_3
+# 						has_active_mission = TUR_etatism_crisis_4
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		cost = 0
+
+# 		fire_only_once = no
+
+# 		complete_effect = {
+# 			add_ideas = partial_economic_mobilisation
+# 		}
+
+# 		complete_effect = {
+# 			set_temp_variable = { law_cost = modifier@economy_cost_factor }
+# 			add_to_temp_variable = { law_cost = 1 }
+# 			multiply_temp_variable = { law_cost = -150 }
+# 			# add_to_temp_variable = { law_cost = 150 }
+
+# 			add_political_power = law_cost
+# 		}
+
+# 		ai_will_do = {
+# 			base = 5
+# 			modifier = {
+# 				factor = 5
+# 				num_of_factories > 10
+# 			}
+# 			modifier = {
+# 				factor = 5
+# 				num_of_factories > 20
+# 			}
+# 			modifier = {
+# 				add = 100
+# 				OR = {
+# 					original_tag = URG
+# 					original_tag = PAR
+# 				}
+# 				NOT = {
+# 					has_idea = war_economy
+# 				}
+# 				has_completed_focus = GUAY_coup_detat
+# 			}
+# 			modifier = {
+# 				add = 200
+# 				OR = {
+# 					original_tag = ENG
+# 					original_tag = POL
+# 					original_tag = SOV
+# 					original_tag = USA
+# 				}
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_idea = war_economy
+# 					has_idea = tot_economic_mobilisation
+# 					has_idea = totaler_krieg_economy
+# 				}
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				DAI_should_upgrade_manpower_law = yes
+# 			}
+# 		}
+# 	}
+
+# 	DAI_war_economy = {
+# 		icon = rifles
+# 		visible = { is_ai = yes }
+
+# 		available = {
+# 			has_political_power > 0
+# 			# ==================================================
+# 			NOT = { has_idea = war_economy }
+# 			# Use 51% instead so that when world tension depreciates, we don't accidentally
+# 			# have to demobilize (ideally a 1% extra grace consideration will avoid this).
+# 			has_war_support > 0.51
+# 			# ==================================================
+# 			OR = {
+# 				has_government = fascism
+# 				has_government = communism
+# 				custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
+# 				AND = {
+# 					has_war = yes
+# 					any_enemy_country = {
+# 						ic_ratio = {
+# 							tag = ROOT
+# 							ratio > 0.4
+# 						}
+# 					}
+# 				}
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					original_tag = HUN
+# 					has_dlc = "Death or Dishonor"
+# 					NOT = {
+# 						has_dlc = "Gotterdammerung"
+# 					}
+# 				}
+# 				IF = {
+# 					limit = {
+# 						has_dlc = "Arms Against Tyranny"
+# 					}
+# 					NOT = { has_idea = HUN_treaty_of_triannon_aat }
+# 				}
+# 				ELSE = {
+# 					NOT = { has_idea = HUN_treaty_of_triannon }
+# 				}
+# 			}
+# 			ELSE_IF = {
+# 				limit = {
+# 					original_tag = HUN
+# 					has_dlc = "Gotterdammerung"
+# 				}
+# 				IF = {
+# 					limit = {
+# 						has_dlc = "Arms Against Tyranny"
+# 					}
+# 					custom_trigger_tooltip = {
+# 						tooltip = wuw_HUN_not_has_trianon_for_laws_tt
+# 						NOT = { 
+# 							OR = {
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw 
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff 
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff 
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff 
+# 							}
+# 						}
+						
+# 					}
+# 				}
+# 				ELSE = {
+# 					custom_trigger_tooltip = {
+# 						tooltip = wuw_HUN_not_has_trianon_for_laws_tt
+# 						NOT = { 
+# 							OR = {
+# 								has_idea = HUN_treaty_of_triannon_wuw 
+# 								has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff 
+# 								has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff 
+# 								has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff 
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					has_completed_focus = USA_limited_intervention
+# 					has_defensive_war = no
+# 				}
+# 				has_war_support > 0.75
+# 				congress_high_support_trigger = yes
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					original_tag = TUR
+# 					has_dlc = "Battle for the Bosporus"
+# 				}
+# 				NOT = {
+# 					OR = {
+# 						has_active_mission = TUR_etatism_crisis_1
+# 						has_active_mission = TUR_etatism_crisis_2
+# 						has_active_mission = TUR_etatism_crisis_4
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		cost = 0
+
+# 		fire_only_once = no
+
+# 		complete_effect = {
+# 			add_ideas = war_economy
+# 		}
+
+# 		complete_effect = {
+# 			set_temp_variable = { law_cost = modifier@economy_cost_factor }
+# 			add_to_temp_variable = { law_cost = 1 }
+# 			multiply_temp_variable = { law_cost = -150 }
+# 			# add_to_temp_variable = { law_cost = 150 }
+
+# 			add_political_power = law_cost
+# 		}
+
+# 		ai_will_do = {
+# 			base = 999
+# 			# Japan gets this free upgrade with Purge/Support the Kodoha Faction paths.
+# 			modifier = {
+# 				factor = 0
+# 				AND = {
+# 					original_tag = JAP
+# 					NOT = {
+# 						OR = {
+# 							has_completed_focus = JAP_the_unthinkable_option
+# 							has_completed_focus = JAP_strengthen_civilian_government
+# 						}
+# 					}
+# 				}
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_idea = tot_economic_mobilisation
+# 					has_idea = totaler_krieg_economy
+# 				}
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				DAI_should_upgrade_manpower_law = yes
+# 			}
+# 		}
+# 	}
+
+# 	DAI_total_mobilisation = {
+# 		icon = rifles
+# 		visible = { is_ai = yes }
+
+# 		available = {
+# 			has_political_power > 0
+# 			# ==================================================
+# 			NOT = { has_idea = tot_economic_mobilisation }
+# 			# If we are checking to upgrade to this, we don't need to worry about
+# 			# the potential demobilization problem as we are at war...
+# 			has_war = yes
+# 			has_war_support > 0.8
+# 			any_enemy_country = {
+# 				ic_ratio = {
+# 					tag = ROOT
+# 					ratio > 0.5
+# 				}
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					original_tag = HUN
+# 					has_dlc = "Death or Dishonor"
+# 					NOT = {
+# 						has_dlc = "Gotterdammerung"
+# 					}
+# 				}
+# 				IF = {
+# 					limit = {
+# 						has_dlc = "Arms Against Tyranny"
+# 					}
+# 					NOT = { has_idea = HUN_treaty_of_triannon_aat }
+# 				}
+# 				ELSE = {
+# 					NOT = { has_idea = HUN_treaty_of_triannon }
+# 				}
+# 			}
+# 			ELSE_IF = {
+# 				limit = {
+# 					original_tag = HUN
+# 					has_dlc = "Gotterdammerung"
+# 				}
+# 				IF = {
+# 					limit = {
+# 						has_dlc = "Arms Against Tyranny"
+# 					}
+# 					custom_trigger_tooltip = {
+# 						tooltip = wuw_HUN_not_has_trianon_for_laws_tt
+# 						NOT = { 
+# 							OR = {
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw 
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_debuff 
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff 
+# 								has_idea = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff 
+# 							}
+# 						}
+						
+# 					}		
+# 				}
+# 				ELSE = {
+# 					custom_trigger_tooltip = {
+# 						tooltip = wuw_HUN_not_has_trianon_for_laws_tt
+# 						NOT = { 
+# 							OR = {
+# 								has_idea = HUN_treaty_of_triannon_wuw 
+# 								has_idea = HUN_treaty_of_triannon_wuw_no_army_exp_debuff 
+# 								has_idea = HUN_treaty_of_triannon_wuw_no_air_debuff 
+# 								has_idea = HUN_treaty_of_triannon_wuw_no_air_or_army_debuff 
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					has_completed_focus = USA_limited_intervention
+# 					has_defensive_war = no
+# 				}
+# 				has_war_support > 0.9
+# 				congress_high_support_trigger = yes
+# 			}
+# 			# ==================================================
+# 			IF = {
+# 				limit = {
+# 					original_tag = TUR
+# 					has_dlc = "Battle for the Bosporus"
+# 				}
+# 				NOT = {
+# 					OR = {
+# 						has_active_mission = TUR_etatism_crisis_1
+# 						has_active_mission = TUR_etatism_crisis_2
+# 						has_active_mission = TUR_etatism_crisis_3
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		cost = 0
+
+# 		fire_only_once = no
+
+# 		complete_effect = {
+# 			add_ideas = tot_economic_mobilisation
+# 		}
+
+# 		complete_effect = {
+# 			set_temp_variable = { law_cost = modifier@economy_cost_factor }
+# 			add_to_temp_variable = { law_cost = 1 }
+# 			multiply_temp_variable = { law_cost = -150 }
+# 			# add_to_temp_variable = { law_cost = 150 }
+
+# 			add_political_power = law_cost
+# 		}
+
+# 		ai_will_do = {
+# 			base = 25
+# 			# If we already have war economy we don't need to break our backs for 5% less consumer goods.
+# 			modifier = {
+# 				add = 9974
+# 				NOT = { has_idea = war_economy }
+# 			}
+# 			# Japan gets this free upgrade with Purge/Support the Kodoha Faction paths.
+# 			modifier = {
+# 				factor = 0
+# 				AND = {
+# 					original_tag = JAP
+# 					NOT = {
+# 						OR = {
+# 							has_completed_focus = JAP_the_unthinkable_option
+# 							has_completed_focus = JAP_strengthen_civilian_government
+# 						}
+# 					}
+# 				}
+# 			}
+# 			modifier = {
+# 				# never take this if we are on low conscription laws for safety
+# 				factor = 0
+# 				OR = {
+# 					has_idea = volunteer_only
+# 					AND = {
+# 						has_idea = limited_conscription
+# 						NOT = { has_tech = nd_conscription }
+# 						NOT = { has_tech = human_wave_offensive }
+# 					}
+# 				}
+# 			}
+# 			# Do not take if we do not meet the requirements for Women in the Workforce.
+# 			modifier = {
+# 				factor = 0
+
+# 				has_government = fascism
+# 				# Only one inverse condition is required for Women in the Workforce.
+# 				has_war_support < 0.90
+# 				surrender_progress < 1
+# 			}
+# 			# Do not take if we do not meet the requirements for Women in the Workforce.
+# 			modifier = {
+# 				factor = 0
+
+# 				has_government = neutrality
+# 				# Both inverse conditions are required for Women in the Workforce.
+# 				OR = {
+# 					has_war_support < 0.85
+# 					has_stability < 0.71
+# 				}
+# 			}
+# 			# Do not take if we do not meet the requirements for Women in the Workforce.
+# 			modifier = {
+# 				factor = 0
+# 				OR = {
+# 					has_government = communism
+# 					has_government = democratic
+# 				}
+# 				has_war_support < 0.8
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_idea = totaler_krieg_economy
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				DAI_should_upgrade_manpower_law = yes
+# 			}
+# 		}
+# 	}
+
+# }
