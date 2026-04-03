@@ -1,0 +1,385 @@
+# Trade Laws
+
+DAI_set_desired_trade_law = {
+
+	@free_trade = 0
+	@export_focus = 1
+	@limited_exports = 2
+	@closed_economy = 3
+	@autarkic_economy = 4
+	@autarkic_economy_improved = 5
+
+	set_variable = { DAI_LAW_get_trade_law = -1 }
+
+	IF = { limit = { original_tag = JAP }
+		IF = { limit = { date > 1940.1.1 OR = { has_government = fascism has_government = communism } }
+			set_variable = { DAI_LAW_get_trade_law = @closed_economy }
+		}
+		ELSE = {
+			set_variable = { DAI_LAW_get_trade_law = @limited_exports }
+		}
+	}
+
+	# ELSE_IF = { limit = { original_tag = ITA }
+	# 	set_variable = { DAI_LAW_get_trade_law = @limited_exports }
+	# }
+
+	ELSE_IF = { limit = { has_idea = autarkic_economy }
+		set_variable = { DAI_LAW_get_trade_law = @autarkic_economy }
+	}
+
+	ELSE_IF = { limit = { has_idea = autarkic_economy_improved }
+		set_variable = { DAI_LAW_get_trade_law = @autarkic_economy_improved }
+	}
+
+	# ELSE_IF = {
+	# 	limit = {
+	# 		OR = {
+	# 			original_tag = BRA
+	# 			original_tag = IRQ
+	# 			original_tag = PER
+	# 			original_tag = POR
+	# 			original_tag = ROM
+	# 			original_tag = SIA
+	# 		}
+	# 	}
+	# 	set_variable = { DAI_LAW_get_trade_law = @free_trade }
+	# }
+
+	ELSE = {
+		# # Calculate the civilian factories we receive from trade.
+		# set_temp_variable = { factories_received_from_trade = num_of_controlled_factories }
+		# subtract_from_temp_variable = { factories_received_from_trade = num_of_military_factories }
+		# subtract_from_temp_variable = { factories_received_from_trade = num_of_naval_factories }
+		# set_temp_variable = { temp = num_of_civilian_factories }
+		# subtract_from_temp_variable = { temp = factories_received_from_trade }
+		# set_temp_variable = { factories_received_from_trade = temp }
+
+		# # Sometimes we have factories in states that we can't use (like Danzig at the beginning of the game),
+		# # which can throw off the calculation. For now just make sure this doesn't cause us to have a negative value.
+		# IF = { limit = { check_variable = { factories_received_from_trade < 0 } }
+		# 	set_temp_variable = { factories_received_from_trade = 0 }
+		# }
+
+		set_variable = { DAI_currently_wants = GER_ludwig_erhard }
+		set_variable = { DAI_currently_wants2 = captain_of_industry }
+		set_variable = { DAI_currently_wants3 = ITA_rodolfo_graziani }
+
+		set_temp_variable = { oil_produced = resource_produced@oil }
+		set_temp_variable = { aluminium_produced = resource_produced@aluminium }
+		set_temp_variable = { rubber_produced = resource_produced@rubber }
+		set_temp_variable = { tungsten_produced = resource_produced@tungsten }
+		set_temp_variable = { steel_produced = resource_produced@steel }
+		set_temp_variable = { chromium_produced = resource_produced@chromium }
+
+		# ==================================================
+		# =================== Free Trade ===================
+		# ==================================================
+
+		set_temp_variable = { oil_available = oil_produced }
+		set_temp_variable = { aluminium_available = aluminium_produced }
+		set_temp_variable = { rubber_available = rubber_produced }
+		set_temp_variable = { tungsten_available = tungsten_produced }
+		set_temp_variable = { steel_available = steel_produced }
+		set_temp_variable = { chromium_available = chromium_produced }
+
+		multiply_temp_variable = { oil_available = 0.2 }
+		multiply_temp_variable = { aluminium_available = 0.2 }
+		multiply_temp_variable = { rubber_available = 0.2 }
+		multiply_temp_variable = { tungsten_available = 0.2 }
+		multiply_temp_variable = { steel_available = 0.2 }
+		multiply_temp_variable = { chromium_available = 0.2 }
+
+		set_temp_variable = { oil_deficit = oil_available }
+		set_temp_variable = { aluminium_deficit = aluminium_available }
+		set_temp_variable = { rubber_deficit = rubber_available }
+		set_temp_variable = { tungsten_deficit = tungsten_available }
+		set_temp_variable = { steel_deficit = steel_available }
+		set_temp_variable = { chromium_deficit = chromium_available }
+
+		# Oil Deficit
+		IF = { limit = { check_variable = { resource_imported@oil > oil_available } }
+			subtract_from_temp_variable = { oil_deficit = resource_imported@oil } # Use imported since consumed costs are calculated differently.
+			multiply_temp_variable = { oil_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { oil_deficit = 0 }
+		}
+		# Aluminium Deficit
+		IF = { limit = { check_variable = { resource_consumed@aluminium > aluminium_available } }
+			subtract_from_temp_variable = { aluminium_deficit = resource_consumed@aluminium }
+			multiply_temp_variable = { aluminium_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { aluminium_deficit = 0 }
+		}
+		# Rubber Deficit
+		IF = { limit = { check_variable = { resource_consumed@rubber > rubber_available } }
+			subtract_from_temp_variable = { rubber_deficit = resource_consumed@rubber }
+			multiply_temp_variable = { rubber_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { rubber_deficit = 0 }
+		}
+		# Tungsten Deficit
+		IF = { limit = { check_variable = { resource_consumed@tungsten > tungsten_available } }
+			subtract_from_temp_variable = { tungsten_deficit = resource_consumed@tungsten }
+			multiply_temp_variable = { tungsten_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { tungsten_deficit = 0 }
+		}
+		# Steel Deficit
+		IF = { limit = { check_variable = { resource_consumed@steel > steel_available } }
+			subtract_from_temp_variable = { steel_deficit = resource_consumed@steel }
+			multiply_temp_variable = { steel_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { steel_deficit = 0 }
+		}
+		# Chromium Deficit
+		IF = { limit = { check_variable = { resource_consumed@chromium > chromium_available } }
+			subtract_from_temp_variable = { chromium_deficit = resource_consumed@chromium }
+			multiply_temp_variable = { chromium_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { chromium_deficit = 0 }
+		}
+
+		set_temp_variable = { total_deficit = oil_deficit }
+		add_to_temp_variable = { total_deficit = aluminium_deficit }
+		add_to_temp_variable = { total_deficit = rubber_deficit }
+		add_to_temp_variable = { total_deficit = tungsten_deficit }
+		add_to_temp_variable = { total_deficit = steel_deficit }
+		add_to_temp_variable = { total_deficit = chromium_deficit }
+
+		set_temp_variable = { total_deficit_factories_needed = total_deficit }
+		divide_temp_variable = { total_deficit_factories_needed = 8 }
+		round_temp_variable = total_deficit_factories_needed
+
+		# Since this is the trade law that exports the most, we wouldn't lose factories from exports by exporting more resources.
+		# So we don't need to check for that here.
+		set_temp_variable = { free_trade_factory_value = num_of_civilian_factories }
+		subtract_from_temp_variable = { free_trade_factory_value = total_deficit_factories_needed }
+		multiply_temp_variable = { free_trade_factory_value = 1.15 } # 15% bonus construction speed interpreted as 15% bonus factories for analysis.
+
+		# ==================================================
+		# ================== Export Focus ==================
+		# ==================================================
+
+		set_temp_variable = { oil_available = oil_produced }
+		set_temp_variable = { aluminium_available = aluminium_produced }
+		set_temp_variable = { rubber_available = rubber_produced }
+		set_temp_variable = { tungsten_available = tungsten_produced }
+		set_temp_variable = { steel_available = steel_produced }
+		set_temp_variable = { chromium_available = chromium_produced }
+
+		multiply_temp_variable = { oil_available = 0.5 }
+		multiply_temp_variable = { aluminium_available = 0.5 }
+		multiply_temp_variable = { rubber_available = 0.5 }
+		multiply_temp_variable = { tungsten_available = 0.5 }
+		multiply_temp_variable = { steel_available = 0.5 }
+		multiply_temp_variable = { chromium_available = 0.5 }
+
+		set_temp_variable = { oil_deficit = oil_available }
+		set_temp_variable = { aluminium_deficit = aluminium_available }
+		set_temp_variable = { rubber_deficit = rubber_available }
+		set_temp_variable = { tungsten_deficit = tungsten_available }
+		set_temp_variable = { steel_deficit = steel_available }
+		set_temp_variable = { chromium_deficit = chromium_available }
+
+		# Oil Deficit
+		IF = { limit = { check_variable = { resource_imported@oil > oil_available } }
+			subtract_from_temp_variable = { oil_deficit = resource_imported@oil } # Use imported since consumed costs are calculated differently.
+			multiply_temp_variable = { oil_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { oil_deficit = 0 }
+		}
+		# Aluminium Deficit
+		IF = { limit = { check_variable = { resource_consumed@aluminium > aluminium_available } }
+			subtract_from_temp_variable = { aluminium_deficit = resource_consumed@aluminium }
+			multiply_temp_variable = { aluminium_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { aluminium_deficit = 0 }
+		}
+		# Rubber Deficit
+		IF = { limit = { check_variable = { resource_consumed@rubber > rubber_available } }
+			subtract_from_temp_variable = { rubber_deficit = resource_consumed@rubber }
+			multiply_temp_variable = { rubber_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { rubber_deficit = 0 }
+		}
+		# Tungsten Deficit
+		IF = { limit = { check_variable = { resource_consumed@tungsten > tungsten_available } }
+			subtract_from_temp_variable = { tungsten_deficit = resource_consumed@tungsten }
+			multiply_temp_variable = { tungsten_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { tungsten_deficit = 0 }
+		}
+		# Steel Deficit
+		IF = { limit = { check_variable = { resource_consumed@steel > steel_available } }
+			subtract_from_temp_variable = { steel_deficit = resource_consumed@steel }
+			multiply_temp_variable = { steel_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { steel_deficit = 0 }
+		}
+		# Chromium Deficit
+		IF = { limit = { check_variable = { resource_consumed@chromium > chromium_available } }
+			subtract_from_temp_variable = { chromium_deficit = resource_consumed@chromium }
+			multiply_temp_variable = { chromium_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { chromium_deficit = 0 }
+		}
+
+		set_temp_variable = { total_deficit = oil_deficit }
+		add_to_temp_variable = { total_deficit = aluminium_deficit }
+		add_to_temp_variable = { total_deficit = rubber_deficit }
+		add_to_temp_variable = { total_deficit = tungsten_deficit }
+		add_to_temp_variable = { total_deficit = steel_deficit }
+		add_to_temp_variable = { total_deficit = chromium_deficit }
+
+		set_temp_variable = { total_deficit_factories_needed = total_deficit }
+		divide_temp_variable = { total_deficit_factories_needed = 8 }
+		round_temp_variable = total_deficit_factories_needed
+
+		# # We need to consider losing factories that we currently receive for exports if we downgrade our law and won't export enough
+		# # to keep receiving those factories. It is convoluted so we will estimate.
+		# set_temp_variable = { export_focus_estimated_factories_received_from_trade = factories_received_from_trade }
+		# # From free trade to export focus would be from 80% exported to 50%. 50/80 = 0.625.
+		# IF = { limit = { has_idea = free_trade }
+		# 	multiply_temp_variable = { export_focus_estimated_factories_received_from_trade = 0.625 }
+		# 	round_temp_variable = export_focus_estimated_factories_received_from_trade
+		# }
+
+		set_temp_variable = { export_focus_factory_value = num_of_civilian_factories }
+		subtract_from_temp_variable = { export_focus_factory_value = total_deficit_factories_needed }
+		multiply_temp_variable = { export_focus_factory_value = 1.1 } # 10% bonus construction speed interpreted as 10% bonus factories for analysis.
+
+		# ==================================================
+		# ================ Limited Exports =================
+		# ==================================================
+
+		set_temp_variable = { oil_available = oil_produced }
+		set_temp_variable = { aluminium_available = aluminium_produced }
+		set_temp_variable = { rubber_available = rubber_produced }
+		set_temp_variable = { tungsten_available = tungsten_produced }
+		set_temp_variable = { steel_available = steel_produced }
+		set_temp_variable = { chromium_available = chromium_produced }
+
+		multiply_temp_variable = { oil_available = 0.75 }
+		multiply_temp_variable = { aluminium_available = 0.75 }
+		multiply_temp_variable = { rubber_available = 0.75 }
+		multiply_temp_variable = { tungsten_available = 0.75 }
+		multiply_temp_variable = { steel_available = 0.75 }
+		multiply_temp_variable = { chromium_available = 0.75 }
+
+		set_temp_variable = { oil_deficit = oil_available }
+		set_temp_variable = { aluminium_deficit = aluminium_available }
+		set_temp_variable = { rubber_deficit = rubber_available }
+		set_temp_variable = { tungsten_deficit = tungsten_available }
+		set_temp_variable = { steel_deficit = steel_available }
+		set_temp_variable = { chromium_deficit = chromium_available }
+
+		# Oil Deficit
+		IF = { limit = { check_variable = { resource_imported@oil > oil_available } }
+			subtract_from_temp_variable = { oil_deficit = resource_imported@oil } # Use imported since consumed costs are calculated differently.
+			multiply_temp_variable = { oil_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { oil_deficit = 0 }
+		}
+		# Aluminium Deficit
+		IF = { limit = { check_variable = { resource_consumed@aluminium > aluminium_available } }
+			subtract_from_temp_variable = { aluminium_deficit = resource_consumed@aluminium }
+			multiply_temp_variable = { aluminium_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { aluminium_deficit = 0 }
+		}
+		# Rubber Deficit
+		IF = { limit = { check_variable = { resource_consumed@rubber > rubber_available } }
+			subtract_from_temp_variable = { rubber_deficit = resource_consumed@rubber }
+			multiply_temp_variable = { rubber_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { rubber_deficit = 0 }
+		}
+		# Tungsten Deficit
+		IF = { limit = { check_variable = { resource_consumed@tungsten > tungsten_available } }
+			subtract_from_temp_variable = { tungsten_deficit = resource_consumed@tungsten }
+			multiply_temp_variable = { tungsten_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { tungsten_deficit = 0 }
+		}
+		# Steel Deficit
+		IF = { limit = { check_variable = { resource_consumed@steel > steel_available } }
+			subtract_from_temp_variable = { steel_deficit = resource_consumed@steel }
+			multiply_temp_variable = { steel_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { steel_deficit = 0 }
+		}
+		# Chromium Deficit
+		IF = { limit = { check_variable = { resource_consumed@chromium > chromium_available } }
+			subtract_from_temp_variable = { chromium_deficit = resource_consumed@chromium }
+			multiply_temp_variable = { chromium_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { chromium_deficit = 0 }
+		}
+
+		set_temp_variable = { total_deficit = oil_deficit }
+		add_to_temp_variable = { total_deficit = aluminium_deficit }
+		add_to_temp_variable = { total_deficit = rubber_deficit }
+		add_to_temp_variable = { total_deficit = tungsten_deficit }
+		add_to_temp_variable = { total_deficit = steel_deficit }
+		add_to_temp_variable = { total_deficit = chromium_deficit }
+
+		set_temp_variable = { total_deficit_factories_needed = total_deficit }
+		divide_temp_variable = { total_deficit_factories_needed = 8 }
+		round_temp_variable = total_deficit_factories_needed
+
+		# # We need to consider losing factories that we currently receive for exports if we downgrade our law and won't export enough
+		# # to keep receiving those factories. It is convoluted so we will estimate.
+		# set_temp_variable = { limited_exports_estimated_factories_received_from_trade = factories_received_from_trade }
+		# # From free trade to limited exports would be from 80% exported to 25%. 25/80 = 0.3125.
+		# IF = { limit = { has_idea = free_trade }
+		# 	multiply_temp_variable = { limited_exports_estimated_factories_received_from_trade = 0.3125 }
+		# 	round_temp_variable = limited_exports_estimated_factories_received_from_trade
+		# }
+		# # From export focus to limited exports would be from 50% exported to 25%. 25/50 = 0.5.
+		# IF = { limit = { has_idea = export_focus }
+		# 	multiply_temp_variable = { limited_exports_estimated_factories_received_from_trade = 0.5 }
+		# 	round_temp_variable = limited_exports_estimated_factories_received_from_trade
+		# }
+
+		set_temp_variable = { limited_exports_factory_value = num_of_civilian_factories }
+		subtract_from_temp_variable = { limited_exports_factory_value = total_deficit_factories_needed }
+		multiply_temp_variable = { limited_exports_factory_value = 1.05 } # 5% bonus construction speed interpreted as 5% bonus factories for analysis.
+
+		# ==================================================
+
+		# Choose.
+		set_temp_variable = { best_law = @free_trade }
+		set_temp_variable = { best_trade_factory_value = free_trade_factory_value }
+		IF = { limit = { check_variable = { export_focus_factory_value > best_trade_factory_value } }
+			set_temp_variable = { best_law = @export_focus }
+			set_temp_variable = { best_trade_factory_value = export_focus_factory_value }
+		}
+		IF = { limit = { check_variable = { limited_exports_factory_value > best_trade_factory_value } }
+			set_temp_variable = { best_law = @limited_exports }
+			set_temp_variable = { best_trade_factory_value = limited_exports_factory_value }
+		}
+
+		set_variable = { DAI_LAW_get_trade_law = best_law }
+
+	}
+
+}

@@ -1,0 +1,75 @@
+SIA_ally_JAP = {
+	allowed = {
+		original_tag = SIA
+	}
+	enable = {
+		JAP = { has_government = fascism }
+		OR = {
+			date > 1941.12.6 # Pearl Harbor Surprise
+			JAP = { has_completed_focus = JAP_alliance_with_siam }
+		}
+	}
+	ai_strategy = {
+		type = alliance
+		id = "JAP"
+		value = 200
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "ENG"
+		value = 100
+	}
+}
+
+SIA_in_the_shadow_of_the_sun = {
+	allowed = { original_tag = SIA }
+	enable = {
+		has_army_manpower = { size < 1000000 }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = { type = build_army id = infantry value = 100 }
+	ai_strategy = { type = force_build_armies value = 100 }
+}
+
+SIA_build_marines_mountaineers = {
+	allowed = { original_tag = SIA }
+	enable = { always = yes }
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -20
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 10
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 10
+	}
+}
+
+# SIA_save_for_partial = {
+# 	allowed = {
+# 		original_tag = SIA
+# 	}
+# 	enable = {
+# 		has_war_support > 0.25
+# 		OR = {
+# 			NOT = { has_idea = partial_economic_mobilisation }
+# 			NOT = { has_idea = war_economy }
+# 			NOT = { has_idea = tot_economic_mobilisation }
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = pp_spend_amount
+# 		id = idea
+# 		value = 500
+# 	}
+# }

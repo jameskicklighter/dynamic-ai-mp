@@ -1,0 +1,76 @@
+DAI_set_build_order_GER = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	IF = { limit = { DAI_GER_is_historical_ai = yes }
+
+		IF = {
+			limit = {
+				NOT = { has_idea_with_trait = economic_reformer }
+				has_available_idea_with_traits = { idea = economic_reformer limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:GER_ludwig_erhard }
+		}
+		ELSE_IF = {
+			limit = {
+				# We are only concerned about early build order. Don't do an extensive check for conditions,
+				# as they should normally be met by the logic of the build order.
+				NOT = { has_idea = war_economy }
+				NOT = { has_idea = tot_economic_mobilisation }
+				date < 1937.1.1
+				has_war_support > 0.5
+			}
+			set_variable = { DAI_build_order_wants = token:war_economy }
+		}
+		ELSE_IF = {
+			limit = {
+				# We are only concerned about early build order. Don't do an extensive check for conditions,
+				# as they should normally be met by the logic of the build order.
+				NOT = { has_idea = free_trade }
+				has_completed_focus = GER_prioritize_economic_growth
+				date < 1937.1.1
+			}
+			set_variable = { DAI_build_order_wants = token:free_trade }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = GER_reich_marshal }
+				has_available_idea_with_traits = { idea = GER_reich_marshal limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:GER_hermann_goring }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_chief_organizational_2 }
+				has_available_idea_with_traits = { idea = army_chief_organizational_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:GER_ludwig_beck }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea = GER_organization_todt }
+				NOT = { has_idea = GER_organization_todt_improved }
+				has_completed_focus = GER_form_organization_todt
+			}
+			set_variable = { DAI_build_order_wants = token:GER_organization_todt }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = navy_chief_decisive_battle_2 }
+				has_available_idea_with_traits = { idea = navy_chief_decisive_battle_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:GER_erich_raeder }
+		}
+		# ELSE_IF = {
+		# 	limit = {
+		# 		NOT = { has_idea_with_trait = navy_chief_decisive_battle_2 }
+		# 		has_available_idea_with_traits = { idea = navy_chief_decisive_battle_2 limit = 1 }
+		# 	}
+		# 	set_variable = { DAI_build_order_wants = token:GER_erich_raeder }
+		# }
+
+		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+
+	}
+
+}

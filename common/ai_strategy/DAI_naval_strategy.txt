@@ -1,0 +1,563 @@
+# ===== DAI General Thought Process =====
+#	beep boop might fill this in later...
+#
+#
+# =======================================
+
+##############################################################################
+### 	No 'Man The Guns'
+##############################################################################
+
+default_role_ratios = {
+	enable = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital
+		value = 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 100
+	}
+}
+
+##############################################################################
+### 		CONVOYS
+##############################################################################
+
+DAI_produce_convoys_1 = {
+	enable = { always = yes }
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 1
+	}
+}
+
+DAI_produce_convoys_2 = {
+	enable = {
+		OR = {
+			original_tag = ENG
+			original_tag = ITA
+			original_tag = JAP
+			original_tag = USA
+			original_tag = SOV
+		}
+	}
+	abort_when_not_enabled = yes
+
+	# Additive with the previous, so 3 total.
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 2
+	}
+}
+
+DAI_stockpile_100_convoys = {
+	enable = {
+		has_equipment = { convoy < 100 }
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			original_tag = SOV
+			original_tag = ITA
+			original_tag = JAP
+			AND = {
+				original_tag = GER
+				date > 1940.1.1
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 10
+	}
+}
+
+DAI_stockpile_200_convoys = {
+	enable = {
+		has_equipment = { convoy < 200 }
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			original_tag = SOV
+			original_tag = ITA
+			original_tag = JAP
+			AND = {
+				original_tag = GER
+				date > 1940.1.1
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 5
+	}
+}
+
+DAI_stockpile_300_convoys = {
+	enable = {
+		has_equipment = { convoy < 300 }
+		date > 1939.1.1
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			original_tag = SOV
+			original_tag = ITA
+			original_tag = JAP
+			AND = {
+				original_tag = GER
+				date > 1940.1.1
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 3
+	}
+}
+
+DAI_stockpile_400_convoys = {
+	enable = {
+		has_equipment = { convoy < 400 }
+		date > 1940.1.1
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			# original_tag = SOV
+			original_tag = ITA
+			original_tag = JAP
+			original_tag = GER
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 2
+	}
+}
+
+DAI_stockpile_600_convoys = {
+	enable = {
+		has_equipment = { convoy < 600 }
+		date > 1941.1.1
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			original_tag = JAP
+			# original_tag = SOV
+			# original_tag = ITA
+			# original_tag = GER
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 2
+	}
+}
+
+DAI_stockpile_800_convoys = {
+	enable = {
+		has_equipment = { convoy < 800 }
+		date > 1941.1.1
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			original_tag = JAP
+			# original_tag = SOV
+			# original_tag = ITA
+			# original_tag = GER
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 1
+	}
+}
+
+##############################################################################
+### 		ROLE RATIOS / PRODUCTION
+##############################################################################
+
+
+# We have a small or nonexistent navy.
+DAI_naval_role_ratios_SMALL_NAVY = {
+	enable = {
+		has_dlc = "Man the Guns"
+		DAI_Should_Research_Navy_GENERAL = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bc
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_escort
+		value = 50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_sweeper
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_layer
+		value = 0
+	}
+}
+
+# We have a small navy but we shouldn't neglect screens.
+DAI_naval_role_ratios_SMALL_NAVY_HAS_CAPITAL = {
+	enable = {
+		has_dlc = "Man the Guns"
+		DAI_Should_Research_Navy_GENERAL = no
+		has_navy_size = {
+			type = capital_ship
+			size > 0
+		}
+	}
+	abort_when_not_enabled = yes
+
+	# Values are additive, and the previous strategy is still engaged.
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = 20
+	}
+}
+
+# We have a large navy or are planning to build one.
+DAI_naval_role_ratios_LARGE_NAVY = {
+	enable = {
+		has_dlc = "Man the Guns"
+		DAI_Should_Research_Navy_GENERAL = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bc
+		value = 0 # Was 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = 300
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_escort
+		value = 50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_sweeper
+		value = 5
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_layer
+		value = 5
+	}
+
+}
+
+DAI_early_cruiser_boost_ITA = {
+	enable = {
+		has_dlc = "Man the Guns"
+		original_tag = ITA
+		date < 1938.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 100 # Temporarily at 30.
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 200
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = capital_ship
+		value = 5
+	}
+}
+
+DAI_early_carrier_boost = {
+	enable = {
+		has_dlc = "Man the Guns"
+		OR = {
+			original_tag = JAP
+			original_tag = ENG
+			original_tag = USA
+		}
+		date < 1938.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 100 # Temporarily at 100.
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = carrier
+		value = 5
+	}
+}
+
+# DAI_protect_convoys = {
+# 	enable = {
+# 		has_dlc = "Man the Guns"
+# 		convoy_threat > 0.5
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	# Additive with other strategies.
+# 	ai_strategy = {
+# 		type = role_ratio
+# 		id = naval_escort
+# 		value = 50
+# 	}
+
+# 	ai_strategy = {
+# 		type = role_ratio
+# 		id = naval_submarine
+# 		value = -40
+# 	}
+
+# 	ai_strategy = {
+# 		type = equipment_production_min_factories
+# 		id = convoy
+# 		value = 1
+# 	}
+# }
+
+DAI_sub_production = {
+	enable = {
+		has_dlc = "Man the Guns"
+		DAI_Should_Research_Navy_SUBMARINE = yes
+		num_of_naval_factories > 15
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = submarine
+		value = 5
+	}
+}
+
+DAI_sub_production_GER = {
+	enable = {
+		has_dlc = "Man the Guns"
+		DAI_Should_Research_Navy_SUBMARINE = yes
+		original_tag = GER
+		num_of_naval_factories > 20
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = submarine
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = 300
+	}
+}
+
+DAI_minimum_cv_plane_construction = {
+	enable = {
+		has_navy_size = { type = carrier size > 0 }
+	}
+	abort_when_not_enabled = yes
+
+	# ai_strategy = { type = equipment_production_surplus_management id = cv_small_plane_airframe value = 1 }
+	# ai_strategy = { type = equipment_variant_production_factor id = cv_small_plane_airframe value = 10 }
+
+	# ai_strategy = { type = equipment_production_surplus_management id = cv_small_plane_naval_bomber_airframe value = 1 }
+	# ai_strategy = { type = equipment_variant_production_factor id = cv_small_plane_naval_bomber_airframe value = 10 }
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cv_fighter
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cv_naval_bomber
+		value = 1
+	}
+}
+
+##############################################################################
+### 		NAVAL MISSIONS
+##############################################################################
+
+# DAI_peace_time_naval_missions = {
+# 	enable = {
+# 		has_war = no
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_PATROL" value = 50000 }
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_STRIKE_FORCE" value = 50000 }
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_CONVOY_ESCORT" value = 50000 }
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_CONVOY_RAIDING" value = 50000 }
+# }
+
+# Ironically ends up favoring allies, because JAP never sub raids...
+# DAI_conserve_fuel = {
+# 	enable = { is_major = yes fuel_ratio < 0.25 }
+# 	abort = { NOT = { fuel_ratio < 0.5 } }
+
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_CONVOY_RAIDING" value = 200000 }
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_PATROL" value = 200000 }
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_MINES_PLANTING" value = 200000 }
+# 	ai_strategy = { type = naval_mission_threshold id = "MISSION_MINES_SWEEPING" value = 200000 }
+# }

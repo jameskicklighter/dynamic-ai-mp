@@ -1,0 +1,25 @@
+
+DAI_daily_update = {
+
+	if = { limit = { is_ai = yes }
+
+		# If we are a dynamic tag, we going with the flow instead.
+		# So just use the normal tag.
+		if = { limit = { tag = GER } DAI_set_build_order_GER = yes }
+
+	}
+}
+
+DAI_monthly_update = {
+
+	if = { limit = { is_ai = yes }
+
+		# Laws
+		DAI_set_desired_trade_law = yes
+
+		# Military
+		DAI_set_wants_armor_flag = yes
+		DAI_set_armor_template_flags = yes
+
+	}
+}

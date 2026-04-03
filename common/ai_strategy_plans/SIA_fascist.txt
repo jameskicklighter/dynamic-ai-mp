@@ -1,0 +1,65 @@
+SIA_fascist = {
+	name = "SIA turn fascist"
+	desc = "Historical behavior for SIA"
+
+	allowed = {
+		original_tag = SIA
+	}
+
+	enable = {
+		JAP = {
+			OR = {
+				AND = {
+					is_historical_focus_on = yes
+					OR = {
+						not = { has_dlc = "Waking the Tiger" }
+						has_game_rule = {
+							rule = JAP_ai_behavior
+							option = DEFAULT
+						}
+					}
+				}
+				has_game_rule = {
+					rule = JAP_ai_behavior
+					option = FASCIST
+				}
+				has_country_flag = JAP_AI_RANDOM_FASCIST
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	focus_factors = {
+		liberty_ethos = 0
+
+		# political_effort = 5
+		collectivist_ethos = 2
+		nationalism_focus = 2
+		militarism = 2
+		military_youth = 2
+		paramilitarism = 2
+	}
+
+	ai_national_focuses = {
+		# political_effort
+		# collectivist_ethos
+		# nationalism_focus
+		# militarism
+		# military_youth 
+		# paramilitarism
+	}
+
+	ideas = {
+		# fascist_demagogue = 999 Doesn't work...
+	}
+
+	traits = {
+		# fascist_demagogue = 999 Doesn't work...
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "JAP"
+		value = 100
+	}
+}

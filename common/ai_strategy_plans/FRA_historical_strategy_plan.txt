@@ -1,0 +1,96 @@
+FRA_historical_plan = {
+	name = "France historical plan"
+	desc = "Historical behavior for France"
+
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = FRA_ai_behavior
+					option = DEFAULT
+				}	
+			}
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+			has_country_flag = FRA_AI_DEMOCRATIC_HISTORICAL
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		#-----1936-----
+		FRA_form_the_popular_front				# 70		March 11, 1936
+		FRA_ban_the_leagues						# 70		May 20, 1936
+		FRA_reform_the_labour_laws				# 70		July 29, 1936
+		FRA_review_foreign_policy				# 70		October 7, 1936
+		FRA_buy_time							# 70		December 16, 1936
+
+		#-----1937-----
+		FRA_strengthen_government_support		# 70		February 24, 1937
+		FRA_devalue_the_franc					# 70		May 5, 1937
+		FRA_invest_in_the_metropole				# 70		July 14, 1937
+		FRA_metropolitan_france					# 70		September 22, 1937
+		FRA_algerie_france						# 70		December 1, 1937
+
+		#-----1938-----
+		FRA_go_with_britain						# 70		February 9, 1938
+		FRA_industrial_expansion				# 70		April 20, 1938
+		FRA_extra_research_slot					# 70		June 29, 1938
+		FRA_defensive_strategems				# 70		September 7, 1938
+		FRA_begin_rearmament					# 70		November 16, 1938
+
+		#-----1939-----
+		FRA_defensive_focus						# 70		January 25, 1939
+		FRA_nationalize_key_industry			# 70		April 5, 1939
+		FRA_form_the_state_arsenals				# 70		June 14, 1939
+		FRA_reorganize_the_aviation_industry	# 70		August 23, 1939
+		FRA_general_work_council				# 70		November 1, 1939
+
+		# We will probably fall to Germany if we haven't already.
+
+		#-----1940-----
+		FRA_national_champions					# 70		January 10, 1940
+		FRA_the_blum_viollette_proposal			# 70		March 20, 1940
+		FRA_expand_the_citizenship				# 70		May 29, 1940
+		FRA_encourage_immigration				# 70		August 7, 1940
+		FRA_invest_in_the_colonies				# 70		October 16, 1940
+		FRA_invest_in_west_africa				# 70		December 25, 1940
+
+		#-----1941-----
+		FRA_invest_in_indochina					# 70		March 5, 1941
+		FRA_invest_in_syria						# 70		May 14, 1941
+		FRA_colonial_industry					# 70		July 23, 1941
+		FRA_extra_research_slot_2				# 70		October 1, 1941
+		FRA_firepower_kills						# 70		December 10, 1941
+
+		#-----1942-----
+		FRA_infantry_focus						# 70		February 18, 1942
+		FRA_artillery_focus						# 70		April 29, 1942
+		FRA_heavy_armor_focus					# 70		July 8, 1942
+		FRA_army_reform							# 70		September 16, 1942
+		FRA_division_cuirassee					# 70		November 25, 1942
+	}
+
+	focus_factors = {
+		FRA_intervention_in_spain = 0
+		FRA_right_wing_rhetoric = 0
+		FRA_leftist_rhetoric = 0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

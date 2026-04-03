@@ -1,0 +1,279 @@
+# DAI Scripted Triggers
+
+DAI_should_pre_research_industry = {
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+	}
+}
+
+DAI_should_build_planes = {
+	OR = {
+		num_of_military_factories > 30
+		# Always Produce Planes
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+		# Good Air Producers for Historical
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				original_tag = CAN
+				original_tag = HUN
+			}
+		}
+	}
+}
+
+DAI_should_build_tanks = {
+	# OR = {
+	# 	num_of_military_factories > 30
+	# 	# Always Produce Tanks
+	# 	original_tag = ENG
+	# 	original_tag = FRA
+	# 	original_tag = GER
+	# 	original_tag = ITA
+	# 	original_tag = JAP
+	# 	original_tag = SOV
+	# 	original_tag = USA
+	# 	# Good Tank Producers for Historical
+	# 	AND = {
+	# 		is_historical_focus_on = yes
+	# 		OR = {
+	# 			original_tag = CAN
+	# 			# original_tag = CZE
+	# 			original_tag = HUN
+	# 			original_tag = ROM
+	# 		}
+	# 	}
+	# }
+
+	has_country_flag = DAI_build_armor
+}
+
+# For potential raids.
+DAI_should_build_paratroopers = {
+	always = no
+	# OR = {
+	# 	AND = {
+	# 		date > 1938.1.1
+	# 		OR = {
+	# 			tag = ENG
+	# 			tag = GER
+	# 		}
+	# 	}
+	# 	AND = {
+	# 		date > 1940.1.1
+	# 		is_major = yes
+	# 	}
+	# }
+}
+
+##############################################################################
+### 		NAVAL
+##############################################################################
+
+# Used to prioritize researching technologies that affect all ships
+# such as retreat speed, reduced critical hit, and invasion capacity.
+# Also used to make sure we have decent hulls and weapons.
+DAI_Should_Research_Navy_GENERAL = {
+	# We need to prepare for Barbarossa, regardless of our dockyards.
+	# Furthermore we need to focus on subs.
+	IF = {
+		limit = {
+			original_tag = GER
+			has_government = fascism
+		}
+		OR = {
+			date > 1944.1.1
+			AND = {
+				date > 1942.1.1
+				SOV = {
+					OR = {
+						is_in_faction_with = ROOT
+						is_puppet_of = ROOT
+						has_capitulated = yes
+						exists = no
+					}
+				}
+			}
+		}
+	}
+	# else_if = {
+	# 	limit = {
+	# 		original_tag = SOV
+	# 	}
+	# 	AND = {
+	# 		date > 1942.1.1
+	# 		surrender_progress < 0.1
+	# 	}
+	# }
+	ELSE = {
+		OR = {
+			# We have sufficient Naval Industry to prioritize upgrades.
+			# We have at least 75% of an enemy's naval strength, and
+			# we have at least a modest navy to upgrade.
+			AND = {
+				has_war = yes
+				surrender_progress < 0.1
+				amount_research_slots > 3
+				enemies_naval_strength_ratio < 1.33
+				num_of_naval_factories > 20
+				has_navy_size = {
+					size > 30
+				}
+			}
+			# We always need vital ship upgrades to put up a fight.
+			original_tag = ENG
+			original_tag = ITA
+			original_tag = JAP
+			original_tag = USA
+		}
+	}
+}
+
+DAI_Should_Research_Navy_ANTI_SUB = {
+	num_of_naval_factories > 4
+	OR = {
+		convoy_threat > 0.5
+		# We always need better anti-sub.
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_CRUISER = {
+	OR = {
+		# We always need better cruisers.
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_CARRIER = {
+	OR = {
+		# We always need better carriers.
+		original_tag = ENG
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_SUBMARINE = {
+	OR = {
+		# We always need better subs.
+		original_tag = GER
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+##############################################################################
+### 		MISCELLANEOUS
+##############################################################################
+
+DAI_ITA_only_has_fake_war_with_ETH = {
+	if = { limit = { original_tag = ITA }
+		has_war = no
+		NOT = {
+			any_other_country = {
+				NOT = { original_tag = ETH }
+				has_war_with = ROOT
+			}
+		}
+	}
+}
+
+##############################################################################
+### 		IDEAS
+##############################################################################
+
+DAI_should_upgrade_manpower_law = {
+
+	NOT = { conscription_ratio < 1.0 }
+
+	set_temp_variable = { manpower_in_reserve_ratio = manpower_k }
+	if = { limit = { check_variable = { deployed_army_manpower_k > 0 } }
+		divide_temp_variable = { manpower_in_reserve_ratio = deployed_army_manpower_k }
+	}
+	else = {
+		set_temp_variable = { manpower_in_reserve_ratio = 1 }
+	}
+
+	# We want to have 40% of our army's size in reserve, otherwise we need to upgrade
+	# our manpower law. We also need at least 100k in reserve.
+	OR = {
+		has_war = yes
+		date > 1937.1.1
+	}
+	OR = {
+		has_manpower < 100000
+		check_variable = { manpower_in_reserve_ratio < 0.4 }
+	}
+
+}
+
+##############################################################################
+### 		COUNTRY SPECIFIC
+##############################################################################
+
+
+# ========== JAP ==========
+
+DAI_JAP_okay_to_invade_CHI = {
+
+	has_war_with = CHI
+
+	NOT = {
+		OR = {
+			has_idea = JAP_intervene_in_china_1
+			has_idea = JAP_intervene_in_china_2
+			has_idea = JAP_intervene_in_china_3
+			has_idea = JAP_intervene_in_china_4
+			has_idea = JAP_intervene_in_china_5
+		}
+	}
+
+	strength_ratio = { tag = CHI ratio > 0.9 }
+	has_army_manpower = { size > 600000 }
+
+	# We don't already have a foothold on the mainland.
+	NOT = {
+		count_triggers = {
+			amount = 2
+			controls_state = 595
+			controls_state = 596
+			controls_state = 597
+			controls_state = 613
+			controls_state = 743
+		}
+	}
+
+}
+
+DAI_JAP_okay_to_invade_GXC = {
+
+	has_war_with = GXC
+
+	IF = { limit = { GXC = { is_in_faction_with = CHI } }
+		date > 1940.1.1
+		DAI_JAP_okay_to_invade_CHI = yes
+	}
+	ELSE = {
+		always = yes
+	}
+
+}
