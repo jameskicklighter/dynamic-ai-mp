@@ -359,3 +359,9 @@ SOV_historical_plan = {
 # 	}
 
 # }
+
+# TODO-rev (patch 1.17.5.2): Base game reordered SOV focus priorities.
+# Key changes: SOV_superior_war_machines added early (pre-1940), SOV_secure_leningrad moved after policy_of_individual_security,
+# navy/engineering/anti-cap moved to 1940, foster_flying_clubs moved later in 1940,
+# shift_to_armaments_production moved to 1941, rehabilitated_military before move_industry.
+# Review whether any of these ordering changes should be adopted.
