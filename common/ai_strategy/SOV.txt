@@ -2450,3 +2450,15 @@ SOV_aifc_linear_defence = {
 		value = -100  # Just don't
 	}
 }
+
+# TODO-rev (patch 1.17.5.2): The following new/changed base game strategies are NOT in this mod file.
+# Since this file replaces vanilla SOV.txt entirely, they are effectively removed.
+# New strategies:
+#   SOV_build_the_t34 — 5 medium tank factory min + 2 motorized min after 1940.3.1 when have improved_medium_tank
+#   SOV_time_to_leave_light_tanks — light_tank production -75%, medium +30% when have improved_medium_tank + medium armor templates
+# Changed strategies (not in mod):
+#   SOV_we_want_t34_asap — improved_medium_tank_chassis research weight 150->250, production_upgrade_desire_offset ids updated
+#   SOV_boost_div_upgrades — date changed 1941.1.1->1940.1.1
+#   SOV_wants_civ — date changed 1939.1.1->1938.9.1
+# In-mod strategy needing update:
+#   SOV_unit_buffer_for_asian_threat — surrender_progress 0.75->0.35, states reduced (remove 564, 566, 567)
