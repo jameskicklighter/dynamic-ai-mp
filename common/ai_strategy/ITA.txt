@@ -767,6 +767,25 @@ ITA_dont_take_claims_on_yug = {
 # 		value = -100
 # 	}
 
+
+ITA_air_defense_homeland = {
+	allowed = { original_tag = ITA }
+	enable = {
+		has_war_with = ENG
+		any_owned_state = {
+			is_core_of = ITA
+			is_on_continent = europe
+			NOT = { is_controlled_by = ITA }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 23 # Italy
+		value = 10000
+	}
+}
 # 	ai_strategy = {
 # 		type = unit_ratio
 # 		id = capital_ship
@@ -1750,5 +1769,30 @@ ITA_dont_invade_uk_early = {
 		type = invade
 		id = ENG
 		value = -500
+	}
+}
+
+ITA_dont_send_air_to_middle_east = {
+	allowed = { original_tag = ITA }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1941.3.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 28 # Middle East
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 232 # Levant
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 116 # Iran
+		value = -30000
 	}
 }

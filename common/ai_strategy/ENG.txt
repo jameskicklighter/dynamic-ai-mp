@@ -385,6 +385,65 @@ ENG_bba_air_prod_2 = {
 # 		value = 10
 # 	}
 
+
+ENG_defend_alexandria = {
+	allowed = { original_tag = ENG }
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		NOT = {
+			controls_state = 448 # Tripoli
+			controls_state = 451 # Tobruk
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		area = north_east_africa
+		value = 25
+	}
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		id = 447 # Alexandria
+		value = 10
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.07
+		states = {
+			447 # Alexandria
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+ENG_defend_alexandria_reduced = {
+	allowed = { original_tag = ENG }
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		controls_state = 448 # Tripoli
+		controls_state = 451 # Tobruk
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		area = north_east_africa
+		value = 10
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.02
+		states = {
+			447 # Alexandria
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
 # 	ai_strategy = {
 # 		type = equipment_production_factor
 # 		id = maritime_patrol_plane
