@@ -50,7 +50,7 @@ DAI_set_armor_template_flags = {
 					has_tech = basic_medium_tank
 					has_tech = basic_medium_tank_chassis 
 				}
-				date < 1939.1.1
+				date < 1938.1.1
 			}
 
 			set_country_flag = { flag = DAI_default_armor_template value = 1 }
@@ -61,7 +61,12 @@ DAI_set_armor_template_flags = {
 					has_tech = basic_medium_tank
 					has_tech = basic_medium_tank_chassis 
 				}
-				date < 1940.1.1
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank
+						has_tech = improved_medium_tank_chassis
+					}
+				}
 			}
 
 			set_country_flag = { flag = DAI_default_armor_template value = 2 }
@@ -69,8 +74,10 @@ DAI_set_armor_template_flags = {
 		ELSE_IF = {
 			limit = {
 				OR = {
-					has_tech = basic_medium_tank
-					has_tech = basic_medium_tank_chassis 
+					has_tech = improved_medium_tank
+					has_tech = improved_medium_tank_chassis
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
 				}
 			}
 
