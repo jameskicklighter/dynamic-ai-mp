@@ -537,9 +537,9 @@ technologies = {
 					original_tag = HUN
 					has_completed_focus = wuw_HUN_the_turan
 				}
-				#40M Tur�n
+				#40M Turán
 				create_equipment_variant = {
-					name = "40M Tur�n"
+					name = "40M Turán"
 					type = medium_tank_chassis_2
 					parent_version = 0
 					modules = {
@@ -563,9 +563,9 @@ technologies = {
 					original_tag = HUN
 					has_completed_focus = wuw_HUN_assault_gun_focus
 				}
-				# 40M Nimr�d
+				# 40M Nimród
 				create_equipment_variant = {
-					name = "40M Nimr�d"
+					name = "40M Nimród"
 					type = medium_tank_aa_chassis_2
 					parent_version = 0
 					modules = {
@@ -647,9 +647,9 @@ technologies = {
 					original_tag = HUN
 					has_completed_focus = wuw_HUN_the_turan
 				}
-				#43M Tur�n III
+				#43M Turán III
 				create_equipment_variant = {
-					name = "43M Tur�n III"
+					name = "43M Turán III"
 					type = medium_tank_chassis_3
 					parent_version = 0
 					modules = {
@@ -673,9 +673,9 @@ technologies = {
 					original_tag = HUN
 					has_completed_focus = wuw_HUN_assault_gun_focus
 				}
-				# 43M Zr�nyi
+				# 43M Zrínyi
 				create_equipment_variant = {
-					name = "43M Zr�nyi"
+					name = "43M Zrínyi"
 					type = medium_tank_artillery_chassis_3
 					parent_version = 0
 					modules = {

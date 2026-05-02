@@ -906,6 +906,21 @@ technologies = {
 			tank_buster_1
 			lc_high_velocity_cannon_turret #Module for Land Cruiser
 		}
+
+		#Pfot
+		on_research_complete = {
+			if = {
+				limit = {
+					has_dlc = "Peace For Our Time"
+				}
+				custom_effect_tooltip = {
+					localization_key = SP_UNLOCK_PROJECT
+					PROJECT = sp_land_large_caliber_kinetic_energy_sabot
+				}
+			}
+		}
+		#End Pfot
+
 		path = {
 			leads_to_tech = antitank1
 			research_cost_coeff = 1
@@ -1006,19 +1021,6 @@ technologies = {
 			tank_buster_2
 		}
 
-		#Project Wolfdog
-		on_research_complete = {
-			if = {
-				limit = {
-					has_dlc = "Peace For Our Time"
-				}
-				custom_effect_tooltip = {
-					localization_key = SP_UNLOCK_PROJECT
-					PROJECT = sp_land_large_caliber_kinetic_energy_sabot
-				}
-			}
-		}
-		#End Project Wolfdog
 		path = {
 			leads_to_tech = antitank3
 			research_cost_coeff = 1
@@ -1547,7 +1549,7 @@ technologies = {
 			ap_attack = 0.15
 		}
 		category_tank_destroyers = {
-			ap_attack = 0.15
+			ap_attack = 0.05
 		}
 
 		force_use_small_tech_layout = yes
