@@ -24,12 +24,6 @@ DAI_fighter = {
 				has_tech = basic_small_airframe 
 				has_tech = engines_2 
 			}
-			modifier = { 
-				add = -500 
-				
-				has_tech = improved_small_airframe 
-				has_tech = engines_3 
-			}
 		}
 
 		target_variant = {
@@ -67,6 +61,53 @@ DAI_fighter = {
 		}
 	}
 
+	BASIC_FIGHTER_VARIANT_B = { # Normal type
+		priority = {
+			base = 0
+			modifier = { 
+				add = 150
+				
+				has_tech = basic_small_airframe
+				has_tech = aa_cannon_1
+				has_tech = engines_2
+			}
+		}
+
+		target_variant = {
+			type = small_plane_airframe_1
+			match_value = 1
+			
+			modules = {
+				fixed_main_weapon_slot = { module = aircraft_cannon_1_2x }
+				fixed_auxiliary_weapon_slot_1 = { module = aircraft_cannon_1_2x }
+				engine_type_slot > engine_1_1x
+				special_type_slot_1 = { module = empty }
+				special_type_slot_2 = { module = empty } 
+			}
+		}
+
+		allowed_modules = {
+			plane_engine_type
+
+			light_mg_2x
+			light_mg_4x
+			heavy_mg_2x
+			heavy_mg_4x
+			aircraft_cannon_1_1x
+			aircraft_cannon_1_2x
+			aircraft_cannon_2_1x
+			aircraft_cannon_2_2x
+			large_aircraft_cannon_1x
+			large_aircraft_cannon_2x
+
+			drop_tanks
+			fuel_tanks_small
+			armor_plate_small
+			self_sealing_fuel_tanks_small
+			non_strategic_materials_small
+		}
+	}
+
 	##################
 	### IMPROVED
 	##################
@@ -75,16 +116,9 @@ DAI_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_small_airframe 
 				has_tech = engines_3 
-			}
-			modifier = { 
-				add = -500 
-				
-				has_tech = advanced_small_airframe 
-				has_tech = engines_4
 			}
 		}
 
@@ -133,16 +167,9 @@ DAI_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_small_airframe 
 				has_tech = engines_4
-			}
-			modifier = { 
-				add = -500 
-				
-				has_tech = modern_small_airframe 
-				has_tech = jet_engines
 			}
 		}
 
@@ -193,8 +220,7 @@ DAI_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 400
 				has_tech = modern_small_airframe
 				has_tech = jet_engines
 			}
@@ -260,12 +286,6 @@ DAI_cas = {
 				has_tech = basic_small_airframe 
 				has_tech = engines_2 
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_small_airframe 
-				has_tech = engines_3 
-			}
 		}
 
 		target_variant = {
@@ -306,16 +326,9 @@ DAI_cas = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_small_airframe 
 				has_tech = engines_3 
-			}
-			modifier = { 
-				add = -500 
-				
-				has_tech = advanced_small_airframe 
-				has_tech = engines_4
 			}
 		}
 
@@ -359,16 +372,9 @@ DAI_cas = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-				
+				add = 300
 				has_tech = advanced_small_airframe 
 				has_tech = engines_4
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_small_airframe
-				has_tech = jet_engines
 			}
 		}
 
@@ -414,8 +420,7 @@ DAI_cas = {
 		priority = {
 			base = -1
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_small_airframe
 				has_tech = jet_engines
 			}
@@ -480,12 +485,6 @@ DAI_naval_bomber = {
 				has_tech = basic_small_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500  
-
-				has_tech = improved_small_airframe 
-				has_tech = engines_3
-			}
 		}
 
 		target_variant = {
@@ -521,15 +520,8 @@ DAI_naval_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_small_airframe 
-				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500  
-
-				has_tech = advanced_small_airframe 
 				has_tech = engines_3
 			}
 		}
@@ -569,16 +561,9 @@ DAI_naval_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_small_airframe 
 				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500  
-
-				has_tech = modern_small_airframe 
-				has_tech = jet_engines
 			}
 		}
 
@@ -619,8 +604,7 @@ DAI_naval_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_small_airframe 
 				has_tech = jet_engines
 			}
@@ -684,13 +668,6 @@ DAI_cv_fighter = {
 				has_tech = engines_2 
 				has_tech = aa_lmg 
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_small_airframe 
-				has_tech = engines_3 
-				has_tech = aa_lmg 
-			}
 		}
 
 		target_variant = {
@@ -728,17 +705,9 @@ DAI_cv_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_small_airframe 
 				has_tech = engines_3 
-				has_tech = aa_lmg 
-			}
-			modifier = { 
-				add = -500
-
-				has_tech = advanced_small_airframe 
-				has_tech = engines_4
 				has_tech = aa_lmg 
 			}
 		}
@@ -780,18 +749,10 @@ DAI_cv_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100
-
+				add = 300
 				has_tech = advanced_small_airframe 
 				has_tech = engines_4
 				has_tech = aa_lmg 
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_small_airframe 
-				has_tech = aa_lmg 
-				has_tech = jet_engines
 			}
 		}
 
@@ -833,8 +794,7 @@ DAI_cv_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_small_airframe 
 				has_tech = aa_lmg 
 				has_tech = jet_engines
@@ -892,12 +852,6 @@ DAI_cv_cas = { # Unused
 				has_tech = basic_small_airframe 
 				has_tech = engines_2 
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_small_airframe 
-				has_tech = engines_3 
-			}
 		}
 
 		target_variant = {
@@ -923,16 +877,9 @@ DAI_cv_cas = { # Unused
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_small_airframe 
 				has_tech = engines_3 
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = advanced_small_airframe 
-				has_tech = engines_4 
 			}
 		}
 
@@ -961,15 +908,9 @@ DAI_cv_cas = { # Unused
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_small_airframe 
 				has_tech = engines_4 
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_small_airframe 
 			}
 		}
 
@@ -999,8 +940,7 @@ DAI_cv_cas = { # Unused
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_small_airframe 
 			}
 		}
@@ -1051,12 +991,6 @@ DAI_cv_naval_bomber = {
 				has_tech = basic_small_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500  
-
-				has_tech = improved_small_airframe 
-				has_tech = engines_3
-			}
 		}
 
 		target_variant = {
@@ -1091,15 +1025,8 @@ DAI_cv_naval_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_small_airframe 
-				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500  
-
-				has_tech = advanced_small_airframe 
 				has_tech = engines_3
 			}
 		}
@@ -1138,16 +1065,9 @@ DAI_cv_naval_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_small_airframe 
 				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500  
-
-				has_tech = modern_small_airframe 
-				has_tech = jet_engines
 			}
 		}
 
@@ -1186,8 +1106,7 @@ DAI_cv_naval_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_small_airframe 
 				has_tech = jet_engines
 			}
@@ -1245,12 +1164,6 @@ DAI_tactical_bomber = {
 				has_tech = basic_medium_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_medium_airframe 
-				has_tech = engines_3
-			}
 		}
 
 		target_variant = {
@@ -1299,16 +1212,9 @@ DAI_tactical_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_medium_airframe 
 				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = advanced_medium_airframe 
-				has_tech = engines_4
 			}
 		}
 
@@ -1359,16 +1265,9 @@ DAI_tactical_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_medium_airframe 
 				has_tech = engines_4
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_medium_airframe 
-				has_tech = jet_engines
 			}
 		}
 
@@ -1420,8 +1319,7 @@ DAI_tactical_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_medium_airframe 
 				has_tech = jet_engines
 			}
@@ -1497,12 +1395,6 @@ DAI_heavy_fighter = {
 				has_tech = basic_medium_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_medium_airframe 
-				has_tech = engines_3
-			}
 		}
 
 		target_variant = {
@@ -1557,16 +1449,9 @@ DAI_heavy_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_medium_airframe 
 				has_tech = engines_3 
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = advanced_medium_airframe 
-				has_tech = engines_4
 			}
 		}
 
@@ -1623,16 +1508,9 @@ DAI_heavy_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_medium_airframe 
 				has_tech = engines_4
-			}
-			modifier = { 
-				add = -500 
-				
-				has_tech = modern_medium_airframe 
-				has_tech = jet_engines
 			}
 		}
 
@@ -1690,8 +1568,7 @@ DAI_heavy_fighter = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 500 
-
+				add = 400
 				has_tech = modern_medium_airframe 
 				has_tech = jet_engines
 			}
@@ -1763,12 +1640,6 @@ DAI_strategic_bomber = {
 				has_tech = basic_large_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_large_airframe 
-				has_tech = engines_3
-			}
 		}
 
 		target_variant = {
@@ -1807,16 +1678,9 @@ DAI_strategic_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_large_airframe 
 				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = advanced_large_airframe 
-				has_tech = engines_4
 			}
 		}
 
@@ -1858,16 +1722,9 @@ DAI_strategic_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_large_airframe 
 				has_tech = engines_4
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_large_airframe 
-				has_tech = jet_engines
 			}
 		}
 
@@ -1909,8 +1766,7 @@ DAI_strategic_bomber = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_large_airframe 
 				has_tech = jet_engines
 			}
@@ -1971,12 +1827,6 @@ DAI_maritime_patrol = {
 				has_tech = basic_large_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500  
-
-				has_tech = improved_large_airframe 
-				has_tech = engines_3
-			}
 		}
 
 		target_variant = {
@@ -2017,16 +1867,9 @@ DAI_maritime_patrol = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_large_airframe 
 				has_tech = engines_3
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = advanced_large_airframe 
-				has_tech = engines_4
 			}
 		}
 
@@ -2070,16 +1913,9 @@ DAI_maritime_patrol = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100
-
+				add = 300
 				has_tech = advanced_large_airframe 
 				has_tech = engines_4
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_large_airframe
-				has_tech = jet_engines
 			}
 		}
 
@@ -2123,8 +1959,7 @@ DAI_maritime_patrol = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_large_airframe
 				has_tech = jet_engines
 			}
@@ -2184,12 +2019,6 @@ DAI_scout_plane = { # Unused
 				has_tech = basic_medium_airframe 
 				has_tech = engines_2
 			}
-			modifier = { 
-				add = -500 
-
-				has_tech = improved_medium_airframe 
-				has_tech = engines_2
-			}
 		}
 
 		target_variant = {
@@ -2219,15 +2048,8 @@ DAI_scout_plane = { # Unused
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 200
 				has_tech = improved_medium_airframe 
-				has_tech = engines_2
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = advanced_medium_airframe 
 				has_tech = engines_2
 			}
 		}
@@ -2260,15 +2082,9 @@ DAI_scout_plane = { # Unused
 		priority = {
 			base = 0
 			modifier = { 
-				add = 100 
-
+				add = 300
 				has_tech = advanced_medium_airframe 
 				has_tech = engines_2
-			}
-			modifier = { 
-				add = -500 
-
-				has_tech = modern_medium_airframe 
 			}
 		}
 
@@ -2301,8 +2117,7 @@ DAI_scout_plane = { # Unused
 		priority = {
 			base = 0
 			modifier = { 
-				add = 400 
-
+				add = 400
 				has_tech = modern_medium_airframe 
 			}
 		}
