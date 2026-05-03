@@ -1,4 +1,4 @@
-﻿# AI tank design for testing
+# AI tank design for testing
 # Group priorities zeroed - designs available for player use only
 
 USA_light_tanks = {
@@ -24,7 +24,7 @@ USA_light_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = light_tank_chassis_0
 			modules = {
 				main_armament_slot = tank_heavy_machine_gun
@@ -66,7 +66,7 @@ USA_light_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = light_tank_chassis_1
 			modules = {
 				main_armament_slot = {
@@ -117,7 +117,7 @@ USA_light_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 3000
+			match_value = 0
 			type = light_tank_chassis_2
 			modules = {
 				main_armament_slot = {
@@ -178,7 +178,7 @@ USA_light_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = light_tank_chassis_3
 			modules = {
 				main_armament_slot = {
@@ -241,7 +241,7 @@ USA_light_tank_destroyers = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = light_tank_destroyer_chassis_1
 			modules = {
 				main_armament_slot = tank_high_velocity_cannon
@@ -287,7 +287,7 @@ USA_light_tank_destroyers = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = light_tank_destroyer_chassis_2
 			modules = {
 				main_armament_slot = {
@@ -360,7 +360,7 @@ USA_light_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = light_tank_artillery_chassis_1
 			modules = {
 				main_armament_slot = tank_close_support_gun
@@ -403,7 +403,7 @@ USA_light_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = light_tank_artillery_chassis_2
 			modules = {
 				main_armament_slot = tank_medium_howitzer
@@ -447,7 +447,7 @@ USA_light_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = light_tank_artillery_chassis_3
 			modules = {
 				main_armament_slot = tank_medium_howitzer_2
@@ -507,7 +507,7 @@ USA_light_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = light_tank_aa_chassis_1
 			modules = {
 				main_armament_slot = tank_anti_air_cannon
@@ -550,7 +550,7 @@ USA_light_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = light_tank_aa_chassis_2
 			modules = {
 				main_armament_slot = tank_anti_air_cannon_2
@@ -594,7 +594,7 @@ USA_light_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 2500
+			match_value = 0
 			type = light_tank_aa_chassis_3
 			modules = {
 				main_armament_slot = tank_anti_air_cannon_2
@@ -653,7 +653,7 @@ USA_medium_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = medium_tank_chassis_1
 			modules = {
 				main_armament_slot = {
@@ -704,7 +704,7 @@ USA_medium_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 2500
+			match_value = 0
 			type = medium_tank_chassis_1
 			modules = {
 				main_armament_slot = {
@@ -758,7 +758,7 @@ USA_medium_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 3000
+			match_value = 0
 			type = medium_tank_chassis_2
 			modules = {
 				main_armament_slot = {
@@ -821,7 +821,7 @@ USA_medium_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = medium_tank_chassis_3
 			modules = {
 				main_armament_slot = { any_of = { tank_high_velocity_cannon_2 tank_medium_cannon_2 } }
@@ -900,7 +900,7 @@ USA_medium_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = medium_tank_destroyer_chassis_1
 			modules = {
 				main_armament_slot = {
@@ -959,7 +959,7 @@ USA_medium_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = medium_tank_destroyer_chassis_2
 			modules = {
 				main_armament_slot = {
@@ -1013,7 +1013,7 @@ USA_medium_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = medium_tank_destroyer_chassis_3
 			modules = {
 				main_armament_slot = {
@@ -1081,7 +1081,7 @@ USA_medium_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = medium_tank_artillery_chassis_1
 			modules = {
 				main_armament_slot = tank_medium_howitzer
@@ -1125,7 +1125,7 @@ USA_medium_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = medium_tank_artillery_chassis_2
 			modules = {
 				main_armament_slot = tank_medium_howitzer_2
@@ -1170,7 +1170,7 @@ USA_medium_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = medium_tank_artillery_chassis_3
 			modules = {
 				main_armament_slot = tank_heavy_howitzer
@@ -1231,7 +1231,7 @@ USA_medium_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = medium_tank_aa_chassis_1
 			modules = {
 				main_armament_slot = tank_anti_air_cannon
@@ -1275,7 +1275,7 @@ USA_medium_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = medium_tank_aa_chassis_2
 			modules = {
 				main_armament_slot = tank_anti_air_cannon_2
@@ -1320,7 +1320,7 @@ USA_medium_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 2500
+			match_value = 0
 			type = medium_tank_aa_chassis_3
 			modules = {
 				main_armament_slot = tank_anti_air_cannon_3
@@ -1378,7 +1378,7 @@ USA_heavy_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = heavy_tank_chassis_1
 			modules = {
 				main_armament_slot = tank_heavy_cannon
@@ -1418,7 +1418,7 @@ USA_heavy_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = heavy_tank_chassis_2
 			modules = {
 				main_armament_slot = {
@@ -1473,7 +1473,7 @@ USA_heavy_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = heavy_tank_chassis_3
 			modules = {
 				main_armament_slot = {
@@ -1559,7 +1559,7 @@ USA_heavy_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = heavy_tank_destroyer_chassis_1
 			modules = {
 				main_armament_slot = {
@@ -1613,7 +1613,7 @@ USA_heavy_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = heavy_tank_destroyer_chassis_2
 			modules = {
 				main_armament_slot = {
@@ -1676,7 +1676,7 @@ USA_heavy_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = heavy_tank_destroyer_chassis_3
 			modules = {
 				main_armament_slot = {
@@ -1751,7 +1751,7 @@ USA_heavy_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = heavy_tank_artillery_chassis_1
 			modules = {
 				main_armament_slot = tank_medium_howitzer
@@ -1794,7 +1794,7 @@ USA_heavy_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = heavy_tank_artillery_chassis_2
 			modules = {
 				main_armament_slot = tank_medium_howitzer_2
@@ -1839,7 +1839,7 @@ USA_heavy_tank_artillery = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = heavy_tank_artillery_chassis_3
 			modules = {
 				main_armament_slot = tank_heavy_howitzer
@@ -1899,7 +1899,7 @@ USA_heavy_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = heavy_tank_aa_chassis_1
 			modules = {
 				main_armament_slot = tank_anti_air_cannon
@@ -1942,7 +1942,7 @@ USA_heavy_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = heavy_tank_aa_chassis_2
 			modules = {
 				main_armament_slot = tank_anti_air_cannon_2
@@ -1986,7 +1986,7 @@ USA_heavy_tank_anti_air = {
 
 		history = yes
 		target_variant = {
-			match_value = 2500
+			match_value = 0
 			type = heavy_tank_aa_chassis_3
 			modules = {
 				main_armament_slot = tank_anti_air_cannon_3
@@ -2043,7 +2043,7 @@ USA_super_heavy_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = super_heavy_tank_chassis
 			modules = {
 				main_armament_slot = {
@@ -2127,7 +2127,7 @@ USA_modern_tanks = { #m46
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = modern_tank_chassis
 			modules = {
 				main_armament_slot = {
@@ -2210,7 +2210,7 @@ USA_modern_tank_destroyer = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = modern_tank_destroyer_chassis
 			modules = {
 				main_armament_slot = {
@@ -2292,7 +2292,7 @@ USA_amphibious_tanks = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = amphibious_tank_chassis
 			modules = {
 				main_armament_slot = {

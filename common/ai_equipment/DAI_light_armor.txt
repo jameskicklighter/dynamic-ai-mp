@@ -24,7 +24,7 @@ DAI_light_tank = {
 		}
 		target_variant = {
 			type = light_tank_chassis_1
-			match_value = 10000
+			match_value = 1000
 			modules = {
 				turret_type_slot = tank_light_three_man_tank_turret
 				main_armament_slot = {
@@ -76,7 +76,7 @@ DAI_light_tank = {
 		}
 		target_variant = {
 			type = light_tank_chassis_2
-			match_value = 10000
+			match_value = 2000
 			modules = {
 				turret_type_slot = tank_light_three_man_tank_turret
 				main_armament_slot = {
