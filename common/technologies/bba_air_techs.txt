@@ -264,8 +264,8 @@ technologies = {
 			base = 2
 			modifier = {
 				add = 999
-				date > 1939.7.1
-				amount_research_slots > 4
+				date > 1938.1.1
+				amount_research_slots > 3
 				DAI_should_build_planes = yes
 			}
 			modifier = {
@@ -1271,8 +1271,8 @@ technologies = {
 			base = 1.8
 			modifier = {
 				add = 999
-				date > 1938.1.1
-				amount_research_slots > 4
+				date > 1937.7.1
+				amount_research_slots > 3
 				DAI_should_build_planes = yes
 			}
 			modifier = {
@@ -1324,8 +1324,8 @@ technologies = {
 			base = 1.7
 			modifier = {
 				add = 999
-				date > 1938.1.1
-				amount_research_slots > 4
+				date > 1937.7.1
+				amount_research_slots > 3
 				DAI_should_build_planes = yes
 			}
 			modifier = {
@@ -1624,8 +1624,8 @@ technologies = {
 			base = 1.9
 			modifier = {
 				add = 999
-				date > 1939.7.1
-				amount_research_slots > 4
+				date > 1938.1.1
+				amount_research_slots > 3
 				DAI_should_build_planes = yes
 			}
 			modifier = {
