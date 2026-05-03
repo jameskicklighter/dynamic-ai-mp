@@ -20,7 +20,7 @@ DAI_medium_tank = {
 		}
 		target_variant = {
 			type = medium_tank_chassis_1
-			match_value = 10000
+			match_value = 1000
 			modules = {
 				turret_type_slot = tank_medium_three_man_tank_turret
 				main_armament_slot = { any_of = { tank_medium_cannon tank_small_cannon_2 tank_small_cannon tank_close_support_gun } }
@@ -61,7 +61,7 @@ DAI_medium_tank = {
 		}
 		target_variant = {
 			type = medium_tank_chassis_2
-			match_value = 10000
+			match_value = 2000
 			modules = {
 				turret_type_slot = tank_medium_three_man_tank_turret
 				main_armament_slot = { any_of = { tank_medium_cannon_2 tank_medium_cannon tank_small_cannon_2 } }
@@ -116,7 +116,7 @@ DAI_modern_tank = {
 		}
 		target_variant = {
 			type = modern_tank_chassis_1
-			match_value = 10000
+			match_value = 1000
 			modules = {
 				turret_type_slot = tank_modern_tank_turret
 				main_armament_slot = { any_of = { tank_high_velocity_cannon_3 tank_high_velocity_cannon_2 tank_medium_cannon_2 tank_heavy_cannon } }
@@ -177,7 +177,7 @@ DAI_medium_SP_anti_air = {
 		}
 		target_variant = {
 			type = medium_tank_aa_chassis_1
-			match_value = 10000
+			match_value = 1000
 			modules = {
 				turret_type_slot = tank_medium_three_man_tank_turret
 				main_armament_slot = { any_of = { tank_anti_air_cannon_3 tank_anti_air_cannon_2 tank_anti_air_cannon } }
@@ -216,7 +216,7 @@ DAI_medium_SP_anti_air = {
 		priority = { base = 10 } # Low priority since previoius design does enough.
 		target_variant = {
 			type = medium_tank_aa_chassis_2
-			match_value = 10000
+			match_value = 2000
 			modules = {
 				turret_type_slot = tank_medium_three_man_tank_turret
 				main_armament_slot = { any_of = { tank_anti_air_cannon_3 tank_anti_air_cannon_2 tank_anti_air_cannon } }
@@ -278,7 +278,7 @@ DAI_medium_tank_destroyer = {
 		}
 		target_variant = {
 			type = medium_tank_destroyer_chassis_1
-			match_value = 10000
+			match_value = 1000
 			modules = {
 				turret_type_slot = tank_medium_fixed_superstructure_turret
 				main_armament_slot = { any_of = { tank_heavy_cannon_3 tank_heavy_cannon_2 tank_heavy_cannon } }
@@ -318,7 +318,7 @@ DAI_medium_tank_destroyer = {
 		priority = { base = 10 }
 		target_variant = {
 			type = medium_tank_destroyer_chassis_2
-			match_value = 10000
+			match_value = 2000
 			modules = {
 				turret_type_slot = tank_medium_fixed_superstructure_turret
 				main_armament_slot = { any_of = { tank_heavy_cannon_3 tank_heavy_cannon_2 } }
@@ -380,7 +380,7 @@ DAI_medium_flame_tank = {
 		}
 		target_variant = {
 			type = medium_tank_flame_chassis_1
-			match_value = 10000
+			match_value = 1000
 			modules = {
 				turret_type_slot = tank_medium_three_man_tank_turret
 				main_armament_slot = { any_of = { advanced_flamethrower flamethrower } }
@@ -416,7 +416,7 @@ DAI_medium_flame_tank = {
 		priority = { base = 10 }
 		target_variant = {
 			type = medium_tank_flame_chassis_2
-			match_value = 10000
+			match_value = 2000
 			modules = {
 				turret_type_slot = tank_medium_three_man_tank_turret
 				main_armament_slot = { any_of = { advanced_flamethrower flamethrower } }

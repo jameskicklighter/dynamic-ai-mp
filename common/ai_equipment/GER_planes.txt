@@ -1,4 +1,4 @@
-﻿# AI plane design for testing
+# AI plane design for testing
 # Group priorities zeroed - designs available for player use only
 
 GER_fighter = {
@@ -21,7 +21,7 @@ GER_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = small_plane_airframe_0
 			modules = {
 				fixed_main_weapon_slot = light_mg_2x
@@ -45,7 +45,7 @@ GER_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = small_plane_airframe_1
 			modules = {
 				fixed_main_weapon_slot = aircraft_cannon_1_1x
@@ -74,7 +74,7 @@ GER_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 3000
+			match_value = 0
 			type = small_plane_airframe_2
 			modules = {
 				fixed_main_weapon_slot = aircraft_cannon_1_2x
@@ -105,7 +105,7 @@ GER_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 3500
+			match_value = 0
 			type = small_plane_airframe_2
 			modules = {
 				fixed_main_weapon_slot = aircraft_cannon_1_2x
@@ -140,7 +140,7 @@ GER_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = small_plane_airframe_3
 			modules = {
 				fixed_main_weapon_slot = aircraft_cannon_1_2x
@@ -168,7 +168,7 @@ GER_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = small_plane_airframe_4
 			modules = {
 				fixed_main_weapon_slot = aircraft_cannon_2_2x
@@ -208,7 +208,7 @@ GER_cas = {
 
 		history = yes
 		target_variant = {
-			match_value = 500
+			match_value = 0
 			type = small_plane_cas_airframe_0
 			modules = {
 				fixed_main_weapon_slot = bomb_locks
@@ -235,7 +235,7 @@ GER_cas = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = small_plane_cas_airframe_1
 			modules = {
 				fixed_main_weapon_slot = bomb_locks
@@ -262,7 +262,7 @@ GER_cas = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = small_plane_cas_airframe_2
 			modules = {
 				fixed_main_weapon_slot = bomb_locks
@@ -292,7 +292,7 @@ GER_cas = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 2500
+			match_value = 0
 			type = small_plane_cas_airframe_3
 			modules = {
 				fixed_main_weapon_slot = bomb_locks
@@ -330,7 +330,7 @@ GER_naval_bomber = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = small_plane_naval_bomber_airframe_1
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting
@@ -354,7 +354,7 @@ GER_naval_bomber = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = small_plane_naval_bomber_airframe_2
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting
@@ -381,7 +381,7 @@ GER_naval_bomber = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = small_plane_naval_bomber_airframe_3
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting
@@ -423,7 +423,7 @@ GER_tactical_bomber = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = medium_plane_airframe_0
 			modules = {
 				fixed_main_weapon_slot = medium_bomb_bay
@@ -446,7 +446,7 @@ GER_tactical_bomber = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 3000
+			match_value = 0
 			type = medium_plane_airframe_1
 			modules = {
 				fixed_main_weapon_slot = medium_bomb_bay
@@ -470,7 +470,7 @@ GER_tactical_bomber = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 3000
+			match_value = 0
 			type = medium_plane_airframe_2
 			modules = {
 				fixed_main_weapon_slot = medium_bomb_bay
@@ -498,7 +498,7 @@ GER_tactical_bomber = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = medium_plane_airframe_3
 			modules = {
 				fixed_main_weapon_slot = medium_bomb_bay
@@ -527,7 +527,7 @@ GER_tactical_bomber = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = medium_plane_airframe_4
 			modules = {
 				fixed_main_weapon_slot = medium_bomb_bay
@@ -567,7 +567,7 @@ GER_heavy_fighter = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = medium_plane_fighter_airframe_1
 			modules = {
 				fixed_main_weapon_slot = light_mg_4x
@@ -593,7 +593,7 @@ GER_heavy_fighter = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 1500
+			match_value = 0
 			type = medium_plane_fighter_airframe_2
 			modules = {
 				fixed_main_weapon_slot = heavy_mg_4x
@@ -620,7 +620,7 @@ GER_heavy_fighter = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = medium_plane_fighter_airframe_3
 			modules = {
 				fixed_main_weapon_slot = heavy_mg_4x
@@ -663,7 +663,7 @@ GER_strategic_bomber = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = large_plane_airframe_1
 			modules = {
 				fixed_main_weapon_slot = large_bomb_bay
@@ -691,7 +691,7 @@ GER_strategic_bomber = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = large_plane_airframe_2
 			modules = {
 				fixed_main_weapon_slot = large_bomb_bay
@@ -719,7 +719,7 @@ GER_strategic_bomber = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = large_plane_airframe_3
 			modules = {
 				fixed_main_weapon_slot = large_bomb_bay
@@ -747,7 +747,7 @@ GER_strategic_bomber = {
 
 		history = yes
 		target_variant = {
-			match_value = 5000
+			match_value = 0
 			type = large_plane_airframe_4
 			modules = {
 				fixed_main_weapon_slot = large_bomb_bay
@@ -792,7 +792,7 @@ GER_maritime_patrol = {
 
 		history = yes
 		target_variant = {
-			match_value = 1000
+			match_value = 0
 			type = large_plane_maritime_patrol_plane_airframe_1
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting
@@ -822,7 +822,7 @@ GER_maritime_patrol = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000
+			match_value = 0
 			type = large_plane_maritime_patrol_plane_airframe_2
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting
@@ -854,7 +854,7 @@ GER_maritime_patrol = {
 
 		history = yes
 		target_variant = {
-			match_value = 4000
+			match_value = 0
 			type = large_plane_maritime_patrol_plane_airframe_3
 			modules = {
 				fixed_main_weapon_slot = torpedo_mounting

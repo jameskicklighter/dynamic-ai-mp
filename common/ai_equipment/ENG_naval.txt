@@ -1,4 +1,4 @@
-﻿# AI Ship Designs for His Majesty the King
+# AI Ship Designs for His Majesty the King
 # Group priorities zeroed - designs available for player use only
 
 ENG_destroyers = {
@@ -33,7 +33,7 @@ ENG_destroyers = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_light_1
 			modules = {
@@ -73,7 +73,7 @@ ENG_destroyers = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_light_1
 			modules = {
@@ -110,7 +110,7 @@ ENG_destroyers = {
 
 		history = yes
 		target_variant = {
-			match_value = 2500.0
+			match_value = 0
 			
 			type = ship_hull_light_2
 			modules = {
@@ -147,7 +147,7 @@ ENG_destroyers = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2750.0
+			match_value = 0
 			
 			type = ship_hull_light_2
 			modules = {
@@ -184,7 +184,7 @@ ENG_destroyers = {
 		
 		history = yes
 		target_variant = {
-			match_value = 3500.0
+			match_value = 0
 			
 			type = ship_hull_light_3
 			modules = {
@@ -224,7 +224,7 @@ ENG_destroyers = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 3750.0
+			match_value = 0
 			
 			type = ship_hull_light_3
 			modules = {
@@ -263,7 +263,7 @@ ENG_destroyers = {
 		
 		history = yes
 		target_variant = {
-			match_value = 4500.0
+			match_value = 0
 			
 			type = ship_hull_light_4
 			modules = {
@@ -320,7 +320,7 @@ ENG_escorts = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_light_1
 			modules = {
@@ -359,7 +359,7 @@ ENG_escorts = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_light_2
 			modules = {
@@ -412,7 +412,7 @@ ENG_naval_light_cruiser = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_1
 			modules = {
@@ -451,7 +451,7 @@ ENG_naval_light_cruiser = {
 
 		history = yes
 		target_variant = {
-			match_value = 1100.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_1
 			modules = {
@@ -493,7 +493,7 @@ ENG_naval_light_cruiser = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1200.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_1
 			modules = {
@@ -532,7 +532,7 @@ ENG_naval_light_cruiser = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_2
 			modules = {
@@ -576,7 +576,7 @@ ENG_naval_light_cruiser = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2100.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_2
 			modules = {
@@ -619,7 +619,7 @@ ENG_naval_light_cruiser = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 3000.0
+			match_value = 0
 			type = ship_hull_cruiser_2
 			modules = {
 				fixed_ship_battery_slot = ship_light_medium_battery_2
@@ -662,7 +662,7 @@ ENG_naval_light_cruiser = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 4000.0
+			match_value = 0
 			type = ship_hull_cruiser_3
 			modules = {
 				fixed_ship_battery_slot = ship_light_medium_battery_2
@@ -703,7 +703,7 @@ ENG_naval_light_cruiser = {
 		}
 		history = yes
 		target_variant = {
-			match_value = 4500.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_3
 			modules = {
@@ -744,7 +744,7 @@ ENG_naval_light_cruiser = {
 		
 		history = yes
 		target_variant = {
-			match_value = 5000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_4
 			modules = {
@@ -810,7 +810,7 @@ ENG_naval_light_AA_cruiser = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2500.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_2
 			modules = {
@@ -870,7 +870,7 @@ ENG_naval_cruiser_heavy = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_1
 			modules = {
@@ -905,7 +905,7 @@ ENG_naval_cruiser_heavy = {
 
 		history = yes
 		target_variant = {
-			match_value = 1100.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_1
 			modules = {
@@ -940,7 +940,7 @@ ENG_naval_cruiser_heavy = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_2
 			modules = {
@@ -976,7 +976,7 @@ ENG_naval_cruiser_heavy = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2200.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_2
 			modules = {
@@ -1014,7 +1014,7 @@ ENG_naval_cruiser_heavy = {
 		
 		history = yes
 		target_variant = {
-			match_value = 3000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_3
 			modules = {
@@ -1053,7 +1053,7 @@ ENG_naval_cruiser_heavy = {
 		
 		history = yes
 		target_variant = {
-			match_value = 4000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_4
 			modules = {
@@ -1113,7 +1113,7 @@ ENG_naval_capital_battleship = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_heavy_1
 			modules = {
@@ -1152,7 +1152,7 @@ ENG_naval_capital_battleship = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1100.0
+			match_value = 0
 			
 			type = ship_hull_heavy_1
 			modules = {
@@ -1192,7 +1192,7 @@ ENG_naval_capital_battleship = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_heavy_2
 			modules = {
@@ -1232,7 +1232,7 @@ ENG_naval_capital_battleship = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2200.0
+			match_value = 0
 			
 			type = ship_hull_heavy_2
 			modules = {
@@ -1271,7 +1271,7 @@ ENG_naval_capital_battleship = {
 		
 		history = yes
 		target_variant = {
-			match_value = 3000.0
+			match_value = 0
 			
 			type = ship_hull_heavy_3
 			modules = {
@@ -1310,7 +1310,7 @@ ENG_naval_capital_battleship = {
 		
 		history = yes
 		target_variant = {
-			match_value = 4000.0
+			match_value = 0
 			
 			type = ship_hull_heavy_4
 			modules = {
@@ -1370,7 +1370,7 @@ ENG_naval_capital_bc = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_heavy_1
 			modules = {
@@ -1408,7 +1408,7 @@ ENG_naval_capital_bc = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1100.0
+			match_value = 0
 			
 			type = ship_hull_heavy_1
 			modules = {
@@ -1446,7 +1446,7 @@ ENG_naval_capital_bc = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_heavy_1
 			modules = {
@@ -1484,7 +1484,7 @@ ENG_naval_capital_bc = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2200.0
+			match_value = 0
 			
 			type = ship_hull_heavy_1
 			modules = {
@@ -1542,7 +1542,7 @@ ENG_naval_carrier = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_carrier_conversion_bb
 			modules = {
@@ -1579,7 +1579,7 @@ ENG_naval_carrier = {
 
 		history = yes
 		target_variant = {
-			match_value = 1100.0
+			match_value = 0
 			
 			type = ship_hull_carrier_conversion_bb
 			modules = {
@@ -1616,7 +1616,7 @@ ENG_naval_carrier = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_carrier_1
 			modules = {
@@ -1649,7 +1649,7 @@ ENG_naval_carrier = {
 		
 		history = yes
 		target_variant = {
-			match_value = 3000.0
+			match_value = 0
 			
 			type = ship_hull_carrier_2
 			modules = {
@@ -1682,7 +1682,7 @@ ENG_naval_carrier = {
 		
 		history = yes
 		target_variant = {
-			match_value = 4000.0
+			match_value = 0
 			
 			type = ship_hull_carrier_3
 			modules = {
@@ -1737,7 +1737,7 @@ naval_carrier_light = {
 		
 		history = yes
 		target_variant = {
-			match_value = 500.0
+			match_value = 0
 			
 			type = ship_hull_carrier_conversion_ca
 			modules = {
@@ -1793,7 +1793,7 @@ ENG_naval_escort_carrier = {
 		history = yes
 
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 		
 
 			type = ship_hull_escort_carrier
@@ -1830,7 +1830,7 @@ ENG_naval_escort_carrier = {
 		history = yes
 
 		target_variant = {
-			match_value = 1500.0
+			match_value = 0
 		
 
 			type = ship_hull_escort_carrier
@@ -1886,7 +1886,7 @@ naval_submarine = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_submarine
 			modules = {
@@ -1913,7 +1913,7 @@ naval_submarine = {
 
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_submarine_2
 			modules = {
@@ -1940,7 +1940,7 @@ naval_submarine = {
 		
 		history = yes
 		target_variant = {
-			match_value = 3000.0
+			match_value = 0
 			
 			type = ship_hull_submarine_3
 			modules = {
@@ -1969,7 +1969,7 @@ naval_submarine = {
 		
 		history = yes
 		target_variant = {
-			match_value = 4000.0
+			match_value = 0
 			
 			type = ship_hull_submarine_4
 			modules = {
@@ -2018,7 +2018,7 @@ naval_mine_sweeper = {
 		enable = { has_tech = basic_naval_mines }
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			
 			type = ship_hull_light_1
 			modules = {
@@ -2057,7 +2057,7 @@ naval_mine_sweeper = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			
 			type = ship_hull_light
 			modules = {
@@ -2119,7 +2119,7 @@ naval_mine_layer = {
 		
 		history = yes
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 			 
 			type = ship_hull_light
 			modules = {
@@ -2156,7 +2156,7 @@ naval_mine_layer = {
 		
 		history = yes
 		target_variant = {
-			match_value = 2000.0
+			match_value = 0
 			 
 			type = ship_hull_submarine_2
 			modules = {
@@ -2188,7 +2188,7 @@ naval_mine_layer = {
 		
 		history = yes
 		target_variant = {
-			match_value = 3000.0
+			match_value = 0
 			
 			type = ship_hull_cruiser_1
 			modules = {
