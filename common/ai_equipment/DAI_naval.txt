@@ -304,7 +304,7 @@ DAI_destroyer_screen = {
 	category = naval
 	roles = { naval_screen }
 	priority = { # Priority of design among all roles (1-10)
-		base = 9
+		base = 900
 	}
 
 	##############################################################################
@@ -316,7 +316,7 @@ DAI_destroyer_screen = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 5000
+				add = 1000
 
 				### Requirements
 				# has_tech = basic_ship_hull_light
@@ -329,7 +329,7 @@ DAI_destroyer_screen = {
 
 		target_variant = {
 			type = ship_hull_light_1
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 
@@ -373,7 +373,7 @@ DAI_destroyer_screen = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 2000
 
 				### Requirements
 				has_tech = basic_ship_hull_light
@@ -386,7 +386,7 @@ DAI_destroyer_screen = {
 
 		target_variant = {
 			type = ship_hull_light_2
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 
@@ -430,7 +430,7 @@ DAI_destroyer_screen = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 3000
 
 				### Requirements
 				has_tech = improved_ship_hull_light
@@ -450,7 +450,7 @@ DAI_destroyer_screen = {
 
 		target_variant = {
 			type = ship_hull_light_3
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 
@@ -495,7 +495,7 @@ DAI_destroyer_screen = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 4000
 
 				### Requirements
 				has_tech = advanced_ship_hull_light
@@ -520,7 +520,7 @@ DAI_destroyer_screen = {
 
 		target_variant = {
 			type = ship_hull_light_4
-			match_value = 1
+			match_value = 4000
 
 			modules = {
 
@@ -566,7 +566,7 @@ DAI_ASW_destroyer = {
 	category = naval
 	roles = { naval_escort }
 	priority = { # Priority of design among all roles (1-10)
-		base = 8
+		base = 800
 	}
 
 	##############################################################################
@@ -578,7 +578,7 @@ DAI_ASW_destroyer = {
 		priority = {
 			base = 0
 			modifier = {
-				add = 5000
+				add = 1000
 
 				### Requirements
 				# has_tech = basic_ship_hull_light
@@ -592,7 +592,7 @@ DAI_ASW_destroyer = {
 
 		target_variant = {
 			type = ship_hull_light_1
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 
@@ -636,7 +636,7 @@ DAI_ASW_destroyer = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 2000
 
 				### Requirements
 				has_tech = basic_ship_hull_light
@@ -650,7 +650,7 @@ DAI_ASW_destroyer = {
 
 		target_variant = {
 			type = ship_hull_light_2
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 
@@ -694,7 +694,7 @@ DAI_ASW_destroyer = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 3000
 
 				### Requirements
 				has_tech = improved_ship_hull_light
@@ -708,7 +708,7 @@ DAI_ASW_destroyer = {
 
 		target_variant = {
 			type = ship_hull_light_3
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 
@@ -753,7 +753,7 @@ DAI_ASW_destroyer = {
 		priority = {
 			base = 0
 			modifier = {
-				add = 40000
+				add = 4000
 
 				### Requirements
 				has_tech = advanced_ship_hull_light
@@ -767,7 +767,7 @@ DAI_ASW_destroyer = {
 
 		target_variant = {
 			type = ship_hull_light_4
-			match_value = 1
+			match_value = 4000
 
 			modules = {
 
@@ -813,7 +813,7 @@ DAI_light_cruiser_A = {
 	category = naval
 	roles = { naval_cruiser_light }
 	priority = { # Priority of design among all roles (1-10)
-		base = 7
+		base = 700
 	}
 
 	##############################################################################
@@ -825,7 +825,7 @@ DAI_light_cruiser_A = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 1000
 
 				### Requirements
 				has_tech = basic_ship_hull_cruiser
@@ -838,7 +838,7 @@ DAI_light_cruiser_A = {
 
 		target_variant = {
 			type = ship_hull_cruiser_2
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 				
@@ -886,7 +886,7 @@ DAI_light_cruiser_A = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2000
 
 				### Requirements
 				has_tech = improved_ship_hull_cruiser
@@ -907,7 +907,7 @@ DAI_light_cruiser_A = {
 
 		target_variant = {
 			type = ship_hull_cruiser_3
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 
@@ -956,7 +956,7 @@ DAI_light_cruiser_A = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 3000
 
 				### Requirements
 				has_tech = advanced_ship_hull_cruiser
@@ -981,7 +981,7 @@ DAI_light_cruiser_A = {
 
 		target_variant = {
 			type = ship_hull_cruiser_4
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 
@@ -1031,7 +1031,7 @@ DAI_heavy_cruiser = {
 	category = naval
 	roles = { naval_cruiser_heavy }
 	priority = { # Priority of design among all roles (1-10)
-		base = 5
+		base = 500
 	}
 
 	##############################################################################
@@ -1043,7 +1043,7 @@ DAI_heavy_cruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 1000
 
 				### Requirements
 				has_tech = basic_ship_hull_cruiser
@@ -1057,7 +1057,7 @@ DAI_heavy_cruiser = {
 
 		target_variant = {
 			type = ship_hull_cruiser_2
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 				# ELECTRONICS
@@ -1103,7 +1103,7 @@ DAI_heavy_cruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2000
 
 				### Requirements
 				has_tech = improved_ship_hull_cruiser
@@ -1124,7 +1124,7 @@ DAI_heavy_cruiser = {
 
 		target_variant = {
 			type = ship_hull_cruiser_3
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 				# ELECTRONICS
@@ -1171,7 +1171,7 @@ DAI_heavy_cruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 3000
 
 				### Requirements
 				has_tech = advanced_ship_hull_cruiser
@@ -1196,7 +1196,7 @@ DAI_heavy_cruiser = {
 
 		target_variant = {
 			type = ship_hull_cruiser_4
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 				# ELECTRONICS
@@ -1327,7 +1327,7 @@ DAI_battleship = {
 	category = naval
 	roles = { naval_capital_bb }
 	priority = { # Priority of design among all roles (1-10)
-		base = 4
+		base = 400
 	}
 
 	##############################################################################
@@ -1339,7 +1339,7 @@ DAI_battleship = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 1000
 
 				### Requirements
 				has_tech = basic_ship_hull_heavy
@@ -1354,7 +1354,7 @@ DAI_battleship = {
 
 		target_variant = {
 			type = ship_hull_heavy_2
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 				# ELECTRONICS
@@ -1401,7 +1401,7 @@ DAI_battleship = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2000
 
 				### Requirements
 				has_tech = improved_ship_hull_heavy
@@ -1423,7 +1423,7 @@ DAI_battleship = {
 
 		target_variant = {
 			type = ship_hull_heavy_3
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 				# ELECTRONICS
@@ -1471,7 +1471,7 @@ DAI_battleship = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 3000
 
 				### Requirements
 				has_tech = advanced_ship_hull_heavy
@@ -1498,7 +1498,7 @@ DAI_battleship = {
 
 		target_variant = {
 			type = ship_hull_heavy_4
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 				# ELECTRONICS
@@ -1889,7 +1889,7 @@ DAI_battlecruiser = {
 	category = naval
 	roles = { naval_capital_bc }
 	priority = { # Priority of design among all roles (1-10)
-		base = 1
+		base = 100
 	}
 
 	##############################################################################
@@ -1901,7 +1901,7 @@ DAI_battlecruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 1000
 
 				### Requirements
 				has_tech = basic_ship_hull_heavy
@@ -1916,7 +1916,7 @@ DAI_battlecruiser = {
 
 		target_variant = {
 			type = ship_hull_heavy_2
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 				
@@ -1959,7 +1959,7 @@ DAI_battlecruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2000
 
 				### Requirements
 				has_tech = improved_ship_hull_heavy
@@ -1983,7 +1983,7 @@ DAI_battlecruiser = {
 
 		target_variant = {
 			type = ship_hull_heavy_3
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 				
@@ -2023,7 +2023,7 @@ DAI_battlecruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2500
 
 				### Requirements
 				has_tech = improved_ship_hull_heavy
@@ -2043,7 +2043,7 @@ DAI_battlecruiser = {
 
 		target_variant = {
 			type = ship_hull_heavy_3
-			match_value = 1.1
+			match_value = 2500
 
 			modules = {
 				
@@ -2087,7 +2087,7 @@ DAI_battlecruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 3000
 
 				### Requirements
 				has_tech = advanced_ship_hull_heavy
@@ -2115,7 +2115,7 @@ DAI_battlecruiser = {
 
 		target_variant = {
 			type = ship_hull_heavy_4
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 				
@@ -2155,7 +2155,7 @@ DAI_battlecruiser = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 3500
 
 				### Requirements
 				has_tech = advanced_ship_hull_heavy
@@ -2179,7 +2179,7 @@ DAI_battlecruiser = {
 
 		target_variant = {
 			type = ship_hull_heavy_4
-			match_value = 1.1
+			match_value = 3500
 
 			modules = {
 				
@@ -2276,7 +2276,7 @@ DAI_carrier_A = {
 	category = naval
 	roles = { naval_carrier }
 	priority = { # Priority of design among all roles (1-10)
-		base = 6
+		base = 600
 	}
 
 	##############################################################################
@@ -2288,7 +2288,7 @@ DAI_carrier_A = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 1000
 
 				### Requirements
 				has_tech = basic_ship_hull_carrier
@@ -2297,7 +2297,7 @@ DAI_carrier_A = {
 
 		target_variant = {
 			type = ship_hull_carrier_1
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 				# ELECTRONICS
@@ -2339,7 +2339,7 @@ DAI_carrier_A = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2000
 
 				### Requirements
 				has_tech = improved_ship_hull_carrier
@@ -2358,7 +2358,7 @@ DAI_carrier_A = {
 
 		target_variant = {
 			type = ship_hull_carrier_2
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 				# ELECTRONICS
@@ -2401,7 +2401,7 @@ DAI_carrier_A = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 3000
 
 				### Requirements
 				has_tech = advanced_ship_hull_carrier
@@ -2424,7 +2424,7 @@ DAI_carrier_A = {
 
 		target_variant = {
 			type = ship_hull_carrier_3
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 				# ELECTRONICS
@@ -2492,7 +2492,7 @@ DAI_escort_carrier = {
 		history = yes
 
 		target_variant = {
-			match_value = 1000.0
+			match_value = 0
 		
 
 			type = ship_hull_escort_carrier
@@ -2565,7 +2565,7 @@ DAI_submarine = {
 	category = naval
 	roles = { naval_submarine }
 	priority = { # Priority of design among all roles (1-10)
-		base = 10
+		base = 1000
 	}
 	
 	##############################################################################
@@ -2577,7 +2577,7 @@ DAI_submarine = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 10000
+				add = 1000
 
 				### Requirements
 				has_tech = basic_ship_hull_submarine
@@ -2586,7 +2586,7 @@ DAI_submarine = {
 
 		target_variant = {
 			type = ship_hull_submarine_2
-			match_value = 1
+			match_value = 1000
 
 			modules = {
 				# ENGINE
@@ -2615,7 +2615,7 @@ DAI_submarine = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 20000
+				add = 2000
 
 				### Requirements
 				has_tech = basic_ship_hull_submarine
@@ -2625,7 +2625,7 @@ DAI_submarine = {
 
 		target_variant = {
 			type = ship_hull_cruiser_submarine
-			match_value = 1
+			match_value = 2000
 
 			modules = {
 				
@@ -2657,7 +2657,7 @@ DAI_submarine = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 30000
+				add = 3000
 
 				### Requirements
 				has_tech = improved_ship_hull_submarine
@@ -2673,7 +2673,7 @@ DAI_submarine = {
 
 		target_variant = {
 			type = ship_hull_submarine_3
-			match_value = 1
+			match_value = 3000
 
 			modules = {
 				# ENGINE
@@ -2705,7 +2705,7 @@ DAI_submarine = {
 		priority = {
 			base = 0
 			modifier = { 
-				add = 40000
+				add = 4000
 
 				### Requirements
 				has_tech = advanced_ship_hull_submarine
@@ -2722,7 +2722,7 @@ DAI_submarine = {
 
 		target_variant = {
 			type = ship_hull_submarine_4
-			match_value = 1
+			match_value = 4000
 
 			modules = {
 				# ENGINE
@@ -2857,7 +2857,6 @@ DAI_submarine = {
 #		}
 #	}
 #}
-
 #naval_mine_layer = {
 #	category = naval
 #	
@@ -2957,4 +2956,3 @@ DAI_submarine = {
 #		}
 #	}
 #}
- 
