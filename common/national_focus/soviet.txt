@@ -2464,36 +2464,41 @@ focus_tree = {
 					limit = {
 						has_dlc = "By Blood Alone"
 					}
-					create_equipment_variant = {
-						name = "U-2" #
-						type = small_plane_cas_airframe_0
-						modules = {
-							fixed_main_weapon_slot = bomb_locks
-							fixed_auxiliary_weapon_slot_1 = empty
-							engine_type_slot = engine_1_1x
-							special_type_slot_1 = non_strategic_materials_small
+					if = {
+						limit = {
+							is_ai = no
 						}
-					}
-					create_equipment_variant = {
-						name = "Pe-2" #
-						type = small_plane_cas_airframe_2
-						allow_without_tech = yes
-						modules = {
-							fixed_main_weapon_slot = small_bomb_bay
-							fixed_auxiliary_weapon_slot_1 = light_mg_2x
-							engine_type_slot = engine_2_2x
-							special_type_slot_1 = lmg_defense_turret
-							special_type_slot_2 = dive_brakes_small
+						create_equipment_variant = {
+							name = "U-2" #
+							type = small_plane_cas_airframe_0
+							modules = {
+								fixed_main_weapon_slot = bomb_locks
+								fixed_auxiliary_weapon_slot_1 = empty
+								engine_type_slot = engine_1_1x
+								special_type_slot_1 = non_strategic_materials_small
+							}
 						}
-					}
-					create_equipment_variant = {
-						name = "Yak-1" #
-						type = small_plane_airframe_1
-						modules = {
-							fixed_main_weapon_slot = aircraft_cannon_1_1x
-							fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
-							engine_type_slot = engine_2_1x
-							special_type_slot_1 = non_strategic_materials_small
+						create_equipment_variant = {
+							name = "Pe-2" #
+							type = small_plane_cas_airframe_2
+							allow_without_tech = yes
+							modules = {
+								fixed_main_weapon_slot = small_bomb_bay
+								fixed_auxiliary_weapon_slot_1 = light_mg_2x
+								engine_type_slot = engine_2_2x
+								special_type_slot_1 = lmg_defense_turret
+								special_type_slot_2 = dive_brakes_small
+							}
+						}
+						create_equipment_variant = {
+							name = "Yak-1" #
+							type = small_plane_airframe_1
+							modules = {
+								fixed_main_weapon_slot = aircraft_cannon_1_1x
+								fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
+								engine_type_slot = engine_2_1x
+								special_type_slot_1 = non_strategic_materials_small
+							}
 						}
 					}
 					if = {
@@ -3537,49 +3542,54 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_equipment_variant = {
-					name = "Kronshtadt Class"		
-					type = ship_hull_heavy_2
-					name_group = SOV_BC_HISTORICAL
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-					modules = {
-						fixed_ship_battery_slot = ship_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_1
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = heavy_ship_engine_2
-						fixed_ship_secondaries_slot = ship_secondaries_1
-						fixed_ship_armor_slot = ship_armor_bc_2
-						front_1_custom_slot = ship_heavy_battery_1
-						mid_1_custom_slot = ship_secondaries_1
-						mid_2_custom_slot = ship_anti_air_1
-						rear_1_custom_slot = ship_airplane_launcher_1
+				if = {
+					limit = {
+						is_ai = no
 					}
-				}
-
-				#Line Production
-				add_equipment_production = {
-					equipment = {
+					create_equipment_variant = {
+						name = "Kronshtadt Class"
 						type = ship_hull_heavy_2
-						creator = "SOV"
-						version_name = "Kronshtadt Class"
+						name_group = SOV_BC_HISTORICAL
+						parent_version = 0
+						allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_ship_battery_slot = ship_heavy_battery_1
+							fixed_ship_anti_air_slot = ship_anti_air_1
+							fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+							fixed_ship_radar_slot = empty
+							fixed_ship_engine_slot = heavy_ship_engine_2
+							fixed_ship_secondaries_slot = ship_secondaries_1
+							fixed_ship_armor_slot = ship_armor_bc_2
+							front_1_custom_slot = ship_heavy_battery_1
+							mid_1_custom_slot = ship_secondaries_1
+							mid_2_custom_slot = ship_anti_air_1
+							rear_1_custom_slot = ship_airplane_launcher_1
+						}
 					}
-					requested_factories = 1
-					progress = 0.50
-					amount = 1 #Tooltip purposes
-				}
 
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_heavy_2
-						creator = "SOV"
-						version_name = "Kronshtadt Class"
+					#Line Production
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_heavy_2
+							creator = "SOV"
+							version_name = "Kronshtadt Class"
+						}
+						requested_factories = 1
+						progress = 0.50
+						amount = 1 #Tooltip purposes
 					}
-					requested_factories = 1
-					progress = 0.35
-					amount = 1
+
+					#Line Production
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_heavy_2
+							creator = "SOV"
+							version_name = "Kronshtadt Class"
+						}
+						requested_factories = 1
+						progress = 0.35
+						amount = 1
+					}
 				}
 			}
 			
@@ -3657,59 +3667,64 @@ focus_tree = {
 						#}
 					#}
 					#custom_effect_tooltip = SOV_an_oceangoing_navy_shbb_tt
-				create_equipment_variant = { #MM: Engine should be 3 (but also should Yamato's)
-					name = "Sovetsky Soyuz Class"
-					type = ship_hull_super_heavy_1
-					name_group = SOV_STATES
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-					modules = {
-						fixed_ship_battery_slot = ship_super_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = heavy_ship_engine_2
-						fixed_ship_secondaries_slot = ship_secondaries_2
-						fixed_ship_armor_slot = ship_armor_shbb
-						front_1_custom_slot = ship_anti_air_2
-						front_2_custom_slot = empty
-						mid_1_custom_slot = empty
-						mid_2_custom_slot = ship_secondaries_2
-						mid_3_custom_slot = ship_secondaries_2
-						rear_1_custom_slot = ship_super_heavy_battery_1
-						rear_2_custom_slot = ship_airplane_launcher_1
+				if = {
+					limit = {
+						is_ai = no
 					}
-				}
-				#Line Production
-				add_equipment_production = {
-					equipment = {
+					create_equipment_variant = { #MM: Engine should be 3 (but also should Yamato's)
+						name = "Sovetsky Soyuz Class"
 						type = ship_hull_super_heavy_1
-						creator = "SOV"
-						version_name = "Sovetsky Soyuz Class"
+						name_group = SOV_STATES
+						parent_version = 0
+						allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_ship_battery_slot = ship_super_heavy_battery_1
+							fixed_ship_anti_air_slot = ship_anti_air_2
+							fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+							fixed_ship_radar_slot = empty
+							fixed_ship_engine_slot = heavy_ship_engine_2
+							fixed_ship_secondaries_slot = ship_secondaries_2
+							fixed_ship_armor_slot = ship_armor_shbb
+							front_1_custom_slot = ship_anti_air_2
+							front_2_custom_slot = empty
+							mid_1_custom_slot = empty
+							mid_2_custom_slot = ship_secondaries_2
+							mid_3_custom_slot = ship_secondaries_2
+							rear_1_custom_slot = ship_super_heavy_battery_1
+							rear_2_custom_slot = ship_airplane_launcher_1
+						}
 					}
-					requested_factories = 1
-					progress = 0.50
-					amount = 1
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_super_heavy_1
-						creator = "SOV"
-						version_name = "Sovetsky Soyuz Class"
+					#Line Production
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_super_heavy_1
+							creator = "SOV"
+							version_name = "Sovetsky Soyuz Class"
+						}
+						requested_factories = 1
+						progress = 0.50
+						amount = 1
 					}
-					requested_factories = 1
-					progress = 0.25
-					amount = 1
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_super_heavy_1
-						creator = "SOV"
-						version_name = "Sovetsky Soyuz Class"
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_super_heavy_1
+							creator = "SOV"
+							version_name = "Sovetsky Soyuz Class"
+						}
+						requested_factories = 1
+						progress = 0.25
+						amount = 1
 					}
-					requested_factories = 1
-					progress = 0.25
-					amount = 1
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_super_heavy_1
+							creator = "SOV"
+							version_name = "Sovetsky Soyuz Class"
+						}
+						requested_factories = 1
+						progress = 0.25
+						amount = 1
+					}
 				}
 			}
 
@@ -3896,6 +3911,7 @@ focus_tree = {
 				if = {
 					limit = { #Carrier 4 
 						has_tech = advanced_ship_hull_carrier
+						is_ai = no
 					}
 					#Equipment Variant
 					create_equipment_variant = {
@@ -3930,6 +3946,7 @@ focus_tree = {
 				else_if = {
 					limit = { #Carrier 3
 						has_tech = improved_ship_hull_carrier
+						is_ai = no
 					}
 					#Equipment Variant
 					create_equipment_variant = {
@@ -3964,6 +3981,7 @@ focus_tree = {
 				else_if = {
 					limit = { #Carrier 2
 						has_tech = basic_ship_hull_carrier
+						is_ai = no
 					}
 					#Equipment Variant
 					create_equipment_variant = {
@@ -3995,7 +4013,10 @@ focus_tree = {
 						amount = 1
 					}
 				}
-				else = {  #Carrier 1
+				else_if = {  #Carrier 1
+					limit = {
+						is_ai = no
+					}
 					if = {
 						limit = {
 							NOT = { has_tech = early_ship_hull_carrier }
@@ -4040,6 +4061,7 @@ focus_tree = {
 				if = {
 					limit = { #Carrier 4 
 						has_tech = advanced_carrier
+						is_ai = no
 					}
 					create_equipment_variant = {
 						name = "Project 71 Class"
@@ -4066,6 +4088,7 @@ focus_tree = {
 				else_if = {
 					limit = { #Carrier 3
 						has_tech = improved_carrier
+						is_ai = no
 					}
 					create_equipment_variant = {
 						name = "Project 71 Class"
@@ -4092,6 +4115,7 @@ focus_tree = {
 				else_if = {
 					limit = { #Carrier 2
 						has_tech = basic_carrier
+						is_ai = no
 					}
 					create_equipment_variant = {
 						name = "Project 71 Class"
@@ -4115,7 +4139,10 @@ focus_tree = {
 						amount = 1
 					}
 				}
-				else = {  #Carrier 1
+				else_if = {  #Carrier 1
+					limit = {
+						is_ai = no
+					}
 					if = {
 						limit = {
 							NOT = { has_tech = early_carrier }
@@ -4335,6 +4362,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_dlc = "No Step Back"
+					is_ai = no
 				}
 				#T-34 tank template
 				if = {
@@ -4554,6 +4582,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_dlc = "No Step Back"
+					is_ai = no
 				}
 				#SU-85/100 tank template (AT)
 				if = {
@@ -8138,6 +8167,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_dlc = "No Step Back"
+					is_ai = no
 				}
 				# IS-2 tank template
 				if = {
@@ -12950,6 +12980,7 @@ focus_tree = {
 					if = {
 						limit = {
 							has_tech = basic_heavy_battery
+							is_ai = no
 						}
 						create_equipment_variant = {
 							name = "Hipper Class"
@@ -12971,7 +13002,10 @@ focus_tree = {
 							}
 						}
 					}
-					else = {
+					else_if = {
+						limit = {
+							is_ai = no
+						}
 						create_equipment_variant = {
 							name = "Hipper Class"
 							type = ship_hull_cruiser_2
@@ -12994,16 +13028,21 @@ focus_tree = {
 					}
 					
 					# CA: Lützow -> Petropavlovsk
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_cruiser_2
-							creator = SOV
-							version_name = "Hipper Class"
+					if = {
+						limit = {
+							is_ai = no
 						}
-						name = "Petropavlovsk"
-						requested_factories = 1
-						progress = 0.5
-						amount = 1
+						add_equipment_production = {
+							equipment = {
+								type = ship_hull_cruiser_2
+								creator = SOV
+								version_name = "Hipper Class"
+							}
+							name = "Petropavlovsk"
+							requested_factories = 1
+							progress = 0.5
+							amount = 1
+						}
 					}
 
 					if = { #Default name
@@ -13037,26 +13076,31 @@ focus_tree = {
 						}
 						set_technology = { basic_heavy_cruiser = 1 }
 					}
-					create_equipment_variant = {
-						name = "Hipper Class"
-						type = heavy_cruiser_2
-						parent_version = 0
-						upgrades = {
-							ship_reliability_upgrade = 1
-							ship_engine_upgrade = 1
-							ship_armor_upgrade = 2
-							ship_gun_upgrade = 2
+					if = {
+						limit = {
+							is_ai = no
 						}
-					}
-
-					add_equipment_production = {
-						equipment = {
+						create_equipment_variant = {
+							name = "Hipper Class"
 							type = heavy_cruiser_2
-							creator = SOV
+							parent_version = 0
+							upgrades = {
+								ship_reliability_upgrade = 1
+								ship_engine_upgrade = 1
+								ship_armor_upgrade = 2
+								ship_gun_upgrade = 2
+							}
 						}
-						requested_factories = 1
-						progress = 0.5
-						amount = 1
+
+						add_equipment_production = {
+							equipment = {
+								type = heavy_cruiser_2
+								creator = SOV
+							}
+							requested_factories = 1
+							progress = 0.5
+							amount = 1
+						}
 					}
 
 					if = { #Default name
@@ -13086,6 +13130,7 @@ focus_tree = {
 				IF = {
 					limit = {
 						has_dlc = "No Step Back"
+						is_ai = no
 					}
 					create_equipment_variant = {
 						name = "A-20"

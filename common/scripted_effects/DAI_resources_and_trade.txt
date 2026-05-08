@@ -71,6 +71,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_produced = resource_produced@tungsten }
 		set_temp_variable = { steel_produced = resource_produced@steel }
 		set_temp_variable = { chromium_produced = resource_produced@chromium }
+		set_temp_variable = { coal_produced = resource_produced@coal }
 
 		# ==================================================
 		# =================== Free Trade ===================
@@ -82,6 +83,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_available = tungsten_produced }
 		set_temp_variable = { steel_available = steel_produced }
 		set_temp_variable = { chromium_available = chromium_produced }
+		set_temp_variable = { coal_available = coal_produced }
 
 		multiply_temp_variable = { oil_available = 0.2 }
 		multiply_temp_variable = { aluminium_available = 0.2 }
@@ -89,6 +91,7 @@ DAI_set_desired_trade_law = {
 		multiply_temp_variable = { tungsten_available = 0.2 }
 		multiply_temp_variable = { steel_available = 0.2 }
 		multiply_temp_variable = { chromium_available = 0.2 }
+		multiply_temp_variable = { coal_available = 0.2 }
 
 		set_temp_variable = { oil_deficit = oil_available }
 		set_temp_variable = { aluminium_deficit = aluminium_available }
@@ -96,6 +99,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_deficit = tungsten_available }
 		set_temp_variable = { steel_deficit = steel_available }
 		set_temp_variable = { chromium_deficit = chromium_available }
+		set_temp_variable = { coal_deficit = coal_available }
 
 		# Oil Deficit
 		IF = { limit = { check_variable = { resource_imported@oil > oil_available } }
@@ -145,6 +149,14 @@ DAI_set_desired_trade_law = {
 		ELSE = {
 			set_temp_variable = { chromium_deficit = 0 }
 		}
+		# Coal Deficit
+		IF = { limit = { check_variable = { resource_consumed@coal > coal_available } }
+			subtract_from_temp_variable = { coal_deficit = resource_consumed@coal }
+			multiply_temp_variable = { coal_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { coal_deficit = 0 }
+		}
 
 		set_temp_variable = { total_deficit = oil_deficit }
 		add_to_temp_variable = { total_deficit = aluminium_deficit }
@@ -152,6 +164,7 @@ DAI_set_desired_trade_law = {
 		add_to_temp_variable = { total_deficit = tungsten_deficit }
 		add_to_temp_variable = { total_deficit = steel_deficit }
 		add_to_temp_variable = { total_deficit = chromium_deficit }
+		add_to_temp_variable = { total_deficit = coal_deficit }
 
 		set_temp_variable = { total_deficit_factories_needed = total_deficit }
 		divide_temp_variable = { total_deficit_factories_needed = 8 }
@@ -173,6 +186,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_available = tungsten_produced }
 		set_temp_variable = { steel_available = steel_produced }
 		set_temp_variable = { chromium_available = chromium_produced }
+		set_temp_variable = { coal_available = coal_produced }
 
 		multiply_temp_variable = { oil_available = 0.5 }
 		multiply_temp_variable = { aluminium_available = 0.5 }
@@ -180,6 +194,7 @@ DAI_set_desired_trade_law = {
 		multiply_temp_variable = { tungsten_available = 0.5 }
 		multiply_temp_variable = { steel_available = 0.5 }
 		multiply_temp_variable = { chromium_available = 0.5 }
+		multiply_temp_variable = { coal_available = 0.5 }
 
 		set_temp_variable = { oil_deficit = oil_available }
 		set_temp_variable = { aluminium_deficit = aluminium_available }
@@ -187,6 +202,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_deficit = tungsten_available }
 		set_temp_variable = { steel_deficit = steel_available }
 		set_temp_variable = { chromium_deficit = chromium_available }
+		set_temp_variable = { coal_deficit = coal_available }
 
 		# Oil Deficit
 		IF = { limit = { check_variable = { resource_imported@oil > oil_available } }
@@ -236,6 +252,14 @@ DAI_set_desired_trade_law = {
 		ELSE = {
 			set_temp_variable = { chromium_deficit = 0 }
 		}
+		# Coal Deficit
+		IF = { limit = { check_variable = { resource_consumed@coal > coal_available } }
+			subtract_from_temp_variable = { coal_deficit = resource_consumed@coal }
+			multiply_temp_variable = { coal_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { coal_deficit = 0 }
+		}
 
 		set_temp_variable = { total_deficit = oil_deficit }
 		add_to_temp_variable = { total_deficit = aluminium_deficit }
@@ -243,6 +267,7 @@ DAI_set_desired_trade_law = {
 		add_to_temp_variable = { total_deficit = tungsten_deficit }
 		add_to_temp_variable = { total_deficit = steel_deficit }
 		add_to_temp_variable = { total_deficit = chromium_deficit }
+		add_to_temp_variable = { total_deficit = coal_deficit }
 
 		set_temp_variable = { total_deficit_factories_needed = total_deficit }
 		divide_temp_variable = { total_deficit_factories_needed = 8 }
@@ -271,6 +296,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_available = tungsten_produced }
 		set_temp_variable = { steel_available = steel_produced }
 		set_temp_variable = { chromium_available = chromium_produced }
+		set_temp_variable = { coal_available = coal_produced }
 
 		multiply_temp_variable = { oil_available = 0.75 }
 		multiply_temp_variable = { aluminium_available = 0.75 }
@@ -278,6 +304,7 @@ DAI_set_desired_trade_law = {
 		multiply_temp_variable = { tungsten_available = 0.75 }
 		multiply_temp_variable = { steel_available = 0.75 }
 		multiply_temp_variable = { chromium_available = 0.75 }
+		multiply_temp_variable = { coal_available = 0.75 }
 
 		set_temp_variable = { oil_deficit = oil_available }
 		set_temp_variable = { aluminium_deficit = aluminium_available }
@@ -285,6 +312,7 @@ DAI_set_desired_trade_law = {
 		set_temp_variable = { tungsten_deficit = tungsten_available }
 		set_temp_variable = { steel_deficit = steel_available }
 		set_temp_variable = { chromium_deficit = chromium_available }
+		set_temp_variable = { coal_deficit = coal_available }
 
 		# Oil Deficit
 		IF = { limit = { check_variable = { resource_imported@oil > oil_available } }
@@ -334,6 +362,14 @@ DAI_set_desired_trade_law = {
 		ELSE = {
 			set_temp_variable = { chromium_deficit = 0 }
 		}
+		# Coal Deficit
+		IF = { limit = { check_variable = { resource_consumed@coal > coal_available } }
+			subtract_from_temp_variable = { coal_deficit = resource_consumed@coal }
+			multiply_temp_variable = { coal_deficit = -1 }
+		}
+		ELSE = {
+			set_temp_variable = { coal_deficit = 0 }
+		}
 
 		set_temp_variable = { total_deficit = oil_deficit }
 		add_to_temp_variable = { total_deficit = aluminium_deficit }
@@ -341,6 +377,7 @@ DAI_set_desired_trade_law = {
 		add_to_temp_variable = { total_deficit = tungsten_deficit }
 		add_to_temp_variable = { total_deficit = steel_deficit }
 		add_to_temp_variable = { total_deficit = chromium_deficit }
+		add_to_temp_variable = { total_deficit = coal_deficit }
 
 		set_temp_variable = { total_deficit_factories_needed = total_deficit }
 		divide_temp_variable = { total_deficit_factories_needed = 8 }
