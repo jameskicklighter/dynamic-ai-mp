@@ -16,6 +16,10 @@ DAI_fighter = {
 	##################
 
 	BASIC_FIGHTER_VARIANT_A = { # Normal type
+		enable = {
+			NOT = { has_tech = aa_cannon_1 }
+		}
+
 		priority = {
 			base = 0
 			modifier = {
