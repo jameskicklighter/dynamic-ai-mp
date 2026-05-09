@@ -30,14 +30,12 @@ NDefines.NAI.RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0                         
 NDefines.NAI.RESEARCH_NEW_DOCTRINE_RANDOM_FACTOR = 0
 
 NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 1
-NDefines.NAI.MAX_AHEAD_RESEARCH_PENALTY = 3                                    -- BASE GAME is 3
--- NDefines.NAI.RESEARCH_NEW_WEIGHT_FACTOR = 0			                            -- Impact of previously unexplored tech weights. Higher means more random exploration.
--- NDefines.NAI.RESEARCH_BONUS_FACTOR = 3                                              -- To which extent AI should care about bonuses to research
-NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 3		                            -- To which extent AI should care about ahead of time penalties to research
--- NDefines.NAI.RESEARCH_BASE_DAYS = 60					                            -- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
-NDefines.NAI.RESEARCH_MULTI_DOCTRINE_SCORE = 0
-NDefines.NAI.XP_RATIO_REQUIRED_TO_RESEARCH_WITH_XP = 3.0		-- AI will at least need this amount of xp compared to cost of a tech to reserch it with XP			
--- NDefines.NAI.RESEARCH_WITH_XP_AI_WEIGHT_MULT = 1.5 				-- AI will bump score of a research with this mult if it can use XP
+NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 10.0
+NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 1.5
+NDefines.NAI.RESEARCH_BONUS_FACTOR = 2
+NDefines.NAI.MAX_AHEAD_RESEARCH_PENALTY = 7
+--NDefines.NAI.RESEARCH_BASE_DAYS = 1000
+NDefines.NAI.RESEARCH_YEARS_BEHIND_FACTOR = 0.20
 
 -- Combat XP Usage --
 NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_LAND_DOCTRINE = 1    -- How quickly is desire to unlock land doctrines accumulated?
