@@ -65,7 +65,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1937.1.1
 			}
 			modifier = {
@@ -123,7 +123,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1937.1.1
 			}
 			modifier = {
@@ -187,7 +187,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1938.1.1
 			}
 			modifier = {
@@ -244,7 +244,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1939.1.1
 			}
 			modifier = {
@@ -299,7 +299,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1940.1.1
 			}
 			modifier = {
@@ -350,7 +350,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1941.1.1
 			}
 			modifier = {
@@ -402,7 +402,7 @@ technologies = {
 			base = 4
 			modifier = {
 				add = 20
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1942.1.1
 			}
 			modifier = {
@@ -621,7 +621,7 @@ technologies = {
 			modifier = {
 				add = 100
 				OR = {
-					DAI_should_build_tanks = yes
+					has_country_flag = DAI_wants_armor
 					DAI_Should_Research_Navy_GENERAL = yes
 				}
 			}
@@ -941,7 +941,12 @@ technologies = {
 			modifier = {
 				add = 200
 				date > 1937.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+			}
+			modifier = {
+				add = 200
+				date > 1937.1.1
+				DAI_prefers_tank_destroyers = yes
 			}
 			# -- DAI
 		}
@@ -989,7 +994,11 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 200
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+			}
+			modifier = {
+				add = 200
+				DAI_prefers_tank_destroyers = yes
 			}
 			# -- DAI
 		}
@@ -1040,7 +1049,11 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 200
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+			}
+			modifier = {
+				add = 200
+				DAI_prefers_tank_destroyers = yes
 			}
 			# -- DAI
 		}
@@ -1100,7 +1113,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 200
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -1141,7 +1154,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 200
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -1182,7 +1195,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 200
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}

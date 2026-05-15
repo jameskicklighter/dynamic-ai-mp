@@ -1,33 +1,11 @@
-# =========================
-# = = = = = = = = = = = = =
-#   Soviet Unit Templates
-# = = = = = = = = = = = = =
-# =========================
 
 
-# =========================
-#         Infantry
-# =========================
 
 INFANTRY_SOV = {
 	available_for = { SOV }
 	roles = { infantry }
-	upgrade_prio = {
-		base = 1 
-		modifier = {
-			factor = 999
-			date < 1939.1.1
-		}
-		modifier = {
-			factor = 100
-			date > 1939.1.1
-		}
-	}
 
 	INFANTRY_SOV_1 = {
-		# Weights
-		upgrade_prio = { base = 10 }
-		# Design
 		target_template = {
 			support = {
 				engineer = 1
@@ -38,7 +16,6 @@ INFANTRY_SOV = {
 			}
 			regiments = {
 				infantry = 9
-				# anti_air_brigade = 1
 			}
 		}
 	}

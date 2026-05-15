@@ -101,7 +101,7 @@ technologies = {
 			modifier = {
 				add = 100
 				date > 1937.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -142,7 +142,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -179,7 +179,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 100
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}

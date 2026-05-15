@@ -118,11 +118,6 @@ JAP_role_ratios_early = {
 		id = marines
 		value = 10
 	}
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 0
-	}
 
 	# Production Strategies
 	ai_strategy = {
@@ -172,11 +167,6 @@ JAP_role_ratios_late = {
 	}
 	ai_strategy = {
 		type = role_ratio
-		id = armor
-		value = 5
-	}
-	ai_strategy = {
-		type = role_ratio
 		id = garrison
 		value = 10
 	}
@@ -196,6 +186,22 @@ JAP_role_ratios_late = {
 		type = equipment_production_min_factories
 		id = convoy
 		value = 1
+	}
+}
+
+JAP_armor_role_ratios = {
+	allowed = { original_tag = JAP }
+	enable = {
+		date > 1938.1.1
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 5
 	}
 }
 

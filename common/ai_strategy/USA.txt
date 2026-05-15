@@ -40,16 +40,32 @@ USA_unit_production = {
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor
-		value = 20
-	}
-
-	ai_strategy = {
-		type = role_ratio
 		id = infantry
 		value = 55
 	}
 
+}
+
+USA_armor_role_ratios = {
+	allowed = { original_tag = USA }
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+		has_country_flag = DAI_prefer_medium_tank_destroyers
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 19
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_medium_tank_destroyer
+		value = 1
+	}
 }
 
 

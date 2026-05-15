@@ -1672,7 +1672,7 @@ technologies = {
 			modifier = {
 				add = 100
 				date > 1937.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -1746,7 +1746,7 @@ technologies = {
 			modifier = {
 				add = 50
 				date > 1937.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -2022,12 +2022,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 9 
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				add = 20
 				date > 1941.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -2145,12 +2145,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 9 
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				add = 20
 				date > 1943.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -2187,12 +2187,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 9 
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				add = 20
 				date > 1945.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}

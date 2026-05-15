@@ -39,14 +39,8 @@ FRA_unit_production = {
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor
-		value = 5
-	}
-
-	ai_strategy = {
-		type = role_ratio
 		id = infantry
-		value = 80
+		value = 75
 	}
 
 	#Air unit factors
@@ -84,6 +78,21 @@ FRA_unit_production = {
 		type = equipment_production_factor
 		id = infantry
 		value = 50
+	}
+}
+
+FRA_armor_role_ratios = {
+	allowed = { original_tag = FRA }
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tank_destroyers
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_heavy_tank_destroyer
+		value = 10
 	}
 }
 
