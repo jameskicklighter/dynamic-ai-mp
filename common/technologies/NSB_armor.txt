@@ -128,7 +128,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 30
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1937.1.1
 			}
 			# -- DAI
@@ -206,7 +206,7 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 30
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 				date > 1937.1.1
 			}
 			# -- DAI
@@ -479,12 +479,14 @@ technologies = {
 				add = 999
 				date > 1937.1.1
 				OR = { amount_research_slots > 3 is_major = yes }
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
 			}
 			modifier = {
 				add = 30
 				date > 1938.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
 			}
 			# -- DAI
 		}
@@ -593,12 +595,14 @@ technologies = {
 				add = 999
 				date > 1939.1.1
 				OR = { amount_research_slots > 3 is_major = yes }
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
 			}
 			modifier = {
 				add = 30
 				date > 1940.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
 			}
 			# -- DAI
 		}
@@ -701,12 +705,14 @@ technologies = {
 				add = 30
 				date > 1942.7.1
 				amount_research_slots > 3
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
 			}
 			modifier = {
 				add = 30
 				date > 1943.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
 			}
 			# -- DAI
 		}
@@ -747,12 +753,20 @@ technologies = {
 				add = 30
 				date > 1944.7.1
 				amount_research_slots > 3
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				OR = {
+					DAI_prefers_medium_armor = yes
+					DAI_prefers_heavy_armor = yes
+				}
 			}
 			modifier = {
 				add = 30
 				date > 1945.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
+				OR = {
+					DAI_prefers_medium_armor = yes
+					DAI_prefers_heavy_armor = yes
+				}
 			}
 			# -- DAI
 		}
@@ -822,6 +836,18 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 999
+				date > 1937.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_heavy_armor = yes
+			}
+			modifier = {
+				add = 30
+				date > 1938.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_heavy_armor = yes
+			}
 			# -- DAI
 		}
 
@@ -877,6 +903,19 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 999
+				date > 1939.1.1
+				OR = { amount_research_slots > 3 is_major = yes }
+				DAI_should_start_tank_production = yes
+				DAI_prefers_heavy_armor = yes
+			}
+			modifier = {
+				add = 30
+				date > 1940.1.1
+				DAI_should_start_tank_production = yes
+				DAI_prefers_heavy_armor = yes
+			}
 			# -- DAI
 		}
 
@@ -925,6 +964,19 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 30
+				date > 1942.7.1
+				amount_research_slots > 3
+				DAI_should_start_tank_production = yes
+				DAI_prefers_heavy_armor = yes
+			}
+			modifier = {
+				add = 30
+				date > 1943.1.1
+				DAI_should_start_tank_production = yes
+				DAI_prefers_heavy_armor = yes
+			}
 			# -- DAI
 		}
 
@@ -1088,15 +1140,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 50
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = basic_medium_tank_chassis
-						is_researching_technology = basic_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_basic_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1141,20 +1190,17 @@ technologies = {
 				add = 999
 				date > 1937.7.1
 				amount_research_slots > 3
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				add = 50
 				date > 1939.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = basic_medium_tank_chassis
-						is_researching_technology = basic_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_basic_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1199,15 +1245,12 @@ technologies = {
 			modifier = {
 				add = 50
 				date > 1941.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = improved_medium_tank_chassis
-						is_researching_technology = improved_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_improved_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1243,15 +1286,12 @@ technologies = {
 			modifier = {
 				add = 5
 				date > 1944.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = advanced_medium_tank_chassis
-						is_researching_technology = advanced_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_advanced_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1290,15 +1330,12 @@ technologies = {
 			modifier = {
 				add = 50
 				date > 1938.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = basic_medium_tank_chassis
-						is_researching_technology = basic_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_basic_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1339,15 +1376,12 @@ technologies = {
 			modifier = {
 				add = 50
 				date > 1939.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = basic_medium_tank_chassis
-						is_researching_technology = basic_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_basic_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1386,15 +1420,12 @@ technologies = {
 			modifier = {
 				add = 50
 				date > 1941.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = improved_medium_tank_chassis
-						is_researching_technology = improved_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_improved_tank_chassis = yes
 				}
 			}
 			# -- DAI
@@ -1428,15 +1459,12 @@ technologies = {
 			modifier = {
 				add = 5
 				date > 1944.1.1
-				DAI_should_build_tanks = yes
+				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
 				factor = 0
 				NOT = {
-					OR = {
-						has_tech = advanced_medium_tank_chassis
-						is_researching_technology = advanced_medium_tank_chassis
-					}
+					DAI_has_or_researching_preferred_advanced_tank_chassis = yes
 				}
 			}
 			# -- DAI

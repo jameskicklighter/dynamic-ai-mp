@@ -25,7 +25,7 @@ Running list of all differences from the base game. AI weight-only changes are s
 
 ### Scripted Triggers
 - `DAI_should_build_planes` — Gated to majors + 30+ mil factory countries + CAN/HUN
-- `DAI_should_build_tanks` — Flag-driven (`DAI_build_armor`)
+- `DAI_should_build_armor` — Flag-driven (`DAI_build_armor`)
 - `DAI_should_build_paratroopers` — Disabled
 - Naval research triggers split by role (general, anti-sub, cruiser, carrier, submarine) with country-specific conditions
 - Historical vs alternate AI path detection for ENG, FRA, GER (historical/democratic/kaiser), SOV

@@ -233,12 +233,6 @@ GER_unit_production = {
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor
-		value = 30
-	}
-
-	ai_strategy = {
-		type = role_ratio
 		id = infantry
 		value = 60
 	}
@@ -311,12 +305,6 @@ GER_unit_production = {
 	# }
 
 	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = medium_tank_chassis
-		value = 100
-	}
-
-	ai_strategy = {
 		type = equipment_production_min_factories_archetype # Build these up over time, don't stall
 		id = anti_air_equipment
 		value = 2
@@ -337,6 +325,21 @@ GER_unit_production = {
 		type = equipment_production_min_factories_archetype
 		id = motorized_equipment
 		value = 1
+	}
+}
+
+GER_armor_role_ratios = {
+	allowed = { original_tag = GER }
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 30
 	}
 }
 

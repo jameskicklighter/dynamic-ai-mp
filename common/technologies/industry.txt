@@ -764,7 +764,7 @@ technologies = {
 				add = 99
 				date > 1937.1.1
 				OR = {
-					DAI_should_build_tanks = yes
+					has_country_flag = DAI_wants_armor
 					DAI_should_build_planes = yes
 					DAI_Should_Research_Navy_GENERAL = yes
 				}
@@ -1117,7 +1117,7 @@ technologies = {
 				add = 10
 				date > 1937.1.1
 				OR = {
-					DAI_should_build_tanks = yes
+					has_country_flag = DAI_wants_armor
 					DAI_should_build_planes = yes
 					DAI_Should_Research_Navy_GENERAL = yes
 				}
