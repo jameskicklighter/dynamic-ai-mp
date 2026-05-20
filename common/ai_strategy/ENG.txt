@@ -1107,7 +1107,10 @@ ENG_protect_the_channel_from_invasion = {
 	}
 }
 ENG_the_channel_is_dangerous = {
-	allowed = { original_tag = ENG }
+	allowed = {
+		# DAI_d_day_invasion_plan.txt adds explicit Channel naval support when D-Day matters.
+		always = no
+	}
 	enable = {
 		has_war = yes
 		127 = { is_fully_controlled_by = ENG }
@@ -1320,6 +1323,14 @@ ENG_USA_focus_on_europe = {
 			}
 		}
 		has_global_flag = FRA_already_surrendered
+		# DAI's D-Day file owns pre-foothold targeting. Delay these older broad
+		# GER/Europe requests so Greece/Balkans do not compete with Normandy.
+		OR = {
+			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
+			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
+			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
+			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1359,6 +1370,14 @@ ENG_USA_focus_on_europe_more = {
 			}
 		}
 		has_global_flag = FRA_already_surrendered
+		# Keep the broad GER front request asleep until the Normandy-area foothold
+		# exists; before that, DAI should only be asking for Normandy.
+		OR = {
+			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
+			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
+			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
+			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1394,6 +1413,14 @@ ENG_USA_focus_on_europe_loads_more = {
 		is_historical_focus_on = yes
 		date > 1943.6.1
 		has_global_flag = FRA_already_surrendered
+		# mainland_europe includes Greece/Balkans, so only wake this support
+		# request after the D-Day landing has a nearby French foothold.
+		OR = {
+			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
+			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
+			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
+			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2074,11 +2101,8 @@ ENG_super_boost_armor_div_med = { #lets make sure the uk upgrades armor divs to 
 
 ENG_USA_take_italys_spaghetti = {
 	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
+		# DAI_d_day_invasion_plan.txt now owns the Africa -> Italy -> Normandy phase order.
+		always = no
 	}
 	enable = {
 		date > 1942.6.1
@@ -2109,11 +2133,8 @@ ENG_USA_take_italys_spaghetti = {
 
 ENG_USA_onto_the_beaches = {
 	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
+		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
+		always = no
 	}
 	enable = {
 		date > 1942.6.1
@@ -2135,11 +2156,8 @@ ENG_USA_onto_the_beaches = {
 
 ENG_USA_onto_the_beaches_2 = {
 	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
+		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
+		always = no
 	}
 	enable = {
 		date > 1943.1.1
@@ -2166,11 +2184,8 @@ ENG_USA_onto_the_beaches_2 = {
 
 ENG_USA_onto_the_beaches_3 = {
 	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
+		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
+		always = no
 	}
 	enable = {
 		date > 1943.6.1
@@ -2185,11 +2200,8 @@ ENG_USA_onto_the_beaches_3 = {
 
 ENG_USA_onto_the_beaches_4 = {
 	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
+		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
+		always = no
 	}
 	enable = {
 		date > 1944.1.1
@@ -2267,14 +2279,11 @@ ENG_USA_onto_the_beaches_4 = {
 #	}
 #}
 #
-# Note USA has an additional boost in the USA_d_day_boost strategy
+# DAI disables the old USA_d_day_boost as well.
 ENG_USA_d_day = {
 	allowed = {
-		OR = {
-			original_tag = USA
-			original_tag = ENG
-		}
-		is_historical_focus_on = yes
+		# DAI_d_day_invasion_plan.txt now owns the main Normandy push.
+		always = no
 	}
 	enable = {
 		date > 1943.9.1
@@ -2617,6 +2626,18 @@ ENG_to_tobruk = {
 		date > 1940.12.1
 		date < 1943.6.1
 		ITA = { is_ai = yes }
+		NOT = {
+			OR = {
+				date > 1943.1.1
+				AND = {
+					date > 1942.1.1
+					SOV = {
+						has_war_with = GER
+						surrender_progress > 0.25
+					}
+				}
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2666,6 +2687,18 @@ ENG_navy_to_tobruk = {
 		date > 1941.4.1 # We should have taken it by land route by now...
 		date < 1943.6.1
 		451 = { is_controlled_by = ITA }
+		NOT = {
+			OR = {
+				date > 1943.1.1
+				AND = {
+					date > 1942.1.1
+					SOV = {
+						has_war_with = GER
+						surrender_progress > 0.25
+					}
+				}
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2916,6 +2949,18 @@ ENG_develop_mediterranean_supremacy = {
 			has_war_with = SOU
 		}
 		date > 1940.1.1
+		NOT = {
+			OR = {
+				date > 1943.1.1
+				AND = {
+					date > 1942.1.1
+					SOV = {
+						has_war_with = GER
+						surrender_progress > 0.25
+					}
+				}
+			}
+		}
 	}
 	
 	abort_when_not_enabled = yes

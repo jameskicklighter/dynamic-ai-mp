@@ -360,6 +360,18 @@ USA_focus_on_africa = {
 		is_historical_focus_on = yes
 		has_war_with = GER
 		has_global_flag = FRA_already_surrendered
+		NOT = {
+			OR = {
+				date > 1943.1.1
+				AND = {
+					date > 1942.1.1
+					SOV = {
+						has_war_with = GER
+						surrender_progress > 0.25
+					}
+				}
+			}
+		}
 		OR = { # Check whole north-african coast
 			448 = { CONTROLLER = { has_war_with = ROOT } } # tripoli
 			450 = { CONTROLLER = { has_war_with = ROOT } } # benghazi
@@ -394,11 +406,8 @@ USA_focus_on_africa = {
 
 USA_ENG_sync_invasions_on_europe = {
 	allowed = {
-		#always = no
-		OR = {
-			tag = USA
-			tag = ENG
-		}
+		# DAI_d_day_invasion_plan.txt now owns Allied mainland Europe invasion timing.
+		always = no
 	}
 
 	# only allow invasion on europe on every third month
@@ -431,6 +440,18 @@ USA_take_out_italy_boost = {
 		ITA = {
 			surrender_progress < 0.2
 		}
+		NOT = {
+			OR = {
+				date > 1943.1.1
+				AND = {
+					date > 1942.1.1
+					SOV = {
+						has_war_with = GER
+						surrender_progress > 0.25
+					}
+				}
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -443,7 +464,7 @@ USA_take_out_italy_boost = {
 	ai_strategy = {
 		type = area_priority
 		id = italy
-		value = 600
+		value = 150
 	}
 
 	ai_strategy = {
@@ -455,20 +476,22 @@ USA_take_out_italy_boost = {
 	ai_strategy = {
 		type = area_priority
 		id = north_africa
-		value = 400
+		value = 50
 	}
 
 	ai_strategy = {
 		type = area_priority
 		id = normandy_landing_zone
-		value = -100
+		value = -25
 	}
 }
 
-#This is a boost to the ENG_USA_d_dat strategy to make the USA consider invading in europe and not only in the pacific for a while
+# Disabled because DAI_d_day_invasion_plan.txt now owns the Normandy timing and
+# old duplicate D-Day boosts can add cross-pressure to the invasion planner.
 USA_d_day_boost = {
 	allowed = {
-		original_tag = USA
+		# DAI_d_day_invasion_plan.txt now owns Allied mainland Europe invasion timing.
+		always = no
 	}
 	enable = {
 		has_war_with = GER 
@@ -519,6 +542,14 @@ USA_torch_boost = {
 	abort = {
 		OR = {
 			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
+			date > 1943.1.1
+			AND = {
+				date > 1942.1.1
+				SOV = {
+					has_war_with = GER
+					surrender_progress > 0.25
+				}
+			}
 			461 = { is_controlled_by_ROOT_or_ally = yes }
 			459 = { is_controlled_by_ROOT_or_ally = yes }
 		}

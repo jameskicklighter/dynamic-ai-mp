@@ -1,0 +1,9 @@
+areas = {
+
+	DAI_d_day_landing_region = {
+		strategic_regions = {
+			18 # English Channel
+			42 # Bay of Biscay
+		}
+	}
+}
