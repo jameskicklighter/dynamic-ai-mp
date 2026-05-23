@@ -11,7 +11,8 @@ INFANTRY_JAP = {
 				artillery = 1
 			}
 			regiments = {
-				infantry = 9
+				infantry = 8
+				artillery_brigade = 2
 			}
 		}
 	}
@@ -26,7 +27,8 @@ INFANTRY_JAP = {
 				logistics_company = 1
 			}
 			regiments = {
-				infantry = 9
+				infantry = 8
+				artillery_brigade = 2
 			}
 		}
 	}

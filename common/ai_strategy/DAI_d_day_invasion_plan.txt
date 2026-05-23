@@ -6,46 +6,7 @@ DAI_allies_north_africa_before_d_day = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		OR = {
-			448 = { CONTROLLER = { has_war_with = ROOT } } # Tripoli
-			450 = { CONTROLLER = { has_war_with = ROOT } } # Benghazi
-			458 = { CONTROLLER = { has_war_with = ROOT } } # Tunisia
-			461 = { CONTROLLER = { has_war_with = ROOT } } # Casablanca
-			462 = { CONTROLLER = { has_war_with = ROOT } } # Marrakech
-			459 = { CONTROLLER = { has_war_with = ROOT } } # Algiers
-			460 = { CONTROLLER = { has_war_with = ROOT } } # Constantine
-			665 = { CONTROLLER = { has_war_with = ROOT } } # Gabes
-			449 = { CONTROLLER = { has_war_with = ROOT } } # El Agheila
-			451 = { CONTROLLER = { has_war_with = ROOT } } # Derna
-			452 = { CONTROLLER = { has_war_with = ROOT } } # Matrouh
-			447 = { CONTROLLER = { has_war_with = ROOT } } # Alexandria
-			446 = { CONTROLLER = { has_war_with = ROOT } } # Cairo
-			290 = { CONTROLLER = { has_war_with = ROOT } } # Spanish Africa
-		}
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
+		DAI_allies_focus_north_africa = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -98,6 +59,12 @@ DAI_allies_north_africa_before_d_day = {
 
 	ai_strategy = {
 		type = invade
+		id = GER
+		value = -999
+	}
+
+	ai_strategy = {
+		type = invade
 		id = VIC
 		value = 100
 	}
@@ -114,52 +81,7 @@ DAI_allies_italy_before_d_day = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		has_war_with = ITA
-		ITA = {
-			has_capitulated = no
-			surrender_progress < 0.2
-		}
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		NOT = {
-			OR = {
-				448 = { CONTROLLER = { has_war_with = ROOT } } # Tripoli
-				450 = { CONTROLLER = { has_war_with = ROOT } } # Benghazi
-				458 = { CONTROLLER = { has_war_with = ROOT } } # Tunisia
-				461 = { CONTROLLER = { has_war_with = ROOT } } # Casablanca
-				462 = { CONTROLLER = { has_war_with = ROOT } } # Marrakech
-				459 = { CONTROLLER = { has_war_with = ROOT } } # Algiers
-				460 = { CONTROLLER = { has_war_with = ROOT } } # Constantine
-				665 = { CONTROLLER = { has_war_with = ROOT } } # Gabes
-				449 = { CONTROLLER = { has_war_with = ROOT } } # El Agheila
-				451 = { CONTROLLER = { has_war_with = ROOT } } # Derna
-				452 = { CONTROLLER = { has_war_with = ROOT } } # Matrouh
-				447 = { CONTROLLER = { has_war_with = ROOT } } # Alexandria
-				446 = { CONTROLLER = { has_war_with = ROOT } } # Cairo
-				290 = { CONTROLLER = { has_war_with = ROOT } } # Spanish Africa
-			}
-		}
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
+		DAI_allies_focus_italy = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -204,6 +126,11 @@ DAI_allies_italy_before_d_day = {
 		value = -100
 	}
 
+	ai_strategy = {
+		type = invade
+		id = GER
+		value = -999
+	}
 }
 
 DAI_ENG_USA_italy_before_d_day_naval_support = {
@@ -215,52 +142,7 @@ DAI_ENG_USA_italy_before_d_day_naval_support = {
 		}
 	}
 	enable = {
-		has_war_with = GER
-		has_war_with = ITA
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		ITA = {
-			has_capitulated = no
-			surrender_progress < 0.2
-		}
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		NOT = {
-			OR = {
-				448 = { CONTROLLER = { has_war_with = ROOT } } # Tripoli
-				450 = { CONTROLLER = { has_war_with = ROOT } } # Benghazi
-				458 = { CONTROLLER = { has_war_with = ROOT } } # Tunisia
-				461 = { CONTROLLER = { has_war_with = ROOT } } # Casablanca
-				462 = { CONTROLLER = { has_war_with = ROOT } } # Marrakech
-				459 = { CONTROLLER = { has_war_with = ROOT } } # Algiers
-				460 = { CONTROLLER = { has_war_with = ROOT } } # Constantine
-				665 = { CONTROLLER = { has_war_with = ROOT } } # Gabes
-				449 = { CONTROLLER = { has_war_with = ROOT } } # El Agheila
-				451 = { CONTROLLER = { has_war_with = ROOT } } # Derna
-				452 = { CONTROLLER = { has_war_with = ROOT } } # Matrouh
-				447 = { CONTROLLER = { has_war_with = ROOT } } # Alexandria
-				446 = { CONTROLLER = { has_war_with = ROOT } } # Cairo
-				290 = { CONTROLLER = { has_war_with = ROOT } } # Spanish Africa
-			}
-		}
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
+		DAI_allies_focus_italy = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -282,46 +164,8 @@ DAI_allies_d_day_normandy_hardstop = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		NOT = {
-			OR = {
-				14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-				15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-				29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-			}
-		}
-		NOT = {
-			OR = {
-				AND = {
-					date > 1942.6.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-				AND = {
-					date > 1943.1.1
-					OR = {
-						ITA = { has_capitulated = yes }
-						ITA = { has_civil_war = yes }
-						ITA = { surrender_progress > 0.2 }
-					}
-				}
-				date > 1943.6.1
-			}
-		}
+		DAI_allies_focus_normandy = yes
+		DAI_allies_normandy_go_time = no
 	}
 	abort_when_not_enabled = yes
 
@@ -335,41 +179,32 @@ DAI_allies_d_day_normandy_hardstop = {
 	}
 }
 
+DAI_allies_d_day_mainland_europe_hardstop = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_allies_focus_normandy = yes
+		DAI_allies_normandy_go_time = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		area = mainland_europe_excluding_italy
+		ratio = 0.0
+		priority = 650
+		ordertype = invasion
+		execute_order = no
+	}
+}
+
 DAI_allies_d_day_build_up = {
 	allowed = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		OR = {
-			date > 1943.1.1
-			AND = {
-				date > 1942.1.1
-				SOV = {
-					has_war_with = GER
-					surrender_progress > 0.25
-				}
-			}
-		}
-		NOT = {
-			OR = {
-				14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-				15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-				29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-			}
-		}
+		DAI_allies_focus_normandy = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -471,36 +306,7 @@ DAI_ENG_USA_d_day_build_up_naval_support = {
 		}
 	}
 	enable = {
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		OR = {
-			date > 1943.1.1
-			AND = {
-				date > 1942.1.1
-				SOV = {
-					has_war_with = GER
-					surrender_progress > 0.25
-				}
-			}
-		}
-		NOT = {
-			OR = {
-				14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-				15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-				29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-			}
-		}
+		DAI_allies_focus_normandy = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -551,39 +357,7 @@ DAI_allies_d_day_go_time = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		NOT = {
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-		}
-		OR = {
-			AND = {
-				date > 1942.6.1
-				SOV = {
-					has_war_with = GER
-					surrender_progress > 0.25
-				}
-			}
-			AND = {
-				date > 1943.1.1
-				OR = {
-					ITA = { has_capitulated = yes }
-					ITA = { has_civil_war = yes }
-					ITA = { surrender_progress > 0.2 }
-				}
-			}
-			date > 1943.6.1
-		}
+		DAI_allies_normandy_go_time = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -628,17 +402,6 @@ DAI_allies_d_day_go_time = {
 		value = 650
 	}
 
-	# Go-time should execute the Normandy plan, not broaden to every German-held
-	# coast in mainland Europe before we have a French foothold.
-	ai_strategy = {
-		type = front_control
-		area = normandy_landing_zone
-		ratio = 0.0
-		priority = 700
-		ordertype = invasion
-		execute_order = yes
-	}
-
 	ai_strategy = {
 		type = area_priority
 		id = italy
@@ -678,39 +441,7 @@ DAI_ENG_USA_d_day_go_time_naval_support = {
 		}
 	}
 	enable = {
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		NOT = {
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-		}
-		OR = {
-			AND = {
-				date > 1942.6.1
-				SOV = {
-					has_war_with = GER
-					surrender_progress > 0.25
-				}
-			}
-			AND = {
-				date > 1943.1.1
-				OR = {
-					ITA = { has_capitulated = yes }
-					ITA = { has_civil_war = yes }
-					ITA = { surrender_progress > 0.2 }
-				}
-			}
-			date > 1943.6.1
-		}
+		DAI_allies_normandy_go_time = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -761,18 +492,7 @@ DAI_allies_d_day_beachhead_reinforce = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		OR = {
-			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-		}
+		DAI_allies_focus_europe = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -810,42 +530,13 @@ DAI_allies_d_day_avoid_scandinavia_and_balkans = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
+		DAI_allies_focus_normandy = yes
 		NOT = {
 			OR = {
 				original_tag = DEN
 				original_tag = GRE
 				original_tag = NOR
 				original_tag = YUG
-			}
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		FRA = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
-		OR = {
-			date > 1943.1.1
-			AND = {
-				date > 1942.1.1
-				SOV = {
-					has_war_with = GER
-					surrender_progress > 0.25
-				}
-			}
-		}
-		NOT = {
-			OR = {
-				14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-				15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-				29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
 			}
 		}
 	}
@@ -861,15 +552,6 @@ DAI_allies_d_day_avoid_scandinavia_and_balkans = {
 		type = invasion_unit_request
 		area = scandinavia
 		value = -300
-	}
-
-	ai_strategy = {
-		type = front_control
-		area = scandinavia
-		ratio = 0.0
-		priority = 650
-		ordertype = invasion
-		execute_order = no
 	}
 
 	ai_strategy = {
@@ -901,15 +583,6 @@ DAI_allies_d_day_avoid_scandinavia_and_balkans = {
 		id = YUG
 		value = 100
 	}
-
-	ai_strategy = {
-		type = front_control
-		area = greater_balkans
-		ratio = 0.0
-		priority = 650
-		ordertype = invasion
-		execute_order = no
-	}
 }
 
 DAI_ENG_USA_d_day_beachhead_naval_support = {
@@ -921,18 +594,7 @@ DAI_ENG_USA_d_day_beachhead_naval_support = {
 		}
 	}
 	enable = {
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		OR = {
-			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-		}
+		DAI_allies_focus_europe = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -960,18 +622,7 @@ DAI_allies_d_day_beachhead_lower_other_areas = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		OR = {
-			original_tag = ENG
-			is_in_faction_with = ENG
-		}
-		has_war_with = GER
-		GER = { has_capitulated = no }
-		OR = {
-			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-		}
+		DAI_allies_focus_europe = yes
 	}
 	abort_when_not_enabled = yes
 

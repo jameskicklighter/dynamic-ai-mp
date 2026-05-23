@@ -1315,22 +1315,9 @@ ENG_USA_focus_on_europe = {
 	}
 
 	enable = {
-		is_historical_focus_on = yes
-		OR = {
-			date > 1941.6.1
-			SOV = {
-				surrender_progress > 0.50
-			}
-		}
-		has_global_flag = FRA_already_surrendered
 		# DAI's D-Day file owns pre-foothold targeting. Delay these older broad
 		# GER/Europe requests so Greece/Balkans do not compete with Normandy.
-		OR = {
-			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-		}
+		DAI_allies_focus_europe = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -1362,22 +1349,9 @@ ENG_USA_focus_on_europe_more = {
 	}
 
 	enable = {
-		is_historical_focus_on = yes
-		OR = {
-			date > 1942.6.1
-			SOV = {
-				surrender_progress > 0.65
-			}
-		}
-		has_global_flag = FRA_already_surrendered
 		# Keep the broad GER front request asleep until the Normandy-area foothold
 		# exists; before that, DAI should only be asking for Normandy.
-		OR = {
-			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-		}
+		DAI_allies_focus_europe = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -1410,17 +1384,9 @@ ENG_USA_focus_on_europe_loads_more = {
 	}
 
 	enable = {
-		is_historical_focus_on = yes
-		date > 1943.6.1
-		has_global_flag = FRA_already_surrendered
 		# mainland_europe includes Greece/Balkans, so only wake this support
 		# request after the D-Day landing has a nearby French foothold.
-		OR = {
-			14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
-			15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
-			16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
-			29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
-		}
+		DAI_allies_focus_europe = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -2054,255 +2020,230 @@ ENG_super_boost_armor_div = { #lets make sure the uk upgrades rtr to divs
 	# }
 }
 
-ENG_super_boost_armor_div_med = { #lets make sure the uk upgrades armor divs to mediums
-	allowed = {
-		original_tag = ENG
-	}
-	enable = {
-		OR = {
-			has_tech = basic_medium_tank
-			has_tech = basic_medium_tank_chassis
-		}
-		NOT = { has_template_ai_majority_unit = medium_armor }
+# ENG_super_boost_armor_div_med = { #lets make sure the uk upgrades armor divs to mediums
+# 	allowed = {
+# 		original_tag = ENG
+# 	}
+# 	enable = {
+# 		OR = {
+# 			has_tech = basic_medium_tank
+# 			has_tech = basic_medium_tank_chassis
+# 		}
+# 		NOT = { has_template_ai_majority_unit = medium_armor }
 
-		date > 1940.1.1
-	}
+# 		date > 1940.1.1
+# 	}
 
-	abort = {
-		has_template_ai_majority_unit = medium_armor
-	}
+# 	abort = {
+# 		has_template_ai_majority_unit = medium_armor
+# 	}
 
-	# lets do changes more often during this period too
-	ai_strategy = {
-		type = land_xp_spend_priority
-		id = division_template
-		value = 100
-	}
+# 	# lets do changes more often during this period too
+# 	ai_strategy = {
+# 		type = land_xp_spend_priority
+# 		id = division_template
+# 		value = 100
+# 	}
 
-	# # this is gateway
-	# ai_strategy = {
-	# 	type = template_prio
-	# 	id = light_armor
-	# 	value = 100
-	# }
+# 	# this is gateway
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = light_armor
+# 		value = 100
+# 	}
 
-	# ai_strategy = {
-	# 	type = template_prio
-	# 	id = medium_armor
-	# 	value = 150
-	# }
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = medium_armor
+# 		value = 150
+# 	}
 
-	# ai_strategy = {
-	# 	type = template_prio
-	# 	id = motorized
-	# 	value = 200
-	# }
-}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = motorized
+# 		value = 200
+# 	}
+# }
 
-ENG_USA_take_italys_spaghetti = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt now owns the Africa -> Italy -> Normandy phase order.
-		always = no
-	}
-	enable = {
-		date > 1942.6.1
-		ITA = {
-			surrender_progress < 0.2
-		}
-	}
-	abort_when_not_enabled = yes
+# ENG_USA_take_italys_spaghetti = {
+# 	enable = {
+# 		date > 1942.6.1
+# 		ITA = {
+# 			surrender_progress < 0.2
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = area_priority
-		id = italy
-		value = 60
-	}
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = italy
+# 		value = 60
+# 	}
 	
-	ai_strategy = {
-		type = area_priority
-		id = north_africa
-		value = 100
-	}
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = north_africa
+# 		value = 100
+# 	}
 
-	# ai_strategy = {
-	# 	type = area_priority
-	# 	id = normandy_landing_zone
-	# 	value = -100
-	# }
-}
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = normandy_landing_zone
+# 		value = -100
+# 	}
+# }
 
-ENG_USA_onto_the_beaches = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
-		always = no
-	}
-	enable = {
-		date > 1942.6.1
-	}
-	abort_when_not_enabled = yes
+# ENG_USA_onto_the_beaches = {
+# 	enable = {
+# 		date > 1942.6.1
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 10
-	}
+# 	ai_strategy = {
+# 		type = naval_invasion_focus
+# 		value = 10
+# 	}
 
-	ai_strategy = {
-		type = invasion_unit_request
-		area = normandy_landing_zone
-		value = 10
-	}
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		area = normandy_landing_zone
+# 		value = 10
+# 	}
 
-}
+# }
 
-ENG_USA_onto_the_beaches_2 = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
-		always = no
-	}
-	enable = {
-		date > 1943.1.1
-	}
-	abort_when_not_enabled = yes
+# ENG_USA_onto_the_beaches_2 = {
+# 	enable = {
+# 		date > 1943.1.1
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 20
-	}
+# 	ai_strategy = {
+# 		type = naval_invasion_focus
+# 		value = 20
+# 	}
 	
-	ai_strategy = {
-		type = invasion_unit_request
-		area = normandy_landing_zone
-		value = 6
-	}
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		area = normandy_landing_zone
+# 		value = 6
+# 	}
 	
-	ai_strategy = {
-		type = area_priority
-		id = normandy_landing_zone
-		value = 80
-	}
-}
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = normandy_landing_zone
+# 		value = 80
+# 	}
+# }
 
-ENG_USA_onto_the_beaches_3 = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
-		always = no
-	}
-	enable = {
-		date > 1943.6.1
-	}
-	abort_when_not_enabled = yes
+# ENG_USA_onto_the_beaches_3 = {
+# 	enable = {
+# 		date > 1943.6.1
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 30
-	}
-}
+# 	ai_strategy = {
+# 		type = naval_invasion_focus
+# 		value = 30
+# 	}
+# }
 
-ENG_USA_onto_the_beaches_4 = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt centralizes Allied D-Day build-up.
-		always = no
-	}
-	enable = {
-		date > 1944.1.1
-	}
-	abort_when_not_enabled = yes
+# ENG_USA_onto_the_beaches_4 = {
+# 	enable = {
+# 		date > 1944.1.1
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 20
-	}
-}
+# 	ai_strategy = {
+# 		type = naval_invasion_focus
+# 		value = 20
+# 	}
+# }
 
-## US struggle to do torch, so let's help them a tad
-#ENG_torch_support = {
-#	allowed = {
-#		original_tag = ENG 
-#	}
-#	enable = {
-#		country_exists = VIC 
-#		has_war_with = GER 
-#		date > 1942.5.1
-#	}
-#	abort = {
-#		OR = {
-#			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
-#			461 = { is_controlled_by_ROOT_or_ally = yes }
-#			459 = { is_controlled_by_ROOT_or_ally = yes }
-#		}
-#	}
-#
-#	ai_strategy = {
-#		type = put_unit_buffers
-#
-#		states = {
-#			118
-#			114
-#		}
-#
-#		ratio = 0.15
-#
-#		subtract_invasions_from_need = yes
-#		subtract_fronts_from_need = no 
-#	}
-#
-#	ai_strategy = {
-#		type = area_priority
-#		id = torch_landing_zone
-#		value = 800
-#	}
-#	ai_strategy = { # Let's avoid losing units in France for now. We'll go there later
-#		type = area_priority
-#		id = vichy_mainland
-#		value = -500
-#	}
-#
-#	ai_strategy = {
-#		type = invasion_unit_request
-#		area = torch_landing_zone
-#		value = 10
-#	}
-#	ai_strategy = {
-#		type = front_unit_request
-#		area = torch_landing_zone
-#		value = 5
-#	}
-#	ai_strategy = {
-#		type = prepare_for_war
-#		id = VIC
-#		value = 200 
-#	}
-#	ai_strategy = {
-#		type = invade
-#		id = VIC
-#		value = 200
-#	}
-#}
-#
-# DAI disables the old USA_d_day_boost as well.
-ENG_USA_d_day = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt now owns the main Normandy push.
-		always = no
-	}
-	enable = {
-		date > 1943.9.1
-	}
-	abort_when_not_enabled = yes
+# US struggle to do torch, so let's help them a tad
+# ENG_torch_support = {
+# 	allowed = {
+# 		original_tag = ENG
+# 	}
+# 	enable = {
+# 		country_exists = VIC
+# 		has_war_with = GER
+# 		date > 1942.5.1
+# 	}
+# 	abort = {
+# 		OR = {
+# 			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
+# 			461 = { is_controlled_by_ROOT_or_ally = yes }
+# 			459 = { is_controlled_by_ROOT_or_ally = yes }
+# 		}
+# 	}
 
-	ai_strategy = {
-		type = area_priority
-		id = normandy_landing_zone
-		value = 60
-	}
+# 	ai_strategy = {
+# 		type = put_unit_buffers
 
-	ai_strategy = {
-		type = invasion_unit_request
-		area = normandy_landing_zone
-		value = 5
-	}
+# 		states = {
+# 			118
+# 			114
+# 		}
 
-}
+# 		ratio = 0.15
+
+# 		subtract_invasions_from_need = yes
+# 		subtract_fronts_from_need = no
+# 	}
+
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = torch_landing_zone
+# 		value = 800
+# 	}
+# 	ai_strategy = { # Let's avoid losing units in France for now. We'll go there later
+# 		type = area_priority
+# 		id = vichy_mainland
+# 		value = -500
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		area = torch_landing_zone
+# 		value = 10
+# 	}
+# 	ai_strategy = {
+# 		type = front_unit_request
+# 		area = torch_landing_zone
+# 		value = 5
+# 	}
+# 	ai_strategy = {
+# 		type = prepare_for_war
+# 		id = VIC
+# 		value = 200
+# 	}
+# 	ai_strategy = {
+# 		type = invade
+# 		id = VIC
+# 		value = 200
+# 	}
+# }
+
+# ENG_USA_d_day = {
+# 	enable = {
+# 		date > 1943.9.1
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = normandy_landing_zone
+# 		value = 60
+# 	}
+
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		area = normandy_landing_zone
+# 		value = 5
+# 	}
+
+# }
 
 # ENG_RAJ_the_hot_gates = {
 # 	allowed = {
@@ -2602,42 +2543,29 @@ ENG_ethiopian_continuation_war = {
 	}
 }
 
-ENG_no_naval_landings_in_libya_yet = {
-	allowed = { original_tag = ENG }
-	enable = {
-		is_historical_focus_on = yes
-		date < 1942.1.1
-		has_war_with = ITA
-		# More complex conditions will already be handled by the AI planning system
-	}
-	abort_when_not_enabled = yes
+# ENG_no_naval_landings_in_libya_yet = {
+# 	allowed = { original_tag = ENG }
+# 	enable = {
+# 		is_historical_focus_on = yes
+# 		date < 1942.1.1
+# 		has_war_with = ITA
+# 		# More complex conditions will already be handled by the AI planning system
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = invasion_unit_request
-		area = north_africa
-		value = -100
-	}
-}
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		area = north_africa
+# 		value = -100
+# 	}
+# }
 
 ENG_to_tobruk = {
 	allowed = { original_tag = ENG }
 	enable = {
-		is_historical_focus_on = yes
+		DAI_allies_focus_africa = yes
 		date > 1940.12.1
-		date < 1943.6.1
 		ITA = { is_ai = yes }
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2683,22 +2611,9 @@ ENG_to_tobruk = {
 ENG_navy_to_tobruk = {
 	allowed = { original_tag = ENG }
 	enable = {
-		is_historical_focus_on = yes
+		DAI_allies_focus_africa = yes
 		date > 1941.4.1 # We should have taken it by land route by now...
-		date < 1943.6.1
 		451 = { is_controlled_by = ITA }
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2709,13 +2624,43 @@ ENG_navy_to_tobruk = {
 	}
 }
 
+ENG_naval_landings_in_libya = {
+	allowed = { original_tag = ENG }
+	enable = {
+		DAI_allies_focus_africa = yes
+		date > 1942.1.1
+		has_war_with = ITA
+	}
+	abort_when_not_enabled = yes
+
+	# Open the invasion gate for ITA (counters -500 from ENG_ALLIES_careful_with_early_invasions)
+	ai_strategy = {
+		type = invade
+		id = ITA
+		value = 550
+	}
+
+	# Direct naval landings at Tobruk/Tripoli, not the Italian mainland
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 451 # Derna/Tobruk
+		state = 448 # Tripoli
+		value = 50
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = italy
+		value = -100
+	}
+}
+
 ENG_supply_for_tobruk_push = {
 	allowed = { original_tag = ENG }
 	enable = {
 		# NOTE: make sure these conditions are largely the same as for ENG_to_tobruk above
-		is_historical_focus_on = yes
+		DAI_allies_focus_africa = yes
 		date > 1940.7.1  # slightly earlier than the actual push to give time to build
-		date < 1943.6.1
 		451 = { is_controlled_by = ITA }
 		ITA = { is_ai = yes }
 
@@ -2748,27 +2693,8 @@ ENG_supply_for_tobruk_push = {
 ENG_avoid_balkans_until_africa_is_secure = {
 	allowed = { original_tag = ENG }
 	enable = {
-		is_historical_focus_on = yes
+		DAI_allies_focus_africa = yes
 		date > 1939.6.6
-		date < 1943.6.6
-
-		# The check below should really be a scripted trigger or something
-		OR = { # Check whole north-african coast
-			448 = { CONTROLLER = { has_war_with = ROOT } } # tripoli
-			450 = { CONTROLLER = { has_war_with = ROOT } } # benghazi
-			458 = { CONTROLLER = { has_war_with = ROOT } } # tunisia
-			461 = { CONTROLLER = { has_war_with = ROOT } } # casablanca
-			462 = { CONTROLLER = { has_war_with = ROOT } } # marrakech
-			459 = { CONTROLLER = { has_war_with = ROOT } } # algiers
-			460 = { CONTROLLER = { has_war_with = ROOT } } # constantine
-			665 = { CONTROLLER = { has_war_with = ROOT } } # gabès
-			449 = { CONTROLLER = { has_war_with = ROOT } } # el agheila
-			451 = { CONTROLLER = { has_war_with = ROOT } } # derna
-			452 = { CONTROLLER = { has_war_with = ROOT } } # matrouh
-			447 = { CONTROLLER = { has_war_with = ROOT } } # alexandria
-			446 = { CONTROLLER = { has_war_with = ROOT } } # cairo
-			290 = { CONTROLLER = { has_war_with = ROOT } } # spanish africa
-		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2949,17 +2875,9 @@ ENG_develop_mediterranean_supremacy = {
 			has_war_with = SOU
 		}
 		date > 1940.1.1
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
+		OR = {
+			DAI_allies_focus_africa = yes
+			DAI_allies_focus_italy = yes
 		}
 	}
 	

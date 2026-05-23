@@ -1,9 +1,20 @@
 # Military Flags
 
 DAI_set_wants_armor_flag = {
+	IF = {
+		limit = { original_tag = JAP }
+		clr_country_flag = DAI_wants_armor
+		clr_country_flag = DAI_prefer_medium_tanks
+		clr_country_flag = DAI_prefer_heavy_tanks
+		clr_country_flag = DAI_prefer_medium_tank_destroyers
+		clr_country_flag = DAI_prefer_heavy_tank_destroyers
+		clr_country_flag = DAI_default_armor_template
+	}
+
 	IF = { limit = { NOT = { has_country_flag = DAI_wants_armor } }
 		IF = {
 			limit = {
+				NOT = { original_tag = JAP }
 				OR = {
 					DAI_is_default_armor_country = yes
 					num_of_military_factories > 40
@@ -43,9 +54,6 @@ DAI_set_armor_preference_flags = {
 		}
 		ELSE_IF = { limit = { original_tag = FRA }
 			set_country_flag = DAI_prefer_heavy_tank_destroyers
-		}
-		ELSE_IF = { limit = { original_tag = JAP }
-			set_country_flag = DAI_prefer_medium_tanks
 		}
 		ELSE_IF = { limit = { original_tag = ITA }
 			set_country_flag = DAI_prefer_medium_tanks

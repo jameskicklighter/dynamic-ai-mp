@@ -74,3 +74,48 @@ DAI_set_build_order_GER = {
 	}
 
 }
+
+DAI_set_build_order_FRA = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	IF = { limit = { DAI_FRA_is_historical_ai = yes }
+
+		IF = {
+			limit = {
+				NOT = { has_idea_with_trait = silent_workhorse }
+				has_available_idea_with_traits = { idea = silent_workhorse limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:FRA_gaston_henry_haye }
+		}
+		# ELSE_IF = {
+		# 	limit = {
+		# 		# We are only concerned about early build order. Don't do an extensive check for conditions,
+		# 		# as they should normally be met by the logic of the build order.
+		# 		NOT = { has_idea = war_economy }
+		# 		NOT = { has_idea = tot_economic_mobilisation }
+		# 		date < 1937.1.1
+		# 		has_war_support > 0.5
+		# 	}
+		# 	set_variable = { DAI_build_order_wants = token:war_economy }
+		# }
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_chief_offensive_1 }
+				has_available_idea_with_traits = { idea = army_chief_offensive_1 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:FRA_henri_marie_auguste_bineau }
+		}
+		# ELSE_IF = {
+		# 	limit = {
+		# 		NOT = { has_idea_with_trait = war_industrialist }
+		# 		has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
+		# 	}
+		# 	set_variable = { DAI_build_order_wants = token:FRA_zivony_peshkov }
+		# }
+
+		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+
+	}
+
+}

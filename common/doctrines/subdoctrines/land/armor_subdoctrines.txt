@@ -446,10 +446,7 @@ armored_cavalry = {
         base = 1
         modifier = {
             factor = 25
-            OR = {
-                original_tag = ITA 
-                original_tag = JAP 
-            }
+            original_tag = ITA
         }
 
     }
@@ -559,10 +556,7 @@ armored_cavalry_no_lar = {
         base = 1
         modifier = {
             factor = 25
-            OR = {
-                original_tag = ITA 
-                original_tag = JAP 
-            }
+            original_tag = ITA
         }
 
     }
