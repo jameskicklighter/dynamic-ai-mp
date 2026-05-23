@@ -357,37 +357,7 @@ USA_focus_on_africa = {
 	allowed = { original_tag = USA }
 
 	enable = {
-		is_historical_focus_on = yes
-		has_war_with = GER
-		has_global_flag = FRA_already_surrendered
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
-		OR = { # Check whole north-african coast
-			448 = { CONTROLLER = { has_war_with = ROOT } } # tripoli
-			450 = { CONTROLLER = { has_war_with = ROOT } } # benghazi
-			458 = { CONTROLLER = { has_war_with = ROOT } } # tunisia
-			461 = { CONTROLLER = { has_war_with = ROOT } } # casablanca
-			462 = { CONTROLLER = { has_war_with = ROOT } } # marrakech
-			459 = { CONTROLLER = { has_war_with = ROOT } } # algiers
-			460 = { CONTROLLER = { has_war_with = ROOT } } # constantine
-			665 = { CONTROLLER = { has_war_with = ROOT } } # gabès
-			449 = { CONTROLLER = { has_war_with = ROOT } } # el agheila
-			451 = { CONTROLLER = { has_war_with = ROOT } } # derna
-			452 = { CONTROLLER = { has_war_with = ROOT } } # matrouh
-			447 = { CONTROLLER = { has_war_with = ROOT } } # alexandria
-			446 = { CONTROLLER = { has_war_with = ROOT } } # cairo
-			290 = { CONTROLLER = { has_war_with = ROOT } } # spanish africa
-		}
+		DAI_allies_focus_africa = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -404,32 +374,6 @@ USA_focus_on_africa = {
 	}
 }
 
-USA_ENG_sync_invasions_on_europe = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt now owns Allied mainland Europe invasion timing.
-		always = no
-	}
-
-	# only allow invasion on europe on every third month
-
-	enable = {
-		set_temp_variable = { days = global.num_days }
-		modulo_temp_variable = { days = 90 }
-		check_variable = { days < 60 }
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = front_control
-
-		area = mainland_europe
-
-		ordertype = invasion
-		execute_order = no
-	}
-}
-
 USA_take_out_italy_boost = {
 	allowed = {
 		original_tag = USA
@@ -437,21 +381,7 @@ USA_take_out_italy_boost = {
 	}
 	enable = {
 		date > 1942.6.1
-		ITA = {
-			surrender_progress < 0.2
-		}
-		NOT = {
-			OR = {
-				date > 1943.1.1
-				AND = {
-					date > 1942.1.1
-					SOV = {
-						has_war_with = GER
-						surrender_progress > 0.25
-					}
-				}
-			}
-		}
+		DAI_allies_focus_italy = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -486,70 +416,57 @@ USA_take_out_italy_boost = {
 	}
 }
 
-# Disabled because DAI_d_day_invasion_plan.txt now owns the Normandy timing and
-# old duplicate D-Day boosts can add cross-pressure to the invasion planner.
-USA_d_day_boost = {
-	allowed = {
-		# DAI_d_day_invasion_plan.txt now owns Allied mainland Europe invasion timing.
-		always = no
-	}
-	enable = {
-		has_war_with = GER 
-		date > 1943.9.1
-		ITA = {
-			surrender_progress > 0.2
-		}
-	}
-	abort = {
-		OR = {
-			date > 1944.9.1 # if we haven't succeeded by now, kill Japan instead
-			AND = {
-				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris has been liberated
-				is_historical_focus_on = yes 
-			}
-		}
-	}
+# USA_d_day_boost = {
+# 	enable = {
+# 		has_war_with = GER
+# 		date > 1943.9.1
+# 		ITA = {
+# 			surrender_progress > 0.2
+# 		}
+# 	}
+# 	abort = {
+# 		OR = {
+# 			date > 1944.9.1 # if we haven't succeeded by now, kill Japan instead
+# 			AND = {
+# 				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris has been liberated
+# 				is_historical_focus_on = yes
+# 			}
+# 		}
+# 	}
 
-	ai_strategy = {
-		type = invade
-		id = GER
-		value = 50
-	}
+# 	ai_strategy = {
+# 		type = invade
+# 		id = GER
+# 		value = 50
+# 	}
 
-	ai_strategy = {
-		type = area_priority
-		id = normandy_landing_zone
-		value = 400
-	}
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = normandy_landing_zone
+# 		value = 400
+# 	}
 
-	ai_strategy = {
-		type = invasion_unit_request
-		area = normandy_landing_zone
-		value = 5
-	}
-}
+# 	ai_strategy = {
+# 		type = invasion_unit_request
+# 		area = normandy_landing_zone
+# 		value = 5
+# 	}
+# }
 
 USA_torch_boost = {
 	allowed = {
 		original_tag = USA
 	}
 	enable = {
+		DAI_allies_focus_africa = yes
 		country_exists = VIC 
-		has_war_with = GER 
 		date > 1942.5.1
 		#has_war_with = 461.owner 
 	}
 	abort = {
 		OR = {
+			DAI_allies_focus_africa = no
 			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
-			date > 1943.1.1
-			AND = {
-				date > 1942.1.1
-				SOV = {
-					has_war_with = GER
-					surrender_progress > 0.25
-				}
-			}
 			461 = { is_controlled_by_ROOT_or_ally = yes }
 			459 = { is_controlled_by_ROOT_or_ally = yes }
 		}

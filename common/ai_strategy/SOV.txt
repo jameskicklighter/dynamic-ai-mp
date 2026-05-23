@@ -128,6 +128,72 @@ SOV_armor_role_ratios = {
 	}
 }
 
+SOV_build_preferred_medium_tank_chassis = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date > 1940.3.1
+		DAI_should_start_tank_production = yes
+		DAI_prefers_medium_armor = yes
+		OR = {
+			has_tech = improved_medium_tank
+			has_tech = improved_medium_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_chassis
+		value = 5
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = motorized_equipment
+		value = 2
+	}
+}
+
+SOV_build_preferred_heavy_tank_chassis = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date > 1940.3.1
+		DAI_should_start_tank_production = yes
+		DAI_prefers_heavy_armor = yes
+		OR = {
+			has_tech = basic_heavy_tank
+			has_tech = basic_heavy_tank_chassis
+			has_tech = improved_heavy_tank
+			has_tech = improved_heavy_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = heavy_tank_chassis
+		value = 5
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_tank_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = motorized_equipment
+		value = 2
+	}
+}
+
 # DAI --
 SOV_wait_on_air_production = {
 	allowed = { original_tag = SOV }

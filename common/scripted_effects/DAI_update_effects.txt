@@ -6,6 +6,7 @@ DAI_daily_update = {
 		# If we are a dynamic tag, we going with the flow instead.
 		# So just use the normal tag.
 		if = { limit = { tag = GER } DAI_set_build_order_GER = yes }
+		if = { limit = { tag = FRA } DAI_set_build_order_FRA = yes }
 
 	}
 }
@@ -13,6 +14,9 @@ DAI_daily_update = {
 DAI_monthly_update = {
 
 	if = { limit = { is_ai = yes }
+
+		# Strategy flags
+		DAI_update_allied_d_day_flags = yes
 
 		# Laws
 		DAI_set_desired_trade_law = yes
@@ -22,4 +26,40 @@ DAI_monthly_update = {
 		DAI_set_armor_template_flags = yes
 
 	}
+}
+
+DAI_update_allied_d_day_flags = {
+
+	if = {
+		limit = {
+			is_historical_focus_on = yes
+			date > 1942.1.1
+			GER = { has_capitulated = no }
+			SOV = {
+				has_war_with = GER
+				surrender_progress > 0.30
+			}
+		}
+		set_global_flag = DAI_allies_soviet_d_day_pressure
+	}
+
+	if = {
+		limit = {
+			has_global_flag = DAI_allies_soviet_d_day_pressure
+			OR = {
+				NOT = { is_historical_focus_on = yes }
+				NOT = { country_exists = GER }
+				GER = { has_capitulated = yes }
+				NOT = { country_exists = SOV }
+				SOV = {
+					OR = {
+						NOT = { has_war_with = GER }
+						surrender_progress < 0.15
+					}
+				}
+			}
+		}
+		clr_global_flag = DAI_allies_soviet_d_day_pressure
+	}
+
 }

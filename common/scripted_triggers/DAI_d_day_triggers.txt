@@ -1,0 +1,143 @@
+##############################################################################
+### 		ALLIED D-DAY PHASES
+##############################################################################
+
+# These are live phase checks. Use flags instead only if we want a country to
+# remember a chosen phase after the underlying map/date situation changes.
+DAI_allies_france_has_fallen = {
+	OR = {
+		has_global_flag = FRA_already_surrendered
+		FRA = {
+			OR = {
+				has_capitulated = yes
+				exists = no
+			}
+		}
+	}
+}
+
+DAI_allies_have_french_foothold = {
+	OR = {
+		14 = { is_controlled_by_ROOT_or_ally = yes } # Brittany
+		15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
+		16 = { is_controlled_by_ROOT_or_ally = yes } # Paris
+		29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
+	}
+}
+
+DAI_allies_north_africa_is_contested = {
+	OR = {
+		448 = { CONTROLLER = { has_war_with = ROOT } } # Tripoli
+		450 = { CONTROLLER = { has_war_with = ROOT } } # Benghazi
+		458 = { CONTROLLER = { has_war_with = ROOT } } # Tunisia
+		461 = { CONTROLLER = { has_war_with = ROOT } } # Casablanca
+		462 = { CONTROLLER = { has_war_with = ROOT } } # Marrakech
+		459 = { CONTROLLER = { has_war_with = ROOT } } # Algiers
+		460 = { CONTROLLER = { has_war_with = ROOT } } # Constantine
+		665 = { CONTROLLER = { has_war_with = ROOT } } # Gabes
+		449 = { CONTROLLER = { has_war_with = ROOT } } # El Agheila
+		451 = { CONTROLLER = { has_war_with = ROOT } } # Derna
+		452 = { CONTROLLER = { has_war_with = ROOT } } # Matrouh
+		447 = { CONTROLLER = { has_war_with = ROOT } } # Alexandria
+		446 = { CONTROLLER = { has_war_with = ROOT } } # Cairo
+		290 = { CONTROLLER = { has_war_with = ROOT } } # Spanish Africa
+	}
+}
+
+DAI_allies_d_day_base_conditions = {
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = ENG
+		is_in_faction_with = ENG
+	}
+	has_war_with = GER
+	GER = { has_capitulated = no }
+	DAI_allies_france_has_fallen = yes
+}
+
+DAI_allies_soviet_d_day_pressure_flag_is_set = {
+	has_global_flag = DAI_allies_soviet_d_day_pressure
+}
+
+DAI_allies_italy_is_in_chaos_for_d_day = {
+	OR = {
+		NOT = { has_war_with = ITA }
+		ITA = { exists = no }
+		ITA = { has_capitulated = yes }
+		ITA = { has_civil_war = yes }
+		ITA = { surrender_progress > 0.2 }
+	}
+}
+
+DAI_allies_africa_italy_ready_for_normandy = {
+	DAI_allies_north_africa_is_contested = no
+	DAI_allies_italy_is_in_chaos_for_d_day = yes
+}
+
+# Build-up starts early only if the Soviet pressure flag has been set, otherwise
+# the Allies stage once Africa is secure and Italy is disrupted, or for the
+# historical 1944 landing window.
+DAI_allies_normandy_can_build_up = {
+	OR = {
+		date > 1944.1.1
+		DAI_allies_soviet_d_day_pressure_flag_is_set = yes
+		AND = {
+			date > 1943.1.1
+			DAI_allies_africa_italy_ready_for_normandy = yes
+		}
+	}
+}
+
+# Go-time is delayed after build-up so the AI has time to stage troops, ships,
+# and air support before Normandy becomes the favored invasion target.
+DAI_allies_normandy_can_go = {
+	OR = {
+		date > 1944.6.1
+		AND = {
+			date > 1942.6.1
+			DAI_allies_soviet_d_day_pressure_flag_is_set = yes
+		}
+		AND = {
+			date > 1943.6.1
+			DAI_allies_africa_italy_ready_for_normandy = yes
+		}
+	}
+}
+
+DAI_allies_focus_africa = {
+	DAI_allies_d_day_base_conditions = yes
+	DAI_allies_north_africa_is_contested = yes
+	DAI_allies_normandy_can_build_up = no
+}
+
+DAI_allies_focus_north_africa = {
+	DAI_allies_focus_africa = yes
+}
+
+DAI_allies_focus_italy = {
+	DAI_allies_d_day_base_conditions = yes
+	has_war_with = ITA
+	ITA = {
+		has_capitulated = no
+		surrender_progress < 0.2
+	}
+	DAI_allies_north_africa_is_contested = no
+	DAI_allies_normandy_can_build_up = no
+}
+
+DAI_allies_focus_normandy = {
+	DAI_allies_d_day_base_conditions = yes
+	DAI_allies_normandy_can_build_up = yes
+	DAI_allies_have_french_foothold = no
+}
+
+DAI_allies_normandy_go_time = {
+	DAI_allies_d_day_base_conditions = yes
+	DAI_allies_normandy_can_go = yes
+	16 = { is_controlled_by_ROOT_or_ally = no } # Paris
+}
+
+DAI_allies_focus_europe = {
+	DAI_allies_d_day_base_conditions = yes
+	DAI_allies_have_french_foothold = yes
+}

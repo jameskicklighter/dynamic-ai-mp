@@ -861,10 +861,10 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 1.000
+				base = 10
 				modifier = {
-					factor = 2
-					has_capitulated = yes
+					add = 989
+					check_variable = { DAI_build_order_wants = token:FRA_henri_marie_auguste_bineau }
 				}
 			}
 		}		
@@ -1012,11 +1012,6 @@ characters={
 			cost = 100
 			ai_will_do  = {
 				base = 10
-				modifier = {
-					add = 100
-					DAI_FRA_is_historical_ai = yes
-					has_idea_with_trait = silent_workhorse
-				}
 			}
 		}
 	}
@@ -1606,7 +1601,11 @@ characters={
 			do_effect  = {
 			}
 			ai_will_do  = {
-				base = 100
+				base = 10
+				modifier = {
+					add = 989
+					check_variable = { DAI_build_order_wants = token:FRA_gaston_henry_haye }
+				}
 			}
 		}
 	}
@@ -1741,9 +1740,8 @@ characters={
 			ai_will_do  = {
 				base = 3
 				modifier = {
-					add = 100
-					DAI_FRA_is_historical_ai = yes
-					has_idea_with_trait = air_chief_reform_2
+					add = 996
+					check_variable = { DAI_build_order_wants = token:FRA_zivony_peshkov }
 				}
 			}
 		}

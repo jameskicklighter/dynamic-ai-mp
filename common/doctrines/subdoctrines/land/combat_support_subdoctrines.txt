@@ -26,6 +26,10 @@ fire_concentration = {
             factor = 75
             original_tag = FRA
         }   
+        modifier = {
+            factor = 75
+            original_tag = JAP
+        }
     }
 
     # EFFECTS
@@ -786,9 +790,8 @@ field_engineering = {
             factor = 75
             OR = {
                 original_tag = ITA
-                original_tag = JAP
                 original_tag = FIN
-            }            
+            }
         }
     }
 

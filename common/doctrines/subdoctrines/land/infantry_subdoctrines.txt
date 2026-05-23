@@ -151,7 +151,7 @@ large_unit_tactics = {
             add = 99
             OR = {
                 original_tag = CHI
-                # original_tag = JAP
+                original_tag = JAP
             }
         }
         modifier = {
@@ -233,7 +233,6 @@ assault_infantry = {
         modifier = {
             add = 99
             original_tag = USA
-            original_tag = JAP
         }
         modifier = {
             factor = 0.5
