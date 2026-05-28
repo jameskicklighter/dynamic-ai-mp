@@ -5,7 +5,18 @@ INFANTRY_SOV = {
 	available_for = { SOV }
 	roles = { infantry }
 
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
 	INFANTRY_SOV_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			support = {
 				engineer = 1

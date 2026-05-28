@@ -5,7 +5,18 @@ INFANTRY_USA = {
 	available_for = { USA }
 	roles = { infantry }
 
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
 	INFANTRY_USA_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			support = {
 				engineer = 1
@@ -19,6 +30,9 @@ INFANTRY_USA = {
 	}
 
 	INFANTRY_USA_2 = {
+		upgrade_prio = {
+			base = 20
+		}
 		enable = {
 			NOT = { has_idea = undisturbed_isolation }
 			NOT = { has_idea = isolation }

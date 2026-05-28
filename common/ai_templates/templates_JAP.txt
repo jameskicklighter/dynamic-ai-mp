@@ -5,7 +5,18 @@ INFANTRY_JAP = {
 	available_for = { JAP }
 	role = infantry
 
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
 	INFANTRY_JAP_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			support = {
 				artillery = 1
@@ -18,6 +29,9 @@ INFANTRY_JAP = {
 	}
 
 	INFANTRY_JAP_2 = {
+		upgrade_prio = {
+			base = 20
+		}
 		enable = { date > 1939.6.1 }
 		target_template = {
 			support = {

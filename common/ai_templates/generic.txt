@@ -1,5 +1,6 @@
-
-
+# ==================================================
+#   Infantry
+# ==================================================
 
 INFANTRY_GENERIC = {
 	blocked_for = {
@@ -21,7 +22,18 @@ INFANTRY_GENERIC = {
 	}
 	roles = { infantry }
 
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
 	INFANTRY_GENERIC_1A = {
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			support = {
 				engineer = 1
@@ -36,16 +48,24 @@ INFANTRY_GENERIC = {
 
 }
 
-
+# ==================================================
+#   Medium Armor
+# ==================================================
 
 ARMOR_MEDIUM = {
 	roles = { armor }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	ARMOR_MEDIUM_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
-			NOT = { has_tech = mechanised_infantry }
 			NOT = { has_country_flag = { flag = DAI_default_armor_template value = 3 } }
 		}
 		target_template = {
@@ -65,11 +85,13 @@ ARMOR_MEDIUM = {
 	}
 
 	ARMOR_MEDIUM_2A = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
 			has_country_flag = { flag = DAI_default_armor_template value = 3 }
-			NOT = { has_tech = mechanised_infantry }
 		}
 		target_template = {
 			support = {
@@ -88,16 +110,16 @@ ARMOR_MEDIUM = {
 	}
 
 	ARMOR_MEDIUM_2B = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
-			has_tech = mechanised_infantry
-			NOT = {
-				OR = {
-					has_tech = main_battle_tank
-					has_tech = main_battle_tank_chassis
-				}
-			}
 		}
 		target_template = {
 			support = {
@@ -116,14 +138,24 @@ ARMOR_MEDIUM = {
 	}
 
 	ARMOR_MODERN_1 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
-			has_tech = mechanised_infantry
-			OR = {
-				has_tech = main_battle_tank
-				has_tech = main_battle_tank_chassis
-			}
 		}
 		target_template = {
 			support = {
@@ -141,10 +173,21 @@ ARMOR_MEDIUM = {
 	}
 }
 
+# ==================================================
+#   Heavy Armor
+# ==================================================
+
 ARMOR_HEAVY = {
 	roles = { armor_heavy }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	ARMOR_HEAVY_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tanks
@@ -152,7 +195,6 @@ ARMOR_HEAVY = {
 				has_tech = basic_heavy_tank
 				has_tech = basic_heavy_tank_chassis
 			}
-			NOT = { has_tech = mechanised_infantry }
 		}
 		target_template = {
 			support = {
@@ -171,6 +213,13 @@ ARMOR_HEAVY = {
 	}
 
 	ARMOR_HEAVY_2 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tanks
@@ -178,7 +227,6 @@ ARMOR_HEAVY = {
 				has_tech = basic_heavy_tank
 				has_tech = basic_heavy_tank_chassis
 			}
-			has_tech = mechanised_infantry
 		}
 		target_template = {
 			support = {
@@ -197,15 +245,25 @@ ARMOR_HEAVY = {
 	}
 }
 
+# ==================================================
+#   Medium Tank Destroyers
+# ==================================================
+
 ARMOR_MEDIUM_TANK_DESTROYER = {
 	roles = { armor_medium_tank_destroyer }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	ARMOR_MEDIUM_TANK_DESTROYER_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tank_destroyers
 			has_tech = interwar_antitank
-			NOT = { has_tech = mechanised_infantry }
 		}
 		target_template = {
 			support = {
@@ -223,11 +281,17 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 	}
 
 	ARMOR_MEDIUM_TANK_DESTROYER_2 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tank_destroyers
 			has_tech = interwar_antitank
-			has_tech = mechanised_infantry
 		}
 		target_template = {
 			support = {
@@ -245,10 +309,21 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 	}
 }
 
+# ==================================================
+#   Heavy Tank Destroyers
+# ==================================================
+
 ARMOR_HEAVY_TANK_DESTROYER = {
 	roles = { armor_heavy_tank_destroyer }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	ARMOR_HEAVY_TANK_DESTROYER_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tank_destroyers
@@ -257,7 +332,6 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				has_tech = basic_heavy_tank_chassis
 			}
 			has_tech = interwar_antitank
-			NOT = { has_tech = mechanised_infantry }
 		}
 		target_template = {
 			support = {
@@ -275,6 +349,13 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 	}
 
 	ARMOR_HEAVY_TANK_DESTROYER_2 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+		}
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tank_destroyers
@@ -283,7 +364,6 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				has_tech = basic_heavy_tank_chassis
 			}
 			has_tech = interwar_antitank
-			has_tech = mechanised_infantry
 		}
 		target_template = {
 			support = {
@@ -301,11 +381,21 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 	}
 }
 
+# ==================================================
+#   Motorized
+# ==================================================
 
 MOTORIZED_GENERIC = {
 	roles = { motorized }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	MOTORIZED_GENERIC_default = {
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			support = {
 				engineer = 1
@@ -319,15 +409,23 @@ MOTORIZED_GENERIC = {
 	}
 }
 
-
-			
-
+# ==================================================
+#   Mountaineers
+# ==================================================
 
 MOUNTAINEERS_GENERIC = {
 	roles = { mountaineers }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	MOUNTAINEERS_GENERIC_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
+			DAI_wants_mountaineers = yes
 			has_tech = tech_mountaineers
 			date > 1938.1.1
 		}
@@ -337,7 +435,7 @@ MOUNTAINEERS_GENERIC = {
 				artillery = 1
 				anti_air = 1
 				anti_tank = 1
-				logistics_company = 1
+				rangers_support = 1
 			}
 			regiments = {
 				mountaineers = 12
@@ -346,107 +444,126 @@ MOUNTAINEERS_GENERIC = {
 	}
 }
 
-
+# ==================================================
+#   Marines
+# ==================================================
 
 MARINES_GENERIC = {
 	roles = { marines }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	MARINES_GENERIC_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
+			DAI_wants_marines = yes
 			has_tech = marines
+			# has_tech = tech_mountaineers
 			OR = {
-				date > 1938.1.1
+				date > 1937.1.1
 				original_tag = JAP
 			}
 		}
 		target_template = {
 			support = {
-				engineer = 1
+				pioneer_support = 1
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				# medium_flame_tank = 1
 			}
 			regiments = {
-				marine = 7
+				marine = 9
+				# mountaineers = 6
 			}
 		}
 	}
 
 	MARINES_GENERIC_2 = {
+		upgrade_prio = {
+			base = 20
+		}
 		enable = {
+			DAI_wants_marines = yes
 			has_tech = marines
+			has_tech = tech_mountaineers
 			OR = {
-				date > 1938.1.1
+				date > 1937.1.1
 				original_tag = JAP
 			}
-			num_of_military_factories > 25
 		}
 		target_template = {
 			support = {
-				engineer = 1
-				recon = 1
+				pioneer_support = 1
 				artillery = 1
-				logistics_company = 1
+				anti_air = 1
+				anti_tank = 1
+				medium_flame_tank = 1
 			}
 			regiments = {
-				marine = 9
-				artillery_brigade = 3
+				marine = 6
+				mountaineers = 6
 			}
 		}
 	}
 }
 
-
+# ==================================================
+#   Rangers
+# ==================================================
 
 RANGERS_GENERIC = {
 	roles = { rangers }
 
-	RANGERS_GENERIC_1 = {
-		enable = {
-			has_tech = rangers_tech
-			OR = {
-				date > 1938.1.1
-				original_tag = JAP
-			}
-		}
-		target_template = {
-			support = {
-				engineer = 1
-			}
-			regiments = {
-				ranger_battalion = 7
-			}
-		}
+	upgrade_prio = {
+		base = 10
 	}
 
-	RANGERS_GENERIC_2 = {
+	RANGERS_GENERIC_1 = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = {
+			DAI_wants_rangers = yes
 			has_tech = rangers_tech
-			OR = {
-				date > 1938.1.1
-				original_tag = JAP
-			}
-			num_of_military_factories > 25
+			date > 1937.1.1
 		}
 		target_template = {
 			support = {
 				engineer = 1
-				anti_air = 1
 				artillery = 1
-				logistics_company = 1
+				anti_air = 1
+				anti_tank = 1
+				rangers_support = 1
 			}
 			regiments = {
-				ranger_battalion = 9
-				artillery_brigade = 2
+				ranger_battalion = 12
 			}
 		}
 	}
 }
 
+# ==================================================
+#   Garrison
+# ==================================================
 
 GARRISON_GENERIC = {
 	roles = { garrison }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	GARRISON_GENERIC_1 = {
 		reinforce_prio = 0
 		custom_icon = 7
+		upgrade_prio = {
+			base = 10
+		}
 		enable = { date > 1939.1.1 }
 		target_template = {
 			support = { 
@@ -461,14 +578,23 @@ GARRISON_GENERIC = {
 
 }
 
-
+# ==================================================
+#   Suppression
+# ==================================================
 
 SUPPRESSION_GENERIC = {
 	roles = { suppression }
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	SUPPRESSION_GENERIC_1 = {
 		reinforce_prio = 0
 		custom_icon = 13
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			regiments = {
 				cavalry = 6
@@ -479,6 +605,9 @@ SUPPRESSION_GENERIC = {
 	SUPPRESSION_GENERIC_2 = {
 		reinforce_prio = 0
 		custom_icon = 13
+		upgrade_prio = {
+			base = 20
+		}
 		enable = { date > 1939.1.1 }
 		target_template = {
 			support = { 
@@ -493,6 +622,9 @@ SUPPRESSION_GENERIC = {
 	SUPPRESSION_GENERIC_3 = {
 		reinforce_prio = 0
 		custom_icon = 13
+		upgrade_prio = {
+			base = 30
+		}
 		enable = { date > 1940.1.1 num_of_military_factories > 50 }
 		can_upgrade_in_field = { always = no }
 		
@@ -507,12 +639,21 @@ SUPPRESSION_GENERIC = {
 	}
 }
 
-
+# ==================================================
+#   Paratroopers
+# ==================================================
 
 PARATROOPERS_GENERIC = {
 	role = paratroopers
 
+	upgrade_prio = {
+		base = 10
+	}
+
 	PARATROOPER_default = {
+		upgrade_prio = {
+			base = 10
+		}
 		enable = { DAI_should_build_paratroopers = yes }
 		target_template = {
 			support = {
