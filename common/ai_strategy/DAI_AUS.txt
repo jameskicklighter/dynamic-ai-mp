@@ -1,0 +1,65 @@
+DAI_AUS_historical_hold_army_building_for_anschluss = {
+	allowed = {
+		original_tag = AUS
+		has_dlc = "Gotterdammerung"
+	}
+
+	enable = {
+		AUS_is_historical_ai = yes
+		has_war = no
+		is_subject = no
+		country_exists = GER
+		GER = {
+			has_government = fascism
+			NOT = { has_completed_focus = GER_anschluss }
+			NOT = { has_war_with = AUS }
+		}
+		NOT = {
+			OR = {
+				has_country_flag = AUS_AI_RANDOM_ANTI_ANSCLUSS_STRESS
+				has_game_rule = {
+					rule = AUS_AI_BEHAVIOR
+					option = AUS_ANTI_ANSCLUSS_STRESS
+				}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	# Keep historical Austria from expanding its army before Germany's scheduled Anschluss check.
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 50
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineers
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = -1000
+	}
+}

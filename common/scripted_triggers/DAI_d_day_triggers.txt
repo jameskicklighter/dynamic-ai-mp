@@ -25,6 +25,21 @@ DAI_allies_have_french_foothold = {
 	}
 }
 
+DAI_allies_d_day_front_is_secured = {
+	count_triggers = {
+		amount = 6
+		36 = { is_controlled_by_ROOT_or_ally = yes } # Friesland
+		35 = { is_controlled_by_ROOT_or_ally = yes } # Brabant
+		7 = { is_controlled_by_ROOT_or_ally = yes } # Holland
+		977 = { is_controlled_by_ROOT_or_ally = yes } # Antwerpen
+		6 = { is_controlled_by_ROOT_or_ally = yes } # Vlaanderen
+		34 = { is_controlled_by_ROOT_or_ally = yes } # Wallonia
+		29 = { is_controlled_by_ROOT_or_ally = yes } # Pas-de-Calais
+		785 = { is_controlled_by_ROOT_or_ally = yes } # Picardy
+		15 = { is_controlled_by_ROOT_or_ally = yes } # Normandy
+	}
+}
+
 DAI_allies_north_africa_is_contested = {
 	OR = {
 		448 = { CONTROLLER = { has_war_with = ROOT } } # Tripoli
@@ -88,9 +103,14 @@ DAI_allies_normandy_can_build_up = {
 	}
 }
 
-# Go-time is delayed after build-up so the AI has time to stage troops, ships,
-# and air support before Normandy becomes the favored invasion target.
-DAI_allies_normandy_can_go = {
+DAI_allies_normandy_preparation_has_matured = {
+	has_global_flag = {
+		flag = DAI_allies_d_day_prep_started
+		days > 150
+	}
+}
+
+DAI_allies_normandy_date_gate_is_open = {
 	OR = {
 		date > 1944.6.1
 		AND = {
@@ -101,6 +121,30 @@ DAI_allies_normandy_can_go = {
 			date > 1943.6.1
 			DAI_allies_africa_italy_ready_for_normandy = yes
 		}
+	}
+}
+
+DAI_allies_normandy_initial_release_ready = {
+	DAI_allies_focus_normandy = yes
+	NOT = { has_global_flag = DAI_allies_d_day_initial_release_done }
+	DAI_allies_normandy_preparation_has_matured = yes
+	DAI_allies_normandy_date_gate_is_open = yes
+}
+
+DAI_allies_normandy_repeat_release_open = {
+	DAI_allies_focus_normandy = yes
+	has_global_flag = DAI_allies_d_day_initial_release_done
+	has_global_flag = {
+		flag = DAI_allies_d_day_release_cycle_started
+		days < 90
+	}
+}
+
+# Go-time is delayed after build-up, then opens on repeat cycle windows so Allied countries sync.
+DAI_allies_normandy_can_go = {
+	OR = {
+		DAI_allies_normandy_initial_release_ready = yes
+		DAI_allies_normandy_repeat_release_open = yes
 	}
 }
 
@@ -128,16 +172,16 @@ DAI_allies_focus_italy = {
 DAI_allies_focus_normandy = {
 	DAI_allies_d_day_base_conditions = yes
 	DAI_allies_normandy_can_build_up = yes
-	DAI_allies_have_french_foothold = no
+	DAI_allies_d_day_front_is_secured = no
 }
 
 DAI_allies_normandy_go_time = {
 	DAI_allies_d_day_base_conditions = yes
 	DAI_allies_normandy_can_go = yes
-	16 = { is_controlled_by_ROOT_or_ally = no } # Paris
+	DAI_allies_d_day_front_is_secured = no
 }
 
 DAI_allies_focus_europe = {
 	DAI_allies_d_day_base_conditions = yes
-	DAI_allies_have_french_foothold = yes
+	DAI_allies_d_day_front_is_secured = yes
 }

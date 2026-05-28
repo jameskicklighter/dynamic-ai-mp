@@ -120,6 +120,46 @@ DAI_division_template_decisions = {
 		}
 	}
 
+	AI_JAP_Infantry_Filler_8_2 = {
+		icon = rifles
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			division_template = {
+				name = "Infantry 1936 JAP"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
 	AI_Light_Armor_Prototype_1 = {
 		icon = rifles
 		visible = {
@@ -850,66 +890,76 @@ DAI_disband_starting_units_decisions = {
 			is_historical_focus_on = yes
 			is_ai = yes
 			OR = {
-				tag = FIN
-				tag = FRA
-				tag = GRE
-				tag = HOL
-				tag = BEL
-				tag = HUN
-				tag = ROM
-				tag = YUG
+				original_tag = ENG
+				original_tag = FRA
+				original_tag = GRE
+				original_tag = HOL
+				original_tag = BEL
+				original_tag = YUG
 			}
-			any_country = {
-				original_tag = CHI
+			country_exists = CHI
+			country_exists = JAP
+			CHI = {
 				NOT = { surrender_progress > 0.5 }
 				has_war_with = JAP
-			}
-			NOT = {
-				OR = {
-					original_tag = CHI
-					original_tag = JAP
-					AND = {
-						is_literally_china = yes
-						NOT = { is_in_faction_with = CHI }
-					}
-				}
 			}
 		}
 
 		remove_effect = {
 			add_political_power = -1
-			if = {
-				limit = {
-					OR = {
-						has_government = democratic
-						has_government = communism
-					}
-					country_exists = CHI
-					CHI = {
-						NOT = { surrender_progress > 0.5 }
-						has_war_with = JAP
-					}
-				}
-				diplomatic_relation = {
-					country = CHI
-					relation = send_attache
-					active = yes
-				}
+			diplomatic_relation = {
+				country = CHI
+				relation = send_attache
+				active = yes
 			}
-			if = {
-				limit = {
-					has_government = fascism
-					has_government = neutrality
-					country_exists = JAP
-					JAP = {
-						has_war_with = CHI
-					}
-				}
-				diplomatic_relation = {
-					country = JAP
-					relation = send_attache
-					active = yes
-				}
+		}
+
+		ai_will_do = {
+			base = 3000
+		}
+	}
+
+	DAI_military_attache_to_japan = {
+
+		icon = generic_research
+
+		fire_only_once = yes
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = yes
+		}
+
+		cost = 99
+
+		days_remove = 7
+
+		visible = {
+			is_historical_focus_on = yes
+			is_ai = yes
+			OR = {
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+			}
+			country_exists = JAP
+			country_exists = CHI
+			CHI = {
+				NOT = { surrender_progress > 0.5 }
+				has_war_with = JAP
+			}
+		}
+
+		remove_effect = {
+			add_political_power = -1
+			diplomatic_relation = {
+				country = JAP
+				relation = send_attache
+				active = yes
 			}
 		}
 

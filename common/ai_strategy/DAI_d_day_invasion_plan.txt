@@ -492,7 +492,8 @@ DAI_allies_d_day_beachhead_reinforce = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		DAI_allies_focus_europe = yes
+		DAI_allies_d_day_base_conditions = yes
+		DAI_allies_have_french_foothold = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -523,7 +524,7 @@ DAI_allies_d_day_beachhead_reinforce = {
 	}
 }
 
-# During the pre-foothold D-Day window, suppress tempting alternate German fronts.
+# During the active D-Day campaign, suppress tempting alternate German fronts.
 # This is especially for cases where Germany holds Greece/Balkans or Scandinavia.
 DAI_allies_d_day_avoid_scandinavia_and_balkans = {
 	allowed = {
@@ -594,7 +595,8 @@ DAI_ENG_USA_d_day_beachhead_naval_support = {
 		}
 	}
 	enable = {
-		DAI_allies_focus_europe = yes
+		DAI_allies_d_day_base_conditions = yes
+		DAI_allies_have_french_foothold = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -622,7 +624,8 @@ DAI_allies_d_day_beachhead_lower_other_areas = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		DAI_allies_focus_europe = yes
+		DAI_allies_d_day_base_conditions = yes
+		DAI_allies_have_french_foothold = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -641,5 +644,21 @@ DAI_allies_d_day_beachhead_lower_other_areas = {
 	ai_strategy = {
 		type = garrison
 		value = -200
+	}
+}
+
+DAI_allies_d_day_secured_front_lower_invasions = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_allies_focus_europe = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = mainland_europe_excluding_italy
+		value = -100
 	}
 }

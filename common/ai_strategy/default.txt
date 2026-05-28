@@ -422,6 +422,46 @@ DAI_paratrooper_production = {
 	}
 }
 
+DAI_ranger_production = {
+	enable = {
+		has_tech = rangers_tech
+		DAI_wants_rangers = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = rangers
+		value = 3
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -3
+	}
+}
+
+DAI_mountaineer_production = {
+	enable = {
+		has_tech = mountaineers_tech
+		DAI_wants_mountaineers = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 3
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -3
+	}
+}
+
 DAI_base_force_concentration = {
 	enable = {
 		always = yes

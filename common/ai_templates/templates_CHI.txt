@@ -15,7 +15,18 @@ INFANTRY_CHI = {
 	}
 	roles = { infantry }
 
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
 	INFANTRY_CHI_default = {
+		upgrade_prio = {
+			base = 10
+		}
 		target_template = {
 			support = {
 			}
@@ -26,6 +37,9 @@ INFANTRY_CHI = {
 	}
 
 	INFANTRY_CHI_1A = {
+		upgrade_prio = {
+			base = 20
+		}
 		target_template = {
 			support = {
 				artillery = 1
@@ -37,6 +51,9 @@ INFANTRY_CHI = {
 	}
 
 	INFANTRY_CHI_1B = {
+		upgrade_prio = {
+			base = 30
+		}
 		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
 		target_template = {
 			support = {
@@ -49,6 +66,9 @@ INFANTRY_CHI = {
 	}
 
 	INFANTRY_CHI_2A = {
+		upgrade_prio = {
+			base = 40
+		}
 		enable = { num_of_military_factories > 20 date > 1939.1.1 }
 		target_template = {
 			support = {
@@ -62,6 +82,9 @@ INFANTRY_CHI = {
 	}
 
 	INFANTRY_CHI_2B = {
+		upgrade_prio = {
+			base = 50
+		}
 		enable = { num_of_military_factories > 20 date > 1939.1.1 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
 		target_template = {
 			support = {
@@ -75,6 +98,9 @@ INFANTRY_CHI = {
 	}
 
 	INFANTRY_CHI_3 = {
+		upgrade_prio = {
+			base = 60
+		}
 		enable = { num_of_military_factories > 30 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
 		target_template = {
 			support = {
@@ -89,6 +115,9 @@ INFANTRY_CHI = {
 	}
 
 	INFANTRY_CHI_4 = {
+		upgrade_prio = {
+			base = 70
+		}
 		enable = { num_of_military_factories > 40 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
 		target_template = {
 			support = {
