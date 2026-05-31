@@ -395,6 +395,61 @@ DAI_naval_role_ratios_LARGE_NAVY = {
 
 }
 
+# Keep enough screens for existing capital ships and carriers.
+# The warning and critical brackets intentionally stack. Unit ratio raises the
+# overall screen-ship target, while role ratio steers MTG designs toward DDs.
+DAI_naval_screen_ratio_warning = {
+	enable = {
+		has_dlc = "Man the Guns"
+		num_of_naval_factories > 0
+		set_temp_variable = { DAI_naval_capital_carrier_count = num_ships_with_type@capital }
+		add_to_temp_variable = { DAI_naval_capital_carrier_count = num_ships_with_type@carrier }
+		check_variable = { DAI_naval_capital_carrier_count > 0 }
+		set_temp_variable = { DAI_naval_screen_target = DAI_naval_capital_carrier_count }
+		multiply_temp_variable = { DAI_naval_screen_target = 8 }
+		check_variable = { num_ships_with_type@screen < DAI_naval_screen_target }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 25
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 25
+	}
+}
+
+DAI_naval_screen_ratio_critical = {
+	enable = {
+		has_dlc = "Man the Guns"
+		num_of_naval_factories > 0
+		set_temp_variable = { DAI_naval_capital_carrier_count = num_ships_with_type@capital }
+		add_to_temp_variable = { DAI_naval_capital_carrier_count = num_ships_with_type@carrier }
+		check_variable = { DAI_naval_capital_carrier_count > 0 }
+		set_temp_variable = { DAI_naval_screen_target = DAI_naval_capital_carrier_count }
+		multiply_temp_variable = { DAI_naval_screen_target = 6 }
+		check_variable = { num_ships_with_type@screen < DAI_naval_screen_target }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 100
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 100
+	}
+}
+
 DAI_early_cruiser_boost_ITA = {
 	enable = {
 		has_dlc = "Man the Guns"
