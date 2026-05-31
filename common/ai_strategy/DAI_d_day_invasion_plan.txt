@@ -333,17 +333,18 @@ DAI_ENG_USA_d_day_build_up_naval_support = {
 		value = 400
 	}
 
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 18 # English Channel
-		value = -600
-	}
+	# Negative naval_avoid_region behavior is not verified in vanilla.
+	#ai_strategy = {
+	#	type = naval_avoid_region
+	#	id = 18 # English Channel
+	#	value = -600
+	#}
 
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 42 # Bay of Biscay
-		value = -400
-	}
+	#ai_strategy = {
+	#	type = naval_avoid_region
+	#	id = 42 # Bay of Biscay
+	#	value = -400
+	#}
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
@@ -468,17 +469,18 @@ DAI_ENG_USA_d_day_go_time_naval_support = {
 		value = 700
 	}
 
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 18 # English Channel
-		value = -1000
-	}
+	# Negative naval_avoid_region behavior is not verified in vanilla.
+	#ai_strategy = {
+	#	type = naval_avoid_region
+	#	id = 18 # English Channel
+	#	value = -1000
+	#}
 
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 42 # Bay of Biscay
-		value = -700
-	}
+	#ai_strategy = {
+	#	type = naval_avoid_region
+	#	id = 42 # Bay of Biscay
+	#	value = -700
+	#}
 
 	ai_strategy = {
 		type = naval_convoy_raid_region
@@ -612,11 +614,12 @@ DAI_ENG_USA_d_day_beachhead_naval_support = {
 		value = 500
 	}
 
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 18 # English Channel
-		value = -500
-	}
+	# Negative naval_avoid_region behavior is not verified in vanilla.
+	#ai_strategy = {
+	#	type = naval_avoid_region
+	#	id = 18 # English Channel
+	#	value = -500
+	#}
 }
 
 DAI_allies_d_day_beachhead_lower_other_areas = {
