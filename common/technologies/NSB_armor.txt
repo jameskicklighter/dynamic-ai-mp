@@ -592,6 +592,16 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
+				add = 9999
+				date > 1938.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
+				OR = {
+					has_tech_bonus = { category = armor }
+					has_tech_bonus = { category = cat_medium_armor }
+				}
+			}
+			modifier = {
 				add = 999
 				date > 1939.1.1
 				OR = { amount_research_slots > 3 is_major = yes }
@@ -903,6 +913,16 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 9999
+				date > 1938.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_heavy_armor = yes
+				OR = {
+					has_tech_bonus = { category = armor }
+					has_tech_bonus = { category = cat_heavy_armor }
+				}
+			}
 			modifier = {
 				add = 999
 				date > 1939.1.1

@@ -410,6 +410,37 @@ MOTORIZED_GENERIC = {
 }
 
 # ==================================================
+#   Mechanized
+# ==================================================
+
+MECHANIZED_GENERIC = {
+	roles = { mechanized }
+
+	upgrade_prio = {
+		base = 10
+	}
+
+	MECHANIZED_GENERIC_default = {
+		upgrade_prio = {
+			base = 10
+		}
+		enable = {
+			has_tech = mechanised_infantry
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				mechanized = 12
+			}
+		}
+	}
+}
+
+# ==================================================
 #   Mountaineers
 # ==================================================
 

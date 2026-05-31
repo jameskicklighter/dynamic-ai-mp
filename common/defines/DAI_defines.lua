@@ -61,6 +61,10 @@ NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_NAVY = 50
 NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_AIR = 25
 NDefines.NAI.DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_AIR = 20
 
+-- Naval refits: keep AI yards on new ships instead of pulling existing ships out of service.
+NDefines.NAI.REFIT_SHIP_RELUCTANCE = 5000
+NDefines.NAI.REFIT_SHIP_PERCENTAGE_OF_FORCES = 0.0
+
 -- Buildings
 -- BUILDING_TARGETS_BUILDING_PRIORITIES = {				-- buildings in order of pirority when considering building targets strategies. First has the greatest priority, omitted has the lowest. NOTE: not all buildings are supported by building targets strategies.
 --     'industrial_complex',

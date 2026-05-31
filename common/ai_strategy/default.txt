@@ -8,6 +8,7 @@ DAI_default_land_ratios = {
 				original_tag = GER
 				original_tag = FRA
 				original_tag = CHI
+				original_tag = BUL
 				original_tag = ENG
 				original_tag = CZE
 				tag = SOV
@@ -268,7 +269,6 @@ DAI_armor_role_ratio_default_medium = {
 				original_tag = FRA
 				original_tag = GER
 				original_tag = ITA
-				original_tag = JAP
 				original_tag = SOV
 				original_tag = USA
 			}
@@ -378,7 +378,6 @@ DAI_increase_armored_production = {
 				original_tag = FRA
 				original_tag = GER
 				original_tag = ITA
-				original_tag = JAP
 				original_tag = SOV
 				original_tag = USA
 			}
@@ -1652,6 +1651,33 @@ default_produce_some_trucks_for_buffer_2 = {
 		type = equipment_production_min_factories_archetype
 		id = motorized_equipment
 		value = 1
+	}
+}
+
+DAI_delay_mechanized_equipment_upgrade = {
+	enable = {
+		has_dlc = "No Step Back"
+		has_tech = mechanised_infantry
+		has_equipment = { mechanized_equipment < 80000 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = mechanized_equipment_3
+		value = -100
+	}
+
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = mechanized_equipment_2
+		value = -100
+	}
+
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = mechanized_equipment_1
+		value = 100
 	}
 }
 
