@@ -127,6 +127,10 @@ technologies = {
 			# DAI --
 			base = 10
 			modifier = {
+				add = 9999
+				has_tech_bonus = { category = infantry_weapons }
+			}
+			modifier = {
 				add = 495
 				original_tag = CHI
 			}
@@ -1987,12 +1991,26 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
-				add = 9 
+				add = 9
 				has_country_flag = DAI_wants_armor
 			}
 			modifier = {
+				add = 9999
+				date > 1938.1.1
+				OR = {
+					has_country_flag = DAI_wants_armor
+					original_tag = BUL
+				}
+				OR = {
+					has_tech_bonus = { category = motorized_equipment }
+					has_tech_bonus = { category = mio_cat_tech_all_motorized_mechanized }
+					has_tech_bonus = { category = infantry_tech }
+					has_tech_bonus = { category = cat_mechanized_equipment }
+				}
+			}
+			modifier = {
 				add = 20
-				date > 1941.1.1
+				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI

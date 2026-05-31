@@ -9,6 +9,13 @@ technologies = {
 			has_dlc = "Arms Against Tyranny"
 		}
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_mountaineers = yes
+			}
+		}
+
 		# EFFECT ########
 		mountaineers_special_forces_contribution_factor = -0.25
 		category_mountaineers = {
@@ -84,6 +91,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -134,6 +148,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_mountaineers = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -182,6 +203,13 @@ technologies = {
 
 		xp_research_type = army
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_mountaineers = yes
+			}
+		}
 
 		category_mountaineers = {
 			initiative = 0.01
@@ -233,6 +261,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_mountaineers = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		category_mountaineers = {
@@ -280,6 +315,13 @@ technologies = {
 
 		xp_research_type = army
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -336,6 +378,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_mountaineers = yes
+			}
+		}
+
 		category_mountaineers = {
 			max_organisation = 10
 		}
@@ -384,6 +433,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		category_mountaineers = {
@@ -426,6 +482,13 @@ technologies = {
 
 		xp_research_type = army
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_mountaineers = yes
+			}
+		}
 
 		special_forces_cap = 0.06
 		special_forces_out_of_supply_factor = -0.1
@@ -471,6 +534,13 @@ technologies = {
 
 		allow_branch = {
 			has_dlc = "Arms Against Tyranny"
+		}
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_marines = yes
+			}
 		}
 
 		xp_research_type = navy
@@ -545,6 +615,13 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		xor = { marines_shore_parties }
 
 		force_use_small_tech_layout = yes
@@ -594,6 +671,13 @@ technologies = {
 
 		xp_research_type = navy
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_marines = yes
+			}
+		}
 
 		xor = { marines_jungle_troops }
 
@@ -645,6 +729,13 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_marines = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -695,6 +786,13 @@ technologies = {
 
 		xp_research_type = navy
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -749,6 +847,13 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_marines = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -796,6 +901,13 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -842,6 +954,13 @@ technologies = {
 
 		xp_research_type = navy
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_marines = yes
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -896,6 +1015,13 @@ technologies = {
 		xp_research_type = navy
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		amphibious_mechanized = {
@@ -949,6 +1075,13 @@ technologies = {
 
 		xp_research_type = navy
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_marines = yes
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -1012,6 +1145,13 @@ technologies = {
 
 		allow_branch = {
 			has_dlc = "Arms Against Tyranny"
+		}
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
 		}
 
 		xp_research_type = air
@@ -1081,6 +1221,13 @@ technologies = {
 		xp_research_type = air
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1124,6 +1271,13 @@ technologies = {
 		xp_research_type = air
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		xor = { paras_dispersed_drop }
@@ -1166,6 +1320,13 @@ technologies = {
 
 		xp_research_type = air
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -1215,6 +1376,13 @@ technologies = {
 		xp_research_type = air
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1259,6 +1427,13 @@ technologies = {
 
 		xp_research_type = air
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -1305,6 +1480,13 @@ technologies = {
 		xp_research_type = air
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1349,6 +1531,13 @@ technologies = {
 		xp_research_type = air
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1388,6 +1577,13 @@ technologies = {
 		xp_research_type = air
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		category_paratroopers = {
@@ -1425,6 +1621,13 @@ technologies = {
 
 		xp_research_type = air
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -1464,6 +1667,13 @@ technologies = {
 
 		allow_branch = {
 			has_dlc = "No Compromise, No Surrender"
+		}
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_rangers = yes
+			}
 		}
 
 		xp_research_type = army
@@ -1526,6 +1736,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_rangers = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1571,6 +1788,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1615,6 +1839,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_rangers = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1657,6 +1888,13 @@ technologies = {
 	rangers_recon_terrain_training = {
 		xp_research_type = army
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_rangers = yes
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -1704,6 +1942,13 @@ technologies = {
 	rangers_fire_support_integration = {
 		xp_research_type = army
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
 
 		force_use_small_tech_layout = yes
 
@@ -1754,6 +1999,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_rangers = yes
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		path = {
@@ -1803,6 +2055,13 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 60
 
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				always = no
+			}
+		}
+
 		force_use_small_tech_layout = yes
 
 		ranger_battalion = {
@@ -1839,6 +2098,13 @@ technologies = {
 	rangers_backbone_doctrine = {
 		xp_research_type = army
 		xp_unlock_cost = 60
+
+		allow = {
+			if = {
+				limit = { is_ai = yes }
+				DAI_wants_rangers = yes
+			}
+		}
 
 		force_use_small_tech_layout = yes
 

@@ -740,6 +740,44 @@ DAI_disband_starting_units_decisions = {
 		}
 	}
 
+	DAI_mechanized_cost_upgrade = {
+		icon = generic_research
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			has_tech = mechanised_infantry
+			has_army_experience > 15
+		}
+		available = {
+			has_tech = mechanised_infantry
+			has_army_experience > 15
+			NOT = { has_country_flag = DAI_mechanized_cost_upgrade_done }
+		}
+		cost = 0
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -15
+				set_country_flag = DAI_mechanized_cost_upgrade_done
+				create_equipment_variant = {
+					name = "Mechanized Mk2"
+					type = mechanized_equipment_1
+					parent_version = 0
+					upgrades = {
+						mech_cost_upgrade = 5
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 999
+		}
+	}
+
 	DAI_military_attache_to_world_war = {
 	
 		icon = generic_research
