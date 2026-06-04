@@ -1,3 +1,64 @@
+DAI_set_build_order_ENG = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	IF = { limit = { DAI_ENG_is_historical_ai = yes }
+
+		IF = {
+			limit = {
+				NOT = { has_idea_with_trait = silent_workhorse }
+				has_available_idea_with_traits = { idea = silent_workhorse limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ENG_philip_kerr }
+		}
+		ELSE_IF = {
+			limit = {
+				DAI_build_order_should_take_partial_mob = yes
+			}
+			set_variable = { DAI_build_order_wants = token:partial_economic_mobilisation }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_chief_offensive_2 }
+				has_available_idea_with_traits = { idea = army_chief_offensive_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ENG_john_vereker }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = air_chief_reform_2 }
+				has_available_idea_with_traits = { idea = air_chief_reform_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ENG_cyril_newall }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = navy_chief_maneuver_2 }
+				has_available_idea_with_traits = { idea = navy_chief_maneuver_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ENG_ernle_chatfield }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = war_industrialist }
+				has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ENG_maxwell_aitken }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = grand_battle_plan_expert }
+				has_available_idea_with_traits = { idea = grand_battle_plan_expert limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ENG_bernard_montgomery }
+		}
+
+		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+
+	}
+
+}
+
 DAI_set_build_order_GER = {
 
 	set_variable = { DAI_build_order_wants = -1 }
@@ -88,6 +149,12 @@ DAI_set_build_order_FRA = {
 			}
 			set_variable = { DAI_build_order_wants = token:FRA_gaston_henry_haye }
 		}
+		ELSE_IF = {
+			limit = {
+				DAI_build_order_should_take_partial_mob = yes
+			}
+			set_variable = { DAI_build_order_wants = token:partial_economic_mobilisation }
+		}
 		# ELSE_IF = {
 		# 	limit = {
 		# 		# We are only concerned about early build order. Don't do an extensive check for conditions,
@@ -106,13 +173,13 @@ DAI_set_build_order_FRA = {
 			}
 			set_variable = { DAI_build_order_wants = token:FRA_henri_marie_auguste_bineau }
 		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		NOT = { has_idea_with_trait = war_industrialist }
-		# 		has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
-		# 	}
-		# 	set_variable = { DAI_build_order_wants = token:FRA_zivony_peshkov }
-		# }
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = war_industrialist }
+				has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:FRA_zivony_peshkov }
+		}
 
 		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
 

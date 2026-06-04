@@ -46,8 +46,28 @@ DAI_medium_tank = {
 				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
-				tank_nsb_armor_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -103,8 +123,36 @@ DAI_medium_tank = {
 				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 14
-				tank_nsb_armor_upgrade = 14
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -159,8 +207,44 @@ DAI_medium_tank = {
 				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 20
-				tank_nsb_armor_upgrade = 20
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_4
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_4
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -212,7 +296,13 @@ DAI_medium_SP_artillery = {
 				special_type_slot_4 = wet_ammo_storage
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 4
+						has_tech = engine_tech_1
+					}
+				}
 				tank_nsb_armor_upgrade = 0
 			}
 		}
@@ -260,7 +350,13 @@ DAI_medium_SP_artillery = {
 				special_type_slot_4 = wet_ammo_storage
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 4
+						has_tech = engine_tech_1
+					}
+				}
 				tank_nsb_armor_upgrade = 0
 			}
 		}
@@ -308,7 +404,13 @@ DAI_medium_SP_artillery = {
 				special_type_slot_4 = wet_ammo_storage
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 4
+						has_tech = engine_tech_1
+					}
+				}
 				tank_nsb_armor_upgrade = 0
 			}
 		}
@@ -360,7 +462,13 @@ DAI_medium_SP_anti_air = {
 				special_type_slot_4 = additional_machine_guns
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 4
+						has_tech = engine_tech_1
+					}
+				}
 				tank_nsb_armor_upgrade = 0
 			}
 		}
@@ -405,7 +513,13 @@ DAI_medium_SP_anti_air = {
 				special_type_slot_4 = additional_machine_guns
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 4
+						has_tech = engine_tech_1
+					}
+				}
 				tank_nsb_armor_upgrade = 0
 			}
 		}
@@ -450,7 +564,13 @@ DAI_medium_SP_anti_air = {
 				special_type_slot_4 = additional_machine_guns
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 4
+						has_tech = engine_tech_1
+					}
+				}
 				tank_nsb_armor_upgrade = 0
 			}
 		}
@@ -523,8 +643,28 @@ DAI_medium_tank_destroyer = {
 				special_type_slot_4 = squeezebore_adaptor
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 14
-				tank_nsb_armor_upgrade = 14
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -579,8 +719,36 @@ DAI_medium_tank_destroyer = {
 				special_type_slot_4 = squeezebore_adaptor
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 17
-				tank_nsb_armor_upgrade = 17
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -635,8 +803,44 @@ DAI_medium_tank_destroyer = {
 				special_type_slot_4 = squeezebore_adaptor
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 20
-				tank_nsb_armor_upgrade = 20
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_4
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_4
+					}
+				}
 			}
 		}
 		allowed_modules = {

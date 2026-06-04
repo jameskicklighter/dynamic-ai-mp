@@ -1,6 +1,7 @@
 DAI_initialize_constants = {
 	every_country = {
 		limit = { is_ai = yes }
+		DAI_set_wants_air_flag = yes
 		DAI_set_wants_armor_flag = yes
 		DAI_set_armor_template_flags = yes
 	}

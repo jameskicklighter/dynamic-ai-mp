@@ -351,7 +351,7 @@ GER_force_build_more_infantry = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = build_army id = infantry value = 500 }
-	ai_strategy = { type = force_build_armies value = 300 }
+	# ai_strategy = { type = force_build_armies value = 300 }
 	# ai_strategy = { type = build_army id = garrison value = 100 } 
 }
 

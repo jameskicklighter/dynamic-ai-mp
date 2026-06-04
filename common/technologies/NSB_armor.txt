@@ -480,13 +480,19 @@ technologies = {
 				date > 1937.1.1
 				OR = { amount_research_slots > 3 is_major = yes }
 				has_country_flag = DAI_wants_armor
-				DAI_prefers_medium_armor = yes
+				OR = {
+					DAI_prefers_medium_armor = yes
+					DAI_prefers_heavy_armor = yes
+				}
 			}
 			modifier = {
 				add = 30
 				date > 1938.1.1
 				has_country_flag = DAI_wants_armor
-				DAI_prefers_medium_armor = yes
+				OR = {
+					DAI_prefers_medium_armor = yes
+					DAI_prefers_heavy_armor = yes
+				}
 			}
 			# -- DAI
 		}

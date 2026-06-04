@@ -2,7 +2,7 @@
 
 infantry_ENG = {
 	available_for = { ENG }
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10

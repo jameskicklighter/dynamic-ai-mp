@@ -406,6 +406,10 @@ ideas = {
 						original_tag = USA
 					}
 				}
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:partial_economic_mobilisation }
+				}
 				# Wait for War Economy
 				modifier = {
 					original_tag = GER
@@ -420,6 +424,7 @@ ideas = {
 						has_idea = war_economy
 						has_idea = tot_economic_mobilisation
 						has_idea = totaler_krieg_economy
+						has_idea = national_defense_state
 					}
 				}
 				modifier = {
@@ -613,6 +618,7 @@ ideas = {
 					OR = {
 						has_idea = tot_economic_mobilisation
 						has_idea = totaler_krieg_economy
+						has_idea = national_defense_state
 					}
 				}
 				modifier = {
@@ -799,8 +805,13 @@ ideas = {
 						has_idea = volunteer_only
 						AND = {
 							has_idea = limited_conscription
-							NOT = { has_tech = nd_conscription }
-							NOT = { has_tech = human_wave_offensive }
+							NOT = {
+								OR = {
+									has_doctrine = last_stand
+									has_completed_subdoctrine = irregulars
+									has_tech = revolutionary_mass_assault
+								}
+							}
 						}
 					}
 				}
@@ -835,7 +846,10 @@ ideas = {
 				}
 				modifier = {
 					factor = 0
-					has_idea = totaler_krieg_economy
+					OR = {
+						has_idea = totaler_krieg_economy
+						has_idea = national_defense_state
+					}
 				}
 				modifier = {
 					factor = 0

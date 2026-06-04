@@ -3,7 +3,7 @@
 
 INFANTRY_SOV = {
 	available_for = { SOV }
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10

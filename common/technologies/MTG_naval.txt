@@ -756,11 +756,6 @@ technologies = {
 				add = 10
 				DAI_Should_Research_Navy_CRUISER = yes
 			}
-			modifier = {
-				add = 9999
-				original_tag = JAP
-				has_completed_focus = JAP_cruiser_modernization
-			}
 			# -- DAI
 		}
 

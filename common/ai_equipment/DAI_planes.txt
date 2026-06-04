@@ -38,8 +38,8 @@ DAI_fighter = {
 				fixed_main_weapon_slot = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -135,9 +135,9 @@ DAI_fighter = {
 				fixed_auxiliary_weapon_slot_1 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -187,10 +187,10 @@ DAI_fighter = {
 				fixed_auxiliary_weapon_slot_2 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { drop_tanks empty } }
-				special_type_slot_4 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = drop_tanks module = empty }
+				special_type_slot_4 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -240,10 +240,10 @@ DAI_fighter = {
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = jet_engine_2x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { drop_tanks empty } }
-				special_type_slot_4 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = drop_tanks module = empty }
+				special_type_slot_4 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -300,8 +300,8 @@ DAI_cas = {
 				fixed_main_weapon_slot = bomb_locks
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = { any_of = { dive_brakes_small empty } }
-				special_type_slot_2 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = dive_brakes_small module = empty }
+				special_type_slot_2 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -345,9 +345,9 @@ DAI_cas = {
 				fixed_auxiliary_weapon_slot_1 = bomb_locks
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { dive_brakes_small empty } }
-				special_type_slot_3 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = dive_brakes_small module = empty }
+				special_type_slot_3 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -392,10 +392,10 @@ DAI_cas = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { dive_brakes_small empty } }
-				special_type_slot_4 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = dive_brakes_small module = empty }
+				special_type_slot_4 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -440,10 +440,10 @@ DAI_cas = {
 				fixed_auxiliary_weapon_slot_2 = bomb_locks
 				fixed_auxiliary_weapon_slot_3 = bomb_locks
 				engine_type_slot = jet_engine_2x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { dive_brakes_small empty } }
-				special_type_slot_4 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = dive_brakes_small module = empty }
+				special_type_slot_4 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -499,8 +499,8 @@ DAI_naval_bomber = {
 				fixed_main_weapon_slot = { any_of = { torpedo_mounting_2 torpedo_mounting } }
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = { any_of = { drop_tanks empty } }
-				special_type_slot_2 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = drop_tanks module = empty }
+				special_type_slot_2 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -539,9 +539,9 @@ DAI_naval_bomber = {
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { drop_tanks empty } }
-				special_type_slot_2 = { any_of = { fuel_tanks_small empty } }
-				special_type_slot_3 = { any_of = { fuel_tanks_small empty } }
+				special_type_slot_1 = { module = drop_tanks module = empty }
+				special_type_slot_2 = { module = fuel_tanks_small module = empty }
+				special_type_slot_3 = { module = fuel_tanks_small module = empty }
 			}
 		}
 
@@ -581,10 +581,10 @@ DAI_naval_bomber = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { drop_tanks empty } }
-				special_type_slot_2 = { any_of = { fuel_tanks_small empty } }
-				special_type_slot_3 = { any_of = { fuel_tanks_small empty } }
-				special_type_slot_4 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = drop_tanks module = empty }
+				special_type_slot_2 = { module = fuel_tanks_small module = empty }
+				special_type_slot_3 = { module = fuel_tanks_small module = empty }
+				special_type_slot_4 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -624,10 +624,10 @@ DAI_naval_bomber = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = jet_engine_1x
-				special_type_slot_1 = { any_of = { drop_tanks empty } }
-				special_type_slot_2 = { any_of = { fuel_tanks_small empty } }
-				special_type_slot_3 = { any_of = { fuel_tanks_small empty } }
-				special_type_slot_4 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = drop_tanks module = empty }
+				special_type_slot_2 = { module = fuel_tanks_small module = empty }
+				special_type_slot_3 = { module = fuel_tanks_small module = empty }
+				special_type_slot_4 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -682,8 +682,8 @@ DAI_cv_fighter = {
 				fixed_main_weapon_slot = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_1 = light_mg_2x
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = { any_of = { armor_plate_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = armor_plate_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -725,9 +725,9 @@ DAI_cv_fighter = {
 				fixed_auxiliary_weapon_slot_1 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_2 = light_mg_2x
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -770,9 +770,9 @@ DAI_cv_fighter = {
 				fixed_auxiliary_weapon_slot_2 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -815,9 +815,9 @@ DAI_cv_fighter = {
 				fixed_auxiliary_weapon_slot_2 = { any_of = { aircraft_cannon_2_2x aircraft_cannon_1_2x heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_3 = light_mg_4x
 				engine_type_slot = jet_engine_2x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -1005,8 +1005,8 @@ DAI_cv_naval_bomber = {
 				fixed_main_weapon_slot = torpedo_mounting
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -1044,9 +1044,9 @@ DAI_cv_naval_bomber = {
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -1085,9 +1085,9 @@ DAI_cv_naval_bomber = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -1126,9 +1126,9 @@ DAI_cv_naval_bomber = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = jet_engine_1x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_small empty } }
-				special_type_slot_2 = { any_of = { armor_plate_small empty } }
-				special_type_slot_3 = { any_of = { armor_plate_small empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_small module = empty }
+				special_type_slot_2 = { module = armor_plate_small module = empty }
+				special_type_slot_3 = { module = armor_plate_small module = empty }
 			}
 		}
 
@@ -1180,9 +1180,9 @@ DAI_tactical_bomber = {
 				fixed_auxiliary_weapon_slot_2 = bomb_locks
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_2_2x
-				special_type_slot_1 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_2 = { any_of = { self_sealing_fuel_tanks_medium empty } }
-				special_type_slot_3 = { any_of = { lmg_defense_turret empty } }
+				special_type_slot_1 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_2 = { module = self_sealing_fuel_tanks_medium module = empty }
+				special_type_slot_3 = { module = lmg_defense_turret module = empty }
 				special_type_slot_4 = empty
 			}
 		}
@@ -1232,9 +1232,9 @@ DAI_tactical_bomber = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = { any_of = { tank_buster_1 bomb_locks } }
 				engine_type_slot = engine_3_2x
-				special_type_slot_1 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_2 = { any_of = { armor_plate_medium empty } }
-				special_type_slot_3 = { any_of = { self_sealing_fuel_tanks_medium empty } }
+				special_type_slot_1 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_2 = { module = armor_plate_medium module = empty }
+				special_type_slot_3 = { module = self_sealing_fuel_tanks_medium module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 			}
@@ -1286,9 +1286,9 @@ DAI_tactical_bomber = {
 				fixed_auxiliary_weapon_slot_3 = { any_of = { tank_buster_2 tank_buster_1 bomb_locks } }
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = engine_4_2x
-				special_type_slot_1 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_2 = { any_of = { self_sealing_fuel_tanks_medium empty } }
-				special_type_slot_3 = { any_of = { armor_plate_medium empty } }
+				special_type_slot_1 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_2 = { module = self_sealing_fuel_tanks_medium module = empty }
+				special_type_slot_3 = { module = armor_plate_medium module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 			}
@@ -1340,9 +1340,9 @@ DAI_tactical_bomber = {
 				fixed_auxiliary_weapon_slot_3 = { any_of = { tank_buster_2 tank_buster_1 bomb_locks } }
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = jet_engine_3x
-				special_type_slot_1 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_2 = { any_of = { self_sealing_fuel_tanks_medium empty } }
-				special_type_slot_3 = { any_of = { armor_plate_medium empty } }
+				special_type_slot_1 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_2 = { module = self_sealing_fuel_tanks_medium module = empty }
+				special_type_slot_3 = { module = armor_plate_medium module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 			}
@@ -1411,8 +1411,8 @@ DAI_heavy_fighter = {
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = light_mg_4x
 				engine_type_slot = engine_2_2x
-				special_type_slot_1 = { any_of = { hmg_defense_turret_2x empty } }
-				special_type_slot_2 = { any_of = { lmg_defense_turret empty } }
+				special_type_slot_1 = { module = hmg_defense_turret_2x module = empty }
+				special_type_slot_2 = { module = lmg_defense_turret module = empty }
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 			}
@@ -1469,8 +1469,8 @@ DAI_heavy_fighter = {
 				fixed_auxiliary_weapon_slot_2 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_3 = { any_of = { heavy_mg_4x light_mg_4x } }
 				engine_type_slot = engine_3_2x
-				special_type_slot_1 = { any_of = { hmg_defense_turret_2x empty } }
-				special_type_slot_2 = { any_of = { lmg_defense_turret_2x empty } }
+				special_type_slot_1 = { module = hmg_defense_turret_2x module = empty }
+				special_type_slot_2 = { module = lmg_defense_turret_2x module = empty }
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
@@ -1529,9 +1529,9 @@ DAI_heavy_fighter = {
 				fixed_auxiliary_weapon_slot_3 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = engine_4_2x
-				special_type_slot_1 = { any_of = { hmg_defense_turret_2x empty } }
-				special_type_slot_2 = { any_of = { armor_plate_medium empty } }
-				special_type_slot_3 = { any_of = { lmg_defense_turret empty } }
+				special_type_slot_1 = { module = hmg_defense_turret_2x module = empty }
+				special_type_slot_2 = { module = armor_plate_medium module = empty }
+				special_type_slot_3 = { module = lmg_defense_turret module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 			}
@@ -1589,7 +1589,7 @@ DAI_heavy_fighter = {
 				fixed_auxiliary_weapon_slot_3 = { any_of = { heavy_mg_4x light_mg_4x } }
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = jet_engine_2x
-				special_type_slot_1 = { any_of = { hmg_defense_turret empty } }
+				special_type_slot_1 = { module = hmg_defense_turret module = empty }
 				special_type_slot_2 = empty
 				special_type_slot_3 = empty
 				special_type_slot_4 = empty
@@ -1656,10 +1656,10 @@ DAI_strategic_bomber = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_2_4x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_4 = { any_of = { radio_navigation_2 radio_navigation_1 empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_4 = { module = radio_navigation_2 module = radio_navigation_1 module = empty }
 				special_type_slot_5 = empty
 			}
 		}
@@ -1699,11 +1699,11 @@ DAI_strategic_bomber = {
 				fixed_auxiliary_weapon_slot_3 = empty
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = engine_3_4x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_4 = { any_of = { radio_navigation_2 radio_navigation_1 empty } }
-				special_type_slot_5 = { any_of = { armor_plate_large empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_4 = { module = radio_navigation_2 module = radio_navigation_1 module = empty }
+				special_type_slot_5 = { module = armor_plate_large module = empty }
 				special_type_slot_6 = empty
 			}
 		}
@@ -1743,11 +1743,11 @@ DAI_strategic_bomber = {
 				fixed_auxiliary_weapon_slot_3 = empty
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = engine_4_4x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_4 = { any_of = { radio_navigation_2 radio_navigation_1 empty } }
-				special_type_slot_5 = { any_of = { armor_plate_large empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_4 = { module = radio_navigation_2 module = radio_navigation_1 module = empty }
+				special_type_slot_5 = { module = armor_plate_large module = empty }
 				special_type_slot_6 = empty
 			}
 		}
@@ -1787,12 +1787,12 @@ DAI_strategic_bomber = {
 				fixed_auxiliary_weapon_slot_3 = large_bomb_bay
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = jet_engine_6x
-				special_type_slot_1 = { any_of = { self_sealing_fuel_tanks_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { bomb_sights_2 bomb_sights_1 empty } }
-				special_type_slot_4 = { any_of = { radio_navigation_2 radio_navigation_1 empty } }
-				special_type_slot_5 = { any_of = { armor_plate_large empty } }
-				special_type_slot_6 = { any_of = { armor_plate_large empty } }
+				special_type_slot_1 = { module = self_sealing_fuel_tanks_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = bomb_sights_2 module = bomb_sights_1 module = empty }
+				special_type_slot_4 = { module = radio_navigation_2 module = radio_navigation_1 module = empty }
+				special_type_slot_5 = { module = armor_plate_large module = empty }
+				special_type_slot_6 = { module = armor_plate_large module = empty }
 			}
 		}
 
@@ -1843,9 +1843,9 @@ DAI_maritime_patrol = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_2_4x
-				special_type_slot_1 = { any_of = { flying_boat_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { self_sealing_fuel_tanks_large empty } }
+				special_type_slot_1 = { module = flying_boat_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = self_sealing_fuel_tanks_large module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 			}
@@ -1888,9 +1888,9 @@ DAI_maritime_patrol = {
 				fixed_auxiliary_weapon_slot_3 = empty
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = engine_3_4x
-				special_type_slot_1 = { any_of = { flying_boat_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { self_sealing_fuel_tanks_large empty } }
+				special_type_slot_1 = { module = flying_boat_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = self_sealing_fuel_tanks_large module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 				special_type_slot_6 = empty
@@ -1934,9 +1934,9 @@ DAI_maritime_patrol = {
 				fixed_auxiliary_weapon_slot_3 = empty
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = engine_4_4x
-				special_type_slot_1 = { any_of = { flying_boat_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { self_sealing_fuel_tanks_large empty } }
+				special_type_slot_1 = { module = flying_boat_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = self_sealing_fuel_tanks_large module = empty }
 				special_type_slot_4 = empty
 				special_type_slot_5 = empty
 				special_type_slot_6 = empty
@@ -1980,10 +1980,10 @@ DAI_maritime_patrol = {
 				fixed_auxiliary_weapon_slot_3 = empty
 				fixed_auxiliary_weapon_slot_4 = empty
 				engine_type_slot = jet_engine_4x
-				special_type_slot_1 = { any_of = { flying_boat_large empty } }
-				special_type_slot_2 = { any_of = { air_ground_radar_2 air_ground_radar_1 empty } }
-				special_type_slot_3 = { any_of = { self_sealing_fuel_tanks_large empty } }
-				special_type_slot_4 = { any_of = { fuel_tanks_large empty } }
+				special_type_slot_1 = { module = flying_boat_large module = empty }
+				special_type_slot_2 = { module = air_ground_radar_2 module = air_ground_radar_1 module = empty }
+				special_type_slot_3 = { module = self_sealing_fuel_tanks_large module = empty }
+				special_type_slot_4 = { module = fuel_tanks_large module = empty }
 				special_type_slot_5 = empty
 				special_type_slot_6 = empty
 			}

@@ -2,7 +2,7 @@
 
 INFANTRY_ITA = {
 	available_for = { ITA }
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10
@@ -123,9 +123,7 @@ militia_ITA = {
 		ITA
 	}
 	
-	roles = {
-		militias
-	}
+	role = militias
 	
 	upgrade_prio = {
 		base = 10

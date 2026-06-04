@@ -12,9 +12,34 @@ DAI_should_pre_research_industry = {
 	}
 }
 
-DAI_should_build_planes = {
+DAI_build_order_should_take_partial_mob = {
+	date < 1939.1.1
+	has_war_support > 0.25
+	NOT = { has_idea = partial_economic_mobilisation }
+	NOT = { has_idea = war_economy }
+	NOT = { has_idea = tot_economic_mobilisation }
+	NOT = { has_idea = totaler_krieg_economy }
+	NOT = { has_idea = national_defense_state }
+	NOT = {
+		has_war_support > 0.5
+		OR = {
+			has_government = fascism
+			has_government = communism
+			AND = {
+				has_war = yes
+				any_enemy_country = {
+					ic_ratio = {
+						tag = ROOT
+						ratio > 0.4
+					}
+				}
+			}
+		}
+	}
+}
+
+DAI_is_default_air_country = {
 	OR = {
-		num_of_military_factories > 30
 		# Always Produce Planes
 		original_tag = ENG
 		original_tag = FRA
@@ -34,6 +59,41 @@ DAI_should_build_planes = {
 	}
 }
 
+DAI_air_factory_threshold_met = {
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			num_of_military_factories > 75
+		}
+		AND = {
+			NOT = { is_historical_focus_on = yes }
+			num_of_military_factories > 30
+		}
+	}
+}
+
+DAI_can_activate_air_flag = {
+	NOT = {
+		AND = {
+			original_tag = FRA
+			is_historical_focus_on = yes
+			date < 1942.1.1
+			has_capitulated = no
+			NOT = { has_global_flag = FRA_already_surrendered }
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = SOV
+			NOT = { has_completed_focus = SOV_foster_flying_clubs }
+		}
+	}
+}
+
+DAI_should_build_planes = {
+	has_country_flag = DAI_wants_air
+}
+
 DAI_wants_marines = {
 	OR = {
 		original_tag = ENG
@@ -41,6 +101,14 @@ DAI_wants_marines = {
 		original_tag = JAP
 		original_tag = SIA
 		original_tag = USA
+	}
+}
+
+DAI_wants_amtrac = {
+	OR = {
+		original_tag = ENG
+		original_tag = USA
+		DAI_wants_marines = yes
 	}
 }
 
