@@ -1336,7 +1336,7 @@ JAP_ally_SIA = {
 		has_government = fascism
 		OR = {
 			date > 1941.12.6 # Pearl Harbor Surprise
-			JAP = { has_completed_focus = JAP_alliance_with_siam }
+			JAP = { has_completed_focus = JAP_sea_pressure_siam }
 		}
 	}
 	abort_when_not_enabled = yes
@@ -1933,6 +1933,7 @@ JAP_invasion_priority = {
 		DAI_JAP_okay_to_invade_CHI = yes
 		has_war = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = invasion_unit_request
@@ -2524,7 +2525,7 @@ JAP_collaboration_on_CHI_1 = {
 		original_tag = JAP
 	}
 	enable = {
-		has_completed_focus = JAP_purge_the_kodoha_faction
+		has_completed_focus = JAP_sea_purge_the_kodoha_faction
 		CHI = {
 			exists = yes
 			has_capitulated = no
@@ -2552,7 +2553,7 @@ JAP_collaboration_on_CHI_2 = {
 		original_tag = JAP
 	}
 	enable = {
-		has_completed_focus = JAP_purge_the_kodoha_faction
+		has_completed_focus = JAP_sea_purge_the_kodoha_faction
 		CHI = {
 			exists = yes
 			has_capitulated = no
@@ -2580,7 +2581,7 @@ JAP_collaboration_on_CHI_3 = {
 		original_tag = JAP
 	}
 	enable = {
-		has_completed_focus = JAP_purge_the_kodoha_faction
+		has_completed_focus = JAP_sea_purge_the_kodoha_faction
 		CHI = {
 			exists = yes
 			has_capitulated = no

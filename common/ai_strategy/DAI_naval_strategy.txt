@@ -569,6 +569,13 @@ DAI_sub_production_GER = {
 DAI_minimum_cv_plane_construction = {
 	enable = {
 		has_navy_size = { type = carrier size > 0 }
+		NOT = {
+			AND = {
+				original_tag = FRA
+				is_historical_focus_on = yes
+				date < 1942.1.1
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 

@@ -3,7 +3,7 @@
 
 INFANTRY_USA = {
 	available_for = { USA }
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10

@@ -13,7 +13,7 @@ INFANTRY_CHI = {
 		MEN
 		MAN
 	}
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10
@@ -28,8 +28,6 @@ INFANTRY_CHI = {
 			base = 10
 		}
 		target_template = {
-			support = {
-			}
 			regiments = {
 				infantry = 6
 			}
@@ -54,7 +52,9 @@ INFANTRY_CHI = {
 		upgrade_prio = {
 			base = 30
 		}
-		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		enable = {
+			has_doctrine = large_unit_tactics
+		}
 		target_template = {
 			support = {
 				artillery = 1
@@ -85,7 +85,11 @@ INFANTRY_CHI = {
 		upgrade_prio = {
 			base = 50
 		}
-		enable = { num_of_military_factories > 20 date > 1939.1.1 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		enable = {
+			num_of_military_factories > 20
+			date > 1939.1.1
+			has_doctrine = large_unit_tactics
+		}
 		target_template = {
 			support = {
 				engineer = 1
@@ -101,7 +105,10 @@ INFANTRY_CHI = {
 		upgrade_prio = {
 			base = 60
 		}
-		enable = { num_of_military_factories > 30 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		enable = {
+			num_of_military_factories > 30
+			has_doctrine = large_unit_tactics
+		}
 		target_template = {
 			support = {
 				engineer = 1
@@ -118,7 +125,10 @@ INFANTRY_CHI = {
 		upgrade_prio = {
 			base = 70
 		}
-		enable = { num_of_military_factories > 40 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		enable = {
+			num_of_military_factories > 40
+			has_doctrine = large_unit_tactics
+		}
 		target_template = {
 			support = {
 				engineer = 1

@@ -1547,7 +1547,7 @@ DAI_battlecruiser = {
 				has_tech = interwar_antiair
 				has_tech = improved_fire_control_system
 
-				has_tech = improved_airplane_launcher
+				has_tech = basic_ship_hull_cruiser
 
 				### Block after unlocking the next version
 				# NOT = {
@@ -1610,7 +1610,7 @@ DAI_battlecruiser = {
 				has_tech = interwar_antiair
 				has_tech = improved_fire_control_system
 
-				has_tech = improved_airplane_launcher
+				has_tech = basic_ship_hull_cruiser
 
 				### Added
 				# has_tech = improved_decimetric_radar
@@ -1675,7 +1675,7 @@ DAI_battlecruiser = {
 				has_tech = advanced_fire_control_system
 				# has_tech = improved_decimetric_radar
 
-				has_tech = improved_airplane_launcher
+				has_tech = basic_ship_hull_cruiser
 
 			}
 		}
@@ -1734,7 +1734,7 @@ DAI_battlecruiser = {
 				has_tech = advanced_fire_control_system
 				# has_tech = improved_decimetric_radar
 
-				has_tech = improved_airplane_launcher
+				has_tech = basic_ship_hull_cruiser
 
 				### Added
 				has_tech = advanced_dp_light_battery

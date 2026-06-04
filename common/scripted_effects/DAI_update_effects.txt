@@ -5,6 +5,7 @@ DAI_daily_update = {
 
 		# If we are a dynamic tag, we going with the flow instead.
 		# So just use the normal tag.
+		if = { limit = { tag = ENG } DAI_set_build_order_ENG = yes }
 		if = { limit = { tag = GER } DAI_set_build_order_GER = yes }
 		if = { limit = { tag = FRA } DAI_set_build_order_FRA = yes }
 
@@ -22,6 +23,7 @@ DAI_monthly_update = {
 		DAI_set_desired_trade_law = yes
 
 		# Military
+		DAI_set_wants_air_flag = yes
 		DAI_set_wants_armor_flag = yes
 		DAI_set_armor_template_flags = yes
 

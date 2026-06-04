@@ -646,18 +646,12 @@ technologies = {
 			modifier = {
 				add = 48.8
 				date > 1937.1.1
-				OR = {
-					DAI_wants_mountaineers = yes
-					DAI_wants_marines = yes
-				}
+				DAI_wants_mountaineers = yes
 			}
 			modifier = {
 				add = 200
 				date > 1938.1.1
-				OR = {
-					DAI_wants_mountaineers = yes
-					DAI_wants_marines = yes
-				}
+				DAI_wants_mountaineers = yes
 			}
 			# -- DAI
 		}
@@ -2062,6 +2056,27 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 9
+				DAI_wants_amtrac = yes
+			}
+			modifier = {
+				add = 9999
+				date > 1939.1.1
+				DAI_wants_amtrac = yes
+				OR = {
+					has_tech_bonus = { category = motorized_equipment }
+					has_tech_bonus = { category = mio_cat_tech_all_motorized_mechanized }
+					has_tech_bonus = { category = infantry_tech }
+					has_tech_bonus = { category = cat_mechanized_equipment }
+					has_tech_bonus = { category = tp_tech }
+				}
+			}
+			modifier = {
+				add = 20
+				date > 1940.1.1
+				DAI_wants_amtrac = yes
+			}
 			# -- DAI
 		}
 	}

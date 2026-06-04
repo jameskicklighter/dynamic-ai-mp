@@ -1,7 +1,7 @@
-version="1.0"
+version="1.18.2.2"
 tags={
-	"Utilities"
+	"Gameplay"
 }
-name="Simple AI"
-supported_version="1.17.4.1"
-remote_file_id="3124593122"
+name="Dynamic AI MP"
+supported_version="1.18.2.*"
+remote_file_id="3195265157"

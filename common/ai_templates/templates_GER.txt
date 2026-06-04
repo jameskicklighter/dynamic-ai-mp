@@ -3,7 +3,7 @@
 
 INFANTRY_GER = {
 	available_for = { GER }
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10

@@ -37,8 +37,8 @@ DAI_heavy_tank = {
 						tank_medium_cannon
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = {
@@ -47,12 +47,32 @@ DAI_heavy_tank = {
 						wet_ammo_storage
 					}
 				}
-				special_type_slot_3 = sloped_armor
+				special_type_slot_3 = secondary_turret_small_cannon
 				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
-				tank_nsb_armor_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -62,8 +82,8 @@ DAI_heavy_tank = {
 			tank_medium_cannon_2
 			tank_heavy_cannon
 			tank_medium_cannon
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			easy_maintenance
@@ -98,8 +118,8 @@ DAI_heavy_tank = {
 						tank_medium_cannon
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = {
@@ -108,12 +128,40 @@ DAI_heavy_tank = {
 						wet_ammo_storage
 					}
 				}
-				special_type_slot_3 = sloped_armor
+				special_type_slot_3 = secondary_turret_small_cannon
 				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 14
-				tank_nsb_armor_upgrade = 14
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -123,8 +171,8 @@ DAI_heavy_tank = {
 			tank_medium_cannon_2
 			tank_heavy_cannon
 			tank_medium_cannon
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			easy_maintenance
@@ -159,8 +207,8 @@ DAI_heavy_tank = {
 						tank_medium_cannon
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = {
@@ -169,12 +217,48 @@ DAI_heavy_tank = {
 						wet_ammo_storage
 					}
 				}
-				special_type_slot_3 = sloped_armor
+				special_type_slot_3 = secondary_turret_small_cannon
 				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 20
-				tank_nsb_armor_upgrade = 20
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_4
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_4
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -184,8 +268,8 @@ DAI_heavy_tank = {
 			tank_medium_cannon_2
 			tank_heavy_cannon
 			tank_medium_cannon
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			easy_maintenance
@@ -219,17 +303,29 @@ DAI_heavy_SP_artillery = {
 						tank_medium_howitzer
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = extra_ammo_storage
-				special_type_slot_3 = sloped_armor
-				special_type_slot_4 = wet_ammo_storage
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 8
-				tank_nsb_armor_upgrade = 8
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -237,13 +333,12 @@ DAI_heavy_SP_artillery = {
 			tank_heavy_howitzer
 			tank_medium_howitzer_2
 			tank_medium_howitzer
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			extra_ammo_storage
-			sloped_armor
-			wet_ammo_storage
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -265,17 +360,37 @@ DAI_heavy_SP_artillery = {
 						tank_medium_howitzer
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = extra_ammo_storage
-				special_type_slot_3 = sloped_armor
-				special_type_slot_4 = wet_ammo_storage
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 14
-				tank_nsb_armor_upgrade = 14
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -283,13 +398,12 @@ DAI_heavy_SP_artillery = {
 			tank_heavy_howitzer
 			tank_medium_howitzer_2
 			tank_medium_howitzer
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			extra_ammo_storage
-			sloped_armor
-			wet_ammo_storage
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -311,17 +425,53 @@ DAI_heavy_SP_artillery = {
 						tank_medium_howitzer
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = extra_ammo_storage
-				special_type_slot_3 = sloped_armor
-				special_type_slot_4 = wet_ammo_storage
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 20
-				tank_nsb_armor_upgrade = 20
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_4
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_4
+					}
+				}
 			}
 		}
 		allowed_modules = {
@@ -329,13 +479,12 @@ DAI_heavy_SP_artillery = {
 			tank_heavy_howitzer
 			tank_medium_howitzer_2
 			tank_medium_howitzer
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			extra_ammo_storage
-			sloped_armor
-			wet_ammo_storage
+			secondary_turret_small_cannon
 		}
 	}
 }
@@ -366,13 +515,13 @@ DAI_heavy_SP_anti_air = {
 						tank_anti_air_cannon
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = wet_ammo_storage
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 0
@@ -384,12 +533,12 @@ DAI_heavy_SP_anti_air = {
 			tank_anti_air_cannon_3
 			tank_anti_air_cannon_2
 			tank_anti_air_cannon
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			wet_ammo_storage
-			additional_machine_guns
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -411,13 +560,13 @@ DAI_heavy_SP_anti_air = {
 						tank_anti_air_cannon
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = wet_ammo_storage
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 0
@@ -429,12 +578,12 @@ DAI_heavy_SP_anti_air = {
 			tank_anti_air_cannon_3
 			tank_anti_air_cannon_2
 			tank_anti_air_cannon
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			wet_ammo_storage
-			additional_machine_guns
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -456,13 +605,13 @@ DAI_heavy_SP_anti_air = {
 						tank_anti_air_cannon
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = wet_ammo_storage
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 0
@@ -474,12 +623,12 @@ DAI_heavy_SP_anti_air = {
 			tank_anti_air_cannon_3
 			tank_anti_air_cannon_2
 			tank_anti_air_cannon
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			wet_ammo_storage
-			additional_machine_guns
+			secondary_turret_small_cannon
 		}
 	}
 }
@@ -519,7 +668,7 @@ DAI_heavy_tank_destroyer = {
 			type = heavy_tank_destroyer_chassis_1
 			match_value = 1000
 			modules = {
-				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				turret_type_slot = tank_heavy_three_man_tank_turret
 				main_armament_slot = {
 					any_of = {
 						tank_high_velocity_cannon_3
@@ -530,34 +679,53 @@ DAI_heavy_tank_destroyer = {
 						tank_medium_cannon_2
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = wet_ammo_storage
-				special_type_slot_3 = sloped_armor
-				special_type_slot_4 = squeezebore_adaptor
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 14
-				tank_nsb_armor_upgrade = 14
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+				}
 			}
 		}
 		allowed_modules = {
-			tank_heavy_fixed_superstructure_turret
+			tank_heavy_three_man_tank_turret
 			tank_high_velocity_cannon_3
 			tank_heavy_cannon_3
 			tank_heavy_cannon_2
 			tank_high_velocity_cannon_2
 			tank_heavy_cannon
 			tank_medium_cannon_2
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			wet_ammo_storage
-			sloped_armor
-			squeezebore_adaptor
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -577,7 +745,7 @@ DAI_heavy_tank_destroyer = {
 			type = heavy_tank_destroyer_chassis_2
 			match_value = 2000
 			modules = {
-				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				turret_type_slot = tank_heavy_three_man_tank_turret
 				main_armament_slot = {
 					any_of = {
 						tank_high_velocity_cannon_3
@@ -588,34 +756,69 @@ DAI_heavy_tank_destroyer = {
 						tank_medium_cannon_2
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = wet_ammo_storage
-				special_type_slot_3 = sloped_armor
-				special_type_slot_4 = squeezebore_adaptor
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 20
-				tank_nsb_armor_upgrade = 20
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_4
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_4
+					}
+				}
 			}
 		}
 		allowed_modules = {
-			tank_heavy_fixed_superstructure_turret
+			tank_heavy_three_man_tank_turret
 			tank_high_velocity_cannon_3
 			tank_heavy_cannon_3
 			tank_heavy_cannon_2
 			tank_high_velocity_cannon_2
 			tank_heavy_cannon
 			tank_medium_cannon_2
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			wet_ammo_storage
-			sloped_armor
-			squeezebore_adaptor
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -635,7 +838,7 @@ DAI_heavy_tank_destroyer = {
 			type = heavy_tank_destroyer_chassis_3
 			match_value = 3000
 			modules = {
-				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				turret_type_slot = tank_heavy_three_man_tank_turret
 				main_armament_slot = {
 					any_of = {
 						tank_high_velocity_cannon_3
@@ -646,34 +849,69 @@ DAI_heavy_tank_destroyer = {
 						tank_medium_cannon_2
 					}
 				}
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_diesel_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = wet_ammo_storage
-				special_type_slot_3 = sloped_armor
-				special_type_slot_4 = squeezebore_adaptor
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
-				tank_nsb_engine_upgrade = 20
-				tank_nsb_armor_upgrade = 20
+				tank_nsb_engine_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = engine_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = engine_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = engine_tech_4
+					}
+				}
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 5
+						has_tech = armor_tech_1
+					}
+					modifier = {
+						add = 5
+						has_tech = armor_tech_2
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_3
+					}
+					modifier = {
+						add = 3
+						has_tech = armor_tech_4
+					}
+				}
 			}
 		}
 		allowed_modules = {
-			tank_heavy_fixed_superstructure_turret
+			tank_heavy_three_man_tank_turret
 			tank_high_velocity_cannon_3
 			tank_heavy_cannon_3
 			tank_heavy_cannon_2
 			tank_high_velocity_cannon_2
 			tank_heavy_cannon
 			tank_medium_cannon_2
-			tank_torsion_bar_suspension
-			tank_welded_armor
+			tank_christie_suspension
+			tank_riveted_armor
 			tank_diesel_engine
 			tank_radio_module
 			wet_ammo_storage
-			sloped_armor
-			squeezebore_adaptor
+			secondary_turret_small_cannon
 		}
 	}
 }
@@ -700,12 +938,12 @@ DAI_heavy_flame_tank = {
 					}
 				}
 				suspension_type_slot = tank_christie_suspension
-				armor_type_slot = tank_welded_armor
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_gasoline_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = additional_machine_guns
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 0
@@ -717,10 +955,11 @@ DAI_heavy_flame_tank = {
 			advanced_flamethrower
 			flamethrower
 			tank_christie_suspension
-			tank_welded_armor
+			tank_riveted_armor
 			tank_gasoline_engine
 			tank_radio_module
 			additional_machine_guns
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -741,12 +980,12 @@ DAI_heavy_flame_tank = {
 					}
 				}
 				suspension_type_slot = tank_christie_suspension
-				armor_type_slot = tank_welded_armor
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_gasoline_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = additional_machine_guns
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 0
@@ -758,10 +997,11 @@ DAI_heavy_flame_tank = {
 			advanced_flamethrower
 			flamethrower
 			tank_christie_suspension
-			tank_welded_armor
+			tank_riveted_armor
 			tank_gasoline_engine
 			tank_radio_module
 			additional_machine_guns
+			secondary_turret_small_cannon
 		}
 	}
 
@@ -782,12 +1022,12 @@ DAI_heavy_flame_tank = {
 					}
 				}
 				suspension_type_slot = tank_christie_suspension
-				armor_type_slot = tank_welded_armor
+				armor_type_slot = tank_riveted_armor
 				engine_type_slot = tank_gasoline_engine
 				special_type_slot_1 = tank_radio_module
 				special_type_slot_2 = additional_machine_guns
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 0
@@ -799,10 +1039,11 @@ DAI_heavy_flame_tank = {
 			advanced_flamethrower
 			flamethrower
 			tank_christie_suspension
-			tank_welded_armor
+			tank_riveted_armor
 			tank_gasoline_engine
 			tank_radio_module
 			additional_machine_guns
+			secondary_turret_small_cannon
 		}
 	}
 }

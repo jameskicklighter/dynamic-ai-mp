@@ -40,6 +40,12 @@ DAI_default_land_ratios = {
 
 	ai_strategy = {
 		type = role_ratio
+		id = amtrac
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
 		id = armor
 		value = 0
 	}
@@ -443,7 +449,7 @@ DAI_ranger_production = {
 
 DAI_mountaineer_production = {
 	enable = {
-		has_tech = mountaineers_tech
+		has_tech = tech_mountaineers
 		DAI_wants_mountaineers = yes
 	}
 	abort_when_not_enabled = yes
@@ -451,6 +457,26 @@ DAI_mountaineer_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
+		value = 3
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -3
+	}
+}
+
+DAI_amtrac_production = {
+	enable = {
+		has_tech = amphibious_mechanized_infantry
+		DAI_wants_amtrac = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = amtrac
 		value = 3
 	}
 
@@ -1160,6 +1186,7 @@ pretty_please_dont_axe_our_gun_production_efficiency = {
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 
 	# This seems to occasionally include support equipment for some reason,
 	# but I cannot figure out how to isolate guns for this...
@@ -1172,20 +1199,120 @@ pretty_please_dont_axe_our_gun_production_efficiency = {
 
 pretty_please_dont_axe_our_gun_production_efficiency_expanded = {
 	enable = {
-		num_of_military_factories > 10
+		num_of_military_factories > 20
 	}
 	abort_when_not_enabled = yes
 
 	# This seems to occasionally include support equipment for some reason,
 	# but I cannot figure out how to isolate guns for this...
 	ai_strategy = {
-		set_temp_variable = { temp = num_of_military_factories }
-		divide_temp_variable = { temp = 10 }
-		round_temp_variable = temp
-
 		type = equipment_production_min_factories
 		id = infantry
-		value = temp
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_30_mils = {
+	enable = {
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_40_mils = {
+	enable = {
+		num_of_military_factories > 40
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_50_mils = {
+	enable = {
+		num_of_military_factories > 50
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_60_mils = {
+	enable = {
+		num_of_military_factories > 60
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_70_mils = {
+	enable = {
+		num_of_military_factories > 70
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_80_mils = {
+	enable = {
+		num_of_military_factories > 80
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_90_mils = {
+	enable = {
+		num_of_military_factories > 90
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
+	}
+}
+
+pretty_please_dont_axe_our_gun_production_efficiency_100_mils = {
+	enable = {
+		num_of_military_factories > 100
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 1
 	}
 }
 

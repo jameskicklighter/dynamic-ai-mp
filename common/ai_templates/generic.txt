@@ -20,7 +20,7 @@ INFANTRY_GENERIC = {
 		MEN
 		MAN
 	}
-	roles = { infantry }
+	role = infantry
 
 	upgrade_prio = {
 		base = 10
@@ -53,7 +53,7 @@ INFANTRY_GENERIC = {
 # ==================================================
 
 ARMOR_MEDIUM = {
-	roles = { armor }
+	role = armor
 
 	upgrade_prio = {
 		base = 10
@@ -178,7 +178,7 @@ ARMOR_MEDIUM = {
 # ==================================================
 
 ARMOR_HEAVY = {
-	roles = { armor_heavy }
+	role = armor_heavy
 
 	upgrade_prio = {
 		base = 10
@@ -250,7 +250,7 @@ ARMOR_HEAVY = {
 # ==================================================
 
 ARMOR_MEDIUM_TANK_DESTROYER = {
-	roles = { armor_medium_tank_destroyer }
+	role = armor_medium_tank_destroyer
 
 	upgrade_prio = {
 		base = 10
@@ -314,7 +314,7 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 # ==================================================
 
 ARMOR_HEAVY_TANK_DESTROYER = {
-	roles = { armor_heavy_tank_destroyer }
+	role = armor_heavy_tank_destroyer
 
 	upgrade_prio = {
 		base = 10
@@ -386,7 +386,7 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 # ==================================================
 
 MOTORIZED_GENERIC = {
-	roles = { motorized }
+	role = motorized
 
 	upgrade_prio = {
 		base = 10
@@ -414,7 +414,7 @@ MOTORIZED_GENERIC = {
 # ==================================================
 
 MECHANIZED_GENERIC = {
-	roles = { mechanized }
+	role = mechanized
 
 	upgrade_prio = {
 		base = 10
@@ -445,7 +445,7 @@ MECHANIZED_GENERIC = {
 # ==================================================
 
 MOUNTAINEERS_GENERIC = {
-	roles = { mountaineers }
+	role = mountaineers
 
 	upgrade_prio = {
 		base = 10
@@ -480,7 +480,7 @@ MOUNTAINEERS_GENERIC = {
 # ==================================================
 
 MARINES_GENERIC = {
-	roles = { marines }
+	role = marines
 
 	upgrade_prio = {
 		base = 10
@@ -493,11 +493,7 @@ MARINES_GENERIC = {
 		enable = {
 			DAI_wants_marines = yes
 			has_tech = marines
-			# has_tech = tech_mountaineers
-			OR = {
-				date > 1937.1.1
-				original_tag = JAP
-			}
+			date < 1939.1.1
 		}
 		target_template = {
 			support = {
@@ -505,11 +501,9 @@ MARINES_GENERIC = {
 				artillery = 1
 				anti_air = 1
 				anti_tank = 1
-				# medium_flame_tank = 1
 			}
 			regiments = {
-				marine = 9
-				# mountaineers = 6
+				marine = 12
 			}
 		}
 	}
@@ -521,11 +515,7 @@ MARINES_GENERIC = {
 		enable = {
 			DAI_wants_marines = yes
 			has_tech = marines
-			has_tech = tech_mountaineers
-			OR = {
-				date > 1937.1.1
-				original_tag = JAP
-			}
+			date > 1939.1.1
 		}
 		target_template = {
 			support = {
@@ -536,8 +526,63 @@ MARINES_GENERIC = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				marine = 6
-				mountaineers = 6
+				marine = 12
+				artillery_brigade = 4
+			}
+		}
+	}
+}
+
+# ==================================================
+#   Amtrac
+# ==================================================
+
+AMTRAC_GENERIC = {
+	role = amtrac
+
+	upgrade_prio = {
+		base = 10
+	}
+
+	AMTRAC_GENERIC_1 = {
+		upgrade_prio = {
+			base = 10
+		}
+		enable = {
+			has_tech = amphibious_mechanized_infantry
+		}
+		target_template = {
+			support = {
+				pioneer_support = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				amphibious_mechanized = 12
+			}
+		}
+	}
+
+	AMTRAC_GENERIC_2 = {
+		upgrade_prio = {
+			base = 20
+		}
+		enable = {
+			has_tech = amphibious_mechanized_infantry
+			DAI_wants_amtrac = yes
+			DAI_should_start_tank_production = yes
+		}
+		target_template = {
+			support = {
+				pioneer_support = 1
+				artillery = 1
+				anti_air = 1
+				medium_flame_tank = 1
+				light_tank_recon = 1
+			}
+			regiments = {
+				amphibious_mechanized = 15
+				medium_armor = 3
 			}
 		}
 	}
@@ -548,7 +593,7 @@ MARINES_GENERIC = {
 # ==================================================
 
 RANGERS_GENERIC = {
-	roles = { rangers }
+	role = rangers
 
 	upgrade_prio = {
 		base = 10
@@ -583,7 +628,7 @@ RANGERS_GENERIC = {
 # ==================================================
 
 GARRISON_GENERIC = {
-	roles = { garrison }
+	role = garrison
 
 	upgrade_prio = {
 		base = 10
@@ -614,7 +659,7 @@ GARRISON_GENERIC = {
 # ==================================================
 
 SUPPRESSION_GENERIC = {
-	roles = { suppression }
+	role = suppression
 
 	upgrade_prio = {
 		base = 10

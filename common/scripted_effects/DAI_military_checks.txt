@@ -1,12 +1,35 @@
 # Military Flags
 
+DAI_set_wants_air_flag = {
+	IF = { limit = { NOT = { has_country_flag = DAI_wants_air } }
+		IF = {
+			limit = {
+				DAI_can_activate_air_flag = yes
+				OR = {
+					DAI_is_default_air_country = yes
+					DAI_air_factory_threshold_met = yes
+				}
+			}
+
+			set_country_flag = DAI_wants_air
+		}
+	}
+}
+
 DAI_set_wants_armor_flag = {
 	IF = { limit = { NOT = { has_country_flag = DAI_wants_armor } }
 		IF = {
 			limit = {
 				OR = {
 					DAI_is_default_armor_country = yes
-					num_of_military_factories > 75
+					AND = {
+						is_historical_focus_on = yes
+						num_of_military_factories > 75
+					}
+					AND = {
+						NOT = { is_historical_focus_on = yes }
+						num_of_military_factories > 50
+					}
 				}
 			}
 
