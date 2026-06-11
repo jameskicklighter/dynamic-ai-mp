@@ -1043,18 +1043,55 @@ ITA_hold_africa = {
 		original_tag = ITA
 	}
 	enable = {
-		date < 1941.1.1
+		date > 1937.1.1
 	}
 	abort = {
-		any_owned_state = { is_core_of = ITA NOT = { is_controlled_by = ITA } }
-		date > 1941.1.1
+		OR = {
+			any_owned_state = { is_core_of = ITA is_on_continent = europe NOT = { is_controlled_by = ITA } }
+			NOT = { has_war_with = ENG }
+			date > 1942.9.1
+		}
+	}
+
+	#### North Africa
+	ai_strategy = {
+		type = area_priority
+		id = central_north_africa
+		value = 100
+	}
+
+	## Tobruk area
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.03
+
+		states = {
+			451
+			663
+			450
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+
+	## Tripoli area - defend against naval invasions
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.03
+
+		states = {
+			448 # Tripoli
+			458 # Tunisia
+		}
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
 	}
 
 	# Tripoli
 	ai_strategy = {
 		type = theatre_distribution_demand_increase
 		id = 448
-		value = 2
+		value = 4
 	}
 
 	# Benghasi
@@ -1146,8 +1183,8 @@ ITA_push_towards_alexandria = {
 	ai_strategy = {
 		type = front_control
 		state = 452 # Matrouh
-		ratio = 0.3
-		priority = 100
+		ratio = 0.25
+		priority = 80
 		ordertype = front
 		execution_type = rush_weak
 		execute_order = yes
@@ -1156,8 +1193,8 @@ ITA_push_towards_alexandria = {
 	ai_strategy = {
 		type = front_control
 		state = 447 # Alexandria
-		ratio = 0.3
-		priority = 80
+		ratio = 0.25
+		priority = 60
 		ordertype = front
 		execution_type = rush_weak
 		execute_order = yes
@@ -1166,7 +1203,7 @@ ITA_push_towards_alexandria = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = ENG
-		value = 20
+		value = 15
 	}
 
 	ai_strategy = {

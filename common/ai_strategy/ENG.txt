@@ -419,7 +419,7 @@ ENG_defend_alexandria = {
 	}
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.07
+		ratio = 0.06
 		states = {
 			447 # Alexandria
 		}
@@ -929,6 +929,55 @@ ENG_the_adriatic_is_dangerous = {
 		type = naval_avoid_region
 		id = 168 #adriatic
 		value = 75
+	}
+}
+
+# DAI pre-D-Day flow: prioritize Med invasion support during the Africa and Italy phases.
+# 200 = 2.0x priority multiplier on the invasion-support objective for any invasion whose path crosses these regions.
+ENG_focus_naval_invasions_on_med = {
+	allowed = {
+		original_tag = ENG
+		is_historical_focus_on = yes
+	}
+	enable = {
+		OR = {
+			DAI_allies_focus_africa = yes
+			DAI_allies_focus_italy = yes
+		}
+		NOT = { DAI_allies_focus_normandy = yes }
+		NOT = { DAI_allies_focus_europe = yes }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 29 # Central Mediterranean
+		value = 200
+	}
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 68 # Western Mediterranean
+		value = 200
+	}
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 69 # Eastern Mediterranean
+		value = 200
+	}
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 169 # Tyrrhenian Sea
+		value = 200
+	}
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 202 # Aegean Sea
+		value = 200
+	}
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 84 # Bismarck Sea - keep ENG out of Pacific invasions while Med is the priority
+		value = 25
 	}
 }
 
@@ -2501,7 +2550,104 @@ ENG_chill_on_the_pacific = {
 		id = JAP
 		value = -500
 	}
-	
+
+}
+
+ENG_pre_d_day_chill_on_pacific_naval_dominance = {
+	allowed = {
+		original_tag = ENG
+		is_historical_focus_on = yes
+	}
+	enable = {
+		has_war_with = JAP
+		has_war_with = GER
+		GER = { has_capitulated = no }
+		OR = {
+			DAI_allies_focus_africa = yes
+			DAI_allies_focus_italy = yes
+			DAI_allies_focus_normandy = yes
+		}
+		NOT = { DAI_allies_focus_europe = yes }
+	}
+	abort_when_not_enabled = yes
+
+	# Let USA handle the deep Pacific while Britain is committed to Med and D-Day phases.
+	# Keep Malacca and Gulf of Thailand untouched for Singapore defense.
+	ai_strategy = {
+		type = naval_dominance
+		id = 78 # Philippine Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 79 # Sea of Japan
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 80 # Celebes Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 84 # Bismarck Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 90 # Coast of Japan
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 93 # Banda Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 94 # Western Pacific
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 95 # Western Pacific 2
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 96 # North West Pacific
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 97 # South West Pacific
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 160 # Philippines
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 77 # Yellow Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 75 # South China Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 81 # Coral Sea
+		value = -100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 83 # Solomon Sea
+		value = -100
+	}
 }
 
 ENG_ethiopian_continuation_war = {
@@ -2690,6 +2836,35 @@ ENG_supply_for_tobruk_push = {
 	}
 }
 
+ENG_upgrade_matrouh_naval_base = {
+	allowed = { original_tag = ENG }
+	enable = {
+		DAI_allies_focus_africa = yes
+		date > 1941.3.1
+		date < 1943.6.1
+		has_war_with = ITA
+		ITA = { is_ai = yes }
+
+		452 = {  # Matrouh
+			any_province_building_level = {
+				province = {
+					id = 10061  # Marsa Matruh
+				}
+				building = naval_base
+				level < 3
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = naval_base
+		target = 10061  # Marsa Matruh
+		value = 300
+	}
+}
+
 ENG_avoid_balkans_until_africa_is_secure = {
 	allowed = { original_tag = ENG }
 	enable = {
@@ -2874,11 +3049,12 @@ ENG_develop_mediterranean_supremacy = {
 			has_war_with = ITA
 			has_war_with = SOU
 		}
-		date > 1940.1.1
 		OR = {
 			DAI_allies_focus_africa = yes
 			DAI_allies_focus_italy = yes
 		}
+		NOT = { DAI_allies_focus_normandy = yes }
+		NOT = { DAI_allies_focus_europe = yes }
 	}
 	
 	abort_when_not_enabled = yes
@@ -2886,12 +3062,13 @@ ENG_develop_mediterranean_supremacy = {
 	ai_strategy = {
 		type = naval_dominance
 		id = western_med_control_zone
-		value = 30
+		value = 80
 	}
 	
+	# Med convoy and landing route for the Africa/Italy phases before the Normandy pivot.
 	ai_strategy = {
 		type = naval_dominance
-		id = eastern_med_control_zone
-		value = 80
+		id = italy_med_control_zone
+		value = 150
 	}
 }

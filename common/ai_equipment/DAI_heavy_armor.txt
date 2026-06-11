@@ -640,7 +640,7 @@ DAI_heavy_tank_destroyer = {
 		base = 0
 		modifier = {
 			add = 100
-			DAI_prefers_heavy_armor = yes
+			has_country_flag = DAI_prefer_heavy_tank_destroyers
 			has_tech = basic_heavy_tank_chassis
 		}
 	}
@@ -653,11 +653,11 @@ DAI_heavy_tank_destroyer = {
 			base = 0
 			modifier = {
 				add = 5
-				DAI_prefers_heavy_armor = yes
+				has_country_flag = DAI_prefer_heavy_tank_destroyers
 			}
 			modifier = {
 				add = 95
-				DAI_prefers_heavy_armor = yes
+				has_country_flag = DAI_prefer_heavy_tank_destroyers
 				NOT = {
 					has_tech = improved_heavy_tank_chassis
 					has_tech = antitank2
@@ -738,7 +738,7 @@ DAI_heavy_tank_destroyer = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_prefers_heavy_armor = yes
+				has_country_flag = DAI_prefer_heavy_tank_destroyers
 			}
 		}
 		target_variant = {
@@ -831,7 +831,7 @@ DAI_heavy_tank_destroyer = {
 			base = 0
 			modifier = {
 				add = 15
-				DAI_prefers_heavy_armor = yes
+				has_country_flag = DAI_prefer_heavy_tank_destroyers
 			}
 		}
 		target_variant = {

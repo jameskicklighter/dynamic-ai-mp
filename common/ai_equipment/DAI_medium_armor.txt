@@ -596,7 +596,7 @@ DAI_medium_tank_destroyer = {
 		base = 0
 		modifier = {
 			add = 100
-			DAI_prefers_medium_armor = yes
+			has_country_flag = DAI_prefer_medium_tank_destroyers
 			has_tech = basic_medium_tank_chassis
 		}
 	}
@@ -609,11 +609,11 @@ DAI_medium_tank_destroyer = {
 			base = 0
 			modifier = {
 				add = 5
-				DAI_prefers_medium_armor = yes
+				has_country_flag = DAI_prefer_medium_tank_destroyers
 			}
 			modifier = {
 				add = 95
-				DAI_prefers_medium_armor = yes
+				has_country_flag = DAI_prefer_medium_tank_destroyers
 				NOT = {
 					has_tech = improved_medium_tank_chassis
 					has_tech = antitank2
@@ -693,7 +693,7 @@ DAI_medium_tank_destroyer = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_prefers_medium_armor = yes
+				has_country_flag = DAI_prefer_medium_tank_destroyers
 			}
 		}
 		target_variant = {
@@ -777,7 +777,7 @@ DAI_medium_tank_destroyer = {
 			base = 0
 			modifier = {
 				add = 15
-				DAI_prefers_medium_armor = yes
+				has_country_flag = DAI_prefer_medium_tank_destroyers
 			}
 		}
 		target_variant = {
