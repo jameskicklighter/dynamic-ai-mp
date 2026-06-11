@@ -22,6 +22,26 @@ DAI_disband_starting_units_decisions = {
 	}
 }
 
+DAI_equipment_variant_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
+DAI_attache_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
 DAI_spawn_divisions_decisions = {
 	priority = 0
 	allowed = {

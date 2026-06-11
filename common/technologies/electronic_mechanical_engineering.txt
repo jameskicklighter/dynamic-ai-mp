@@ -265,13 +265,27 @@ technologies = {
 			modifier = {
 				OR = {
 					tag = ENG
-					tag = USA
 				}
-				factor = 5
+				factor = 10
+			}
+			modifier = {
+				OR = {
+					tag = USA
+					date > "1939.6.1"
+				}
+				factor = 10
 			}
 			modifier = {
 				date < 1938.1.1
-				factor = 0.5
+				factor = 0.1
+			}
+			modifier = {
+				date > "1939.6.1"
+				factor = 2
+			}
+			modifier = {
+				date > "1940.6.1"
+				factor = 2
 			}
 		}
 		
@@ -377,7 +391,7 @@ technologies = {
 				}
 			}
 			modifier = {
-				factor = 0.5
+				factor = 0.1
 				date < 1940.1.1
 			}
 		}

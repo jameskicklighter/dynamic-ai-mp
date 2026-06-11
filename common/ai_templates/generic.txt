@@ -19,6 +19,15 @@ INFANTRY_GENERIC = {
 		SIK
 		MEN
 		MAN
+		GDC
+		SND
+		SIC
+		NXM
+		GSM
+		XIC
+		KHM
+		KUM
+		HBC
 	}
 	role = infantry
 
@@ -77,9 +86,12 @@ ARMOR_MEDIUM = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				medium_armor = 8
-				medium_tank_destroyer_brigade = 2
-				motorized = 8
+				# Previous bulkier design:
+				# medium_armor = 8
+				# medium_tank_destroyer_brigade = 2
+				# motorized = 8
+				medium_armor = 6
+				motorized = 6
 			}
 		}
 	}
@@ -102,9 +114,12 @@ ARMOR_MEDIUM = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				medium_armor = 8
-				medium_tank_destroyer_brigade = 2
-				motorized = 8
+				# Previous bulkier design:
+				# medium_armor = 8
+				# medium_tank_destroyer_brigade = 2
+				# motorized = 8
+				medium_armor = 6
+				motorized = 6
 			}
 		}
 	}
@@ -130,9 +145,12 @@ ARMOR_MEDIUM = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				medium_armor = 8
-				medium_tank_destroyer_brigade = 2
-				mechanized = 8
+				# Previous bulkier design:
+				# medium_armor = 8
+				# medium_tank_destroyer_brigade = 2
+				# mechanized = 8
+				medium_armor = 6
+				mechanized = 6
 			}
 		}
 	}
@@ -205,9 +223,12 @@ ARMOR_HEAVY = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				heavy_armor = 8
-				heavy_tank_destroyer_brigade = 2
-				motorized = 8
+				# Previous bulkier design:
+				# heavy_armor = 8
+				# heavy_tank_destroyer_brigade = 2
+				# motorized = 8
+				heavy_armor = 6
+				motorized = 6
 			}
 		}
 	}
@@ -237,9 +258,12 @@ ARMOR_HEAVY = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				heavy_armor = 8
-				heavy_tank_destroyer_brigade = 2
-				mechanized = 8
+				# Previous bulkier design:
+				# heavy_armor = 8
+				# heavy_tank_destroyer_brigade = 2
+				# mechanized = 8
+				heavy_armor = 6
+				mechanized = 6
 			}
 		}
 	}
@@ -274,8 +298,11 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				medium_tank_destroyer_brigade = 10
-				motorized = 8
+				# Previous bulkier design:
+				# medium_tank_destroyer_brigade = 10
+				# motorized = 8
+				medium_tank_destroyer_brigade = 6
+				motorized = 6
 			}
 		}
 	}
@@ -302,8 +329,11 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				medium_tank_destroyer_brigade = 10
-				mechanized = 8
+				# Previous bulkier design:
+				# medium_tank_destroyer_brigade = 10
+				# mechanized = 8
+				medium_tank_destroyer_brigade = 6
+				mechanized = 6
 			}
 		}
 	}
@@ -342,8 +372,11 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				heavy_tank_destroyer_brigade = 10
-				motorized = 8
+				# Previous bulkier design:
+				# heavy_tank_destroyer_brigade = 10
+				# motorized = 8
+				heavy_tank_destroyer_brigade = 6
+				motorized = 6
 			}
 		}
 	}
@@ -374,8 +407,11 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				medium_flame_tank = 1
 			}
 			regiments = {
-				heavy_tank_destroyer_brigade = 10
-				mechanized = 8
+				# Previous bulkier design:
+				# heavy_tank_destroyer_brigade = 10
+				# mechanized = 8
+				heavy_tank_destroyer_brigade = 6
+				mechanized = 6
 			}
 		}
 	}
