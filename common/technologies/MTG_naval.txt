@@ -1147,6 +1147,7 @@ technologies = {
 			ship_armor_cruiser_3
 		}
 
+
 		on_research_complete = {
 			custom_effect_tooltip = heavy_armor_advice_tt
 		}
@@ -1154,6 +1155,7 @@ technologies = {
 			leads_to_tech = improved_heavy_armor_scheme
 			research_cost_coeff = 1
 		}
+
 
 		xp_research_type = navy
 		xp_boost_cost = 50
@@ -1164,7 +1166,7 @@ technologies = {
 
 		folder = {
 			name = mtgnavalfolder
-			position = {  x = 0 y = 8 }
+			position = {  x = 0 y = 5 }
 		}
 
 		ai_will_do = {
@@ -1202,6 +1204,7 @@ technologies = {
 			custom_effect_tooltip = heavy_armor_advice_tt
 		}
 
+
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.25
@@ -1209,7 +1212,7 @@ technologies = {
 
 		folder = {
 			name = mtgnavalfolder
-			position = {  x = 0 y = 14 }
+			position = {  x = 0 y = 8 }
 		}
 
 		ai_will_do = {

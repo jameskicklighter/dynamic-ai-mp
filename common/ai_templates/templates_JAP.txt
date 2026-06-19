@@ -21,6 +21,9 @@ INFANTRY_JAP = {
 			support = {
 				artillery = 1
 			}
+			regimental_support = {
+				fire_support = 3
+			}
 			regiments = {
 				infantry = 8
 				artillery_brigade = 2
@@ -39,6 +42,9 @@ INFANTRY_JAP = {
 				artillery = 1
 				anti_air = 1
 				logistics_company = 1
+			}
+			regimental_support = {
+				fire_support = 3
 			}
 			regiments = {
 				infantry = 8

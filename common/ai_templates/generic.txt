@@ -49,6 +49,9 @@ INFANTRY_GENERIC = {
 				artillery = 1
 				anti_air = 1
 			}
+			regimental_support = {
+				fire_support = 3
+			}
 			regiments = {
 				infantry = 9
 			}
@@ -85,13 +88,12 @@ ARMOR_MEDIUM = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				medium_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# medium_armor = 8
-				# medium_tank_destroyer_brigade = 2
-				# motorized = 8
-				medium_armor = 6
-				motorized = 6
+				medium_armor = 10
+				motorized = 8
 			}
 		}
 	}
@@ -113,13 +115,12 @@ ARMOR_MEDIUM = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				medium_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# medium_armor = 8
-				# medium_tank_destroyer_brigade = 2
-				# motorized = 8
-				medium_armor = 6
-				motorized = 6
+				medium_armor = 10
+				motorized = 8
 			}
 		}
 	}
@@ -144,13 +145,12 @@ ARMOR_MEDIUM = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				medium_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# medium_armor = 8
-				# medium_tank_destroyer_brigade = 2
-				# mechanized = 8
-				medium_armor = 6
-				mechanized = 6
+				medium_armor = 10
+				mechanized = 8
 			}
 		}
 	}
@@ -182,6 +182,9 @@ ARMOR_MEDIUM = {
 				logistics_company = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
+			}
+			regimental_support = {
+				modern_tank_destroyer_support = 3
 			}
 			regiments = {
 				modern_armor = 10
@@ -222,13 +225,12 @@ ARMOR_HEAVY = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				heavy_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# heavy_armor = 8
-				# heavy_tank_destroyer_brigade = 2
-				# motorized = 8
-				heavy_armor = 6
-				motorized = 6
+				heavy_armor = 10
+				motorized = 8
 			}
 		}
 	}
@@ -257,13 +259,12 @@ ARMOR_HEAVY = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				heavy_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# heavy_armor = 8
-				# heavy_tank_destroyer_brigade = 2
-				# mechanized = 8
-				heavy_armor = 6
-				mechanized = 6
+				heavy_armor = 10
+				mechanized = 8
 			}
 		}
 	}
@@ -297,12 +298,12 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				medium_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# medium_tank_destroyer_brigade = 10
-				# motorized = 8
-				medium_tank_destroyer_brigade = 6
-				motorized = 6
+				medium_tank_destroyer_brigade = 10
+				motorized = 8
 			}
 		}
 	}
@@ -328,12 +329,12 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				medium_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# medium_tank_destroyer_brigade = 10
-				# mechanized = 8
-				medium_tank_destroyer_brigade = 6
-				mechanized = 6
+				medium_tank_destroyer_brigade = 10
+				mechanized = 8
 			}
 		}
 	}
@@ -371,12 +372,12 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				heavy_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# heavy_tank_destroyer_brigade = 10
-				# motorized = 8
-				heavy_tank_destroyer_brigade = 6
-				motorized = 6
+				heavy_tank_destroyer_brigade = 10
+				motorized = 8
 			}
 		}
 	}
@@ -406,12 +407,12 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				light_tank_recon = 1
 				medium_flame_tank = 1
 			}
+			regimental_support = {
+				heavy_tank_destroyer_support = 3
+			}
 			regiments = {
-				# Previous bulkier design:
-				# heavy_tank_destroyer_brigade = 10
-				# mechanized = 8
-				heavy_tank_destroyer_brigade = 6
-				mechanized = 6
+				heavy_tank_destroyer_brigade = 10
+				mechanized = 8
 			}
 		}
 	}
@@ -504,6 +505,9 @@ MOUNTAINEERS_GENERIC = {
 				anti_tank = 1
 				rangers_support = 1
 			}
+			regimental_support = {
+				fire_support = 4
+			}
 			regiments = {
 				mountaineers = 12
 			}
@@ -538,6 +542,9 @@ MARINES_GENERIC = {
 				anti_air = 1
 				anti_tank = 1
 			}
+			regimental_support = {
+				fire_support = 4
+			}
 			regiments = {
 				marine = 12
 			}
@@ -560,6 +567,9 @@ MARINES_GENERIC = {
 				anti_air = 1
 				anti_tank = 1
 				medium_flame_tank = 1
+			}
+			regimental_support = {
+				fire_support = 4
 			}
 			regiments = {
 				marine = 12
@@ -651,6 +661,9 @@ RANGERS_GENERIC = {
 				anti_air = 1
 				anti_tank = 1
 				rangers_support = 1
+			}
+			regimental_support = {
+				fire_support = 4
 			}
 			regiments = {
 				ranger_battalion = 12
@@ -776,6 +789,30 @@ PARATROOPERS_GENERIC = {
 			}
 			regiments = {
 				paratrooper= 6
+			}
+		}
+	}
+}
+
+hq_generic = {
+	role = hq_role
+
+	upgrade_prio = {
+		base = 0
+	}
+
+	hq_default = {
+		upgrade_prio = {
+			base = 0
+		}
+
+		target_template = {
+			support = {
+				hq_support_company = 1
+			}
+
+			regiments = {
+				infantry = 4
 			}
 		}
 	}

@@ -1444,6 +1444,11 @@ default_build_a_nl_facility = {
 		num_of_civilian_factories > 25
 		num_of_military_factories > 25 # Even if we have the base tech, let's wait until we have some kind of capacity
 		nuclear_facility < 1  # one is enough
+		NOT = {
+			any_controlled_state = {
+				nuclear_facility > 0
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -1467,6 +1472,11 @@ default_build_a_nav_facility = {
 		}
 		date > 1939.1.1
 		naval_facility < 1 # one is enough
+		NOT = {
+			any_controlled_state = {
+				naval_facility > 0
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1504,6 +1514,11 @@ default_build_a_lw_facility = {
 		}
 		date > 1939.1.1
 		land_facility < 1 # one is enough
+		NOT = {
+			any_controlled_state = {
+				land_facility > 0
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -1536,6 +1551,11 @@ default_build_an_air_facility = {
 			has_tech = basic_large_airframe
 		}
 		air_facility < 1 # one is enough
+		NOT = {
+			any_controlled_state = {
+				air_facility > 0
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

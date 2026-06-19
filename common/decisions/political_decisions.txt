@@ -83,11 +83,7 @@ fascism_on_the_rise = {
 		}
 		
 		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 0
-				has_stability < 0.65
-			}
+			factor = 1
 		}
 	}
 	
@@ -606,7 +602,15 @@ fascism_on_the_rise = {
 					has_dlc = "Trial of Allegiance"
 				}
 				NOT = {
-					tag = ARG
+					original_tag = ARG
+				}
+			}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				NOT = {
+					original_tag = NOR
 				}
 			}
 		}
@@ -1957,7 +1961,7 @@ political_actions = {
 		}
     }
 
-	anti_fascist_raids = {
+    anti_fascist_raids = {
 
     	icon = generic_civil_support
 
@@ -1968,6 +1972,11 @@ political_actions = {
 					original_tag = RAJ
 					has_idea = idea_RAJ_kingmaker	
 				}
+
+    			AND = {
+    				original_tag = SIA
+    				has_dlc = "Thunder at Our Gates"
+    			}
 			}
 			IF = {
 				limit = {
@@ -1979,7 +1988,17 @@ political_actions = {
 		}
 
 		available = {
-            fascism > 0.1
+			if = {
+				limit = {
+					NOT = {
+						AND = {
+							has_dlc = "Thunder at Our Gates"
+							original_tag = SIA
+						}
+					}
+				}
+            	fascism > 0.1
+			}
             if = {
 				limit = {
 					tag = SPR
@@ -2025,9 +2044,31 @@ political_actions = {
 
 		complete_effect = {
 			add_stability = -0.1
+			if = {
+				limit = {
+					original_tag = SIA
+					has_completed_focus = SIA_shuffle_pridi_to_the_minister_of_interior
+					is_ai = yes 
+				}
+
+				SIA_increase_civilian_approval = yes
+				SIA_decrease_military_approval = yes
+				add_war_support = -0.02
+			}
 		}
 		
 		remove_effect = {
+			if = {
+				limit = {
+					original_tag = SIA
+					has_completed_focus = SIA_shuffle_pridi_to_the_minister_of_interior
+					is_ai = no
+				}
+
+				SIA_increase_civilian_approval = yes
+				SIA_decrease_military_approval = yes
+				add_war_support = -0.1
+			}
 		}
 		
 		ai_will_do = {
@@ -2081,20 +2122,20 @@ political_actions = {
 				original_tag = ITA
 				has_completed_focus = ITA_monarchia_d_italia
 			}
-			# DAI --
-			# modifier = { # If they have nothing else big to spend pp on, and this is avaiable, Monarchist Germany should start work on removing communist support. 
-			# 	add = 100
-			# 	original_tag = GER
-			# 	OR = {
-			# 		has_country_flag = GER_AI_RANDOM_KAISER
-			# 		has_game_rule = {
-			# 			rule = GER_ai_behavior
-			# 			option = KAISER
-			# 		}
-			# 	}
-			# 	NOT = { has_completed_focus = GER_revive_the_kaiserreich_ww }
-			# }
-			# -- DAI
+
+			modifier = {
+				add = 500
+				original_tag = SIA
+				has_idea = idea_SIA_civilian_rebellious
+			}
+
+			modifier = {
+				add = 500
+				original_tag = SIA 
+				NOT = { has_completed_focus = SIA_achieve_domestic_legitimacy }
+				has_completed_focus = SIA_to_lay_the_bait
+				NOT = { has_idea = idea_SIA_civilian_full_support }
+			}
 		}
     }
 
@@ -2109,11 +2150,26 @@ political_actions = {
     				original_tag = RAJ
     				has_idea = idea_RAJ_kingmaker	
     			}
+
+    			AND = {
+    				original_tag = SIA
+    				has_dlc = "Thunder at Our Gates"
+    			}
 			}
 		}
 
 		available = {
-            democratic > 0.1
+			if = {
+				limit = {
+					NOT = {
+						AND = {
+							has_dlc = "Thunder at Our Gates"
+							original_tag = SIA
+						}
+					}
+				}
+            	democratic > 0.1
+			}
             if = {
 				limit = {
 					tag = SPR
@@ -2134,27 +2190,41 @@ political_actions = {
 
 		complete_effect = {
 			add_stability = -0.1
+			if = {
+				limit = {
+					original_tag = SIA
+					has_completed_focus = SIA_for_the_preservation_of_siamese_independence
+					is_ai = yes
+				}
+
+				SIA_increase_military_approval = yes
+				SIA_decrease_civilian_approval = yes
+				add_war_support = -0.02
+			}
 		}
 		
 		remove_effect = {
+			if = {
+				limit = {
+					original_tag = SIA
+					has_completed_focus = SIA_for_the_preservation_of_siamese_independence
+					is_ai = no
+				}
+
+				SIA_increase_military_approval = yes
+				SIA_decrease_civilian_approval = yes
+				add_war_support = -0.1
+			}
 		}
 		
 		ai_will_do = {
-			# DAI --
 			base = 0
-			# modifier = { # If they have nothing else big to spend pp on, and this is avaiable, Monarchist Germany should start work on removing communist support. 
-			# 	add = 50
-			# 	original_tag = GER
-			# 	OR = {
-			# 		has_country_flag = GER_AI_RANDOM_KAISER
-			# 		has_game_rule = {
-			# 			rule = GER_ai_behavior
-			# 			option = KAISER
-			# 		}
-			# 	}
-			# 	NOT = { has_completed_focus = GER_revive_the_kaiserreich_ww }
-			# }
-			# -- DAI
+
+			modifier = {
+				add = 500
+				original_tag = SIA
+				has_idea = idea_SIA_military_rebellious
+			}
 		}
     }
 
@@ -2200,29 +2270,27 @@ political_actions = {
 		}
 		
 		ai_will_do = {
-			# DAI --
 			base = 0
-			# modifier = { # If they have nothing else big to spend pp on, and this is avaiable, Monarchist Germany should start work on removing communist support. 
-			# 	add = 100
-			# 	original_tag = GER
-			# 	OR = {
-			# 		has_country_flag = GER_AI_RANDOM_KAISER
-			# 		has_game_rule = {
-			# 			rule = GER_ai_behavior
-			# 			option = KAISER
-			# 		}
-			# 	}
-			# 	NOT = { has_completed_focus = GER_revive_the_kaiserreich_ww }
-			# }
-			# -- DAI
+			modifier = { # If they have nothing else big to spend pp on, and this is avaiable, Monarchist Germany should start work on removing communist support. 
+				add = 10
+				original_tag = GER
+				OR = {
+					has_country_flag = GER_AI_RANDOM_KAISER
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = KAISER
+					}
+				}
+			}
 			modifier = { 
 				add = 5
 				has_dlc = "No Compromise, No Surrender"
 				original_tag = CHI
 				communism > 0.1
 			}
+
 		}
-	}
+    }
 
     anti_neutrality_raids = {
 
@@ -2350,6 +2418,14 @@ political_actions = {
 					original_tag = AUS
 				}
 				NOT = { has_completed_focus = AUS_reinstate_the_imperial_council }
+			}
+
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					original_tag = AST
+				}
+				NOT = { has_completed_focus = AST_australia_first }
 			}
 		}
 
@@ -2537,6 +2613,14 @@ political_actions = {
 					has_dlc = "Battle for the Bosporus"	
 				}
 				NOT = { original_tag = GRE }
+			}
+
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					original_tag = AST
+				}
+				NOT = { has_completed_focus = AST_against_war_and_fascism }
 			}
 		}
 

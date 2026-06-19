@@ -123,7 +123,7 @@ ENG_destroyers = {
 				fixed_ship_torpedo_slot = ship_torpedo
 				front_1_custom_slot = ship_anti_air
 				mid_1_custom_slot = ship_depth_charge
-				rear_1_custom_slot = ship_anti_air
+				rear_1_custom_slot = ship_depth_charge
 			}
 		}
 
@@ -223,7 +223,7 @@ ENG_escorts = {
 				fixed_ship_anti_air_slot = ship_anti_air
 				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 				fixed_ship_radar_slot = ship_sonar
-				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_engine_slot = light_ship_engine_1 #Stick to cheap engine
 				fixed_ship_torpedo_slot = empty
 				mid_1_custom_slot = ship_depth_charge
 				rear_1_custom_slot = ship_depth_charge

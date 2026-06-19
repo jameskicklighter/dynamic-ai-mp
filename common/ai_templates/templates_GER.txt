@@ -23,6 +23,9 @@ INFANTRY_GER = {
 				artillery = 1
 				anti_air = 1
 			}
+			regimental_support = {
+				fire_support = 3
+			}
 			regiments = {
 				infantry = 9
 			}
@@ -40,6 +43,9 @@ INFANTRY_GER = {
 				artillery = 1
 				anti_air = 1
 				field_hospital = 1
+			}
+			regimental_support = {
+				fire_support = 3
 			}
 			regiments = {
 				infantry = 9

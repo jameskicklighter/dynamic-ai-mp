@@ -64,11 +64,13 @@ HIGH_VALUE_DIRS = (
     "common/doctrines/",
     "common/factions/",
     "common/ideas/",
+    "common/military_industrial_organization/",
     "common/national_focus/",
     "common/on_actions/",
     "common/scripted_effects/",
     "common/scripted_triggers/",
     "common/technologies/",
+    "common/units/",
     "events/",
 )
 
