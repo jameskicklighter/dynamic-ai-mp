@@ -369,28 +369,13 @@ propaganda_efforts = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 20
-				has_war_support < 0.5
-				#has_war = yes
-			}
-			modifier = {
-				factor = 2
+				add = 1
 				has_war_support < 0.4
-				#has_war = yes
-			}
-			modifier = {
-				factor = 2
-				has_war_support < 0.3
-				#has_war = yes
-			}
-			modifier = {
-				factor = 2
-				has_war_support < 0.2
-				#has_war = yes
+				has_war = yes
 			}
 		}
 	}
-
+	
 	war_propaganda_casualties = { 
 
 		icon = generic_prepare_civil_war
@@ -604,12 +589,7 @@ propaganda_efforts = {
 				#has_tech = radio
 				has_completed_focus = BRA_radio_nacional
 			}
-			ELSE = {
-				threat > 0.25
-				has_tech = radio
-			}
-
-			IF = {
+			ELSE_IF = {
 				limit = {
 					tag = AFG
 				}
@@ -1695,17 +1675,15 @@ war_measures = {
 
 		cost = 50
 		ai_will_do = {
-			# DAI --
-			base = 100
-			# modifier = {
-			# 	surrender_progress > 0.6
-			# 	factor = 10
-			# }
+			factor = 1
+			modifier = {
+				surrender_progress > 0.6
+				factor = 10
+			}
 			modifier = {
 				has_capitulated = yes
 				factor = 0
 			}
-			# -- DAI
 		}
 
 		modifier = {
@@ -1722,36 +1700,36 @@ war_measures = {
 
 		icon = generic_industry
 
-		allowed = {
-			always = yes
-		}
+        allowed = {
+            always = yes
+        }
 
-		available = {
-			has_war = yes
-			if = {
+        available = {
+            has_war = yes
+            if = {
 				limit = {
 					NOT = {
 						original_tag = GER
 						original_tag = JAP
 					}
 				}
-				has_idea = tot_economic_mobilisation
-				if = {
-					limit = {
-						original_tag = PRC
-					}
-					NOT = { 
-						has_completed_focus = PRC_holding_half_the_sky
-						has_completed_focus = PRC_promote_womens_suffrage
-					}
-				}
+        		has_idea = tot_economic_mobilisation
+        		if = {
+        			limit = {
+        				original_tag = PRC
+        			}
+        			NOT = { 
+        				has_completed_focus = PRC_holding_half_the_sky
+        				has_completed_focus = PRC_promote_womens_suffrage
+        			}
+        		}
 			}
 			else_if = {
 				limit = {
 					original_tag = GER
 				}
 				OR = {
-					has_idea = tot_economic_mobilisation
+        			has_idea = tot_economic_mobilisation
 					has_idea = totaler_krieg_economy
 				}
 				NOT = { has_completed_focus = GER_womens_rights_and_equality }
@@ -1766,79 +1744,84 @@ war_measures = {
 				}
 				NOT = { has_completed_focus = JAP_democratic_women_in_the_workforce }
 			}
-			OR = {
-				AND = {
-					has_government = democratic
-					has_war_support > 0.79
-				}
-				AND = {
-					has_government = communism
-					has_war_support > 0.79
-				}
-				AND = {
-					has_government = fascism
-					OR = {
-						has_war_support > 0.89
-						surrender_progress > 0
-					}
-				}
-				AND = {
-					has_government = neutrality
-					has_war_support > 0.84
-					has_stability > 0.7
-				}
+            OR = {
+                AND = {
+                    has_government = democratic
+                    has_war_support > 0.79
+                }
+                AND = {
+                    has_government = communism
+                    has_war_support > 0.79
+                }
+                AND = {
+                    has_government = fascism
+                    OR = {
+                        has_war_support > 0.89
+                        surrender_progress > 0
+                    }
+                }
+                AND = {
+                    has_government = neutrality
+                    has_war_support > 0.84
+                    has_stability > 0.7
+                }
+            }
+        }
+        visible = {
+            has_war = yes
+            if = {
+            	limit = {
+            		original_tag = GER
+            	}
+            	NOT = { has_completed_focus = GER_womens_rights_and_equality }
+            }
+        }
+        cost = 100
+        days_remove = -1
+        remove_trigger = {
+            if = {
+            	limit = {
+            		original_tag = GER
+            	}
+        		OR = {
+        			has_war = no
+        			AND = {
+        				NOT = { has_idea = tot_economic_mobilisation }
+        				NOT = { has_idea = totaler_krieg_economy }
+        			}
+        			has_completed_focus = GER_womens_rights_and_equality
+        		}
+            }
+            else_if = {
+            	limit = {
+            		original_tag = JAP
+            	}
+        		OR = {
+        			has_war = no
+        			AND = {
+        				NOT = { has_idea = tot_economic_mobilisation }
+        				NOT = { has_idea = national_defense_state }
+        			}
+        		}
+            }
+        	else = {
+	        	OR = {
+	            	has_war = no
+	            	NOT = { has_idea = tot_economic_mobilisation }
+	            }
+        	}
+        }
+        modifier = {
+            conscription = 0.03
+            stability_factor = -0.05
+        }
+        ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				has_manpower < 100000
 			}
-		}
-		visible = {
-			has_war = yes
-			if = {
-				limit = {
-					original_tag = GER
-				}
-				NOT = { has_completed_focus = GER_womens_rights_and_equality }
-			}
-		}
-		cost = 100
-		days_remove = -1
-		remove_trigger = {
-			if = {
-				limit = {
-					original_tag = GER
-				}
-				OR = {
-					has_war = no
-					AND = {
-						NOT = { has_idea = tot_economic_mobilisation }
-						NOT = { has_idea = totaler_krieg_economy }
-					}
-					has_completed_focus = GER_womens_rights_and_equality
-				}
-			}
-			else_if = {
-				limit = {
-					original_tag = JAP
-				}
-				OR = {
-					has_war = no
-					AND = {
-						NOT = { has_idea = tot_economic_mobilisation }
-						NOT = { has_idea = national_defense_state }
-					}
-				}
-			}
-			else = {
-				OR = {
-					has_war = no
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-			}
-		}
-		modifier = {
-			conscription = 0.03
-			stability_factor = -0.05
-		}
-		ai_will_do = {
-			factor = 1000 # Get them women ASAP.
 		}
 		complete_effect = {
 			if = {
@@ -1847,8 +1830,8 @@ war_measures = {
 				}
 				country_event = { id = canada_vanilla.1 hours = 6 } # Ronnie the Bren Gun Girl
 			}
-		}
-	}
+        }
+   }
 
     war_bonds = {
 
@@ -1901,7 +1884,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				has_political_power < 200
+				has_political_power < 100
 				factor = 0 #use as pp dump
 			}
 
@@ -1909,11 +1892,6 @@ war_measures = {
 				factor = 0
 				original_tag = SOV
 				SOV_save_pp_for_manpower_trouble = yes
-			}
-
-			modifier = {
-				factor = 0
-				has_idea = tot_economic_mobilisation
 			}
 		}
 
@@ -1948,8 +1926,8 @@ war_measures = {
 				value = -0.025
 			}
 		}
-	}
-
+    }
+	
 	diversify_special_forces = {
 
 		icon = GFX_decision_generic_military
@@ -1957,15 +1935,13 @@ war_measures = {
 		allowed = {
 			has_dlc = "Arms Against Tyranny"
 			NOT = {
-				OR = {
-					tag = ENG #has a focus
-					tag = USA #has a focus
-					tag = SOV #has a focus
-					tag = JAP #has a focus
-					tag = AST #has a focus
-					tag = FRA #has a focus
-					tag = GER #has a focus
-				}
+				tag = ENG #has a focus
+				tag = USA #has a focus
+				tag = SOV #has a focus
+				tag = JAP #has a focus
+				tag = AST #has a focus
+				tag = FRA #has a focus
+				tag = GER #has a focus
 			}
 		}
 
@@ -1980,25 +1956,21 @@ war_measures = {
 					has_dlc = "Trial of Allegiance"
 				}
 				NOT = {
-					OR = {
-						tag = CHL #has a focus
-						tag = BRA #has a focus
-						tag = ARG #has a focus
-						tag = URG #has a focus
-						tag = PAR #has a focus
-					}
+					tag = CHL #has a focus
+					tag = BRA #has a focus
+					tag = ARG #has a focus
+					tag = URG #has a focus
+					tag = PAR #has a focus
 				}
 			}
 			IF = {
 				limit = {
-					has_dlc = "Graveyard of Empires"
+            		has_dlc = "Graveyard of Empires"
 				}
 				NOT = {
-					OR = {
-						tag = PER #has a focus
-						tag = IRQ #has a focus
-						tag = RAJ #has a focus
-					}
+					tag = PER #has a focus
+					tag = IRQ #has a focus
+					tag = RAJ #has a focus
 				}
 			}
 			IF = {
@@ -2006,13 +1978,26 @@ war_measures = {
 					has_dlc = "Gotterdammerung"
 				}
 				NOT = {
-					OR = {
-						tag = BEL #has a focus
-						tag = COG #has a focus
-					}
+					tag = BEL #has a focus
+					tag = COG #has a focus
 				}
 			}
-			PHI_SEA = no
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				NOT = {
+					tag = PHI #has a focus
+				}
+			}
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+				}
+				NOT = {
+					tag = INS #has a focus
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -2047,10 +2032,14 @@ war_measures = {
 			modifier = {
 				factor = 0
 				NOT = {
-					has_tech = special_forces_mountaineers
-					has_tech = special_forces_marines
-					has_tech = special_forces_paratroopers
-					has_tech = special_forces_rangers
+					has_doctrine = mountaineers_1
+					has_doctrine = mountaineers_2
+					has_doctrine = marines_1
+					has_doctrine = marines_2
+					has_doctrine = paratroopers_1
+					has_doctrine = paratroopers_2
+					has_doctrine = rangers_1
+					has_doctrine = rangers_2
 				}
 			}
 		}

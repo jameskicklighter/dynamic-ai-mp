@@ -1,4 +1,4 @@
-﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_POLITICAL}
 ### search_filters = {FOCUS_FILTER_RESEARCH}
 ### search_filters = {FOCUS_FILTER_INDUSTRY}
 ### search_filters = {FOCUS_FILTER_STABILITY}
@@ -16573,6 +16573,10 @@ focus_tree = {
 					type = send_lend_lease_desire
 					id = SOV
 					value = 300
+				}
+				add_relation_rule_override = {
+					target = SOV
+					can_send_volunteers = yes 
 				}
 			}
 		}

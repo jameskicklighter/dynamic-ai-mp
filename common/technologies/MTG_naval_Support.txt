@@ -1254,8 +1254,10 @@ technologies = {
 
 		enable_equipment_modules = {
 			ship_torpedo_2
-			ship_torpedo_sub_2
+			ship_torpedo_sub_2			
 		}
+		
+
 
 		folder = {
 			name = mtgnavalsupportfolder
@@ -1280,6 +1282,7 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			mio_cat_tech_all_submarine_and_modules
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1290,6 +1293,7 @@ technologies = {
 		research_cost = 1.5
 
 		start_year = 1940
+
 
 		path = {
 			leads_to_tech = homing_torpedo
@@ -1302,8 +1306,10 @@ technologies = {
 
 		enable_equipment_modules = {
 			ship_torpedo_3
-			ship_torpedo_sub_3
+			ship_torpedo_sub_3			
 		}
+		
+
 
 		folder = {
 			name = mtgnavalsupportfolder
@@ -1327,6 +1333,7 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			mio_cat_tech_all_submarine_and_modules
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1340,12 +1347,13 @@ technologies = {
 
 		enable_equipment_modules = {
 			ship_torpedo_4
-			ship_torpedo_sub_4	
+			ship_torpedo_sub_4			
 		}
 
 		on_research_complete = {
 			custom_effect_tooltip = torpedo_advice_tt
 		}
+
 
 		folder = {
 			name = mtgnavalsupportfolder
@@ -1369,6 +1377,7 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			mio_cat_tech_all_submarine_and_modules
 		}
 		special_project_specialization = { specialization_naval }
 	}

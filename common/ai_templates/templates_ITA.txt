@@ -23,6 +23,9 @@ INFANTRY_ITA = {
 				anti_air = 1
 				recon = 1
 			}
+			regimental_support = {
+				fire_support = 3
+			}
 			regiments = {
 				infantry = 9
 			}

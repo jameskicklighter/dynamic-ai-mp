@@ -1,4 +1,4 @@
-﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_POLITICAL}
 ### search_filters = {FOCUS_FILTER_RESEARCH}
 ### search_filters = {FOCUS_FILTER_INDUSTRY}
 ### search_filters = {FOCUS_FILTER_STABILITY}
@@ -3645,11 +3645,11 @@ focus_tree = {
 
 		completion_reward = {
 			GER_modify_army_modifier = yes
-			add_to_variable = {
+			add_to_variable = { 
 				GER_military_special_forces_cap = 0.05
 				tooltip = special_forces_cap_tt
 			}
-			add_to_variable = {
+			add_to_variable = { 
 				GER_military_acclimatization_cold_climate_gain_factor = 0.1
 				tooltip = acclimatization_cold_climate_gain_factor_tt
 			}
@@ -3663,8 +3663,23 @@ focus_tree = {
 					name = GER_establish_the_skijager
 					cost_reduction = 0.25
 					uses = 2
-					category = cat_mountaineers_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = mountaineer_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = GER_establish_the_skijager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_1
+					}
+					add_mastery_bonus = {
+						name = GER_establish_the_skijager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_2
+					}
+				}				
 			}
 			add_tech_bonus = {
 				name = GER_establish_the_skijager
@@ -5440,8 +5455,23 @@ focus_tree = {
 					name = GER_fallschirmjager
 					cost_reduction = 0.25
 					uses = 2
-					category = cat_paratroopers_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = paratrooper_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = GER_fallschirmjager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_1
+					}
+					add_mastery_bonus = {
+						name = GER_fallschirmjager
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_2
+					}
+				}				
 			}
 			add_tech_bonus = {
 				name = GER_fallschirmjager
@@ -5453,7 +5483,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_modify_army_modifier = yes
-			add_to_variable = {
+			add_to_variable = { 
 				GER_military_special_forces_cap = 0.05
 				tooltip = special_forces_cap_tt
 			}
@@ -7262,8 +7292,23 @@ focus_tree = {
 					name = GER_marinestosstrupp
 					cost_reduction = 0.25
 					uses = 2
-					category = cat_marines_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = GER_marinestosstrupp
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = GER_marinestosstrupp
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
+				}				
 			}
 			add_tech_bonus = {
 				name = GER_marinestosstrupp
@@ -7274,7 +7319,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			GER_modify_army_modifier = yes
-			add_to_variable = {
+			add_to_variable = { 
 				GER_military_special_forces_cap = 0.05
 				tooltip = special_forces_cap_tt
 			}
@@ -12935,7 +12980,7 @@ focus_tree = {
 		cost = 10
 
 		cancel_if_invalid = yes
-
+		
 		available = {
 			is_subject = no
 			custom_trigger_tooltip = {
@@ -12943,7 +12988,7 @@ focus_tree = {
 				NOT = {
 					any_enemy_country = {
 						is_major = yes
-						any_controlled_state = {
+						any_controlled_state = { 
 							is_on_continent = europe
 						}
 					}
@@ -12998,9 +13043,25 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
-					cost_reduction = 0.5
-					uses = 2
-					category = cat_marines_doctrine
+					name = GER_crossing_the_atlantic
+					cost_reduction = 0.25
+					uses = 1
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = GER_crossing_the_atlantic
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = GER_crossing_the_atlantic
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
 				}
 			}
 
@@ -18020,11 +18081,26 @@ focus_tree = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
-					cost_reduction = 0.5
-					uses = 2
-					category = cat_marines_doctrine
+					cost_reduction = 0.25
+					uses = 1
+					category = special_forces_doctrine
 					name = GER_blitzkrieg_across_the_pacific
 				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = GER_blitzkrieg_across_the_pacific
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = GER_blitzkrieg_across_the_pacific
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
+				}				
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -18059,82 +18135,60 @@ focus_tree = {
 		id = GER_fuhrerprinzip
 
 		dynamic = yes
-
+		
 		alternate_icon = GFX_focus_GER_support_the_fuhrer_historical
 
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_todt = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_fritz_todt
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_todt
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_speer = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_albert_speer
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_speer
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_goring = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_hermann_goring
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_goring
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_himmler = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_heinrich_himmler
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_himmler
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_goebbels = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_joseph_goebbels
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_goebbels
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_hess = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_rudolf_hess
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_hess
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_bormann = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_martin_bormann
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_bormann
-		}
-		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_braun = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_eva_braun
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_braun
+			GFX_focus_GER_support_the_fuhrer = yes
 		}
-		icon = GFX_focus_GER_support_the_fuhrer
 
 		prerequisite = { focus = GER_remilitarize_the_rhineland }
 		x = -17
@@ -25584,7 +25638,7 @@ focus_tree = {
 		x = 11
 		y = 1
 		relative_position_id = GER_tend_to_the_future_of_germany
-
+		
 		cost = 2
 
 		available = {
@@ -25635,11 +25689,11 @@ focus_tree = {
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.03
-			}
+			}	
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.03
-			}
+			}	
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -25651,10 +25705,10 @@ focus_tree = {
 				limit = {
 					has_global_flag = GER_civil_war_has_started
 				}
-				set_party_name = {
-					ideology = neutrality
-					long_name = GER_neutrality_party_kaiserreich_long
-					name = GER_neutrality_party_kaiserreich
+				set_party_name = { 
+					ideology = neutrality 
+					long_name = GER_neutrality_party_kaiserreich_long 
+					name = GER_neutrality_party_kaiserreich 
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
@@ -25662,6 +25716,7 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = GER_andreas_hermes
 			show_ideas_tooltip = GER_wilhelm_von_gayl
+			show_ideas_tooltip = GER_theodor_heuss
 
 			IF = {
 				limit = {
@@ -25799,7 +25854,6 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = GER_theodor_heuss
 			show_ideas_tooltip = GER_julius_leber
 			show_ideas_tooltip = kurt_schumacher
 
@@ -29634,18 +29688,10 @@ focus_tree = {
 		id = GER_german_hegemony_in_the_middle_east
 
 		icon = {
-			trigger = {
+			GFX_focus_GER_german_hegemony_in_the_middle_east_demcoratic = {
 				has_government = democratic
 			}
-			value = GFX_focus_GER_german_hegemony_in_the_middle_east_demcoratic
-		}
-		icon = {
-			trigger = {
-				NOT = {
-					has_government = democratic
-				}
-			}
-			value = GFX_focus_GER_german_hegemony_in_the_middle_east_neutrality
+			GFX_focus_GER_german_hegemony_in_the_middle_east_neutrality = yes
 		}
 
 		prerequisite = { focus = GER_conquer_italy focus = GER_european_confederation focus = GER_align_italy focus = GER_prepare_italian_coup_ww }
@@ -29678,7 +29724,7 @@ focus_tree = {
 						exists = yes
 						NOT = { is_ally_with = ROOT }
 						NOT = { is_guaranteed_by = ROOT }
-						NOT = { has_non_aggression_pact_with = ROOT }
+						NOT = { has_non_aggression_pact_with = ROOT }	
 					}
 				}
 				create_wargoal = {
@@ -29724,7 +29770,7 @@ focus_tree = {
 					}
 					NOT = { is_in_faction_with = ROOT }
 					NOT = { is_guaranteed_by = ROOT }
-					NOT = { has_non_aggression_pact_with = ROOT }
+					NOT = { has_non_aggression_pact_with = ROOT }	
 					NOT = {
 						GER = {
 							has_wargoal_against = PREV
@@ -29748,27 +29794,19 @@ focus_tree = {
 
 	focus = {
 		id = GER_bring_turkey_into_the_fold
-
+		
 		prerequisite = { focus = GER_conquer_italy focus = GER_european_confederation focus = GER_align_italy focus = GER_prepare_italian_coup_ww }
 		mutually_exclusive = { focus = GER_german_hegemony_in_the_middle_east }
 
 		icon = {
-			trigger = {
+			GFX_focus_TUR_pivot_to_the_past = {
 				has_government = neutrality
 			}
-			value = GFX_focus_TUR_pivot_to_the_past
-		}
-		icon = {
-			trigger = {
-				NOT = {
-					has_government = neutrality
-				}
-			}
-			value = GFX_focus_generic_befriend_turkey
+			GFX_focus_generic_befriend_turkey = yes
 		}
 
 		x = 1
-		y = 1
+		y = 1 
 		relative_position_id = GER_align_italy
 
 		cost = 5
@@ -29793,7 +29831,7 @@ focus_tree = {
 					id = wuw_GER_realpolitik.23
 					hours = 6
 					random_hours = 12
-				}
+				}	
 			}
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
@@ -33565,12 +33603,12 @@ focus_tree = {
 
 		completion_reward = {
 
-			add_named_threat = { threat = 5 name = GER_expand_pacific_holdings }
+			add_named_threat = { threat = 5 name = GER_expand_pacific_holdings } 
 
 			every_state = {
 				limit = {
 					OR = {
-						state = 734 # Nendo
+						state = 734 # Nendo 
 						state = 635 # New Caledonia
 						state = 641 # Tahiti
 						state = 636 # Fiji
@@ -33599,7 +33637,11 @@ focus_tree = {
 						state = 593 # Guangdong
 						state = 729 # Macau
 						state = 743 # Qingdao
-						state = 1017 # Trung Bo
+						state = 1017 # Trung Bo 
+						state = 1066 
+						state = 1067 
+						state = 1068 
+						state = 1069 
 					}
 					NOT = {
 						is_claimed_by = ROOT
@@ -33650,7 +33692,7 @@ focus_tree = {
 					create_wargoal = {
 						type = annex_everything
 						target = PREV
-					}
+					}	
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -33664,7 +33706,7 @@ focus_tree = {
 					FRA = {
 						has_a_german_trade_idea = no
 						OR = {
-							owns_state = 734 # Nendo
+							owns_state = 734 # Nendo 
 							owns_state = 635 # New Caledonia
 							owns_state = 641 # Tahiti
 							owns_state = 728 # Guangzhouwan
@@ -33672,7 +33714,11 @@ focus_tree = {
 							owns_state = 286 # Southern Indochina
 							owns_state = 670 # Laos
 							owns_state = 671 # Tonkin
-							owns_state = 1017 # Trung Bo
+							owns_state = 1017 # Trung Bo 
+							owns_state = 1066 
+							owns_state = 1067 
+							owns_state = 1068 
+							owns_state = 1069 
 						}
 					}
 				}
@@ -33680,7 +33726,7 @@ focus_tree = {
 					create_wargoal = {
 						type = take_claimed_state
 						target = FRA
-					}
+					}	
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
@@ -33703,7 +33749,7 @@ focus_tree = {
 					create_wargoal = {
 						type = take_claimed_state
 						target = POR
-					}
+					}	
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
@@ -33730,7 +33776,7 @@ focus_tree = {
 					create_wargoal = {
 						type = take_claimed_state
 						target = HOL
-					}
+					}	
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}

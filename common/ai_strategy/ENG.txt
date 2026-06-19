@@ -2449,6 +2449,35 @@ ENG_disregard_france_a_bit = {
 	}
 }
 
+ENG_air_support_north_africa = {
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		date > 1941.6.1
+		ITA = { controls_state = 448 } # Italy still holds Tripoli
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 128 # Egypt
+		value = 5000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 225 # Tripoli
+		value = 3000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 29 # Central Mediterranean Sea
+		value = 2000
+	}
+}
+
 ENG_dont_kick_russia_out_from_triple_entente_due_to_gobbling_up_breakaway_states = {
 	allowed = {
 		original_tag = ENG

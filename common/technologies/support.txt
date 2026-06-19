@@ -78,7 +78,11 @@ technologies = {
 		enable_subunits = {
 			engineer
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_engineer
+		}
+
 		path = {
 			leads_to_tech = tech_engineers2
 			research_cost_coeff = 1
@@ -95,12 +99,27 @@ technologies = {
 			name = support_folder
 			position = { x = 0 y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			engineers_tech
 		}
-		
+
+		ai_will_do = {
+			# DAI --
+			base = 1
+			modifier = {
+				add = 20
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 100
+				date > 1938.1.1
+				has_country_flag = DAI_wants_armor
+			}
+			# -- DAI
+		}
+
 		on_research_complete = {
 			if = {
 				limit = {
@@ -108,7 +127,7 @@ technologies = {
 				}
 				custom_effect_tooltip = {
 					localization_key = SP_UNLOCK_PROJECT
-					PROJECT = sp_land_flamethrower_tank	
+					PROJECT = sp_land_flamethrower_tank
 				}
 			}
 
@@ -130,21 +149,6 @@ technologies = {
 					}
 				}
 			}
-		}
-		
-		ai_will_do = {
-			# DAI --
-			base = 1
-			modifier = {
-				add = 20
-				date > 1938.1.1
-			}
-			modifier = {
-				add = 100
-				date > 1938.1.1
-				has_country_flag = DAI_wants_armor
-			}
-			# -- DAI
 		}
 	}
 	
@@ -238,7 +242,7 @@ technologies = {
 		engineer = {
 			entrenchment = 0.50
 			river = {
-				attack = 0.1	
+				attack = 0.1
 				defence = 0.10
 			}
 		}
@@ -253,7 +257,7 @@ technologies = {
 		armored_engineer = {
 			entrenchment = 1
 			river = {
-				attack = 0.05	
+				attack = 0.05
 				defence = 0.05
 				movement = 0.15
 			}
@@ -264,7 +268,7 @@ technologies = {
 				attack = 0.1
 			}
 			fort = {
-				attack = 0.10
+				attack = 0.1
 			}
 		}
 		medium_flame_tank = {
@@ -272,7 +276,7 @@ technologies = {
 				attack = 0.1
 			}
 			fort = {
-				attack = 0.10
+				attack = 0.1
 			}
 		}
 		heavy_flame_tank = {
@@ -280,13 +284,13 @@ technologies = {
 				attack = 0.1
 			}
 			fort = {
-				attack = 0.10
+				attack = 0.1
 			}
 		}
 		path = {
 			leads_to_tech = tech_engineers4
 			research_cost_coeff = 1
-		}		
+		}
 
 		research_cost = 2.0
 		start_year = 1942
@@ -294,12 +298,12 @@ technologies = {
 			name = support_folder
 			position = { x = 0 y = @1942 }
 		}
-		
+
 		categories = {
 			support_tech
 			engineers_tech
 		}
-		
+
 		ai_will_do = {
 			# DAI --
 			base = 4
@@ -316,7 +320,7 @@ technologies = {
 		engineer = {
 			entrenchment = 0.50
 			urban = {
-				attack = 0.1	
+				attack = 0.1
 				defence = 0.1
 			}
 		}
@@ -324,7 +328,7 @@ technologies = {
 		assault_engineer = {
 			breakthrough = 0.1
 			urban = {
-				attack = 0.15	
+				attack = 0.15
 			}
 		}
 
@@ -341,7 +345,7 @@ technologies = {
 				attack = 0.1
 			}
 			fort = {
-				attack = 0.10
+				attack = 0.1
 			}
 		}
 		medium_flame_tank = {
@@ -349,7 +353,7 @@ technologies = {
 				attack = 0.1
 			}
 			fort = {
-				attack = 0.10
+				attack = 0.1
 			}
 		}
 		heavy_flame_tank = {
@@ -357,7 +361,7 @@ technologies = {
 				attack = 0.1
 			}
 			fort = {
-				attack = 0.10
+				attack = 0.1
 			}
 		}
 		research_cost = 2.0
@@ -366,12 +370,12 @@ technologies = {
 			name = support_folder
 			position = { x = 0 y = @1945 }
 		}
-		
+
 		categories = {
 			support_tech
 			engineers_tech
 		}
-		
+
 		ai_will_do = {
 			# DAI --
 			base = 4
@@ -390,8 +394,13 @@ technologies = {
 			mot_recon
 			armored_car_recon
 			light_tank_recon
+
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_recon
+		}
+
 		path = {
 			leads_to_tech = tech_recon2
 			research_cost_coeff = 1
@@ -408,12 +417,12 @@ technologies = {
 			name = support_folder
 			position = { x = 2 y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			recon_tech
 		}
-		
+
 		ai_will_do = {
 			# DAI --
 			base = 1
@@ -542,7 +551,25 @@ technologies = {
 		enable_subunits = {
 			military_police
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_military_police
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					tag = ENG
+					is_ai = yes
+				}
+				add_units_to_division_template = {
+					template_name = "Army Headquarters"
+					support = { hq_military_police = 0 }
+				}
+			}
+		}
+
 		path = {
 			leads_to_tech = tech_military_police2
 			research_cost_coeff = 1
@@ -559,10 +586,26 @@ technologies = {
 			name = support_folder
 			position = { x = 4 y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			military_police_tech
+		}
+
+		ai_will_do = {
+			# DAI --
+			base = 0.5
+			modifier = {
+				add = 20
+				date > 1938.1.1
+				OR = {
+					original_tag = GER
+					original_tag = ITA
+					original_tag = JAP
+					original_tag = SOV
+				}
+			}
+			# -- DAI
 		}
 
 		on_research_complete = {
@@ -579,22 +622,6 @@ technologies = {
 					}
 				}
 			}
-		}
-		
-		ai_will_do = {
-			# DAI --
-			base = 0.5
-			modifier = {
-				add = 20
-				date > 1938.1.1
-				OR = {
-					original_tag = GER
-					original_tag = ITA
-					original_tag = JAP
-					original_tag = SOV
-				}
-			}
-			# -- DAI
 		}
 	}
 	
@@ -755,7 +782,25 @@ technologies = {
 		enable_subunits = {
 			maintenance_company
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_maintenance
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					tag = FRA
+					is_ai = yes
+				}
+				add_units_to_division_template = {
+					template_name = "Quartier General d'Armee"
+					support = { hq_maintenance = 0 }
+				}
+			}
+		}
+
 		path = {
 			leads_to_tech = tech_maintenance_company2
 			research_cost_coeff = 1
@@ -772,12 +817,12 @@ technologies = {
 			name = support_folder
 			position = { x = 6 y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			maintenance_company_tech
 		}
-		
+
 		ai_will_do = {
 			# DAI --
 			base = 0.9
@@ -934,7 +979,11 @@ technologies = {
 		enable_subunits = {
 			field_hospital
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_field_hospital
+		}
+
 		path = {
 			leads_to_tech = tech_field_hospital2
 			research_cost_coeff = 1
@@ -955,12 +1004,23 @@ technologies = {
 			name = support_folder
 			position = { x = @field_hospital_x y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			hospital_tech
 			motorized_equipment
 			mio_cat_tech_all_motorized_mechanized
+		}
+
+		ai_will_do = {
+			# DAI --
+			base = 0.1
+			modifier = {
+				add = 25
+				date > 1940.1.1
+				has_country_flag = DAI_wants_armor
+			}
+			# -- DAI
 		}
 
 		on_research_complete = {
@@ -977,17 +1037,6 @@ technologies = {
 					}
 				}
 			}
-		}
-		
-		ai_will_do = {
-			# DAI --
-			base = 0.1
-			modifier = {
-				add = 25
-				date > 1940.1.1
-				has_country_flag = DAI_wants_armor
-			}
-			# -- DAI
 		}
 	}
 	
@@ -1153,7 +1202,7 @@ technologies = {
 		category_support_battalions = {
 			max_organisation = 10
 			soft_attack = 0.25
-			experience_loss_factor = 0.05
+			experience_loss_factor = -0.05
 		}
 	}
 
@@ -1162,7 +1211,36 @@ technologies = {
 		enable_subunits = {
 			logistics_company
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_logistics
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					tag = USA
+					is_ai = yes
+				}
+				add_units_to_division_template = {
+					template_name = "Field Army Headquarters"
+					support = { hq_logistics = 0 }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					tag = SOV
+					is_ai = yes
+				}
+				add_units_to_division_template = {
+					template_name = "Shtab Armii"
+					support = { hq_logistics = 0 }
+				}
+			}
+		}
+
 		path = {
 			leads_to_tech = tech_logistics_company2
 			research_cost_coeff = 1
@@ -1183,14 +1261,14 @@ technologies = {
 			name = support_folder
 			position = { x = @logistic_x y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			logistics_tech
 			motorized_equipment
 			mio_cat_tech_all_motorized_mechanized
 		}
-		
+
 		ai_will_do = {
 			# DAI --
 			base = 0.5
@@ -1331,7 +1409,11 @@ technologies = {
 		enable_subunits = {
 			signal_company
 		}
-		
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_signal
+		}
+
 		path = {
 			leads_to_tech = tech_signal_company2
 			research_cost_coeff = 1
@@ -1353,13 +1435,13 @@ technologies = {
 			name = support_folder
 			position = { x = @signal_x y = @1936 }
 		}
-		
+
 		categories = {
 			support_tech
 			signal_company_tech
 			electronics
 		}
-		
+
 		ai_will_do = {
 			# DAI --
 			base = 0.9
@@ -1934,6 +2016,30 @@ technologies = {
 			# DAI --
 			base = 1
 			# -- DAI
+		}
+	}
+
+	AST_war_carriers_tech = { #hidden tech to boost logistics companies
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		logistics_company = {
+			supply_consumption_factor = -0.15
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		categories = {
+			support_tech
+			logistics_tech
+			motorized_equipment
+			mio_cat_tech_all_motorized_mechanized
 		}
 	}
 

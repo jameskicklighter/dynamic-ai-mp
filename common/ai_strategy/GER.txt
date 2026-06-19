@@ -4638,6 +4638,11 @@ GER_build_an_air_facility_in_penemunde = {
 	enable = {
 		62 = { is_owned_and_controlled_by = GER }
 		air_facility < 1 # one is enough
+		NOT = {
+			any_controlled_state = {
+				air_facility > 0
+			}
+		}
 		date > 1939.1.1 # Was 1937.2.1 Moving it to later in order to let them focus on building their industry
 	}
 	abort_when_not_enabled = yes
@@ -4656,6 +4661,11 @@ GER_build_an_air_facility_anywhere = {
 	enable = {
 		62 = { NOT = { is_owned_and_controlled_by = GER } }
 		air_facility < 1 # one is enough
+		NOT = {
+			any_controlled_state = {
+				air_facility > 0
+			}
+		}
 		date > 1939.1.1 # Was 1937.2.1
 	}
 	abort_when_not_enabled = yes

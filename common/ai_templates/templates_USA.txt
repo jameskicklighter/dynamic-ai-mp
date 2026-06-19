@@ -23,6 +23,9 @@ INFANTRY_USA = {
 				artillery = 1
 				anti_air = 1
 			}
+			regimental_support = {
+				fire_support = 3
+			}
 			regiments = {
 				infantry = 9
 			}
@@ -44,6 +47,9 @@ INFANTRY_USA = {
 				anti_air = 1
 				anti_tank = 1
 				recon = 1
+			}
+			regimental_support = {
+				fire_support = 3
 			}
 			regiments = {
 				infantry = 9
