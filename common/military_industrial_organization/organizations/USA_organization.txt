@@ -86,25 +86,14 @@ USA_chrysler_organization = {
 				has_completed_focus = NOR_invite_transnational_manufacturers
 			}
 		}
-		IF = {
-			limit = { 
-				FROM = { 
-					original_tag = USA
-					is_ai = yes
-				}
-			}
-			NOT = { FROM = { has_completed_focus = USA_main_battle_tanks } }
-		}
 	}
 
 	visible = {
 		IF = {
 			limit = { 
-				FROM = { 
-					original_tag = USA
-					is_ai = yes
-				}
+				FROM = { original_tag = USA }
 			}
+			FROM = { is_ai = yes }
 			NOT = { FROM = { has_completed_focus = USA_main_battle_tanks } }
 		}
 	}
@@ -217,6 +206,13 @@ USA_detroit_arsenal_organization = {
 
 	available = {
 		FROM = { has_completed_focus = USA_main_battle_tanks }
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = USA } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	initial_trait = {
@@ -1021,6 +1017,13 @@ USA_baldwin_locomotive_works_organization = {
 	icon = GFX_idea_USA_blw
 	allowed = {
 		original_tag = USA
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = USA } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	equipment_type = { train_equipment railway_gun_equipment support_equipment armor }

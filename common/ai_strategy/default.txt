@@ -13,8 +13,10 @@ DAI_default_land_ratios = {
 				original_tag = CZE
 				tag = SOV
 				original_tag = ITA
-				original_tag = JAP
 				original_tag = HUN
+				original_tag = JAP
+				original_tag = SIA
+				original_tag = USA
 			}
 		}
 	}
@@ -54,6 +56,35 @@ DAI_default_land_ratios = {
 		type = role_ratio
 		id = infantry
 		value = 100
+	}
+}
+
+DAI_default_garrison_role_ratio_1937 = {
+	enable = {
+		date > 1937.1.1
+		NOT = {
+			OR = {
+				original_tag = GER
+				original_tag = FRA
+				original_tag = CHI
+				original_tag = BUL
+				original_tag = ENG
+				original_tag = CZE
+				tag = SOV
+				original_tag = ITA
+				original_tag = HUN
+				original_tag = JAP
+				original_tag = SIA
+				original_tag = USA
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
 	}
 }
 
@@ -285,7 +316,7 @@ DAI_armor_role_ratio_default_medium = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 5
+		value = 10
 	}
 }
 
@@ -306,7 +337,7 @@ DAI_armor_role_ratio_default_heavy = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor_heavy
-		value = 5
+		value = 10
 	}
 }
 
@@ -326,7 +357,7 @@ DAI_armor_role_ratio_default_medium_tank_destroyer = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor_medium_tank_destroyer
-		value = 5
+		value = 10
 	}
 }
 
@@ -341,14 +372,54 @@ DAI_armor_role_ratio_default_heavy_tank_destroyer = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor_heavy_tank_destroyer
-		value = 5
+		value = 10
+	}
+}
+
+DAI_armor_role_ratio_default_light = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_light_tanks
+		NOT = {
+			OR = {
+				original_tag = JAP
+				original_tag = SIA
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
+	}
+}
+
+DAI_light_tank_chassis_production_preference = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_light_tanks
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_tank_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = light_tank_chassis
+		value = 1
 	}
 }
 
 DAI_medium_tank_chassis_production_preference = {
 	enable = {
 		DAI_should_start_tank_production = yes
-		DAI_prefers_medium_armor = yes
+		has_country_flag = DAI_prefer_medium_tanks
 	}
 	abort_when_not_enabled = yes
 
@@ -359,10 +430,50 @@ DAI_medium_tank_chassis_production_preference = {
 	}
 }
 
+DAI_medium_tank_support_destroyer_chassis_production = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_destroyer_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_medium_tank_destroyer_chassis_production_preference = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tank_destroyers
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_destroyer_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_destroyer_chassis
+		value = 1
+	}
+}
+
 DAI_heavy_tank_chassis_production_preference = {
 	enable = {
 		DAI_should_start_tank_production = yes
-		DAI_prefers_heavy_armor = yes
+		has_country_flag = DAI_prefer_heavy_tanks
 	}
 	abort_when_not_enabled = yes
 
@@ -373,9 +484,193 @@ DAI_heavy_tank_chassis_production_preference = {
 	}
 }
 
-DAI_increase_armored_production = {
+DAI_heavy_tank_support_destroyer_chassis_production = {
 	enable = {
-		num_of_military_factories > 69
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tanks
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_tank_destroyer_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = heavy_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_heavy_tank_destroyer_chassis_production_preference = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tank_destroyers
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_tank_destroyer_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = heavy_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_modern_tank_chassis_production_preference_medium = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+		OR = {
+			has_tech = main_battle_tank
+			has_tech = main_battle_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_chassis
+		value = 2
+	}
+}
+
+DAI_modern_tank_chassis_production_preference_heavy = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tanks
+		OR = {
+			has_tech = main_battle_tank
+			has_tech = main_battle_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_chassis
+		value = 2
+	}
+}
+
+DAI_modern_tank_destroyer_support_chassis_production_medium = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+		OR = {
+			has_tech = main_battle_tank
+			has_tech = main_battle_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_destroyer_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_modern_tank_destroyer_support_chassis_production_heavy = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tanks
+		OR = {
+			has_tech = main_battle_tank
+			has_tech = main_battle_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_destroyer_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_modern_tank_destroyer_chassis_production_preference_medium_tank_destroyers = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tank_destroyers
+		OR = {
+			has_tech = main_battle_tank
+			has_tech = main_battle_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_destroyer_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_modern_tank_destroyer_chassis_production_preference_heavy_tank_destroyers = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tank_destroyers
+		OR = {
+			has_tech = main_battle_tank
+			has_tech = main_battle_tank_chassis
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = modern_tank_destroyer_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_destroyer_chassis
+		value = 1
+	}
+}
+
+DAI_increase_armored_production_medium = {
+	enable = {
+		num_of_military_factories > 100
 		DAI_should_start_tank_production = yes
 		has_country_flag = DAI_prefer_medium_tanks
 		NOT = {
@@ -390,19 +685,101 @@ DAI_increase_armored_production = {
 		}
 	}
 	abort = {
-		num_of_military_factories < 60
+		num_of_military_factories < 100
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 5
+		value = 20
+	}
+}
+
+DAI_increase_armored_production_heavy = {
+	enable = {
+		num_of_military_factories > 100
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tanks
+		NOT = {
+			OR = {
+				original_tag = FRA
+				original_tag = GER
+				original_tag = SOV
+			}
+		}
+	}
+	abort = {
+		num_of_military_factories < 100
 	}
 
 	ai_strategy = {
 		type = role_ratio
-		id = infantry
-		value = -5
+		id = armor_heavy
+		value = 20
+	}
+}
+
+DAI_increase_armored_production_medium_tank_destroyer = {
+	enable = {
+		num_of_military_factories > 100
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tank_destroyers
+		NOT = {
+			OR = {
+				original_tag = ENG
+				original_tag = USA
+			}
+		}
+	}
+	abort = {
+		num_of_military_factories < 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_medium_tank_destroyer
+		value = 20
+	}
+}
+
+DAI_increase_armored_production_heavy_tank_destroyer = {
+	enable = {
+		num_of_military_factories > 100
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_heavy_tank_destroyers
+		NOT = { original_tag = FRA }
+	}
+	abort = {
+		num_of_military_factories < 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_heavy_tank_destroyer
+		value = 20
+	}
+}
+
+DAI_increase_armored_production_light = {
+	enable = {
+		num_of_military_factories > 100
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_light_tanks
+		NOT = {
+			OR = {
+				original_tag = JAP
+				original_tag = SIA
+			}
+		}
+	}
+	abort = {
+		num_of_military_factories < 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 20
 	}
 }
 
@@ -419,11 +796,28 @@ DAI_paratrooper_production = {
 		id = paratroopers
 		value = 3
 	}
+}
+
+DAI_marine_production = {
+	enable = {
+		has_tech = marines
+		DAI_wants_marines = yes
+		NOT = {
+			OR = {
+				original_tag = ENG
+				original_tag = ITA
+				original_tag = JAP
+				original_tag = SIA
+				original_tag = USA
+			}
+		}
+	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
-		id = infantry
-		value = -3
+		id = marines
+		value = 10
 	}
 }
 
@@ -431,19 +825,20 @@ DAI_ranger_production = {
 	enable = {
 		has_tech = rangers_tech
 		DAI_wants_rangers = yes
+		NOT = {
+			OR = {
+				original_tag = GER
+				original_tag = SOV
+				original_tag = USA
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
 		id = rangers
-		value = 3
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -3
+		value = 10
 	}
 }
 
@@ -451,19 +846,20 @@ DAI_mountaineer_production = {
 	enable = {
 		has_tech = tech_mountaineers
 		DAI_wants_mountaineers = yes
+		NOT = {
+			OR = {
+				original_tag = GER
+				original_tag = SOV
+				original_tag = USA
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
-		value = 3
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -3
+		value = 10
 	}
 }
 
@@ -477,13 +873,45 @@ DAI_amtrac_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = amtrac
-		value = 3
+		value = 20
 	}
 
 	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = amphibious_mechanized_equipment
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = amphibious_mechanized_equipment
+		value = 1
+	}
+}
+
+DAI_mechanized_production = {
+	enable = {
+		has_tech = mechanised_infantry
+		DAI_wants_mech = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
 		type = role_ratio
-		id = infantry
-		value = -3
+		id = mechanized
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = mechanized_equipment
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = mechanized_equipment
+		value = 2
 	}
 }
 

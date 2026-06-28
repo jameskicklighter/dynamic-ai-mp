@@ -11,7 +11,7 @@ USA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 10
+		value = 0
 	}
 
 	ai_strategy = {
@@ -29,7 +29,7 @@ USA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = marines
-		value = 15
+		value = 0
 	}
 
 	ai_strategy = {
@@ -41,9 +41,41 @@ USA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 55
+		value = 100
 	}
 
+}
+
+USA_land_role_ratios_1937 = {
+	allowed = { original_tag = USA }
+	enable = {
+		date > 1937.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = rangers
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 20
+	}
 }
 
 USA_armor_role_ratios = {
@@ -58,13 +90,13 @@ USA_armor_role_ratios = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 19
+		value = 20
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor_medium_tank_destroyer
-		value = 1
+		value = 20
 	}
 }
 

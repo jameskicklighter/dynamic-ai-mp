@@ -5,11 +5,11 @@
 INFANTRY_GENERIC = {
 	blocked_for = {
 		GER
-		JAP
 		ENG
 		USA
 		ITA
 		SOV
+		JAP
 		CHI
 		PRC
 		GXC
@@ -61,6 +61,73 @@ INFANTRY_GENERIC = {
 }
 
 # ==================================================
+#   Light Armor
+# ==================================================
+
+ARMOR_LIGHT = {
+	role = armor
+
+	upgrade_prio = {
+		base = 10
+	}
+
+	ARMOR_LIGHT_1 = {
+		upgrade_prio = {
+			base = 10
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_light_tanks
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				light_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				light_tank_destroyer_support = 3
+			}
+			regiments = {
+				light_armor = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_LIGHT_2 = {
+		upgrade_prio = {
+			base = 10
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_light_tanks
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				light_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				light_tank_destroyer_support = 3
+			}
+			regiments = {
+				light_armor = 10
+				motorized = 8
+			}
+		}
+	}
+
+}
+
+# ==================================================
 #   Medium Armor
 # ==================================================
 
@@ -78,7 +145,6 @@ ARMOR_MEDIUM = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
-			NOT = { has_country_flag = { flag = DAI_default_armor_template value = 3 } }
 		}
 		target_template = {
 			support = {
@@ -89,6 +155,7 @@ ARMOR_MEDIUM = {
 				medium_flame_tank = 1
 			}
 			regimental_support = {
+				mot_fire_support = 2
 				medium_tank_destroyer_support = 3
 			}
 			regiments = {
@@ -98,34 +165,7 @@ ARMOR_MEDIUM = {
 		}
 	}
 
-	ARMOR_MEDIUM_2A = {
-		upgrade_prio = {
-			base = 10
-		}
-		enable = {
-			DAI_should_start_tank_production = yes
-			has_country_flag = DAI_prefer_medium_tanks
-			has_country_flag = { flag = DAI_default_armor_template value = 3 }
-		}
-		target_template = {
-			support = {
-				armored_engineer = 1
-				anti_air = 1
-				logistics_company = 1
-				light_tank_recon = 1
-				medium_flame_tank = 1
-			}
-			regimental_support = {
-				medium_tank_destroyer_support = 3
-			}
-			regiments = {
-				medium_armor = 10
-				motorized = 8
-			}
-		}
-	}
-
-	ARMOR_MEDIUM_2B = {
+	ARMOR_MEDIUM_2 = {
 		upgrade_prio = {
 			base = 10
 			modifier = {
@@ -146,6 +186,7 @@ ARMOR_MEDIUM = {
 				medium_flame_tank = 1
 			}
 			regimental_support = {
+				mot_fire_support = 2
 				medium_tank_destroyer_support = 3
 			}
 			regiments = {
@@ -174,6 +215,11 @@ ARMOR_MEDIUM = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
 		}
 		target_template = {
 			support = {
@@ -184,6 +230,7 @@ ARMOR_MEDIUM = {
 				medium_flame_tank = 1
 			}
 			regimental_support = {
+				mot_fire_support = 2
 				modern_tank_destroyer_support = 3
 			}
 			regiments = {
@@ -223,9 +270,10 @@ ARMOR_HEAVY = {
 				anti_air = 1
 				logistics_company = 1
 				light_tank_recon = 1
-				medium_flame_tank = 1
+				heavy_flame_tank = 1
 			}
 			regimental_support = {
+				mot_fire_support = 2
 				heavy_tank_destroyer_support = 3
 			}
 			regiments = {
@@ -257,13 +305,58 @@ ARMOR_HEAVY = {
 				anti_air = 1
 				logistics_company = 1
 				light_tank_recon = 1
-				medium_flame_tank = 1
+				heavy_flame_tank = 1
 			}
 			regimental_support = {
+				mot_fire_support = 2
 				heavy_tank_destroyer_support = 3
 			}
 			regiments = {
 				heavy_armor = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_MODERN_1 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tanks
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_armor = 10
 				mechanized = 8
 			}
 		}
@@ -299,7 +392,7 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				medium_flame_tank = 1
 			}
 			regimental_support = {
-				medium_tank_destroyer_support = 3
+				mot_fire_support = 3
 			}
 			regiments = {
 				medium_tank_destroyer_brigade = 10
@@ -330,10 +423,54 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				medium_flame_tank = 1
 			}
 			regimental_support = {
-				medium_tank_destroyer_support = 3
+				mot_fire_support = 3
 			}
 			regiments = {
 				medium_tank_destroyer_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_TANK_DESTROYER_MODERN_1 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tank_destroyers
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_tank_destroyer_brigade = 10
 				mechanized = 8
 			}
 		}
@@ -370,10 +507,10 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				anti_air = 1
 				logistics_company = 1
 				light_tank_recon = 1
-				medium_flame_tank = 1
+				heavy_flame_tank = 1
 			}
 			regimental_support = {
-				heavy_tank_destroyer_support = 3
+				mot_fire_support = 3
 			}
 			regiments = {
 				heavy_tank_destroyer_brigade = 10
@@ -405,13 +542,57 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				anti_air = 1
 				logistics_company = 1
 				light_tank_recon = 1
-				medium_flame_tank = 1
+				heavy_flame_tank = 1
 			}
 			regimental_support = {
-				heavy_tank_destroyer_support = 3
+				mot_fire_support = 3
 			}
 			regiments = {
 				heavy_tank_destroyer_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_TANK_DESTROYER_MODERN_1 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+			}
+			modifier = {
+				add = 10
+				has_tech = mechanised_infantry
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tank_destroyers
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_tank_destroyer_brigade = 10
 				mechanized = 8
 			}
 		}
@@ -469,6 +650,9 @@ MECHANIZED_GENERIC = {
 				engineer = 1
 				artillery = 1
 				anti_air = 1
+			}
+			regimental_support = {
+				mot_fire_support = 4
 			}
 			regiments = {
 				mechanized = 12
@@ -543,10 +727,10 @@ MARINES_GENERIC = {
 				anti_tank = 1
 			}
 			regimental_support = {
-				fire_support = 4
+				fire_support = 3
 			}
 			regiments = {
-				marine = 12
+				marine = 9
 			}
 		}
 	}
@@ -572,7 +756,7 @@ MARINES_GENERIC = {
 				fire_support = 4
 			}
 			regiments = {
-				marine = 12
+				marine = 9
 				artillery_brigade = 4
 			}
 		}
@@ -596,39 +780,19 @@ AMTRAC_GENERIC = {
 		}
 		enable = {
 			has_tech = amphibious_mechanized_infantry
+			DAI_wants_amtrac = yes
 		}
 		target_template = {
 			support = {
 				pioneer_support = 1
 				artillery = 1
 				anti_air = 1
+			}
+			regimental_support = {
+				mot_fire_support = 4
 			}
 			regiments = {
 				amphibious_mechanized = 12
-			}
-		}
-	}
-
-	AMTRAC_GENERIC_2 = {
-		upgrade_prio = {
-			base = 20
-		}
-		enable = {
-			has_tech = amphibious_mechanized_infantry
-			DAI_wants_amtrac = yes
-			DAI_should_start_tank_production = yes
-		}
-		target_template = {
-			support = {
-				pioneer_support = 1
-				artillery = 1
-				anti_air = 1
-				medium_flame_tank = 1
-				light_tank_recon = 1
-			}
-			regiments = {
-				amphibious_mechanized = 15
-				medium_armor = 3
 			}
 		}
 	}

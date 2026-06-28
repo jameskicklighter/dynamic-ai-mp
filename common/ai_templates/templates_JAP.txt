@@ -1,6 +1,5 @@
 
 
-
 INFANTRY_JAP = {
 	available_for = { JAP }
 	role = infantry
@@ -25,8 +24,7 @@ INFANTRY_JAP = {
 				fire_support = 3
 			}
 			regiments = {
-				infantry = 8
-				artillery_brigade = 2
+				infantry = 9
 			}
 		}
 	}
@@ -35,20 +33,20 @@ INFANTRY_JAP = {
 		upgrade_prio = {
 			base = 20
 		}
-		enable = { date > 1939.6.1 }
+		enable = { date > 1939.1.1 }
 		target_template = {
 			support = {
 				engineer = 1
 				artillery = 1
 				anti_air = 1
+				anti_tank = 1
 				logistics_company = 1
 			}
 			regimental_support = {
 				fire_support = 3
 			}
 			regiments = {
-				infantry = 8
-				artillery_brigade = 2
+				infantry = 9
 			}
 		}
 	}

@@ -4,90 +4,10 @@
 
 DAI_division_template_decisions = {
 
-	# AI_Infantry_Prototype_18w = {
-	# 	icon = rifles
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
-	# 	available = {
-	# 		NOT = { has_tech = gw_artillery }
-	# 	}
-	# 	cost = 0
-
-	# 	fire_only_once = yes
-
-	# 	ai_will_do = {
-	# 		base = 100
-	# 	}
-
-	# 	complete_effect = {
-	# 	}
-
-	# 	complete_effect = {
-	# 		division_template = {
-	# 			name = ""
-	# 			regiments = {
-	# 				infantry = { x = 0 y = 0 }
-	# 				infantry = { x = 0 y = 1 }
-	# 				infantry = { x = 0 y = 2 }
-	# 				infantry = { x = 1 y = 0 }
-	# 				infantry = { x = 1 y = 1 }
-	# 				infantry = { x = 1 y = 2 }
-	# 				infantry = { x = 2 y = 0 }
-	# 				infantry = { x = 2 y = 1 }
-	# 				infantry = { x = 2 y = 2 }
-	# 			}
-	# 			support = {
-	# 			}
-	# 		}
-	# 	}
-	# }
-
-	# AI_Infantry_Prototype_18w_Artillery = {
-	# 	icon = rifles
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
-	# 	available = {
-	# 		has_tech = gw_artillery
-	# 	}
-	# 	cost = 0
-
-	# 	fire_only_once = yes
-
-	# 	ai_will_do = {
-	# 		base = 100
-	# 	}
-
-	# 	complete_effect = {
-	# 	}
-
-	# 	complete_effect = {
-	# 		division_template = {
-	# 			name = "New Division"
-	# 			regiments = {
-	# 				infantry = { x = 0 y = 0 }
-	# 				infantry = { x = 0 y = 1 }
-	# 				infantry = { x = 0 y = 2 }
-	# 				infantry = { x = 1 y = 0 }
-	# 				infantry = { x = 1 y = 1 }
-	# 				infantry = { x = 1 y = 2 }
-	# 				infantry = { x = 2 y = 0 }
-	# 				infantry = { x = 2 y = 1 }
-	# 				infantry = { x = 2 y = 2 }
-	# 			}
-	# 			support = {
-	# 				artillery = { x = 0 y = 0 }
-	# 			}
-	# 		}
-	# 	}
-	# }
-
 	AI_Infantry_Filler_Spawn_18w = {
 		icon = rifles
 		visible = {
 			is_ai = yes
-			# original_tag = JAP
 		}
 		available = {
 			always = yes
@@ -120,16 +40,55 @@ DAI_division_template_decisions = {
 		}
 	}
 
-	AI_JAP_Infantry_Filler_8_2 = {
+	# AI_JAP_Infantry_Filler_9_3 = {
+	# 	icon = rifles
+	# 	allowed = {
+	# 		original_tag = JAP
+	# 	}
+	# 	visible = {
+	# 		is_ai = yes
+	# 	}
+	# 	available = {
+	# 		always = yes
+	# 	}
+	# 	cost = 0
+
+	# 	fire_only_once = yes
+
+	# 	ai_will_do = {
+	# 		base = 999
+	# 	}
+
+	# 	complete_effect = {
+	# 		division_template = {
+	# 			name = "Infantry 1936 A"
+	# 			regiments = {
+	# 				infantry = { x = 0 y = 0 }
+	# 				infantry = { x = 0 y = 1 }
+	# 				infantry = { x = 0 y = 2 }
+	# 				infantry = { x = 1 y = 0 }
+	# 				infantry = { x = 1 y = 1 }
+	# 				infantry = { x = 1 y = 2 }
+	# 				infantry = { x = 2 y = 0 }
+	# 				infantry = { x = 2 y = 1 }
+	# 				infantry = { x = 2 y = 2 }
+	# 			}
+	# 			support = {
+	# 				artillery = { x = 0 y = 0 }
+	# 			}
+	# 		}
+	# 	}
+	# }
+
+	AI_Mountaineer_Template_Basic = {
 		icon = rifles
-		allowed = {
-			original_tag = JAP
-		}
 		visible = {
 			is_ai = yes
 		}
 		available = {
-			always = yes
+			DAI_wants_mountaineers = yes
+			has_army_experience > 0
+			has_tech = tech_mountaineers
 		}
 		cost = 0
 
@@ -140,22 +99,205 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
+			army_experience = -1
 			division_template = {
-				name = "Infantry 1936 JAP"
+				name = "Mountaineers 1936 A"
 				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 2 y = 1 }
-					artillery_brigade = { x = 3 y = 0 }
-					artillery_brigade = { x = 3 y = 1 }
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+					mountaineers = { x = 3 y = 0 }
+					mountaineers = { x = 3 y = 1 }
+					mountaineers = { x = 3 y = 2 }
 				}
 				support = {
 				}
+			}
+		}
+	}
+
+	AI_Marine_Template_Basic = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_wants_marines = yes
+			has_army_experience > 0
+			has_tech = marines
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Marines 1936 A"
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 2 y = 0 }
+					marine = { x = 2 y = 1 }
+					marine = { x = 2 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Ranger_Template_Basic = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_wants_rangers = yes
+			has_army_experience > 0
+			has_tech = rangers_tech
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Rangers 1936 A"
+				regiments = {
+					ranger_battalion = { x = 0 y = 0 }
+					ranger_battalion = { x = 0 y = 1 }
+					ranger_battalion = { x = 0 y = 2 }
+					ranger_battalion = { x = 1 y = 0 }
+					ranger_battalion = { x = 1 y = 1 }
+					ranger_battalion = { x = 1 y = 2 }
+					ranger_battalion = { x = 2 y = 0 }
+					ranger_battalion = { x = 2 y = 1 }
+					ranger_battalion = { x = 2 y = 2 }
+					ranger_battalion = { x = 3 y = 0 }
+					ranger_battalion = { x = 3 y = 1 }
+					ranger_battalion = { x = 3 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Mechanized_Template_Basic = {
+		icon = GFX_decision_generic_motorized
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_wants_mech = yes
+			has_army_experience > 0
+			has_tech = mechanised_infantry
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Mechanized 1940 A"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 2 y = 0 }
+					mechanized = { x = 2 y = 1 }
+					mechanized = { x = 2 y = 2 }
+					mechanized = { x = 3 y = 0 }
+					mechanized = { x = 3 y = 1 }
+					mechanized = { x = 3 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Light_Armor_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_light_tanks
+			has_army_experience > 0
+			OR = {
+				has_tech = basic_light_tank
+				has_tech = basic_light_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Light Armor 1936 A"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					light_armor = { x = 2 y = 0 }
+					light_armor = { x = 2 y = 1 }
+					light_armor = { x = 2 y = 2 }
+					light_armor = { x = 2 y = 3 }
+					light_armor = { x = 3 y = 0 }
+					light_armor = { x = 3 y = 1 }
+					light_armor = { x = 3 y = 2 }
+					light_armor = { x = 4 y = 0 }
+					light_armor = { x = 4 y = 1 }
+					light_armor = { x = 4 y = 2 }
+				}
+				support = {
+				}
+				# regimental_support = {
+				# 	mot_fire_support = { x = 0 y = 0 }
+				# 	mot_fire_support = { x = 0 y = 1 }
+				# 	mot_fire_support = { x = 0 y = 2 }
+				# }
 			}
 		}
 	}
@@ -168,7 +310,7 @@ DAI_division_template_decisions = {
 		available = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
-			has_army_experience > 3
+			has_army_experience > 0
 			OR = {
 				has_tech = basic_medium_tank
 				has_tech = basic_medium_tank_chassis
@@ -183,9 +325,9 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			army_experience = -3
+			army_experience = -1
 			division_template = {
-				name = "DAI Medium Armor"
+				name = "Medium Armor 1936 A"
 				regiments = {
 					motorized = { x = 0 y = 0 }
 					motorized = { x = 0 y = 1 }
@@ -208,6 +350,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
+				# regimental_support = {
+				# 	mot_fire_support = { x = 0 y = 0 }
+				# 	mot_fire_support = { x = 0 y = 1 }
+				# 	mot_fire_support = { x = 0 y = 2 }
+				# }
 			}
 		}
 	}
@@ -219,6 +366,7 @@ DAI_division_template_decisions = {
 		}
 		available = {
 			always = no
+			has_army_experience > 0
 		}
 		cost = 0
 
@@ -229,9 +377,9 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			army_experience = -10
+			army_experience = -1
 			division_template = {
-				name = "DAI Modern Armor"
+				name = "Modern Armor 1944 A"
 				regiments = {
 					modern_armor = { x = 0 y = 0 }
 					modern_armor = { x = 0 y = 1 }
@@ -254,6 +402,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
+				# regimental_support = {
+				# 	mot_fire_support = { x = 0 y = 0 }
+				# 	mot_fire_support = { x = 0 y = 1 }
+				# 	mot_fire_support = { x = 0 y = 2 }
+				# }
 			}
 		}
 	}
@@ -266,7 +419,7 @@ DAI_division_template_decisions = {
 		available = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tanks
-			has_army_experience > 3
+			has_army_experience > 0
 			OR = {
 				has_tech = basic_heavy_tank
 				has_tech = basic_heavy_tank_chassis
@@ -281,9 +434,9 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			army_experience = -3
+			army_experience = -1
 			division_template = {
-				name = "DAI Heavy Armor"
+				name = "Heavy Armor 1936 A"
 				regiments = {
 					motorized = { x = 0 y = 0 }
 					motorized = { x = 0 y = 1 }
@@ -306,6 +459,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
+				# regimental_support = {
+				# 	mot_fire_support = { x = 0 y = 0 }
+				# 	mot_fire_support = { x = 0 y = 1 }
+				# 	mot_fire_support = { x = 0 y = 2 }
+				# }
 			}
 		}
 	}
@@ -318,7 +476,7 @@ DAI_division_template_decisions = {
 		available = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tank_destroyers
-			has_army_experience > 3
+			has_army_experience > 0
 			has_tech = interwar_antitank
 			OR = {
 				has_tech = basic_medium_tank
@@ -334,9 +492,9 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			army_experience = -3
+			army_experience = -1
 			division_template = {
-				name = "DAI Medium Tank Destroyer"
+				name = "Medium Tank Destroyer 1936 A"
 				regiments = {
 					motorized = { x = 0 y = 0 }
 					motorized = { x = 0 y = 1 }
@@ -359,6 +517,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
+				# regimental_support = {
+				# 	mot_fire_support = { x = 0 y = 0 }
+				# 	mot_fire_support = { x = 0 y = 1 }
+				# 	mot_fire_support = { x = 0 y = 2 }
+				# }
 			}
 		}
 	}
@@ -371,7 +534,7 @@ DAI_division_template_decisions = {
 		available = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tank_destroyers
-			has_army_experience > 3
+			has_army_experience > 0
 			has_tech = interwar_antitank
 			OR = {
 				has_tech = basic_heavy_tank
@@ -387,9 +550,9 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			army_experience = -3
+			army_experience = -1
 			division_template = {
-				name = "DAI Heavy Tank Destroyer"
+				name = "Heavy Tank Destroyer 1936 A"
 				regiments = {
 					motorized = { x = 0 y = 0 }
 					motorized = { x = 0 y = 1 }
@@ -412,6 +575,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
+				# regimental_support = {
+				# 	mot_fire_support = { x = 0 y = 0 }
+				# 	mot_fire_support = { x = 0 y = 1 }
+				# 	mot_fire_support = { x = 0 y = 2 }
+				# }
 			}
 		}
 	}
@@ -423,7 +591,7 @@ DAI_division_template_decisions = {
 		}
 		available = {
 			DAI_wants_amtrac = yes
-			has_army_experience > 10
+			has_army_experience > 0
 			has_tech = amphibious_mechanized_infantry
 		}
 		cost = 0
@@ -435,75 +603,22 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			army_experience = -10
+			army_experience = -1
 			division_template = {
-				name = "DAI Amtrac"
+				name = "Amtrac 1940 A"
 				regiments = {
 					amphibious_mechanized = { x = 0 y = 0 }
 					amphibious_mechanized = { x = 0 y = 1 }
 					amphibious_mechanized = { x = 0 y = 2 }
-					amphibious_mechanized = { x = 0 y = 3 }
 					amphibious_mechanized = { x = 1 y = 0 }
 					amphibious_mechanized = { x = 1 y = 1 }
 					amphibious_mechanized = { x = 1 y = 2 }
-					amphibious_mechanized = { x = 1 y = 3 }
 					amphibious_mechanized = { x = 2 y = 0 }
 					amphibious_mechanized = { x = 2 y = 1 }
 					amphibious_mechanized = { x = 2 y = 2 }
-					amphibious_mechanized = { x = 2 y = 3 }
-				}
-				support = {
-				}
-			}
-		}
-	}
-
-	AI_Amtrac_Template_Armor = {
-		icon = GFX_decision_generic_motorized
-		visible = {
-			is_ai = yes
-		}
-		available = {
-			DAI_wants_amtrac = yes
-			DAI_should_start_tank_production = yes
-			has_army_experience > 10
-			has_tech = amphibious_mechanized_infantry
-			OR = {
-				has_tech = basic_medium_tank
-				has_tech = basic_medium_tank_chassis
-			}
-		}
-		cost = 0
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			base = 999
-		}
-
-		complete_effect = {
-			army_experience = -10
-			division_template = {
-				name = "DAI Amtrac Armor"
-				regiments = {
-					amphibious_mechanized = { x = 0 y = 0 }
-					amphibious_mechanized = { x = 0 y = 1 }
-					amphibious_mechanized = { x = 0 y = 2 }
-					amphibious_mechanized = { x = 0 y = 3 }
-					amphibious_mechanized = { x = 0 y = 4 }
-					amphibious_mechanized = { x = 1 y = 0 }
-					amphibious_mechanized = { x = 1 y = 1 }
-					amphibious_mechanized = { x = 1 y = 2 }
-					amphibious_mechanized = { x = 1 y = 3 }
-					amphibious_mechanized = { x = 1 y = 4 }
-					amphibious_mechanized = { x = 2 y = 0 }
-					amphibious_mechanized = { x = 2 y = 1 }
-					amphibious_mechanized = { x = 2 y = 2 }
-					amphibious_mechanized = { x = 2 y = 3 }
-					amphibious_mechanized = { x = 2 y = 4 }
-					medium_armor = { x = 3 y = 0 }
-					medium_armor = { x = 3 y = 1 }
-					medium_armor = { x = 3 y = 2 }
+					amphibious_mechanized = { x = 3 y = 0 }
+					amphibious_mechanized = { x = 3 y = 1 }
+					amphibious_mechanized = { x = 3 y = 2 }
 				}
 				support = {
 				}
@@ -963,11 +1078,11 @@ DAI_equipment_variant_decisions = {
 		visible = {
 			is_ai = yes
 			has_tech = mechanised_infantry
-			has_army_experience > 15
+			has_army_experience > 0
 		}
 		available = {
 			has_tech = mechanised_infantry
-			has_army_experience > 15
+			has_army_experience > 0
 			NOT = { has_country_flag = DAI_mechanized_cost_upgrade_done }
 		}
 		cost = 0
@@ -975,11 +1090,51 @@ DAI_equipment_variant_decisions = {
 
 		complete_effect = {
 			hidden_effect = {
-				army_experience = -15
+				army_experience = -1
 				set_country_flag = DAI_mechanized_cost_upgrade_done
 				create_equipment_variant = {
 					name = "Mechanized Mk2"
 					type = mechanized_equipment_1
+					parent_version = 0
+					upgrades = {
+						mech_cost_upgrade = 5
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 999
+		}
+	}
+
+	DAI_amtrac_cost_upgrade = {
+		icon = GFX_decision_generic_motorized
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			DAI_wants_amtrac = yes
+			has_tech = amphibious_mechanized_infantry
+			has_army_experience > 0
+		}
+		available = {
+			DAI_wants_amtrac = yes
+			has_tech = amphibious_mechanized_infantry
+			has_army_experience > 0
+			NOT = { has_country_flag = DAI_amtrac_cost_upgrade_done }
+		}
+		cost = 0
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -1
+				set_country_flag = DAI_amtrac_cost_upgrade_done
+				create_equipment_variant = {
+					name = "Amtrac Mk2"
+					type = amphibious_mechanized_equipment_1
 					parent_version = 0
 					upgrades = {
 						mech_cost_upgrade = 5
@@ -1343,277 +1498,73 @@ DAI_attache_decisions = {
 
 }
 
-# DAI_hire_advisor_decisions = {
+DAI_spawn_divisions_decisions = {
 
-# 	JAP_hire_head_of_intelligence = {
-# 		icon = GFX_decision_generic_disband_irregulars
-# 		allowed = { original_tag = JAP }
-# 		visible = { is_ai = yes }
-# 		available = { date < 1936.1.10 }
-# 		cost = 0
+	DAI_JAP_spawn_units = {
+		icon = rifles
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			has_manpower > 500000
+			has_equipment = { infantry_equipment > 1200 }
+			has_equipment = { artillery_equipment > 24 }
+		}
+		cost = 0
 
-# 		fire_only_once = yes
-# 		ai_will_do = { base = 999 }
+		fire_only_once = no
+		days_re_enable = 30
 
-# 		complete_effect = {
-# 			add_trait = {
-# 				# character = SOV_nikolay_yezhov
-# 				slot = political_advisor
-# 				trait = JAP_hire_head_of_intelligence
-# 			}
-# 		}
-# 	}
+		ai_will_do = {
+			base = 100
+		}
 
-# }
+		complete_effect = {
+			if = { limit = { NOT = { has_template = "Infantry 1936 A" } }
+				division_template = {
+					name = "Infantry 1936 A"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+			}
+		}
 
-# DAI_spawn_divisions_decisions = {
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -900
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = -12
+				}
+				add_manpower = -9300
+			}
+		}
 
-# 	DAI_GER_spawn_units = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			original_tag = GER
-# 		}
-# 		available = {
-# 			has_manpower > 1000000
-# 			has_army_manpower = { size < 3000000 }
-# 			has_equipment = { infantry_equipment > 1000 }
-# 		}
-# 		cost = 0
-
-# 		fire_only_once = no
-# 		days_re_enable = 30
-
-# 		ai_will_do = {
-# 			base = 100
-# 		}
-
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				add_equipment_to_stockpile = { 
-# 					type = infantry_equipment
-# 					amount = -900
-# 				}
-# 				add_manpower = -9000
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
-# 				division_template = {
-# 					name = "Infantry 1936 Template"
-
-# 					regiments = {
-# 						infantry = { x = 0 y = 0 }
-# 						infantry = { x = 0 y = 1 }
-# 						infantry = { x = 0 y = 2 }
-
-# 						infantry = { x = 1 y = 0 }
-# 						infantry = { x = 1 y = 1 }
-# 						infantry = { x = 1 y = 2 }
-
-# 						infantry = { x = 2 y = 0 }
-# 						infantry = { x = 2 y = 1 }
-# 						infantry = { x = 2 y = 2 }
-# 					}
-# 				}
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			capital_scope = {
-# 				create_unit = {
-# 					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
-# 					owner = ROOT
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	DAI_POL_spawn_units = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			original_tag = POL
-# 		}
-# 		available = {
-# 			has_manpower > 300000
-# 			has_army_manpower = { size < 1500000 }
-# 			has_equipment = { infantry_equipment > 1000 }
-# 		}
-# 		cost = 0
-
-# 		fire_only_once = no
-# 		days_re_enable = 30
-
-# 		ai_will_do = {
-# 			base = 100
-# 		}
-
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				add_equipment_to_stockpile = { 
-# 					type = infantry_equipment
-# 					amount = -900
-# 				}
-# 				add_manpower = -9000
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
-# 				division_template = {
-# 					name = "Infantry 1936 Template"
-
-# 					regiments = {
-# 						infantry = { x = 0 y = 0 }
-# 						infantry = { x = 0 y = 1 }
-# 						infantry = { x = 0 y = 2 }
-
-# 						infantry = { x = 1 y = 0 }
-# 						infantry = { x = 1 y = 1 }
-# 						infantry = { x = 1 y = 2 }
-
-# 						infantry = { x = 2 y = 0 }
-# 						infantry = { x = 2 y = 1 }
-# 						infantry = { x = 2 y = 2 }
-# 					}
-# 				}
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			capital_scope = {
-# 				create_unit = {
-# 					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
-# 					owner = ROOT
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	DAI_SOV_spawn_units = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			original_tag = SOV
-# 		}
-# 		available = {
-# 			has_manpower > 1000000
-# 			has_army_manpower = { size < 3000000 }
-# 			has_equipment = { infantry_equipment > 1000 }
-# 		}
-# 		cost = 0
-
-# 		fire_only_once = no
-# 		days_re_enable = 30
-
-# 		ai_will_do = {
-# 			base = 100
-# 		}
-
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				add_equipment_to_stockpile = { 
-# 					type = infantry_equipment
-# 					amount = -900
-# 				}
-# 				add_manpower = -9000
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
-# 				division_template = {
-# 					name = "Infantry 1936 Template"
-
-# 					regiments = {
-# 						infantry = { x = 0 y = 0 }
-# 						infantry = { x = 0 y = 1 }
-# 						infantry = { x = 0 y = 2 }
-
-# 						infantry = { x = 1 y = 0 }
-# 						infantry = { x = 1 y = 1 }
-# 						infantry = { x = 1 y = 2 }
-
-# 						infantry = { x = 2 y = 0 }
-# 						infantry = { x = 2 y = 1 }
-# 						infantry = { x = 2 y = 2 }
-# 					}
-# 				}
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			capital_scope = {
-# 				create_unit = {
-# 					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
-# 					owner = ROOT
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	DAI_JAP_spawn_units = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			original_tag = JAP
-# 		}
-# 		available = {
-# 			has_manpower > 500000
-# 			has_army_manpower = { size < 2000000 }
-# 			has_equipment = { infantry_equipment > 1000 }
-# 		}
-# 		cost = 0
-
-# 		fire_only_once = no
-# 		days_re_enable = 30
-
-# 		ai_will_do = {
-# 			base = 100
-# 		}
-
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				add_equipment_to_stockpile = { 
-# 					type = infantry_equipment
-# 					amount = -900
-# 				}
-# 				add_manpower = -9000
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
-# 				division_template = {
-# 					name = "Infantry 1936 Template"
-
-# 					regiments = {
-# 						infantry = { x = 0 y = 0 }
-# 						infantry = { x = 0 y = 1 }
-# 						infantry = { x = 0 y = 2 }
-
-# 						infantry = { x = 1 y = 0 }
-# 						infantry = { x = 1 y = 1 }
-# 						infantry = { x = 1 y = 2 }
-
-# 						infantry = { x = 2 y = 0 }
-# 						infantry = { x = 2 y = 1 }
-# 						infantry = { x = 2 y = 2 }
-# 					}
-# 				}
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			capital_scope = {
-# 				create_unit = {
-# 					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
-# 					owner = ROOT
-# 				}
-# 			}
-# 		}
-# 	}
-
-# }
+		complete_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Infantry 1936 A\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+		}
+	}
+}

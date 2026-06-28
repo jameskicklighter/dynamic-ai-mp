@@ -413,6 +413,10 @@ ITA_macchi_organization = {
 			limit = { FROM = { original_tag = ETH } }
 			FROM = { has_country_flag = ETH_ITA_sends_air_designers }
 		}
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
+		}
 	}
 	
 	available = {
@@ -462,6 +466,13 @@ ITA_savoia_marchetti_organization = {
 	
 	allowed = {	
 		tag = ITA 
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
+		}
 	}
 	
 	available = {
@@ -572,6 +583,10 @@ ITA_caproni_organization = {
 		IF = {
 			limit = { FROM = { original_tag = ETH } }
 			FROM = { has_country_flag = ETH_ITA_sends_air_designers }
+		}
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
 		}
 	}
 	
@@ -1070,6 +1085,13 @@ ITA_brescia_arsenal_organization = {
 	allowed = {	 
 		tag = ITA
 	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
+		}
+	}
 	
 	available = {
 		FROM = {
@@ -1121,6 +1143,7 @@ ITA_officine_meccaniche_organization = {
 	equipment_type = {
 		motorized_equipment
 		mechanized_equipment
+		amphibious_mechanized_equipment
 		motorized_rocket_equipment
 		train_equipment
 	}
@@ -1144,6 +1167,7 @@ ITA_officine_meccaniche_organization = {
 		limit_to_equipment_type = {
 			motorized_equipment
 			mechanized_equipment
+			amphibious_mechanized_equipment
 			motorized_rocket_equipment
 		}
 	}
@@ -1154,6 +1178,7 @@ ITA_officine_meccaniche_organization = {
 		limit_to_equipment_type = {
 			motorized_equipment
 			mechanized_equipment
+			amphibious_mechanized_equipment
 			motorized_rocket_equipment
 		}
 	}
@@ -1204,6 +1229,7 @@ ITA_officine_meccaniche_organization = {
 
 		limit_to_equipment_type = {
 			mechanized_equipment
+			amphibious_mechanized_equipment
 		}
 
 		organization_modifier = {
@@ -1248,6 +1274,13 @@ ITA_ansaldo_train_organization = {
 	icon = GFX_idea_AUS_ansaldo
 	allowed = {
 		original_tag = ITA
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	equipment_type = { train_equipment railway_gun_equipment support_equipment armor }

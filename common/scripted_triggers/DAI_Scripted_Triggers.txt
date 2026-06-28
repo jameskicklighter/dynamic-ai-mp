@@ -94,6 +94,10 @@ DAI_should_build_planes = {
 	has_country_flag = DAI_wants_air
 }
 
+DAI_wants_mech = {
+	has_country_flag = DAI_wants_mech
+}
+
 DAI_wants_marines = {
 	OR = {
 		original_tag = ENG
@@ -160,6 +164,10 @@ DAI_prefers_medium_armor = {
 	}
 }
 
+DAI_prefers_light_armor = {
+	has_country_flag = DAI_prefer_light_tanks
+}
+
 DAI_prefers_heavy_armor = {
 	OR = {
 		has_country_flag = DAI_prefer_heavy_tanks
@@ -181,10 +189,25 @@ DAI_has_basic_medium_tank_chassis = {
 	}
 }
 
+DAI_has_basic_light_tank_chassis = {
+	OR = {
+		has_tech = basic_light_tank
+		has_tech = basic_light_tank_chassis
+	}
+}
+
 DAI_has_basic_heavy_tank_chassis = {
 	OR = {
 		has_tech = basic_heavy_tank
 		has_tech = basic_heavy_tank_chassis
+	}
+}
+
+DAI_has_or_researching_basic_light_tank_chassis = {
+	OR = {
+		DAI_has_basic_light_tank_chassis = yes
+		is_researching_technology = basic_light_tank
+		is_researching_technology = basic_light_tank_chassis
 	}
 }
 
@@ -213,6 +236,15 @@ DAI_has_or_researching_improved_medium_tank_chassis = {
 	}
 }
 
+DAI_has_or_researching_improved_light_tank_chassis = {
+	OR = {
+		has_tech = improved_light_tank
+		has_tech = improved_light_tank_chassis
+		is_researching_technology = improved_light_tank
+		is_researching_technology = improved_light_tank_chassis
+	}
+}
+
 DAI_has_or_researching_improved_heavy_tank_chassis = {
 	OR = {
 		has_tech = improved_heavy_tank
@@ -231,6 +263,15 @@ DAI_has_or_researching_advanced_medium_tank_chassis = {
 	}
 }
 
+DAI_has_or_researching_advanced_light_tank_chassis = {
+	OR = {
+		has_tech = advanced_light_tank
+		has_tech = advanced_light_tank_chassis
+		is_researching_technology = advanced_light_tank
+		is_researching_technology = advanced_light_tank_chassis
+	}
+}
+
 DAI_has_or_researching_advanced_heavy_tank_chassis = {
 	OR = {
 		has_tech = advanced_heavy_tank
@@ -242,6 +283,10 @@ DAI_has_or_researching_advanced_heavy_tank_chassis = {
 
 DAI_has_preferred_basic_tank_chassis = {
 	OR = {
+		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_basic_light_tank_chassis = yes
+		}
 		AND = {
 			DAI_prefers_medium_armor = yes
 			DAI_has_basic_medium_tank_chassis = yes
@@ -256,6 +301,10 @@ DAI_has_preferred_basic_tank_chassis = {
 DAI_has_or_researching_preferred_basic_tank_chassis = {
 	OR = {
 		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_or_researching_basic_light_tank_chassis = yes
+		}
+		AND = {
 			DAI_prefers_medium_armor = yes
 			DAI_has_or_researching_basic_medium_tank_chassis = yes
 		}
@@ -269,6 +318,10 @@ DAI_has_or_researching_preferred_basic_tank_chassis = {
 DAI_has_or_researching_preferred_improved_tank_chassis = {
 	OR = {
 		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_or_researching_improved_light_tank_chassis = yes
+		}
+		AND = {
 			DAI_prefers_medium_armor = yes
 			DAI_has_or_researching_improved_medium_tank_chassis = yes
 		}
@@ -281,6 +334,10 @@ DAI_has_or_researching_preferred_improved_tank_chassis = {
 
 DAI_has_or_researching_preferred_advanced_tank_chassis = {
 	OR = {
+		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_or_researching_advanced_light_tank_chassis = yes
+		}
 		AND = {
 			DAI_prefers_medium_armor = yes
 			DAI_has_or_researching_advanced_medium_tank_chassis = yes
@@ -441,7 +498,21 @@ DAI_ITA_only_has_fake_war_with_ETH = {
 
 DAI_should_upgrade_manpower_law = {
 
-	NOT = { conscription_ratio < 1.0 }
+	# Finland needs service by requirement even if we are mobilizing.
+	if = {
+		limit = {
+			NOT = {
+				original_tag = FIN
+				OR = {
+					has_idea = volunteer_only
+					has_idea = limited_conscription
+					has_idea = extensive_conscription
+				}
+			}
+		}
+		# We are not currently mobilizing from a previous upgrade or modifier.
+		NOT = { conscription_ratio < 1.0 }
+	}
 
 	set_temp_variable = { manpower_in_reserve_ratio = manpower_k }
 	if = { limit = { check_variable = { deployed_army_manpower_k > 0 } }

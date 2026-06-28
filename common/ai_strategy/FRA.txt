@@ -51,7 +51,7 @@ FRA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
@@ -63,7 +63,7 @@ FRA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
-		value = 10
+		value = 0
 	}
 
 	ai_strategy = {
@@ -81,7 +81,7 @@ FRA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 75
+		value = 100
 	}
 
 	#Air unit factors
@@ -119,6 +119,26 @@ FRA_unit_production = {
 		type = equipment_production_factor
 		id = infantry
 		value = 50
+	}
+}
+
+FRA_land_role_ratios_1937 = {
+	allowed = { original_tag = FRA }
+	enable = {
+		date > 1937.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 10
 	}
 }
 
@@ -177,7 +197,7 @@ FRA_armor_role_ratios = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor_heavy_tank_destroyer
-		value = 10
+		value = 20
 	}
 }
 
@@ -587,4 +607,3 @@ JAP_avoid_joining_vichy = { #This is required due to declare_war command executi
 		value = -400
 	}
 }
-

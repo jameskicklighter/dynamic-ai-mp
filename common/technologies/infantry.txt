@@ -47,7 +47,7 @@ technologies = {
 		
 		ai_will_do = {
 			# DAI --
-			base = 20
+			base = 999
 			# -- DAI
 		}
 	}
@@ -86,7 +86,7 @@ technologies = {
 				}
 			}
 			modifier = {
-				add = 100
+				add = 999
 				date > 1937.1.1
 			}
 			# -- DAI
@@ -127,7 +127,8 @@ technologies = {
 			# DAI --
 			base = 10
 			modifier = {
-				add = 9999
+				add = 100
+				date > 1937.1.1
 				has_tech_bonus = { category = infantry_weapons }
 			}
 			modifier = {
@@ -135,8 +136,8 @@ technologies = {
 				original_tag = CHI
 			}
 			modifier = {
-				add = 100
-				date > 1939.1.1
+				add = 999
+				date > 1938.1.1
 			}
 			# -- DAI
 		}
@@ -172,8 +173,8 @@ technologies = {
 			# DAI --
 			base = 10
 			modifier = {
-				add = 100
-				date > 1940.1.1
+				add = 999
+				date > 1938.1.1
 			}
 			# -- DAI
 		}
@@ -2074,15 +2075,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 9
-				has_country_flag = DAI_wants_armor
+				DAI_wants_mech = yes
 			}
 			modifier = {
-				add = 9999
-				date > 1938.1.1
-				OR = {
-					has_country_flag = DAI_wants_armor
-					original_tag = BUL
-				}
+				add = 100
+				date > 1939.1.1
+				DAI_wants_mech = yes
 				OR = {
 					has_tech_bonus = { category = motorized_equipment }
 					has_tech_bonus = { category = mio_cat_tech_all_motorized_mechanized }
@@ -2093,7 +2091,7 @@ technologies = {
 			modifier = {
 				add = 20
 				date > 1939.1.1
-				has_country_flag = DAI_wants_armor
+				DAI_wants_mech = yes
 			}
 			# -- DAI
 		}
@@ -2149,8 +2147,8 @@ technologies = {
 				DAI_wants_amtrac = yes
 			}
 			modifier = {
-				add = 9999
-				date > 1939.1.1
+				add = 100
+				date > 1940.1.1
 				DAI_wants_amtrac = yes
 				OR = {
 					has_tech_bonus = { category = motorized_equipment }
@@ -2237,12 +2235,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 9 
-				has_country_flag = DAI_wants_armor
+				DAI_wants_mech = yes
 			}
 			modifier = {
 				add = 20
 				date > 1943.1.1
-				has_country_flag = DAI_wants_armor
+				DAI_wants_mech = yes
 			}
 			# -- DAI
 		}
@@ -2284,12 +2282,12 @@ technologies = {
 			base = 1
 			modifier = {
 				add = 9 
-				has_country_flag = DAI_wants_armor
+				DAI_wants_mech = yes
 			}
 			modifier = {
 				add = 20
 				date > 1945.1.1
-				has_country_flag = DAI_wants_armor
+				DAI_wants_mech = yes
 			}
 			# -- DAI
 		}
