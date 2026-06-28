@@ -224,11 +224,6 @@ technologies = {
 				add = 15
 				date > 1940.1.1
 			}
-			# Dozer Blade
-			modifier = {
-				add = 100
-				has_country_flag = DAI_wants_armor
-			}
 			# -- DAI
 		}
 	}
@@ -827,8 +822,8 @@ technologies = {
 			# DAI --
 			base = 0.9
 			modifier = {
-				add = 25
-				date > 1939.1.1
+				add = 100
+				date > 1938.1.1
 				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
@@ -874,8 +869,8 @@ technologies = {
 			# DAI --
 			base = 0.9
 			modifier = {
-				add = 25
-				date > 1940.1.1
+				add = 100
+				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
@@ -929,11 +924,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.9
-			modifier = {
-				add = 25
-				date > 1943.1.1
-				has_country_flag = DAI_wants_armor
-			}
+			# modifier = {
+			# 	add = 25
+			# 	date > 1943.1.1
+			# 	has_country_flag = DAI_wants_armor
+			# }
 			# -- DAI
 		}
 	}
@@ -965,11 +960,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.9
-			modifier = {
-				add = 25
-				date > 1946.1.1
-				has_country_flag = DAI_wants_armor
-			}
+			# modifier = {
+			# 	add = 25
+			# 	date > 1946.1.1
+			# 	has_country_flag = DAI_wants_armor
+			# }
 			# -- DAI
 		}
 	}
@@ -1018,7 +1013,7 @@ technologies = {
 			modifier = {
 				add = 25
 				date > 1940.1.1
-				has_country_flag = DAI_wants_armor
+				original_tag = GER
 			}
 			# -- DAI
 		}
@@ -1082,7 +1077,7 @@ technologies = {
 			modifier = {
 				add = 25
 				date > 1940.1.1
-				has_country_flag = DAI_wants_armor
+				original_tag = GER
 			}
 			# -- DAI
 		}
@@ -1140,7 +1135,7 @@ technologies = {
 			modifier = {
 				add = 25
 				date > 1942.1.1
-				has_country_flag = DAI_wants_armor
+				original_tag = GER
 			}
 			# -- DAI
 		}
@@ -1182,7 +1177,7 @@ technologies = {
 			modifier = {
 				add = 25
 				date > 1945.1.1
-				has_country_flag = DAI_wants_armor
+				original_tag = GER
 			}
 			# -- DAI
 		}
@@ -1445,11 +1440,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.9
-			modifier = {
-				add = 25
-				date > 1939.1.1
-				has_country_flag = DAI_wants_armor
-			}
+			# modifier = {
+			# 	add = 25
+			# 	date > 1939.1.1
+			# 	has_country_flag = DAI_wants_armor
+			# }
 			# -- DAI
 		}
 	}
@@ -1489,11 +1484,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.9
-			modifier = {
-				add = 25
-				date > 1940.1.1
-				has_country_flag = DAI_wants_armor
-			}
+			# modifier = {
+			# 	add = 25
+			# 	date > 1940.1.1
+			# 	has_country_flag = DAI_wants_armor
+			# }
 			# -- DAI
 		}
 	}
@@ -1533,11 +1528,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.9
-			modifier = {
-				add = 25
-				date > 1943.1.1
-				has_country_flag = DAI_wants_armor
-			}
+			# modifier = {
+			# 	add = 25
+			# 	date > 1943.1.1
+			# 	has_country_flag = DAI_wants_armor
+			# }
 			# -- DAI
 		}
 	}
@@ -1572,11 +1567,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.9
-			modifier = {
-				add = 25
-				date > 1946.1.1
-				has_country_flag = DAI_wants_armor
-			}
+			# modifier = {
+			# 	add = 25
+			# 	date > 1946.1.1
+			# 	has_country_flag = DAI_wants_armor
+			# }
 			# -- DAI
 		}
 	}
@@ -1770,7 +1765,12 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
-				add = 30
+				add = 25
+				date > 1939.1.1
+				has_country_flag = DAI_wants_armor
+			}
+			modifier = {
+				add = 999
 				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 			}

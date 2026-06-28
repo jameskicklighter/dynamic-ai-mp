@@ -192,7 +192,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
@@ -204,7 +204,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
@@ -234,7 +234,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 60
+		value = 100
 	}
 
 	# Naval unit factors
@@ -328,6 +328,32 @@ GER_unit_production = {
 	}
 }
 
+GER_land_role_ratios_1937 = {
+	allowed = { original_tag = GER }
+	enable = {
+		date > 1937.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = rangers
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 20
+	}
+}
+
 GER_armor_role_ratios = {
 	allowed = { original_tag = GER }
 	enable = {
@@ -339,7 +365,7 @@ GER_armor_role_ratios = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 30
+		value = 40
 	}
 }
 
@@ -347,6 +373,7 @@ GER_force_build_more_infantry = {
 	allowed = { original_tag = GER }
 	enable = {
 		has_army_manpower = { size < 3000000 }
+		date < 1938.1.1
 	}
 	abort_when_not_enabled = yes
 

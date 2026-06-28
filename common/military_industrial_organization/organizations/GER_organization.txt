@@ -290,6 +290,10 @@ GER_henschel_organization = {
 	
 	visible = {
 		IF = {
+			limit = { FROM = { original_tag = GER } }
+			FROM = { is_ai = no }
+		}
+		IF = {
 			limit = { FROM = { original_tag = ETH } }
 			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
 		}
@@ -681,12 +685,11 @@ GER_alkett_organization = {
 	visible = {
 		IF = {
 			limit = { FROM = { original_tag = GER } }
-			OR = {
-				FROM = {
-					is_ai = no
-				}
-				date > 1940.1.1
-			}
+			FROM = { is_ai = no }
+		}
+		IF = {
+			limit = { FROM = { original_tag = GER } }
+			date > 1940.1.1
 		}
 	}
 
@@ -869,15 +872,6 @@ GER_daimler_benz_organization = {
 		}
 	}
 	
-	visible = {
-		IF = {
-			limit = { FROM = { original_tag = GER } }
-			FROM = {
-				is_ai = no
-			}
-		}
-	}
-
 	available = {
 		IF = {
 			limit = {
@@ -3580,12 +3574,7 @@ GER_carl_walther_organization = {
 	visible = {
 		IF = {
 			limit = { FROM = { original_tag = GER } }
-			FROM = {
-				OR = {
-					is_ai = no 
-					NOT = { has_country_flag = mass_infantry_flag }
-				}
-			}
+			FROM = { is_ai = no }
 		}
 	}
 

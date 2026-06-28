@@ -104,6 +104,13 @@ JAP_sagami_army_arsenal_organization = {
 		has_dlc = "Arms Against Tyranny"
 	}
 
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+	}
+
 	add_trait = {
 		token = JAP_mio_trait_military_arsenal_trait
 		name = JAP_mio_trait_military_arsenal_trait
@@ -194,6 +201,13 @@ JAP_mitsubishi_heavy_industries_organization = {
 					has_dlc = "Arms Against Tyranny"
 			}
 			PHI_SEA = yes
+		}
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
 		}
 	}
 
@@ -943,6 +957,13 @@ JAP_kawasaki_dockyards_organization = {
 		has_dlc = "Arms Against Tyranny"
 	}
 
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+	}
+
 	equipment_type = {
 		carrier
 		screen_ship
@@ -1292,6 +1313,13 @@ JAP_sasebo_naval_arsenal_organization = {
 	allowed = {	 
 		original_tag = JAP
 		has_dlc = "Arms Against Tyranny"
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	add_trait = {  
@@ -1708,6 +1736,10 @@ JAP_mitsubishi_organization = {
 	
 	visible = {
 		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+		IF = {
 			limit = {
 				FROM = { original_tag = ETH }
 			}
@@ -2119,6 +2151,13 @@ JAP_yokosuka_organization = {
 		has_dlc = "Arms Against Tyranny"
 	}
 
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+	}
+
 	add_trait = {
 		token = JAP_mio_trait_type_91_aerial_torpedo_integration
 		name = JAP_mio_trait_type_91_aerial_torpedo_integration
@@ -2242,6 +2281,13 @@ JAP_kawanishi_aircraft_company_organization = {
 		has_dlc = "Arms Against Tyranny"
 	}
 
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+	}
+
 	add_trait = {
 		token = JAP_mio_trait_unified_research_and_development
 		name = JAP_mio_trait_unified_research_and_development
@@ -2291,6 +2337,13 @@ JAP_kawasaki_aircraft_industries_organization = {
 	allowed = {	
 		original_tag = JAP
 		has_dlc = "Arms Against Tyranny"
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	add_trait = {
@@ -2376,10 +2429,17 @@ JAP_kawasaki_aircraft_industries_organization = {
 JAP_tachikawa_aircraft_company_organization = {
 	include = generic_cas_aircraft_organization
 	icon = GFX_idea_JAP_tachikawa_aircraft_company
-	
+
 	allowed = {	 
 		original_tag = JAP
 		has_dlc = "Arms Against Tyranny"
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	initial_trait = {
@@ -2889,6 +2949,13 @@ JAP_tokyo_automobile_industries_organization = {
 		has_dlc = "La Resistance"
 		has_dlc = "Arms Against Tyranny"
 	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+	}
 	
 	available = {
 		IF = {
@@ -3057,6 +3124,13 @@ JAP_nagoya_arsenal_organization = {
 		has_dlc = "Arms Against Tyranny"
 	}
 
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
+	}
+
 	available = {
 		# When in a Foreign MIO, countries need to be at peace with original country
 		IF = {
@@ -3137,6 +3211,13 @@ JAP_hitachi_arms_department_organization = {
 	allowed = {	
 		original_tag = JAP
 		has_dlc = "Arms Against Tyranny"
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = JAP } }
+			FROM = { is_ai = no }
+		}
 	}
 	
 	available = {
@@ -3245,4 +3326,3 @@ JAP_nippon_sharyo_organization = {
 		}
 	}
 }
-

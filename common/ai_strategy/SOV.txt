@@ -24,7 +24,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 2
+		value = 0
 	}
 
 	ai_strategy = {
@@ -36,7 +36,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
@@ -66,7 +66,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 63
+		value = 100
 	}
 
 	ai_strategy = {
@@ -113,18 +113,44 @@ SOV_unit_production = {
 	# }
 }
 
-SOV_armor_role_ratios = {
+SOV_land_role_ratios_1937 = {
 	allowed = { original_tag = SOV }
 	enable = {
-		DAI_should_start_tank_production = yes
-		has_country_flag = DAI_prefer_heavy_tanks
+		date > 1937.1.1
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor_heavy
-		value = 30
+		id = garrison
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = rangers
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 20
+	}
+}
+
+SOV_armor_role_ratios = {
+	allowed = { original_tag = SOV }
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_tanks
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 50
 	}
 }
 
@@ -2456,11 +2482,12 @@ SOV_large_standing_army = {
 	allowed = { original_tag = SOV }
 	enable = {
 		has_army_manpower = { size < 3000000 }
+		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
 	
 	ai_strategy = { type = build_army id = infantry value = 500 }
-	ai_strategy = { type = force_build_armies value = 300 }
+	# ai_strategy = { type = force_build_armies value = 300 }
 }
 
 SOV_historical_dont_attack_poland_too_early = {

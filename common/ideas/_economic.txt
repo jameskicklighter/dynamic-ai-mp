@@ -141,6 +141,12 @@ ideas = {
 					set_variable = { SIA_current_economy_law = 0 }
 				}
 			}
+
+			ai_will_do = {
+				# DAI --
+				factor = 0
+				# -- DAI
+			}
 		}
 
 		# ========================================

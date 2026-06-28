@@ -266,9 +266,7 @@ ENG_harland_wolff_organization = {
 	visible = {
 		IF = {
 			limit = { FROM = { original_tag = ENG } }
-			hidden_trigger = {
-				FROM = { is_ai = no }
-			}	
+			FROM = { is_ai = no }
 		}
 	}
 
@@ -409,9 +407,7 @@ ENG_yarrow_shipbuilders_organization = {
 	visible = {
 		IF = {
 			limit = { FROM = { original_tag = ENG } }
-			hidden_trigger = {
-				FROM = { is_ai = no }
-			}	
+			FROM = { is_ai = no }
 		}
 	}
 
@@ -621,6 +617,13 @@ ENG_hawker_organization = {
 		}
 		has_dlc = "Arms Against Tyranny"
 	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ENG } }
+			FROM = { is_ai = no }
+		}
+	}
 }
 
 ENG_de_havilland_organization = {
@@ -673,6 +676,10 @@ ENG_fairey_aviation_organization = {
 	}
 
 	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ENG } }
+			FROM = { is_ai = no }
+		}
 		IF = {
 			limit = { FROM = { original_tag = ETH } }
 			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
@@ -1058,6 +1065,13 @@ ENG_crewe_works_organization = {
 	icon = GFX_idea_ENG_crewe
 	allowed = {
 		original_tag = ENG
+	}
+
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ENG } }
+			FROM = { is_ai = no }
+		}
 	}
 
 	equipment_type = { train_equipment railway_gun_equipment support_equipment mio_cat_eq_all_medium_tank }

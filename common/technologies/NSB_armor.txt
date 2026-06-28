@@ -205,9 +205,15 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
-				add = 30
-				has_country_flag = DAI_wants_armor
 				date > 1937.1.1
+				add = 999
+				OR = { amount_research_slots > 3 is_major = yes }
+				has_country_flag = DAI_wants_armor
+			}
+			modifier = {
+				add = 30
+				date > 1938.1.1
+				has_country_flag = DAI_wants_armor
 			}
 			# -- DAI
 		}
@@ -250,7 +256,30 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			base = 0
+			base = 1
+			modifier = {
+				add = 100
+				date > 1939.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_light_armor = yes
+				OR = {
+					has_tech_bonus = { category = armor }
+					has_tech_bonus = { category = cat_light_armor }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1939.1.1
+				OR = { amount_research_slots > 3 is_major = yes }
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_light_armor = yes
+			}
+			modifier = {
+				add = 30
+				date > 1940.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_light_armor = yes
+			}
 			# -- DAI
 		}
 
@@ -406,7 +435,20 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			base = 0
+			base = 1
+			modifier = {
+				add = 30
+				date > 1942.7.1
+				amount_research_slots > 3
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_light_armor = yes
+			}
+			modifier = {
+				add = 30
+				date > 1943.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_light_armor = yes
+			}
 			# -- DAI
 		}
 
@@ -482,7 +524,6 @@ technologies = {
 				has_country_flag = DAI_wants_armor
 				OR = {
 					DAI_prefers_medium_armor = yes
-					DAI_prefers_heavy_armor = yes
 				}
 			}
 			modifier = {
@@ -491,7 +532,6 @@ technologies = {
 				has_country_flag = DAI_wants_armor
 				OR = {
 					DAI_prefers_medium_armor = yes
-					DAI_prefers_heavy_armor = yes
 				}
 			}
 			# -- DAI
@@ -598,8 +638,8 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
-				add = 9999
-				date > 1938.1.1
+				add = 100
+				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 				DAI_prefers_medium_armor = yes
 				OR = {
@@ -773,6 +813,7 @@ technologies = {
 				OR = {
 					DAI_prefers_medium_armor = yes
 					DAI_prefers_heavy_armor = yes
+					DAI_prefers_tank_destroyers = yes
 				}
 			}
 			modifier = {
@@ -782,6 +823,7 @@ technologies = {
 				OR = {
 					DAI_prefers_medium_armor = yes
 					DAI_prefers_heavy_armor = yes
+					DAI_prefers_tank_destroyers = yes
 				}
 			}
 			# -- DAI
@@ -920,8 +962,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 9999
-				date > 1938.1.1
+				add = 100
+				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 				DAI_prefers_heavy_armor = yes
 				OR = {

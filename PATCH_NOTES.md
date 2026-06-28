@@ -160,7 +160,6 @@ Running list of all differences from the base game. AI weight-only changes are s
 - **Italy**: Includes recon support (unique). Armor disabled.
 
 ### Generic Fallback (`generic.txt`)
-- Armor progression via `DAI_default_armor_template` flag (0–3): light → light-medium → medium → advanced medium with SP anti-air/TDs
 - Majors excluded (use country-specific templates)
 
 ---

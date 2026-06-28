@@ -23,7 +23,7 @@ ITA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
@@ -35,13 +35,13 @@ ITA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = marines
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
@@ -53,7 +53,7 @@ ITA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 65
+		value = 100
 	}
 
 	#Air unit factors
@@ -149,6 +149,32 @@ ITA_unit_production = {
 	# }
 }
 
+ITA_land_role_ratios_1937 = {
+	allowed = { original_tag = ITA }
+	enable = {
+		date > 1937.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 20
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 20
+	}
+}
+
 ITA_early_naval_bomber_production = {
 	allowed = { original_tag = ITA }
 	enable = {
@@ -174,7 +200,7 @@ ITA_armor_role_ratios = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 20
+		value = 10
 	}
 }
 
@@ -644,13 +670,13 @@ ITA_template_design_1 = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 5
+		value = 0
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id  = militias
-		value = 5
+		value = 0
 	}
 }
 
@@ -709,13 +735,13 @@ ITA_template_design_2 = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 10
+		value = 0
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = militias
-		value = 5
+		value = 0
 	}
 }
 
