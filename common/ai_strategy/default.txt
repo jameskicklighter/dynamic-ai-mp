@@ -800,8 +800,7 @@ DAI_paratrooper_production = {
 
 DAI_marine_production = {
 	enable = {
-		has_tech = marines
-		DAI_wants_marines = yes
+		DAI_should_start_marine_production = yes
 		NOT = {
 			OR = {
 				original_tag = ENG
@@ -823,8 +822,7 @@ DAI_marine_production = {
 
 DAI_ranger_production = {
 	enable = {
-		has_tech = rangers_tech
-		DAI_wants_rangers = yes
+		DAI_should_start_ranger_production = yes
 		NOT = {
 			OR = {
 				original_tag = GER
@@ -844,8 +842,7 @@ DAI_ranger_production = {
 
 DAI_mountaineer_production = {
 	enable = {
-		has_tech = tech_mountaineers
-		DAI_wants_mountaineers = yes
+		DAI_should_start_mountaineer_production = yes
 		NOT = {
 			OR = {
 				original_tag = GER
@@ -865,8 +862,7 @@ DAI_mountaineer_production = {
 
 DAI_amtrac_production = {
 	enable = {
-		has_tech = amphibious_mechanized_infantry
-		DAI_wants_amtrac = yes
+		DAI_should_start_amtrac_production = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -891,8 +887,7 @@ DAI_amtrac_production = {
 
 DAI_mechanized_production = {
 	enable = {
-		has_tech = mechanised_infantry
-		DAI_wants_mech = yes
+		DAI_should_start_mech_production = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -2232,7 +2227,7 @@ default_produce_some_trucks_for_buffer_2 = {
 DAI_delay_mechanized_equipment_upgrade = {
 	enable = {
 		has_dlc = "No Step Back"
-		has_tech = mechanised_infantry
+		DAI_should_start_mech_production = yes
 		has_equipment = { mechanized_equipment < 80000 }
 	}
 	abort_when_not_enabled = yes

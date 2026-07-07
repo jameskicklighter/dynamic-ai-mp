@@ -1,0 +1,17 @@
+ENG_bernard_montgomery
+ENG_cyril_newall
+ENG_ernle_chatfield
+ENG_john_vereker
+ENG_maxwell_aitken
+ENG_philip_kerr
+FRA_gaston_henry_haye
+FRA_henri_marie_auguste_bineau
+FRA_zivony_peshkov
+free_trade
+GER_erich_raeder
+GER_hermann_goring
+GER_ludwig_beck
+GER_ludwig_erhard
+GER_organization_todt
+partial_economic_mobilisation
+war_economy

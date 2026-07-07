@@ -170,7 +170,7 @@ ARMOR_MEDIUM = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 		}
 		enable = {
@@ -201,11 +201,11 @@ ARMOR_MEDIUM = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 				OR = {
 					has_tech = main_battle_tank
 					has_tech = main_battle_tank_chassis
@@ -215,7 +215,7 @@ ARMOR_MEDIUM = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
-			has_tech = mechanised_infantry
+			DAI_can_use_mechanized = yes
 			OR = {
 				has_tech = main_battle_tank
 				has_tech = main_battle_tank_chassis
@@ -288,7 +288,7 @@ ARMOR_HEAVY = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 		}
 		enable = {
@@ -323,11 +323,11 @@ ARMOR_HEAVY = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 				OR = {
 					has_tech = main_battle_tank
 					has_tech = main_battle_tank_chassis
@@ -337,7 +337,7 @@ ARMOR_HEAVY = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tanks
-			has_tech = mechanised_infantry
+			DAI_can_use_mechanized = yes
 			OR = {
 				has_tech = main_battle_tank
 				has_tech = main_battle_tank_chassis
@@ -406,7 +406,7 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 		}
 		enable = {
@@ -437,11 +437,11 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 				OR = {
 					has_tech = main_battle_tank
 					has_tech = main_battle_tank_chassis
@@ -451,7 +451,7 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tank_destroyers
-			has_tech = mechanised_infantry
+			DAI_can_use_mechanized = yes
 			OR = {
 				has_tech = main_battle_tank
 				has_tech = main_battle_tank_chassis
@@ -524,7 +524,7 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 		}
 		enable = {
@@ -559,11 +559,11 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 			base = 10
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 			}
 			modifier = {
 				add = 10
-				has_tech = mechanised_infantry
+				DAI_can_use_mechanized = yes
 				OR = {
 					has_tech = main_battle_tank
 					has_tech = main_battle_tank_chassis
@@ -573,7 +573,7 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_heavy_tank_destroyers
-			has_tech = mechanised_infantry
+			DAI_can_use_mechanized = yes
 			OR = {
 				has_tech = main_battle_tank
 				has_tech = main_battle_tank_chassis
@@ -643,7 +643,7 @@ MECHANIZED_GENERIC = {
 			base = 10
 		}
 		enable = {
-			has_tech = mechanised_infantry
+			DAI_should_start_mech_production = yes
 		}
 		target_template = {
 			support = {
@@ -677,9 +677,7 @@ MOUNTAINEERS_GENERIC = {
 			base = 10
 		}
 		enable = {
-			DAI_wants_mountaineers = yes
-			has_tech = tech_mountaineers
-			date > 1938.1.1
+			DAI_should_start_mountaineer_production = yes
 		}
 		target_template = {
 			support = {
@@ -715,8 +713,7 @@ MARINES_GENERIC = {
 			base = 10
 		}
 		enable = {
-			DAI_wants_marines = yes
-			has_tech = marines
+			DAI_should_start_marine_production = yes
 			date < 1939.1.1
 		}
 		target_template = {
@@ -740,8 +737,7 @@ MARINES_GENERIC = {
 			base = 20
 		}
 		enable = {
-			DAI_wants_marines = yes
-			has_tech = marines
+			DAI_should_start_marine_production = yes
 			date > 1939.1.1
 		}
 		target_template = {
@@ -779,8 +775,7 @@ AMTRAC_GENERIC = {
 			base = 10
 		}
 		enable = {
-			has_tech = amphibious_mechanized_infantry
-			DAI_wants_amtrac = yes
+			DAI_should_start_amtrac_production = yes
 		}
 		target_template = {
 			support = {
@@ -814,9 +809,7 @@ RANGERS_GENERIC = {
 			base = 10
 		}
 		enable = {
-			DAI_wants_rangers = yes
-			has_tech = rangers_tech
-			date > 1937.1.1
+			DAI_should_start_ranger_production = yes
 		}
 		target_template = {
 			support = {

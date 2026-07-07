@@ -1,0 +1,14 @@
+add_namespace = DAI_licensing
+
+country_event = {
+	id = DAI_licensing.1
+	title = DAI_licensing.1.t
+	desc = DAI_licensing.1.d
+	picture = GFX_report_event_generic_construction_site
+
+	is_triggered_only = yes
+
+	option = {
+		name = DAI_licensing.1.a
+	}
+}

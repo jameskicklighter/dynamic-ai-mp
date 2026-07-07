@@ -405,7 +405,6 @@ technologies = {
 			leads_to_tech = sp_helicopter_artillery_observers_tech
 			research_cost_coeff = 1
 		}
-
 		research_cost = 1.25
 		start_year = 1936
 		folder = {
@@ -443,7 +442,6 @@ technologies = {
 			leads_to_tech = tech_recon3
 			research_cost_coeff = 1
 		}
-
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
@@ -485,7 +483,6 @@ technologies = {
 			leads_to_tech = tech_recon4
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2.0
 		start_year = 1942
 		folder = {
@@ -517,7 +514,6 @@ technologies = {
 		helicopter_recon = {
 			recon = 2
 		}
-
 		research_cost = 2.0
 		start_year = 1945
 		folder = {
@@ -1056,7 +1052,6 @@ technologies = {
 			leads_to_tech = tech_field_hospital3
 			research_cost_coeff = 1
 		}
-
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
@@ -1114,7 +1109,6 @@ technologies = {
 			leads_to_tech = tech_field_hospital4
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2.0
 		start_year = 1942
 		folder = {
@@ -1156,7 +1150,6 @@ technologies = {
 				default_morale = 0.05
 			}
 		}
-
 		research_cost = 2.0
 		start_year = 1945
 		folder = {
@@ -1187,7 +1180,7 @@ technologies = {
 	SWI_saint_bernard_tech = { #Saint Bernard tech
 		allow = { always = no } #Only obtained through Focus
 		field_hospital = {
-			casualty_trickleback = 0.20 ## REMEMBER TO UPDATE THE TOOLTIP 
+			casualty_trickleback = 0.10 ## REMEMBER TO UPDATE THE TOOLTIP
 			experience_loss_factor = -0.3
 		}
 	}
@@ -1291,7 +1284,6 @@ technologies = {
 			leads_to_tech = tech_logistics_company3
 			research_cost_coeff = 1
 		}
-
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
@@ -1337,7 +1329,6 @@ technologies = {
 			leads_to_tech = tech_logistics_company4
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2.0
 		start_year = 1942
 		folder = {
@@ -1372,7 +1363,6 @@ technologies = {
 		helicopter_transport = {
 			supply_consumption_factor = -0.15
 		}
-
 		research_cost = 2.0
 		start_year = 1945
 		folder = {
@@ -1714,7 +1704,6 @@ technologies = {
 		category_recon = {
 			recon = 2
 		}
-
 		categories = {
 			support_tech
 			recon_tech
@@ -1918,7 +1907,6 @@ technologies = {
 		enable_subunits = {
 			helicopter_recon
 		}
-		
 		research_cost = 2.0
 		start_year = 1938
 		folder = {
@@ -2024,7 +2012,6 @@ technologies = {
 		allow = {
 			always = no
 		}
-
 		research_cost = 1
 		start_year = 1936
 

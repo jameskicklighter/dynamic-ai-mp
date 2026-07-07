@@ -26,7 +26,7 @@ DAI_monthly_update = {
 		DAI_set_wants_air_flag = yes
 		DAI_set_wants_armor_flag = yes
 		DAI_set_wants_mech_flag = yes
-		DAI_set_armor_template_flags = yes
+		DAI_update_historical_axis_debug = yes
 
 	}
 }

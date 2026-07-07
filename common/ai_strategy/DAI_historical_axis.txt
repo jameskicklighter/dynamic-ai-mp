@@ -1,0 +1,70 @@
+DAI_historical_axis_expeditionaries_to_GER = {
+	allowed = {
+		OR = {
+			original_tag = BUL
+			original_tag = HUN
+			original_tag = ROM
+		}
+	}
+
+	enable = {
+		DAI_historical_axis_expeditionaries_to_GER_enable = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	# Historical Axis minors should offer Germany real expeditionary forces if the engine accepts this diplomatic-action desire.
+	# Runtime debug logs for this condition are emitted by DAI_update_historical_axis_debug.
+	ai_strategy = {
+		type = diplo_action_desire
+		id = GER
+		target = send_expeditionary_force
+		value = 10000
+	}
+}
+
+DAI_historical_axis_allies_do_not_guard_human_GER = {
+	allowed = {
+		OR = {
+			original_tag = BUL
+			original_tag = HUN
+			original_tag = ROM
+		}
+	}
+
+	enable = {
+		DAI_historical_axis_allies_should_not_guard_human_GER = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	# Human Germany controls the main Soviet front; AI allies should not attach to Germany before D-Day or German surrender pressure.
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = GER
+		value = 100
+	}
+}
+
+DAI_historical_axis_allies_guard_ROM_front = {
+	allowed = {
+		OR = {
+			original_tag = BUL
+			original_tag = HUN
+			original_tag = ITA
+		}
+	}
+
+	enable = {
+		DAI_historical_axis_allies_should_guard_ROM_front = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	# Romania anchors the southern Axis-Soviet front; historical AI BUL/HUN/ITA should guard it unless that ally is collapsing.
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = ROM
+		value = 100
+	}
+}

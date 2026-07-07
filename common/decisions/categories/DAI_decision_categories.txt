@@ -32,6 +32,27 @@ DAI_equipment_variant_decisions = {
 	}
 }
 
+DAI_production_license_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		NOT = { has_global_flag = DAI_disable_ai_production_licensing }
+	}
+}
+
+DAI_production_license_notification_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		is_ai = yes
+		NOT = { has_global_flag = DAI_disable_ai_production_licensing }
+	}
+}
+
 DAI_attache_decisions = {
 	priority = 0
 	allowed = {

@@ -1,0 +1,226 @@
+DAI_set_license_relation_recipient_to_provider = {
+	if = {
+		limit = {
+			NOT = {
+				has_license = { from = ROOT }
+			}
+		}
+		diplomatic_relation = {
+			country = ROOT
+			relation = licence_production_access
+			active = yes
+		}
+	}
+}
+
+DAI_mark_license_notifications_from_provider = {
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = mechanised_infantry
+				has_country_flag = DAI_mechanized_cost_upgrade_done
+			}
+			NOT = { has_tech = mechanised_infantry }
+			NOT = { has_country_flag = DAI_notified_mech_license_available }
+		}
+		set_country_flag = DAI_notified_mech_license_available
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = amphibious_mechanized_infantry
+				has_country_flag = DAI_amtrac_cost_upgrade_done
+			}
+			NOT = { has_tech = amphibious_mechanized_infantry }
+			NOT = { has_country_flag = DAI_notified_amtrac_license_available }
+		}
+		set_country_flag = DAI_notified_amtrac_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = amphibious_mechanized_infantry_2 }
+			NOT = { has_tech = amphibious_mechanized_infantry_2 }
+			NOT = { has_country_flag = DAI_notified_amtrac2_license_available }
+		}
+		set_country_flag = DAI_notified_amtrac2_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = infantry_weapons1 }
+			NOT = { has_tech = infantry_weapons1 }
+			NOT = { has_country_flag = DAI_notified_gun1_license_available }
+		}
+		set_country_flag = DAI_notified_gun1_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = improved_infantry_weapons }
+			NOT = { has_tech = improved_infantry_weapons }
+			NOT = { has_country_flag = DAI_notified_gun2_license_available }
+		}
+		set_country_flag = DAI_notified_gun2_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = advanced_infantry_weapons }
+			NOT = { has_tech = advanced_infantry_weapons }
+			NOT = { has_country_flag = DAI_notified_gun3_license_available }
+		}
+		set_country_flag = DAI_notified_gun3_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = gw_artillery }
+			NOT = { has_tech = gw_artillery }
+			NOT = { has_country_flag = DAI_notified_artillery1_license_available }
+		}
+		set_country_flag = DAI_notified_artillery1_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = artillery1 }
+			NOT = { has_tech = artillery1 }
+			NOT = { has_country_flag = DAI_notified_artillery2_license_available }
+		}
+		set_country_flag = DAI_notified_artillery2_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = artillery4 }
+			NOT = { has_tech = artillery4 }
+			NOT = { has_country_flag = DAI_notified_artillery3_license_available }
+		}
+		set_country_flag = DAI_notified_artillery3_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = interwar_antiair }
+			NOT = { has_tech = interwar_antiair }
+			NOT = { has_country_flag = DAI_notified_aa1_license_available }
+		}
+		set_country_flag = DAI_notified_aa1_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = antiair2 }
+			NOT = { has_tech = antiair2 }
+			NOT = { has_country_flag = DAI_notified_aa2_license_available }
+		}
+		set_country_flag = DAI_notified_aa2_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = antiair5 }
+			NOT = { has_tech = antiair5 }
+			NOT = { has_country_flag = DAI_notified_aa3_license_available }
+		}
+		set_country_flag = DAI_notified_aa3_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = interwar_antitank }
+			NOT = { has_tech = interwar_antitank }
+			NOT = { has_country_flag = DAI_notified_at1_license_available }
+		}
+		set_country_flag = DAI_notified_at1_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = antitank2 }
+			NOT = { has_tech = antitank2 }
+			NOT = { has_country_flag = DAI_notified_at2_license_available }
+		}
+		set_country_flag = DAI_notified_at2_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = antitank5 }
+			NOT = { has_tech = antitank5 }
+			NOT = { has_country_flag = DAI_notified_at3_license_available }
+		}
+		set_country_flag = DAI_notified_at3_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = basic_small_airframe }
+			NOT = { has_tech = basic_small_airframe }
+			NOT = { has_country_flag = DAI_notified_basic_small_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_basic_small_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = improved_small_airframe }
+			NOT = { has_tech = improved_small_airframe }
+			NOT = { has_country_flag = DAI_notified_improved_small_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_improved_small_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = advanced_small_airframe }
+			NOT = { has_tech = advanced_small_airframe }
+			NOT = { has_country_flag = DAI_notified_advanced_small_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_advanced_small_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = basic_medium_airframe }
+			NOT = { has_tech = basic_medium_airframe }
+			NOT = { has_country_flag = DAI_notified_basic_medium_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_basic_medium_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = improved_medium_airframe }
+			NOT = { has_tech = improved_medium_airframe }
+			NOT = { has_country_flag = DAI_notified_improved_medium_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_improved_medium_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = advanced_medium_airframe }
+			NOT = { has_tech = advanced_medium_airframe }
+			NOT = { has_country_flag = DAI_notified_advanced_medium_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_advanced_medium_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = basic_large_airframe }
+			NOT = { has_tech = basic_large_airframe }
+			NOT = { has_country_flag = DAI_notified_basic_large_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_basic_large_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = improved_large_airframe }
+			NOT = { has_tech = improved_large_airframe }
+			NOT = { has_country_flag = DAI_notified_improved_large_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_improved_large_airframe_license_available
+	}
+	if = {
+		limit = {
+			ROOT = { has_tech = advanced_large_airframe }
+			NOT = { has_tech = advanced_large_airframe }
+			NOT = { has_country_flag = DAI_notified_advanced_large_airframe_license_available }
+		}
+		set_country_flag = DAI_notified_advanced_large_airframe_license_available
+	}
+}
+
+DAI_notify_human_license_opportunities_from_provider = {
+	every_other_country = {
+		limit = {
+			DAI_is_human_license_partner_of_root = yes
+			DAI_has_license_notification_opportunity_from_root = yes
+		}
+		country_event = { id = DAI_licensing.1 }
+		DAI_mark_license_notifications_from_provider = yes
+	}
+}

@@ -70,30 +70,39 @@ technologies = {
 			medium_armor
 			heavy_armor
 		}
-		on_research_complete_limit = {
-			NOT = {	has_template_containing_unit = light_armor }
-			NOT = {	has_template_containing_unit = heavy_armor }
-			NOT = {	has_template_containing_unit = medium_armor }
-		}
 		on_research_complete = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_tech = motorised_infantry
+						NOT = {	has_template_containing_unit = light_armor }
+						NOT = {	has_template_containing_unit = heavy_armor }
+						NOT = {	has_template_containing_unit = medium_armor }
 					}
+					if = {
+						limit = {
+							has_tech = motorised_infantry
+						}
 
-					load_oob = "unlock_tanks_mot"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = motorised_infantry }
+						load_oob = "unlock_tanks_mot"
 					}
+					if = {
+						limit = {
+							NOT = { has_tech = motorised_infantry }
+						}
 
-					load_oob = "unlock_tanks"
+						load_oob = "unlock_tanks"
+					}
 				}
 			}
 
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			if = {
+				limit = {
+					NOT = {	has_template_containing_unit = light_armor }
+					NOT = {	has_template_containing_unit = heavy_armor }
+					NOT = {	has_template_containing_unit = medium_armor }
+				}
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
 		}
 
 		path = {
@@ -155,38 +164,47 @@ technologies = {
 			light_armor
 		}
 
-		on_research_complete_limit = {
-			NOT = {	has_template_containing_unit = light_armor }
-			NOT = {	has_template_containing_unit = heavy_armor }
-			NOT = {	has_template_containing_unit = medium_armor }
-		}
 		on_research_complete = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_tech = motorised_infantry
+						NOT = {	has_template_containing_unit = light_armor }
+						NOT = {	has_template_containing_unit = heavy_armor }
+						NOT = {	has_template_containing_unit = medium_armor }
+					}
+					if = {
+						limit = {
+							has_tech = motorised_infantry
+						}
+
+						load_oob = "unlock_tanks_mot"
+					}
+					if = {
+						limit = {
+							NOT = { has_tech = motorised_infantry }
+						}
+
+						load_oob = "unlock_tanks"
 					}
 
-					load_oob = "unlock_tanks_mot"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = motorised_infantry }
+					if = { #Italian templates
+						limit = {
+							original_tag = ITA
+							has_completed_focus = ITA_italian_tankettes
+						}
+						ITA_add_improved_light_tank_templates = yes
 					}
-
-					load_oob = "unlock_tanks"
-				}
-
-				if = { #Italian templates
-					limit = {
-						original_tag = ITA
-						has_completed_focus = ITA_italian_tankettes
-					}
-					ITA_add_improved_light_tank_templates = yes
 				}
 			}
 
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			if = {
+				limit = {
+					NOT = {	has_template_containing_unit = light_armor }
+					NOT = {	has_template_containing_unit = heavy_armor }
+					NOT = {	has_template_containing_unit = medium_armor }
+				}
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
 		}
 
 		path = {
@@ -257,16 +275,6 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 1
-			modifier = {
-				add = 100
-				date > 1939.1.1
-				has_country_flag = DAI_wants_armor
-				DAI_prefers_light_armor = yes
-				OR = {
-					has_tech_bonus = { category = armor }
-					has_tech_bonus = { category = cat_light_armor }
-				}
-			}
 			modifier = {
 				add = 999
 				date > 1939.1.1
@@ -424,7 +432,6 @@ technologies = {
 			light_tank_artillery_chassis_3
 			light_tank_aa_chassis_3
 		}
-
 		research_cost = 2
 		start_year = 1941
 
@@ -475,30 +482,39 @@ technologies = {
 			medium_armor
 		}
 
-		on_research_complete_limit = {
-			NOT = {	has_template_containing_unit = light_armor }
-			NOT = {	has_template_containing_unit = heavy_armor }
-			NOT = {	has_template_containing_unit = medium_armor }
-		}
 		on_research_complete = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_tech = motorised_infantry
+						NOT = {	has_template_containing_unit = light_armor }
+						NOT = {	has_template_containing_unit = heavy_armor }
+						NOT = {	has_template_containing_unit = medium_armor }
 					}
+					if = {
+						limit = {
+							has_tech = motorised_infantry
+						}
 
-					load_oob = "unlock_tanks_mot"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = motorised_infantry }
+						load_oob = "unlock_tanks_mot"
 					}
+					if = {
+						limit = {
+							NOT = { has_tech = motorised_infantry }
+						}
 
-					load_oob = "unlock_tanks"
+						load_oob = "unlock_tanks"
+					}
 				}
 			}
 
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			if = {
+				limit = {
+					NOT = {	has_template_containing_unit = light_armor }
+					NOT = {	has_template_containing_unit = heavy_armor }
+					NOT = {	has_template_containing_unit = medium_armor }
+				}
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
 		}
 
 		path = {
@@ -517,6 +533,27 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 1
+			modifier = {
+				add = 9999
+				date > 1936.1.1
+				amount_research_slots > 4
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_medium_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1937.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_medium_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
 			modifier = {
 				add = 999
 				date > 1937.1.1
@@ -638,13 +675,24 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
-				add = 100
+				add = 9999
+				date > 1938.1.1
+				amount_research_slots > 4
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_medium_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
+			modifier = {
+				add = 999
 				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 				DAI_prefers_medium_armor = yes
 				OR = {
-					has_tech_bonus = { category = armor }
 					has_tech_bonus = { category = cat_medium_armor }
+					has_tech_bonus = { category = armor }
 				}
 			}
 			modifier = {
@@ -758,6 +806,27 @@ technologies = {
 			# DAI --
 			base = 1
 			modifier = {
+				add = 9999
+				date > 1941.1.1
+				amount_research_slots > 4
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_medium_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1942.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_medium_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_medium_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
+			modifier = {
 				add = 30
 				date > 1942.7.1
 				amount_research_slots > 3
@@ -793,7 +862,6 @@ technologies = {
 		enable_subunits = {
 			modern_armor
 		}
-
 		research_cost = 2.5
 		start_year = 1945
 
@@ -962,13 +1030,24 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
+				add = 9999
+				date > 1938.1.1
+				amount_research_slots > 4
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_heavy_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_heavy_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
+			modifier = {
+				add = 999
 				date > 1939.1.1
 				has_country_flag = DAI_wants_armor
 				DAI_prefers_heavy_armor = yes
 				OR = {
-					has_tech_bonus = { category = armor }
 					has_tech_bonus = { category = cat_heavy_armor }
+					has_tech_bonus = { category = armor }
 				}
 			}
 			modifier = {
@@ -1032,6 +1111,27 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 9999
+				date > 1941.1.1
+				amount_research_slots > 4
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_heavy_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_heavy_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1942.1.1
+				has_country_flag = DAI_wants_armor
+				DAI_prefers_heavy_armor = yes
+				OR = {
+					has_tech_bonus = { category = cat_heavy_armor }
+					has_tech_bonus = { category = armor }
+				}
+			}
 			modifier = {
 				add = 30
 				date > 1942.7.1
@@ -1735,7 +1835,6 @@ technologies = {
 			name = armour_folder
 			position = { x = 7 y = @1943 }
 		}
-
 		show_effect_as_desc = yes
 		ai_will_do = {
 			factor = 1
@@ -1829,7 +1928,6 @@ technologies = {
 			name = armour_folder
 			position = { x = 9 y = @1943 }
 		}
-
 		show_effect_as_desc = yes
 		ai_will_do = {
 			factor = 1
@@ -1899,7 +1997,6 @@ technologies = {
 			name = armour_folder
 			position = { x = 11 y = @1943 }
 		}
-
 		show_effect_as_desc = yes
 		ai_will_do = {
 			factor = 1
@@ -1963,7 +2060,6 @@ technologies = {
 			name = armour_folder
 			position = { x = 9 y = @1945 }
 		}
-
 		show_effect_as_desc = yes
 		ai_will_do = {
 			factor = 1
@@ -2021,7 +2117,6 @@ technologies = {
 		enable_equipment_modules = {
 			lc_high_impact_obliterator_cannon			
 		}
-
 		show_effect_as_desc = yes
 		ai_will_do = {
 			factor = 1

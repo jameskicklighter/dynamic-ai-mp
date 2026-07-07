@@ -1,0 +1,91 @@
+DAI_update_historical_axis_debug = {
+	if = {
+		limit = {
+			DAI_historical_axis_expeditionaries_to_GER_enable = yes
+			NOT = { has_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled diplo_action_desire target=send_expeditionary_force id=GER value=10000"
+		set_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged
+			NOT = { DAI_historical_axis_expeditionaries_to_GER_enable = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled diplo_action_desire target=send_expeditionary_force id=GER"
+		clr_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_GER_should_split_SOV_front_for_human_ROM = yes
+			NOT = { has_country_flag = DAI_historical_axis_split_SOV_front_for_human_ROM_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled dont_defend_ally_borders id=ROM because ROM is human and has no surrender progress"
+		set_country_flag = DAI_historical_axis_split_SOV_front_for_human_ROM_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_split_SOV_front_for_human_ROM_logged
+			NOT = { DAI_historical_axis_GER_should_split_SOV_front_for_human_ROM = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled dont_defend_ally_borders id=ROM for human-ROM condition"
+		clr_country_flag = DAI_historical_axis_split_SOV_front_for_human_ROM_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_GER_should_split_HUN_front_for_human_ROM = yes
+			NOT = { has_country_flag = DAI_historical_axis_split_HUN_front_for_human_ROM_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled dont_defend_ally_borders id=HUN because ROM is human and HUN has no surrender progress"
+		set_country_flag = DAI_historical_axis_split_HUN_front_for_human_ROM_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_split_HUN_front_for_human_ROM_logged
+			NOT = { DAI_historical_axis_GER_should_split_HUN_front_for_human_ROM = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled dont_defend_ally_borders id=HUN for human-ROM condition"
+		clr_country_flag = DAI_historical_axis_split_HUN_front_for_human_ROM_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_allies_should_not_guard_human_GER = yes
+			NOT = { has_country_flag = DAI_historical_axis_dont_guard_human_GER_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled dont_defend_ally_borders id=GER because GER is human and D-Day/GER surrender conditions are inactive"
+		set_country_flag = DAI_historical_axis_dont_guard_human_GER_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_dont_guard_human_GER_logged
+			NOT = { DAI_historical_axis_allies_should_not_guard_human_GER = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled dont_defend_ally_borders id=GER"
+		clr_country_flag = DAI_historical_axis_dont_guard_human_GER_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_allies_should_guard_ROM_front = yes
+			NOT = { has_country_flag = DAI_historical_axis_guard_ROM_front_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled force_defend_ally_borders id=ROM for historical Axis-SOV front"
+		set_country_flag = DAI_historical_axis_guard_ROM_front_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_guard_ROM_front_logged
+			NOT = { DAI_historical_axis_allies_should_guard_ROM_front = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled force_defend_ally_borders id=ROM for historical Axis-SOV front"
+		clr_country_flag = DAI_historical_axis_guard_ROM_front_logged
+	}
+}
