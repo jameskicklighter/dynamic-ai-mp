@@ -116,6 +116,75 @@ DAI_wants_amtrac = {
 	}
 }
 
+DAI_can_use_mechanized = {
+	OR = {
+		has_tech = mechanised_infantry
+		AND = {
+			has_tech = DAI_enable_mech
+			has_country_flag = DAI_mech_licensed
+		}
+	}
+}
+
+DAI_can_use_amtrac = {
+	OR = {
+		has_tech = amphibious_mechanized_infantry
+		AND = {
+			has_tech = DAI_enable_amtrac
+			OR = {
+				has_country_flag = DAI_amtrac_licensed_1
+				has_country_flag = DAI_amtrac_licensed_2
+			}
+		}
+	}
+}
+
+DAI_should_use_mechanized = {
+	OR = {
+		DAI_wants_mech = yes
+		has_country_flag = DAI_mech_licensed
+	}
+}
+
+DAI_should_use_amtrac = {
+	OR = {
+		DAI_wants_amtrac = yes
+		has_country_flag = DAI_amtrac_licensed_1
+		has_country_flag = DAI_amtrac_licensed_2
+	}
+}
+
+DAI_should_start_mech_production = {
+	DAI_can_use_mechanized = yes
+	DAI_should_use_mechanized = yes
+}
+
+DAI_should_start_mechanized_production = {
+	DAI_should_start_mech_production = yes
+}
+
+DAI_should_start_amtrac_production = {
+	DAI_can_use_amtrac = yes
+	DAI_should_use_amtrac = yes
+}
+
+DAI_should_start_mountaineer_production = {
+	DAI_wants_mountaineers = yes
+	has_tech = tech_mountaineers
+	date > 1938.1.1
+}
+
+DAI_should_start_marine_production = {
+	DAI_wants_marines = yes
+	has_tech = marines
+}
+
+DAI_should_start_ranger_production = {
+	DAI_wants_rangers = yes
+	has_tech = rangers_tech
+	date > 1937.1.1
+}
+
 DAI_wants_mountaineers = {
 	OR = {
 		# original_tag = BUL

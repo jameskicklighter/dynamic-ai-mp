@@ -86,9 +86,8 @@ DAI_division_template_decisions = {
 			is_ai = yes
 		}
 		available = {
-			DAI_wants_mountaineers = yes
+			DAI_should_start_mountaineer_production = yes
 			has_army_experience > 0
-			has_tech = tech_mountaineers
 		}
 		cost = 0
 
@@ -128,9 +127,8 @@ DAI_division_template_decisions = {
 			is_ai = yes
 		}
 		available = {
-			DAI_wants_marines = yes
+			DAI_should_start_marine_production = yes
 			has_army_experience > 0
-			has_tech = marines
 		}
 		cost = 0
 
@@ -142,20 +140,45 @@ DAI_division_template_decisions = {
 
 		complete_effect = {
 			army_experience = -1
-			division_template = {
-				name = "Marines 1936 A"
-				regiments = {
-					marine = { x = 0 y = 0 }
-					marine = { x = 0 y = 1 }
-					marine = { x = 0 y = 2 }
-					marine = { x = 1 y = 0 }
-					marine = { x = 1 y = 1 }
-					marine = { x = 1 y = 2 }
-					marine = { x = 2 y = 0 }
-					marine = { x = 2 y = 1 }
-					marine = { x = 2 y = 2 }
+			if = {
+				limit = { date > 1939.1.1 }
+				division_template = {
+					name = "Marines 1939 A"
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						marine = { x = 2 y = 0 }
+						marine = { x = 2 y = 1 }
+						marine = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+					}
+					support = {
+					}
 				}
-				support = {
+			}
+			else = {
+				division_template = {
+					name = "Marines 1936 A"
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						marine = { x = 2 y = 0 }
+						marine = { x = 2 y = 1 }
+						marine = { x = 2 y = 2 }
+					}
+					support = {
+					}
 				}
 			}
 		}
@@ -167,9 +190,8 @@ DAI_division_template_decisions = {
 			is_ai = yes
 		}
 		available = {
-			DAI_wants_rangers = yes
+			DAI_should_start_ranger_production = yes
 			has_army_experience > 0
-			has_tech = rangers_tech
 		}
 		cost = 0
 
@@ -209,9 +231,8 @@ DAI_division_template_decisions = {
 			is_ai = yes
 		}
 		available = {
-			DAI_wants_mech = yes
+			DAI_should_start_mech_production = yes
 			has_army_experience > 0
-			has_tech = mechanised_infantry
 		}
 		cost = 0
 
@@ -293,11 +314,13 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
-				# regimental_support = {
-				# 	mot_fire_support = { x = 0 y = 0 }
-				# 	mot_fire_support = { x = 0 y = 1 }
-				# 	mot_fire_support = { x = 0 y = 2 }
-				# }
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					light_tank_destroyer_support = { x = 2 y = 0 }
+					light_tank_destroyer_support = { x = 3 y = 0 }
+					light_tank_destroyer_support = { x = 4 y = 0 }
+				}
 			}
 		}
 	}
@@ -350,11 +373,13 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
-				# regimental_support = {
-				# 	mot_fire_support = { x = 0 y = 0 }
-				# 	mot_fire_support = { x = 0 y = 1 }
-				# 	mot_fire_support = { x = 0 y = 2 }
-				# }
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_tank_destroyer_support = { x = 4 y = 0 }
+				}
 			}
 		}
 	}
@@ -365,7 +390,13 @@ DAI_division_template_decisions = {
 			is_ai = yes
 		}
 		available = {
-			always = no
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tanks
+			DAI_can_use_mechanized = yes
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
 			has_army_experience > 0
 		}
 		cost = 0
@@ -402,11 +433,6 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
-				# regimental_support = {
-				# 	mot_fire_support = { x = 0 y = 0 }
-				# 	mot_fire_support = { x = 0 y = 1 }
-				# 	mot_fire_support = { x = 0 y = 2 }
-				# }
 			}
 		}
 	}
@@ -459,11 +485,13 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
-				# regimental_support = {
-				# 	mot_fire_support = { x = 0 y = 0 }
-				# 	mot_fire_support = { x = 0 y = 1 }
-				# 	mot_fire_support = { x = 0 y = 2 }
-				# }
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					heavy_tank_destroyer_support = { x = 2 y = 0 }
+					heavy_tank_destroyer_support = { x = 3 y = 0 }
+					heavy_tank_destroyer_support = { x = 4 y = 0 }
+				}
 			}
 		}
 	}
@@ -517,11 +545,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
-				# regimental_support = {
-				# 	mot_fire_support = { x = 0 y = 0 }
-				# 	mot_fire_support = { x = 0 y = 1 }
-				# 	mot_fire_support = { x = 0 y = 2 }
-				# }
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					mot_fire_support = { x = 1 y = 1 }
+				}
 			}
 		}
 	}
@@ -575,11 +603,11 @@ DAI_division_template_decisions = {
 				}
 				support = {
 				}
-				# regimental_support = {
-				# 	mot_fire_support = { x = 0 y = 0 }
-				# 	mot_fire_support = { x = 0 y = 1 }
-				# 	mot_fire_support = { x = 0 y = 2 }
-				# }
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					mot_fire_support = { x = 1 y = 1 }
+				}
 			}
 		}
 	}
@@ -590,9 +618,8 @@ DAI_division_template_decisions = {
 			is_ai = yes
 		}
 		available = {
-			DAI_wants_amtrac = yes
+			DAI_should_start_amtrac_production = yes
 			has_army_experience > 0
-			has_tech = amphibious_mechanized_infantry
 		}
 		cost = 0
 

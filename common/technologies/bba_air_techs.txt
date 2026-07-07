@@ -15,7 +15,6 @@ technologies = {
 			leads_to_tech = bba_improved_transport_plane
 			research_cost_coeff = 1
 		}
-		
 		research_cost = 2
 		start_year = 1933
 
@@ -51,7 +50,6 @@ technologies = {
 			leads_to_tech = bba_strategic_airlifter
 			research_cost_coeff = 1
 		}
-		
 		research_cost = 2
 		start_year = 1940
 		
@@ -81,7 +79,6 @@ technologies = {
 		enable_equipments = {
 			transport_plane_equipment_3
 		}
-		
 		research_cost = 2
 		start_year = 1945
 		
@@ -124,8 +121,6 @@ technologies = {
 			leads_to_tech = basic_small_airframe
 			research_cost_coeff = 1
 		}
-		
-		
 		research_cost = 2
 		start_year = 1926
 		folder = {
@@ -177,7 +172,6 @@ technologies = {
 			leads_to_tech = improved_small_airframe
 			research_cost_coeff = 1
 		}
-		
 		research_cost = 2
 		start_year = 1936
 
@@ -265,14 +259,40 @@ technologies = {
 			modifier = {
 				add = 9999
 				date > 1938.1.1
+				amount_research_slots > 4
 				DAI_should_build_planes = yes
+				NOT = {
+					OR = {
+						has_country_flag = DAI_improved_small_airframe_licensed
+						has_country_flag = DAI_advanced_small_airframe_licensed
+					}
+				}
 				OR = {
 					has_tech_bonus = { category = light_air }
+					has_tech_bonus = { category = air_equipment }
 					has_tech_bonus = { category = light_fighter }
 					has_tech_bonus = { category = cas_bomber }
 					has_tech_bonus = { category = naval_air }
 					has_tech_bonus = { category = naval_bomber }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1939.1.1
+				DAI_should_build_planes = yes
+				NOT = {
+					OR = {
+						has_country_flag = DAI_improved_small_airframe_licensed
+						has_country_flag = DAI_advanced_small_airframe_licensed
+					}
+				}
+				OR = {
+					has_tech_bonus = { category = light_air }
 					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = light_fighter }
+					has_tech_bonus = { category = cas_bomber }
+					has_tech_bonus = { category = naval_air }
+					has_tech_bonus = { category = naval_bomber }
 				}
 			}
 			modifier = {
@@ -339,6 +359,35 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 2
+			modifier = {
+				add = 9999
+				date > 1942.1.1
+				amount_research_slots > 4
+				DAI_should_build_planes = yes
+				NOT = { has_country_flag = DAI_advanced_small_airframe_licensed }
+				OR = {
+					has_tech_bonus = { category = light_air }
+					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = light_fighter }
+					has_tech_bonus = { category = cas_bomber }
+					has_tech_bonus = { category = naval_air }
+					has_tech_bonus = { category = naval_bomber }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1943.1.1
+				DAI_should_build_planes = yes
+				NOT = { has_country_flag = DAI_advanced_small_airframe_licensed }
+				OR = {
+					has_tech_bonus = { category = light_air }
+					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = light_fighter }
+					has_tech_bonus = { category = cas_bomber }
+					has_tech_bonus = { category = naval_air }
+					has_tech_bonus = { category = naval_bomber }
+				}
+			}
 			# modifier = {
 			# 	add = 999
 			# 	date > 1943.1.1
@@ -375,7 +424,6 @@ technologies = {
 			cv_small_plane_naval_bomber_airframe_4
 			cv_small_plane_suicide_airframe_4
 		}
-		
 		research_cost = 2
 		start_year = 1945
 
@@ -451,7 +499,6 @@ technologies = {
 			leads_to_tech = basic_medium_airframe
 			research_cost_coeff = 1
 		}
-		
 		research_cost = 2
 		start_year = 1926
 		folder = {
@@ -493,7 +540,6 @@ technologies = {
 			leads_to_tech = improved_medium_airframe
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2
 		start_year = 1936
 
@@ -675,7 +721,6 @@ technologies = {
 			leads_to_tech = basic_large_airframe
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2
 		start_year = 1926
 		folder = {
@@ -711,7 +756,6 @@ technologies = {
 			leads_to_tech = improved_large_airframe
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2
 		start_year = 1936
 		folder = {
@@ -801,7 +845,6 @@ technologies = {
 			leads_to_tech = modern_large_airframe
 			research_cost_coeff = 1
 		}
-
 		research_cost = 2
 		start_year = 1944
 		folder = {
@@ -891,7 +934,6 @@ technologies = {
 			leads_to_tech = heavy_bombs
 			research_cost_coeff = 1
 		}
-		
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -977,7 +1019,6 @@ technologies = {
 		enable_equipment_modules = {
 			armor_piercing_bomb_locks
 		}
-			
 		research_cost = 1
 		start_year = 1936
 
@@ -1008,7 +1049,6 @@ technologies = {
 		enable_equipment_modules = {
 			recon_camera
 		}
-		
 		research_cost = 1
 		start_year = 1922
 
@@ -1051,7 +1091,6 @@ technologies = {
 			leads_to_tech = air_torpedoe_2
 			research_cost_coeff = 1
 		}
-		
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -1100,7 +1139,6 @@ technologies = {
 			leads_to_tech = air_torpedoe_3
 			research_cost_coeff = 1
 		}
-		
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -1142,7 +1180,6 @@ technologies = {
 		enable_equipment_modules = {
 			torpedo_mounting_3
 		}
-			
 		research_cost = 1
 		start_year = 1944
 
@@ -1219,7 +1256,6 @@ technologies = {
 			leads_to_tech = survivability_studies
 			research_cost_coeff = 1
 		}
-		
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -1260,7 +1296,6 @@ technologies = {
 			armor_plate_medium
 			armor_plate_large
 		}
-		
 		research_cost = 1
 		start_year = 1939
 
@@ -1312,7 +1347,6 @@ technologies = {
 			hmg_defense_turret
 			hmg_defense_turret_2x
 		}
-		
 		research_cost = 1
 		start_year = 1939
 
@@ -1374,7 +1408,6 @@ technologies = {
 			leads_to_tech = aa_cannon_3
 			research_cost_coeff = 1
 		}
-
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -1402,7 +1435,6 @@ technologies = {
 			cannon_defense_turret
 			cannon_defense_turret_2x
 		}
-		
 		research_cost = 1.5
 		start_year = 1943
 
@@ -1438,7 +1470,6 @@ technologies = {
 			cannon_defense_turret
 			cannon_defense_turret_2x
 		}
-		
 		research_cost = 2
 		start_year = 1945
 
@@ -1498,7 +1529,6 @@ technologies = {
 			leads_to_tech = aircraft_construction
 			research_cost_coeff = 1
 		}
-
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -1636,6 +1666,27 @@ technologies = {
 			# DAI --
 			base = 1.9
 			modifier = {
+				add = 9999
+				date > 1938.1.1
+				amount_research_slots > 4
+				DAI_should_build_planes = yes
+				OR = {
+					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = cat_air_engine }
+					has_tech_bonus = { category = plane_modules_tech }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1939.1.1
+				DAI_should_build_planes = yes
+				OR = {
+					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = cat_air_engine }
+					has_tech_bonus = { category = plane_modules_tech }
+				}
+			}
+			modifier = {
 				add = 999
 				date > 1938.1.1
 				amount_research_slots > 3
@@ -1679,7 +1730,6 @@ technologies = {
 			leads_to_tech = sp_centrifugal_jet_tech
 			research_cost_coeff = 1
 		}
-
 		categories = {
 			air_equipment
 			plane_modules_tech
@@ -1696,6 +1746,27 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 1.9
+			modifier = {
+				add = 9999
+				date > 1942.1.1
+				amount_research_slots > 4
+				DAI_should_build_planes = yes
+				OR = {
+					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = cat_air_engine }
+					has_tech_bonus = { category = plane_modules_tech }
+				}
+			}
+			modifier = {
+				add = 999
+				date > 1943.1.1
+				DAI_should_build_planes = yes
+				OR = {
+					has_tech_bonus = { category = air_equipment }
+					has_tech_bonus = { category = cat_air_engine }
+					has_tech_bonus = { category = plane_modules_tech }
+				}
+			}
 			modifier = {
 				add = 999
 				date > 1943.7.1
@@ -1726,7 +1797,6 @@ technologies = {
 			fuel_tanks_large
 			drop_tanks
 		}
-		
 		research_cost = 1
 		start_year = 1936
 
@@ -1776,7 +1846,6 @@ technologies = {
 			non_strategic_materials_large
 			flying_boat_large
 		}
-		
 		research_cost = 1
 		start_year = 1936
 
@@ -1953,7 +2022,6 @@ technologies = {
 			leads_to_tech = aerial_hangars
 			research_cost_coeff = 1
 		}	
-
 		research_cost = 1.5
 		start_year = 1944
 
@@ -1993,7 +2061,6 @@ technologies = {
 		}
 
 		is_special_project_tech = yes
-
 		research_cost = 1.75
 		start_year = 1946
 

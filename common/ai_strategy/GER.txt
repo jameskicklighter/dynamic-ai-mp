@@ -3550,15 +3550,8 @@ GER_focus_on_our_border_barb  = {
 		original_tag = GER
 	}
 	enable = {
-		has_war_with = SOV
-		ROM = {
-			is_in_faction_with = ROOT
-			surrender_progress < 0.01
-		}
-		HUN = {
-			is_in_faction_with = ROOT
-			surrender_progress < 0.01
-		}
+		# Human Romania handles its own front; historical AI Germany should stay off ROM unless Romania starts collapsing.
+		DAI_historical_axis_GER_should_split_SOV_front_for_human_ROM = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -3567,6 +3560,17 @@ GER_focus_on_our_border_barb  = {
 		id = ROM
 		value = 100
 	}
+}
+
+GER_focus_on_hungarian_border_barb  = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		# Keep the human-Romania split from pulling German AI onto Hungary unless Hungary starts collapsing.
+		DAI_historical_axis_GER_should_split_HUN_front_for_human_ROM = yes
+	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = dont_defend_ally_borders

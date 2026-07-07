@@ -361,6 +361,10 @@ JAP_ally_GER = {
 		original_tag = JAP
 	}
 	enable = {
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
 		has_completed_focus = JAP_technological_exchange
 		country_exists = GER
 	}
@@ -385,6 +389,10 @@ JAP_ally_GER_historical = {
 		original_tag = JAP
 	}
 	enable = {
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
 		has_completed_focus = JAP_sea_mil_tech_coop_with_germany
 		country_exists = GER
 	}
@@ -2156,6 +2164,108 @@ JAP_invade_east_indies = {
 		value = 120 # Slightly higher than Philippines.
 	}
 
+}
+
+JAP_dei_stage_1_borneo = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = INS
+		INS = { has_capitulated = no }
+		date > 1941.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 400
+	}
+
+	# Borneo oil region and eastern airfields first. Broad INS invasion pressure stays in JAP_invade_east_indies.
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 1055 # Eastern Kalimantan (Balikpapan oil)
+		value = 150
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 1056 # Manado
+		value = 100
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 738 # Aru Islands
+		value = -100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 668 # The Moluccas
+		value = -100
+	}
+}
+
+JAP_dei_stage_2_core = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = INS
+		INS = { has_capitulated = no }
+		date > 1941.1.1
+		1055 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
+	}
+	abort_when_not_enabled = yes
+
+	# Once Borneo is secured, move to Java, Sumatra, and the remaining islands.
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 1058 # Batavia
+		value = 200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 335 # West Java
+		value = 150
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 1051 # East Java (Surabaya)
+		value = 120
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 672 # South Sumatra (Palembang oil)
+		value = 150
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 1049 # Medan and Riouw
+		value = 80
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 673 # Sulawesi
+		value = 80
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 1054 # Dutch Timor
+		value = 60
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 738 # Aru Islands
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 668 # The Moluccas
+		value = 150
+	}
 }
 
 JAP_invade_malaya = {

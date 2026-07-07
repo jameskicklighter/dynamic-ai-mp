@@ -919,32 +919,14 @@ ITA_share_borders_with_GER_against_SOV = {
 		original_tag = ITA
 	}
 	enable = {
-		is_in_faction_with = GER
-		GER = {
-			going_war_with_SOV = yes
-			is_ai = no # Let the humans work.
-		}
-
-		GER_should_split_SOV_front_with_ITA = yes
+		DAI_historical_axis_allies_should_not_guard_human_GER = yes
 	}
-	abort = {
-		not = {
-			is_in_faction_with = GER
-			GER = {
-				going_war_with_SOV = yes
-			}
-			GER_should_continue_split_SOV_front_with_ITA = yes
-		}
-	}
+	abort_when_not_enabled = yes
 
+	# Human Germany controls the German-Soviet front; Italy covers Axis minors instead and avoids attaching to Germany.
 	ai_strategy = {
 		type = force_defend_ally_borders
 		id = CRO
-		value = 100
-	}
-	ai_strategy = {
-		type = force_defend_ally_borders
-		id = ROM
 		value = 100
 	}
 	ai_strategy = {
