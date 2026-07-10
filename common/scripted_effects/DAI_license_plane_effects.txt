@@ -54,31 +54,34 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_small_airframe_design_full } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1936 C"
-							type = small_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								engine_type_slot = engine_2_1x
-								special_type_slot_1 = armor_plate_small
-								special_type_slot_2 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1936 C"
+								type = small_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									engine_type_slot = engine_2_1x
+									special_type_slot_1 = armor_plate_small
+									special_type_slot_2 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -98,31 +101,34 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1936 C"
-							type = small_plane_cas_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_2_1x
-								special_type_slot_1 = dive_brakes_small
-								special_type_slot_2 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1936 C"
+								type = small_plane_cas_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_2_1x
+									special_type_slot_1 = dive_brakes_small
+									special_type_slot_2 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -142,31 +148,34 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1936 C"
-							type = small_plane_naval_bomber_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_2_1x
-								special_type_slot_1 = drop_tanks
-								special_type_slot_2 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1936 C"
+								type = small_plane_naval_bomber_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_2_1x
+									special_type_slot_1 = drop_tanks
+									special_type_slot_2 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -186,31 +195,34 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1936 C"
-							type = cv_small_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_2x
-								engine_type_slot = engine_2_1x
-								special_type_slot_1 = armor_plate_small
-								special_type_slot_2 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1936 C"
+								type = cv_small_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_2x
+									engine_type_slot = engine_2_1x
+									special_type_slot_1 = armor_plate_small
+									special_type_slot_2 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -230,31 +242,34 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1936 C"
-							type = cv_small_plane_naval_bomber_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_2_1x
-								special_type_slot_1 = self_sealing_fuel_tanks_small
-								special_type_slot_2 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1936 C"
+								type = cv_small_plane_naval_bomber_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_2_1x
+									special_type_slot_1 = self_sealing_fuel_tanks_small
+									special_type_slot_2 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -286,29 +301,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_small_airframe_design_engine } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1936 B"
-							type = small_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1936 B"
+								type = small_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -326,29 +344,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1936 B"
-							type = small_plane_cas_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1936 B"
+								type = small_plane_cas_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -366,29 +387,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1936 B"
-							type = small_plane_naval_bomber_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1936 B"
+								type = small_plane_naval_bomber_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -406,29 +430,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1936 B"
-							type = cv_small_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_2x
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1936 B"
+								type = cv_small_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_2x
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -446,29 +473,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1936 B"
-							type = cv_small_plane_naval_bomber_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1936 B"
+								type = cv_small_plane_naval_bomber_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -499,29 +529,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_small_airframe_design_base } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1936 A"
-							type = small_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								engine_type_slot = engine_1_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1936 A"
+								type = small_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									engine_type_slot = engine_1_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -539,29 +572,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1936 A"
-							type = small_plane_cas_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_1_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1936 A"
+								type = small_plane_cas_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_1_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -579,29 +615,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1936 A"
-							type = small_plane_naval_bomber_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_1_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1936 A"
+								type = small_plane_naval_bomber_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_1_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -619,29 +658,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1936 A"
-							type = cv_small_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_2x
-								engine_type_slot = engine_1_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1936 A"
+								type = cv_small_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_2x
+									engine_type_slot = engine_1_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -659,29 +701,32 @@ DAI_create_basic_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1936 A"
-							type = cv_small_plane_naval_bomber_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								engine_type_slot = engine_1_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1936 A"
+								type = cv_small_plane_naval_bomber_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									engine_type_slot = engine_1_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -713,33 +758,36 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_small_airframe_design_full } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1940 C"
-							type = small_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = armor_plate_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1940 C"
+								type = small_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = armor_plate_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -761,33 +809,36 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1940 C"
-							type = small_plane_cas_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = tank_buster_1
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = armor_plate_small
-								special_type_slot_2 = dive_brakes_small
-								special_type_slot_3 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1940 C"
+								type = small_plane_cas_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = tank_buster_1
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = armor_plate_small
+									special_type_slot_2 = dive_brakes_small
+									special_type_slot_3 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -809,33 +860,36 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1940 C"
-							type = small_plane_naval_bomber_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = drop_tanks
-								special_type_slot_2 = fuel_tanks_small
-								special_type_slot_3 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1940 C"
+								type = small_plane_naval_bomber_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = drop_tanks
+									special_type_slot_2 = fuel_tanks_small
+									special_type_slot_3 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -857,33 +911,36 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1940 C"
-							type = cv_small_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_2x
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = self_sealing_fuel_tanks_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1940 C"
+								type = cv_small_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_2x
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = self_sealing_fuel_tanks_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -905,33 +962,36 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1940 C"
-							type = cv_small_plane_naval_bomber_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = self_sealing_fuel_tanks_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1940 C"
+								type = cv_small_plane_naval_bomber_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = self_sealing_fuel_tanks_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -965,30 +1025,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_small_airframe_design_engine } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1940 B"
-							type = small_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1940 B"
+								type = small_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1007,30 +1070,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1940 B"
-							type = small_plane_cas_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1940 B"
+								type = small_plane_cas_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1049,30 +1115,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1940 B"
-							type = small_plane_naval_bomber_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1940 B"
+								type = small_plane_naval_bomber_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1091,30 +1160,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1940 B"
-							type = cv_small_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_2x
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1940 B"
+								type = cv_small_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_2x
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1133,30 +1205,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1940 B"
-							type = cv_small_plane_naval_bomber_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1940 B"
+								type = cv_small_plane_naval_bomber_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1188,30 +1263,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_small_airframe_design_base } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1940 A"
-							type = small_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1940 A"
+								type = small_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1230,30 +1308,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1940 A"
-							type = small_plane_cas_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1940 A"
+								type = small_plane_cas_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1272,30 +1353,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1940 A"
-							type = small_plane_naval_bomber_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1940 A"
+								type = small_plane_naval_bomber_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1314,30 +1398,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1940 A"
-							type = cv_small_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_2x
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1940 A"
+								type = cv_small_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_2x
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1356,30 +1443,33 @@ DAI_create_improved_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1940 A"
-							type = cv_small_plane_naval_bomber_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								engine_type_slot = engine_2_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1940 A"
+								type = cv_small_plane_naval_bomber_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									engine_type_slot = engine_2_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1412,35 +1502,38 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_small_airframe_design_full } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1944 C"
-							type = small_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
-								special_type_slot_1 = armor_plate_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = drop_tanks
-								special_type_slot_4 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1944 C"
+								type = small_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+									special_type_slot_1 = armor_plate_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = drop_tanks
+									special_type_slot_4 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1464,35 +1557,38 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1944 C"
-							type = small_plane_cas_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = tank_buster_2
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
-								special_type_slot_1 = armor_plate_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = dive_brakes_small
-								special_type_slot_4 = fuel_tanks_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1944 C"
+								type = small_plane_cas_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = tank_buster_2
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+									special_type_slot_1 = armor_plate_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = dive_brakes_small
+									special_type_slot_4 = fuel_tanks_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1516,35 +1612,38 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1944 C"
-							type = small_plane_naval_bomber_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_2
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = drop_tanks
-								special_type_slot_2 = fuel_tanks_small
-								special_type_slot_3 = fuel_tanks_small
-								special_type_slot_4 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1944 C"
+								type = small_plane_naval_bomber_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_2
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = drop_tanks
+									special_type_slot_2 = fuel_tanks_small
+									special_type_slot_3 = fuel_tanks_small
+									special_type_slot_4 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1568,34 +1667,37 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1944 C"
-							type = cv_small_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
-								special_type_slot_1 = self_sealing_fuel_tanks_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1944 C"
+								type = cv_small_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+									special_type_slot_1 = self_sealing_fuel_tanks_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1618,34 +1720,37 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1944 C"
-							type = cv_small_plane_naval_bomber_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
-								special_type_slot_1 = self_sealing_fuel_tanks_small
-								special_type_slot_2 = armor_plate_small
-								special_type_slot_3 = armor_plate_small
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1944 C"
+								type = cv_small_plane_naval_bomber_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+									special_type_slot_1 = self_sealing_fuel_tanks_small
+									special_type_slot_2 = armor_plate_small
+									special_type_slot_3 = armor_plate_small
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1680,31 +1785,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_small_airframe_design_engine } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1944 B"
-							type = small_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1944 B"
+								type = small_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1724,31 +1832,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1944 B"
-							type = small_plane_cas_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1944 B"
+								type = small_plane_cas_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1768,31 +1879,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1944 B"
-							type = small_plane_naval_bomber_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1944 B"
+								type = small_plane_naval_bomber_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1812,31 +1926,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1944 B"
-							type = cv_small_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1944 B"
+								type = cv_small_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1856,31 +1973,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1944 B"
-							type = cv_small_plane_naval_bomber_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_4_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1944 B"
+								type = cv_small_plane_naval_bomber_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_4_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1913,31 +2033,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_small_airframe_design_base } }
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Fighter 1944 A"
-							type = small_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Fighter 1944 A"
+								type = small_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -1957,31 +2080,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "CAS 1944 A"
-							type = small_plane_cas_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = bomb_locks
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "CAS 1944 A"
+								type = small_plane_cas_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = bomb_locks
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2001,31 +2127,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Naval Bomber 1944 A"
-							type = small_plane_naval_bomber_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Naval Bomber 1944 A"
+								type = small_plane_naval_bomber_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2045,31 +2174,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Fighter 1944 A"
-							type = cv_small_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Fighter 1944 A"
+								type = cv_small_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2089,31 +2221,34 @@ DAI_create_advanced_small_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_naval_small = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Carrier Naval Bomber 1944 A"
-							type = cv_small_plane_naval_bomber_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_3_1x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Carrier Naval Bomber 1944 A"
+								type = cv_small_plane_naval_bomber_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_3_1x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2147,35 +2282,38 @@ DAI_create_basic_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_medium_airframe_design_full } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1936 C"
-							type = medium_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = bomb_locks
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_2x
-								special_type_slot_1 = bomb_sights_2
-								special_type_slot_2 = self_sealing_fuel_tanks_medium
-								special_type_slot_3 = lmg_defense_turret
-								special_type_slot_4 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1936 C"
+								type = medium_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = bomb_locks
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_2x
+									special_type_slot_1 = bomb_sights_2
+									special_type_slot_2 = self_sealing_fuel_tanks_medium
+									special_type_slot_3 = lmg_defense_turret
+									special_type_slot_4 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2199,35 +2337,38 @@ DAI_create_basic_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1936 C"
-							type = medium_plane_fighter_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								engine_type_slot = engine_2_2x
-								special_type_slot_1 = hmg_defense_turret_2x
-								special_type_slot_2 = lmg_defense_turret
-								special_type_slot_3 = empty
-								special_type_slot_4 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1936 C"
+								type = medium_plane_fighter_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									engine_type_slot = engine_2_2x
+									special_type_slot_1 = hmg_defense_turret_2x
+									special_type_slot_2 = lmg_defense_turret
+									special_type_slot_3 = empty
+									special_type_slot_4 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2263,31 +2404,34 @@ DAI_create_basic_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_medium_airframe_design_engine } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1936 B"
-							type = medium_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = bomb_locks
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1936 B"
+								type = medium_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = bomb_locks
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2307,31 +2451,34 @@ DAI_create_basic_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1936 B"
-							type = medium_plane_fighter_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								engine_type_slot = engine_2_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1936 B"
+								type = medium_plane_fighter_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									engine_type_slot = engine_2_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2364,31 +2511,34 @@ DAI_create_basic_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_medium_airframe_design_base } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1936 A"
-							type = medium_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_1_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1936 A"
+								type = medium_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_1_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2408,31 +2558,34 @@ DAI_create_basic_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1936 A"
-							type = medium_plane_fighter_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								engine_type_slot = engine_1_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1936 A"
+								type = medium_plane_fighter_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									engine_type_slot = engine_1_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2466,36 +2619,39 @@ DAI_create_improved_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_medium_airframe_design_full } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1940 C"
-							type = medium_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = tank_buster_1
-								engine_type_slot = engine_3_2x
-								special_type_slot_1 = bomb_sights_2
-								special_type_slot_2 = armor_plate_medium
-								special_type_slot_3 = self_sealing_fuel_tanks_medium
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1940 C"
+								type = medium_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = tank_buster_1
+									engine_type_slot = engine_3_2x
+									special_type_slot_1 = bomb_sights_2
+									special_type_slot_2 = armor_plate_medium
+									special_type_slot_3 = self_sealing_fuel_tanks_medium
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2520,36 +2676,39 @@ DAI_create_improved_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1940 C"
-							type = medium_plane_fighter_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_3 = heavy_mg_4x
-								engine_type_slot = engine_3_2x
-								special_type_slot_1 = hmg_defense_turret_2x
-								special_type_slot_2 = lmg_defense_turret_2x
-								special_type_slot_3 = empty
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1940 C"
+								type = medium_plane_fighter_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_3 = heavy_mg_4x
+									engine_type_slot = engine_3_2x
+									special_type_slot_1 = hmg_defense_turret_2x
+									special_type_slot_2 = lmg_defense_turret_2x
+									special_type_slot_3 = empty
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2586,31 +2745,34 @@ DAI_create_improved_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_medium_airframe_design_engine } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1940 B"
-							type = medium_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = bomb_locks
-								engine_type_slot = engine_3_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1940 B"
+								type = medium_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = bomb_locks
+									engine_type_slot = engine_3_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2630,31 +2792,34 @@ DAI_create_improved_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1940 B"
-							type = medium_plane_fighter_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								engine_type_slot = engine_3_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1940 B"
+								type = medium_plane_fighter_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									engine_type_slot = engine_3_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2687,31 +2852,34 @@ DAI_create_improved_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_medium_airframe_design_base } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1940 A"
-							type = medium_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1940 A"
+								type = medium_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2731,31 +2899,34 @@ DAI_create_improved_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1940 A"
-							type = medium_plane_fighter_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								engine_type_slot = engine_2_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1940 A"
+								type = medium_plane_fighter_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									engine_type_slot = engine_2_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2789,37 +2960,40 @@ DAI_create_advanced_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_medium_airframe_design_full } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1944 C"
-							type = medium_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = tank_buster_2
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_2x
-								special_type_slot_1 = bomb_sights_2
-								special_type_slot_2 = self_sealing_fuel_tanks_medium
-								special_type_slot_3 = armor_plate_medium
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1944 C"
+								type = medium_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = tank_buster_2
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_2x
+									special_type_slot_1 = bomb_sights_2
+									special_type_slot_2 = self_sealing_fuel_tanks_medium
+									special_type_slot_3 = armor_plate_medium
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2845,37 +3019,40 @@ DAI_create_advanced_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1944 C"
-							type = medium_plane_fighter_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_3 = heavy_mg_4x
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_2x
-								special_type_slot_1 = hmg_defense_turret_2x
-								special_type_slot_2 = armor_plate_medium
-								special_type_slot_3 = lmg_defense_turret
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1944 C"
+								type = medium_plane_fighter_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_3 = heavy_mg_4x
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_2x
+									special_type_slot_1 = hmg_defense_turret_2x
+									special_type_slot_2 = armor_plate_medium
+									special_type_slot_3 = lmg_defense_turret
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2913,32 +3090,35 @@ DAI_create_advanced_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_medium_airframe_design_engine } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1944 B"
-							type = medium_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = bomb_locks
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1944 B"
+								type = medium_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = bomb_locks
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -2959,32 +3139,35 @@ DAI_create_advanced_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1944 B"
-							type = medium_plane_fighter_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1944 B"
+								type = medium_plane_fighter_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3018,32 +3201,35 @@ DAI_create_advanced_medium_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_medium_airframe_design_base } }
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Tactical Bomber 1944 A"
-							type = medium_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = medium_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = bomb_locks
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = bomb_locks
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Tactical Bomber 1944 A"
+								type = medium_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = medium_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = bomb_locks
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = bomb_locks
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3064,32 +3250,35 @@ DAI_create_advanced_medium_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_medium = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Heavy Fighter 1944 A"
-							type = medium_plane_fighter_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = light_mg_4x
-								fixed_auxiliary_weapon_slot_1 = light_mg_4x
-								fixed_auxiliary_weapon_slot_2 = light_mg_4x
-								fixed_auxiliary_weapon_slot_3 = light_mg_4x
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_2x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Heavy Fighter 1944 A"
+								type = medium_plane_fighter_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = light_mg_4x
+									fixed_auxiliary_weapon_slot_1 = light_mg_4x
+									fixed_auxiliary_weapon_slot_2 = light_mg_4x
+									fixed_auxiliary_weapon_slot_3 = light_mg_4x
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_2x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3124,36 +3313,39 @@ DAI_create_basic_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_large_airframe_design_full } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1936 C"
-							type = large_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_4x
-								special_type_slot_1 = self_sealing_fuel_tanks_large
-								special_type_slot_2 = air_ground_radar_2
-								special_type_slot_3 = bomb_sights_2
-								special_type_slot_4 = radio_navigation_2
-								special_type_slot_5 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1936 C"
+								type = large_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_4x
+									special_type_slot_1 = self_sealing_fuel_tanks_large
+									special_type_slot_2 = air_ground_radar_2
+									special_type_slot_3 = bomb_sights_2
+									special_type_slot_4 = radio_navigation_2
+									special_type_slot_5 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3178,36 +3370,39 @@ DAI_create_basic_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1936 C"
-							type = large_plane_maritime_patrol_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_2
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting_2
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_4x
-								special_type_slot_1 = flying_boat_large
-								special_type_slot_2 = air_ground_radar_2
-								special_type_slot_3 = self_sealing_fuel_tanks_large
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1936 C"
+								type = large_plane_maritime_patrol_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_2
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting_2
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_4x
+									special_type_slot_1 = flying_boat_large
+									special_type_slot_2 = air_ground_radar_2
+									special_type_slot_3 = self_sealing_fuel_tanks_large
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3244,31 +3439,34 @@ DAI_create_basic_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_large_airframe_design_engine } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1936 B"
-							type = large_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1936 B"
+								type = large_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3288,31 +3486,34 @@ DAI_create_basic_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1936 B"
-							type = large_plane_maritime_patrol_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_2_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1936 B"
+								type = large_plane_maritime_patrol_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_2_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3345,31 +3546,34 @@ DAI_create_basic_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_basic_large_airframe_design_base } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1936 A"
-							type = large_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_1_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1936 A"
+								type = large_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_1_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3389,31 +3593,34 @@ DAI_create_basic_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1936 A"
-							type = large_plane_maritime_patrol_plane_airframe_1
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								engine_type_slot = engine_1_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1936 A"
+								type = large_plane_maritime_patrol_plane_airframe_1
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									engine_type_slot = engine_1_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3447,38 +3654,41 @@ DAI_create_improved_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_large_airframe_design_full } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1940 C"
-							type = large_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_2 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_4x
-								special_type_slot_1 = self_sealing_fuel_tanks_large
-								special_type_slot_2 = air_ground_radar_2
-								special_type_slot_3 = bomb_sights_2
-								special_type_slot_4 = radio_navigation_2
-								special_type_slot_5 = armor_plate_large
-								special_type_slot_6 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1940 C"
+								type = large_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_4x
+									special_type_slot_1 = self_sealing_fuel_tanks_large
+									special_type_slot_2 = air_ground_radar_2
+									special_type_slot_3 = bomb_sights_2
+									special_type_slot_4 = radio_navigation_2
+									special_type_slot_5 = armor_plate_large
+									special_type_slot_6 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3505,38 +3715,41 @@ DAI_create_improved_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1940 C"
-							type = large_plane_maritime_patrol_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_4x
-								special_type_slot_1 = flying_boat_large
-								special_type_slot_2 = air_ground_radar_2
-								special_type_slot_3 = self_sealing_fuel_tanks_large
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
-								special_type_slot_6 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1940 C"
+								type = large_plane_maritime_patrol_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_4x
+									special_type_slot_1 = flying_boat_large
+									special_type_slot_2 = air_ground_radar_2
+									special_type_slot_3 = self_sealing_fuel_tanks_large
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+									special_type_slot_6 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3575,32 +3788,35 @@ DAI_create_improved_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_large_airframe_design_engine } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1940 B"
-							type = large_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_2 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1940 B"
+								type = large_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3621,32 +3837,35 @@ DAI_create_improved_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1940 B"
-							type = large_plane_maritime_patrol_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_2 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1940 B"
+								type = large_plane_maritime_patrol_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3680,32 +3899,35 @@ DAI_create_improved_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_improved_large_airframe_design_base } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1940 A"
-							type = large_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = empty
-								fixed_auxiliary_weapon_slot_2 = empty
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_2_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1940 A"
+								type = large_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = empty
+									fixed_auxiliary_weapon_slot_2 = empty
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_2_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3726,32 +3948,35 @@ DAI_create_improved_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1940 A"
-							type = large_plane_maritime_patrol_plane_airframe_2
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_2 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_2_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1940 A"
+								type = large_plane_maritime_patrol_plane_airframe_2
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_2_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3786,38 +4011,41 @@ DAI_create_advanced_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_large_airframe_design_full } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1944 C"
-							type = large_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_2 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_4x
-								special_type_slot_1 = self_sealing_fuel_tanks_large
-								special_type_slot_2 = air_ground_radar_2
-								special_type_slot_3 = bomb_sights_2
-								special_type_slot_4 = radio_navigation_2
-								special_type_slot_5 = armor_plate_large
-								special_type_slot_6 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1944 C"
+								type = large_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_4x
+									special_type_slot_1 = self_sealing_fuel_tanks_large
+									special_type_slot_2 = air_ground_radar_2
+									special_type_slot_3 = bomb_sights_2
+									special_type_slot_4 = radio_navigation_2
+									special_type_slot_5 = armor_plate_large
+									special_type_slot_6 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3844,38 +4072,41 @@ DAI_create_advanced_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1944 C"
-							type = large_plane_maritime_patrol_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_4x
-								special_type_slot_1 = flying_boat_large
-								special_type_slot_2 = air_ground_radar_2
-								special_type_slot_3 = self_sealing_fuel_tanks_large
-								special_type_slot_4 = empty
-								special_type_slot_5 = empty
-								special_type_slot_6 = empty
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1944 C"
+								type = large_plane_maritime_patrol_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_4x
+									special_type_slot_1 = flying_boat_large
+									special_type_slot_2 = air_ground_radar_2
+									special_type_slot_3 = self_sealing_fuel_tanks_large
+									special_type_slot_4 = empty
+									special_type_slot_5 = empty
+									special_type_slot_6 = empty
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3914,32 +4145,35 @@ DAI_create_advanced_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_large_airframe_design_engine } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1944 B"
-							type = large_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_2 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1944 B"
+								type = large_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -3960,32 +4194,35 @@ DAI_create_advanced_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1944 B"
-							type = large_plane_maritime_patrol_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_2 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_4_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1944 B"
+								type = large_plane_maritime_patrol_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_4_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -4019,32 +4256,35 @@ DAI_create_advanced_large_airframe_designs_from_root = {
 			limit = { NOT = { has_country_flag = DAI_advanced_large_airframe_design_base } }
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Strategic Bomber 1944 A"
-							type = large_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = large_bomb_bay
-								fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_2 = large_bomb_bay
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Strategic Bomber 1944 A"
+								type = large_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = large_bomb_bay
+									fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
@@ -4065,32 +4305,35 @@ DAI_create_advanced_large_airframe_designs_from_root = {
 			}
 			DAI_set_air_design_team_large = yes
 			set_temp_variable = { DAI_air_design_team_added = 0 }
-			meta_effect = {
-				text = {
-					if = {
-						limit = {
-							NOT = { check_variable = { DAI_air_design_team = 0 } }
-							mio:[x] = { is_mio_available = yes }
-						}
-						create_equipment_variant = {
-							name = "Maritime Patrol 1944 A"
-							type = large_plane_maritime_patrol_plane_airframe_3
-							parent_version = 0
-							allow_without_tech = yes
-							design_team = mio:[x]
-							modules = {
-								fixed_main_weapon_slot = torpedo_mounting
-								fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_2 = torpedo_mounting
-								fixed_auxiliary_weapon_slot_3 = empty
-								fixed_auxiliary_weapon_slot_4 = empty
-								engine_type_slot = engine_3_4x
+			if = {
+				limit = { NOT = { check_variable = { DAI_air_design_team = 0 } } }
+				meta_effect = {
+					text = {
+						if = {
+							limit = {
+								NOT = { check_variable = { DAI_air_design_team = 0 } }
+								mio:[x] = { is_mio_available = yes }
 							}
+							create_equipment_variant = {
+								name = "Maritime Patrol 1944 A"
+								type = large_plane_maritime_patrol_plane_airframe_3
+								parent_version = 0
+								allow_without_tech = yes
+								design_team = mio:[x]
+								modules = {
+									fixed_main_weapon_slot = torpedo_mounting
+									fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+									fixed_auxiliary_weapon_slot_3 = empty
+									fixed_auxiliary_weapon_slot_4 = empty
+									engine_type_slot = engine_3_4x
+								}
+							}
+							set_temp_variable = { DAI_air_design_team_added = 1 }
 						}
-						set_temp_variable = { DAI_air_design_team_added = 1 }
 					}
+					x = "[?DAI_air_design_team.GetTokenKey]"
 				}
-				x = "[?DAI_air_design_team.GetTokenKey]"
 			}
 			if = {
 				limit = { check_variable = { DAI_air_design_team_added = 0 } }
