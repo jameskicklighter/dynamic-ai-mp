@@ -470,13 +470,13 @@ ideas = {
 					check_variable = { DAI_build_order_wants = token:partial_economic_mobilisation }
 				}
 				# Wait for War Economy
-				modifier = {
-					original_tag = GER
-					has_government = fascism
-					has_war_support < 0.5
-					NOT = { has_completed_focus = GER_reorganize_the_wehrmacht }
-					factor = 0
-				}
+				# modifier = {
+				# 	original_tag = GER
+				# 	has_government = fascism
+				# 	has_war_support < 0.5
+				# 	NOT = { has_completed_focus = GER_reorganize_the_wehrmacht }
+				# 	factor = 0
+				# }
 				modifier = {
 					factor = 0
 					OR = {
@@ -486,11 +486,11 @@ ideas = {
 						has_idea = national_defense_state
 					}
 				}
-				modifier = {
-					factor = 0
-					tag = GER
-					NOT = { has_completed_focus = GER_prioritize_economic_growth }
-				}
+				# modifier = {
+				# 	factor = 0
+				# 	tag = GER
+				# 	NOT = { has_completed_focus = GER_prioritize_economic_growth }
+				# }
 				# -- DAI
 			}
 
@@ -698,11 +698,11 @@ ideas = {
 						has_idea = national_defense_state
 					}
 				}
-				modifier = {
-					factor = 0
-					tag = GER
-					NOT = { has_completed_focus = GER_prioritize_economic_growth }
-				}
+				# modifier = {
+				# 	factor = 0
+				# 	tag = GER
+				# 	NOT = { has_completed_focus = GER_prioritize_economic_growth }
+				# }
 				# -- DAI
 			}
 		}
@@ -933,11 +933,11 @@ ideas = {
 						has_idea = national_defense_state
 					}
 				}
-				modifier = {
-					factor = 0
-					tag = GER
-					NOT = { has_completed_focus = GER_prioritize_economic_growth }
-				}
+				# modifier = {
+				# 	factor = 0
+				# 	tag = GER
+				# 	NOT = { has_completed_focus = GER_prioritize_economic_growth }
+				# }
 				# -- DAI
 			}
 

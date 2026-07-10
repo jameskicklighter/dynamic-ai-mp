@@ -1,10 +1,9 @@
 DAI_set_license_relation_recipient_to_provider = {
 	if = {
 		limit = {
-			NOT = {
-				has_license = { from = ROOT }
-			}
+			NOT = { has_country_flag = DAI_license_relation_from_@ROOT }
 		}
+		set_country_flag = DAI_license_relation_from_@ROOT
 		diplomatic_relation = {
 			country = ROOT
 			relation = licence_production_access

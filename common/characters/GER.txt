@@ -2471,6 +2471,10 @@ characters = {
 			}
 			ai_will_do = {
 				base = 1
+				modifier = {
+					add = 989
+					check_variable = { DAI_build_order_wants = token:GER_hjalmar_schacht }
+				}
 				# modifier = {
 				# 	add = 100
 				# 	GER_is_historical_ai = yes

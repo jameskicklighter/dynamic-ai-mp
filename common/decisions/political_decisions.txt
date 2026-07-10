@@ -83,7 +83,11 @@ fascism_on_the_rise = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			base = 1
+			modifier = {
+				factor = 0
+				has_stability < 0.65
+			}
 		}
 	}
 	

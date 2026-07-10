@@ -48,14 +48,6 @@ DAI_is_default_air_country = {
 		original_tag = JAP
 		original_tag = SOV
 		original_tag = USA
-		# Good Air Producers for Historical
-		AND = {
-			is_historical_focus_on = yes
-			OR = {
-				original_tag = CAN
-				original_tag = HUN
-			}
-		}
 	}
 }
 

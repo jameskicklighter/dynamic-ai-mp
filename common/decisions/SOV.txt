@@ -10980,7 +10980,8 @@ SOV_industry_relocation = {
 		icon = generic_construction
 
 		ai_will_do = {
-			base = 10
+			# DAI --
+			base = 0
 			modifier = {
 				add = 200 # oh shit they are getting close!
 				FROM = {
@@ -10997,24 +10998,30 @@ SOV_industry_relocation = {
 				}
 			}
 			modifier = {
-				factor = 10
-				GER = {
-					focus_progress = {
-						focus = GER_war_with_the_ussr
-						progress > 0
+				add = 25 # oh shit they are getting close!
+				FROM = {
+					NOT = {
+						OR = {
+							state = 219 #MOSCOW
+							state = 195 #LENINGRAD
+							state = 202 #KIEV
+							state = 206 #MINSK
+							state = 217 #STALINGRAD
+						}
+					}
+					any_neighbor_state = {
+						NOT = { is_fully_controlled_by = ROOT }
 					}
 				}
 			}
-			modifier = {
-				factor = 0
-				SOV_save_pp_for_manpower_trouble = yes
-			}
+			# -- DAI
 		}
 
 		state_target = any_owned_state
 
 		target_trigger = {
 			FROM = {
+				is_owned_by = ROOT
 				is_core_of = ROOT
 				is_fully_controlled_by = ROOT
 				is_on_continent = europe

@@ -67,10 +67,11 @@ DAI_set_build_order_GER = {
 
 		IF = {
 			limit = {
-				NOT = { has_idea_with_trait = economic_reformer }
-				has_available_idea_with_traits = { idea = economic_reformer limit = 1 }
+				has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
+				GER_hjalmar_schacht = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = GER_mefo_bills_architect limit = 1 }
 			}
-			set_variable = { DAI_build_order_wants = token:GER_ludwig_erhard }
+			set_variable = { DAI_build_order_wants = token:GER_hjalmar_schacht }
 		}
 		ELSE_IF = {
 			limit = {
@@ -82,16 +83,6 @@ DAI_set_build_order_GER = {
 				has_war_support > 0.5
 			}
 			set_variable = { DAI_build_order_wants = token:war_economy }
-		}
-		ELSE_IF = {
-			limit = {
-				# We are only concerned about early build order. Don't do an extensive check for conditions,
-				# as they should normally be met by the logic of the build order.
-				NOT = { has_idea = free_trade }
-				has_completed_focus = GER_prioritize_economic_growth
-				date < 1937.1.1
-			}
-			set_variable = { DAI_build_order_wants = token:free_trade }
 		}
 		ELSE_IF = {
 			limit = {
