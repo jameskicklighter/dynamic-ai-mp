@@ -23,29 +23,18 @@ DAI_set_wants_armor_flag = {
 				OR = {
 					AND = {
 						original_tag = JAP
-						OR = {
-							NOT = { is_historical_focus_on = yes }
-							num_of_military_factories > 75
-						}
+						is_historical_focus_on = yes
+						num_of_military_factories > 75
 					}
 					DAI_is_default_armor_country = yes
 					AND = {
 						is_historical_focus_on = yes
-						num_of_military_factories > 75
-					}
-					AND = {
-						NOT = { is_historical_focus_on = yes }
+						NOT = { original_tag = JAP }
 						num_of_military_factories > 50
 					}
 					AND = {
 						NOT = { is_historical_focus_on = yes }
-						OR = {
-							original_tag = ROM
-							original_tag = BUL
-							original_tag = YUG
-							original_tag = CZE
-							original_tag = AUS
-						}
+						num_of_military_factories > 50
 					}
 				}
 			}
@@ -85,26 +74,7 @@ DAI_set_armor_preference_flags = {
 			NOT = { has_country_flag = DAI_prefer_heavy_tank_destroyers }
 		}
 
-		IF = { limit = { original_tag = JAP }
-			set_country_flag = DAI_prefer_light_tanks
-		}
-		ELSE_IF = { limit = { original_tag = SIA }
-			set_country_flag = DAI_prefer_light_tanks
-		}
-		ELSE_IF = {
-			limit = {
-				NOT = { is_historical_focus_on = yes }
-				OR = {
-					original_tag = ROM
-					original_tag = BUL
-					original_tag = YUG
-					original_tag = CZE
-					original_tag = AUS
-				}
-			}
-			set_country_flag = DAI_prefer_light_tanks
-		}
-		ELSE_IF = { limit = { original_tag = GER }
+		IF = { limit = { original_tag = GER }
 			set_country_flag = DAI_prefer_medium_tanks
 		}
 		ELSE_IF = { limit = { original_tag = ENG }

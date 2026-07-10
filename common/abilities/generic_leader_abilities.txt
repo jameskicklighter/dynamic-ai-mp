@@ -49,6 +49,19 @@ ability = {
 				
 				add = 2
 			}
+			# DAI --
+			modifier = {
+				factor = 0
+				FROM = { command_power < 40.0 }
+				date < 1942.1.1
+			}
+			# Soviets need Command Power for some decisions.
+			modifier = {
+				factor = 0
+				FROM = { command_power < 100.0 }
+				FROM = { tag = SOV }
+			}
+			# -- DAI
 		}
 		
 		cost = 0.22
@@ -114,6 +127,19 @@ ability = {
 				
 				add = 2
 			}
+			# DAI --
+			modifier = {
+				factor = 0
+				FROM = { command_power < 40.0 }
+				date < 1942.1.1
+			}
+			# Soviets need Command Power for some decisions.
+			modifier = {
+				factor = 0
+				FROM = { command_power < 100.0 }
+				FROM = { tag = SOV }
+			}
+			# -- DAI
 		}
 	}
 
@@ -153,6 +179,12 @@ ability = {
 				check_variable = { avg_unit_planning_ratio < 0.4 }
 				
 				add = 2
+			}
+			modifier = {
+				# DAI --
+				factor = 0
+				date < 1942.1.1
+				# -- DAI
 			}
 		}
 	}
@@ -194,6 +226,12 @@ ability = {
 				check_variable = { temp2 > 0.5 }
 				
 				add = 2
+			}
+			modifier = {
+				# DAI --
+				factor = 0
+				date < 1942.1.1
+				# -- DAI
 			}
 		}
 	}
@@ -289,6 +327,12 @@ ability = {
 				check_variable = { num_units_crossing_river > 5 }
 				
 				add = 2
+			}
+			modifier = {
+				# DAI --
+				factor = 0
+				date < 1942.1.1
+				# -- DAI
 			}
 		}
 	}

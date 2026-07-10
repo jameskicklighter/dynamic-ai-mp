@@ -788,41 +788,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = basic_small_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_basic_small_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_basic_small_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = basic_small_airframe }
-				NOT = { has_country_flag = DAI_basic_small_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = basic_small_airframe
+			hidden_trigger = { DAI_can_share_basic_small_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_basic_small_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_basic_small_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_basic_small_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = basic_small_airframe }
-					NOT = { has_country_flag = DAI_basic_small_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = small_plane_airframe_1 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_basic_small_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = small_plane_airframe_1 } cost_factor = 0 }
-				}
+				DAI_create_basic_small_airframe_designs_from_root = yes
 				set_country_flag = DAI_basic_small_airframe_licensed
 			}
 		}
@@ -835,41 +833,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = improved_small_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_improved_small_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_improved_small_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = improved_small_airframe }
-				NOT = { has_country_flag = DAI_improved_small_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = improved_small_airframe
+			hidden_trigger = { DAI_can_share_improved_small_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_improved_small_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_improved_small_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_improved_small_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = improved_small_airframe }
-					NOT = { has_country_flag = DAI_improved_small_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = small_plane_airframe_2 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_improved_small_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = small_plane_airframe_2 } cost_factor = 0 }
-				}
+				DAI_create_improved_small_airframe_designs_from_root = yes
 				set_country_flag = DAI_improved_small_airframe_licensed
 			}
 		}
@@ -882,41 +878,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = advanced_small_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_advanced_small_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_advanced_small_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = advanced_small_airframe }
-				NOT = { has_country_flag = DAI_advanced_small_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = advanced_small_airframe
+			hidden_trigger = { DAI_can_share_advanced_small_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_advanced_small_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_advanced_small_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_advanced_small_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = advanced_small_airframe }
-					NOT = { has_country_flag = DAI_advanced_small_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = small_plane_airframe_3 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_advanced_small_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = small_plane_airframe_3 } cost_factor = 0 }
-				}
+				DAI_create_advanced_small_airframe_designs_from_root = yes
 				set_country_flag = DAI_advanced_small_airframe_licensed
 			}
 		}
@@ -929,41 +923,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = basic_medium_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_basic_medium_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_basic_medium_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = basic_medium_airframe }
-				NOT = { has_country_flag = DAI_basic_medium_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = basic_medium_airframe
+			hidden_trigger = { DAI_can_share_basic_medium_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_basic_medium_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_basic_medium_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_basic_medium_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = basic_medium_airframe }
-					NOT = { has_country_flag = DAI_basic_medium_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = medium_plane_airframe_1 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_basic_medium_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = medium_plane_airframe_1 } cost_factor = 0 }
-				}
+				DAI_create_basic_medium_airframe_designs_from_root = yes
 				set_country_flag = DAI_basic_medium_airframe_licensed
 			}
 		}
@@ -976,41 +968,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = improved_medium_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_improved_medium_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_improved_medium_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = improved_medium_airframe }
-				NOT = { has_country_flag = DAI_improved_medium_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = improved_medium_airframe
+			hidden_trigger = { DAI_can_share_improved_medium_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_improved_medium_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_improved_medium_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_improved_medium_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = improved_medium_airframe }
-					NOT = { has_country_flag = DAI_improved_medium_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = medium_plane_airframe_2 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_improved_medium_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = medium_plane_airframe_2 } cost_factor = 0 }
-				}
+				DAI_create_improved_medium_airframe_designs_from_root = yes
 				set_country_flag = DAI_improved_medium_airframe_licensed
 			}
 		}
@@ -1023,41 +1013,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = advanced_medium_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_advanced_medium_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_advanced_medium_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = advanced_medium_airframe }
-				NOT = { has_country_flag = DAI_advanced_medium_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = advanced_medium_airframe
+			hidden_trigger = { DAI_can_share_advanced_medium_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_advanced_medium_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_advanced_medium_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_advanced_medium_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = advanced_medium_airframe }
-					NOT = { has_country_flag = DAI_advanced_medium_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = medium_plane_airframe_3 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_advanced_medium_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = medium_plane_airframe_3 } cost_factor = 0 }
-				}
+				DAI_create_advanced_medium_airframe_designs_from_root = yes
 				set_country_flag = DAI_advanced_medium_airframe_licensed
 			}
 		}
@@ -1070,41 +1058,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = basic_large_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_basic_large_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_basic_large_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = basic_large_airframe }
-				NOT = { has_country_flag = DAI_basic_large_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = basic_large_airframe
+			hidden_trigger = { DAI_can_share_basic_large_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_basic_large_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_basic_large_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_basic_large_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = basic_large_airframe }
-					NOT = { has_country_flag = DAI_basic_large_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = large_plane_airframe_1 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_basic_large_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = large_plane_airframe_1 } cost_factor = 0 }
-				}
+				DAI_create_basic_large_airframe_designs_from_root = yes
 				set_country_flag = DAI_basic_large_airframe_licensed
 			}
 		}
@@ -1117,41 +1103,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = improved_large_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_improved_large_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_improved_large_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = improved_large_airframe }
-				NOT = { has_country_flag = DAI_improved_large_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = improved_large_airframe
+			hidden_trigger = { DAI_can_share_improved_large_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_improved_large_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_improved_large_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_improved_large_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = improved_large_airframe }
-					NOT = { has_country_flag = DAI_improved_large_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = large_plane_airframe_2 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_improved_large_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = large_plane_airframe_2 } cost_factor = 0 }
-				}
+				DAI_create_improved_large_airframe_designs_from_root = yes
 				set_country_flag = DAI_improved_large_airframe_licensed
 			}
 		}
@@ -1164,41 +1148,39 @@ DAI_production_license_decisions = {
 		}
 		visible = {
 			is_in_faction = yes
-			has_tech = advanced_large_airframe
-			any_other_country = {
-				is_ai = yes
-				OR = {
-					is_in_faction_with = ROOT
-					ROOT = { is_subject_of = PREV }
-					is_subject_of = ROOT
+			hidden_trigger = {
+				DAI_can_share_advanced_large_airframe_license = yes
+				any_other_country = {
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_advanced_large_airframe_design_from_root = yes
 				}
-				NOT = { has_tech = advanced_large_airframe }
-				NOT = { has_country_flag = DAI_advanced_large_airframe_licensed }
 			}
 		}
 		available = {
 			is_in_faction = yes
-			has_tech = advanced_large_airframe
+			hidden_trigger = { DAI_can_share_advanced_large_airframe_license = yes }
 		}
 		cost = 0
 		fire_only_once = no
 		ai_will_do = { base = 999 }
 		complete_effect = {
+			DAI_create_advanced_large_airframe_designs_from_root = yes
 			every_other_country = {
 				limit = {
-					is_ai = yes
-					OR = {
-						is_in_faction_with = ROOT
-						ROOT = { is_subject_of = PREV }
-						is_subject_of = ROOT
+					DAI_is_ai_license_partner_of_root = yes
+					DAI_needs_advanced_large_airframe_design_from_root = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = DAI_advanced_large_airframe_frame_license_from_@ROOT }
 					}
-					NOT = { has_tech = advanced_large_airframe }
-					NOT = { has_country_flag = DAI_advanced_large_airframe_licensed }
+					DAI_set_license_relation_recipient_to_provider = yes
+					ROOT = {
+						create_production_license = { target = PREV equipment = { type = large_plane_airframe_3 } cost_factor = 0 }
+					}
+					set_country_flag = DAI_advanced_large_airframe_frame_license_from_@ROOT
 				}
-				DAI_set_license_relation_recipient_to_provider = yes
-				ROOT = {
-					create_production_license = { target = PREV equipment = { type = large_plane_airframe_3 } cost_factor = 0 }
-				}
+				DAI_create_advanced_large_airframe_designs_from_root = yes
 				set_country_flag = DAI_advanced_large_airframe_licensed
 			}
 		}
@@ -1214,11 +1196,11 @@ DAI_production_license_notification_decisions = {
 		}
 		visible = {
 			is_ai = yes
-			DAI_has_human_license_notification_opportunity = yes
+			hidden_trigger = { DAI_has_human_license_notification_opportunity = yes }
 		}
 		available = {
 			is_ai = yes
-			DAI_has_human_license_notification_opportunity = yes
+			hidden_trigger = { DAI_has_human_license_notification_opportunity = yes }
 		}
 		cost = 0
 		fire_only_once = no

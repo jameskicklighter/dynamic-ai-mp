@@ -66,9 +66,18 @@ NDefines.NAI.REFIT_SHIP_RELUCTANCE = 5000
 NDefines.NAI.REFIT_SHIP_PERCENTAGE_OF_FORCES = 0.0
 
 -- Buildings
--- BUILDING_TARGETS_BUILDING_PRIORITIES = {				-- buildings in order of pirority when considering building targets strategies. First has the greatest priority, omitted has the lowest. NOTE: not all buildings are supported by building targets strategies.
---     'industrial_complex',
--- },
+NDefines.NAI.BUILDING_TARGETS_BUILDING_PRIORITIES = { -- Buildings in priority order when considering building_target strategies. First has the greatest priority; omitted has the lowest.
+	'air_base',
+	'infrastructure',
+	'synthetic_refinery',
+	'dockyard',
+	'industrial_complex',
+	'arms_factory',
+}
+NDefines.NAI.CONSTRUCTION_PRIO_SUPPLY_BUILDING = 3.50
+NDefines.NAI.CONSTRUCTION_PRIO_RAILWAY = 20.0
+NDefines.NAI.CONSTRUCTION_PRIO_FACTOR_OWNED_CORE = 5.0
+NDefines.NAI.CONSTRUCTION_PRIO_FACTOR_OWNED_NONCORE = 3.0
 
 -- Laws: If the values for these exceed ai_will_do, the AI will not change its laws unless the internal source code does it.
 NDefines.NAI.MIN_AI_SCORE_TO_MOBILIZATION_LAW_OVERRIDE_HARD_CODED_SCORE = 1.0

@@ -369,9 +369,24 @@ propaganda_efforts = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 1
+				add = 20
+				has_war_support < 0.5
+				#has_war = yes
+			}
+			modifier = {
+				factor = 2
 				has_war_support < 0.4
-				has_war = yes
+				#has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war_support < 0.3
+				#has_war = yes
+			}
+			modifier = {
+				factor = 2
+				has_war_support < 0.2
+				#has_war = yes
 			}
 		}
 	}
@@ -1675,15 +1690,17 @@ war_measures = {
 
 		cost = 50
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				surrender_progress > 0.6
-				factor = 10
-			}
+			# DAI --
+			base = 100
+			# modifier = {
+			# 	surrender_progress > 0.6
+			# 	factor = 10
+			# }
 			modifier = {
 				has_capitulated = yes
 				factor = 0
 			}
+			# -- DAI
 		}
 
 		modifier = {
@@ -1816,12 +1833,7 @@ war_measures = {
             stability_factor = -0.05
         }
         ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 3
-				has_manpower < 100000
-			}
+			factor = 1000 # Get them women ASAP.
 		}
 		complete_effect = {
 			if = {
@@ -1884,7 +1896,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				has_political_power < 100
+				has_political_power < 200
 				factor = 0 #use as pp dump
 			}
 
@@ -1892,6 +1904,11 @@ war_measures = {
 				factor = 0
 				original_tag = SOV
 				SOV_save_pp_for_manpower_trouble = yes
+			}
+
+			modifier = {
+				factor = 0
+				has_idea = tot_economic_mobilisation
 			}
 		}
 

@@ -84,14 +84,14 @@ GER_build_civs = {
 	abort = {
 		OR = {
 			industrial_complex > 49
-			date > 1939.1.1
+			date > 1938.1.1
 		}
 	}
 
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
-		value = 55
+		value = 51
 	}
 }
 
@@ -100,15 +100,37 @@ GER_wants_synth = {
 		original_tag = GER
 	}
 	enable = {
-		date > 1939.1.1
-		has_war = no
+		date > 1938.7.1
+		# has_war = no
+		synthetic_refinery < 15
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = synthetic_refinery
-		value = 12
+		value = 15
+	}
+}
+
+GER_build_mils = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1939.1.1
+		num_of_military_factories < 200
+		# OR = {
+		# 	synthetic_refinery > 11
+		# 	has_war = yes
+		# }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 200
 	}
 }
 
@@ -3545,40 +3567,6 @@ GER_abandon_ship = {
 
 }
 
-GER_focus_on_our_border_barb  = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		# Human Romania handles its own front; historical AI Germany should stay off ROM unless Romania starts collapsing.
-		DAI_historical_axis_GER_should_split_SOV_front_for_human_ROM = yes
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = ROM
-		value = 100
-	}
-}
-
-GER_focus_on_hungarian_border_barb  = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		# Keep the human-Romania split from pulling German AI onto Hungary unless Hungary starts collapsing.
-		DAI_historical_axis_GER_should_split_HUN_front_for_human_ROM = yes
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = HUN
-		value = 100
-	}
-}
-
 GER_blitzkrieg_russia_hard  = { #STEINER, IT IS NOT TIME YET
 	allowed = {
 		original_tag = GER
@@ -4681,7 +4669,7 @@ GER_build_an_air_facility_in_penemunde = {
 		type = build_building
 		id = air_facility
 		target = 9388
-		value = 1
+		value = 9999
 	}
 }
 
@@ -4703,7 +4691,7 @@ GER_build_an_air_facility_anywhere = {
 	ai_strategy = {
 		type = build_building
 		id = air_facility
-		value = 1
+		value = 9999
 	}
 }
 

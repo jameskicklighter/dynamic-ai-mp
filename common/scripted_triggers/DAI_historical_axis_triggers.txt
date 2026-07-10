@@ -19,44 +19,31 @@ DAI_historical_axis_expeditionaries_to_GER_enable = {
 	SOV = { has_capitulated = no }
 }
 
-DAI_historical_axis_D_day_has_begun = {
+DAI_historical_axis_HUN_or_ROM_is_human_axis_member = {
+	country_exists = GER
 	OR = {
-		has_global_flag = DAI_allies_d_day_initial_release_done
-		has_global_flag = DAI_allies_d_day_release_cycle_started
+		AND = {
+			country_exists = HUN
+			HUN = {
+				is_ai = no
+				is_in_faction_with = GER
+			}
+		}
+		AND = {
+			country_exists = ROM
+			ROM = {
+				is_ai = no
+				is_in_faction_with = GER
+			}
+		}
 	}
 }
 
-DAI_historical_axis_GER_should_split_SOV_front_for_human_ROM = {
-	is_ai = yes
-	original_tag = GER
-	is_historical_focus_on = yes
-	has_war_with = SOV
-	ROM = {
-		is_ai = no
-		is_in_faction_with = GER
-		NOT = { surrender_progress > 0 }
-	}
-}
-
-DAI_historical_axis_GER_should_split_HUN_front_for_human_ROM = {
-	is_ai = yes
-	original_tag = GER
-	is_historical_focus_on = yes
-	has_war_with = SOV
-	ROM = {
-		is_ai = no
-		is_in_faction_with = GER
-		NOT = { surrender_progress > 0 }
-	}
-	HUN = {
-		is_in_faction_with = GER
-		NOT = { surrender_progress > 0 }
-	}
-}
-
-DAI_historical_axis_allies_should_not_guard_human_GER = {
+DAI_historical_axis_allies_should_guard_AI_GER_front = {
 	is_ai = yes
 	NOT = { has_capitulated = yes }
+	NOT = { surrender_progress > 0 }
+	NOT = { DAI_historical_axis_HUN_or_ROM_is_human_axis_member = yes }
 	OR = {
 		original_tag = BUL
 		original_tag = HUN
@@ -68,26 +55,79 @@ DAI_historical_axis_allies_should_not_guard_human_GER = {
 	country_exists = GER
 	country_exists = SOV
 	GER = {
-		is_ai = no
-		going_war_with_SOV = yes
+		is_ai = yes
 		has_capitulated = no
-		NOT = { surrender_progress > 0 }
+		has_war_with = SOV
 	}
 	SOV = { has_capitulated = no }
-	DAI_historical_axis_D_day_has_begun = no
+}
+
+DAI_historical_axis_GER_should_not_guard_HUN_ROM_front = {
+	is_ai = yes
+	original_tag = GER
+	NOT = { has_capitulated = yes }
+	is_historical_focus_on = yes
+	country_exists = SOV
+	DAI_historical_axis_HUN_or_ROM_is_human_axis_member = yes
+	has_war_with = SOV
+	SOV = { has_capitulated = no }
+}
+
+DAI_historical_axis_axis_should_guard_HUN_front = {
+	is_ai = yes
+	NOT = { has_capitulated = yes }
+	NOT = { surrender_progress > 0 }
+	NOT = {
+		AND = {
+			original_tag = GER
+			DAI_historical_axis_HUN_or_ROM_is_human_axis_member = yes
+		}
+	}
+	OR = {
+		original_tag = BUL
+		original_tag = GER
+		original_tag = ITA
+		original_tag = ROM
+	}
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = GER
+		is_in_faction_with = GER
+	}
+	country_exists = GER
+	country_exists = HUN
+	country_exists = SOV
+	GER = {
+		has_capitulated = no
+		has_war_with = SOV
+	}
+	HUN = {
+		is_in_faction_with = GER
+	}
+	SOV = { has_capitulated = no }
 }
 
 DAI_historical_axis_allies_should_guard_ROM_front = {
 	is_ai = yes
 	NOT = { has_capitulated = yes }
 	NOT = { surrender_progress > 0 }
+	NOT = {
+		AND = {
+			original_tag = GER
+			DAI_historical_axis_HUN_or_ROM_is_human_axis_member = yes
+		}
+	}
 	OR = {
 		original_tag = BUL
+		original_tag = GER
 		original_tag = HUN
 		original_tag = ITA
 	}
 	is_historical_focus_on = yes
-	is_in_faction_with = GER
+	OR = {
+		original_tag = GER
+		is_in_faction_with = GER
+	}
 	country_exists = GER
 	country_exists = ROM
 	country_exists = SOV

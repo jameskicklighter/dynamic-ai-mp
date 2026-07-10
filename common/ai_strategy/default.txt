@@ -1877,7 +1877,7 @@ default_build_a_nl_facility = {
 	ai_strategy = {
 		type = build_building
 		id = nuclear_facility
-		value = 100
+		value = 9999
 	}
 }
 

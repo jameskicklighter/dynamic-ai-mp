@@ -914,38 +914,6 @@ ITA_air_defense_homeland = {
 # 	}
 # }
 
-ITA_share_borders_with_GER_against_SOV = {
-	allowed = {
-		original_tag = ITA
-	}
-	enable = {
-		DAI_historical_axis_allies_should_not_guard_human_GER = yes
-	}
-	abort_when_not_enabled = yes
-
-	# Human Germany controls the German-Soviet front; Italy covers Axis minors instead and avoids attaching to Germany.
-	ai_strategy = {
-		type = force_defend_ally_borders
-		id = CRO
-		value = 100
-	}
-	ai_strategy = {
-		type = force_defend_ally_borders
-		id = HUN
-		value = 100
-	}
-	ai_strategy = {
-		type = force_defend_ally_borders
-		id = SLO
-		value = 100
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = GER
-		value = 100
-	}
-}
-
 ITA_spain_scw_support_la_resistance = {
 	allowed = {
 		original_tag = ITA
