@@ -8,6 +8,8 @@ DAI_daily_update = {
 		if = { limit = { tag = ENG } DAI_set_build_order_ENG = yes }
 		if = { limit = { tag = GER } DAI_set_build_order_GER = yes }
 		if = { limit = { tag = FRA } DAI_set_build_order_FRA = yes }
+		if = { limit = { tag = ROM } DAI_set_build_order_ROM = yes }
+		if = { limit = { tag = ITA } DAI_set_build_order_ITA = yes }
 
 	}
 }

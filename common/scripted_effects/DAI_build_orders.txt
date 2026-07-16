@@ -177,3 +177,237 @@ DAI_set_build_order_FRA = {
 	}
 
 }
+
+DAI_set_build_order_ROM = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	IF = { limit = { DAI_ROM_is_historical_ai = yes }
+
+		IF = {
+			limit = {
+				NOT = { has_idea_with_trait = silent_workhorse }
+				has_available_idea_with_traits = { idea = silent_workhorse limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ROM_gheorghe_argeseanu }
+		}
+		ELSE_IF = {
+			limit = {
+				DAI_build_order_should_take_partial_mob = yes
+			}
+			set_variable = { DAI_build_order_wants = token:partial_economic_mobilisation }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_chief_defensive_2 }
+				has_available_idea_with_traits = { idea = army_chief_defensive_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ROM_constantin_sanatescu }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea = free_trade }
+			}
+			set_variable = { DAI_build_order_wants = token:free_trade }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = air_chief_reform_2 }
+				has_available_idea_with_traits = { idea = air_chief_reform_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ROM_gheorghe_jienescu }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = navy_chief_commerce_raiding_2 }
+				has_available_idea_with_traits = { idea = navy_chief_commerce_raiding_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ROM_nicolae_sova }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_infantry_2 }
+				has_available_idea_with_traits = { idea = army_infantry_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ROM_gheorghe_avramescu }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = prince_of_terror }
+				has_available_idea_with_traits = { idea = prince_of_terror limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ROM_armand_calinescu }
+		}
+
+		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+
+	}
+
+	DAI_debug_build_order_ROM = yes
+
+}
+
+DAI_debug_build_order_ROM = {
+
+	set_temp_variable = { DAI_debug_ROM_historical = 0 }
+	set_temp_variable = { DAI_debug_ROM_silent_hired = 0 }
+	set_temp_variable = { DAI_debug_ROM_silent_available = 0 }
+	set_temp_variable = { DAI_debug_ROM_before_1939 = 0 }
+	set_temp_variable = { DAI_debug_ROM_war_support_25 = 0 }
+	set_temp_variable = { DAI_debug_ROM_no_partial_or_higher_law = 0 }
+	set_temp_variable = { DAI_debug_ROM_war_economy_eligible = 0 }
+	set_temp_variable = { DAI_debug_ROM_has_150_pp = 0 }
+	set_temp_variable = { DAI_debug_ROM_at_war = 0 }
+	set_temp_variable = { DAI_debug_ROM_partial_check = 0 }
+
+	if = {
+		limit = { DAI_ROM_is_historical_ai = yes }
+		set_temp_variable = { DAI_debug_ROM_historical = 1 }
+	}
+	if = {
+		limit = { has_idea_with_trait = silent_workhorse }
+		set_temp_variable = { DAI_debug_ROM_silent_hired = 1 }
+	}
+	if = {
+		limit = { has_available_idea_with_traits = { idea = silent_workhorse limit = 1 } }
+		set_temp_variable = { DAI_debug_ROM_silent_available = 1 }
+	}
+	if = {
+		limit = { date < 1939.1.1 }
+		set_temp_variable = { DAI_debug_ROM_before_1939 = 1 }
+	}
+	if = {
+		limit = { has_war_support > 0.25 }
+		set_temp_variable = { DAI_debug_ROM_war_support_25 = 1 }
+	}
+	if = {
+		limit = {
+			NOT = { has_idea = partial_economic_mobilisation }
+			NOT = { has_idea = war_economy }
+			NOT = { has_idea = tot_economic_mobilisation }
+			NOT = { has_idea = totaler_krieg_economy }
+			NOT = { has_idea = national_defense_state }
+		}
+		set_temp_variable = { DAI_debug_ROM_no_partial_or_higher_law = 1 }
+	}
+	if = {
+		limit = {
+			has_war_support > 0.5
+			OR = {
+				has_government = fascism
+				has_government = communism
+				AND = {
+					has_war = yes
+					any_enemy_country = {
+						ic_ratio = {
+							tag = ROOT
+							ratio > 0.4
+						}
+					}
+				}
+			}
+		}
+		set_temp_variable = { DAI_debug_ROM_war_economy_eligible = 1 }
+	}
+	if = {
+		limit = { has_political_power > 149 }
+		set_temp_variable = { DAI_debug_ROM_has_150_pp = 1 }
+	}
+	if = {
+		limit = { has_war = yes }
+		set_temp_variable = { DAI_debug_ROM_at_war = 1 }
+	}
+	if = {
+		limit = { DAI_build_order_should_take_partial_mob = yes }
+		set_temp_variable = { DAI_debug_ROM_partial_check = 1 }
+	}
+
+	log = "[GetYear] [GetMonth] | DAI_BUILD_ORDER_ROM | [Root.GetName] | historical=[?DAI_debug_ROM_historical] silent_hired=[?DAI_debug_ROM_silent_hired] silent_available=[?DAI_debug_ROM_silent_available] before_1939=[?DAI_debug_ROM_before_1939] war_support_over_25=[?DAI_debug_ROM_war_support_25] no_partial_or_higher_law=[?DAI_debug_ROM_no_partial_or_higher_law] war_economy_eligible=[?DAI_debug_ROM_war_economy_eligible] has_150_pp=[?DAI_debug_ROM_has_150_pp] at_war=[?DAI_debug_ROM_at_war] partial_check=[?DAI_debug_ROM_partial_check] selected_token=[?DAI_build_order_wants]"
+
+	if = {
+		limit = { check_variable = { DAI_build_order_wants = token:ROM_gheorghe_argeseanu } }
+		log = "[GetYear] [GetMonth] | DAI_BUILD_ORDER_ROM | [Root.GetName] | selected=silent_workhorse"
+	}
+	else_if = {
+		limit = { check_variable = { DAI_build_order_wants = token:partial_economic_mobilisation } }
+		log = "[GetYear] [GetMonth] | DAI_BUILD_ORDER_ROM | [Root.GetName] | selected=partial_economic_mobilisation"
+	}
+	else_if = {
+		limit = { check_variable = { DAI_build_order_wants = token:ROM_constantin_sanatescu } }
+		log = "[GetYear] [GetMonth] | DAI_BUILD_ORDER_ROM | [Root.GetName] | selected=constantin_sanatescu"
+	}
+	else_if = {
+		limit = { check_variable = { DAI_build_order_wants = token:free_trade } }
+		log = "[GetYear] [GetMonth] | DAI_BUILD_ORDER_ROM | [Root.GetName] | selected=free_trade"
+	}
+	else = {
+		log = "[GetYear] [GetMonth] | DAI_BUILD_ORDER_ROM | [Root.GetName] | selected=other_or_none"
+	}
+
+}
+
+DAI_set_build_order_ITA = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	IF = { limit = { DAI_ITA_is_historical_ai = yes }
+
+		IF = {
+			limit = {
+				NOT = { has_idea = war_economy }
+				NOT = { has_idea = tot_economic_mobilisation }
+				NOT = { has_idea = totaler_krieg_economy }
+				NOT = { has_idea = national_defense_state }
+				has_war_support > 0.5
+				has_government = fascism
+			}
+			set_variable = { DAI_build_order_wants = token:war_economy }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = captain_of_industry }
+				has_available_idea_with_traits = { idea = captain_of_industry limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ITA_alberto_beneduce }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = air_chief_reform_2 }
+				has_available_idea_with_traits = { idea = air_chief_reform_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ITA_francesco_pricolo }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_chief_morale_2 }
+				has_available_idea_with_traits = { idea = army_chief_morale_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ITA_pietro_badoglio }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = navy_chief_decisive_battle_1 }
+				has_available_idea_with_traits = { idea = navy_chief_decisive_battle_1 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ITA_inigo_campioni }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = war_industrialist }
+				has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ITA_giacomo_acerbo }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = grand_battle_plan_expert }
+				has_available_idea_with_traits = { idea = grand_battle_plan_expert limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:ITA_rodolfo_graziani }
+		}
+
+		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+
+	}
+
+}

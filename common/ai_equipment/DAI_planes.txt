@@ -1406,7 +1406,7 @@ DAI_heavy_fighter = {
 			match_value = 1000
 
 			modules = {
-				fixed_main_weapon_slot = light_mg_4x
+				fixed_main_weapon_slot = heavy_mg_4x
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = light_mg_4x

@@ -173,7 +173,11 @@ characters = {
 				grand_battle_plan_expert
 			}
 			ai_will_do = {
-				factor = 50.000
+				base = 50.000
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:ITA_rodolfo_graziani }
+				}
 			}
 		}
 
@@ -209,7 +213,11 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 1.000
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:ITA_pietro_badoglio }
+				}
 			}
 		}
 
@@ -959,7 +967,11 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				factor = 1.000
+				base = 1.000
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:ITA_inigo_campioni }
+				}
 			}
 		}
 		
@@ -1424,7 +1436,11 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 1.000
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:ITA_francesco_pricolo }
+				}
 			}
 		}		
 	}
@@ -1967,7 +1983,11 @@ characters = {
 				war_industrialist 
 			}
 			ai_will_do = {
-				factor = 0.300
+				base = 0.300
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:ITA_giacomo_acerbo }
+				}
 				modifier = {
 					factor = 0
 					OR = {
@@ -2084,7 +2104,11 @@ characters = {
 			}
 
 			ai_will_do = {
-				factor = 0.500
+				base = 0.500
+				modifier = {
+					add = 999
+					check_variable = { DAI_build_order_wants = token:ITA_alberto_beneduce }
+				}
 				modifier = {
 					factor = 0
 					OR = {

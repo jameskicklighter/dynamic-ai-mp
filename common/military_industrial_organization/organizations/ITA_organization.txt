@@ -690,6 +690,10 @@ ITA_imam_organization = {
 			limit = { FROM = { original_tag = ETH } }
 			FROM = { has_country_flag = ETH_ITA_sends_air_designers }
 		}
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
+		}
 	}
 	
 	available = {
@@ -741,6 +745,13 @@ ITA_crda_cant_organization = {
 		tag = ITA 
 	}
 	
+	visible = {
+		IF = {
+			limit = { FROM = { original_tag = ITA } }
+			FROM = { is_ai = no }
+		}
+	}
+
 	available = {
 		FROM = {
 			controls_state = 736 #LITORALE (Trieste)

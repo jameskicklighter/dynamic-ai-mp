@@ -163,54 +163,6 @@ DAI_mark_license_notifications_from_provider = {
 		}
 		set_country_flag = DAI_notified_advanced_small_airframe_license_available
 	}
-	if = {
-		limit = {
-			ROOT = { has_tech = basic_medium_airframe }
-			NOT = { has_tech = basic_medium_airframe }
-			NOT = { has_country_flag = DAI_notified_basic_medium_airframe_license_available }
-		}
-		set_country_flag = DAI_notified_basic_medium_airframe_license_available
-	}
-	if = {
-		limit = {
-			ROOT = { has_tech = improved_medium_airframe }
-			NOT = { has_tech = improved_medium_airframe }
-			NOT = { has_country_flag = DAI_notified_improved_medium_airframe_license_available }
-		}
-		set_country_flag = DAI_notified_improved_medium_airframe_license_available
-	}
-	if = {
-		limit = {
-			ROOT = { has_tech = advanced_medium_airframe }
-			NOT = { has_tech = advanced_medium_airframe }
-			NOT = { has_country_flag = DAI_notified_advanced_medium_airframe_license_available }
-		}
-		set_country_flag = DAI_notified_advanced_medium_airframe_license_available
-	}
-	if = {
-		limit = {
-			ROOT = { has_tech = basic_large_airframe }
-			NOT = { has_tech = basic_large_airframe }
-			NOT = { has_country_flag = DAI_notified_basic_large_airframe_license_available }
-		}
-		set_country_flag = DAI_notified_basic_large_airframe_license_available
-	}
-	if = {
-		limit = {
-			ROOT = { has_tech = improved_large_airframe }
-			NOT = { has_tech = improved_large_airframe }
-			NOT = { has_country_flag = DAI_notified_improved_large_airframe_license_available }
-		}
-		set_country_flag = DAI_notified_improved_large_airframe_license_available
-	}
-	if = {
-		limit = {
-			ROOT = { has_tech = advanced_large_airframe }
-			NOT = { has_tech = advanced_large_airframe }
-			NOT = { has_country_flag = DAI_notified_advanced_large_airframe_license_available }
-		}
-		set_country_flag = DAI_notified_advanced_large_airframe_license_available
-	}
 }
 
 DAI_notify_human_license_opportunities_from_provider = {

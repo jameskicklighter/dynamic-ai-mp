@@ -23,56 +23,62 @@ ROM_historical = {
 		}
 	}
 	abort = {
-		
+
 	}
 
 	ai_national_focuses = {
-		ROM_preserve_greater_romania
-		ROM_army_maneuvers
-		ROM_expand_the_air_force
-		ROM_civil_works
-		ROM_agrarian_reform
-		ROM_local_development
-		ROM_army_war_college
-		ROM_danubian_transport_network
-		ROM_malaxa
-		ROM_institute_royal_dictatorship
-		ROM_revise_the_constitution
-		ROM_flexible_foreign_policy
-		ROM_air_superiority
-		ROM_expand_the_galati_shipyards
-		ROM_trade_treaty_with_germany
-		ROM_iar_80
-		ROM_appoint_allied_friendly_government
-		ROM_cas
-		ROM_royal_guards_divisions
-		ROM_the_zb_53
-		ROM_vanatori_de_munte
-		ROM_hunedoara_steel_works
-		ROM_appoint_german_friendly_government
-		ROM_invite_german_advisors
-		ROM_iron_guard
-		ROM_force_abdication
-		ROM_join_axis
-		ROM_the_armored_division
-		ROM_expand_ploiesti_oil_production
-		ROM_german_romanian_oil_exploitation_company
-		ROM_expand_the_university_of_bucharest
-		ROM_acquire_modern_tanks
-		ROM_invest_in_the_iar
-		ROM_artillery_modernization
-		ROM_mobile_tank_destroyers
-		ROM_mountain_artillery
-		ROM_coastal_defense_navy
-		ROM_modern_destroyers
-		ROM_the_maresal
+		#-----1936-----
+		ROM_institute_royal_dictatorship # 70 -> March 11, 1936
+		ROM_expand_the_air_force # 70 -> May 20, 1936
+		ROM_local_development # 70 -> July 29, 1936
+		ROM_air_superiority # 70 -> October 7, 1936
+		ROM_iar_80 # 70 -> December 16, 1936
+
+		#-----1937-----
+		ROM_army_maneuvers # 70 -> February 24, 1937
+		ROM_army_war_college # 70 -> May 5, 1937
+		ROM_the_zb_53 # 70 -> July 14, 1937
+		ROM_crack_down_on_extremism # 35 -> August 18, 1937
+		ROM_revise_the_constitution # 70 -> October 27, 1937
+
+		#-----1938-----
+		ROM_the_royal_foundation # 70 -> January 5, 1938
+		ROM_flexible_foreign_policy # 35 -> February 9, 1938
+		ROM_appoint_german_friendly_government # 70 -> April 20, 1938
+		ROM_iron_guard # 70 -> June 29, 1938
+		ROM_force_abdication # 70 -> September 7, 1938
+		ROM_preserve_greater_romania # 70 -> November 16, 1938
+
+		#-----1939-----
+		ROM_civil_works # 70 -> January 25, 1939
+		ROM_agrarian_reform # 70 -> April 5, 1939
+		ROM_danubian_transport_network # 70 -> June 14, 1939
+		ROM_malaxa # 70 -> August 23, 1939
+		ROM_hunedoara_steel_works # 70 -> November 1, 1939
+
+		#-----1940-----
+		ROM_invest_in_the_iar # 70 -> January 10, 1940
+		ROM_expand_ploiesti_oil_production # 70 -> March 20, 1940
+		ROM_trade_treaty_with_germany # 70 -> May 29, 1940
+		ROM_invite_german_advisors # 70 -> August 7, 1940
+		ROM_join_axis # 70 -> October 16, 1940
+		ROM_expand_the_university_of_bucharest # 70 -> December 25, 1940
+
+		#-----1941-----
+		ROM_german_romanian_oil_exploitation_company # 70 -> March 5, 1941
+		ROM_expand_the_galati_shipyards # 70 -> May 14, 1941
+		ROM_royal_guards_divisions # 70 -> July 23, 1941
+		ROM_reserve_divisions # 70 -> October 1, 1941
+		ROM_cas # 70 -> December 10, 1941
+
+		#-----1942-----
+		ROM_vanatori_de_munte # 70 -> February 18, 1942
+		ROM_artillery_modernization # 70 -> April 29, 1942
+		ROM_mountain_artillery # 70 -> July 8, 1942
 	}
 
 	research = {
-		industry = 50.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
+
 	}
 
 	ideas = {
@@ -93,7 +99,7 @@ ROM_historical = {
 	}
 
 	focus_factors = {
-		
+
 	}
 
 }

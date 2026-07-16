@@ -146,6 +146,10 @@ technologies = {
 			# DAI --
 			base = 2
 			modifier = {
+				add = 999999
+				DAI_pre_research_small_airframe = yes
+			}
+			modifier = {
 				add = 100
 				DAI_should_build_planes = yes
 				date > 1937.1.1 # Soft limit to focus industry first.
@@ -198,6 +202,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 2
+			modifier = {
+				add = 999999
+				DAI_pre_research_small_airframe = yes
+			}
 			modifier = {
 				add = 100
 				DAI_should_build_planes = yes
@@ -257,24 +265,8 @@ technologies = {
 			# DAI --
 			base = 2
 			modifier = {
-				add = 9999
-				date > 1938.1.1
-				amount_research_slots > 4
-				DAI_should_build_planes = yes
-				NOT = {
-					OR = {
-						has_country_flag = DAI_improved_small_airframe_licensed
-						has_country_flag = DAI_advanced_small_airframe_licensed
-					}
-				}
-				OR = {
-					has_tech_bonus = { category = light_air }
-					has_tech_bonus = { category = air_equipment }
-					has_tech_bonus = { category = light_fighter }
-					has_tech_bonus = { category = cas_bomber }
-					has_tech_bonus = { category = naval_air }
-					has_tech_bonus = { category = naval_bomber }
-				}
+				add = 999999
+				DAI_pre_research_small_airframe_endpoint_ready = yes
 			}
 			modifier = {
 				add = 999
@@ -949,6 +941,10 @@ technologies = {
 			# DAI --
 			base = 1.6
 			modifier = {
+				add = 9999
+				DAI_pre_research_small_airframe_pending = yes
+			}
+			modifier = {
 				add = 30
 				DAI_should_build_planes = yes
 			}
@@ -1040,6 +1036,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 9999
+				DAI_pre_research_small_airframe_pending = yes
+			}
 			# -- DAI
 		}
 	}
@@ -1106,6 +1106,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 1.5
+			modifier = {
+				add = 9999
+				DAI_pre_research_small_airframe_pending = yes
+			}
 			modifier = {
 				add = 30
 				date > 1937.1.1
@@ -1270,6 +1274,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 2
+			modifier = {
+				add = 9999
+				DAI_pre_research_small_airframe_pending = yes
+			}
 			modifier = {
 				add = 30
 				date > 1937.1.1
@@ -1546,6 +1554,13 @@ technologies = {
 			# DAI --
 			base = 2
 			modifier = {
+				add = 999999
+				OR = {
+					DAI_pre_research_small_airframe = yes
+					DAI_pre_research_plane_engine = yes
+				}
+			}
+			modifier = {
 				add = 30
 				date > 1937.1.1
 				DAI_should_build_planes = yes
@@ -1553,8 +1568,14 @@ technologies = {
 			# Research interwar small frame/fighter 0 first.
 			modifier = {
 				factor = 0
-				NOT = { has_tech = iw_small_airframe }
-				NOT = { is_researching_technology = iw_small_airframe }
+				NOT = {
+					OR = {
+						has_tech = iw_small_airframe
+						is_researching_technology = iw_small_airframe
+						DAI_pre_research_small_airframe = yes
+						DAI_pre_research_plane_engine = yes
+					}
+				}
 			}
 			# -- DAI
 		}
@@ -1606,6 +1627,13 @@ technologies = {
 			# DAI --
 			base = 1.9
 			modifier = {
+				add = 999999
+				OR = {
+					DAI_pre_research_small_airframe = yes
+					DAI_pre_research_plane_engine = yes
+				}
+			}
+			modifier = {
 				add = 100
 				date > 1937.1.1
 				DAI_should_build_planes = yes
@@ -1613,8 +1641,14 @@ technologies = {
 			# Research basic small frame/fighter 1 first.
 			modifier = {
 				factor = 0
-				NOT = { has_tech = basic_small_airframe }
-				NOT = { is_researching_technology = basic_small_airframe }
+				NOT = {
+					OR = {
+						has_tech = basic_small_airframe
+						is_researching_technology = basic_small_airframe
+						DAI_pre_research_small_airframe = yes
+						DAI_pre_research_plane_engine = yes
+					}
+				}
 			}
 			# -- DAI
 		}
@@ -1666,15 +1700,8 @@ technologies = {
 			# DAI --
 			base = 1.9
 			modifier = {
-				add = 9999
-				date > 1938.1.1
-				amount_research_slots > 4
-				DAI_should_build_planes = yes
-				OR = {
-					has_tech_bonus = { category = air_equipment }
-					has_tech_bonus = { category = cat_air_engine }
-					has_tech_bonus = { category = plane_modules_tech }
-				}
+				add = 999999
+				DAI_pre_research_plane_engine_endpoint_ready = yes
 			}
 			modifier = {
 				add = 999
@@ -1700,8 +1727,13 @@ technologies = {
 			# Research improved small frame/fighter 2 first.
 			modifier = {
 				factor = 0
-				NOT = { has_tech = improved_small_airframe }
-				NOT = { is_researching_technology = improved_small_airframe }
+				NOT = {
+					OR = {
+						has_tech = improved_small_airframe
+						is_researching_technology = improved_small_airframe
+						DAI_pre_research_plane_engine_endpoint_ready = yes
+					}
+				}
 			}
 			# -- DAI
 		}
@@ -1821,6 +1853,10 @@ technologies = {
 			# DAI --
 			base = 1.9
 			modifier = {
+				add = 9999
+				DAI_pre_research_small_airframe_pending = yes
+			}
+			modifier = {
 				add = 30
 				DAI_should_build_planes = yes
 			}
@@ -1869,6 +1905,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 1.6
+			modifier = {
+				add = 9999
+				DAI_pre_research_small_airframe_pending = yes
+			}
 			modifier = {
 				add = 30
 				date > 1939.1.1

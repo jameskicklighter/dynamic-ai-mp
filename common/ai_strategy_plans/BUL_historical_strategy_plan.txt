@@ -1,0 +1,128 @@
+BUL_historical_plan = {
+	name = "Bulgaria Historical Plan"
+	desc = "Tsar Boris III will lead the country towards the Axis, relying on German arbitration to expand Bulgarian borders peacefully, eventually signing the Tripartite Pact and delaying Bulgarian participation in the war."
+
+	allowed = {
+		original_tag = BUL
+		has_dlc = "Battle for the Bosporus"
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = BUL_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = BUL_AI_RANDOM_HISTORICAL
+			has_game_rule = {
+				rule = BUL_ai_behavior
+				option = HISTORICAL
+			}
+		}	
+	}
+	abort = {
+		has_war_with = GER
+	}
+
+	ai_national_focuses = {
+		#ASAP -> Do them as soon as army restrictions get lifted
+		BUL_reorganize_the_military_industry
+		BUL_rebuild_the_army
+
+		#-----1936-----
+		BUL_acquire_modern_tools # 35 -> February 5, 1936
+		BUL_negotiate_bulgarian_rearmament # 35 -> March 11, 1936
+		BUL_national_military_academy # 35 -> April 15, 1936
+		BUL_war_logistics # 70 -> June 24, 1936
+		BUL_power_to_the_tsar # 70 -> September 2, 1936
+		BUL_dissolve_the_military_union # 35 -> October 7, 1936
+		BUL_the_tsars_regime # 70 -> December 16, 1936
+
+		#-----1937-----
+		BUL_improve_the_road_system # 70 -> February 24, 1937
+		BUL_restore_the_tarnovo_constitution # 70 -> May 5, 1937
+		BUL_freedom_of_press # 70 -> July 14, 1937
+		BUL_invigorate_national_industry # 70 -> September 22, 1937
+		BUL_promote_bulgarian_nationalism # 70 -> December 1, 1937
+
+		#-----1938-----
+		BUL_limited_womens_suffrage # 70 -> February 9, 1938
+		BUL_expand_sofia_university # 70 -> April 20, 1938
+		BUL_bulgarian_irredentism # 70 -> June 29, 1938
+		BUL_approach_germany # 70 -> September 7, 1938
+		BUL_illusions_of_a_non_partisan_system # 70 -> November 16, 1938
+
+		#-----1939-----
+		BUL_georgi_benkovski_aircraft_repair_facilities # 70 -> January 25, 1939
+		BUL_national_railway_lines # 35 -> March 1, 1939
+		BUL_light_metal_exploitation # 35 -> April 5, 1939
+		BUL_ban_far_right_organizations # 35 -> May 10, 1939
+		BUL_cooperation_with_italy # 70 -> July 19, 1939
+		BUL_found_the_brannik # 70 -> September 27, 1939
+		BUL_crush_the_communists # 35 -> November 1, 1939
+
+		#-----1940-----
+		BUL_steel_plant_in_pernik # 70 -> January 10, 1940
+		BUL_liberalization_of_trade_policies # 70 -> March 20, 1940
+		BUL_increase_industry_investments # 70 -> May 29, 1940
+		BUL_support_macedonian_organizations # 35 -> July 3, 1940
+		BUL_join_the_tripartite_pact # 35 -> August 7, 1940
+		BUL_peaceful_development # 70 -> October 16, 1940
+		BUL_vasil_levsky_national_military_university # 70 -> December 25, 1940
+
+		#-----1941-----
+		BUL_contract_foreign_companies # 35 -> January 29, 1941
+		BUL_kaproni_bulgarski # 70 -> April 9, 1941
+		BUL_bulgarian_administration_of_the_balkans # 140 -> August 27, 1941
+		BUL_darzhavna_voenna_fabrika # 70 -> November 5, 1941
+
+		#-----1942-----
+		BUL_found_dvf_sopot # 70 -> January 14, 1942
+		BUL_form_a_regency_council # 70 -> March 25, 1942
+		BUL_military_secrets_sharing # 70 -> June 3, 1942
+		BUL_pilot_training_program # 70 -> August 12, 1942
+		BUL_mineral_extraction_in_the_rhodopes # 70 -> October 21, 1942
+		BUL_darzhavna_aeroplanna_rabotilnitsa # 70 -> December 30, 1942
+
+		#-----1943-----
+		BUL_darzhavna_samoletna_fabrika # 70 -> March 10, 1943
+		BUL_utmost_optimization # 70 -> May 19, 1943
+		BUL_prussia_of_the_balkans # 70 -> July 28, 1943
+		BUL_uranium_prospecting # 70 -> October 6, 1943
+
+	}
+
+	focus_factors = {
+		BUL_plot_against_boris = 0
+		BUL_total_war = 0
+		BUL_cooperate_with_the_zveno = 0
+		BUL_condemn_macedonian_organizations = 0
+		BUL_restrained_paramilitary_organizations = 0
+		BUL_appoint_right_wing_ministers = 0
+		BUL_strengthen_the_royal_dictatorship = 0
+		BUL_the_third_bulgarian_empire = 0
+		BUL_the_return_of_ferdinand_i = 0
+		BUL_the_fate_of_the_balkans = 0
+		BUL_dominance_in_the_black_sea = 0
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

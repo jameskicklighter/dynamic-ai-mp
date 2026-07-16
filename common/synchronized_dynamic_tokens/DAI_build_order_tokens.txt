@@ -14,5 +14,17 @@ GER_hermann_goring
 GER_ludwig_beck
 GER_ludwig_erhard
 GER_organization_todt
+ITA_alberto_beneduce
+ITA_francesco_pricolo
+ITA_giacomo_acerbo
+ITA_inigo_campioni
+ITA_pietro_badoglio
+ITA_rodolfo_graziani
 partial_economic_mobilisation
+ROM_armand_calinescu
+ROM_constantin_sanatescu
+ROM_gheorghe_argeseanu
+ROM_gheorghe_avramescu
+ROM_gheorghe_jienescu
+ROM_nicolae_sova
 war_economy

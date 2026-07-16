@@ -76,6 +76,10 @@ technologies = {
 			# DAI --
 			base = 10
 			modifier = {
+				add = 999999
+				DAI_pre_research_guns = yes
+			}
+			modifier = {
 				add = 495
 				OR = {
 					original_tag = CHI
@@ -124,6 +128,10 @@ technologies = {
 			# DAI --
 			base = 10
 			modifier = {
+				add = 999999
+				DAI_pre_research_guns = yes
+			}
+			modifier = {
 				add = 495
 				original_tag = CHI
 			}
@@ -164,18 +172,9 @@ technologies = {
 			# DAI --
 			base = 10
 			modifier = {
-				add = 9999
-				date > 1937.1.1
-				amount_research_slots > 4
-				NOT = {
-					OR = {
-						has_country_flag = DAI_gun2_licensed
-						has_country_flag = DAI_gun3_licensed
-					}
-				}
-				has_tech_bonus = {
-					category = infantry_weapons
-				}
+				add = 999999
+				DAI_pre_research_guns = yes
+				has_tech_bonus = { category = infantry_weapons }
 			}
 			modifier = {
 				add = 999
@@ -186,9 +185,7 @@ technologies = {
 						has_country_flag = DAI_gun3_licensed
 					}
 				}
-				has_tech_bonus = {
-					category = infantry_weapons
-				}
+				has_tech_bonus = { category = infantry_weapons }
 			}
 			modifier = {
 				add = 100
@@ -1737,6 +1734,10 @@ technologies = {
 			# DAI --
 			base = 4
 			modifier = {
+				add = 999999
+				DAI_pre_research_mech = yes
+			}
+			modifier = {
 				add = 21
 				date > 1938.1.1
 			}
@@ -1822,6 +1823,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 1
+			modifier = {
+				add = 999999
+				DAI_pre_research_mech = yes
+			}
 			modifier = {
 				add = 10
 				date > 1939.1.1
@@ -2107,16 +2112,8 @@ technologies = {
 				DAI_wants_mech = yes
 			}
 			modifier = {
-				add = 9999
-				date > 1938.1.1
-				amount_research_slots > 4
-				DAI_wants_mech = yes
-				NOT = {
-					AND = {
-						has_tech = DAI_enable_mech
-						has_country_flag = DAI_mech_licensed
-					}
-				}
+				add = 999999
+				DAI_pre_research_mech = yes
 				OR = {
 					has_tech_bonus = { category = cat_mechanized_equipment }
 					has_tech_bonus = { category = motorized_equipment }

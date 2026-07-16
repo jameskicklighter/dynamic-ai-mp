@@ -12,6 +12,72 @@ DAI_should_pre_research_industry = {
 	}
 }
 
+DAI_pre_research_guns = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = ROM
+	}
+}
+
+DAI_pre_research_small_airframe = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = ROM
+	}
+}
+
+DAI_pre_research_small_airframe_endpoint_ready = {
+	DAI_pre_research_small_airframe = yes
+	OR = {
+		AND = {
+			original_tag = ROM
+			has_completed_focus = ROM_iar_80
+		}
+		has_tech_bonus = { category = light_air }
+		has_tech_bonus = { category = air_equipment }
+		has_tech_bonus = { category = light_fighter }
+		has_tech_bonus = { category = cas_bomber }
+		has_tech_bonus = { category = naval_air }
+		has_tech_bonus = { category = naval_bomber }
+	}
+}
+
+DAI_pre_research_small_airframe_pending = {
+	DAI_pre_research_small_airframe = yes
+	has_dlc = "By Blood Alone"
+	date > 1936.7.1
+	NOT = {
+		OR = {
+			DAI_pre_research_small_airframe_endpoint_ready = yes
+			has_tech = improved_small_airframe
+			is_researching_technology = improved_small_airframe
+		}
+	}
+}
+
+DAI_pre_research_mech = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = BUL
+	}
+}
+
+DAI_pre_research_plane_engine = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = ITA
+	}
+}
+
+DAI_pre_research_plane_engine_endpoint_ready = {
+	DAI_pre_research_plane_engine = yes
+	has_completed_focus = ITA_reggianes_exports
+}
+
 DAI_build_order_should_take_partial_mob = {
 	date < 1939.1.1
 	has_war_support > 0.25

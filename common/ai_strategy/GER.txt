@@ -332,11 +332,11 @@ GER_unit_production = {
 		value = 2
 	}
 
-	ai_strategy = {
-		type = equipment_production_min_factories_archetype
-		id = artillery_equipment
-		value = 4
-	}
+	# ai_strategy = {
+	# 	type = equipment_production_min_factories_archetype
+	# 	id = artillery_equipment
+	# 	value = 4
+	# }
 
 	ai_strategy = { #added to railway gun define (set to 0 by default, increased in default strategies)
 		type = railway_gun_divisions_ratio

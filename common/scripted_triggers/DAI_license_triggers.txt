@@ -1,18 +1,95 @@
-DAI_is_human_license_partner_of_root = {
-	is_ai = no
+DAI_is_historical_axis_license_bloc_member = {
+	OR = {
+		original_tag = GER
+		original_tag = ITA
+		original_tag = HUN
+		original_tag = ROM
+		original_tag = BUL
+		AND = {
+			is_subject = yes
+			overlord = {
+				OR = {
+					original_tag = GER
+					original_tag = ITA
+					original_tag = HUN
+					original_tag = ROM
+					original_tag = BUL
+				}
+			}
+		}
+	}
+}
+
+DAI_is_historical_allied_license_bloc_member = {
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = USA
+		AND = {
+			is_subject = yes
+			overlord = {
+				OR = {
+					original_tag = ENG
+					original_tag = FRA
+					original_tag = USA
+				}
+			}
+		}
+	}
+}
+
+DAI_is_historical_license_partner_of_root = {
+	is_historical_focus_on = yes
+	NOT = { has_war_with = ROOT }
+	OR = {
+		AND = {
+			DAI_is_historical_axis_license_bloc_member = yes
+			ROOT = { DAI_is_historical_axis_license_bloc_member = yes }
+		}
+		AND = {
+			DAI_is_historical_allied_license_bloc_member = yes
+			ROOT = { DAI_is_historical_allied_license_bloc_member = yes }
+		}
+	}
+}
+
+DAI_is_historical_license_partner_of_prev = {
+	is_historical_focus_on = yes
+	NOT = { has_war_with = PREV }
+	OR = {
+		AND = {
+			DAI_is_historical_axis_license_bloc_member = yes
+			PREV = { DAI_is_historical_axis_license_bloc_member = yes }
+		}
+		AND = {
+			DAI_is_historical_allied_license_bloc_member = yes
+			PREV = { DAI_is_historical_allied_license_bloc_member = yes }
+		}
+	}
+}
+
+DAI_is_license_partner_of_root = {
 	OR = {
 		is_in_faction_with = ROOT
 		ROOT = { is_subject_of = PREV }
 		is_subject_of = ROOT
+		DAI_is_historical_license_partner_of_root = yes
 	}
+}
+
+DAI_is_human_license_partner_of_root = {
+	is_ai = no
+	DAI_is_license_partner_of_root = yes
 }
 
 DAI_is_ai_license_partner_of_root = {
 	is_ai = yes
-	OR = {
-		is_in_faction_with = ROOT
-		ROOT = { is_subject_of = PREV }
-		is_subject_of = ROOT
+	DAI_is_license_partner_of_root = yes
+}
+
+DAI_has_ai_license_partner = {
+	any_other_country = {
+		DAI_is_ai_license_partner_of_root = yes
 	}
 }
 
@@ -44,284 +121,7 @@ DAI_can_share_advanced_small_airframe_license = {
 	}
 }
 
-DAI_can_share_basic_medium_airframe_license = {
-	DAI_can_offer_air_license = yes
-	OR = {
-		has_tech = basic_medium_airframe
-		has_country_flag = DAI_basic_medium_airframe_licensed
-	}
-}
 
-DAI_can_share_improved_medium_airframe_license = {
-	DAI_can_offer_air_license = yes
-	OR = {
-		has_tech = improved_medium_airframe
-		has_country_flag = DAI_improved_medium_airframe_licensed
-	}
-}
-
-DAI_can_share_advanced_medium_airframe_license = {
-	DAI_can_offer_air_license = yes
-	OR = {
-		has_tech = advanced_medium_airframe
-		has_country_flag = DAI_advanced_medium_airframe_licensed
-	}
-}
-
-DAI_can_share_basic_large_airframe_license = {
-	DAI_can_offer_air_license = yes
-	OR = {
-		has_tech = basic_large_airframe
-		has_country_flag = DAI_basic_large_airframe_licensed
-	}
-}
-
-DAI_can_share_improved_large_airframe_license = {
-	DAI_can_offer_air_license = yes
-	OR = {
-		has_tech = improved_large_airframe
-		has_country_flag = DAI_improved_large_airframe_licensed
-	}
-}
-
-DAI_can_share_advanced_large_airframe_license = {
-	DAI_can_offer_air_license = yes
-	OR = {
-		has_tech = advanced_large_airframe
-		has_country_flag = DAI_advanced_large_airframe_licensed
-	}
-}
-
-DAI_basic_small_airframe_profile_full = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_2
-	has_tech = aa_hmg
-	has_tech = survivability_studies
-	has_tech = range_improvements
-	has_tech = aircraft_construction
-}
-
-DAI_basic_small_airframe_profile_engine = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_2
-	NOT = { has_tech = aa_hmg }
-}
-
-DAI_basic_small_airframe_profile_base = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	NOT = { has_tech = engines_2 }
-}
-
-DAI_improved_small_airframe_profile_full = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_3
-	has_tech = aa_hmg
-	has_tech = air_torpedoe_3
-	has_tech = survivability_studies
-	has_tech = range_improvements
-	has_tech = aircraft_construction
-	has_tech = interwar_antitank
-}
-
-DAI_improved_small_airframe_profile_engine = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_3
-	NOT = { has_tech = aa_hmg }
-}
-
-DAI_improved_small_airframe_profile_base = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_2
-	NOT = { has_tech = engines_3 }
-}
-
-DAI_advanced_small_airframe_profile_full = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_4
-	has_tech = aa_hmg
-	has_tech = air_torpedoe_3
-	has_tech = survivability_studies
-	has_tech = range_improvements
-	has_tech = aircraft_construction
-	has_tech = antitank2
-}
-
-DAI_advanced_small_airframe_profile_engine = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_4
-	NOT = { has_tech = aa_hmg }
-}
-
-DAI_advanced_small_airframe_profile_base = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_3
-	NOT = { has_tech = engines_4 }
-}
-
-DAI_basic_medium_airframe_profile_full = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_2
-	has_tech = aa_hmg
-	has_tech = survivability_studies
-	has_tech = improved_computing_machine
-}
-
-DAI_basic_medium_airframe_profile_engine = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_2
-	NOT = { has_tech = aa_hmg }
-}
-
-DAI_basic_medium_airframe_profile_base = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	NOT = { has_tech = engines_2 }
-}
-
-DAI_improved_medium_airframe_profile_full = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_3
-	has_tech = aa_hmg
-	has_tech = survivability_studies
-	has_tech = improved_computing_machine
-	has_tech = interwar_antitank
-}
-
-DAI_improved_medium_airframe_profile_engine = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_3
-	NOT = { has_tech = aa_hmg }
-}
-
-DAI_improved_medium_airframe_profile_base = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_2
-	NOT = { has_tech = engines_3 }
-}
-
-DAI_advanced_medium_airframe_profile_full = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_4
-	has_tech = aa_hmg
-	has_tech = survivability_studies
-	has_tech = improved_computing_machine
-	has_tech = antitank2
-}
-
-DAI_advanced_medium_airframe_profile_engine = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_4
-	NOT = { has_tech = aa_hmg }
-}
-
-DAI_advanced_medium_airframe_profile_base = {
-	has_tech = aa_lmg
-	has_tech = early_bombs
-	has_tech = engines_3
-	NOT = { has_tech = engines_4 }
-}
-
-DAI_basic_large_airframe_profile_full = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_2
-	has_tech = survivability_studies
-	has_tech = air_torpedoe_2
-	has_tech = aircraft_construction
-	has_tech = improved_computing_machine
-	has_tech = improved_radio
-	has_tech = monopulse_radar
-}
-
-DAI_basic_large_airframe_profile_engine = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_2
-	NOT = { has_tech = survivability_studies }
-}
-
-DAI_basic_large_airframe_profile_base = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	NOT = { has_tech = engines_2 }
-}
-
-DAI_improved_large_airframe_profile_full = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_3
-	has_tech = survivability_studies
-	has_tech = air_torpedoe_3
-	has_tech = aircraft_construction
-	has_tech = improved_computing_machine
-	has_tech = improved_radio
-	has_tech = monopulse_radar
-}
-
-DAI_improved_large_airframe_profile_engine = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_3
-	NOT = { has_tech = survivability_studies }
-}
-
-DAI_improved_large_airframe_profile_base = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_2
-	NOT = { has_tech = engines_3 }
-}
-
-DAI_advanced_large_airframe_profile_full = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_4
-	has_tech = survivability_studies
-	has_tech = air_torpedoe_3
-	has_tech = aircraft_construction
-	has_tech = improved_computing_machine
-	has_tech = improved_radio
-	has_tech = monopulse_radar
-}
-
-DAI_advanced_large_airframe_profile_engine = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_4
-	NOT = { has_tech = survivability_studies }
-}
-
-DAI_advanced_large_airframe_profile_base = {
-	has_tech = early_bombs
-	has_tech = air_torpedoe_1
-	has_tech = engines_3
-	NOT = { has_tech = engines_4 }
-}
 
 DAI_is_air_license_provider_for_prev = {
 	DAI_can_offer_air_license = yes
@@ -329,404 +129,10 @@ DAI_is_air_license_provider_for_prev = {
 		is_in_faction_with = PREV
 		is_subject_of = PREV
 		PREV = { is_subject_of = PREV }
+		DAI_is_historical_license_partner_of_prev = yes
 	}
 }
 
-DAI_has_basic_small_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_basic_small_airframe_license = yes
-		DAI_basic_small_airframe_profile_full = yes
-	}
-}
-
-DAI_has_basic_small_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_basic_small_airframe_license = yes
-		OR = {
-			DAI_basic_small_airframe_profile_full = yes
-			DAI_basic_small_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_improved_small_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_improved_small_airframe_license = yes
-		DAI_improved_small_airframe_profile_full = yes
-	}
-}
-
-DAI_has_improved_small_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_improved_small_airframe_license = yes
-		OR = {
-			DAI_improved_small_airframe_profile_full = yes
-			DAI_improved_small_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_advanced_small_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_advanced_small_airframe_license = yes
-		DAI_advanced_small_airframe_profile_full = yes
-	}
-}
-
-DAI_has_advanced_small_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_advanced_small_airframe_license = yes
-		OR = {
-			DAI_advanced_small_airframe_profile_full = yes
-			DAI_advanced_small_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_basic_medium_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_basic_medium_airframe_license = yes
-		DAI_basic_medium_airframe_profile_full = yes
-	}
-}
-
-DAI_has_basic_medium_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_basic_medium_airframe_license = yes
-		OR = {
-			DAI_basic_medium_airframe_profile_full = yes
-			DAI_basic_medium_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_improved_medium_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_improved_medium_airframe_license = yes
-		DAI_improved_medium_airframe_profile_full = yes
-	}
-}
-
-DAI_has_improved_medium_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_improved_medium_airframe_license = yes
-		OR = {
-			DAI_improved_medium_airframe_profile_full = yes
-			DAI_improved_medium_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_advanced_medium_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_advanced_medium_airframe_license = yes
-		DAI_advanced_medium_airframe_profile_full = yes
-	}
-}
-
-DAI_has_advanced_medium_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_advanced_medium_airframe_license = yes
-		OR = {
-			DAI_advanced_medium_airframe_profile_full = yes
-			DAI_advanced_medium_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_basic_large_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_basic_large_airframe_license = yes
-		DAI_basic_large_airframe_profile_full = yes
-	}
-}
-
-DAI_has_basic_large_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_basic_large_airframe_license = yes
-		OR = {
-			DAI_basic_large_airframe_profile_full = yes
-			DAI_basic_large_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_improved_large_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_improved_large_airframe_license = yes
-		DAI_improved_large_airframe_profile_full = yes
-	}
-}
-
-DAI_has_improved_large_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_improved_large_airframe_license = yes
-		OR = {
-			DAI_improved_large_airframe_profile_full = yes
-			DAI_improved_large_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_has_advanced_large_airframe_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_advanced_large_airframe_license = yes
-		DAI_advanced_large_airframe_profile_full = yes
-	}
-}
-
-DAI_has_advanced_large_airframe_engine_or_full_provider_for_prev = {
-	any_other_country = {
-		DAI_is_air_license_provider_for_prev = yes
-		DAI_can_share_advanced_large_airframe_license = yes
-		OR = {
-			DAI_advanced_large_airframe_profile_full = yes
-			DAI_advanced_large_airframe_profile_engine = yes
-		}
-	}
-}
-
-DAI_needs_basic_small_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_basic_small_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_basic_small_airframe_profile_engine = yes }
-			NOT = { DAI_has_basic_small_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_full }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_basic_small_airframe_profile_base = yes }
-			NOT = { DAI_has_basic_small_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_full }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_engine }
-			NOT = { has_country_flag = DAI_basic_small_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_improved_small_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_improved_small_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_improved_small_airframe_profile_engine = yes }
-			NOT = { DAI_has_improved_small_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_full }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_improved_small_airframe_profile_base = yes }
-			NOT = { DAI_has_improved_small_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_full }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_engine }
-			NOT = { has_country_flag = DAI_improved_small_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_advanced_small_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_advanced_small_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_advanced_small_airframe_profile_engine = yes }
-			NOT = { DAI_has_advanced_small_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_full }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_advanced_small_airframe_profile_base = yes }
-			NOT = { DAI_has_advanced_small_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_full }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_engine }
-			NOT = { has_country_flag = DAI_advanced_small_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_basic_medium_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_basic_medium_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_basic_medium_airframe_profile_engine = yes }
-			NOT = { DAI_has_basic_medium_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_full }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_basic_medium_airframe_profile_base = yes }
-			NOT = { DAI_has_basic_medium_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_full }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_engine }
-			NOT = { has_country_flag = DAI_basic_medium_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_improved_medium_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_improved_medium_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_improved_medium_airframe_profile_engine = yes }
-			NOT = { DAI_has_improved_medium_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_full }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_improved_medium_airframe_profile_base = yes }
-			NOT = { DAI_has_improved_medium_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_full }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_engine }
-			NOT = { has_country_flag = DAI_improved_medium_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_advanced_medium_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_advanced_medium_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_advanced_medium_airframe_profile_engine = yes }
-			NOT = { DAI_has_advanced_medium_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_full }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_advanced_medium_airframe_profile_base = yes }
-			NOT = { DAI_has_advanced_medium_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_full }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_engine }
-			NOT = { has_country_flag = DAI_advanced_medium_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_basic_large_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_basic_large_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_basic_large_airframe_profile_engine = yes }
-			NOT = { DAI_has_basic_large_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_full }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_basic_large_airframe_profile_base = yes }
-			NOT = { DAI_has_basic_large_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_full }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_engine }
-			NOT = { has_country_flag = DAI_basic_large_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_improved_large_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_improved_large_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_improved_large_airframe_profile_engine = yes }
-			NOT = { DAI_has_improved_large_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_full }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_improved_large_airframe_profile_base = yes }
-			NOT = { DAI_has_improved_large_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_full }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_engine }
-			NOT = { has_country_flag = DAI_improved_large_airframe_design_base }
-		}
-	}
-}
-
-DAI_needs_advanced_large_airframe_design_from_root = {
-	OR = {
-		AND = {
-			ROOT = { DAI_advanced_large_airframe_profile_full = yes }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_full_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_full }
-		}
-		AND = {
-			ROOT = { DAI_advanced_large_airframe_profile_engine = yes }
-			NOT = { DAI_has_advanced_large_airframe_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_engine_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_full }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_engine }
-		}
-		AND = {
-			ROOT = { DAI_advanced_large_airframe_profile_base = yes }
-			NOT = { DAI_has_advanced_large_airframe_engine_or_full_provider_for_prev = yes }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_base_from_@ROOT }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_full }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_engine }
-			NOT = { has_country_flag = DAI_advanced_large_airframe_design_base }
-		}
-	}
-}
 
 DAI_has_license_notification_opportunity_from_root = {
 	OR = {
@@ -825,36 +231,6 @@ DAI_has_license_notification_opportunity_from_root = {
 			ROOT = { has_tech = advanced_small_airframe }
 			NOT = { has_tech = advanced_small_airframe }
 			NOT = { has_country_flag = DAI_notified_advanced_small_airframe_license_available }
-		}
-		AND = {
-			ROOT = { has_tech = basic_medium_airframe }
-			NOT = { has_tech = basic_medium_airframe }
-			NOT = { has_country_flag = DAI_notified_basic_medium_airframe_license_available }
-		}
-		AND = {
-			ROOT = { has_tech = improved_medium_airframe }
-			NOT = { has_tech = improved_medium_airframe }
-			NOT = { has_country_flag = DAI_notified_improved_medium_airframe_license_available }
-		}
-		AND = {
-			ROOT = { has_tech = advanced_medium_airframe }
-			NOT = { has_tech = advanced_medium_airframe }
-			NOT = { has_country_flag = DAI_notified_advanced_medium_airframe_license_available }
-		}
-		AND = {
-			ROOT = { has_tech = basic_large_airframe }
-			NOT = { has_tech = basic_large_airframe }
-			NOT = { has_country_flag = DAI_notified_basic_large_airframe_license_available }
-		}
-		AND = {
-			ROOT = { has_tech = improved_large_airframe }
-			NOT = { has_tech = improved_large_airframe }
-			NOT = { has_country_flag = DAI_notified_improved_large_airframe_license_available }
-		}
-		AND = {
-			ROOT = { has_tech = advanced_large_airframe }
-			NOT = { has_tech = advanced_large_airframe }
-			NOT = { has_country_flag = DAI_notified_advanced_large_airframe_license_available }
 		}
 	}
 }
