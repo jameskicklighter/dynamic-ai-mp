@@ -87,16 +87,18 @@ DAI_build_order_should_take_partial_mob = {
 	NOT = { has_idea = totaler_krieg_economy }
 	NOT = { has_idea = national_defense_state }
 	NOT = {
-		has_war_support > 0.5
-		OR = {
-			has_government = fascism
-			has_government = communism
-			AND = {
-				has_war = yes
-				any_enemy_country = {
-					ic_ratio = {
-						tag = ROOT
-						ratio > 0.4
+		AND = {
+			has_war_support > 0.5
+			OR = {
+				has_government = fascism
+				has_government = communism
+				AND = {
+					has_war = yes
+					any_enemy_country = {
+						ic_ratio = {
+							tag = ROOT
+							ratio > 0.4
+						}
 					}
 				}
 			}
