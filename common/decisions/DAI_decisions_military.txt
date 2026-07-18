@@ -1,0 +1,1597 @@
+# ==================== #
+# ====  Military  ==== #
+# ==================== #
+
+DAI_division_template_decisions = {
+
+	AI_Infantry_Filler_Spawn_18w = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			division_template = {
+				name = "Infantry 1936 A"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	# AI_JAP_Infantry_Filler_9_3 = {
+	# 	icon = rifles
+	# 	allowed = {
+	# 		original_tag = JAP
+	# 	}
+	# 	visible = {
+	# 		is_ai = yes
+	# 	}
+	# 	available = {
+	# 		always = yes
+	# 	}
+	# 	cost = 0
+
+	# 	fire_only_once = yes
+
+	# 	ai_will_do = {
+	# 		base = 999
+	# 	}
+
+	# 	complete_effect = {
+	# 		division_template = {
+	# 			name = "Infantry 1936 A"
+	# 			regiments = {
+	# 				infantry = { x = 0 y = 0 }
+	# 				infantry = { x = 0 y = 1 }
+	# 				infantry = { x = 0 y = 2 }
+	# 				infantry = { x = 1 y = 0 }
+	# 				infantry = { x = 1 y = 1 }
+	# 				infantry = { x = 1 y = 2 }
+	# 				infantry = { x = 2 y = 0 }
+	# 				infantry = { x = 2 y = 1 }
+	# 				infantry = { x = 2 y = 2 }
+	# 			}
+	# 			support = {
+	# 				artillery = { x = 0 y = 0 }
+	# 			}
+	# 		}
+	# 	}
+	# }
+
+	AI_Mountaineer_Template_Basic = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_mountaineer_production = yes
+			has_army_experience > 0
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Mountaineers 1936 A"
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+					mountaineers = { x = 3 y = 0 }
+					mountaineers = { x = 3 y = 1 }
+					mountaineers = { x = 3 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Marine_Template_Basic = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_marine_production = yes
+			has_army_experience > 0
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			if = {
+				limit = { date > 1939.1.1 }
+				division_template = {
+					name = "Marines 1939 A"
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						marine = { x = 2 y = 0 }
+						marine = { x = 2 y = 1 }
+						marine = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+					}
+					support = {
+					}
+				}
+			}
+			else = {
+				division_template = {
+					name = "Marines 1936 A"
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						marine = { x = 2 y = 0 }
+						marine = { x = 2 y = 1 }
+						marine = { x = 2 y = 2 }
+					}
+					support = {
+					}
+				}
+			}
+		}
+	}
+
+	AI_Ranger_Template_Basic = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_ranger_production = yes
+			has_army_experience > 0
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Rangers 1936 A"
+				regiments = {
+					ranger_battalion = { x = 0 y = 0 }
+					ranger_battalion = { x = 0 y = 1 }
+					ranger_battalion = { x = 0 y = 2 }
+					ranger_battalion = { x = 1 y = 0 }
+					ranger_battalion = { x = 1 y = 1 }
+					ranger_battalion = { x = 1 y = 2 }
+					ranger_battalion = { x = 2 y = 0 }
+					ranger_battalion = { x = 2 y = 1 }
+					ranger_battalion = { x = 2 y = 2 }
+					ranger_battalion = { x = 3 y = 0 }
+					ranger_battalion = { x = 3 y = 1 }
+					ranger_battalion = { x = 3 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Mechanized_Template_Basic = {
+		icon = GFX_decision_generic_motorized
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_mech_production = yes
+			has_army_experience > 0
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Mechanized 1940 A"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 2 y = 0 }
+					mechanized = { x = 2 y = 1 }
+					mechanized = { x = 2 y = 2 }
+					mechanized = { x = 3 y = 0 }
+					mechanized = { x = 3 y = 1 }
+					mechanized = { x = 3 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Light_Armor_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_light_tanks
+			has_army_experience > 0
+			OR = {
+				has_tech = basic_light_tank
+				has_tech = basic_light_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Light Armor 1936 A"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					light_armor = { x = 2 y = 0 }
+					light_armor = { x = 2 y = 1 }
+					light_armor = { x = 2 y = 2 }
+					light_armor = { x = 2 y = 3 }
+					light_armor = { x = 3 y = 0 }
+					light_armor = { x = 3 y = 1 }
+					light_armor = { x = 3 y = 2 }
+					light_armor = { x = 4 y = 0 }
+					light_armor = { x = 4 y = 1 }
+					light_armor = { x = 4 y = 2 }
+				}
+				support = {
+				}
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					light_tank_destroyer_support = { x = 2 y = 0 }
+					light_tank_destroyer_support = { x = 3 y = 0 }
+					light_tank_destroyer_support = { x = 4 y = 0 }
+				}
+			}
+		}
+	}
+
+	AI_Medium_Armor_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tanks
+			has_army_experience > 0
+			OR = {
+				has_tech = basic_medium_tank
+				has_tech = basic_medium_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Medium Armor 1936 A"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+					medium_armor = { x = 4 y = 2 }
+				}
+				support = {
+				}
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					medium_tank_destroyer_support = { x = 3 y = 0 }
+					medium_tank_destroyer_support = { x = 4 y = 0 }
+				}
+			}
+		}
+	}
+
+	AI_Modern_Armor_Template_Mechanized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tanks
+			DAI_can_use_mechanized = yes
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+			has_army_experience > 0
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Modern Armor 1944 A"
+				regiments = {
+					modern_armor = { x = 0 y = 0 }
+					modern_armor = { x = 0 y = 1 }
+					modern_armor = { x = 0 y = 2 }
+					modern_armor = { x = 0 y = 3 }
+					modern_armor = { x = 0 y = 4 }
+					modern_armor = { x = 1 y = 0 }
+					modern_armor = { x = 1 y = 1 }
+					modern_armor = { x = 1 y = 2 }
+					modern_armor = { x = 1 y = 3 }
+					modern_armor = { x = 1 y = 4 }
+					mechanized = { x = 2 y = 0 }
+					mechanized = { x = 2 y = 1 }
+					mechanized = { x = 2 y = 2 }
+					mechanized = { x = 2 y = 3 }
+					mechanized = { x = 3 y = 0 }
+					mechanized = { x = 3 y = 1 }
+					mechanized = { x = 3 y = 2 }
+					mechanized = { x = 3 y = 3 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+	AI_Heavy_Armor_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tanks
+			has_army_experience > 0
+			OR = {
+				has_tech = basic_heavy_tank
+				has_tech = basic_heavy_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Heavy Armor 1936 A"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					heavy_armor = { x = 2 y = 0 }
+					heavy_armor = { x = 2 y = 1 }
+					heavy_armor = { x = 2 y = 2 }
+					heavy_armor = { x = 2 y = 3 }
+					heavy_armor = { x = 3 y = 0 }
+					heavy_armor = { x = 3 y = 1 }
+					heavy_armor = { x = 3 y = 2 }
+					heavy_armor = { x = 4 y = 0 }
+					heavy_armor = { x = 4 y = 1 }
+					heavy_armor = { x = 4 y = 2 }
+				}
+				support = {
+				}
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					heavy_tank_destroyer_support = { x = 2 y = 0 }
+					heavy_tank_destroyer_support = { x = 3 y = 0 }
+					heavy_tank_destroyer_support = { x = 4 y = 0 }
+				}
+			}
+		}
+	}
+
+	AI_Medium_Tank_Destroyer_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tank_destroyers
+			has_army_experience > 0
+			has_tech = interwar_antitank
+			OR = {
+				has_tech = basic_medium_tank
+				has_tech = basic_medium_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Medium Tank Destroyer 1936 A"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					medium_tank_destroyer_brigade = { x = 2 y = 0 }
+					medium_tank_destroyer_brigade = { x = 2 y = 1 }
+					medium_tank_destroyer_brigade = { x = 2 y = 2 }
+					medium_tank_destroyer_brigade = { x = 2 y = 3 }
+					medium_tank_destroyer_brigade = { x = 3 y = 0 }
+					medium_tank_destroyer_brigade = { x = 3 y = 1 }
+					medium_tank_destroyer_brigade = { x = 3 y = 2 }
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+					medium_tank_destroyer_brigade = { x = 4 y = 2 }
+				}
+				support = {
+				}
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					mot_fire_support = { x = 1 y = 1 }
+				}
+			}
+		}
+	}
+
+	AI_Heavy_Tank_Destroyer_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tank_destroyers
+			has_army_experience > 0
+			has_tech = interwar_antitank
+			OR = {
+				has_tech = basic_heavy_tank
+				has_tech = basic_heavy_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Heavy Tank Destroyer 1936 A"
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					heavy_tank_destroyer_brigade = { x = 2 y = 0 }
+					heavy_tank_destroyer_brigade = { x = 2 y = 1 }
+					heavy_tank_destroyer_brigade = { x = 2 y = 2 }
+					heavy_tank_destroyer_brigade = { x = 2 y = 3 }
+					heavy_tank_destroyer_brigade = { x = 3 y = 0 }
+					heavy_tank_destroyer_brigade = { x = 3 y = 1 }
+					heavy_tank_destroyer_brigade = { x = 3 y = 2 }
+					heavy_tank_destroyer_brigade = { x = 4 y = 0 }
+					heavy_tank_destroyer_brigade = { x = 4 y = 1 }
+					heavy_tank_destroyer_brigade = { x = 4 y = 2 }
+				}
+				support = {
+				}
+				regimental_support = {
+					mot_fire_support = { x = 0 y = 0 }
+					mot_fire_support = { x = 1 y = 0 }
+					mot_fire_support = { x = 1 y = 1 }
+				}
+			}
+		}
+	}
+
+	AI_Amtrac_Template_Basic = {
+		icon = GFX_decision_generic_motorized
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_amtrac_production = yes
+			has_army_experience > 0
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Amtrac 1940 A"
+				regiments = {
+					amphibious_mechanized = { x = 0 y = 0 }
+					amphibious_mechanized = { x = 0 y = 1 }
+					amphibious_mechanized = { x = 0 y = 2 }
+					amphibious_mechanized = { x = 1 y = 0 }
+					amphibious_mechanized = { x = 1 y = 1 }
+					amphibious_mechanized = { x = 1 y = 2 }
+					amphibious_mechanized = { x = 2 y = 0 }
+					amphibious_mechanized = { x = 2 y = 1 }
+					amphibious_mechanized = { x = 2 y = 2 }
+					amphibious_mechanized = { x = 3 y = 0 }
+					amphibious_mechanized = { x = 3 y = 1 }
+					amphibious_mechanized = { x = 3 y = 2 }
+				}
+				support = {
+				}
+			}
+		}
+	}
+
+}
+
+DAI_disband_starting_units_decisions = {
+
+	# ==================== #
+	# ====   EUROPE   ==== #
+	# ==================== #
+
+	ENG_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = ENG }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Cavalry Brigade"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Tank Brigade"
+					disband = yes
+				}
+				# Armored Cars
+				delete_units = {
+					division_template = "Armoured Car Company"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	FRA_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = FRA }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Division de Cavalerie"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Division d'Infanterie Motorisée"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Brigade de Chars de Combat"
+					disband = yes
+				}
+				# Mechanized
+				delete_units = {
+					division_template = "Division Légère Mécanique"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	GER_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = GER }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Kavallerie-Brigade"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Infanterie-Division (mot.)"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Panzer-Division"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	BUL_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = BUL }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Konna Divizija"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	GRE_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = GRE }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Merarchía Ippikoú"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	HUN_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = HUN }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Huszár Dandár"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	ITA_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = ITA }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Reggimento di Cavalleria"
+					disband = yes
+				}
+				# Fast Division
+				delete_units = {
+					division_template = "Divisione Celere"
+					disband = yes
+				}
+				# Irregular Cavalry
+				delete_units = {
+					division_template = "Truppe Irregolari a Cavallo"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	POL_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = POL }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Brygada Kawalerii"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	ROM_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = ROM }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Brigada de Cavalerie"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Regimentul de Blindate"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	SOV_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = SOV }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Kavaleriyskaya Diviziya"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Motostrelkovaya Diviziya"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Mekhanizirovaniy Korpus"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	USA_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = USA }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Cavalry Division"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	YUG_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = YUG }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Konjička Divizija"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Tenkovski Bataljon"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	AUS_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = AUS }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Schnelle Division"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	CZE_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = CZE }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Jezdecká brigáda"
+					disband = yes
+				}
+				# Fast Division
+				delete_units = {
+					division_template = "Rychlá divize"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	# ==================== #
+	# =====   ASIA   ===== #
+	# ==================== #
+
+	# CHI_disband_useless_starting_garrison_divisions = {
+	# 	icon = GFX_decision_generic_disband_irregulars
+	# 	allowed = {
+	# 		OR = {
+	# 			original_tag = CHI
+	# 		}
+	# 	}
+	# 	visible = { is_ai = yes }
+	# 	available = { date < 1936.1.10 }
+	# 	cost = 0
+	# 	fire_only_once = yes
+	# 	ai_will_do = { base = 999 }
+
+	# 	complete_effect = {
+	# 		hidden_effect = {
+	# 			# Garrison
+	# 			delete_units = {
+	# 				division_template = "Juntuán"
+	# 				disband = yes
+	# 			}
+	# 		}
+	# 	}
+	# }
+
+	CHI_disband_useless_starting_cavalry_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = CHI }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Qibing Jun"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	JAP_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = JAP }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# # Garrison
+				# delete_units = {
+				# 	division_template = "Chuton-chi Shidan"
+				# 	disband = yes
+				# }
+				# Cavalry
+				delete_units = {
+					division_template = "Kihei Shidan"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Jidousha Shidan"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Dokuritsu Konsei Ryodan"
+					disband = yes
+				}
+			}
+		}
+	}
+}
+
+DAI_equipment_variant_decisions = {
+
+	DAI_mechanized_cost_upgrade = {
+		icon = GFX_decision_generic_motorized
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			has_tech = mechanised_infantry
+			has_army_experience > 0
+		}
+		available = {
+			has_tech = mechanised_infantry
+			has_army_experience > 0
+			NOT = { has_country_flag = DAI_mechanized_cost_upgrade_done }
+		}
+		cost = 0
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -1
+				set_country_flag = DAI_mechanized_cost_upgrade_done
+				create_equipment_variant = {
+					name = "Mechanized Mk2"
+					type = mechanized_equipment_1
+					parent_version = 0
+					upgrades = {
+						mech_cost_upgrade = 5
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 999
+		}
+	}
+
+	DAI_amtrac_cost_upgrade = {
+		icon = GFX_decision_generic_motorized
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			DAI_wants_amtrac = yes
+			has_tech = amphibious_mechanized_infantry
+			has_army_experience > 0
+		}
+		available = {
+			DAI_wants_amtrac = yes
+			has_tech = amphibious_mechanized_infantry
+			has_army_experience > 0
+			NOT = { has_country_flag = DAI_amtrac_cost_upgrade_done }
+		}
+		cost = 0
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -1
+				set_country_flag = DAI_amtrac_cost_upgrade_done
+				create_equipment_variant = {
+					name = "Amtrac Mk2"
+					type = amphibious_mechanized_equipment_1
+					parent_version = 0
+					upgrades = {
+						mech_cost_upgrade = 5
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 999
+		}
+	}
+}
+
+DAI_attache_decisions = {
+
+	DAI_military_attache_to_world_war = {
+	
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		fire_only_once = yes
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			OR = {
+				tag = USA
+				AND = {
+					is_in_faction = yes
+					OR = {
+						is_in_faction_with = SOV
+						is_in_faction_with = GER
+						is_in_faction_with = ENG
+					}
+					has_war = yes
+				}
+			}
+		}
+
+		cost = 99
+
+		days_remove = 7
+
+		visible = {
+			is_ai = yes
+			is_faction_leader = no
+			OR = {
+				AND = {
+					NOT = { tag = GER }
+					is_in_faction_with = GER
+					GER = { is_faction_leader = yes }
+					GER = { 
+						any_enemy_country = { is_major = yes }
+						has_war = yes 
+						is_ai = yes
+					}
+				}
+				AND = {
+					NOT = { tag = ENG }
+					is_in_faction_with = ENG
+					ENG = { 
+						any_enemy_country = { is_major = yes }
+						has_war = yes  
+						is_ai = yes
+					}
+				}
+				AND = {
+					NOT = { tag = SOV }
+					is_in_faction_with = SOV
+					SOV = { 
+						any_enemy_country = { is_major = yes }
+						has_war = yes  
+						is_ai = yes
+					}
+				}
+				AND = {
+					tag = USA
+					has_government = democratic
+					has_war = no
+					ENG = { 
+						is_ai = yes 
+						has_war = yes
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			add_political_power = -1
+			if = {
+				limit = {
+					is_in_faction_with = GER
+					GER = { is_faction_leader = yes }
+				}
+				diplomatic_relation = {
+					country = GER
+					relation = send_attache
+					active = yes
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction_with = ENG
+					ENG = { is_faction_leader = yes }
+				}
+				diplomatic_relation = {
+					country = ENG
+					relation = send_attache
+					active = yes
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction_with = SOV
+					SOV = { is_faction_leader = yes }
+				}
+				diplomatic_relation = {
+					country = SOV
+					relation = send_attache
+					active = yes
+				}
+			}
+			if = {
+				limit = {
+					tag = USA
+					has_government = democratic
+					has_war = no
+					ENG = { has_war = yes }
+				}
+				diplomatic_relation = {
+					country = ENG
+					relation = send_attache
+					active = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 3000
+		}
+	}
+
+	DAI_military_attache_to_china = {
+	
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		fire_only_once = yes
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = yes
+		}
+
+		cost = 99
+
+		days_remove = 7
+
+		visible = {
+			is_historical_focus_on = yes
+			is_ai = yes
+			OR = {
+				original_tag = ENG
+				original_tag = FRA
+				original_tag = GRE
+				original_tag = HOL
+				original_tag = BEL
+				original_tag = YUG
+			}
+			country_exists = CHI
+			country_exists = JAP
+			CHI = {
+				NOT = { surrender_progress > 0.5 }
+				has_war_with = JAP
+			}
+		}
+
+		remove_effect = {
+			add_political_power = -1
+			diplomatic_relation = {
+				country = CHI
+				relation = send_attache
+				active = yes
+			}
+		}
+
+		ai_will_do = {
+			base = 3000
+		}
+	}
+
+	DAI_military_attache_to_japan = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		fire_only_once = yes
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = yes
+		}
+
+		cost = 99
+
+		days_remove = 7
+
+		visible = {
+			is_historical_focus_on = yes
+			is_ai = yes
+			OR = {
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+			}
+			country_exists = JAP
+			country_exists = CHI
+			CHI = {
+				NOT = { surrender_progress > 0.5 }
+				has_war_with = JAP
+			}
+		}
+
+		remove_effect = {
+			add_political_power = -1
+			diplomatic_relation = {
+				country = JAP
+				relation = send_attache
+				active = yes
+			}
+		}
+
+		ai_will_do = {
+			base = 3000
+		}
+	}
+
+	DAI_military_attache_to_spain_republicans = {
+	
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		fire_only_once = yes
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = yes
+		}
+
+		cost = 99
+
+		days_remove = 7
+
+		visible = {
+			is_historical_focus_on = yes
+			OR = {
+				tag = ENG
+				tag = SOV
+			}
+			is_ai = yes
+			any_country = {
+				original_tag = SPR
+				has_civil_war = yes
+			}
+		}
+
+		remove_effect = {
+			add_political_power = -1
+			every_other_country = {
+				limit = {
+					original_tag = SPR
+					has_civil_war = yes
+					OR = {
+						has_government = democratic
+						has_government = communism
+					}
+				}
+				ROOT = {
+					diplomatic_relation = {
+						country = PREV
+						relation = send_attache
+						active = yes
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 3000
+		}
+	}
+
+	DAI_military_attache_to_spain_nationalists = {
+	
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		fire_only_once = yes
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = yes
+		}
+
+		cost = 99
+
+		days_remove = 7
+
+		visible = {
+			is_historical_focus_on = yes
+			OR = {
+				tag = GER
+				tag = ITA
+			}
+			is_ai = yes
+			any_country = {
+				original_tag = SPR
+				has_civil_war = yes
+			}
+		}
+
+		remove_effect = {
+			add_political_power = -1
+			every_other_country = {
+				limit = {
+					original_tag = SPR
+					has_civil_war = yes
+					OR = {
+						AND = {
+							has_government = neutrality
+							fascism > 0.30
+						}
+						has_government = fascism
+					}
+				}
+				ROOT = {
+					diplomatic_relation = {
+						country = PREV
+						relation = send_attache
+						active = yes
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 3000
+		}
+	}
+
+}
+
+DAI_spawn_divisions_decisions = {
+
+	DAI_JAP_spawn_units = {
+		icon = rifles
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			has_manpower > 500000
+			has_equipment = { infantry_equipment > 1200 }
+			has_equipment = { artillery_equipment > 24 }
+		}
+		cost = 0
+
+		fire_only_once = no
+		days_re_enable = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			if = { limit = { NOT = { has_template = "Infantry 1936 A" } }
+				division_template = {
+					name = "Infantry 1936 A"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -900
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = -12
+				}
+				add_manpower = -9300
+			}
+		}
+
+		complete_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Infantry 1936 A\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+		}
+	}
+}

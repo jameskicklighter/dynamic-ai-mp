@@ -1,0 +1,174 @@
+
+
+
+INFANTRY_CHI = {
+	available_for = {
+		CHI
+		PRC
+		GXC
+		YUN
+		SHX
+		XSM
+		SIK
+		MEN
+		MAN
+		GDC
+		SND
+		SIC
+		NXM
+		GSM
+		XIC
+		KHM
+		KUM
+		HBC
+	}
+	role = infantry
+
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
+	INFANTRY_CHI_default = {
+		upgrade_prio = {
+			base = 10
+		}
+		target_template = {
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 6
+			}
+		}
+	}
+
+	INFANTRY_CHI_1A = {
+		upgrade_prio = {
+			base = 20
+		}
+		target_template = {
+			support = {
+				artillery = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+
+	INFANTRY_CHI_1B = {
+		upgrade_prio = {
+			base = 30
+		}
+		enable = {
+			has_doctrine = large_unit_tactics
+		}
+		target_template = {
+			support = {
+				artillery = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+	}
+
+	INFANTRY_CHI_2A = {
+		upgrade_prio = {
+			base = 40
+		}
+		enable = { num_of_military_factories > 20 date > 1939.1.1 }
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+
+	INFANTRY_CHI_2B = {
+		upgrade_prio = {
+			base = 50
+		}
+		enable = {
+			num_of_military_factories > 20
+			date > 1939.1.1
+			has_doctrine = large_unit_tactics
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+	}
+
+	INFANTRY_CHI_3 = {
+		upgrade_prio = {
+			base = 60
+		}
+		enable = {
+			num_of_military_factories > 30
+			has_doctrine = large_unit_tactics
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+	}
+
+	INFANTRY_CHI_4 = {
+		upgrade_prio = {
+			base = 70
+		}
+		enable = {
+			num_of_military_factories > 40
+			has_doctrine = large_unit_tactics
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 11
+			}
+		}
+	}
+}

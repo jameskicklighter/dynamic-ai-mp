@@ -1,0 +1,727 @@
+# DAI Scripted Triggers
+
+DAI_should_pre_research_industry = {
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+	}
+}
+
+DAI_pre_research_guns = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = ROM
+		original_tag = SAF
+	}
+}
+
+DAI_pre_research_small_airframe = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = CAN
+		original_tag = ROM
+	}
+}
+
+DAI_pre_research_small_airframe_endpoint_ready = {
+	DAI_pre_research_small_airframe = yes
+	OR = {
+		AND = {
+			original_tag = ROM
+			has_completed_focus = ROM_iar_80
+		}
+		has_tech_bonus = { category = light_air }
+		has_tech_bonus = { category = air_equipment }
+		has_tech_bonus = { category = light_fighter }
+		has_tech_bonus = { category = cas_bomber }
+		has_tech_bonus = { category = naval_air }
+		has_tech_bonus = { category = naval_bomber }
+	}
+}
+
+DAI_pre_research_small_airframe_pending = {
+	DAI_pre_research_small_airframe = yes
+	has_dlc = "By Blood Alone"
+	date > 1936.7.1
+	NOT = {
+		OR = {
+			DAI_pre_research_small_airframe_endpoint_ready = yes
+			has_tech = improved_small_airframe
+			is_researching_technology = improved_small_airframe
+		}
+	}
+}
+
+DAI_pre_research_mech = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = BUL
+		original_tag = CAN
+	}
+}
+
+DAI_pre_research_plane_engine = {
+	is_ai = yes
+	is_historical_focus_on = yes
+	OR = {
+		original_tag = ITA
+		original_tag = MEX
+	}
+}
+
+DAI_pre_research_plane_engine_endpoint_ready = {
+	DAI_pre_research_plane_engine = yes
+	OR = {
+		AND = {
+			original_tag = ITA
+			has_completed_focus = ITA_reggianes_exports
+		}
+		AND = {
+			original_tag = MEX
+			has_completed_focus = MEX_focus_aviation_workshops
+		}
+	}
+}
+
+DAI_build_order_should_take_partial_mob = {
+	date < 1939.1.1
+	has_war_support > 0.25
+	NOT = { has_idea = partial_economic_mobilisation }
+	NOT = { has_idea = war_economy }
+	NOT = { has_idea = tot_economic_mobilisation }
+	NOT = { has_idea = totaler_krieg_economy }
+	NOT = { has_idea = national_defense_state }
+	NOT = {
+		AND = {
+			has_war_support > 0.5
+			OR = {
+				has_government = fascism
+				has_government = communism
+				AND = {
+					has_war = yes
+					any_enemy_country = {
+						ic_ratio = {
+							tag = ROOT
+							ratio > 0.4
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+DAI_is_default_air_country = {
+	OR = {
+		# Always Produce Planes
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+	}
+}
+
+DAI_air_factory_threshold_met = {
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			num_of_military_factories > 75
+		}
+		AND = {
+			NOT = { is_historical_focus_on = yes }
+			num_of_military_factories > 30
+		}
+	}
+}
+
+DAI_can_activate_air_flag = {
+	NOT = {
+		AND = {
+			original_tag = FRA
+			is_historical_focus_on = yes
+			date < 1942.1.1
+			has_capitulated = no
+			NOT = { has_global_flag = FRA_already_surrendered }
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = SOV
+			NOT = { has_completed_focus = SOV_foster_flying_clubs }
+		}
+	}
+}
+
+DAI_should_build_planes = {
+	has_country_flag = DAI_wants_air
+}
+
+DAI_wants_mech = {
+	has_country_flag = DAI_wants_mech
+}
+
+DAI_wants_marines = {
+	OR = {
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SIA
+		original_tag = USA
+	}
+}
+
+DAI_wants_amtrac = {
+	OR = {
+		original_tag = ENG
+		original_tag = USA
+		DAI_wants_marines = yes
+	}
+}
+
+DAI_can_use_mechanized = {
+	OR = {
+		has_tech = mechanised_infantry
+		AND = {
+			has_tech = DAI_enable_mech
+			has_country_flag = DAI_mech_licensed
+		}
+	}
+}
+
+DAI_can_use_amtrac = {
+	OR = {
+		has_tech = amphibious_mechanized_infantry
+		AND = {
+			has_tech = DAI_enable_amtrac
+			OR = {
+				has_country_flag = DAI_amtrac_licensed_1
+				has_country_flag = DAI_amtrac_licensed_2
+			}
+		}
+	}
+}
+
+DAI_should_use_mechanized = {
+	DAI_wants_mech = yes
+}
+
+DAI_should_use_amtrac = {
+	OR = {
+		DAI_wants_amtrac = yes
+		has_country_flag = DAI_amtrac_licensed_1
+		has_country_flag = DAI_amtrac_licensed_2
+	}
+}
+
+DAI_should_start_mech_production = {
+	DAI_can_use_mechanized = yes
+	DAI_should_use_mechanized = yes
+}
+
+DAI_should_start_mechanized_production = {
+	DAI_should_start_mech_production = yes
+}
+
+DAI_should_start_amtrac_production = {
+	DAI_can_use_amtrac = yes
+	DAI_should_use_amtrac = yes
+}
+
+DAI_should_start_mountaineer_production = {
+	DAI_wants_mountaineers = yes
+	has_tech = tech_mountaineers
+	date > 1938.1.1
+}
+
+DAI_should_start_marine_production = {
+	DAI_wants_marines = yes
+	has_tech = marines
+}
+
+DAI_should_start_ranger_production = {
+	DAI_wants_rangers = yes
+	has_tech = rangers_tech
+	date > 1937.1.1
+}
+
+DAI_wants_mountaineers = {
+	OR = {
+		# original_tag = BUL
+		original_tag = GER
+		original_tag = GRE
+		original_tag = HUN
+		# original_tag = ITA
+		# original_tag = JAP
+		original_tag = ROM
+		original_tag = SOV
+		original_tag = USA
+		original_tag = YUG
+	}
+}
+
+DAI_wants_rangers = {
+	OR = {
+		original_tag = GER
+		original_tag = SOV
+		original_tag = USA
+	}
+}
+
+DAI_is_default_armor_country = {
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		# original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+		original_tag = CAN
+		# original_tag = YUG
+		original_tag = HUN
+		# original_tag = BUL
+		# original_tag = ROM
+		original_tag = CZE
+	}
+}
+
+DAI_prefers_medium_armor = {
+	OR = {
+		has_country_flag = DAI_prefer_medium_tanks
+		has_country_flag = DAI_prefer_medium_tank_destroyers
+	}
+}
+
+DAI_prefers_light_armor = {
+	has_country_flag = DAI_prefer_light_tanks
+}
+
+DAI_prefers_heavy_armor = {
+	OR = {
+		has_country_flag = DAI_prefer_heavy_tanks
+		has_country_flag = DAI_prefer_heavy_tank_destroyers
+	}
+}
+
+DAI_prefers_tank_destroyers = {
+	OR = {
+		has_country_flag = DAI_prefer_medium_tank_destroyers
+		has_country_flag = DAI_prefer_heavy_tank_destroyers
+	}
+}
+
+DAI_has_basic_medium_tank_chassis = {
+	OR = {
+		has_tech = basic_medium_tank
+		has_tech = basic_medium_tank_chassis
+	}
+}
+
+DAI_has_basic_light_tank_chassis = {
+	OR = {
+		has_tech = basic_light_tank
+		has_tech = basic_light_tank_chassis
+	}
+}
+
+DAI_has_basic_heavy_tank_chassis = {
+	OR = {
+		has_tech = basic_heavy_tank
+		has_tech = basic_heavy_tank_chassis
+	}
+}
+
+DAI_has_or_researching_basic_light_tank_chassis = {
+	OR = {
+		DAI_has_basic_light_tank_chassis = yes
+		is_researching_technology = basic_light_tank
+		is_researching_technology = basic_light_tank_chassis
+	}
+}
+
+DAI_has_or_researching_basic_medium_tank_chassis = {
+	OR = {
+		DAI_has_basic_medium_tank_chassis = yes
+		is_researching_technology = basic_medium_tank
+		is_researching_technology = basic_medium_tank_chassis
+	}
+}
+
+DAI_has_or_researching_basic_heavy_tank_chassis = {
+	OR = {
+		DAI_has_basic_heavy_tank_chassis = yes
+		is_researching_technology = basic_heavy_tank
+		is_researching_technology = basic_heavy_tank_chassis
+	}
+}
+
+DAI_has_or_researching_improved_medium_tank_chassis = {
+	OR = {
+		has_tech = improved_medium_tank
+		has_tech = improved_medium_tank_chassis
+		is_researching_technology = improved_medium_tank
+		is_researching_technology = improved_medium_tank_chassis
+	}
+}
+
+DAI_has_or_researching_improved_light_tank_chassis = {
+	OR = {
+		has_tech = improved_light_tank
+		has_tech = improved_light_tank_chassis
+		is_researching_technology = improved_light_tank
+		is_researching_technology = improved_light_tank_chassis
+	}
+}
+
+DAI_has_or_researching_improved_heavy_tank_chassis = {
+	OR = {
+		has_tech = improved_heavy_tank
+		has_tech = improved_heavy_tank_chassis
+		is_researching_technology = improved_heavy_tank
+		is_researching_technology = improved_heavy_tank_chassis
+	}
+}
+
+DAI_has_or_researching_advanced_medium_tank_chassis = {
+	OR = {
+		has_tech = advanced_medium_tank
+		has_tech = advanced_medium_tank_chassis
+		is_researching_technology = advanced_medium_tank
+		is_researching_technology = advanced_medium_tank_chassis
+	}
+}
+
+DAI_has_or_researching_advanced_light_tank_chassis = {
+	OR = {
+		has_tech = advanced_light_tank
+		has_tech = advanced_light_tank_chassis
+		is_researching_technology = advanced_light_tank
+		is_researching_technology = advanced_light_tank_chassis
+	}
+}
+
+DAI_has_or_researching_advanced_heavy_tank_chassis = {
+	OR = {
+		has_tech = advanced_heavy_tank
+		has_tech = advanced_heavy_tank_chassis
+		is_researching_technology = advanced_heavy_tank
+		is_researching_technology = advanced_heavy_tank_chassis
+	}
+}
+
+DAI_has_preferred_basic_tank_chassis = {
+	OR = {
+		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_basic_light_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_medium_armor = yes
+			DAI_has_basic_medium_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_heavy_armor = yes
+			DAI_has_basic_heavy_tank_chassis = yes
+		}
+	}
+}
+
+DAI_has_or_researching_preferred_basic_tank_chassis = {
+	OR = {
+		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_or_researching_basic_light_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_medium_armor = yes
+			DAI_has_or_researching_basic_medium_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_heavy_armor = yes
+			DAI_has_or_researching_basic_heavy_tank_chassis = yes
+		}
+	}
+}
+
+DAI_has_or_researching_preferred_improved_tank_chassis = {
+	OR = {
+		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_or_researching_improved_light_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_medium_armor = yes
+			DAI_has_or_researching_improved_medium_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_heavy_armor = yes
+			DAI_has_or_researching_improved_heavy_tank_chassis = yes
+		}
+	}
+}
+
+DAI_has_or_researching_preferred_advanced_tank_chassis = {
+	OR = {
+		AND = {
+			DAI_prefers_light_armor = yes
+			DAI_has_or_researching_advanced_light_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_medium_armor = yes
+			DAI_has_or_researching_advanced_medium_tank_chassis = yes
+		}
+		AND = {
+			DAI_prefers_heavy_armor = yes
+			DAI_has_or_researching_advanced_heavy_tank_chassis = yes
+		}
+	}
+}
+
+DAI_should_start_tank_production = {
+	has_country_flag = DAI_wants_armor
+	date > 1937.1.1
+	DAI_has_preferred_basic_tank_chassis = yes
+}
+
+# For potential raids.
+DAI_should_build_paratroopers = {
+	always = no
+	# OR = {
+	# 	AND = {
+	# 		date > 1938.1.1
+	# 		OR = {
+	# 			tag = ENG
+	# 			tag = GER
+	# 		}
+	# 	}
+	# 	AND = {
+	# 		date > 1940.1.1
+	# 		is_major = yes
+	# 	}
+	# }
+}
+
+##############################################################################
+### 		NAVAL
+##############################################################################
+
+# Used to prioritize researching technologies that affect all ships
+# such as retreat speed, reduced critical hit, and invasion capacity.
+# Also used to make sure we have decent hulls and weapons.
+DAI_Should_Research_Navy_GENERAL = {
+	# We need to prepare for Barbarossa, regardless of our dockyards.
+	# Furthermore we need to focus on subs.
+	IF = {
+		limit = {
+			original_tag = GER
+			has_government = fascism
+		}
+		OR = {
+			date > 1944.1.1
+			AND = {
+				date > 1942.1.1
+				SOV = {
+					OR = {
+						is_in_faction_with = ROOT
+						is_puppet_of = ROOT
+						has_capitulated = yes
+						exists = no
+					}
+				}
+			}
+		}
+	}
+	# else_if = {
+	# 	limit = {
+	# 		original_tag = SOV
+	# 	}
+	# 	AND = {
+	# 		date > 1942.1.1
+	# 		surrender_progress < 0.1
+	# 	}
+	# }
+	ELSE = {
+		OR = {
+			# We have sufficient Naval Industry to prioritize upgrades.
+			# We have at least 75% of an enemy's naval strength, and
+			# we have at least a modest navy to upgrade.
+			AND = {
+				has_war = yes
+				surrender_progress < 0.1
+				amount_research_slots > 3
+				enemies_naval_strength_ratio < 1.33
+				num_of_naval_factories > 20
+				has_navy_size = {
+					size > 30
+				}
+			}
+			# We always need vital ship upgrades to put up a fight.
+			original_tag = ENG
+			original_tag = ITA
+			original_tag = JAP
+			original_tag = USA
+		}
+	}
+}
+
+DAI_Should_Research_Navy_ANTI_SUB = {
+	num_of_naval_factories > 4
+	OR = {
+		convoy_threat > 0.5
+		# We always need better anti-sub.
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_CRUISER = {
+	OR = {
+		# We always need better cruisers.
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_CARRIER = {
+	OR = {
+		# We always need better carriers.
+		original_tag = ENG
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_SUBMARINE = {
+	OR = {
+		# We always need better subs.
+		original_tag = GER
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+##############################################################################
+### 		MISCELLANEOUS
+##############################################################################
+
+DAI_ITA_only_has_fake_war_with_ETH = {
+	if = { limit = { original_tag = ITA }
+		has_war = no
+		NOT = {
+			any_other_country = {
+				NOT = { original_tag = ETH }
+				has_war_with = ROOT
+			}
+		}
+	}
+}
+
+##############################################################################
+### 		IDEAS
+##############################################################################
+
+DAI_should_upgrade_manpower_law = {
+
+	# Finland needs service by requirement even if we are mobilizing.
+	if = {
+		limit = {
+			NOT = {
+				original_tag = FIN
+				OR = {
+					has_idea = volunteer_only
+					has_idea = limited_conscription
+					has_idea = extensive_conscription
+				}
+			}
+		}
+		# We are not currently mobilizing from a previous upgrade or modifier.
+		NOT = { conscription_ratio < 1.0 }
+	}
+
+	set_temp_variable = { manpower_in_reserve_ratio = manpower_k }
+	if = { limit = { check_variable = { deployed_army_manpower_k > 0 } }
+		divide_temp_variable = { manpower_in_reserve_ratio = deployed_army_manpower_k }
+	}
+	else = {
+		set_temp_variable = { manpower_in_reserve_ratio = 1 }
+	}
+
+	# We want to have 40% of our army's size in reserve, otherwise we need to upgrade
+	# our manpower law. We also need at least 100k in reserve.
+	OR = {
+		has_war = yes
+		date > 1937.1.1
+	}
+	OR = {
+		has_manpower < 100000
+		check_variable = { manpower_in_reserve_ratio < 0.4 }
+	}
+
+}
+
+##############################################################################
+### 		COUNTRY SPECIFIC
+##############################################################################
+
+
+# ========== JAP ==========
+
+DAI_JAP_okay_to_invade_CHI = {
+
+	has_war_with = CHI
+
+	NOT = {
+		OR = {
+			has_idea = JAP_intervene_in_china_1
+			has_idea = JAP_intervene_in_china_2
+			has_idea = JAP_intervene_in_china_3
+			has_idea = JAP_intervene_in_china_4
+			has_idea = JAP_intervene_in_china_5
+		}
+	}
+
+	strength_ratio = { tag = CHI ratio > 0.9 }
+	has_army_manpower = { size > 600000 }
+
+	# We don't already have a foothold on the mainland.
+	NOT = {
+		count_triggers = {
+			amount = 2
+			controls_state = 595
+			controls_state = 596
+			controls_state = 597
+			controls_state = 613
+			controls_state = 743
+		}
+	}
+
+}
+
+DAI_JAP_okay_to_invade_GXC = {
+
+	has_war_with = GXC
+
+	IF = { limit = { GXC = { is_in_faction_with = CHI } }
+		date > 1940.1.1
+		DAI_JAP_okay_to_invade_CHI = yes
+	}
+	ELSE = {
+		always = yes
+	}
+
+}

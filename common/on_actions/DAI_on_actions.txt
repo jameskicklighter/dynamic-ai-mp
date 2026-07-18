@@ -1,0 +1,68 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			random_country = {
+				DAI_initialize_constants = yes
+			}
+			every_country = {
+				limit = {
+					OR = {
+						capital_scope = { is_on_continent = europe }
+						original_tag = FRA
+					}
+				}
+				set_country_flag = DAI_original_capital_in_europe
+			}
+			GER = {
+				set_country_flag = DAI_original_europe_bootstrap_complete
+			}
+		}
+	}
+
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							original_tag = GER
+							is_ally_with = GER
+						}
+					}
+					ROOT = {
+						OR = {
+							has_country_flag = DAI_original_capital_in_europe
+							capital_scope = { is_on_continent = europe }
+							original_tag = FRA
+							original_tag = TUR
+						}
+					}
+				}
+				ROOT = {
+					set_country_flag = DAI_german_gold_registration_pending
+				}
+			}
+		}
+	}
+
+	on_daily_GER = {
+		effect = {
+			DAI_reconcile_german_gold_targets = yes
+			DAI_log_german_france_economy_transitions = yes
+		}
+	}
+
+	on_daily = {
+		effect = {
+			DAI_daily_update = yes
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			DAI_monthly_update = yes
+		}
+	}
+
+}

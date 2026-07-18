@@ -1,0 +1,33 @@
+
+
+infantry_ENG = {
+	available_for = { ENG }
+	role = infantry
+
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
+	INFANTRY_ENG_1 = {
+		upgrade_prio = {
+			base = 10
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+}

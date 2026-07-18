@@ -1,0 +1,98 @@
+# ==================== #
+# ====  Military  ==== #
+# ==================== #
+
+DAI_division_template_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
+DAI_disband_starting_units_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
+DAI_equipment_variant_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
+DAI_production_license_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		NOT = { has_global_flag = DAI_disable_ai_production_licensing }
+	}
+}
+
+DAI_production_license_notification_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		is_ai = yes
+		NOT = { has_global_flag = DAI_disable_ai_production_licensing }
+	}
+}
+
+DAI_attache_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
+DAI_spawn_divisions_decisions = {
+	priority = 0
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+}
+
+# DAI_hire_advisor_decisions = {
+# 	priority = 0
+# 	allowed = {
+# 		always = yes
+# 	}
+# 	visible = {
+# 		always = yes
+# 	}
+# }
+
+# ==================== #
+# ======  Laws  ====== #
+# ==================== #
+
+# DAI_economy_law_decisions = {
+# 	priority = 0
+# 	allowed = {
+# 		always = yes
+# 	}
+# 	visible = {
+# 		always = yes
+# 	}
+# }

@@ -1,0 +1,245 @@
+DAI_is_historical_axis_license_bloc_member = {
+	OR = {
+		original_tag = GER
+		original_tag = ITA
+		original_tag = HUN
+		original_tag = ROM
+		original_tag = BUL
+		AND = {
+			is_subject = yes
+			overlord = {
+				OR = {
+					original_tag = GER
+					original_tag = ITA
+					original_tag = HUN
+					original_tag = ROM
+					original_tag = BUL
+				}
+			}
+		}
+	}
+}
+
+DAI_is_historical_allied_license_bloc_member = {
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = MEX
+		original_tag = USA
+		AND = {
+			is_subject = yes
+			overlord = {
+				OR = {
+					original_tag = ENG
+					original_tag = FRA
+					original_tag = MEX
+					original_tag = USA
+				}
+			}
+		}
+	}
+}
+
+DAI_is_historical_license_partner_of_root = {
+	is_historical_focus_on = yes
+	NOT = { has_war_with = ROOT }
+	OR = {
+		AND = {
+			DAI_is_historical_axis_license_bloc_member = yes
+			ROOT = { DAI_is_historical_axis_license_bloc_member = yes }
+		}
+		AND = {
+			DAI_is_historical_allied_license_bloc_member = yes
+			ROOT = { DAI_is_historical_allied_license_bloc_member = yes }
+		}
+	}
+}
+
+DAI_is_historical_license_partner_of_prev = {
+	is_historical_focus_on = yes
+	NOT = { has_war_with = PREV }
+	OR = {
+		AND = {
+			DAI_is_historical_axis_license_bloc_member = yes
+			PREV = { DAI_is_historical_axis_license_bloc_member = yes }
+		}
+		AND = {
+			DAI_is_historical_allied_license_bloc_member = yes
+			PREV = { DAI_is_historical_allied_license_bloc_member = yes }
+		}
+	}
+}
+
+DAI_is_license_partner_of_root = {
+	OR = {
+		is_in_faction_with = ROOT
+		ROOT = { is_subject_of = PREV }
+		is_subject_of = ROOT
+		DAI_is_historical_license_partner_of_root = yes
+	}
+}
+
+DAI_is_human_license_partner_of_root = {
+	is_ai = no
+	DAI_is_license_partner_of_root = yes
+}
+
+DAI_is_ai_license_partner_of_root = {
+	is_ai = yes
+	DAI_is_license_partner_of_root = yes
+}
+
+DAI_has_ai_license_partner = {
+	any_other_country = {
+		DAI_is_ai_license_partner_of_root = yes
+	}
+}
+
+DAI_can_offer_air_license = {
+	always = yes
+}
+
+DAI_can_share_basic_small_airframe_license = {
+	DAI_can_offer_air_license = yes
+	OR = {
+		has_tech = basic_small_airframe
+		has_country_flag = DAI_basic_small_airframe_licensed
+	}
+}
+
+DAI_can_share_improved_small_airframe_license = {
+	DAI_can_offer_air_license = yes
+	OR = {
+		has_tech = improved_small_airframe
+		has_country_flag = DAI_improved_small_airframe_licensed
+	}
+}
+
+DAI_can_share_advanced_small_airframe_license = {
+	DAI_can_offer_air_license = yes
+	OR = {
+		has_tech = advanced_small_airframe
+		has_country_flag = DAI_advanced_small_airframe_licensed
+	}
+}
+
+
+
+DAI_is_air_license_provider_for_prev = {
+	DAI_can_offer_air_license = yes
+	OR = {
+		is_in_faction_with = PREV
+		is_subject_of = PREV
+		PREV = { is_subject_of = PREV }
+		DAI_is_historical_license_partner_of_prev = yes
+	}
+}
+
+
+DAI_has_license_notification_opportunity_from_root = {
+	OR = {
+		AND = {
+			ROOT = {
+				has_tech = mechanised_infantry
+				has_country_flag = DAI_mechanized_cost_upgrade_done
+			}
+			NOT = { has_tech = mechanised_infantry }
+			NOT = { has_country_flag = DAI_notified_mech_license_available }
+		}
+		AND = {
+			ROOT = {
+				has_tech = amphibious_mechanized_infantry
+				has_country_flag = DAI_amtrac_cost_upgrade_done
+			}
+			NOT = { has_tech = amphibious_mechanized_infantry }
+			NOT = { has_country_flag = DAI_notified_amtrac_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = amphibious_mechanized_infantry_2 }
+			NOT = { has_tech = amphibious_mechanized_infantry_2 }
+			NOT = { has_country_flag = DAI_notified_amtrac2_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = infantry_weapons1 }
+			NOT = { has_tech = infantry_weapons1 }
+			NOT = { has_country_flag = DAI_notified_gun1_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = improved_infantry_weapons }
+			NOT = { has_tech = improved_infantry_weapons }
+			NOT = { has_country_flag = DAI_notified_gun2_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = advanced_infantry_weapons }
+			NOT = { has_tech = advanced_infantry_weapons }
+			NOT = { has_country_flag = DAI_notified_gun3_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = gw_artillery }
+			NOT = { has_tech = gw_artillery }
+			NOT = { has_country_flag = DAI_notified_artillery1_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = artillery1 }
+			NOT = { has_tech = artillery1 }
+			NOT = { has_country_flag = DAI_notified_artillery2_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = artillery4 }
+			NOT = { has_tech = artillery4 }
+			NOT = { has_country_flag = DAI_notified_artillery3_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = interwar_antiair }
+			NOT = { has_tech = interwar_antiair }
+			NOT = { has_country_flag = DAI_notified_aa1_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = antiair2 }
+			NOT = { has_tech = antiair2 }
+			NOT = { has_country_flag = DAI_notified_aa2_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = antiair5 }
+			NOT = { has_tech = antiair5 }
+			NOT = { has_country_flag = DAI_notified_aa3_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = interwar_antitank }
+			NOT = { has_tech = interwar_antitank }
+			NOT = { has_country_flag = DAI_notified_at1_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = antitank2 }
+			NOT = { has_tech = antitank2 }
+			NOT = { has_country_flag = DAI_notified_at2_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = antitank5 }
+			NOT = { has_tech = antitank5 }
+			NOT = { has_country_flag = DAI_notified_at3_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = basic_small_airframe }
+			NOT = { has_tech = basic_small_airframe }
+			NOT = { has_country_flag = DAI_notified_basic_small_airframe_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = improved_small_airframe }
+			NOT = { has_tech = improved_small_airframe }
+			NOT = { has_country_flag = DAI_notified_improved_small_airframe_license_available }
+		}
+		AND = {
+			ROOT = { has_tech = advanced_small_airframe }
+			NOT = { has_tech = advanced_small_airframe }
+			NOT = { has_country_flag = DAI_notified_advanced_small_airframe_license_available }
+		}
+	}
+}
+
+DAI_has_human_license_notification_opportunity = {
+	any_other_country = {
+		DAI_is_human_license_partner_of_root = yes
+		DAI_has_license_notification_opportunity_from_root = yes
+	}
+}

@@ -1,0 +1,55 @@
+
+
+
+INFANTRY_GER = {
+	available_for = { GER }
+	role = infantry
+
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
+	INFANTRY_GER_1 = {
+		upgrade_prio = {
+			base = 10
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+
+	INFANTRY_GER_2 = {
+		upgrade_prio = {
+			base = 20
+		}
+		enable = { date > 1940.1.1 }
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				field_hospital = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+}

@@ -1,0 +1,158 @@
+
+
+INFANTRY_ITA = {
+	available_for = { ITA }
+	role = infantry
+
+	upgrade_prio = {
+		base = 10
+		modifier = {
+			add = 989
+			date < 1939.1.1
+		}
+	}
+
+	INFANTRY_ITA_1 = {
+		upgrade_prio = {
+			base = 10
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				recon = 1
+			}
+			regimental_support = {
+				fire_support = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+}
+
+
+
+
+	
+	
+	
+
+	
+
+		
+
+		
+		
+			
+			
+		
+		
+
+	
+
+		
+		
+
+			
+			
+		
+			
+
+
+
+
+
+		
+
+	
+
+		
+
+		
+
+			
+			
+
+
+
+
+
+
+		
+
+	
+
+			
+		
+		
+		
+
+			
+			
+
+		
+
+	
+
+			
+		
+		
+		
+
+			
+			
+
+		
+
+
+
+		
+		
+
+			
+			
+		
+
+
+
+
+
+militia_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	role = militias
+	
+	upgrade_prio = {
+		base = 10
+	}
+	
+
+	militia_default_ITA = {
+		upgrade_prio = {
+			base = 10
+		}
+	
+		enable = {
+			NOT = { has_completed_focus = ITA_disband_the_blackshirts }
+		}
+		
+		
+
+		target_template = {
+			
+			support = {
+				engineer = 1
+			}
+			
+			regiments = {
+				militia = 12
+			}
+		}
+	}
+}

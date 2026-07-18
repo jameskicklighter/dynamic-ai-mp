@@ -1,0 +1,131 @@
+# German monarchist plan (without Götterdämerrung)
+German_alternate_kaiser_no_ww = {
+	name = "German Alternate plan to restore the Kaiser"
+	desc = "Wir wollen unsren Kaiser Wilhelm wiederhaben!"
+
+	allowed = {
+		original_tag = GER
+		NOT = {
+			has_dlc = "Gotterdammerung"
+		}
+	}
+	enable = {
+		OR = {
+			has_country_flag = GER_AI_RANDOM_KAISER
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = KAISER
+			}
+			AND = {
+				has_game_rule = { 
+					rule = GER_ai_behavior
+					option = DEFAULT
+				}
+				has_completed_focus = GER_oppose_hitler #historical mode off, Germany picked oppose Hitler
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		GER_oppose_hitler
+		GER_secure_the_new_state
+		GER_revive_the_kaiserreich
+		GER_rebuild_the_nation
+		GER_fan_the_prussian_militarism
+		GER_return_of_the_kaiser
+	}
+
+	research = {
+	}
+
+	ideas = {
+		hjalmar_schacht = 10
+		heinrich_himmler = 0
+		martin_bormann = 0
+		goering = 0
+	}
+
+	traits = {
+		captain_of_industry = 5
+		GER_reich_marshal = 0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+# German democratic plan (without Götterdämerrung)
+German_alternate_democratic_no_ww = {
+	name = "German Alternate plan to restore democracy"
+	desc = "UNITY! JUSTICE! FREEDOM!"
+
+	allowed = {
+		original_tag = GER
+		NOT = {
+			has_dlc = "Gotterdammerung"
+		}
+	}
+	enable = {
+		OR = {
+			has_country_flag = GER_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = DEMOCRATIC
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		GER_oppose_hitler
+		GER_secure_the_new_state
+		GER_reestablish_free_elections
+		GER_rebuild_the_nation
+		GER_fan_the_prussian_militarism
+	}
+
+	research = {
+	}
+
+	ideas = {
+		hjalmar_schacht = 10
+		heinrich_himmler = 0
+		martin_bormann = 0
+		goering = 0
+	}
+
+	traits = {
+		captain_of_industry = 5
+		GER_reich_marshal = 0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}

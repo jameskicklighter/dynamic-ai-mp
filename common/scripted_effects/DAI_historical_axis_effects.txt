@@ -1,0 +1,91 @@
+DAI_update_historical_axis_debug = {
+	if = {
+		limit = {
+			DAI_historical_axis_expeditionaries_to_GER_enable = yes
+			NOT = { has_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled diplo_action_desire target=send_expeditionary_force id=GER value=10000"
+		set_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged
+			NOT = { DAI_historical_axis_expeditionaries_to_GER_enable = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled diplo_action_desire target=send_expeditionary_force id=GER"
+		clr_country_flag = DAI_historical_axis_expeditionaries_to_GER_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_allies_should_guard_AI_GER_front = yes
+			NOT = { has_country_flag = DAI_historical_axis_guard_AI_GER_front_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled force_defend_ally_borders id=GER for AI Germany Axis-SOV front"
+		set_country_flag = DAI_historical_axis_guard_AI_GER_front_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_guard_AI_GER_front_logged
+			NOT = { DAI_historical_axis_allies_should_guard_AI_GER_front = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled force_defend_ally_borders id=GER for AI Germany Axis-SOV front"
+		clr_country_flag = DAI_historical_axis_guard_AI_GER_front_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_GER_should_not_guard_HUN_ROM_front = yes
+			NOT = { has_country_flag = DAI_historical_axis_GER_dont_guard_HUN_ROM_front_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled dont_defend_ally_borders id=HUN/ROM because HUN or ROM is human"
+		set_country_flag = DAI_historical_axis_GER_dont_guard_HUN_ROM_front_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_GER_dont_guard_HUN_ROM_front_logged
+			NOT = { DAI_historical_axis_GER_should_not_guard_HUN_ROM_front = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled dont_defend_ally_borders id=HUN/ROM for human HUN/ROM front"
+		clr_country_flag = DAI_historical_axis_GER_dont_guard_HUN_ROM_front_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_axis_should_guard_HUN_front = yes
+			NOT = { has_country_flag = DAI_historical_axis_guard_HUN_front_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled force_defend_ally_borders id=HUN for historical Axis-SOV front"
+		set_country_flag = DAI_historical_axis_guard_HUN_front_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_guard_HUN_front_logged
+			NOT = { DAI_historical_axis_axis_should_guard_HUN_front = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled force_defend_ally_borders id=HUN for historical Axis-SOV front"
+		clr_country_flag = DAI_historical_axis_guard_HUN_front_logged
+	}
+
+	if = {
+		limit = {
+			DAI_historical_axis_allies_should_guard_ROM_front = yes
+			NOT = { has_country_flag = DAI_historical_axis_guard_ROM_front_logged }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] enabled force_defend_ally_borders id=ROM for historical Axis-SOV front"
+		set_country_flag = DAI_historical_axis_guard_ROM_front_logged
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_historical_axis_guard_ROM_front_logged
+			NOT = { DAI_historical_axis_allies_should_guard_ROM_front = yes }
+		}
+		log = "[GetYear] [GetMonth] | DAI_HIST_AXIS | [ROOT.GetName] disabled force_defend_ally_borders id=ROM for historical Axis-SOV front"
+		clr_country_flag = DAI_historical_axis_guard_ROM_front_logged
+	}
+}

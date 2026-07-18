@@ -1,0 +1,134 @@
+
+DAI_daily_update = {
+
+	if = { limit = { is_ai = yes }
+
+		# If we are a dynamic tag, we going with the flow instead.
+		# So just use the normal tag.
+		if = { limit = { tag = ENG } DAI_set_build_order_ENG = yes }
+		if = { limit = { tag = GER } DAI_set_build_order_GER = yes }
+		if = { limit = { tag = FRA } DAI_set_build_order_FRA = yes }
+		if = { limit = { tag = ROM } DAI_set_build_order_ROM = yes }
+		if = { limit = { tag = ITA } DAI_set_build_order_ITA = yes }
+
+	}
+}
+
+DAI_monthly_update = {
+
+	if = { limit = { is_ai = yes }
+
+		# Strategy flags
+		DAI_update_allied_d_day_flags = yes
+
+		# Laws
+		DAI_set_desired_trade_law = yes
+
+		# Military
+		DAI_set_wants_air_flag = yes
+		DAI_set_wants_armor_flag = yes
+		DAI_set_wants_mech_flag = yes
+		DAI_update_historical_axis_debug = yes
+		DAI_update_improved_small_airframe_engines_3_profile_access = yes
+		DAI_log_small_aircraft_target_transitions = yes
+
+	}
+}
+
+DAI_update_allied_d_day_flags = {
+
+	if = {
+		limit = {
+			is_historical_focus_on = yes
+			date > 1942.1.1
+			GER = { has_capitulated = no }
+			SOV = {
+				has_war_with = GER
+				surrender_progress > 0.30
+			}
+		}
+		set_global_flag = DAI_allies_soviet_d_day_pressure
+	}
+
+	if = {
+		limit = {
+			has_global_flag = DAI_allies_soviet_d_day_pressure
+			OR = {
+				NOT = { is_historical_focus_on = yes }
+				NOT = { country_exists = GER }
+				GER = { has_capitulated = yes }
+				NOT = { country_exists = SOV }
+				SOV = {
+					OR = {
+						NOT = { has_war_with = GER }
+						surrender_progress < 0.15
+					}
+				}
+			}
+		}
+		clr_global_flag = DAI_allies_soviet_d_day_pressure
+	}
+
+	if = {
+		limit = {
+			OR = {
+				has_global_flag = DAI_allies_d_day_prep_started
+				has_global_flag = DAI_allies_d_day_initial_release_done
+				has_global_flag = DAI_allies_d_day_release_cycle_started
+			}
+			OR = {
+				NOT = { is_historical_focus_on = yes }
+				NOT = { country_exists = ENG }
+				ENG = { has_capitulated = yes }
+				NOT = { country_exists = GER }
+				GER = { has_capitulated = yes }
+				DAI_allies_focus_europe = yes
+			}
+		}
+		clr_global_flag = DAI_allies_d_day_prep_started
+		clr_global_flag = DAI_allies_d_day_initial_release_done
+		clr_global_flag = DAI_allies_d_day_release_cycle_started
+	}
+
+	if = {
+		limit = {
+			NOT = { has_global_flag = DAI_allies_d_day_prep_started }
+			NOT = { has_global_flag = DAI_allies_d_day_initial_release_done }
+			NOT = { has_global_flag = DAI_allies_d_day_release_cycle_started }
+			DAI_allies_focus_normandy = yes
+		}
+		set_global_flag = DAI_allies_d_day_prep_started
+	}
+
+	if = {
+		limit = {
+			DAI_allies_normandy_initial_release_ready = yes
+			NOT = { has_global_flag = DAI_allies_d_day_release_cycle_started }
+		}
+		set_global_flag = DAI_allies_d_day_initial_release_done
+		set_global_flag = DAI_allies_d_day_release_cycle_started
+	}
+
+	if = {
+		limit = {
+			DAI_allies_focus_normandy = yes
+			has_global_flag = DAI_allies_d_day_initial_release_done
+			NOT = { has_global_flag = DAI_allies_d_day_release_cycle_started }
+		}
+		set_global_flag = DAI_allies_d_day_release_cycle_started
+	}
+
+	if = {
+		limit = {
+			DAI_allies_focus_normandy = yes
+			has_global_flag = DAI_allies_d_day_initial_release_done
+			has_global_flag = {
+				flag = DAI_allies_d_day_release_cycle_started
+				days > 180
+			}
+		}
+		clr_global_flag = DAI_allies_d_day_release_cycle_started
+		set_global_flag = DAI_allies_d_day_release_cycle_started
+	}
+
+}

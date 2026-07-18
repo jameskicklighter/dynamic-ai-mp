@@ -1,0 +1,127 @@
+ENG_historical_plan = {
+	name = "United Kingdom historical plan"
+	desc = "Historical behavior for United Kingdom"
+
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Man the Guns" }
+					has_game_rule = {
+						rule = ENG_ai_behavior 
+						option = DEFAULT
+					}
+				}
+			}
+			has_country_flag = ENG_AI_DEMOCRATIC_HISTORICAL
+			has_game_rule = {
+				rule = ENG_ai_behavior 
+				option = DEMOCRATIC_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		OR = {
+			GER = { has_completed_focus = GER_oppose_hitler }
+			GER = { has_completed_focus = GER_oppose_hitler_ww }
+		}
+	}
+
+	ai_national_focuses = {
+		#-----1936-----
+		limited_rearmament_focus # 70 -> March 11, 1936
+		uk_empire_focus # 70 -> May 20, 1936
+		ENG_steady_as_she_goes # 35 -> June 24, 1936
+		ENG_home_defence # 70 -> September 2, 1936
+		shadow_scheme_focus # 70 -> November 11, 1936
+
+		#-----1937-----
+		uk_industrial_focus # 70 -> January 20, 1937
+		uk_extra_tech_slot # 70 -> March 31, 1937
+		general_rearmament_focus # 70 -> June 9, 1937
+		uk_service_focus # 70 -> August 18, 1937
+		uk_colonial_focus # 70 -> October 27, 1937
+
+		#-----1938-----
+		royal_ordinance_focus # 70 -> January 5, 1938
+		ENG_vickers_experimental_facility_focus # 35 -> February 9, 1938
+		uk_small_arms_focus # 70 -> April 20, 1938
+		uk_asia_focus # 70 -> June 29, 1938
+		uk_burma_focus # 70 -> September 7, 1938
+		air_defense_focus # 70 -> November 16, 1938
+
+		#-----1939-----
+		radar_focus # 70 -> January 25, 1939
+		air_rearmament_focus # 70 -> April 5, 1939
+		ENG_prepare_for_the_inevitable # 70 -> June 14, 1939
+		ENG_issue_gasmasks # 70 -> August 23, 1939
+		ENG_military_training_act # 70 -> November 1, 1939
+
+		#-----1940-----
+		fighter_command_focus # 70 -> January 10, 1940
+		bomber_command_focus # 70 -> March 20, 1940
+		coastal_command_focus # 70 -> May 29, 1940
+		aircraft_production_focus # 70 -> August 7, 1940
+		naval_rearmament_focus # 70 -> October 16, 1940
+		ENG_motorized_focus # 70 -> December 25, 1940
+
+		#-----1941-----
+		crypto_bomb_focus # 70 -> March 5, 1941
+		tizard_mission_focus # 70 -> May 14, 1941
+		ENG_special_air_service # 70 -> July 23, 1941
+		uk_destroyer_focus # 70 -> October 1, 1941
+		uk_waves_focus # 70 -> December 10, 1941
+
+		#-----1942-----
+		uk_convoy_focus # 70 -> February 18, 1942
+		ENG_chiefs_of_staff_committee # 70 -> April 29, 1942
+		maud_focus # 70 -> July 8, 1942
+		uk_mediterranean_focus # 70 -> September 16, 1942
+		uk_carrier_focus # 70 -> November 25, 1942
+
+		#-----1943-----
+		hongkong_focus # 70 -> February 3, 1943
+		uk_iraq_focus # 70 -> April 14, 1943
+		uk_rock_focus # 70 -> June 23, 1943
+		singapore_focus # 70 -> September 1, 1943
+		peninsular_focus # 70 -> November 10, 1943
+
+		#-----1944-----
+		uk_amphibious_focus # 70 -> January 19, 1944
+		uk_protect_suez # 70 -> March 29, 1944
+		uk_malta_focus # 70 -> June 7, 1944
+		uk_commonwealth_focus # 35 -> July 12, 1944
+		uk_canada_focus # 70 -> September 20, 1944
+		uk_australia_focus # 70 -> November 29, 1944
+
+		#-----1945-----
+		uk_new_zealand_focus # 70 -> February 7, 1945
+		uk_south_africa_focus # 70 -> April 18, 1945
+		UK_secret_focus # 70 -> June 27, 1945
+		uk_jet_focus # 70 -> September 5, 1945
+		ENG_tank_focus # 70 -> November 14, 1945
+
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+		home_defence_spirit = 1
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

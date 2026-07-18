@@ -1,0 +1,115 @@
+# Military Flags
+
+DAI_set_wants_air_flag = {
+	IF = { limit = { NOT = { has_country_flag = DAI_wants_air } }
+		IF = {
+			limit = {
+				DAI_can_activate_air_flag = yes
+				OR = {
+					DAI_is_default_air_country = yes
+					DAI_air_factory_threshold_met = yes
+				}
+			}
+
+			set_country_flag = DAI_wants_air
+		}
+	}
+}
+
+DAI_set_wants_armor_flag = {
+	IF = { limit = { NOT = { has_country_flag = DAI_wants_armor } }
+		IF = {
+			limit = {
+				OR = {
+					AND = {
+						original_tag = JAP
+						is_historical_focus_on = yes
+						num_of_military_factories > 75
+					}
+					DAI_is_default_armor_country = yes
+					AND = {
+						is_historical_focus_on = yes
+						NOT = { original_tag = JAP }
+						num_of_military_factories > 50
+					}
+					AND = {
+						NOT = { is_historical_focus_on = yes }
+						num_of_military_factories > 50
+					}
+				}
+			}
+
+			set_country_flag = DAI_wants_armor
+		}
+	}
+
+	IF = { limit = { has_country_flag = DAI_wants_armor }
+		DAI_set_armor_preference_flags = yes
+	}
+}
+
+DAI_set_wants_mech_flag = {
+	IF = { limit = { NOT = { has_country_flag = DAI_wants_mech } }
+		IF = {
+			limit = {
+				OR = {
+					has_country_flag = DAI_wants_armor
+					num_of_military_factories > 20
+					AND = {
+						is_historical_focus_on = yes
+						OR = {
+							original_tag = GER
+							original_tag = ENG
+							original_tag = ITA
+							original_tag = USA
+							original_tag = FRA
+							original_tag = JAP
+							original_tag = SOV
+							original_tag = CAN
+							original_tag = BUL
+							original_tag = ROM
+							original_tag = HUN
+						}
+					}
+				}
+			}
+
+			set_country_flag = DAI_wants_mech
+		}
+	}
+}
+
+DAI_set_armor_preference_flags = {
+	IF = {
+		limit = {
+			NOT = { has_country_flag = DAI_prefer_light_tanks }
+			NOT = { has_country_flag = DAI_prefer_medium_tanks }
+			NOT = { has_country_flag = DAI_prefer_heavy_tanks }
+			NOT = { has_country_flag = DAI_prefer_medium_tank_destroyers }
+			NOT = { has_country_flag = DAI_prefer_heavy_tank_destroyers }
+		}
+
+		IF = { limit = { original_tag = GER }
+			set_country_flag = DAI_prefer_medium_tanks
+		}
+		ELSE_IF = { limit = { original_tag = ENG }
+			set_country_flag = DAI_prefer_medium_tank_destroyers
+		}
+		ELSE_IF = { limit = { original_tag = USA }
+			set_country_flag = DAI_prefer_medium_tanks
+			set_country_flag = DAI_prefer_medium_tank_destroyers
+		}
+		ELSE_IF = { limit = { original_tag = SOV }
+			set_country_flag = DAI_prefer_medium_tanks
+		}
+		ELSE_IF = { limit = { original_tag = FRA }
+			set_country_flag = DAI_prefer_heavy_tank_destroyers
+		}
+		ELSE_IF = { limit = { original_tag = ITA }
+			set_country_flag = DAI_prefer_medium_tanks
+		}
+		ELSE_IF = { limit = { has_country_flag = DAI_wants_armor }
+			set_country_flag = DAI_prefer_medium_tanks
+		}
+	}
+}

@@ -1,0 +1,41 @@
+areas = {
+
+	DAI_d_day_landing_region = {
+		strategic_regions = {
+			18 # English Channel
+			42 # Bay of Biscay
+		}
+	}
+
+	mainland_europe_excluding_italy = {
+		strategic_regions = {
+			210 # Southern Iberia
+			41 # Northeastern Iberia
+			209 # Northwestern Iberia
+
+			20 # Southern France
+			19 # Northern France
+			208 # Western France
+
+			5 # Benelux
+
+			21 # Northern Italy
+
+			25 # Greece
+			24 # Western Balkans
+			26 # Eastern Balkans
+
+			130 # Ukraine
+
+			6 # Northwestern Germany
+			8 # Eastern Germany
+			38 # Western Poland
+			37 # Baltic Region
+
+			275 # Jutland
+			11 # Southern Norway
+			191 # Northern Norway
+			10 # Southern Sweden
+		}
+	}
+}

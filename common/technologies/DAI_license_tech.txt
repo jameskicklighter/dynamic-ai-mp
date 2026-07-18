@@ -1,0 +1,18 @@
+technologies = {
+
+	DAI_enable_mech = {
+		allow = { always = no }
+
+		enable_subunits = {
+			mechanized
+		}
+	}
+
+	DAI_enable_amtrac = {
+		allow = { always = no }
+
+		enable_subunits = {
+			amphibious_mechanized
+		}
+	}
+}
