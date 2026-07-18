@@ -1499,27 +1499,27 @@ DAI_battlecruiser = {
 			modules = {
 				
 				# ELECTRONICS
-				fixed_ship_fire_control_system_slot = { module = ship_fire_control_system_1 }
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
 				fixed_ship_radar_slot = { module = empty }
 
 				# ENGINE
-				fixed_ship_engine_slot = { module = heavy_ship_engine_2 }
+				fixed_ship_engine_slot = heavy_ship_engine
 
 				# ANTI-AIR
-				fixed_ship_anti_air_slot = { module = ship_anti_air_2 }
+				fixed_ship_anti_air_slot = ship_anti_air
 
 				# ARMOR
 				fixed_ship_armor_slot = { module = ship_armor_bc_2 }
 
 				# MAIN
-				fixed_ship_secondaries_slot = { module = ship_secondaries_2 }
-				fixed_ship_battery_slot = { module = ship_heavy_battery_1 }
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_battery_slot = ship_heavy_battery
 
 				# CUSTOM
-				front_1_custom_slot = { module = ship_heavy_battery_1 }
-				mid_1_custom_slot = { module = ship_heavy_battery_1 }
-				mid_2_custom_slot = { module = ship_anti_air_2 }
-				rear_1_custom_slot = { module = ship_anti_air_2 }
+				front_1_custom_slot = ship_heavy_battery
+				mid_1_custom_slot = ship_heavy_battery
+				mid_2_custom_slot = ship_anti_air
+				rear_1_custom_slot = ship_anti_air
 			}
 		}
 
@@ -1565,28 +1565,28 @@ DAI_battlecruiser = {
 			modules = {
 				
 				# ELECTRONICS
-				fixed_ship_fire_control_system_slot = { module = ship_fire_control_system_2 }
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
 				fixed_ship_radar_slot = { module = empty }
 
 				# ENGINE
-				fixed_ship_engine_slot = { module = heavy_ship_engine_3 }
+				fixed_ship_engine_slot = heavy_ship_engine
 
 				# ANTI-AIR
-				fixed_ship_anti_air_slot = { module = ship_anti_air_2 }
+				fixed_ship_anti_air_slot = ship_anti_air
 
 				# ARMOR
 				fixed_ship_armor_slot = { module = ship_armor_bc_2 }
 
 				# MAIN
-				fixed_ship_secondaries_slot = { module = ship_secondaries_2 }
-				fixed_ship_battery_slot = { module = ship_heavy_battery_1 }
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_battery_slot = ship_heavy_battery
 
 				# CUSTOM
-				front_1_custom_slot = { module = ship_heavy_battery_1 }
-				mid_1_custom_slot = { module = ship_heavy_battery_1 }
-				mid_2_custom_slot = { module = ship_airplane_launcher_2 }
-				mid_3_custom_slot = { module = ship_anti_air_2 }
-				rear_1_custom_slot = { module = ship_anti_air_2 }
+				front_1_custom_slot = ship_heavy_battery
+				mid_1_custom_slot = ship_heavy_battery
+				mid_2_custom_slot = ship_airplane_launcher
+				mid_3_custom_slot = ship_anti_air
+				rear_1_custom_slot = ship_anti_air
 			}
 		}
 
@@ -1624,28 +1624,28 @@ DAI_battlecruiser = {
 			modules = {
 				
 				# ELECTRONICS
-				fixed_ship_fire_control_system_slot = { module = ship_fire_control_system_2 }
-				fixed_ship_radar_slot = { module = ship_radar_2 }
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = ship_radar
 
 				# ENGINE
-				fixed_ship_engine_slot = { module = heavy_ship_engine_3 }
+				fixed_ship_engine_slot = heavy_ship_engine
 
 				# ANTI-AIR
-				fixed_ship_anti_air_slot = { module = ship_anti_air_2 }
+				fixed_ship_anti_air_slot = ship_anti_air
 
 				# ARMOR
 				fixed_ship_armor_slot = { module = ship_armor_bc_2 }
 
 				# MAIN
-				fixed_ship_secondaries_slot = { module = ship_secondaries_2 }
-				fixed_ship_battery_slot = { module = ship_heavy_battery_1 }
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_battery_slot = ship_heavy_battery
 
 				# CUSTOM
-				front_1_custom_slot = { module = ship_heavy_battery_1 }
-				mid_1_custom_slot = { module = ship_heavy_battery_1 }
-				mid_2_custom_slot = { module = ship_airplane_launcher_2 }
-				mid_3_custom_slot = { module = ship_anti_air_2 }
-				rear_1_custom_slot = { module = ship_anti_air_2 }
+				front_1_custom_slot = ship_heavy_battery
+				mid_1_custom_slot = ship_heavy_battery
+				mid_2_custom_slot = ship_airplane_launcher
+				mid_3_custom_slot = ship_anti_air
+				rear_1_custom_slot = ship_anti_air
 			}
 		}
 
@@ -1687,28 +1687,28 @@ DAI_battlecruiser = {
 			modules = {
 				
 				# ELECTRONICS
-				fixed_ship_fire_control_system_slot = { module = ship_fire_control_system_3 }
-				fixed_ship_radar_slot = { module = ship_radar_2 }
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = ship_radar
 
 				# ENGINE
-				fixed_ship_engine_slot = { module = heavy_ship_engine_4 }
+				fixed_ship_engine_slot = heavy_ship_engine
 
 				# ANTI-AIR
-				fixed_ship_anti_air_slot = { module = ship_anti_air_3 }
+				fixed_ship_anti_air_slot = ship_anti_air
 
 				# ARMOR
 				fixed_ship_armor_slot = { module = ship_armor_bc_3 }
 
 				# MAIN
-				fixed_ship_secondaries_slot = { module = ship_secondaries_2 }
-				fixed_ship_battery_slot = { module = ship_heavy_battery_3 }
+				fixed_ship_secondaries_slot = ship_secondaries
+				fixed_ship_battery_slot = ship_heavy_battery
 
 				# CUSTOM
-				front_1_custom_slot = { module = ship_heavy_battery_3 }
-				mid_1_custom_slot = { module = ship_heavy_battery_3 }
-				mid_2_custom_slot = { module = ship_airplane_launcher_2 }
-				mid_3_custom_slot = { module = ship_anti_air_3 }
-				rear_1_custom_slot = { module = ship_anti_air_3 }
+				front_1_custom_slot = ship_heavy_battery
+				mid_1_custom_slot = ship_heavy_battery
+				mid_2_custom_slot = ship_airplane_launcher
+				mid_3_custom_slot = ship_anti_air
+				rear_1_custom_slot = ship_anti_air
 			}
 		}
 
@@ -1751,28 +1751,28 @@ DAI_battlecruiser = {
 			modules = {
 				
 				# ELECTRONICS
-				fixed_ship_fire_control_system_slot = { module = ship_fire_control_system_3 }
-				fixed_ship_radar_slot = { module = ship_radar_4 }
+				fixed_ship_fire_control_system_slot = ship_fire_control_system
+				fixed_ship_radar_slot = ship_radar
 
 				# ENGINE
-				fixed_ship_engine_slot = { module = heavy_ship_engine_4 }
+				fixed_ship_engine_slot = heavy_ship_engine
 
 				# ANTI-AIR
-				fixed_ship_anti_air_slot = { module = ship_anti_air_4 }
+				fixed_ship_anti_air_slot = ship_anti_air
 
 				# ARMOR
 				fixed_ship_armor_slot = { module = ship_armor_bc_3 }
 
 				# MAIN
-				fixed_ship_secondaries_slot = { module = dp_ship_secondaries_4 }
-				fixed_ship_battery_slot = { module = ship_heavy_battery_3 }
+				fixed_ship_secondaries_slot = ship_dp_secondaries
+				fixed_ship_battery_slot = ship_heavy_battery
 
 				# CUSTOM
-				front_1_custom_slot = { module = ship_heavy_battery_3 }
-				mid_1_custom_slot = { module = ship_heavy_battery_3 }
-				mid_2_custom_slot = { module = ship_airplane_launcher_2 }
-				mid_3_custom_slot = { module = ship_anti_air_4 }
-				rear_1_custom_slot = { module = ship_anti_air_4 }
+				front_1_custom_slot = ship_heavy_battery
+				mid_1_custom_slot = ship_heavy_battery
+				mid_2_custom_slot = ship_airplane_launcher
+				mid_3_custom_slot = ship_anti_air
+				rear_1_custom_slot = ship_anti_air
 			}
 		}
 
@@ -2042,7 +2042,7 @@ DAI_escort_carrier = {
 
 			type = ship_hull_escort_carrier
 			modules = {
-				fixed_ship_engine_slot = carrier_ship_engine_1
+				fixed_ship_engine_slot = carrier_ship_engine
 				fixed_ship_deck_slot_1 = ship_escort_deck_space
 				fixed_ship_deck_slot_2 = ship_escort_deck_space
 				front_1_custom_slot = empty

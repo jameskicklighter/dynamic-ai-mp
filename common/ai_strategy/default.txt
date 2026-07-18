@@ -910,6 +910,27 @@ DAI_mechanized_production = {
 	}
 }
 
+DAI_armor_mechanized_production_boost = {
+	enable = {
+		DAI_should_start_mech_production = yes
+		has_country_flag = DAI_wants_mech
+		has_country_flag = DAI_wants_armor
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = mechanized_equipment
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = mechanized_equipment
+		value = 2
+	}
+}
+
 DAI_base_force_concentration = {
 	enable = {
 		always = yes
@@ -1611,11 +1632,10 @@ pretty_please_dont_axe_our_gun_production_efficiency = {
 	}
 	abort_when_not_enabled = yes
 
-	# This seems to occasionally include support equipment for some reason,
-	# but I cannot figure out how to isolate guns for this...
+	# Preserve rifle-line efficiency without affecting other infantry-tagged equipment.
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1626,11 +1646,9 @@ pretty_please_dont_axe_our_gun_production_efficiency_expanded = {
 	}
 	abort_when_not_enabled = yes
 
-	# This seems to occasionally include support equipment for some reason,
-	# but I cannot figure out how to isolate guns for this...
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1642,8 +1660,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_30_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1655,8 +1673,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_40_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1668,8 +1686,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_50_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1681,8 +1699,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_60_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1694,8 +1712,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_70_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1707,8 +1725,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_80_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1720,8 +1738,8 @@ pretty_please_dont_axe_our_gun_production_efficiency_90_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
 		value = 1
 	}
 }
@@ -1733,8 +1751,21 @@ pretty_please_dont_axe_our_gun_production_efficiency_100_mils = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
+		value = 1
+	}
+}
+
+DAI_produce_minimum_helicopters = {
+	enable = {
+		is_special_project_completed = sp:sp_air_helicopter
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = helicopter_equipment
 		value = 1
 	}
 }

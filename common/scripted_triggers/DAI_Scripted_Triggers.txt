@@ -17,6 +17,7 @@ DAI_pre_research_guns = {
 	is_historical_focus_on = yes
 	OR = {
 		original_tag = ROM
+		original_tag = SAF
 	}
 }
 
@@ -24,6 +25,7 @@ DAI_pre_research_small_airframe = {
 	is_ai = yes
 	is_historical_focus_on = yes
 	OR = {
+		original_tag = CAN
 		original_tag = ROM
 	}
 }
@@ -62,6 +64,7 @@ DAI_pre_research_mech = {
 	is_historical_focus_on = yes
 	OR = {
 		original_tag = BUL
+		original_tag = CAN
 	}
 }
 
@@ -70,12 +73,22 @@ DAI_pre_research_plane_engine = {
 	is_historical_focus_on = yes
 	OR = {
 		original_tag = ITA
+		original_tag = MEX
 	}
 }
 
 DAI_pre_research_plane_engine_endpoint_ready = {
 	DAI_pre_research_plane_engine = yes
-	has_completed_focus = ITA_reggianes_exports
+	OR = {
+		AND = {
+			original_tag = ITA
+			has_completed_focus = ITA_reggianes_exports
+		}
+		AND = {
+			original_tag = MEX
+			has_completed_focus = MEX_focus_aviation_workshops
+		}
+	}
 }
 
 DAI_build_order_should_take_partial_mob = {
@@ -200,10 +213,7 @@ DAI_can_use_amtrac = {
 }
 
 DAI_should_use_mechanized = {
-	OR = {
-		DAI_wants_mech = yes
-		has_country_flag = DAI_mech_licensed
-	}
+	DAI_wants_mech = yes
 }
 
 DAI_should_use_amtrac = {

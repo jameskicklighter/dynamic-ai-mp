@@ -54,8 +54,23 @@ DAI_set_wants_mech_flag = {
 			limit = {
 				OR = {
 					has_country_flag = DAI_wants_armor
-					original_tag = BUL
-					original_tag = ROM
+					num_of_military_factories > 20
+					AND = {
+						is_historical_focus_on = yes
+						OR = {
+							original_tag = GER
+							original_tag = ENG
+							original_tag = ITA
+							original_tag = USA
+							original_tag = FRA
+							original_tag = JAP
+							original_tag = SOV
+							original_tag = CAN
+							original_tag = BUL
+							original_tag = ROM
+							original_tag = HUN
+						}
+					}
 				}
 			}
 

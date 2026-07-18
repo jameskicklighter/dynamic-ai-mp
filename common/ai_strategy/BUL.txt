@@ -1,7 +1,7 @@
 BUL_unit_production = {
 	allowed = { original_tag = BUL }
 	enable = {
-		DAI_should_start_mech_production = no
+		always = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -51,62 +51,6 @@ BUL_unit_production = {
 		type = role_ratio
 		id = infantry
 		value = 95
-	}
-}
-
-BUL_mechanized_unit_production = {
-	allowed = { original_tag = BUL }
-	enable = {
-		DAI_should_start_mech_production = yes
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 5
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = paratroopers
-		value = 0
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = mountaineers
-		value = 0
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = marines
-		value = 0
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 0
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = motorized
-		value = 0
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = mechanized
-		value = 45
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 50
 	}
 }
 
