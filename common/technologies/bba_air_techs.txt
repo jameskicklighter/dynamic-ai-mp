@@ -1731,6 +1731,7 @@ technologies = {
 					OR = {
 						has_tech = improved_small_airframe
 						is_researching_technology = improved_small_airframe
+						has_country_flag = DAI_improved_small_airframe_licensed
 						DAI_pre_research_plane_engine_endpoint_ready = yes
 					}
 				}

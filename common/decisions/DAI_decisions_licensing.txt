@@ -631,6 +631,82 @@ DAI_production_license_decisions = {
 		}
 	}
 
+	DAI_create_basic_small_airframe_local_role_designs = {
+		icon = GFX_decision_generic_research
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			hidden_trigger = { DAI_needs_basic_small_airframe_local_role_design = yes }
+		}
+		available = {
+			is_ai = yes
+			hidden_trigger = { DAI_needs_basic_small_airframe_local_role_design = yes }
+		}
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 30
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=basic action=begin need_trigger=passed"
+			DAI_log_basic_fighter_design_diagnostics = yes
+			DAI_create_basic_small_airframe_role_designs = yes
+			DAI_log_basic_fighter_creation_result = yes
+			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=basic action=end"
+		}
+	}
+
+	DAI_create_improved_small_airframe_local_role_designs = {
+		icon = GFX_decision_generic_research
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			hidden_trigger = { DAI_needs_improved_small_airframe_local_role_design = yes }
+		}
+		available = {
+			is_ai = yes
+			hidden_trigger = { DAI_needs_improved_small_airframe_local_role_design = yes }
+		}
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 30
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=improved action=begin need_trigger=passed"
+			DAI_log_improved_fighter_design_diagnostics = yes
+			DAI_create_improved_small_airframe_role_designs = yes
+			DAI_log_improved_fighter_creation_result = yes
+			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=improved action=end"
+		}
+	}
+
+	DAI_create_advanced_small_airframe_local_role_designs = {
+		icon = GFX_decision_generic_research
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = yes
+			hidden_trigger = { DAI_needs_advanced_small_airframe_local_role_design = yes }
+		}
+		available = {
+			is_ai = yes
+			hidden_trigger = { DAI_needs_advanced_small_airframe_local_role_design = yes }
+		}
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 30
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=advanced action=begin need_trigger=passed"
+			DAI_create_advanced_small_airframe_role_designs = yes
+			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=advanced action=end"
+		}
+	}
+
 	DAI_share_basic_small_airframe_license_with_ai = {
 		icon = GFX_decision_generic_research
 		allowed = {
@@ -652,6 +728,7 @@ DAI_production_license_decisions = {
 		}
 		cost = 0
 		fire_only_once = no
+		days_re_enable = 30
 		ai_will_do = { base = 999 }
 		complete_effect = {
 			DAI_create_basic_small_airframe_role_designs = yes
@@ -686,6 +763,7 @@ DAI_production_license_decisions = {
 		}
 		cost = 0
 		fire_only_once = no
+		days_re_enable = 30
 		ai_will_do = { base = 999 }
 		complete_effect = {
 			DAI_create_improved_small_airframe_role_designs = yes
@@ -720,6 +798,7 @@ DAI_production_license_decisions = {
 		}
 		cost = 0
 		fire_only_once = no
+		days_re_enable = 30
 		ai_will_do = { base = 999 }
 		complete_effect = {
 			DAI_create_advanced_small_airframe_role_designs = yes

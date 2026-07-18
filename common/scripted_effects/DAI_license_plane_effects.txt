@@ -1,26 +1,70 @@
 # Small-airframe MIO helpers and inactive A/B/C variant catalog.
-# Generated role effects below use this catalog as their module source of truth.
+# Authored source of truth. Run tools/generate_plane_role_licensing.py --write
+# after changing a profile; the generator never rewrites this file.
 
-DAI_set_air_design_team_small = {
+# Primary mappings follow DAI's normal AI-visible manufacturer policy. Alternate
+# mappings are exact-role compatible and are attempted only when the engine says
+# the organization is available; several are intentionally hidden from ordinary
+# AI selection and therefore remain guarded fallbacks rather than forced choices.
+
+DAI_set_air_design_team_fighter = {
 	set_temp_variable = { DAI_air_design_team = 0 }
-	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } }
+	set_temp_variable = { DAI_air_design_team_alternate = 0 }
+	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } set_temp_variable = { DAI_air_design_team_alternate = token:GER_messerschmitt_organization } }
 	if = { limit = { original_tag = ENG } set_temp_variable = { DAI_air_design_team = token:ENG_supermarine_organization } }
-	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } }
+	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } set_temp_variable = { DAI_air_design_team_alternate = token:USA_lockheed_organization } }
 	if = { limit = { original_tag = SOV } set_temp_variable = { DAI_air_design_team = token:SOV_mig_design_bureau_organization } }
-	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_morane_saulnier_organization } }
-	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } }
-	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } }
+	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_morane_saulnier_organization } set_temp_variable = { DAI_air_design_team_alternate = token:FRA_SNCAC_organization } }
+	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ITA_savoia_marchetti_organization } }
+	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } set_temp_variable = { DAI_air_design_team_alternate = token:JAP_mitsubishi_organization } }
 }
 
-DAI_set_air_design_team_naval_small = {
+DAI_set_air_design_team_cas = {
 	set_temp_variable = { DAI_air_design_team = 0 }
-	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } }
-	if = { limit = { original_tag = ENG } set_temp_variable = { DAI_air_design_team = token:ENG_supermarine_organization } }
-	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } }
+	set_temp_variable = { DAI_air_design_team_alternate = 0 }
+	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } set_temp_variable = { DAI_air_design_team_alternate = token:GER_junkers_organization } }
+	if = { limit = { original_tag = ENG } set_temp_variable = { DAI_air_design_team = token:ENG_supermarine_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ENG_hawker_organization } }
+	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } set_temp_variable = { DAI_air_design_team_alternate = token:USA_douglas_aircraft_company_organization } }
+	if = { limit = { original_tag = SOV } set_temp_variable = { DAI_air_design_team = token:SOV_mig_design_bureau_organization } }
+	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_morane_saulnier_organization } set_temp_variable = { DAI_air_design_team_alternate = token:FRA_SNCAC_organization } }
+	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ITA_caproni_organization } }
+	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } set_temp_variable = { DAI_air_design_team_alternate = token:JAP_tachikawa_aircraft_company_organization } }
+}
+
+DAI_set_air_design_team_naval_bomber = {
+	set_temp_variable = { DAI_air_design_team = 0 }
+	set_temp_variable = { DAI_air_design_team_alternate = 0 }
+	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } set_temp_variable = { DAI_air_design_team_alternate = token:GER_fieseler_organization } }
+	if = { limit = { original_tag = ENG } set_temp_variable = { DAI_air_design_team = token:ENG_supermarine_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ENG_fairey_aviation_organization } }
+	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } set_temp_variable = { DAI_air_design_team_alternate = token:USA_grumman_organization } }
 	if = { limit = { original_tag = SOV } set_temp_variable = { DAI_air_design_team = token:SOV_yakovlev_design_bureau_organization } }
-	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_levasseur_organization } }
-	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } }
-	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } }
+	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_levasseur_organization } set_temp_variable = { DAI_air_design_team_alternate = token:FRA_SNCAC_organization } }
+	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ITA_crda_cant_organization } }
+	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } set_temp_variable = { DAI_air_design_team_alternate = token:JAP_yokosuka_organization } }
+}
+
+DAI_set_air_design_team_carrier_fighter = {
+	set_temp_variable = { DAI_air_design_team = 0 }
+	set_temp_variable = { DAI_air_design_team_alternate = 0 }
+	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } set_temp_variable = { DAI_air_design_team_alternate = token:GER_fieseler_organization } }
+	if = { limit = { original_tag = ENG } set_temp_variable = { DAI_air_design_team = token:ENG_supermarine_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ENG_fairey_aviation_organization } }
+	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } set_temp_variable = { DAI_air_design_team_alternate = token:USA_grumman_organization } }
+	if = { limit = { original_tag = SOV } set_temp_variable = { DAI_air_design_team = token:SOV_yakovlev_design_bureau_organization } set_temp_variable = { DAI_air_design_team_alternate = token:SOV_mig_design_bureau_organization } }
+	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_levasseur_organization } set_temp_variable = { DAI_air_design_team_alternate = token:FRA_morane_saulnier_organization } }
+	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ITA_crda_cant_organization } }
+	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } set_temp_variable = { DAI_air_design_team_alternate = token:JAP_yokosuka_organization } }
+}
+
+DAI_set_air_design_team_carrier_naval_bomber = {
+	set_temp_variable = { DAI_air_design_team = 0 }
+	set_temp_variable = { DAI_air_design_team_alternate = 0 }
+	if = { limit = { original_tag = GER } set_temp_variable = { DAI_air_design_team = token:GER_focke_wulf_organization } set_temp_variable = { DAI_air_design_team_alternate = token:GER_fieseler_organization } }
+	if = { limit = { original_tag = ENG } set_temp_variable = { DAI_air_design_team = token:ENG_supermarine_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ENG_fairey_aviation_organization } }
+	if = { limit = { original_tag = USA } set_temp_variable = { DAI_air_design_team = token:USA_north_american_aviation_organization } set_temp_variable = { DAI_air_design_team_alternate = token:USA_grumman_organization } }
+	if = { limit = { original_tag = SOV } set_temp_variable = { DAI_air_design_team = token:SOV_yakovlev_design_bureau_organization } }
+	if = { limit = { original_tag = FRA } set_temp_variable = { DAI_air_design_team = token:FRA_levasseur_organization } set_temp_variable = { DAI_air_design_team_alternate = token:FRA_SNCAC_organization } }
+	if = { limit = { original_tag = ITA } set_temp_variable = { DAI_air_design_team = token:ITA_fiat_aviazione_organization } set_temp_variable = { DAI_air_design_team_alternate = token:ITA_crda_cant_organization } }
+	if = { limit = { original_tag = JAP } set_temp_variable = { DAI_air_design_team = token:JAP_aichi_organization } set_temp_variable = { DAI_air_design_team_alternate = token:JAP_yokosuka_organization } }
 }
 
 DAI_plane_license_small_variant_catalog = {
@@ -32,11 +76,11 @@ DAI_plane_license_small_variant_catalog = {
 			parent_version = 0
 			allow_without_tech = yes
 			modules = {
-				fixed_main_weapon_slot = heavy_mg_4x
-				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				fixed_main_weapon_slot = aircraft_cannon_1_2x
+				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
 				engine_type_slot = engine_2_1x
-				special_type_slot_1 = armor_plate_small
-				special_type_slot_2 = fuel_tanks_small
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -45,9 +89,11 @@ DAI_plane_license_small_variant_catalog = {
 			parent_version = 0
 			allow_without_tech = yes
 			modules = {
-				fixed_main_weapon_slot = light_mg_4x
-				fixed_auxiliary_weapon_slot_1 = light_mg_4x
+				fixed_main_weapon_slot = heavy_mg_4x
+				fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -59,6 +105,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = light_mg_4x
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -83,6 +131,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = bomb_locks
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -94,6 +144,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = bomb_locks
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -118,6 +170,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = torpedo_mounting
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -129,6 +183,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = torpedo_mounting
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -153,6 +209,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = light_mg_4x
 				fixed_auxiliary_weapon_slot_1 = light_mg_2x
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -164,6 +222,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = light_mg_4x
 				fixed_auxiliary_weapon_slot_1 = light_mg_2x
 				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -188,6 +248,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = torpedo_mounting
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -199,6 +261,8 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_main_weapon_slot = torpedo_mounting
 				fixed_auxiliary_weapon_slot_1 = empty
 				engine_type_slot = engine_1_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -226,6 +290,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -238,6 +305,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -265,6 +335,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = bomb_locks
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -277,6 +350,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = bomb_locks
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -285,7 +361,7 @@ DAI_plane_license_small_variant_catalog = {
 			parent_version = 0
 			allow_without_tech = yes
 			modules = {
-				fixed_main_weapon_slot = torpedo_mounting_3
+				fixed_main_weapon_slot = torpedo_mounting_2
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
@@ -304,6 +380,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -316,6 +395,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -343,6 +425,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				fixed_auxiliary_weapon_slot_2 = light_mg_2x
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -355,6 +440,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = light_mg_4x
 				fixed_auxiliary_weapon_slot_2 = light_mg_2x
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -382,6 +470,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -394,6 +485,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_1 = empty
 				fixed_auxiliary_weapon_slot_2 = empty
 				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -424,6 +518,10 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -437,6 +535,10 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -467,6 +569,10 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -480,6 +586,10 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -510,6 +620,10 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -523,6 +637,10 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -552,6 +670,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -565,6 +686,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = light_mg_4x
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -594,6 +718,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_4_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 		create_equipment_variant = {
@@ -607,6 +734,9 @@ DAI_plane_license_small_variant_catalog = {
 				fixed_auxiliary_weapon_slot_2 = empty
 				fixed_auxiliary_weapon_slot_3 = empty
 				engine_type_slot = engine_3_1x
+				special_type_slot_1 = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
 			}
 		}
 	}

@@ -1,0 +1,276 @@
+# DAI-owned safeguards and diagnostics for vanilla Economy of Conquest behavior.
+
+DAI_reconcile_german_gold_targets = {
+	# One-time current-capital bootstrap for saves created before this safeguard.
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_original_europe_bootstrap_complete }
+		}
+		every_country = {
+			limit = {
+				OR = {
+					capital_scope = { is_on_continent = europe }
+					original_tag = FRA
+				}
+			}
+			set_country_flag = DAI_original_capital_in_europe
+		}
+		set_country_flag = DAI_original_europe_bootstrap_complete
+	}
+
+	# Targeted fallback after the pre-capitulation Vichy sequence or for an existing post-fall save.
+	if = {
+		limit = {
+			OR = {
+				has_global_flag = fall_of_france
+				has_global_flag = achievement_france_surrender
+			}
+			has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
+			country_exists = FRA
+			FRA = {
+				NOT = { has_country_flag = DAI_german_gold_registration_pending }
+				any_core_state = {
+					is_on_continent = europe
+					is_controlled_by = GER
+				}
+				NOT = {
+					any_core_state = {
+						has_state_flag = GER_seize_gold_reserves_state_flag
+					}
+				}
+				OR = {
+					NOT = { has_country_flag = GER_has_capitulated_to_germany }
+					NOT = {
+						is_in_array = {
+							array = GER.GER_seize_gold_targets_array
+							value = THIS
+						}
+					}
+				}
+			}
+		}
+		FRA = {
+			set_country_flag = DAI_original_capital_in_europe
+			set_country_flag = DAI_german_gold_registration_pending
+			set_country_flag = DAI_german_gold_registration_save_migration
+		}
+	}
+
+	every_country = {
+		limit = {
+			has_country_flag = {
+				flag = DAI_german_gold_registration_pending
+				days > 0
+			}
+		}
+
+		set_temp_variable = { DAI_german_gold_flag_added = 0 }
+		set_temp_variable = { DAI_german_gold_array_added = 0 }
+
+		if = {
+			limit = {
+				NOT = { has_country_flag = GER_has_capitulated_to_germany }
+			}
+			set_country_flag = GER_has_capitulated_to_germany
+			set_temp_variable = { DAI_german_gold_flag_added = 1 }
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_in_array = {
+						array = GER.GER_seize_gold_targets_array
+						value = THIS
+					}
+				}
+			}
+			add_to_array = {
+				array = GER.GER_seize_gold_targets_array
+				value = THIS
+			}
+			set_temp_variable = { DAI_german_gold_array_added = 1 }
+		}
+
+		if = {
+			limit = {
+				has_country_flag = GER_has_capitulated_to_germany
+				is_in_array = {
+					array = GER.GER_seize_gold_targets_array
+					value = THIS
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = DAI_german_gold_registration_save_migration
+				}
+				log = "[GetYear] [GetMonth] | DAI_GER_GOLD_TARGET_REGISTRATION | germany=[ROOT.GetName] target=[THIS.GetName] status=dai_repaired reason=post_vichy_fallback flag_added=[?DAI_german_gold_flag_added] array_added=[?DAI_german_gold_array_added]"
+			}
+			else_if = {
+				limit = {
+					check_variable = { DAI_german_gold_flag_added = 0 }
+					check_variable = { DAI_german_gold_array_added = 0 }
+				}
+				log = "[GetYear] [GetMonth] | DAI_GER_GOLD_TARGET_REGISTRATION | germany=[ROOT.GetName] target=[THIS.GetName] status=vanilla_confirmed reason=capitulation_pending flag_added=0 array_added=0"
+			}
+			else = {
+				log = "[GetYear] [GetMonth] | DAI_GER_GOLD_TARGET_REGISTRATION | germany=[ROOT.GetName] target=[THIS.GetName] status=dai_repaired reason=capitulation_pending flag_added=[?DAI_german_gold_flag_added] array_added=[?DAI_german_gold_array_added]"
+			}
+			clr_country_flag = DAI_german_gold_registration_pending
+			clr_country_flag = DAI_german_gold_registration_save_migration
+			clr_country_flag = DAI_german_gold_registration_failed_logged
+		}
+		else_if = {
+			limit = {
+				NOT = { has_country_flag = DAI_german_gold_registration_failed_logged }
+			}
+			set_country_flag = DAI_german_gold_registration_failed_logged
+			log = "[GetYear] [GetMonth] | DAI_GER_GOLD_TARGET_REGISTRATION | germany=[ROOT.GetName] target=[THIS.GetName] status=blocked reason=reconciliation_failed"
+		}
+	}
+}
+
+DAI_log_german_france_economy_transitions = {
+	# The Vichy benefit changes monthly growth; it does not directly reduce current CG.
+	if = {
+		limit = {
+			has_country_flag = GER_french_war_reparations_flag
+			NOT = { has_country_flag = DAI_GER_france_reparations_state_active }
+		}
+		clr_country_flag = DAI_GER_france_reparations_state_missing
+		set_country_flag = DAI_GER_france_reparations_state_active
+		log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_REPARATIONS | country=[THIS.GetName] state=active monthly_increase=[?GER_monthly_consumer_goods_increase] france_delta=[?GER_change_monthly_CG_vichy_france] current_cg=[?GER_industrial_consumer_goods_factor] effect=monthly_growth_reduction_not_immediate_cg"
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_global_flag = fall_of_france
+				has_global_flag = achievement_france_surrender
+			}
+			has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
+			NOT = { has_country_flag = GER_french_war_reparations_flag }
+			NOT = { has_country_flag = DAI_GER_france_reparations_state_missing }
+		}
+		clr_country_flag = DAI_GER_france_reparations_state_active
+		set_country_flag = DAI_GER_france_reparations_state_missing
+		log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_REPARATIONS | country=[THIS.GetName] state=missing monthly_increase=[?GER_monthly_consumer_goods_increase] france_delta=[?GER_change_monthly_CG_vichy_france] current_cg=[?GER_industrial_consumer_goods_factor] action=observe_only"
+	}
+
+	if = {
+		limit = {
+			country_exists = FRA
+			FRA = {
+				any_core_state = {
+					has_state_flag = GER_seize_gold_reserves_state_flag
+				}
+			}
+			NOT = { has_country_flag = DAI_GER_france_gold_state_flag_observed }
+		}
+		set_country_flag = DAI_GER_france_gold_state_flag_observed
+		log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_STATE | country=[THIS.GetName] state=seizure_state_flag_observed current_cg=[?GER_industrial_consumer_goods_factor] decision_selection=engine_internal_not_script_visible"
+	}
+
+	if = {
+		limit = {
+			country_exists = FRA
+			OR = {
+				has_global_flag = fall_of_france
+				has_global_flag = achievement_france_surrender
+			}
+		}
+		if = {
+			limit = {
+				has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
+				check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				FRA = {
+					has_country_flag = GER_has_capitulated_to_germany
+					NOT = { has_country_flag = GER_dont_seize_gold_reserves_flag }
+					is_in_array = {
+						array = GER.GER_seize_gold_targets_array
+						value = THIS
+					}
+					any_core_state = {
+						is_controlled_by = GER
+						NOT = { is_core_of = GER }
+						NOT = { has_state_flag = GER_seize_gold_reserves_state_flag }
+						OR = {
+							check_variable = { industrial_complex_level > 0 }
+							check_variable = { arms_factory_level > 0 }
+							check_variable = { building_level@dockyard > 0 }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = DAI_GER_france_gold_eligibility_active }
+				}
+				clr_country_flag = DAI_GER_france_gold_eligibility_blocked
+				set_country_flag = DAI_GER_france_gold_eligibility_active
+				log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_ELIGIBILITY | country=[THIS.GetName] state=decision_target_eligible registration_flag=1 array_member=1 economy_of_conquest=1 cg_positive=1 vichy_hold=0 controlled_unseized_factory_core=1 current_cg=[?GER_industrial_consumer_goods_factor]"
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = DAI_GER_france_gold_eligibility_blocked }
+				}
+				clr_country_flag = DAI_GER_france_gold_eligibility_active
+				set_country_flag = DAI_GER_france_gold_eligibility_blocked
+				log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_ELIGIBILITY | country=[THIS.GetName] state=blocked current_cg=[?GER_industrial_consumer_goods_factor]"
+				if = {
+					limit = {
+						NOT = { has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier } }
+					}
+					log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_BLOCKER | country=[THIS.GetName] requirement=economy_of_conquest result=missing"
+				}
+				if = {
+					limit = {
+						NOT = { check_variable = { GER_industrial_consumer_goods_factor > 0 } }
+					}
+					log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_BLOCKER | country=[THIS.GetName] requirement=positive_consumer_goods_factor result=missing"
+				}
+				if = {
+					limit = {
+						FRA = { NOT = { has_country_flag = GER_has_capitulated_to_germany } }
+					}
+					log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_BLOCKER | country=[THIS.GetName] requirement=GER_has_capitulated_to_germany result=missing"
+				}
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								is_in_array = {
+									array = GER.GER_seize_gold_targets_array
+									value = THIS
+								}
+							}
+						}
+					}
+					log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_BLOCKER | country=[THIS.GetName] requirement=GER_seize_gold_targets_array result=missing"
+				}
+				if = {
+					limit = { FRA = { has_country_flag = GER_dont_seize_gold_reserves_flag } }
+					log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_BLOCKER | country=[THIS.GetName] requirement=vichy_setup_complete result=pending"
+				}
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								any_core_state = {
+									is_controlled_by = GER
+									NOT = { is_core_of = GER }
+									NOT = { has_state_flag = GER_seize_gold_reserves_state_flag }
+									OR = {
+										check_variable = { industrial_complex_level > 0 }
+										check_variable = { arms_factory_level > 0 }
+										check_variable = { building_level@dockyard > 0 }
+									}
+								}
+							}
+						}
+					}
+					log = "[GetYear] [GetMonth] | DAI_GER_FRANCE_GOLD_BLOCKER | country=[THIS.GetName] requirement=controlled_unseized_factory_core result=missing"
+				}
+			}
+		}
+	}
+}

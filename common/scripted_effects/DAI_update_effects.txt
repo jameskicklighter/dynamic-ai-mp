@@ -29,6 +29,8 @@ DAI_monthly_update = {
 		DAI_set_wants_armor_flag = yes
 		DAI_set_wants_mech_flag = yes
 		DAI_update_historical_axis_debug = yes
+		DAI_update_improved_small_airframe_engines_3_profile_access = yes
+		DAI_log_small_aircraft_target_transitions = yes
 
 	}
 }

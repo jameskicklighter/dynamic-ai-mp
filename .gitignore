@@ -2,4 +2,5 @@ __pycache__/
 *.py[cod]
 agent-guidance/
 reports/
-tools/
+tools/*
+!tools/generate_plane_role_licensing.py
