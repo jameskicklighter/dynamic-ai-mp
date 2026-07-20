@@ -19,6 +19,11 @@ FRA_dominance_fleet_1 = {
 		FRA_PatrolDominanceForce_1 = 2
 	}
 }
+FRA_support_fleet_1 = {
+	required_taskforces = {
+		FRA_InvasionSupport_1 = 1
+	}
+}
 FRA_raiding_fleet_1 = {
 	required_taskforces = {
 		FRA_ConvoyRaiding_1 = 4

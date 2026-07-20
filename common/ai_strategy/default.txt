@@ -898,15 +898,23 @@ DAI_mechanized_production = {
 	}
 
 	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = mechanized_equipment
-		value = 100
-	}
-
-	ai_strategy = {
 		type = equipment_production_min_factories_archetype
 		id = mechanized_equipment
 		value = 2
+	}
+}
+
+DAI_mechanized_production_factor = {
+	enable = {
+		DAI_should_start_mech_production = yes
+		has_equipment = { mechanized_equipment < 2000 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = mechanized_equipment
+		value = 100
 	}
 }
 
@@ -919,15 +927,25 @@ DAI_armor_mechanized_production_boost = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = mechanized_equipment
-		value = 100
-	}
-
-	ai_strategy = {
 		type = equipment_production_min_factories_archetype
 		id = mechanized_equipment
 		value = 2
+	}
+}
+
+DAI_armor_mechanized_production_factor_boost = {
+	enable = {
+		DAI_should_start_mech_production = yes
+		has_country_flag = DAI_wants_mech
+		has_country_flag = DAI_wants_armor
+		has_equipment = { mechanized_equipment < 2000 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = mechanized_equipment
+		value = 50
 	}
 }
 
@@ -2279,6 +2297,19 @@ DAI_delay_mechanized_equipment_upgrade = {
 		type = production_upgrade_desire_offset
 		id = mechanized_equipment_1
 		value = 100
+	}
+}
+
+DAI_delay_infantry_equipment_upgrade = {
+	enable = {
+		has_equipment = { infantry_equipment < 100000 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = infantry_equipment_3
+		value = -100
 	}
 }
 

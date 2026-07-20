@@ -1,0 +1,122 @@
+##############################################################################
+### 		AXIS SEALION PHASES
+##############################################################################
+
+DAI_axis_sealion_base_conditions = {
+	is_historical_focus_on = yes
+	country_exists = GER
+	country_exists = ENG
+	GER = {
+		is_ai = yes
+		has_capitulated = no
+		has_war_with = ENG
+	}
+	ENG = { has_capitulated = no }
+	OR = {
+		has_global_flag = FRA_already_surrendered
+		FRA = {
+			OR = {
+				has_capitulated = yes
+				exists = no
+			}
+		}
+	}
+	OR = {
+		NOT = { country_exists = SOV }
+		SOV = { has_capitulated = yes }
+	}
+}
+
+DAI_axis_sealion_faction_participant = {
+	is_ai = yes
+	has_capitulated = no
+	has_war_with = ENG
+	OR = {
+		original_tag = GER
+		is_in_faction_with = GER
+	}
+}
+
+DAI_axis_sealion_naval_participant = {
+	DAI_axis_sealion_faction_participant = yes
+	OR = {
+		original_tag = GER
+		original_tag = ITA
+		AND = {
+			original_tag = FRA
+			tag = VIC
+		}
+	}
+}
+
+DAI_axis_has_english_foothold = {
+	OR = {
+		127 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Sussex
+		126 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Greater London Area
+		125 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Anglia
+		129 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Midlands
+		130 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Yorkshire
+		131 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Northumberland
+		123 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # South-West England
+		338 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Gloucestershire
+		122 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Wales
+		132 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Lancashire
+		121 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Lothian
+		136 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Aberdeenshire
+		120 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Scottish Highlands
+		133 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Lanark
+	}
+}
+
+DAI_axis_sealion_front_is_secured = {
+	count_triggers = {
+		amount = 5
+		125 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Anglia
+		126 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Greater London Area
+		127 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Sussex
+		128 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # West Midlands
+		129 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Midlands
+		338 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Gloucestershire
+		123 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # South-West England
+		122 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Wales
+	}
+}
+
+DAI_axis_sealion_preparation_has_matured = {
+	has_global_flag = {
+		flag = DAI_axis_sealion_prep_started
+		days > 180
+	}
+}
+
+DAI_axis_sealion_initial_release_ready = {
+	DAI_axis_sealion_focus = yes
+	NOT = { has_global_flag = DAI_axis_sealion_initial_release_done }
+	DAI_axis_sealion_preparation_has_matured = yes
+}
+
+DAI_axis_sealion_repeat_release_open = {
+	DAI_axis_sealion_focus = yes
+	has_global_flag = DAI_axis_sealion_initial_release_done
+	has_global_flag = {
+		flag = DAI_axis_sealion_release_cycle_started
+		days < 90
+	}
+}
+
+DAI_axis_sealion_can_go = {
+	OR = {
+		DAI_axis_sealion_initial_release_ready = yes
+		DAI_axis_sealion_repeat_release_open = yes
+	}
+}
+
+DAI_axis_sealion_focus = {
+	DAI_axis_sealion_base_conditions = yes
+	DAI_axis_sealion_front_is_secured = no
+}
+
+DAI_axis_sealion_go_time = {
+	DAI_axis_sealion_focus = yes
+	DAI_axis_sealion_can_go = yes
+}

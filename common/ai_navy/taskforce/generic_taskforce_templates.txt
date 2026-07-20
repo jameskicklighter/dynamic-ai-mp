@@ -210,6 +210,46 @@ ConvoyEscort_1 = {
 	}
 }
 
+Generic_InvasionSupport_1 = {
+	allowed = {
+		NOT = {
+			OR = {
+				original_tag = JAP
+				original_tag = ENG
+				original_tag = SOV
+				original_tag = USA
+				original_tag = ITA
+				original_tag = GER
+				original_tag = FRA
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	mission = { naval_invasion_support }
+
+	min_composition = {
+		heavy_cruiser = {
+			amount = 1
+		}
+		destroyer = {
+			amount = 4
+		}
+	}
+	optimal_composition = {
+		battleship = {
+			amount = 1
+		}
+		heavy_cruiser = {
+			amount = 1
+		}
+		destroyer = {
+			amount = 8
+		}
+	}
+}
+
 #NavalInvasionSupport_1 = { #Commented out for now as it throws the error, for some reason
 #	allowed = {
 #		NOT = {

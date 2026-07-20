@@ -1,0 +1,379 @@
+# Historical Sealion uses the same preparation and release shape as DAI D-Day.
+# Eligible German faction members plan invasions; Germany, Italy, and Vichy supply naval concentration.
+
+DAI_axis_sealion_invasion_hardstop = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_focus = yes
+		DAI_axis_sealion_go_time = no
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		area = UK_excluding_ni
+		ratio = 0.0
+		priority = 650
+		ordertype = invasion
+		execute_order = no
+	}
+}
+
+DAI_axis_sealion_build_up = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_focus = yes
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		order_id = 2
+
+		# Stage invasion reserves in western Europe during the build-up.
+		states = {
+			14
+			15
+			16
+			24
+			29
+			36
+			7
+			35
+		}
+
+		ratio = 0.20
+		area = europe
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = no
+	}
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 60
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = UK_excluding_ni
+		value = 24
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = UK_excluding_ni
+		value = 350
+	}
+
+	ai_strategy = {
+		type = invade
+		id = ENG
+		value = 500
+	}
+}
+
+DAI_axis_sealion_build_up_air_support = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_focus = yes
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 18 # English Channel
+		value = 5000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 1 # Southern England
+		value = 4000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 2 # Northern England
+		value = 2500
+	}
+}
+
+DAI_axis_sealion_build_up_naval_support = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = FRA
+		}
+	}
+	enable = {
+		DAI_axis_sealion_focus = yes
+		DAI_axis_sealion_naval_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_dominance
+		id = DAI_sealion_landing_region
+		value = 70
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 18 # English Channel
+		value = 600
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 16 # North Sea
+		value = 400
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 18 # English Channel
+		value = 500
+	}
+
+	ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 50
+	}
+}
+
+DAI_axis_sealion_go_time_invasion = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_go_time = yes
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 100
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = UK_excluding_ni
+		value = 24
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = UK_excluding_ni
+		value = 650
+	}
+}
+
+DAI_axis_sealion_go_time_air_support = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_go_time = yes
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 18 # English Channel
+		value = 8000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 1 # Southern England
+		value = 6000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 2 # Northern England
+		value = 4000
+	}
+}
+
+DAI_axis_sealion_go_time_naval_support = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = FRA
+		}
+	}
+	enable = {
+		DAI_axis_sealion_go_time = yes
+		DAI_axis_sealion_naval_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_dominance
+		id = DAI_sealion_landing_region
+		value = 100
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 18 # English Channel
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 16 # North Sea
+		value = 700
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 18 # English Channel
+		value = 800
+	}
+
+	ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 75
+	}
+}
+
+DAI_axis_sealion_beachhead_reinforce = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_base_conditions = yes
+		DAI_axis_has_english_foothold = yes
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		target = UK_excluding_ni
+		value = 500
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		area = UK_excluding_ni
+		value = 75
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = UK_excluding_ni
+		value = 400
+	}
+}
+
+DAI_axis_sealion_beachhead_naval_support = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = FRA
+		}
+	}
+	enable = {
+		DAI_axis_sealion_base_conditions = yes
+		DAI_axis_has_english_foothold = yes
+		DAI_axis_sealion_naval_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_dominance
+		id = DAI_sealion_landing_region
+		value = 70
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 18 # English Channel
+		value = 500
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 16 # North Sea
+		value = 350
+	}
+}
+
+DAI_axis_sealion_secured_front_lower_invasions = {
+	allowed = {
+		is_historical_focus_on = yes
+	}
+	enable = {
+		DAI_axis_sealion_base_conditions = yes
+		DAI_axis_sealion_front_is_secured = yes
+		DAI_axis_sealion_faction_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = UK_excluding_ni
+		value = -100
+	}
+}
+
+# Preserve the old continuous behavior outside historical games.
+DAI_axis_sealion_nonhistorical_plan = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+		}
+	}
+	enable = {
+		is_historical_focus_on = no
+		has_war_with = ENG
+		FRA = { has_capitulated = yes }
+		NOT = { has_war_with = SOV }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 10
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = UK_excluding_ni
+		value = 24
+	}
+
+	ai_strategy = {
+		type = invade
+		id = ENG
+		value = 500
+	}
+
+	ai_strategy = {
+		type = naval_invasion_dominance_weight
+		value = 40
+	}
+
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 16 # North Sea
+	}
+}

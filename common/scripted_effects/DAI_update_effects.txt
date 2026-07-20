@@ -20,6 +20,7 @@ DAI_monthly_update = {
 
 		# Strategy flags
 		DAI_update_allied_d_day_flags = yes
+		DAI_update_axis_sealion_flags = yes
 
 		# Laws
 		DAI_set_desired_trade_law = yes
@@ -40,7 +41,7 @@ DAI_update_allied_d_day_flags = {
 	if = {
 		limit = {
 			is_historical_focus_on = yes
-			date > 1942.1.1
+			date > 1941.12.31
 			GER = { has_capitulated = no }
 			SOV = {
 				has_war_with = GER
@@ -129,6 +130,72 @@ DAI_update_allied_d_day_flags = {
 		}
 		clr_global_flag = DAI_allies_d_day_release_cycle_started
 		set_global_flag = DAI_allies_d_day_release_cycle_started
+	}
+
+}
+
+DAI_update_axis_sealion_flags = {
+
+	if = {
+		limit = {
+			OR = {
+				has_global_flag = DAI_axis_sealion_prep_started
+				has_global_flag = DAI_axis_sealion_initial_release_done
+				has_global_flag = DAI_axis_sealion_release_cycle_started
+			}
+			OR = {
+				DAI_axis_sealion_base_conditions = no
+				DAI_axis_sealion_front_is_secured = yes
+			}
+		}
+		clr_global_flag = DAI_axis_sealion_prep_started
+		clr_global_flag = DAI_axis_sealion_initial_release_done
+		clr_global_flag = DAI_axis_sealion_release_cycle_started
+	}
+
+	if = {
+		limit = {
+			tag = GER
+			NOT = { has_global_flag = DAI_axis_sealion_prep_started }
+			NOT = { has_global_flag = DAI_axis_sealion_initial_release_done }
+			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
+			DAI_axis_sealion_focus = yes
+		}
+		set_global_flag = DAI_axis_sealion_prep_started
+	}
+
+	if = {
+		limit = {
+			tag = GER
+			DAI_axis_sealion_initial_release_ready = yes
+			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
+		}
+		set_global_flag = DAI_axis_sealion_initial_release_done
+		set_global_flag = DAI_axis_sealion_release_cycle_started
+	}
+
+	if = {
+		limit = {
+			tag = GER
+			DAI_axis_sealion_focus = yes
+			has_global_flag = DAI_axis_sealion_initial_release_done
+			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
+		}
+		set_global_flag = DAI_axis_sealion_release_cycle_started
+	}
+
+	if = {
+		limit = {
+			tag = GER
+			DAI_axis_sealion_focus = yes
+			has_global_flag = DAI_axis_sealion_initial_release_done
+			has_global_flag = {
+				flag = DAI_axis_sealion_release_cycle_started
+				days > 180
+			}
+		}
+		clr_global_flag = DAI_axis_sealion_release_cycle_started
+		set_global_flag = DAI_axis_sealion_release_cycle_started
 	}
 
 }

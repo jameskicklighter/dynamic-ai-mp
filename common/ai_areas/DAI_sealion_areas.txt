@@ -1,0 +1,9 @@
+areas = {
+
+	DAI_sealion_landing_region = {
+		strategic_regions = {
+			18 # English Channel
+			16 # North Sea
+		}
+	}
+}

@@ -17,6 +17,10 @@ NDefines.NMilitary.AIR_EQUIPMENT_BASE_COST = 1
 NDefines.NMilitary.AIR_EQUIPMENT_RAMP_COST = 0
 NDefines.NMilitary.NAVAL_EQUIPMENT_RAMP_COST = 0
 
+-- Production Licenses: remove civilian-factory costs from scripted and traditional licenses. --
+NDefines.NProduction.BASE_LICENSE_IC_COST = 0
+NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0
+
 
 -- =========== --
 -- AI Specific --

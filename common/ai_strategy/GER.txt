@@ -728,9 +728,7 @@ GER_dont_justify_before_around_maginot = {
 		has_government = fascism
 		NOT = { has_completed_focus = GER_around_maginot }
 	}
-	abort = {
-		always = no
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = antagonize
@@ -826,12 +824,6 @@ GER_blitzkrieg_poland = {
 		}
 	}
 	ai_strategy = {
-		type = front_armor_score
-		id = POL
-		value = 250
-	}
-
-	ai_strategy = {
 		type = force_concentration_target_weight
 		state = 87 # Lodz
 		state = 10 # Warsaw
@@ -854,6 +846,10 @@ GER_blitzkrieg_russia_with_force_concentration = {
 	}
 	enable = {
 		#is_historical_focus_on = yes
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 		OR = {
 			focus_progress = {
 				focus = GER_war_with_the_ussr
@@ -906,12 +902,10 @@ GER_dont_die_in_mountains = {
 	}
 	abort = {
 		OR = {
-			AND = {
-				NOT = { country_exists = FRA }
-				date > 1942.5.1
-			}
+			date > 1942.5.1
+			NOT = { country_exists = SWI }
 			SWI = {
-				NOt = {has_idea = SWI_swiss_neutrality}
+				NOT = { has_idea = SWI_swiss_neutrality }
 			}
 		}
 	}
@@ -1875,7 +1869,10 @@ GER_stop_blitz = { #prevents GER air from suicidally continuing the Blitz after 
 	enable = {
 		is_historical_focus_on = yes
 		has_war_with = ENG
-		SOV = { has_capitulated = no }
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 		date > 1940.11.2
 	}
 
@@ -2284,6 +2281,12 @@ AXIS_raid_from_brest = {
 		has_war_with = ENG
 		date < 1942.1.1
 		FRA = { has_capitulated = yes }
+		NOT = {
+			AND = {
+				DAI_axis_sealion_focus = yes
+				DAI_axis_sealion_naval_participant = yes
+			}
+		}
 
 		OR = {
 			GER = {
@@ -2403,12 +2406,17 @@ GER_prepare_for_war_with_SOV = {
 		original_tag = GER
 	}
 	enable = {
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 		going_war_with_SOV = yes
 	}
 	abort = {
 		OR = {
 			surrender_progress > 0.15
 			going_war_with_SOV = no
+			NOT = { country_exists = SOV }
 			SOV = { has_capitulated = yes }
 		}
 	}
@@ -2843,6 +2851,10 @@ GER_enable_invasion_of_NOR = {
 		}
 	}
 	enable = {
+		NOR = {
+			exists = yes
+			has_capitulated = no
+		}
 		# try to invade NOR if things are looking not so bad
 		OR = {
 			date < 1940.4.4
@@ -2993,17 +3005,6 @@ GER_around_the_maginot = {
 	#}
 
 	ai_strategy = {
-		type = front_armor_score
-		id = FRA
-		value = -100
-	}
-
-	ai_strategy = {
-		type = front_armor_score
-		id = HOL
-		value = 100
-	}
-	ai_strategy = {
 		type = prepare_for_war
 		id = HOL
 		value = 1000
@@ -3056,18 +3057,21 @@ GER_tanks_against_belgium = {
 	enable = {
 		is_historical_focus_on = yes
 		HOL = { has_capitulated = yes }
+		BEL = {
+			exists = yes
+			has_capitulated = no
+		}
 		#LUX = { has_capitulated = yes }
 	}
 
 	abort = {
-		surrender_progress > 0.15 #Bring our metal bawkses home
+		OR = {
+			surrender_progress > 0.15 #Bring our metal bawkses home
+			NOT = { country_exists = BEL }
+			BEL = { has_capitulated = yes }
+		}
 	}
 
-	ai_strategy = {
-		type = front_armor_score
-		id = BEL
-		value = 100
-	}
 	ai_strategy = {
 		type = prepare_for_war
 		id = BEL
@@ -3108,28 +3112,6 @@ GER_dont_invade_until_FRA_falls = {
 		type = front_unit_request
 		tag = NOR
 		value = -30
-	}
-}
-
-# Valid for all German strategies, historical or otherwise.
-GER_sea_lion = {
-	allowed = {
-		OR = {
-			original_tag = GER
-			original_tag = ITA
-		}
-	}
-	enable = {
-		has_war_with = ENG
-		NOT = { has_war_with = SOV }
-		FRA = { has_capitulated = yes }
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = invade
-		id = "ENG"
-		value = 99999
 	}
 }
 
@@ -3377,6 +3359,10 @@ GER_tanks_in_the_snow = {
 	}
 
 	enable = {
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 		OR = {
 			focus_progress = {
 				focus = GER_war_with_the_ussr
@@ -3387,13 +3373,11 @@ GER_tanks_in_the_snow = {
 	}
 
 	abort = {
-		surrender_progress > 0.15 #Bring our metal bawkses home
-	}
-
-	ai_strategy = {
-		type = front_armor_score
-		id = SOV
-		value = 250
+		OR = {
+			surrender_progress > 0.15 #Bring our metal bawkses home
+			NOT = { country_exists = SOV }
+			SOV = { has_capitulated = yes }
+		}
 	}
 
 	ai_strategy = {
@@ -3525,22 +3509,144 @@ GER_tanks_against_france = {
 		HOL = { has_capitulated = yes }
 		BEL = { has_capitulated = yes }
 		LUX = { has_capitulated = yes }
+		FRA = {
+			exists = yes
+			has_capitulated = no
+		}
 	}
 
 	abort = {
-		surrender_progress > 0.15 #Bring our metal bawkses home
-	}
-
-	ai_strategy = {
-		type = front_armor_score
-		id = FRA
-		value = 100
+		OR = {
+			surrender_progress > 0.15 #Bring our metal bawkses home
+			NOT = { country_exists = FRA }
+			FRA = { has_capitulated = yes }
+		}
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
 		value = 10
+	}
+}
+
+GER_wartime_armor_front_POL = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = POL
+		POL = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = POL
+		value = 250
+	}
+}
+
+GER_wartime_armor_front_HOL = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = HOL
+		HOL = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = HOL
+		value = 250
+	}
+}
+
+GER_wartime_armor_front_BEL = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = BEL
+		BEL = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = BEL
+		value = 250
+	}
+}
+
+GER_wartime_armor_front_FRA = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = FRA
+		FRA = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = FRA
+		value = 250
+	}
+}
+
+GER_wartime_armor_front_SOV = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = SOV
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = SOV
+		value = 250
+	}
+}
+
+GER_wartime_armor_front_NOR = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = NOR
+		NOR = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = NOR
+		value = -200
 	}
 }
 
@@ -3551,10 +3657,18 @@ GER_abandon_ship = {
 
 	enable = {
 		surrender_progress > 0.25 #Bring our metal bawkses home
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 	}
 
 	abort = {
-		surrender_progress < 0.25 #Bring our metal bawkses home
+		OR = {
+			surrender_progress < 0.25 #Bring our metal bawkses home
+			NOT = { country_exists = SOV }
+			SOV = { has_capitulated = yes }
+		}
 	}
 
 	ai_strategy = {
@@ -3574,6 +3688,10 @@ GER_blitzkrieg_russia_hard  = { #STEINER, IT IS NOT TIME YET
 
 	enable = {
 		date < 1942.8.1
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 		OR = {
 			focus_progress = {
 				focus = GER_war_with_the_ussr
@@ -3616,6 +3734,10 @@ GER_blitzkrieg_russia_hard_air_north  = { #get GER to focus on breaking border d
 
 	enable = {
 		date < 1942.1.1
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 
 		OR = {
 			focus_progress = {
@@ -3661,6 +3783,10 @@ GER_blitzkrieg_russia_hard_air_center  = { #get GER to focus on breaking border 
 
 	enable = {
 		date < 1942.1.1
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 		OR = {
 			focus_progress = {
 				focus = GER_war_with_the_ussr
@@ -3699,6 +3825,10 @@ GER_blitzkrieg_russia_hard_air_south  = { #get GER to focus on breaking border d
 
 	enable = {
 		date < 1942.1.1
+		SOV = {
+			exists = yes
+			has_capitulated = no
+		}
 
 		OR = {
 			focus_progress = {
@@ -5099,5 +5229,178 @@ GER_base_faction_priorities = {
 		type = spent_faction_initiative_priority
 		id = unlock_doctrine_sharing
 		value = 10
+	}
+}
+
+GER_collaboration_on_POL = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		is_historical_focus_on = yes
+		date > 1937.7.1
+		POL = {
+			exists = yes
+			has_capitulated = no
+			NOT = { is_in_faction_with = GER }
+		}
+		num_finished_operations = {
+			operation = operation_collaboration_government
+			target = POL
+			value < 1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_collaboration_government
+		value = 9999
+		operation_target = POL
+	}
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = POL
+	}
+}
+
+GER_collaboration_on_FRA = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		is_historical_focus_on = yes
+		date > 1938.7.1
+		FRA = {
+			exists = yes
+			has_capitulated = no
+			NOT = { is_in_faction_with = GER }
+		}
+		num_finished_operations = {
+			operation = operation_collaboration_government
+			target = FRA
+			value < 1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_collaboration_government
+		value = 9999
+		operation_target = FRA
+	}
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = FRA
+	}
+}
+
+GER_collaboration_on_SOV_1 = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		is_historical_focus_on = yes
+		OR = {
+			date > 1940.1.1
+			has_war_with = SOV
+		}
+		SOV = {
+			exists = yes
+			has_capitulated = no
+			NOT = { is_in_faction_with = GER }
+		}
+		num_finished_operations = {
+			operation = operation_collaboration_government
+			target = SOV
+			value < 1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_collaboration_government
+		value = 9999
+		operation_target = SOV
+	}
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = SOV
+	}
+}
+
+GER_collaboration_on_SOV_2 = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		is_historical_focus_on = yes
+		SOV = {
+			exists = yes
+			has_capitulated = no
+			NOT = { is_in_faction_with = GER }
+			surrender_progress > 0.4
+		}
+		num_finished_operations = {
+			operation = operation_collaboration_government
+			target = SOV
+			value < 2
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_collaboration_government
+		value = 9999
+		operation_target = SOV
+	}
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = SOV
+	}
+}
+
+GER_collaboration_on_SOV_3 = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		is_historical_focus_on = yes
+		SOV = {
+			exists = yes
+			has_capitulated = no
+			NOT = { is_in_faction_with = GER }
+			surrender_progress > 0.7
+		}
+		num_finished_operations = {
+			operation = operation_collaboration_government
+			target = SOV
+			value < 3
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_operation
+		operation = operation_collaboration_government
+		value = 9999
+		operation_target = SOV
+	}
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 9999
+		mission_target = SOV
 	}
 }

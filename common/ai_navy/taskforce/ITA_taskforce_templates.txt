@@ -163,3 +163,33 @@ ITA_ConvoyEscort_1 = {
 		}
 	}
 }
+
+ITA_InvasionSupport_1 = {
+	allowed = {
+		original_tag = ITA
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	mission = { naval_invasion_support }
+
+	min_composition = {
+		heavy_cruiser = {
+			amount = 1
+		}
+		destroyer = {
+			amount = 4
+		}
+	}
+	optimal_composition = {
+		battleship = {
+			amount = 1
+		}
+		heavy_cruiser = {
+			amount = 1
+		}
+		destroyer = {
+			amount = 8
+		}
+	}
+}

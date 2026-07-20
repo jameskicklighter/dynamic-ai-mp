@@ -93,6 +93,7 @@ DAI_allies_africa_italy_ready_for_normandy = {
 # the Allies stage once Africa is secure and Italy is disrupted, or for the
 # historical 1944 landing window.
 DAI_allies_normandy_can_build_up = {
+	date > 1941.12.31 # Earliest eligible date: 1942.1.1
 	OR = {
 		date > 1944.1.1
 		DAI_allies_soviet_d_day_pressure_flag_is_set = yes
@@ -106,7 +107,7 @@ DAI_allies_normandy_can_build_up = {
 DAI_allies_normandy_preparation_has_matured = {
 	has_global_flag = {
 		flag = DAI_allies_d_day_prep_started
-		days > 150
+		days > 180
 	}
 }
 

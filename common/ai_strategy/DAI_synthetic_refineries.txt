@@ -1,0 +1,60 @@
+# Dynamic rubber-shortage response for major industrial powers.
+DAI_dynamic_rubber_shortage_refineries = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = SOV
+			original_tag = USA
+		}
+	}
+	enable = {
+		date > 1939.1.1
+		check_variable = { resource@rubber < -8 }
+		OR = {
+			AND = {
+				original_tag = ENG
+				synthetic_refinery < 15
+			}
+			AND = {
+				original_tag = FRA
+				synthetic_refinery < 20
+			}
+			AND = {
+				original_tag = GER
+				synthetic_refinery < 40
+			}
+			AND = {
+				original_tag = ITA
+				synthetic_refinery < 15
+			}
+			AND = {
+				original_tag = JAP
+				synthetic_refinery < 10
+			}
+			AND = {
+				original_tag = SOV
+				synthetic_refinery < 30
+			}
+			AND = {
+				original_tag = USA
+				synthetic_refinery < 30
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	# Make the prerequisite available if the shortage begins before it is researched.
+	ai_strategy = {
+		type = research_tech
+		id = synth_oil_experiments
+		value = 100
+	}
+
+	# A no-target build strategy is ignored while another refinery is already queued.
+	ai_strategy = {
+		type = build_building
+		id = synthetic_refinery
+		value = 20
+	}
+}

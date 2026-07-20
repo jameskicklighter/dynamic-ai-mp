@@ -2022,6 +2022,12 @@ ITA_contest_the_med = {
 			has_war_with = FRA
 		}
 		date > 1939.9.1
+		NOT = {
+			AND = {
+				DAI_axis_sealion_go_time = yes
+				DAI_axis_sealion_naval_participant = yes
+			}
+		}
 		# We just want to always do this, this is our home coast
 	}
 	

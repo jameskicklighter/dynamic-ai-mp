@@ -19,6 +19,11 @@ GER_dominance_fleet_1 = {
 		GER_PatrolDominanceForce_1 = 2
 	}
 }
+GER_support_fleet_1 = {
+	required_taskforces = {
+		GER_InvasionSupport_1 = 1
+	}
+}
 GER_raiding_fleet_1 = {
 	required_taskforces = {
 		GER_ConvoyRaiding_1 = 4
