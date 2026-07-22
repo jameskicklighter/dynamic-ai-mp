@@ -70,8 +70,40 @@ DAI_allies_d_day_base_conditions = {
 	DAI_allies_france_has_fallen = yes
 }
 
-DAI_allies_soviet_d_day_pressure_flag_is_set = {
-	has_global_flag = DAI_allies_soviet_d_day_pressure
+DAI_allies_soviet_d_day_pressure = {
+	country_exists = SOV
+	SOV = {
+		has_capitulated = no
+		has_war_with = GER
+		surrender_progress > 0.30
+	}
+}
+
+DAI_allies_soviet_cannot_resist_germany = {
+	OR = {
+		NOT = { country_exists = SOV }
+		SOV = {
+			OR = {
+				has_capitulated = yes
+				is_subject_of = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+DAI_allies_soviet_requires_early_d_day = {
+	OR = {
+		DAI_allies_soviet_cannot_resist_germany = yes
+		AND = {
+			country_exists = SOV
+			SOV = {
+				has_capitulated = no
+				has_war_with = GER
+				surrender_progress > 0.50
+			}
+		}
+	}
 }
 
 DAI_allies_italy_is_in_chaos_for_d_day = {
@@ -89,17 +121,22 @@ DAI_allies_africa_italy_ready_for_normandy = {
 	DAI_allies_italy_is_in_chaos_for_d_day = yes
 }
 
-# Build-up starts early only if the Soviet pressure flag has been set, otherwise
-# the Allies stage once Africa is secure and Italy is disrupted, or for the
-# historical 1944 landing window.
+# Severe Soviet pressure or collapse bypasses the calendar. The existing dated
+# Soviet-pressure, Africa/Italy, and historical 1944 paths remain unchanged.
 DAI_allies_normandy_can_build_up = {
-	date > 1941.12.31 # Earliest eligible date: 1942.1.1
 	OR = {
-		date > 1944.1.1
-		DAI_allies_soviet_d_day_pressure_flag_is_set = yes
+		has_global_flag = DAI_allies_d_day_prep_started
+		DAI_allies_soviet_requires_early_d_day = yes
 		AND = {
-			date > 1943.1.1
-			DAI_allies_africa_italy_ready_for_normandy = yes
+			date > 1941.12.31 # Earliest date for the existing build-up paths: 1942.1.1
+			OR = {
+				date > 1944.1.1
+				DAI_allies_soviet_d_day_pressure = yes
+				AND = {
+					date > 1943.1.1
+					DAI_allies_africa_italy_ready_for_normandy = yes
+				}
+			}
 		}
 	}
 }
@@ -116,7 +153,7 @@ DAI_allies_normandy_date_gate_is_open = {
 		date > 1944.6.1
 		AND = {
 			date > 1942.6.1
-			DAI_allies_soviet_d_day_pressure_flag_is_set = yes
+			has_global_flag = DAI_allies_d_day_prep_started
 		}
 		AND = {
 			date > 1943.6.1

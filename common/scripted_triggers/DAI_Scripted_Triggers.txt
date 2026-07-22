@@ -217,11 +217,7 @@ DAI_should_use_mechanized = {
 }
 
 DAI_should_use_amtrac = {
-	OR = {
-		DAI_wants_amtrac = yes
-		has_country_flag = DAI_amtrac_licensed_1
-		has_country_flag = DAI_amtrac_licensed_2
-	}
+	DAI_wants_amtrac = yes
 }
 
 DAI_should_start_mech_production = {
