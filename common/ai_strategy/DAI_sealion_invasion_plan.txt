@@ -61,7 +61,12 @@ DAI_axis_sealion_build_up = {
 
 	ai_strategy = {
 		type = invasion_unit_request
-		area = UK_excluding_ni
+		state = 127 # Sussex
+		state = 126 # Greater London Area
+		state = 125 # East Anglia
+		state = 129 # East Midlands
+		state = 130 # Yorkshire
+		state = 131 # Northern England
 		value = 24
 	}
 
@@ -168,7 +173,12 @@ DAI_axis_sealion_go_time_invasion = {
 
 	ai_strategy = {
 		type = invasion_unit_request
-		area = UK_excluding_ni
+		state = 127 # Sussex
+		state = 126 # Greater London Area
+		state = 125 # East Anglia
+		state = 129 # East Midlands
+		state = 130 # Yorkshire
+		state = 131 # Northern England
 		value = 24
 	}
 
@@ -226,6 +236,18 @@ DAI_axis_sealion_go_time_naval_support = {
 		type = naval_dominance
 		id = DAI_sealion_landing_region
 		value = 100
+	}
+
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 18 # English Channel
+		value = 200
+	}
+
+	ai_strategy = {
+		type = naval_invasion_support_priority
+		id = 16 # North Sea
+		value = 200
 	}
 
 	ai_strategy = {
@@ -357,7 +379,12 @@ DAI_axis_sealion_nonhistorical_plan = {
 
 	ai_strategy = {
 		type = invasion_unit_request
-		area = UK_excluding_ni
+		state = 127 # Sussex
+		state = 126 # Greater London Area
+		state = 125 # East Anglia
+		state = 129 # East Midlands
+		state = 130 # Yorkshire
+		state = 131 # Northern England
 		value = 24
 	}
 

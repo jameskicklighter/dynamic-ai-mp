@@ -69,6 +69,10 @@ NDefines.NAI.DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_AIR = 20
 NDefines.NAI.REFIT_SHIP_RELUCTANCE = 5000
 NDefines.NAI.REFIT_SHIP_PERCENTAGE_OF_FORCES = 0.0
 
+-- Naval invasions: allow AI planning against countries with much stronger navies.
+-- Naval supremacy and execution requirements still apply after an invasion plan is drawn.
+NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 1000
+
 -- Buildings
 NDefines.NAI.BUILDING_TARGETS_BUILDING_PRIORITIES = { -- Buildings in priority order when considering building_target strategies. First has the greatest priority; omitted has the lowest.
 	'air_base',
