@@ -38,8 +38,8 @@ GER_coast_defense = {
         GER
     }
 
-    min_priority = 5
-    max_priority = 10
+    min_priority = 1
+    max_priority = 5
 }
 
 GER_convoy_protection = {

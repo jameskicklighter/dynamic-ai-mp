@@ -84,37 +84,6 @@ FRA_unit_production = {
 		value = 100
 	}
 
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 200
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 50
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 10
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = strategic_bomber
-		value = 0
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 20
-	}
-
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
@@ -145,44 +114,13 @@ FRA_land_role_ratios_1937 = {
 FRA_no_air_production_until_fallen = {
 	allowed = { original_tag = FRA }
 	enable = {
-		has_capitulated = no
-		NOT = { has_global_flag = FRA_already_surrendered }
+		NOT = { DAI_should_build_planes = yes }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = air_factory_balance
 		value = -200
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = -999
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = -999
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = -999
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = strategic_bomber
-		value = -999
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = -999
 	}
 }
 
@@ -432,16 +370,21 @@ FRA_buffer_belgium_front = {
 		has_war_with = GER
 		NOT = { has_global_flag = FRA_already_surrendered }
 		OR = {
-			AND = {
-				is_historical_focus_on = yes
-				OR = {
-					GER = { has_wargoal_against = BEL }
-					GER = { has_war_with = BEL }
-				}
+			is_historical_focus_on = yes
+			BEL = {
+				exists = yes
+				is_in_faction_with = ROOT
+				has_war_with = GER
 			}
-			AND = {
-				BEL = { is_in_faction_with = ROOT }
-				BEL = { has_war_with = GER }
+			HOL = {
+				exists = yes
+				is_in_faction_with = ROOT
+				has_war_with = GER
+			}
+			LUX = {
+				exists = yes
+				is_in_faction_with = ROOT
+				has_war_with = GER
 			}
 		}
 	}
@@ -458,7 +401,96 @@ FRA_buffer_belgium_front = {
 		ratio = 0.2
 		area = europe
 		subtract_invasions_from_need = no
-		subtract_fronts_from_need = yes
+		subtract_fronts_from_need = no
+	}
+}
+
+FRA_avoid_low_countries_ally_fronts = {
+	allowed = { original_tag = FRA }
+	enable = {
+		has_war_with = GER
+		NOT = { has_global_flag = FRA_already_surrendered }
+		OR = {
+			AND = {
+				GER = { has_war_with = BEL }
+				BEL = {
+					exists = yes
+					has_capitulated = no
+				}
+			}
+			AND = {
+				GER = { has_war_with = HOL }
+				HOL = {
+					exists = yes
+					has_capitulated = no
+				}
+			}
+			AND = {
+				GER = { has_war_with = LUX }
+				LUX = {
+					exists = yes
+					has_capitulated = no
+				}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = BEL
+		value = 500
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = HOL
+		value = 500
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = LUX
+		value = 500
+	}
+}
+
+FRA_hold_italian_front = {
+	allowed = { original_tag = FRA }
+	enable = {
+		has_war_with = ITA
+		NOT = { has_global_flag = FRA_already_surrendered }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		tag = ITA
+		ratio = 0.3
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no
+		manual_attack = no
+	}
+}
+
+FRA_wartime_armor_front_GER = {
+	allowed = { original_tag = FRA }
+	enable = {
+		has_war_with = GER
+		NOT = { has_global_flag = FRA_already_surrendered }
+		GER = {
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 200
 	}
 }
 
@@ -513,57 +545,6 @@ FRA_buffer_belgium_front = {
 # 		execution_type = careful
 # 		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
 # 		manual_attack = no
-# 	}
-# }
-
-# FRA_benelux_will_surely_not_fall = {
-# 	allowed = { original_tag = FRA }
-# 	enable = {
-# 		has_war_with = GER
-# 		date < 1940.8.1
-# 		OR = {
-# 			HOL = { has_capitulated = no }
-# 			BEL = { has_capitulated = no }
-# 		}
-# 	}
-
-# 	abort = {
-# 		OR = {
-# 			date > 1940.8.1
-# 			AND = {
-# 				HOL = { surrender_progress > 0.30 }
-# 				BEL = { surrender_progress > 0.30 }
-# 			}
-# 		}
-# 	}
-
-# 	ai_strategy = {
-# 		type = dont_defend_ally_borders
-# 		id = "HOL"
-# 		value = 50
-# 	}
-# 	ai_strategy = {
-# 		type = dont_defend_ally_borders
-# 		id = "BEL"
-# 		value = 50
-# 	}
-# 	ai_strategy = {
-# 		type = dont_defend_ally_borders
-# 		id = "LUX"
-# 		value = 50
-# 	}
-# 	ai_strategy = {
-# 		type = put_unit_buffers
-# 		# french states bordering benelux
-# 		states = {
-# 			29
-# 			785
-# 			18
-# 		}
-# 		ratio = 0.1
-# 		area = europe
-# 		subtract_invasions_from_need = no
-# 		subtract_fronts_from_need = yes
 # 	}
 # }
 

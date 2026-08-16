@@ -49,14 +49,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
-			# Need the basics.
 			modifier = {
 				add = 100
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1937.1.1 # Soft limit to focus industry first.
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1938.1.1
 			}
 			# -- DAI
 		}
@@ -97,15 +93,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
-			# Need the basics.
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_DESTROYER = yes
 				date > 1937.1.1 # Soft limit to focus industry first.
-			}
-			modifier = {
-				add = 5
-				DAI_Should_Research_Navy_ANTI_SUB = yes
 			}
 			# -- DAI
 		}
@@ -147,8 +138,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1939.1.1
 			}
 			# -- DAI
 		}
@@ -185,8 +177,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1943.1.1
 			}
 			# -- DAI
 		}
@@ -218,12 +211,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1938.1.1 # Soft limit to focus industry first.
+				add = 999
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1938.1.1
 			}
 			# -- DAI
 		}
@@ -269,14 +259,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
-			# Need the basics.
 			modifier = {
-				add = 100
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1937.1.1 # Soft limit to focus industry first.
+				add = 999
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1938.1.1
 			}
 			# -- DAI
 		}
@@ -322,12 +308,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1938.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
 			}
 			# -- DAI
 		}
@@ -372,11 +354,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 5
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1939.1.1
 			}
 			# -- DAI
 		}
@@ -418,11 +398,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 5
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1943.1.1
 			}
 			# -- DAI
 		}
@@ -462,14 +440,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
-			# Need the basics.
 			modifier = {
-				add = 10
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1937.1.1 # Soft limit to focus industry first.
+				add = 999
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1938.1.1
 			}
 			# -- DAI
 		}
@@ -509,12 +483,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 5
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1938.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
 			}
 			# -- DAI
 		}
@@ -551,12 +521,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				has_war_with = GER
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1939.1.1
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -587,12 +559,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				has_war_with = GER
+				add = 100
+				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1943.1.1
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1885,6 +1859,17 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules		
 		}
 		special_project_specialization = { specialization_naval }
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_SUBMARINE = yes
+				date > 1939.1.1
+			}
+			# -- DAI
+		}
 	}
 
 	sp_aip_engine_advanced_tech = {
@@ -1914,6 +1899,17 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules		
 		}
 		special_project_specialization = { specialization_naval }
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_SUBMARINE = yes
+				date > 1943.1.1
+			}
+			# -- DAI
+		}
 	}
 
 	sp_refined_pykrete = {
@@ -1952,6 +1948,17 @@ technologies = {
 			pykrete_tech
 		}
 		special_project_specialization = { specialization_naval }		
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_CARRIER = yes
+				date > 1942.1.1
+			}
+			# -- DAI
+		}
 	}
 
 	sp_ice_composite_runawayas = {
@@ -1982,6 +1989,17 @@ technologies = {
 			pykrete_tech
 		}
 		special_project_specialization = { specialization_naval }	
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_CARRIER = yes
+				date > 1944.1.1
+			}
+			# -- DAI
+		}
 	}
 
 	sp_naval_proximity_fuze_tech = {

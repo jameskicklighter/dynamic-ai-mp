@@ -512,12 +512,9 @@ DAI_should_build_paratroopers = {
 ### 		NAVAL
 ##############################################################################
 
-# Used to prioritize researching technologies that affect all ships
-# such as retreat speed, reduced critical hit, and invasion capacity.
-# Also used to make sure we have decent hulls and weapons.
-DAI_Should_Research_Navy_GENERAL = {
-	# We need to prepare for Barbarossa, regardless of our dockyards.
-	# Furthermore we need to focus on subs.
+# Classifies countries with a large navy or a plan to build one.
+DAI_Should_Research_Navy_LARGE = {
+	# Germany shifts to its late naval plan after Barbarossa.
 	IF = {
 		limit = {
 			original_tag = GER
@@ -571,19 +568,26 @@ DAI_Should_Research_Navy_GENERAL = {
 	}
 }
 
-DAI_Should_Research_Navy_ANTI_SUB = {
-	num_of_naval_factories > 4
+DAI_Should_Research_Navy_GENERAL = {
+	num_of_naval_factories > 0
+	DAI_Should_Research_Navy_LARGE = yes
+}
+
+DAI_Should_Research_Navy_SMALL = {
+	num_of_naval_factories > 3
+	DAI_Should_Research_Navy_LARGE = no
+}
+
+DAI_Should_Research_Navy_DESTROYER = {
+	num_of_naval_factories > 0
 	OR = {
-		convoy_threat > 0.5
-		# We always need better anti-sub.
-		original_tag = ENG
-		original_tag = ITA
-		original_tag = JAP
-		original_tag = USA
+		DAI_Should_Research_Navy_LARGE = yes
+		DAI_Should_Research_Navy_SMALL = yes
 	}
 }
 
 DAI_Should_Research_Navy_CRUISER = {
+	num_of_naval_factories > 0
 	OR = {
 		# We always need better cruisers.
 		original_tag = ENG
@@ -594,6 +598,7 @@ DAI_Should_Research_Navy_CRUISER = {
 }
 
 DAI_Should_Research_Navy_CARRIER = {
+	num_of_naval_factories > 0
 	OR = {
 		# We always need better carriers.
 		original_tag = ENG
@@ -603,6 +608,7 @@ DAI_Should_Research_Navy_CARRIER = {
 }
 
 DAI_Should_Research_Navy_SUBMARINE = {
+	num_of_naval_factories > 0
 	OR = {
 		# We always need better subs.
 		original_tag = GER

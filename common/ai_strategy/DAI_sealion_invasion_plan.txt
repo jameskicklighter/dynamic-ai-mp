@@ -156,6 +156,38 @@ DAI_axis_sealion_build_up_naval_support = {
 	}
 }
 
+# Test whether coast-defense strategy pressure can keep Germany's scarce
+# patrol and strike-force capacity out of irrelevant Baltic objectives.
+DAI_axis_sealion_deprioritize_baltic_coast_defense = {
+	allowed = {
+		is_historical_focus_on = yes
+		original_tag = GER
+	}
+	enable = {
+		DAI_axis_sealion_base_conditions = yes
+		DAI_axis_sealion_naval_participant = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = coast_defense
+		id = 9 # Gulf of Finland
+		value = -100
+	}
+
+	ai_strategy = {
+		type = coast_defense
+		id = 206 # Lower Baltic Sea
+		value = -100
+	}
+
+	ai_strategy = {
+		type = coast_defense
+		id = 207 # Danish Belts
+		value = -100
+	}
+}
+
 DAI_axis_sealion_go_time_invasion = {
 	allowed = {
 		is_historical_focus_on = yes

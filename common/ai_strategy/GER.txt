@@ -4336,6 +4336,38 @@ GER_avoid_war_with_SWI = {
 	}
 }
 
+GER_air_unit_ratios = {
+	allowed = { original_tag = GER }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 50
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 30
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 10
+	}
+}
+
 GER_bba_air_prod_1 = {
 	# TODO BFW:
 	allowed = { original_tag = GER }
@@ -4344,13 +4376,6 @@ GER_bba_air_prod_1 = {
 	}
 
 	abort_when_not_enabled = yes
-
-	# Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 200
-	}
 
 	# ai_strategy = {
 	# 	type = equipment_production_factor
@@ -4364,12 +4389,6 @@ GER_bba_air_prod_1 = {
 		value = 6  # Germany needs a minimum production of fighters
 	}
 
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 75 #because doctrine this = 15
-	}
-
  	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = cas
@@ -4380,18 +4399,6 @@ GER_bba_air_prod_1 = {
 		type = equipment_production_min_factories
 		id = cas
 		value = 3  # Germany needs a minimum production of CAS planes
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 50
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 50
 	}
 
 	# ai_strategy = {
@@ -4440,13 +4447,6 @@ GER_bba_air_prod_2 = {
 	}
 	abort_when_not_enabled = yes
 
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 300
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = fighter
@@ -4457,12 +4457,6 @@ GER_bba_air_prod_2 = {
 		type = equipment_production_min_factories
 		id = fighter
 		value = 8
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 100 #because doctrine this = 15
 	}
 
 	# ai_strategy = {
@@ -4477,18 +4471,6 @@ GER_bba_air_prod_2 = {
 		value = 5
 	}
  
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 75
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 75
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = tactical_bomber

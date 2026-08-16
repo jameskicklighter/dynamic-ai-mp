@@ -3,11 +3,12 @@ GER_StrikeForce_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 5
+		base = 1
 	}
 	mission = { naval_strike }
+	keep_updated = yes
 	min_composition = {
-		light_cruiser = {
+		battleship = {
 			amount = 2
 		}
 		destroyer = {
@@ -23,10 +24,10 @@ GER_StrikeForce_1 = {
 			amount = 4
 		}
 		light_cruiser = {
-			amount = 4
+			amount = 12
 		}
 		destroyer = {
-			amount = 14
+			amount = 20
 		}
 	}
 }
@@ -36,9 +37,9 @@ GER_StrikeForceCarrier_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 0
+		base = 0
 		modifier = {
-			add = 10
+			add = 1
 			has_navy_size = {
 				unit = carrier
 				size > 0
@@ -46,9 +47,13 @@ GER_StrikeForceCarrier_1 = {
 		}
 	}
 	mission = { naval_strike }
+	keep_updated = yes
 	min_composition = {
+		carrier = {
+			amount = 1
+		}
 		battleship = {
-			amount = 2
+			amount = 1
 		}
 		destroyer = {
 			amount = 8
@@ -60,13 +65,16 @@ GER_StrikeForceCarrier_1 = {
 			amount = 2
 		}
 		battleship = {
-			amount = 4
+			amount = 2
+		}
+		heavy_cruiser = {
+			amount = 2
 		}
 		light_cruiser = {
-			amount = 10
+			amount = 8
 		}
 		destroyer = {
-			amount = 14
+			amount = 16
 		}
 	}
 }
@@ -76,17 +84,18 @@ GER_PatrolReconForce_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 10
+		base = 1
 	}
 	mission = { naval_patrol }
+	keep_updated = yes
 	min_composition = {
 		destroyer = {
-			amount = 1
+			amount = 2
 		}
 	}
 	optimal_composition = {
 		destroyer = {
-			amount = 5
+			amount = 6
 		}
 	}
 }
@@ -96,12 +105,13 @@ GER_PatrolDominanceForce_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 10
+		base = 1
 	}
 	mission = { naval_patrol }
+	keep_updated = yes
 	min_composition = {
-		light_cruiser = {
-			amount = 2
+		heavy_cruiser = {
+			amount = 1
 		}
 		destroyer = {
 			amount = 4
@@ -126,9 +136,10 @@ GER_ConvoyRaiding_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 1
+		base = 1
 	}
 	mission = { convoy_raiding }
+	keep_updated = yes
 	min_composition = {
 		submarine = {
 			amount = 4
@@ -137,7 +148,7 @@ GER_ConvoyRaiding_1 = {
 
 	optimal_composition = {
 		submarine = {
-			amount = 12
+			amount = 8
 		}
 	}
 }
@@ -147,18 +158,35 @@ GER_ConvoySurfaceRaiding_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 1
+		base = 0
+		modifier = {
+			add = 1
+			has_navy_size = {
+				unit = battle_cruiser
+				size > 1
+			}
+		}
 	}
 	mission = { convoy_raiding }
+	keep_updated = yes
 	min_composition = {
 		battle_cruiser = {
 			amount = 1
+		}
+		destroyer = {
+			amount = 4
 		}
 	}
 
 	optimal_composition = {
 		battle_cruiser = {
 			amount = 2
+		}
+		light_cruiser = {
+			amount = 2
+		}
+		destroyer = {
+			amount = 6
 		}
 	}
 }
@@ -168,9 +196,10 @@ GER_ConvoyEscort_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 5
+		base = 1
 	}
 	mission = { convoy_escort }
+	keep_updated = yes
 	min_composition = {
 		destroyer = {
 			amount = 2
@@ -179,7 +208,7 @@ GER_ConvoyEscort_1 = {
 
 	optimal_composition = {
 		destroyer = {
-			amount = 5
+			amount = 6
 		}
 	}
 }
@@ -189,9 +218,10 @@ GER_InvasionSupport_1 = {
 		original_tag = GER
 	}
 	ai_will_do = {
-		factor = 1
+		base = 1
 	}
 	mission = { naval_invasion_support }
+	keep_updated = yes
 
 	min_composition = {
 		heavy_cruiser = {
@@ -203,13 +233,13 @@ GER_InvasionSupport_1 = {
 	}
 	optimal_composition = {
 		battleship = {
-			amount = 1
+			amount = 2
 		}
 		heavy_cruiser = {
-			amount = 1
+			amount = 2
 		}
 		destroyer = {
-			amount = 8
+			amount = 16
 		}
 	}
 }

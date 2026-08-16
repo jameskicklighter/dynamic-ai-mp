@@ -3,9 +3,10 @@ ITA_StrikeForce_1 = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 1
+		base = 1
 	}
 	mission = { naval_strike }
+	keep_updated = yes
 	min_composition = {
 		battleship = {
 			amount = 1
@@ -23,19 +24,20 @@ ITA_StrikeForce_1 = {
 			amount = 4
 		}
 		light_cruiser = {
-			amount = 6
+			amount = 12
 		}
 		destroyer = {
-			amount = 15
+			amount = 20
 		}
 	}
 }
+
 ITA_StrikeForceCarrier_1 = {
 	allowed = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 0
+		base = 0
 		modifier = {
 			add = 1
 			has_navy_size = {
@@ -45,9 +47,14 @@ ITA_StrikeForceCarrier_1 = {
 		}
 	}
 	mission = { naval_strike }
+	keep_updated = yes
+
 	min_composition = {
+		carrier = {
+			amount = 1
+		}
 		battleship = {
-			amount = 2
+			amount = 1
 		}
 		destroyer = {
 			amount = 8
@@ -56,19 +63,19 @@ ITA_StrikeForceCarrier_1 = {
 
 	optimal_composition = {
 		carrier = {
-			amount = 2
-		}
-		battleship = {
 			amount = 4
 		}
+		battleship = {
+			amount = 3
+		}
 		heavy_cruiser = {
-			amount = 2
+			amount = 3
 		}
 		light_cruiser = {
-			amount = 10
+			amount = 12
 		}
 		destroyer = {
-			amount = 14
+			amount = 28
 		}
 	}
 }
@@ -78,17 +85,19 @@ ITA_PatrolReconForce_1 = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 5
+		base = 1
 	}
 	mission = { naval_patrol }
+	keep_updated = yes
+
 	min_composition = {
 		destroyer = {
-			amount = 3
+			amount = 2
 		}
 	}
 	optimal_composition = {
 		destroyer = {
-			amount = 5
+			amount = 6
 		}
 	}
 }
@@ -98,9 +107,11 @@ ITA_PatrolDominanceForce_1 = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 5
+		base = 1
 	}
 	mission = { naval_patrol }
+	keep_updated = yes
+
 	min_composition = {
 		heavy_cruiser = {
 			amount = 1
@@ -112,10 +123,10 @@ ITA_PatrolDominanceForce_1 = {
 
 	optimal_composition = {
 		heavy_cruiser = {
-			amount = 3
+			amount = 4
 		}
 		light_cruiser = {
-			amount = 4
+			amount = 8
 		}
 		destroyer = {
 			amount = 8
@@ -128,9 +139,10 @@ ITA_ConvoyRaiding_1 = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 1
+		base = 1
 	}
 	mission = { convoy_raiding }
+	keep_updated = yes
 	min_composition = {
 		submarine = {
 			amount = 4
@@ -138,7 +150,7 @@ ITA_ConvoyRaiding_1 = {
 	}
 	optimal_composition = {
 		submarine = {
-			amount = 12
+			amount = 8
 		}
 	}
 }
@@ -148,18 +160,20 @@ ITA_ConvoyEscort_1 = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 5
+		base = 1
 	}
 	mission = { convoy_escort }
+	keep_updated = yes
+
 	min_composition = {
 		destroyer = {
-			amount = 3
+			amount = 2
 		}
 	}
 
 	optimal_composition = {
 		destroyer = {
-			amount = 5
+			amount = 6
 		}
 	}
 }
@@ -169,9 +183,10 @@ ITA_InvasionSupport_1 = {
 		original_tag = ITA
 	}
 	ai_will_do = {
-		factor = 1
+		base = 1
 	}
 	mission = { naval_invasion_support }
+	keep_updated = yes
 
 	min_composition = {
 		heavy_cruiser = {
@@ -181,15 +196,16 @@ ITA_InvasionSupport_1 = {
 			amount = 4
 		}
 	}
+
 	optimal_composition = {
 		battleship = {
-			amount = 1
+			amount = 2
 		}
 		heavy_cruiser = {
-			amount = 1
+			amount = 2
 		}
 		destroyer = {
-			amount = 8
+			amount = 16
 		}
 	}
 }

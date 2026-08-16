@@ -172,6 +172,38 @@ ENG_bomber_production = {
 	}
 }
 
+ENG_air_unit_ratios = {
+	allowed = { original_tag = ENG }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 70
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 10
+	}
+}
+
 ENG_bba_air_prod_1 = {
 	# TODO BFW:
 	allowed = { original_tag = ENG }
@@ -179,13 +211,6 @@ ENG_bba_air_prod_1 = {
 		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
-
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 200
-	}
 
 	# ai_strategy = {
 	# 	type = equipment_production_factor
@@ -199,12 +224,6 @@ ENG_bba_air_prod_1 = {
 		value = 3
 	}
 
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 50 #because doctrine this = 15
-	}
-
  	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = cas
@@ -215,18 +234,6 @@ ENG_bba_air_prod_1 = {
 		type = equipment_production_min_factories
 		id = cas
 		value = 2
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 50
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 50
 	}
 
 	# ai_strategy = {
@@ -292,13 +299,6 @@ ENG_bba_air_prod_2 = {
 	}
 	abort_when_not_enabled = yes
 
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 300
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = fighter
@@ -309,12 +309,6 @@ ENG_bba_air_prod_2 = {
 		type = equipment_production_min_factories
 		id = fighter
 		value = 6
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 100
 	}
 
 	# ai_strategy = {
@@ -329,18 +323,6 @@ ENG_bba_air_prod_2 = {
 		value = 3
 	}
  
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 75
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 75
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = tactical_bomber
