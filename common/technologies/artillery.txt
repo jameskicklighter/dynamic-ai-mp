@@ -638,7 +638,7 @@ technologies = {
 				add = 100
 				OR = {
 					has_country_flag = DAI_wants_armor
-					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_is_large_navy_country = yes
 				}
 			}
 			modifier = {

@@ -73,7 +73,10 @@ DAI_pre_research_plane_engine = {
 	is_historical_focus_on = yes
 	OR = {
 		original_tag = ITA
-		original_tag = MEX
+		AND = {
+			original_tag = BEL
+			has_dlc = "Gotterdammerung"
+		}
 	}
 }
 
@@ -85,8 +88,8 @@ DAI_pre_research_plane_engine_endpoint_ready = {
 			has_completed_focus = ITA_reggianes_exports
 		}
 		AND = {
-			original_tag = MEX
-			has_completed_focus = MEX_focus_aviation_workshops
+			original_tag = BEL
+			has_completed_focus = BEL_develop_belgian_air_industry
 		}
 	}
 }
@@ -94,6 +97,7 @@ DAI_pre_research_plane_engine_endpoint_ready = {
 DAI_build_order_should_take_partial_mob = {
 	date < 1939.1.1
 	has_war_support > 0.25
+	NOT = { DAI_should_block_partial_economic_mobilisation = yes }
 	NOT = { has_idea = partial_economic_mobilisation }
 	NOT = { has_idea = war_economy }
 	NOT = { has_idea = tot_economic_mobilisation }
@@ -116,6 +120,19 @@ DAI_build_order_should_take_partial_mob = {
 				}
 			}
 		}
+	}
+}
+
+DAI_should_block_partial_economic_mobilisation = {
+	IF = {
+		limit = {
+			original_tag = SOV
+			DAI_SOV_is_historical_ai = yes
+		}
+		date < 1936.8.1
+	}
+	ELSE = {
+		always = no
 	}
 }
 
@@ -568,22 +585,53 @@ DAI_Should_Research_Navy_LARGE = {
 	}
 }
 
-DAI_Should_Research_Navy_GENERAL = {
+DAI_is_large_navy_country = {
 	num_of_naval_factories > 0
 	DAI_Should_Research_Navy_LARGE = yes
 }
 
+DAI_block_early_naval_research = {
+	date < 1940.1.1
+	NOT = {
+		OR = {
+			original_tag = ENG
+			original_tag = ITA
+			original_tag = JAP
+			original_tag = USA
+		}
+	}
+}
+
+DAI_Should_Research_Navy_GENERAL = {
+	DAI_is_large_navy_country = yes
+	DAI_block_early_naval_research = no
+}
+
 DAI_Should_Research_Navy_SMALL = {
 	num_of_naval_factories > 3
-	DAI_Should_Research_Navy_LARGE = no
+	DAI_is_large_navy_country = no
+	DAI_block_early_naval_research = no
 }
 
 DAI_Should_Research_Navy_DESTROYER = {
 	num_of_naval_factories > 0
 	OR = {
-		DAI_Should_Research_Navy_LARGE = yes
+		DAI_Should_Research_Navy_GENERAL = yes
 		DAI_Should_Research_Navy_SMALL = yes
 	}
+}
+
+DAI_Should_Research_Navy_EARLY_DESTROYER = {
+	num_of_naval_factories > 0
+	OR = {
+		DAI_is_large_navy_country = yes
+		num_of_naval_factories > 3
+	}
+}
+
+DAI_Should_Research_Navy_EARLY_SUBMARINE = {
+	num_of_naval_factories > 0
+	original_tag = GER
 }
 
 DAI_Should_Research_Navy_CRUISER = {
@@ -607,14 +655,19 @@ DAI_Should_Research_Navy_CARRIER = {
 	}
 }
 
-DAI_Should_Research_Navy_SUBMARINE = {
+DAI_Should_Build_Navy_SUBMARINE = {
 	num_of_naval_factories > 0
 	OR = {
-		# We always need better subs.
+		# We always want to build subs.
 		original_tag = GER
 		original_tag = JAP
 		original_tag = USA
 	}
+}
+
+DAI_Should_Research_Navy_SUBMARINE = {
+	DAI_Should_Build_Navy_SUBMARINE = yes
+	DAI_block_early_naval_research = no
 }
 
 ##############################################################################

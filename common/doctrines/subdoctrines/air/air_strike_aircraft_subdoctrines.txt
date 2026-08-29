@@ -12,17 +12,7 @@ air_subdoctrine_flying_artillery = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 75
-            OR = {
-                original_tag = ENG
-                original_tag = FRA
-                original_tag = ITA
-                original_tag = SOV
-            }
-        }
+        base = 50
     }
 
     # EFFECTS
@@ -67,12 +57,7 @@ air_subdoctrine_dive_bombers = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 75
-            original_tag = GER
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -217,16 +202,7 @@ air_subdoctrine_naval_strike_tactics = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
-        modifier = {
-            factor = 0
-            is_major = no 
-        }
+        base = 0
     }
 
     naval_strike_targetting_factor = 0.1
@@ -271,16 +247,7 @@ air_subdoctrine_naval_torpedo_tactics = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 75
-            original_tag = JAP
-        }
-        modifier = {
-            factor = 0
-            is_major = no 
-        }
+        base = 0
     }
 
     category_nav_bomber = {

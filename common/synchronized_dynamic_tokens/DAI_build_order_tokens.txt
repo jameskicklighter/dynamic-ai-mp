@@ -27,4 +27,9 @@ ROM_gheorghe_argeseanu
 ROM_gheorghe_avramescu
 ROM_gheorghe_jienescu
 ROM_nicolae_sova
+SOV_georgy_zhukov
+SOV_gosproyektstroy_1
+SOV_mikhail_kalinin
+SOV_nikolay_voznesensky
+SOV_semyon_timoshenko
 war_economy

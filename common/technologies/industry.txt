@@ -358,6 +358,25 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+			}
+			modifier = {
+				add = 900
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+				OR = {
+					has_tech = construction1
+					is_researching_technology = construction1
+				}
+				DAI_should_pre_research_industry = yes
+			}
 			# -- DAI
 		}
 		
@@ -393,6 +412,25 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+			}
+			modifier = {
+				add = 900
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+				OR = {
+					has_tech = construction2
+					is_researching_technology = construction2
+				}
+				DAI_should_pre_research_industry = yes
+			}
 			# -- DAI
 		}
 		
@@ -428,6 +466,22 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+			}
+			modifier = {
+				add = 900
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+				date > 1938.1.1
+				DAI_should_pre_research_industry = yes
+			}
 			# -- DAI
 		}
 		
@@ -463,6 +517,13 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+			}
 			# -- DAI
 		}
 		
@@ -493,6 +554,13 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+			}
 			# -- DAI
 		}
 		
@@ -534,6 +602,14 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			# SOV and USA take the concentrated branch instead.
+			modifier = {
+				factor = 0
+				OR = {
+					original_tag = SOV
+					original_tag = USA
+				}
+			}
 			modifier = {
 				add = 900
 				OR = {
@@ -766,7 +842,7 @@ technologies = {
 				OR = {
 					has_country_flag = DAI_wants_armor
 					DAI_should_build_planes = yes
-					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_is_large_navy_country = yes
 				}
 			}
 			modifier = {
@@ -1119,7 +1195,7 @@ technologies = {
 				OR = {
 					has_country_flag = DAI_wants_armor
 					DAI_should_build_planes = yes
-					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_is_large_navy_country = yes
 				}
 			}
 			# -- DAI

@@ -15,15 +15,15 @@ armored_spearhead = {
     }
 
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 25
-            original_tag = GER
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no
+            add = 50
+            OR = {
+                original_tag = GER
+                original_tag = USA
+                original_tag = SOV
+                original_tag = ITA
+            }
         }
     }
 
@@ -99,15 +99,15 @@ armored_spearhead_no_lar = {
     }
 
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 25
-            original_tag = GER
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no
+            add = 50
+            OR = {
+                original_tag = GER
+                original_tag = USA
+                original_tag = SOV
+                original_tag = ITA
+            }
         }
     }
 
@@ -170,19 +170,7 @@ armored_infantry_support = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-               original_tag = ENG
-               original_tag = FRA
-            }
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -272,17 +260,7 @@ streamlined_deployment = {
     }
 
         ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-                # original_tag = SOV
-                original_tag = CHI 
-                original_tag = PRC 
-            }
-        }
-
+        base = 0
     }
 
     category_all_armor = {
@@ -361,21 +339,7 @@ mobile_defense = {
     }
 
         ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-                original_tag = USA
-                original_tag = FIN
-            }
-        }
-
-        modifier = {
-            factor = 0.5
-            is_major = no
-        }
-
+        base = 0
     }
 
     armored_engineer = {
@@ -471,13 +435,7 @@ armored_cavalry = {
     }
 
     ai_will_do = {
-
         base = 1
-        modifier = {
-            factor = 25
-            original_tag = ITA
-        }
-
     }
 
     armored_car = {
@@ -589,13 +547,7 @@ armored_cavalry_no_lar = {
     }
 
     ai_will_do = {
-
         base = 1
-        modifier = {
-            factor = 25
-            original_tag = ITA
-        }
-
     }
 
     motorized = {
@@ -695,8 +647,11 @@ tank_destroyer_force = {
     ai_will_do = {
         base = 0
         modifier = {
-            add = 99
-            original_tag = SOV
+            add = 50
+            OR = {
+                original_tag = ENG
+                original_tag = FRA
+            }
         }
     }  
 

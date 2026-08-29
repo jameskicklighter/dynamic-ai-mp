@@ -469,6 +469,10 @@ ideas = {
 					add = 999
 					check_variable = { DAI_build_order_wants = token:partial_economic_mobilisation }
 				}
+				modifier = {
+					factor = 0
+					DAI_should_block_partial_economic_mobilisation = yes
+				}
 				# Wait for War Economy
 				# modifier = {
 				# 	original_tag = GER

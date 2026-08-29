@@ -1178,6 +1178,117 @@ DAI_equipment_variant_decisions = {
 
 DAI_attache_decisions = {
 
+	DAI_SOV_store_attache_pp = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+		}
+
+		available = {
+			has_political_power > 49
+			NOT = { has_global_flag = spanish_civil_war }
+			date < 1936.9.1
+		}
+
+		cost = 50
+
+		days_remove = 1
+
+		fire_only_once = no
+
+		remove_effect = {
+			add_to_variable = { DAI_SOV_attache_pp_bank = 50 }
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
+	DAI_SOV_release_first_attache_pp = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+		}
+
+		available = {
+			check_variable = { DAI_SOV_attache_pp_bank > 0 }
+			OR = {
+				has_global_flag = spanish_civil_war
+				date > 1936.8.31
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_temp_variable = { DAI_SOV_attache_pp_release = DAI_SOV_attache_pp_bank }
+			clamp_temp_variable = {
+				var = DAI_SOV_attache_pp_release
+				min = 0
+				max = 100
+			}
+			subtract_from_variable = { DAI_SOV_attache_pp_bank = DAI_SOV_attache_pp_release }
+			add_political_power = DAI_SOV_attache_pp_release
+			set_country_flag = DAI_SOV_first_attache_pp_released
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
+	DAI_SOV_release_remaining_attache_pp = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+		}
+
+		available = {
+			has_country_flag = {
+				flag = DAI_SOV_first_attache_pp_released
+				days > 6 # Seven elapsed days
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_political_power = DAI_SOV_attache_pp_bank
+			set_variable = { DAI_SOV_attache_pp_bank = 0 }
+			set_country_flag = DAI_SOV_attache_pp_escrow_emptied
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
 	DAI_military_attache_to_world_war = {
 	
 		icon = GFX_decision_hol_draw_up_staff_plans
@@ -1422,7 +1533,7 @@ DAI_attache_decisions = {
 
 		cost = 99
 
-		days_remove = 7
+		days_remove = 1
 
 		visible = {
 			is_historical_focus_on = yes

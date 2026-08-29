@@ -8,18 +8,12 @@ carrier_battlegroups = {
     xp_type = navy
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 50
-            original_tag = USA
-        }
+        base = 0
     }
 
     available = {
         always = yes
     }
-
-    ai_will_do = { }
 
     # EFFECTS
 	port_strike = 0.20
@@ -63,22 +57,7 @@ floating_airfields = {
     }
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-                original_tag = ENG
-                original_tag = FRA
-            }
-        }
-        modifier = {
-            factor = 2
-            is_major = yes 
-        }
-        modifier = {
-            factor = 0
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -123,6 +102,10 @@ escort_carrier_support = {
     }
     visible = {
         has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+        base = 0
     }
     
     convoy_escort_efficiency = 0.5
@@ -198,6 +181,10 @@ broad_naval_support = {
         has_dlc = "No Compromise, No Surrender"
     }
 
+    ai_will_do = {
+        base = 0
+    }
+
     critical_receive_chance = -0.1
 
     rewards = {
@@ -247,11 +234,7 @@ massed_carrier_fleet = {
     xp_type = navy
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 50
-            original_tag = JAP
-        }
+        base = 0
     }
     available = {
         always = yes
@@ -302,16 +285,11 @@ light_task_forces = {
     ai_will_do = { 
         base = 1
         modifier = {
-            factor = 25
-            original_tag = GER
-        }
-        modifier = {
-            factor = 25
-            original_tag = ITA
-        }
-        modifier = {
-            factor = 25
-            original_tag = SOV
+            add = 25
+            has_navy_size = {
+                type = carrier
+                size > 0
+            }
         }
     }
     mastery = { 

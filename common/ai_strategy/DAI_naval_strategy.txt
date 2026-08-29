@@ -228,7 +228,7 @@ DAI_stockpile_800_convoys = {
 DAI_naval_role_ratios_SMALL_NAVY = {
 	enable = {
 		has_dlc = "Man the Guns"
-		DAI_Should_Research_Navy_GENERAL = no
+		DAI_is_large_navy_country = no
 	}
 	abort_when_not_enabled = yes
 
@@ -297,7 +297,7 @@ DAI_naval_role_ratios_SMALL_NAVY = {
 DAI_naval_role_ratios_SMALL_NAVY_HAS_CAPITAL = {
 	enable = {
 		has_dlc = "Man the Guns"
-		DAI_Should_Research_Navy_GENERAL = no
+		DAI_is_large_navy_country = no
 		has_navy_size = {
 			type = capital_ship
 			size > 0
@@ -329,7 +329,7 @@ DAI_naval_role_ratios_SMALL_NAVY_HAS_CAPITAL = {
 DAI_naval_role_ratios_LARGE_NAVY = {
 	enable = {
 		has_dlc = "Man the Guns"
-		DAI_Should_Research_Navy_GENERAL = yes
+		DAI_is_large_navy_country = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -532,7 +532,7 @@ DAI_early_carrier_boost = {
 DAI_sub_production = {
 	enable = {
 		has_dlc = "Man the Guns"
-		DAI_Should_Research_Navy_SUBMARINE = yes
+		DAI_Should_Build_Navy_SUBMARINE = yes
 		num_of_naval_factories > 15
 	}
 	abort_when_not_enabled = yes
@@ -547,7 +547,7 @@ DAI_sub_production = {
 DAI_sub_production_GER = {
 	enable = {
 		has_dlc = "Man the Guns"
-		DAI_Should_Research_Navy_SUBMARINE = yes
+		DAI_Should_Build_Navy_SUBMARINE = yes
 		original_tag = GER
 		num_of_naval_factories > 20
 	}

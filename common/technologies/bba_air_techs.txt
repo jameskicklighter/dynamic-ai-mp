@@ -732,6 +732,12 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 100
+				tag = USA
+				DAI_should_build_planes = yes
+				date > 1937.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -767,6 +773,12 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 100
+				tag = USA
+				DAI_should_build_planes = yes
+				date > 1937.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -821,6 +833,12 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 30
+				tag = USA
+				DAI_should_build_planes = yes
+				date > 1940.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -856,6 +874,12 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 30
+				tag = USA
+				DAI_should_build_planes = yes
+				date > 1944.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -896,6 +920,12 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 30
+				tag = USA
+				DAI_should_build_planes = yes
+				date > 1945.1.1
+			}
 			# -- DAI
 		}
 	}

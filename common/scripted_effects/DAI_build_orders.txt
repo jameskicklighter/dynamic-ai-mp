@@ -127,6 +127,68 @@ DAI_set_build_order_GER = {
 
 }
 
+DAI_set_build_order_SOV = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	IF = { limit = { DAI_SOV_is_historical_ai = yes }
+
+		IF = {
+			limit = {
+				# We are only concerned about early build order. Don't do an extensive check for conditions,
+				# as they should normally be met by the logic of the build order.
+				NOT = { has_idea = war_economy }
+				NOT = { has_idea = tot_economic_mobilisation }
+				date < 1937.1.1
+				has_war_support > 0.5
+			}
+			set_variable = { DAI_build_order_wants = token:war_economy }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = captain_of_industry }
+				has_available_idea_with_traits = { idea = captain_of_industry limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:SOV_nikolay_voznesensky }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = army_chief_reform_2 }
+				has_available_idea_with_traits = { idea = army_chief_reform_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:SOV_semyon_timoshenko }
+		}
+		ELSE_IF = {
+			limit = {
+				NOT = { has_idea_with_trait = popular_figurehead }
+				has_available_idea_with_traits = { idea = popular_figurehead limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:SOV_mikhail_kalinin }
+		}
+		ELSE_IF = {
+			limit = {
+				has_completed_focus = SOV_foreign_experts
+				NOT = { has_idea = SOV_gosproyektstroy_1 }
+				NOT = { has_country_flag = SOV_gosproyektstroy_level_2_flag }
+				NOT = { has_country_flag = SOV_gosproyektstroy_level_3_flag }
+			}
+			set_variable = { DAI_build_order_wants = token:SOV_gosproyektstroy_1 }
+		}
+		ELSE_IF = {
+			limit = {
+				has_completed_focus = SOV_positive_heroism
+				SOV_georgy_zhukov = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = mass_assault_expert limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:SOV_georgy_zhukov }
+		}
+
+		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+
+	}
+
+}
+
 DAI_set_build_order_FRA = {
 
 	set_variable = { DAI_build_order_wants = -1 }

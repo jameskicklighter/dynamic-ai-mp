@@ -84,6 +84,23 @@ USA_air_unit_ratios = {
 	}
 }
 
+USA_strategic_bomber_minimum = {
+	allowed = { original_tag = USA }
+	enable = {
+		DAI_should_build_planes = yes
+		has_tech = early_bombs
+		has_tech = basic_large_airframe
+		has_tech = engines_2
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 1
+	}
+}
+
 USA_land_role_ratios_1937 = {
 	allowed = { original_tag = USA }
 	enable = {
@@ -1428,6 +1445,13 @@ USA_stay_away_from_my_pacific = {
 		id = pacific
 		value = 100
 	}
+
+	ai_strategy = { type = naval_dominance id = DAI_northwest_pacific_waters value = 100 }
+	ai_strategy = { type = naval_dominance id = DAI_south_china_philippine_waters value = 100 }
+	ai_strategy = { type = naval_dominance id = DAI_southwest_pacific_waters value = 100 }
+	ai_strategy = { type = naval_dominance id = DAI_western_central_pacific_waters value = 100 }
+	ai_strategy = { type = naval_dominance id = DAI_central_pacific_waters value = 100 }
+	ai_strategy = { type = naval_dominance id = DAI_eastern_pacific_waters value = 100 }
 }
 
 USA_lets_do_a_navy = {
@@ -2710,35 +2734,21 @@ USA_build_tank_destroyers = {
 	}
 }
 
-USA_leave_england_to_the_brits = {
+USA_support_ally_england_waters = {
 	allowed = { original_tag = USA }
 	enable = {
-		has_war_with = GER
-		NOT = { DAI_allies_focus_normandy = yes }
+		has_war = yes
+		is_in_faction_with = ENG
 		ENG = {
 			exists = yes
-			set_temp_variable = { t = num_ships }
-			check_variable = { t > 80 }
+			has_war = yes
 		}
-	}
-	abort = {
-		date > 1943.6.1
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = naval_dominance
-		id = 18
-		value = -100
-	}
-	ai_strategy = {
-		type = naval_dominance
-		id = 16
-		value = -100
-	}
-	ai_strategy = {
-		type = naval_dominance
-		id = 173
-		value = -100
+		id = DAI_england_home_waters
+		value = 100
 	}
 }

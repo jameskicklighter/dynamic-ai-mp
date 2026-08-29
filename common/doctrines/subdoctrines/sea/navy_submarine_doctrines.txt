@@ -12,11 +12,7 @@ wolfpacks = {
     }
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 75
-            original_tag = GER
-        }
+        base = 10
     }
 
     # EFFECTS
@@ -73,23 +69,7 @@ submarine_fleet_operations = {
     }
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 25
-            original_tag = USA
-        }
-        modifier = {
-            factor = 25
-            original_tag = FRA
-        }
-        modifier = {
-            factor = 25
-            original_tag = ITA
-        }
-        modifier = {
-            factor = 25
-            original_tag = SOV
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -132,11 +112,7 @@ capital_hunters = {
     xp_type = navy
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 25
-            original_tag = JAP
-        }
+        base = 0
     }
     available = {
         always = yes
@@ -190,6 +166,10 @@ submarine_coastal_defense = {
     }
     visible = {
         has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+        base = 0
     }
 
     submarine = {
@@ -256,6 +236,10 @@ coastal_minelaying = {
         has_dlc = "No Compromise, No Surrender"
     }
 
+    ai_will_do = {
+        base = 0
+    }
+
     naval_mines_effect_reduction = 0.1
 
     rewards = {
@@ -312,6 +296,10 @@ long_range_submarines = {
     }
     visible = {
         has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+        base = 0
     }
 
     naval_torpedo_hit_chance_factor = 0.1

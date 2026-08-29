@@ -1990,12 +1990,7 @@ ITA_contest_the_med = {
 	}
 	
 	enable = {
-		OR = {
-			has_war_with = ENG
-			has_war_with = SOU
-			has_war_with = FRA
-		}
-		date > 1939.9.1
+		has_war = yes
 		NOT = {
 			AND = {
 				DAI_axis_sealion_go_time = yes
@@ -2009,14 +2004,8 @@ ITA_contest_the_med = {
 	
 	ai_strategy = {
 		type = naval_dominance
-		id = western_med_control_zone
-		value = 80
-	}
-	
-	ai_strategy = {
-		type = naval_dominance
-		id = italy_med_control_zone
-		value = 80
+		id = DAI_mediterranean_waters
+		value = 100
 	}
 }
 

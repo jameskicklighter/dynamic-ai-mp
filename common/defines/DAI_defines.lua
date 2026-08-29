@@ -26,6 +26,10 @@ NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0
 -- AI Specific --
 -- =========== --
 
+-- Field exercises: continue until nearly the entire deployed army has reached
+-- the normal exercise-training cap.
+NDefines.NAI.STOP_TRAINING_FULLY_TRAINED_FACTOR = 0.99
+
 -- Research --
 -- I believe this is deprecated and does nothing.
 NDefines.NAI.RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0                      	-- Multiplies value based on relative military industry size / country size.
@@ -129,9 +133,9 @@ NDefines.NAI.NAVAL_STRIKE_FORCE_OBJECTIVE_IMPORTANCE = {
 	0,      -- MINES SWEEPING
 	0,      -- MINES PLANTING
 	1.0, -- COAST DEFENSE
-	0,      -- CONVOY RAIDING
-	0,      -- CONVOY PROTECTION
-	1.0,    -- NAVAL DOMINANCE
+	100.0,      -- CONVOY RAIDING
+	100.0,      -- CONVOY PROTECTION
+	100.0,    -- NAVAL DOMINANCE
 	0,      -- TRAINING
 	0,      -- NAVAL BLOCKADE
 	0,      -- STRIKE FORCE

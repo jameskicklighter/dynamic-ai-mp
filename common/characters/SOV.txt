@@ -203,6 +203,10 @@ characters = {
 			}
 			ai_will_do = {
 				base = 2
+				modifier = {
+					add = 100
+					check_variable = { DAI_build_order_wants = token:SOV_georgy_zhukov }
+				}
 			}
 		}		
 	}
@@ -480,7 +484,7 @@ characters = {
 				base = 10
 				modifier = {
 					add = 100
-					DAI_SOV_is_historical_ai = yes
+					check_variable = { DAI_build_order_wants = token:SOV_semyon_timoshenko }
 				}
 			}
 		}
@@ -2206,8 +2210,7 @@ characters = {
 				base = 1
 				modifier = {
 					add = 100
-					DAI_SOV_is_historical_ai = yes
-					has_idea_with_trait = captain_of_industry
+					check_variable = { DAI_build_order_wants = token:SOV_mikhail_kalinin }
 				}
 			}
 		}
@@ -2297,8 +2300,7 @@ characters = {
 				base = 2
 				modifier = {
 					add = 100
-					DAI_SOV_is_historical_ai = yes
-					has_idea_with_trait = army_chief_reform_2
+					check_variable = { DAI_build_order_wants = token:SOV_nikolay_voznesensky }
 				}
 			}
 		}

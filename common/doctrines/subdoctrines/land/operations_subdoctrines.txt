@@ -8,24 +8,7 @@ mission_type_tactics = {
     xp_type = army
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 50
-            OR = {
-                original_tag = GER
-                original_tag = FIN
-            }
-        }
-
-        modifier = {
-            factor = 0.5
-            is_major = no 
-            NOT = {
-                original_tag = FIN 
-            }
-        }
-
+        base = 0
     }
 
     available = {
@@ -111,10 +94,24 @@ last_stand = {
     conscription = 0.05
 
     ai_will_do = {
-
-        base = 0
-
+        base = 10
+        modifier = {
+            add = 190
+            original_tag = FIN
         }
+        modifier = {
+            add = 25
+            AND = {
+                WTT_is_chinese_country = yes
+                NOT = {
+                    OR = {
+                        original_tag = CHI
+                        original_tag = PRC
+                    }
+                }
+            }
+        }
+    }
 
     rewards = {
         werwolf_groups = {
@@ -165,23 +162,12 @@ infiltration_tactics = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 50
-            OR = {
-                # original_tag = JAP
-                original_tag = FIN
-            }
-        }
-
+        base = 0
     }
 
     # EFFECTS
     enable_tactic = tactic_infantry_charge
     max_planning = 0.05 
-
-    ai_will_do = { }
 
      rewards = {
         infiltration_assault = {
@@ -273,18 +259,15 @@ grand_assault = {
     }
 
     ai_will_do = {
-
         base = 1
         modifier = {
-            factor = 50
-            OR = {
-                # original_tag = ENG
-                original_tag = FRA
-                original_tag = ITA
-                original_tag = SOV
-            }
+            add = 25
+            original_tag = GER
         }
-
+        modifier = {
+            factor = 0
+            original_tag = FIN
+        }
     }
 
     # EFFECTS
@@ -293,8 +276,6 @@ grand_assault = {
         breakthrough = 0.1
         soft_attack = 0.05
     }
-
-    ai_will_do = { }
 
     rewards = {
         central_planning = {
@@ -375,18 +356,14 @@ deep_battle = {
     }
 
     ai_will_do = {
-
-        base = 1
-        # modifier = {
-        #     factor = 50
-        #     original_tag = SOV
-        # }
-
+        base = 0
         modifier = {
-            factor = 0.5
-            is_major = no
+            add = 25
+            OR = {
+                original_tag = SOV
+                original_tag = FRA
+            }
         }
-
     }
 
     # EFFECTS
@@ -395,8 +372,6 @@ deep_battle = {
         max_organisation = 4
     }
 
-
-    ai_will_do = { }
 
     rewards = {
         bounding_overwatch = {
@@ -508,18 +483,14 @@ deep_battle_no_lar = {
     }
 
     ai_will_do = {
-
-        base = 1
-        # modifier = {
-        #     factor = 50
-        #     original_tag = SOV
-        # }
-
+        base = 0
         modifier = {
-            factor = 0.5
-            is_major = no
+            add = 25
+            OR = {
+                original_tag = SOV
+                original_tag = FRA
+            }
         }
-
     }
 
     # EFFECTS
@@ -528,8 +499,6 @@ deep_battle_no_lar = {
         max_organisation = 4
     }
 
-
-    ai_will_do = { }
 
     rewards = {
         bounding_overwatch = {
@@ -633,25 +602,14 @@ guerilla_war = {
     }
 
     ai_will_do = { 
-        base = 1
+        base = 0
         modifier = {
-            factor = 0
-            is_major = yes
-        }
-        modifier = {
-            factor = 2
-            is_major = no
-        }
-        modifier = {
-            factor = 0
-            NOT = {
-                OR = {
-                has_template_containing_unit = irregular_infantry
-                has_template_containing_unit = militia
-                }
+            add = 25
+            OR = {
+                original_tag = PRC
+                original_tag = CHI
             }
         }
-    
     }
 
     # EFFECTS
@@ -748,18 +706,7 @@ rapid_domination = {
     }
 
     ai_will_do = {
-
-        base = 1
-        # modifier = {
-        #     factor = 50
-        #     original_tag = USA
-        # }
-
-        modifier = {
-            factor = 0.5
-            is_major = no
-        }
-
+        base = 0
     }
 
     # EFFECTS
@@ -772,8 +719,6 @@ rapid_domination = {
         soft_attack = 0.1
     }
 
-
-    ai_will_do = { }
 
     rewards = {
         forward_observers = {
@@ -859,11 +804,12 @@ expeditionary_warfare = {
     ai_will_do = {
         base = 0
         modifier = {
-            add = 99
+            add = 25
             OR = {
                 original_tag = ENG
                 original_tag = JAP
                 original_tag = USA
+                original_tag = ITA
             }
         }
     }
@@ -873,8 +819,6 @@ expeditionary_warfare = {
     send_volunteer_divisions_required = -0.5
     send_volunteer_factor = 0.25
     send_volunteers_tension = -0.1
-
-    ai_will_do = { }
 
     rewards = {
         staging_area_security = {
@@ -930,11 +874,7 @@ dispersed_operations = {
     }
 
     ai_will_do = {
-        base = 1
-        modifier = {
-            factor = 40
-            original_tag = SOV
-        }
+        base = 0
     }
 
     # EFFECTS

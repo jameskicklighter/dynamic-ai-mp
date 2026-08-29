@@ -12,16 +12,11 @@ mobile_infantry = {
     }
 
     ai_will_do = { 
-        base = 1
+        base = 0
         modifier = {
-            add = 99
+            add = 100
             original_tag = GER
         }
-        modifier = {
-            factor = 0.5
-            is_major = no
-        }
-    
     }
 
     # EFFECTS
@@ -92,19 +87,7 @@ defensive_postures = {
     }
 
     ai_will_do = {
-        base = 1
-        modifier = {
-            factor = 95
-            OR = {
-                original_tag = ENG
-                original_tag = AST
-                original_tag = NZL
-                original_tag = CAN
-                original_tag = SAF
-                original_tag = ITA
-                original_tag = FIN
-            }
-        }
+        base = 0
     }
 
     #OTHER BASE REWARDS
@@ -163,20 +146,15 @@ large_unit_tactics = {
     }
 
     ai_will_do = {
-        base = 1
+        base = 0
         modifier = {
-            add = 99
+            add = 100
             OR = {
-                original_tag = CHI
-                original_tag = JAP
+                original_tag = ENG
+                original_tag = USA
+                original_tag = ITA
             }
         }
-        modifier = {
-            factor = 0.5
-            is_major = no
-        }
-
-
     }
 
     # EFFECTS
@@ -251,15 +229,10 @@ assault_infantry = {
     }
 
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            add = 99
-            original_tag = USA
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no
+            add = 100
+            original_tag = JAP
         }
     }
 
@@ -632,20 +605,7 @@ irregulars = {
 
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 2
-            is_major = no
-        }
-        modifier = {
-            factor = 0
-            NOT = {
-                OR = {
-                has_template_containing_unit = irregular_infantry
-                has_template_containing_unit = militia
-                }
-            }
-        }
+        base = 0
     }
     irregular_infantry = {
         defense = 0.1
@@ -740,18 +700,11 @@ peoples_war = {
         has_dlc = "No Compromise, No Surrender"
     }
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 95
+            add = 100
             original_tag = PRC
         }
-
-        modifier = {
-            factor = 2
-            is_major = no
-        }
-
     }
 
     # EFFECTS
@@ -825,12 +778,16 @@ great_war_infantry = {
     }
 
     ai_will_do = {
-        base = 1
+        base = 5
         modifier = {
-            add = 99
+            add = 100
             OR = {
                 original_tag = FRA
                 original_tag = SOV
+                AND = {
+                    WTT_is_chinese_country = yes
+                    NOT = { original_tag = PRC }
+                }
             }
         }
     }

@@ -3076,30 +3076,30 @@ ENG_develop_mediterranean_supremacy = {
 	}
 	
 	enable = {
-		OR = {
-			has_war_with = ITA
-			has_war_with = SOU
-		}
-		OR = {
-			DAI_allies_focus_africa = yes
-			DAI_allies_focus_italy = yes
-		}
-		NOT = { DAI_allies_focus_normandy = yes }
-		NOT = { DAI_allies_focus_europe = yes }
+		has_war = yes
 	}
 	
 	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = naval_dominance
-		id = western_med_control_zone
-		value = 80
+		id = DAI_mediterranean_waters
+		value = 100
 	}
-	
-	# Med convoy and landing route for the Africa/Italy phases before the Normandy pivot.
+}
+
+ENG_contest_home_waters = {
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = naval_dominance
-		id = italy_med_control_zone
-		value = 150
+		id = DAI_england_home_waters
+		value = 100
 	}
 }

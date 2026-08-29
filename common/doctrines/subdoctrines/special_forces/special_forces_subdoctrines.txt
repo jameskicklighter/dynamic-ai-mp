@@ -25,7 +25,14 @@ mountaineers_1 = {
     }
 
     ai_will_do = {
-        base = 1
+        base = 10
+        modifier = {
+            add = 15
+            OR = {
+                original_tag = GER
+                original_tag = SOV
+            }
+        }
     }
 
     # EFFECTS
@@ -308,6 +315,15 @@ marines_2 = {
 
     ai_will_do = {
         base = 1
+        modifier = {
+            add = 199
+            OR = {
+                original_tag = USA
+                original_tag = JAP
+                original_tag = ITA
+                original_tag = ENG
+            }
+        }
     }
 
     # EFFECTS

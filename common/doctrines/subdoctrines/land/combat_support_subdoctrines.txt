@@ -12,24 +12,7 @@ fire_concentration = {
     }
 
     ai_will_do = {
-
-        base = 1
-        # modifier = {
-        #     factor = 75
-        #     original_tag = SOV
-        # }
-        modifier = {
-            factor = 75
-            original_tag = ENG
-        }
-        modifier = {
-            factor = 75
-            original_tag = FRA
-        }   
-        modifier = {
-            factor = 75
-            original_tag = JAP
-        }
+        base = 0
     }
 
      # EFFECTS
@@ -112,7 +95,13 @@ anti_tank_frontline = {
         always = yes
     }
 
-    ai_will_do = { base = 0 }
+    ai_will_do = {
+        base = 0
+        modifier = {
+            add = 10
+            original_tag = SOV
+        }
+    }
 
      # EFFECTS
      
@@ -186,12 +175,7 @@ flying_batteries = {
 
     
     ai_will_do = {
-        base = 1
-
-        modifier = {
-            factor = 0 
-            NOT = { has_tech = rocket_artillery } 
-        }
+        base = 0
     }
 
      # EFFECTS
@@ -377,19 +361,13 @@ mobile_recon_and_assault = {
     }
     
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 75
-            original_tag = GER
-        }
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
-        modifier = {
-            factor = 0
-            is_major = no
+            add = 10
+            OR = {
+                original_tag = GER
+                original_tag = USA
+            }
         }
     }
     
@@ -485,19 +463,13 @@ mobile_recon_and_assault_no_lar = {
 
     
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 75
-            original_tag = GER
-        }
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
-        modifier = {
-            factor = 0
-            is_major = no
+            add = 10
+            OR = {
+                original_tag = GER
+                original_tag = USA
+            }
         }
     }
     
@@ -585,8 +557,11 @@ self_propelled_support = {
     ai_will_do = {
         base = 0
         modifier = {
-            add = 99
-            original_tag = SOV
+            add = 10
+            OR = {
+                original_tag = ENG
+                original_tag = FRA
+            }
         }
     }
 
@@ -832,14 +807,7 @@ field_engineering = {
     xp_type = army
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 75
-            OR = {
-                original_tag = ITA
-                original_tag = FIN
-            }
-        }
+        base = 2
     }
 
     engineer = {

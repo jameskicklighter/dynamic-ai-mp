@@ -12,7 +12,7 @@ new_strategic_destruction = {
     xp_type = air
 
     ai_will_do = { 
-        base = 1
+        base = 0
     }
 
     tracks = {
@@ -125,11 +125,6 @@ new_battlefield_support = {
 
     ai_will_do = {
         base = 1
-
-        modifier = {
-            factor = 10
-            is_major = no
-        }
     }
 
     tracks = {
@@ -242,7 +237,7 @@ new_operational_integrity = {
     xp_type = air
 
     ai_will_do = {
-        base = 1
+        base = 0
     }
 
     tracks = {

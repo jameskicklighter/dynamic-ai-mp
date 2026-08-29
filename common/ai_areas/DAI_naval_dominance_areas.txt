@@ -1,0 +1,97 @@
+areas = {
+
+	DAI_england_home_waters = {
+		strategic_regions = {
+			16  # North Sea
+			18  # English Channel
+			43  # Western Approaches
+			173 # Eastern North Sea
+		}
+	}
+
+	DAI_mediterranean_waters = {
+		strategic_regions = {
+			68  # Western Mediterranean Sea
+			169 # Tyrrhenian Sea
+			29  # Central Mediterranean Sea
+			69  # Eastern Mediterranean Sea
+			168 # Adriatic Sea
+			202 # Aegean Sea
+		}
+	}
+
+	DAI_northwest_pacific_waters = {
+		strategic_regions = {
+			76 # East China Sea
+			77 # Yellow Sea
+			79 # Sea of Japan
+			87 # Sea of Okhotsk
+			88 # Bering Sea
+			90 # Coast of Japan
+		}
+	}
+
+	DAI_south_china_philippine_waters = {
+		strategic_regions = {
+			72 # Straits of Malacca
+			73 # Gulf of Thailand
+			75 # South China Sea
+			78 # Philippine Sea
+			80 # Celebes Sea
+		}
+	}
+
+	DAI_southwest_pacific_waters = {
+		strategic_regions = {
+			81 # Coral Sea
+			82 # Gulf of Carpentaria
+			83 # Solomon Sea
+			84 # Bismarck Sea
+			86 # Tasman Sea
+			91 # Arafura Sea
+			92 # Timor Sea
+			93 # Java Sea
+			97 # Eastern Micronesia
+			98 # Great Australian Bight
+		}
+	}
+
+	DAI_western_central_pacific_waters = {
+		strategic_regions = {
+			94  # Mariana Region
+			95  # West Emperor Chain
+			96  # North Emperor Chain
+			177 # Western North Pacific
+			180 # Micronesian Gap
+		}
+	}
+
+	DAI_central_pacific_waters = {
+		strategic_regions = {
+			32  # South-Eastern Pacific
+			105 # Hawaii Ridge
+			110 # East Pacific Rise
+			111 # North Central Pacific
+			112 # Far South Pacific
+			113 # South Central Pacific
+			114 # North Pacific
+			115 # North East Pacific
+			172 # Pacific Line Ridge
+			175 # Central Pacific
+			176 # Central North Pacific
+			178 # West Polynesia
+			179 # French Polynesia
+		}
+	}
+
+	DAI_eastern_pacific_waters = {
+		strategic_regions = {
+			89  # Western Seaboard
+			106 # Mexican Coast
+			107 # Western Canal Zone
+			108 # South American Coast
+			109 # Peruvian Coast
+			171 # Northwest Coast
+		}
+	}
+}

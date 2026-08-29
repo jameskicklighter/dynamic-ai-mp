@@ -50,7 +50,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
-				date > 1937.1.1 # Soft limit to focus industry first.
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -104,7 +104,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
-				date > 1937.1.1 # Soft limit to focus industry first.
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -169,6 +169,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -380,7 +381,7 @@ technologies = {
 	# 		modifier = {
 	# 			add = 10
 	# 			DAI_Should_Research_Navy_GENERAL = yes
-	# 			date > 1937.1.1 # Soft limit to focus industry first.
+	# 			date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 	# 		}
 	# 		# -- DAI
 	# 	}
@@ -429,7 +430,7 @@ technologies = {
 	# 		modifier = {
 	# 			add = 10
 	# 			DAI_Should_Research_Navy_GENERAL = yes
-	# 			date > 1939.1.1 # Soft limit to focus industry first.
+	# 			date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 	# 		}
 	# 		# -- DAI
 	# 	}
@@ -762,6 +763,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -856,7 +858,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
-				date > 1939.1.1
+				date > 1940.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1046,7 +1048,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
-				date > 1937.1.1 # Soft limit to focus industry first.
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1112,6 +1114,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1254,6 +1257,7 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_DESTROYER = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1532,7 +1536,7 @@ technologies = {
 			modifier = {
 				add = 10
 				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1582,7 +1586,7 @@ technologies = {
 			modifier = {
 				add = 10
 				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1636,7 +1640,7 @@ technologies = {
 			modifier = {
 				add = 10
 				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1804,6 +1808,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 1
+				date > 1940.1.1
 				DAI_Should_Research_Navy_GENERAL = yes
 			}
 			# -- DAI
@@ -2167,17 +2172,12 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				amount_research_slots > 3
-				OR = {
-					is_major = yes
-					is_in_faction = yes
-				}
-				date > 1921.1.1
-				date < 1922.1.1
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			modifier = {
 				add = 100
-				date > 1922.1.1
+				date > 1940.1.1
 			}
 			# -- DAI
 		}
@@ -2226,6 +2226,7 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			# Preserve the 1939 landing-craft pre-research window.
 			modifier = {
 				add = 100
 				amount_research_slots > 3

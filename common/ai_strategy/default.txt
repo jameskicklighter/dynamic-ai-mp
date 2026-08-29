@@ -88,6 +88,10 @@ DAI_default_air_ratios = {
 				original_tag = GER
 				original_tag = SOV
 				original_tag = USA
+				AND = {
+					original_tag = JAP
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
