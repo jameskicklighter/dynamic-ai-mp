@@ -1,3 +1,27 @@
+DAI_USA_force_build_more_infantry_pre_1940 = {
+	allowed = { original_tag = USA }
+	enable = {
+		has_army_manpower = { size < 1000000 }
+		date < 1940.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
+DAI_USA_force_build_more_infantry_1940_plus = {
+	allowed = { original_tag = USA }
+	enable = {
+		has_army_manpower = { size < 3500000 }
+		date > 1939.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
 USA_unit_production = {
 
 	allowed = {	original_tag = USA }
@@ -2253,17 +2277,17 @@ USA_fighter_export = { #GM
 	}
 }
 
-USA_90_division_gamble = {
-	allowed = { original_tag = USA }
-	enable = { 
-		is_historical_focus_on = yes
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = ai_wanted_divisions_factor
-		value = -30
-	}
-}
+# USA_90_division_gamble = {
+# 	allowed = { original_tag = USA }
+# 	enable = {
+# 		is_historical_focus_on = yes
+# 	}
+# 	abort_when_not_enabled = yes
+# 	ai_strategy = {
+# 		type = ai_wanted_divisions_factor
+# 		value = -30
+# 	}
+# }
 
 USA_sugar_daddy_for_UK = {
 	allowed = { original_tag = USA }

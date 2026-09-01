@@ -259,8 +259,12 @@ streamlined_deployment = {
         always = yes
     }
 
-        ai_will_do = {
+    ai_will_do = {
         base = 0
+        modifier = {
+            add = 50
+            original_tag = HUN
+        }
     }
 
     category_all_armor = {

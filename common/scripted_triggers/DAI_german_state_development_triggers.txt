@@ -1,0 +1,183 @@
+# A development region is nearly full once at least four of its states have
+# fewer than two currently usable shared building slots remaining.
+
+DAI_GER_western_state_development_area_nearly_full = {
+	count_triggers = {
+		amount > 3
+		56 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		59 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		57 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		55 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		51 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		42 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+	}
+}
+
+DAI_GER_southern_state_development_area_nearly_full = {
+	count_triggers = {
+		amount > 3
+		52 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		978 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		50 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		53 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		54 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+	}
+}
+
+DAI_GER_central_state_development_area_nearly_full = {
+	count_triggers = {
+		amount > 3
+		64 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		65 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		60 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		68 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+	}
+}
+
+DAI_GER_northern_state_development_area_nearly_full = {
+	count_triggers = {
+		amount > 3
+		909 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		58 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		61 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		62 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		63 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+	}
+}
+
+DAI_GER_rebuild_northern_state_development_area_nearly_full = {
+	count_triggers = {
+		amount > 3
+		909 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		58 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		61 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		62 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		63 = {
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+		912 = {
+			is_core_of = ROOT
+			is_fully_controlled_by = ROOT
+			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+		}
+	}
+}
+
+# An active regional bonus normally holds the sequence. Once that region is
+# nearly full, the next decision may start while the original bonus continues.
+DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = {
+	OR = {
+		AND = {
+			has_country_flag = DAI_GER_western_state_development_active
+			NOT = { DAI_GER_western_state_development_area_nearly_full = yes }
+		}
+		AND = {
+			has_country_flag = DAI_GER_southern_state_development_active
+			NOT = { DAI_GER_southern_state_development_area_nearly_full = yes }
+		}
+		has_country_flag = DAI_GER_eastern_state_development_active
+		AND = {
+			has_country_flag = DAI_GER_central_state_development_active
+			NOT = { DAI_GER_central_state_development_area_nearly_full = yes }
+		}
+		AND = {
+			has_country_flag = DAI_GER_northern_state_development_active
+			NOT = { DAI_GER_northern_state_development_area_nearly_full = yes }
+		}
+	}
+}
+
+DAI_GER_rebuild_state_development_bonus_blocks_next_decision = {
+	OR = {
+		AND = {
+			has_country_flag = DAI_GER_western_state_development_active
+			NOT = { DAI_GER_western_state_development_area_nearly_full = yes }
+		}
+		AND = {
+			has_country_flag = DAI_GER_southern_state_development_active
+			NOT = { DAI_GER_southern_state_development_area_nearly_full = yes }
+		}
+		has_country_flag = DAI_GER_eastern_state_development_active
+		AND = {
+			has_country_flag = DAI_GER_central_state_development_active
+			NOT = { DAI_GER_central_state_development_area_nearly_full = yes }
+		}
+		AND = {
+			has_country_flag = DAI_GER_northern_state_development_active
+			NOT = { DAI_GER_rebuild_northern_state_development_area_nearly_full = yes }
+		}
+	}
+}

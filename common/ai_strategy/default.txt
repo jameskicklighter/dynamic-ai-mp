@@ -178,6 +178,12 @@ DAI_wait_for_armored_production = {
 
 	ai_strategy = {
 		type = role_ratio
+		id = armor_medium_sp_artillery
+		value = -100
+	}
+
+	ai_strategy = {
+		type = role_ratio
 		id = armor_heavy_tank_destroyer
 		value = -100
 	}
@@ -191,6 +197,12 @@ DAI_wait_for_armored_production = {
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = medium_tank_chassis
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_artillery_chassis
 		value = -100
 	}
 
@@ -221,6 +233,20 @@ DAI_armor_role_ratio_default_medium = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
+		value = 10
+	}
+}
+
+DAI_armor_role_ratio_default_medium_sp_artillery = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_medium_sp_artillery
 		value = 10
 	}
 }
@@ -332,6 +358,46 @@ DAI_medium_tank_chassis_production_preference = {
 		type = equipment_variant_production_factor
 		id = medium_tank_chassis
 		value = 100
+	}
+}
+
+DAI_medium_sp_artillery_chassis_production_preference = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_artillery_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_artillery_chassis
+		value = 2
+	}
+}
+
+DAI_medium_sp_artillery_support_destroyer_chassis_production = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_destroyer_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_destroyer_chassis
+		value = 1
 	}
 }
 
@@ -596,6 +662,23 @@ DAI_increase_armored_production_medium = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
+		value = 20
+	}
+}
+
+DAI_increase_armored_production_medium_sp_artillery = {
+	enable = {
+		num_of_military_factories > 100
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort = {
+		num_of_military_factories < 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_medium_sp_artillery
 		value = 20
 	}
 }

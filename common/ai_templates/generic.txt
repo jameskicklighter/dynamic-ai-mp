@@ -242,6 +242,78 @@ ARMOR_MEDIUM = {
 }
 
 # ==================================================
+#   Medium SP Artillery
+# ==================================================
+
+ARMOR_MEDIUM_SP_ARTILLERY = {
+	role = armor_medium_sp_artillery
+
+	upgrade_prio = {
+		base = 10
+	}
+
+	ARMOR_MEDIUM_SP_ARTILLERY_1 = {
+		upgrade_prio = {
+			base = 10
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_tech = interwar_artillery
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 3
+			}
+			regiments = {
+				medium_sp_artillery_brigade = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_SP_ARTILLERY_2 = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_tech = interwar_artillery
+		}
+		target_template = {
+			support = {
+				armored_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 3
+			}
+			regiments = {
+				medium_sp_artillery_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+}
+
+# ==================================================
 #   Heavy Armor
 # ==================================================
 

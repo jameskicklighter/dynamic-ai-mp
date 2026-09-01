@@ -53,6 +53,12 @@ on_actions = {
 		}
 	}
 
+	on_daily_SOV = {
+		effect = {
+			DAI_SOV_historical_paranoia_daily_update = yes
+		}
+	}
+
 	on_daily = {
 		effect = {
 			DAI_daily_update = yes

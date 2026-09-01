@@ -1675,37 +1675,6 @@ SOV_litvinov_active_hostile_others = {
 ### FOREIGN RELATIONS ###
 #########################
 
-# Gosproyektstroy USA alignment
-SOV_gosproyektstroy_improve_relations_with_usa = {
-	allowed = {
-		original_tag = SOV
-	}
-
-	enable = {
-		DAI_SOV_is_historical_ai = yes
-		has_completed_focus = SOV_foreign_experts
-		NOT = { has_country_flag = SOV_gosproyektstroy_level_2_flag }
-		NOT = { has_country_flag = SOV_gosproyektstroy_level_3_flag }
-		country_exists = USA
-		USA = {
-			NOT = { has_war_with = SOV }
-			has_opinion = {
-				target = SOV
-				value < 71
-			}
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = diplo_action_desire
-		id = USA
-		target = improve_relation
-		value = 200
-	}
-}
-
 #Soviets
 SOV_khakimov_proposal_sov = {
 	allowed = {
@@ -4156,13 +4125,25 @@ SOV_ready_for_finland = {
 SOV_large_standing_army = {
 	allowed = { original_tag = SOV }
 	enable = {
-		has_army_manpower = { size < 3000000 }
+		has_army_manpower = { size < 2000000 }
 		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
 	
 	ai_strategy = { type = build_army id = infantry value = 500 }
-	# ai_strategy = { type = force_build_armies value = 300 }
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
+DAI_SOV_force_build_more_infantry_1940_plus = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_army_manpower = { size < 3500000 }
+		date > 1939.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
 }
 
 SOV_historical_dont_attack_poland_too_early = {

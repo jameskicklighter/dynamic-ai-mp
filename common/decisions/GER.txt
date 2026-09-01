@@ -13754,15 +13754,45 @@ GER_reich_labor_service_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_western_state_development
+					has_decision = GER_southern_state_development
+					has_decision = GER_central_state_development
+					has_decision = GER_northern_state_development
+					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_western_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_western_state_development }
+						NOT = { has_decision = GER_southern_state_development }
+						NOT = { has_decision = GER_central_state_development }
+						NOT = { has_decision = GER_northern_state_development }
+						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_western_state_development_completed }
+					}
+				}
+			}
 			56 = { is_fully_controlled_by = ROOT }
 			59 = { is_fully_controlled_by = ROOT }
 			57 = { is_fully_controlled_by = ROOT }
@@ -13815,8 +13845,19 @@ GER_reich_labor_service_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_western_state_development_completed
+			set_country_flag = { flag = DAI_GER_western_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -13841,15 +13882,47 @@ GER_reich_labor_service_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { has_country_flag = DAI_GER_central_state_development_completed }
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_western_state_development
+					has_decision = GER_southern_state_development
+					has_decision = GER_central_state_development
+					has_decision = GER_northern_state_development
+					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_northern_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						has_country_flag = DAI_GER_central_state_development_completed
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_western_state_development }
+						NOT = { has_decision = GER_southern_state_development }
+						NOT = { has_decision = GER_central_state_development }
+						NOT = { has_decision = GER_northern_state_development }
+						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_northern_state_development_completed }
+					}
+				}
+			}
 			909 = { is_fully_controlled_by = ROOT }
 			58 = { is_fully_controlled_by = ROOT }
 			61 = { is_fully_controlled_by = ROOT }
@@ -13886,8 +13959,19 @@ GER_reich_labor_service_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_northern_state_development_completed
+			set_country_flag = { flag = DAI_GER_northern_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -13911,12 +13995,8 @@ GER_reich_labor_service_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
-			modifier = {
-				factor = 2
-				has_political_power > 100
-			}
+		ai_will_do = {
+			base = 0
 		}
 
 		available = {
@@ -13998,7 +14078,7 @@ GER_reich_labor_service_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
-		
+
 		remove_effect = {
 			every_core_state = {
 				limit = {
@@ -14027,15 +14107,47 @@ GER_reich_labor_service_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_western_state_development
+					has_decision = GER_southern_state_development
+					has_decision = GER_central_state_development
+					has_decision = GER_northern_state_development
+					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_central_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						has_country_flag = DAI_GER_southern_state_development_completed
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_western_state_development }
+						NOT = { has_decision = GER_southern_state_development }
+						NOT = { has_decision = GER_central_state_development }
+						NOT = { has_decision = GER_northern_state_development }
+						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_central_state_development_completed }
+					}
+				}
+			}
 			64 = { is_fully_controlled_by = ROOT }
 			65 = { is_fully_controlled_by = ROOT }
 			60 = { is_fully_controlled_by = ROOT }
@@ -14069,8 +14181,19 @@ GER_reich_labor_service_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_central_state_development_completed
+			set_country_flag = { flag = DAI_GER_central_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -14093,15 +14216,47 @@ GER_reich_labor_service_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { has_country_flag = DAI_GER_western_state_development_completed }
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_western_state_development
+					has_decision = GER_southern_state_development
+					has_decision = GER_central_state_development
+					has_decision = GER_northern_state_development
+					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_southern_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						has_country_flag = DAI_GER_western_state_development_completed
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_western_state_development }
+						NOT = { has_decision = GER_southern_state_development }
+						NOT = { has_decision = GER_central_state_development }
+						NOT = { has_decision = GER_northern_state_development }
+						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
+					}
+				}
+			}
 			52 = { is_fully_controlled_by = ROOT }
 			978 = { is_fully_controlled_by = ROOT }
 			50 = { is_fully_controlled_by = ROOT }
@@ -14138,8 +14293,19 @@ GER_reich_labor_service_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_southern_state_development_completed
+			set_country_flag = { flag = DAI_GER_southern_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -14326,15 +14492,45 @@ GER_rebuild_the_nation_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_state_development_west
+					has_decision = GER_state_development_south
+					has_decision = GER_state_development_central
+					has_decision = GER_state_development_north
+					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_western_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_state_development_west }
+						NOT = { has_decision = GER_state_development_south }
+						NOT = { has_decision = GER_state_development_central }
+						NOT = { has_decision = GER_state_development_north }
+						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_western_state_development_completed }
+					}
+				}
+			}
 			56 = { is_fully_controlled_by = ROOT }
 			59 = { is_fully_controlled_by = ROOT }
 			57 = { is_fully_controlled_by = ROOT }
@@ -14376,8 +14572,19 @@ GER_rebuild_the_nation_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_western_state_development_completed
+			set_country_flag = { flag = DAI_GER_western_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -14403,15 +14610,47 @@ GER_rebuild_the_nation_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { has_country_flag = DAI_GER_central_state_development_completed }
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_state_development_west
+					has_decision = GER_state_development_south
+					has_decision = GER_state_development_central
+					has_decision = GER_state_development_north
+					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_northern_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						has_country_flag = DAI_GER_central_state_development_completed
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_state_development_west }
+						NOT = { has_decision = GER_state_development_south }
+						NOT = { has_decision = GER_state_development_central }
+						NOT = { has_decision = GER_state_development_north }
+						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_northern_state_development_completed }
+					}
+				}
+			}
 			909 = { is_fully_controlled_by = ROOT }
 			58 = { is_fully_controlled_by = ROOT }
 			61 = { is_fully_controlled_by = ROOT }
@@ -14457,8 +14696,19 @@ GER_rebuild_the_nation_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_northern_state_development_completed
+			set_country_flag = { flag = DAI_GER_northern_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -14484,12 +14734,8 @@ GER_rebuild_the_nation_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
-			modifier = {
-				factor = 2
-				has_political_power > 100
-			}
+		ai_will_do = {
+			base = 0
 		}
 
 		available = {
@@ -14571,7 +14817,7 @@ GER_rebuild_the_nation_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
-		
+
 		remove_effect = {
 			every_core_state = {
 				limit = {
@@ -14601,15 +14847,47 @@ GER_rebuild_the_nation_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_state_development_west
+					has_decision = GER_state_development_south
+					has_decision = GER_state_development_central
+					has_decision = GER_state_development_north
+					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_central_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						has_country_flag = DAI_GER_southern_state_development_completed
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_state_development_west }
+						NOT = { has_decision = GER_state_development_south }
+						NOT = { has_decision = GER_state_development_central }
+						NOT = { has_decision = GER_state_development_north }
+						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_central_state_development_completed }
+					}
+				}
+			}
 			64 = { is_fully_controlled_by = ROOT }
 			65 = { is_fully_controlled_by = ROOT }
 			60 = { is_fully_controlled_by = ROOT }
@@ -14643,8 +14921,19 @@ GER_rebuild_the_nation_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_central_state_development_completed
+			set_country_flag = { flag = DAI_GER_central_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -14668,15 +14957,47 @@ GER_rebuild_the_nation_cat = {
 		priority = 1
 		icon = GFX_decision_generic_construction
 
-		ai_will_do = { 
-			base = 10
+		ai_will_do = {
+			base = 200
 			modifier = {
 				factor = 2
 				has_political_power > 100
 			}
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { has_country_flag = DAI_GER_western_state_development_completed }
+					has_country_flag = DAI_GER_state_development_sequence_lock
+					has_decision = GER_state_development_west
+					has_decision = GER_state_development_south
+					has_decision = GER_state_development_central
+					has_decision = GER_state_development_north
+					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					has_country_flag = DAI_GER_southern_state_development_completed
+				}
+			}
 		}
 
 		available = {
+			hidden_trigger = {
+				OR = {
+					is_ai = no
+					AND = {
+						has_country_flag = DAI_GER_western_state_development_completed
+						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
+						NOT = { has_decision = GER_state_development_west }
+						NOT = { has_decision = GER_state_development_south }
+						NOT = { has_decision = GER_state_development_central }
+						NOT = { has_decision = GER_state_development_north }
+						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
+					}
+				}
+			}
 			52 = { is_fully_controlled_by = ROOT }
 			978 = { is_fully_controlled_by = ROOT }
 			50 = { is_fully_controlled_by = ROOT }
@@ -14713,8 +15034,19 @@ GER_rebuild_the_nation_cat = {
 		modifier = {
 			civilian_factory_use = 3
 		}
+
+		complete_effect = {
+			set_country_flag = DAI_GER_state_development_sequence_lock
+		}
+
+		cancel_effect = {
+			clr_country_flag = DAI_GER_state_development_sequence_lock
+		}
 		
 		remove_effect = {
+			set_country_flag = DAI_GER_southern_state_development_completed
+			set_country_flag = { flag = DAI_GER_southern_state_development_active value = 1 days = 545 }
+			clr_country_flag = DAI_GER_state_development_sequence_lock
 			every_core_state = {
 				limit = {
 					OR = {
@@ -22808,5 +23140,3 @@ GER_the_fading_eagle_category = {
 	}
 
 }
-
-

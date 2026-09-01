@@ -70,6 +70,16 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction2
+						is_researching_technology = construction2
+					}
+				}
+			}
 			# modifier = {
 			# 	add = 900
 			# 	OR = {
@@ -114,6 +124,16 @@ technologies = {
 			# DAI --
 			base = 50
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction3
+						is_researching_technology = construction3
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				date > 1938.1.1
 				OR = {
@@ -125,6 +145,10 @@ technologies = {
 					is_researching_technology = construction2
 				}
 				DAI_should_pre_research_industry = yes
+			}
+			modifier = {
+				add = 1000
+				original_tag = GER
 			}
 			#-- DAI
 		}
@@ -162,6 +186,16 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction4
+						is_researching_technology = construction4
+					}
+				}
+			}
 			# modifier = {
 			# 	add = 900
 			# 	date > 1940.1.1
@@ -197,6 +231,16 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction5
+						is_researching_technology = construction5
+					}
+				}
+			}
 			# -- DAI
 		}
 		
@@ -227,6 +271,16 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction5
+						is_researching_technology = construction5
+					}
+				}
+			}
 			# -- DAI
 		}
 		
@@ -420,6 +474,26 @@ technologies = {
 				}
 			}
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction2
+						is_researching_technology = construction2
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = improved_machine_tools
+						is_researching_technology = improved_machine_tools
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				OR = {
 					original_tag = SOV
@@ -474,6 +548,26 @@ technologies = {
 				}
 			}
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction3
+						is_researching_technology = construction3
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = advanced_machine_tools
+						is_researching_technology = advanced_machine_tools
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				OR = {
 					original_tag = SOV
@@ -524,6 +618,26 @@ technologies = {
 					original_tag = USA
 				}
 			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction4
+						is_researching_technology = construction4
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = assembly_line_production
+						is_researching_technology = assembly_line_production
+					}
+				}
+			}
 			# -- DAI
 		}
 		
@@ -559,6 +673,28 @@ technologies = {
 				OR = {
 					original_tag = SOV
 					original_tag = USA
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction5
+						is_researching_technology = construction5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = flexible_line
+						is_researching_technology = flexible_line
+						has_tech = streamlined_line
+						is_researching_technology = streamlined_line
+					}
 				}
 			}
 			# -- DAI
@@ -657,6 +793,26 @@ technologies = {
 			# DAI --
 			base = 50
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction2
+						is_researching_technology = construction2
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = improved_machine_tools
+						is_researching_technology = improved_machine_tools
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				OR = {
 					has_tech = construction2
@@ -703,6 +859,26 @@ technologies = {
 			# DAI --
 			base = 50
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction3
+						is_researching_technology = construction3
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = advanced_machine_tools
+						is_researching_technology = advanced_machine_tools
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				date > 1938.1.1
 				DAI_should_pre_research_industry = yes
@@ -745,6 +921,26 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction4
+						is_researching_technology = construction4
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = assembly_line_production
+						is_researching_technology = assembly_line_production
+					}
+				}
+			}
 			# modifier = {
 			# 	add = 900
 			# 	date > 1940.1.1
@@ -784,6 +980,28 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_construction_first = yes
+				NOT = {
+					OR = {
+						has_tech = construction5
+						is_researching_technology = construction5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = flexible_line
+						is_researching_technology = flexible_line
+						has_tech = streamlined_line
+						is_researching_technology = streamlined_line
+					}
+				}
+			}
 			# modifier = {
 			# 	add = 900
 			# 	date > 1942.1.1
@@ -1707,6 +1925,16 @@ technologies = {
 			# DAI --
 			base = 50
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = improved_machine_tools
+						is_researching_technology = improved_machine_tools
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				DAI_should_pre_research_industry = yes
 			}
@@ -1831,6 +2059,16 @@ technologies = {
 			# DAI --
 			base = 50
 			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = advanced_machine_tools
+						is_researching_technology = advanced_machine_tools
+					}
+				}
+			}
+			modifier = {
 				add = 900
 				date > 1938.1.1
 				DAI_should_pre_research_industry = yes
@@ -1918,6 +2156,10 @@ technologies = {
 					original_tag = SIA
 				}
 			}
+			modifier = {
+				add = 1000
+				original_tag = GER
+			}
 			# -- DAI
 		}
 	}
@@ -1961,6 +2203,16 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = assembly_line_production
+						is_researching_technology = assembly_line_production
+					}
+				}
+			}
 			# modifier = {
 			# 	add = 900
 			# 	date > 1940.1.1
@@ -2082,6 +2334,18 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 50
+			modifier = {
+				factor = 0
+				DAI_pre_research_industry_production_first = yes
+				NOT = {
+					OR = {
+						has_tech = flexible_line
+						is_researching_technology = flexible_line
+						has_tech = streamlined_line
+						is_researching_technology = streamlined_line
+					}
+				}
+			}
 			# modifier = {
 			# 	add = 900
 			# 	date > 1942.1.1

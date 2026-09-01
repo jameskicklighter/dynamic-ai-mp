@@ -100,6 +100,28 @@ DAI_GER_is_historical_ai = {
 	}
 }
 
+DAI_GER_is_no_mefo_economic_path = {
+	original_tag = GER
+	OR = {
+		has_completed_focus = GER_prioritize_economic_growth
+		focus_progress = {
+			focus = GER_prioritize_economic_growth
+			progress > 0
+		}
+	}
+}
+
+DAI_GER_is_mefo_economic_path = {
+	original_tag = GER
+	OR = {
+		has_completed_focus = GER_the_four_year_plan
+		focus_progress = {
+			focus = GER_the_four_year_plan
+			progress > 0
+		}
+	}
+}
+
 DAI_GER_is_kaiser_ai = {
 	GER = {
 		OR = {

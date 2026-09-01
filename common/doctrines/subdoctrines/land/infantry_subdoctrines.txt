@@ -15,7 +15,10 @@ mobile_infantry = {
         base = 0
         modifier = {
             add = 100
-            original_tag = GER
+            OR = {
+                original_tag = GER
+                original_tag = HUN
+            }
         }
     }
 

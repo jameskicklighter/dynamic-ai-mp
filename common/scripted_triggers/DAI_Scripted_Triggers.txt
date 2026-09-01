@@ -12,6 +12,25 @@ DAI_should_pre_research_industry = {
 	}
 }
 
+DAI_pre_research_industry_construction_first = {
+	DAI_should_pre_research_industry = yes
+	OR = {
+		original_tag = SOV
+		original_tag = USA
+	}
+}
+
+DAI_pre_research_industry_production_first = {
+	DAI_should_pre_research_industry = yes
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+	}
+}
+
 DAI_pre_research_guns = {
 	is_ai = yes
 	is_historical_focus_on = yes
@@ -312,6 +331,7 @@ DAI_is_default_armor_country = {
 DAI_prefers_medium_armor = {
 	OR = {
 		has_country_flag = DAI_prefer_medium_tanks
+		has_country_flag = DAI_prefer_medium_sp_artillery
 		has_country_flag = DAI_prefer_medium_tank_destroyers
 	}
 }

@@ -222,14 +222,25 @@ JAP_armor_role_ratios = {
 JAP_the_sun_rises = {
 	allowed = { original_tag = JAP }
 	enable = {
-		has_army_manpower = { size < 2000000 }
-		date < 1939.1.1
+		has_army_manpower = { size < 1000000 }
+		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
-	
+
 	ai_strategy = { type = build_army id = infantry value = 500 }
-	# ai_strategy = { type = force_build_armies value = 300 }
-	# ai_strategy = { type = build_army id = garrison value = 100 } 
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
+DAI_JAP_force_build_more_infantry_1940_plus = {
+	allowed = { original_tag = JAP }
+	enable = {
+		has_army_manpower = { size < 2000000 }
+		date > 1939.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
 }
 
 MAN_co_prosperity = {

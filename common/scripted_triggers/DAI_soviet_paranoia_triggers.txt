@@ -1,0 +1,64 @@
+DAI_SOV_should_wait_for_paranoia_reducing_focus = {
+	check_variable = { SOV_paranoia < 30 }
+	OR = {
+		# 35-day focuses: any active progress is already inside the wait window.
+		AND = {
+			NOT = { has_completed_focus = SOV_the_path_of_marxism_leninism }
+			focus_progress = { focus = SOV_the_path_of_marxism_leninism progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_centre }
+			focus_progress = { focus = SOV_the_centre progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_socialism_in_one_country }
+			focus_progress = { focus = SOV_socialism_in_one_country progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_zinovyevite_terrorist_center }
+			focus_progress = { focus = SOV_the_zinovyevite_terrorist_center progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_anti_soviet_trotskyist_center }
+			focus_progress = { focus = SOV_the_anti_soviet_trotskyist_center progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_military_conspiracy }
+			focus_progress = { focus = SOV_the_military_conspiracy progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_organization_centralization_discipline }
+			focus_progress = { focus = SOV_organization_centralization_discipline progress > 0 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_behead_the_snake }
+			focus_progress = { focus = SOV_behead_the_snake progress > 0 }
+		}
+
+		# 70-day focuses: progress 0.5 leaves 35 days; 0.49 includes that midpoint.
+		AND = {
+			NOT = { has_completed_focus = SOV_the_stalin_constitution }
+			focus_progress = { focus = SOV_the_stalin_constitution progress > 0.49 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_secure_the_administration }
+			focus_progress = { focus = SOV_secure_the_administration progress > 0.49 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_collectivization_process }
+			focus_progress = { focus = SOV_the_collectivization_process progress > 0.49 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_workers_dictatorship }
+			focus_progress = { focus = SOV_the_workers_dictatorship progress > 0.49 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_the_bloc_of_rights_and_trotskyites }
+			focus_progress = { focus = SOV_the_bloc_of_rights_and_trotskyites progress > 0.49 }
+		}
+		AND = {
+			NOT = { has_completed_focus = SOV_infiltrate_the_nkvd }
+			focus_progress = { focus = SOV_infiltrate_the_nkvd progress > 0.49 }
+		}
+	}
+}

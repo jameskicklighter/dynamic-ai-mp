@@ -384,6 +384,66 @@ DAI_division_template_decisions = {
 		}
 	}
 
+	AI_Medium_SP_Artillery_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_army_experience > 0
+			has_tech = interwar_artillery
+			OR = {
+				has_tech = basic_medium_tank
+				has_tech = basic_medium_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Medium SP Artillery 1936 A"
+				regiments = {
+					medium_sp_artillery_brigade = { x = 0 y = 0 }
+					medium_sp_artillery_brigade = { x = 0 y = 1 }
+					medium_sp_artillery_brigade = { x = 0 y = 2 }
+					medium_sp_artillery_brigade = { x = 0 y = 3 }
+					medium_sp_artillery_brigade = { x = 1 y = 0 }
+					medium_sp_artillery_brigade = { x = 1 y = 1 }
+					medium_sp_artillery_brigade = { x = 1 y = 2 }
+					medium_sp_artillery_brigade = { x = 2 y = 0 }
+					medium_sp_artillery_brigade = { x = 2 y = 1 }
+					medium_sp_artillery_brigade = { x = 2 y = 2 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					motorized = { x = 3 y = 3 }
+					motorized = { x = 4 y = 0 }
+					motorized = { x = 4 y = 1 }
+					motorized = { x = 4 y = 2 }
+					motorized = { x = 4 y = 3 }
+				}
+				support = {
+				}
+				regimental_support = {
+					medium_tank_destroyer_support = { x = 0 y = 0 }
+					medium_tank_destroyer_support = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					mot_fire_support = { x = 3 y = 0 }
+					mot_fire_support = { x = 4 y = 0 }
+				}
+			}
+		}
+	}
+
 	AI_Modern_Armor_Template_Mechanized = {
 		icon = GFX_decision_generic_tank
 		visible = {
@@ -1441,6 +1501,7 @@ DAI_attache_decisions = {
 			OR = {
 				original_tag = ENG
 				original_tag = FRA
+				original_tag = SOV
 				original_tag = GRE
 				original_tag = HOL
 				original_tag = BEL
