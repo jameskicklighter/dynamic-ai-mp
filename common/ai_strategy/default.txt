@@ -100,7 +100,7 @@ DAI_default_air_ratios = {
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
-		value = 60
+		value = 55
 	}
 
 	ai_strategy = {
@@ -119,6 +119,12 @@ DAI_default_air_ratios = {
 		type = unit_ratio
 		id = tactical_bomber
 		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 5
 	}
 }
 
@@ -1961,6 +1967,14 @@ default_build_a_gun_emplacement = {
 }
 
 default_build_a_lw_facility = {
+	allowed = {
+		NOT = {
+			OR = {
+				original_tag = JAP
+				original_tag = SOV
+			}
+		}
+	}
 	enable = {
 		OR = {
 			original_tag = GER

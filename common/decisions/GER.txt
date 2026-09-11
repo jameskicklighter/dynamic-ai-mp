@@ -13767,12 +13767,7 @@ GER_reich_labor_service_cat = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_western_state_development
-					has_decision = GER_southern_state_development
-					has_decision = GER_central_state_development
-					has_decision = GER_northern_state_development
-					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_reich_labor_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_western_state_development_completed
 				}
 			}
@@ -13783,12 +13778,7 @@ GER_reich_labor_service_cat = {
 				OR = {
 					is_ai = no
 					AND = {
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_western_state_development }
-						NOT = { has_decision = GER_southern_state_development }
-						NOT = { has_decision = GER_central_state_development }
-						NOT = { has_decision = GER_northern_state_development }
-						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_reich_labor_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_western_state_development_completed }
 					}
 				}
@@ -13896,12 +13886,7 @@ GER_reich_labor_service_cat = {
 				factor = 0
 				OR = {
 					NOT = { has_country_flag = DAI_GER_central_state_development_completed }
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_western_state_development
-					has_decision = GER_southern_state_development
-					has_decision = GER_central_state_development
-					has_decision = GER_northern_state_development
-					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_reich_labor_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_northern_state_development_completed
 				}
 			}
@@ -13913,12 +13898,7 @@ GER_reich_labor_service_cat = {
 					is_ai = no
 					AND = {
 						has_country_flag = DAI_GER_central_state_development_completed
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_western_state_development }
-						NOT = { has_decision = GER_southern_state_development }
-						NOT = { has_decision = GER_central_state_development }
-						NOT = { has_decision = GER_northern_state_development }
-						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_reich_labor_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_northern_state_development_completed }
 					}
 				}
@@ -14121,12 +14101,7 @@ GER_reich_labor_service_cat = {
 				factor = 0
 				OR = {
 					NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_western_state_development
-					has_decision = GER_southern_state_development
-					has_decision = GER_central_state_development
-					has_decision = GER_northern_state_development
-					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_reich_labor_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_central_state_development_completed
 				}
 			}
@@ -14138,12 +14113,7 @@ GER_reich_labor_service_cat = {
 					is_ai = no
 					AND = {
 						has_country_flag = DAI_GER_southern_state_development_completed
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_western_state_development }
-						NOT = { has_decision = GER_southern_state_development }
-						NOT = { has_decision = GER_central_state_development }
-						NOT = { has_decision = GER_northern_state_development }
-						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_reich_labor_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_central_state_development_completed }
 					}
 				}
@@ -14230,12 +14200,7 @@ GER_reich_labor_service_cat = {
 				factor = 0
 				OR = {
 					NOT = { has_country_flag = DAI_GER_western_state_development_completed }
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_western_state_development
-					has_decision = GER_southern_state_development
-					has_decision = GER_central_state_development
-					has_decision = GER_northern_state_development
-					DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_reich_labor_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_southern_state_development_completed
 				}
 			}
@@ -14247,12 +14212,7 @@ GER_reich_labor_service_cat = {
 					is_ai = no
 					AND = {
 						has_country_flag = DAI_GER_western_state_development_completed
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_western_state_development }
-						NOT = { has_decision = GER_southern_state_development }
-						NOT = { has_decision = GER_central_state_development }
-						NOT = { has_decision = GER_northern_state_development }
-						NOT = { DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_reich_labor_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
 					}
 				}
@@ -14505,12 +14465,7 @@ GER_rebuild_the_nation_cat = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_state_development_west
-					has_decision = GER_state_development_south
-					has_decision = GER_state_development_central
-					has_decision = GER_state_development_north
-					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_rebuild_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_western_state_development_completed
 				}
 			}
@@ -14521,12 +14476,7 @@ GER_rebuild_the_nation_cat = {
 				OR = {
 					is_ai = no
 					AND = {
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_state_development_west }
-						NOT = { has_decision = GER_state_development_south }
-						NOT = { has_decision = GER_state_development_central }
-						NOT = { has_decision = GER_state_development_north }
-						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_rebuild_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_western_state_development_completed }
 					}
 				}
@@ -14624,12 +14574,7 @@ GER_rebuild_the_nation_cat = {
 				factor = 0
 				OR = {
 					NOT = { has_country_flag = DAI_GER_central_state_development_completed }
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_state_development_west
-					has_decision = GER_state_development_south
-					has_decision = GER_state_development_central
-					has_decision = GER_state_development_north
-					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_rebuild_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_northern_state_development_completed
 				}
 			}
@@ -14641,12 +14586,7 @@ GER_rebuild_the_nation_cat = {
 					is_ai = no
 					AND = {
 						has_country_flag = DAI_GER_central_state_development_completed
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_state_development_west }
-						NOT = { has_decision = GER_state_development_south }
-						NOT = { has_decision = GER_state_development_central }
-						NOT = { has_decision = GER_state_development_north }
-						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_rebuild_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_northern_state_development_completed }
 					}
 				}
@@ -14861,12 +14801,7 @@ GER_rebuild_the_nation_cat = {
 				factor = 0
 				OR = {
 					NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_state_development_west
-					has_decision = GER_state_development_south
-					has_decision = GER_state_development_central
-					has_decision = GER_state_development_north
-					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_rebuild_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_central_state_development_completed
 				}
 			}
@@ -14878,12 +14813,7 @@ GER_rebuild_the_nation_cat = {
 					is_ai = no
 					AND = {
 						has_country_flag = DAI_GER_southern_state_development_completed
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_state_development_west }
-						NOT = { has_decision = GER_state_development_south }
-						NOT = { has_decision = GER_state_development_central }
-						NOT = { has_decision = GER_state_development_north }
-						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_rebuild_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_central_state_development_completed }
 					}
 				}
@@ -14971,12 +14901,7 @@ GER_rebuild_the_nation_cat = {
 				factor = 0
 				OR = {
 					NOT = { has_country_flag = DAI_GER_western_state_development_completed }
-					has_country_flag = DAI_GER_state_development_sequence_lock
-					has_decision = GER_state_development_west
-					has_decision = GER_state_development_south
-					has_decision = GER_state_development_central
-					has_decision = GER_state_development_north
-					DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes
+					DAI_GER_rebuild_state_development_sequence_blocked = yes
 					has_country_flag = DAI_GER_southern_state_development_completed
 				}
 			}
@@ -14988,12 +14913,7 @@ GER_rebuild_the_nation_cat = {
 					is_ai = no
 					AND = {
 						has_country_flag = DAI_GER_western_state_development_completed
-						NOT = { has_country_flag = DAI_GER_state_development_sequence_lock }
-						NOT = { has_decision = GER_state_development_west }
-						NOT = { has_decision = GER_state_development_south }
-						NOT = { has_decision = GER_state_development_central }
-						NOT = { has_decision = GER_state_development_north }
-						NOT = { DAI_GER_rebuild_state_development_bonus_blocks_next_decision = yes }
+						NOT = { DAI_GER_rebuild_state_development_sequence_blocked = yes }
 						NOT = { has_country_flag = DAI_GER_southern_state_development_completed }
 					}
 				}

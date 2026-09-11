@@ -136,10 +136,15 @@ DAI_GER_rebuild_northern_state_development_area_nearly_full = {
 	}
 }
 
-# An active regional bonus normally holds the sequence. Once that region is
-# nearly full, the next decision may start while the original bonus continues.
-DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = {
+# Active decisions hold the sequence until the removal effect starts the bonus.
+# Each active bonus then blocks until its region is nearly full or it expires.
+DAI_GER_reich_labor_state_development_sequence_blocked = {
 	OR = {
+		has_country_flag = DAI_GER_state_development_sequence_lock
+		has_decision = GER_western_state_development
+		has_decision = GER_southern_state_development
+		has_decision = GER_central_state_development
+		has_decision = GER_northern_state_development
 		AND = {
 			has_country_flag = DAI_GER_western_state_development_active
 			NOT = { DAI_GER_western_state_development_area_nearly_full = yes }
@@ -160,8 +165,13 @@ DAI_GER_reich_labor_state_development_bonus_blocks_next_decision = {
 	}
 }
 
-DAI_GER_rebuild_state_development_bonus_blocks_next_decision = {
+DAI_GER_rebuild_state_development_sequence_blocked = {
 	OR = {
+		has_country_flag = DAI_GER_state_development_sequence_lock
+		has_decision = GER_state_development_west
+		has_decision = GER_state_development_south
+		has_decision = GER_state_development_central
+		has_decision = GER_state_development_north
 		AND = {
 			has_country_flag = DAI_GER_western_state_development_active
 			NOT = { DAI_GER_western_state_development_area_nearly_full = yes }

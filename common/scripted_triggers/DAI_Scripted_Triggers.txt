@@ -13,7 +13,6 @@ DAI_should_pre_research_industry = {
 }
 
 DAI_pre_research_industry_construction_first = {
-	DAI_should_pre_research_industry = yes
 	OR = {
 		original_tag = SOV
 		original_tag = USA
@@ -21,7 +20,6 @@ DAI_pre_research_industry_construction_first = {
 }
 
 DAI_pre_research_industry_production_first = {
-	DAI_should_pre_research_industry = yes
 	OR = {
 		original_tag = ENG
 		original_tag = FRA
@@ -259,10 +257,6 @@ DAI_should_use_amtrac = {
 DAI_should_start_mech_production = {
 	DAI_can_use_mechanized = yes
 	DAI_should_use_mechanized = yes
-}
-
-DAI_should_start_mechanized_production = {
-	DAI_should_start_mech_production = yes
 }
 
 DAI_should_start_amtrac_production = {
@@ -627,18 +621,9 @@ DAI_Should_Research_Navy_GENERAL = {
 	DAI_block_early_naval_research = no
 }
 
-DAI_Should_Research_Navy_SMALL = {
-	num_of_naval_factories > 3
-	DAI_is_large_navy_country = no
-	DAI_block_early_naval_research = no
-}
-
 DAI_Should_Research_Navy_DESTROYER = {
-	num_of_naval_factories > 0
-	OR = {
-		DAI_Should_Research_Navy_GENERAL = yes
-		DAI_Should_Research_Navy_SMALL = yes
-	}
+	DAI_Should_Research_Navy_EARLY_DESTROYER = yes
+	DAI_block_early_naval_research = no
 }
 
 DAI_Should_Research_Navy_EARLY_DESTROYER = {
@@ -693,18 +678,6 @@ DAI_Should_Research_Navy_SUBMARINE = {
 ##############################################################################
 ### 		MISCELLANEOUS
 ##############################################################################
-
-DAI_ITA_only_has_fake_war_with_ETH = {
-	if = { limit = { original_tag = ITA }
-		has_war = no
-		NOT = {
-			any_other_country = {
-				NOT = { original_tag = ETH }
-				has_war_with = ROOT
-			}
-		}
-	}
-}
 
 ##############################################################################
 ### 		IDEAS
@@ -783,20 +756,6 @@ DAI_JAP_okay_to_invade_CHI = {
 			controls_state = 613
 			controls_state = 743
 		}
-	}
-
-}
-
-DAI_JAP_okay_to_invade_GXC = {
-
-	has_war_with = GXC
-
-	IF = { limit = { GXC = { is_in_faction_with = CHI } }
-		date > 1940.1.1
-		DAI_JAP_okay_to_invade_CHI = yes
-	}
-	ELSE = {
-		always = yes
 	}
 
 }

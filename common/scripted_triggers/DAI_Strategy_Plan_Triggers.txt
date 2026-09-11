@@ -209,3 +209,30 @@ DAI_SOV_is_historical_ai = {
 		}
 	}
 }
+
+# ========== JAP ==========
+
+DAI_JAP_is_historical_ai = {
+	tag = JAP
+	is_ai = yes
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				not = { has_dlc = "Waking the Tiger" }
+				has_game_rule = {
+					rule = JAP_ai_behavior
+					option = DEFAULT
+				}
+			}
+			MAN = {
+				is_ai = yes
+			}
+		}
+		has_game_rule = {
+			rule = JAP_ai_behavior
+			option = FASCIST
+		}
+		has_country_flag = JAP_AI_RANDOM_FASCIST
+	}
+}

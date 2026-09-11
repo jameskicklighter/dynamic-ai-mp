@@ -53,7 +53,10 @@ DAI_set_build_order_ENG = {
 			set_variable = { DAI_build_order_wants = token:ENG_bernard_montgomery }
 		}
 
-		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		}
 
 	}
 
@@ -141,7 +144,10 @@ DAI_set_build_order_GER = {
 		# 	set_variable = { DAI_build_order_wants = token:GER_erich_raeder }
 		# }
 
-		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		}
 
 	}
 
@@ -203,7 +209,10 @@ DAI_set_build_order_SOV = {
 			set_variable = { DAI_build_order_wants = token:SOV_georgy_zhukov }
 		}
 
-		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		}
 
 	}
 
@@ -254,7 +263,10 @@ DAI_set_build_order_FRA = {
 			set_variable = { DAI_build_order_wants = token:FRA_zivony_peshkov }
 		}
 
-		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		}
 
 	}
 
@@ -321,11 +333,17 @@ DAI_set_build_order_ROM = {
 			set_variable = { DAI_build_order_wants = token:ROM_armand_calinescu }
 		}
 
-		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		}
 
 	}
 
-	DAI_debug_build_order_ROM = yes
+	if = {
+		limit = { has_global_flag = DAI_detailed_diagnostics }
+		DAI_debug_build_order_ROM = yes
+	}
 
 }
 
@@ -488,8 +506,100 @@ DAI_set_build_order_ITA = {
 			set_variable = { DAI_build_order_wants = token:ITA_rodolfo_graziani }
 		}
 
-		log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			log = "[GetYear] [GetMonth] | AI | [Root.GetName] | DAI_build_order_wants: = [?DAI_build_order_wants]"
+		}
 
 	}
 
+}
+
+DAI_set_build_order_JAP = {
+
+	set_variable = { DAI_build_order_wants = -1 }
+
+	if = {
+		limit = { DAI_JAP_is_historical_ai = yes }
+
+		if = {
+			limit = {
+				DAI_JAP_should_protect_korekiyo = yes
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_increase_takahashi_korekiyo_security_decision }
+		}
+		else_if = {
+			limit = {
+				DAI_JAP_can_abandon_naval_treaty = yes
+			}
+			set_variable = { DAI_build_order_wants = token:MTG_abandon_treaty_japanese }
+		}
+		else_if = {
+			limit = {
+				DAI_JAP_should_incite_diet_tensions = yes
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_incite_increased_tensions_in_the_diet_decision }
+		}
+		else_if = {
+			limit = {
+				JAP_kanin_kotohito = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = army_chief_offensive_1 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_kanin_kotohito }
+		}
+		else_if = {
+			limit = {
+				OR = { has_completed_focus = JAP_konoes_first_cabinet has_completed_focus = JAP_sway_the_navy_moderates }
+				JAP_mitsumasa_yonai = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = silent_workhorse limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_mitsumasa_yonai }
+		}
+		else_if = {
+			limit = {
+				JAP_takahashi_korekiyo = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = JAP_financial_genius limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_takahashi_korekiyo }
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = JAP_approach_yasuda
+				NOT = { has_idea = yasuda_zaibatsu }
+			}
+			set_variable = { DAI_build_order_wants = token:yasuda_zaibatsu }
+		}
+		else_if = {
+			limit = {
+				JAP_korechika_anami = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = air_chief_ground_support_1 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_korechika_anami }
+		}
+		else_if = {
+			limit = {
+				JAP_shigetaro_shimada = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = navy_chief_decisive_battle_2 limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_shigetaro_shimada }
+		}
+		else_if = {
+			limit = {
+				JAP_tomoyuki_yamashita = { is_hired_as_advisor = no }
+				has_available_idea_with_traits = { idea = grand_battle_plan_expert limit = 1 }
+			}
+			set_variable = { DAI_build_order_wants = token:JAP_tomoyuki_yamashita }
+		}
+
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			if = {
+				limit = { check_variable = { DAI_build_order_wants > 0 } }
+				log = "[GetYear] [GetMonth] | DAI_JAP_BUILD_ORDER | selected=[?DAI_build_order_wants.GetTokenKey] token=[?DAI_build_order_wants] pp=[?political_power] cp=[?command_power]"
+			}
+			else = {
+				log = "[GetYear] [GetMonth] | DAI_JAP_BUILD_ORDER | selected=none token=[?DAI_build_order_wants] pp=[?political_power] cp=[?command_power]"
+			}
+		}
+	}
 }

@@ -37,6 +37,9 @@ DAI_destroyer_screen = {
 
 	EARLY_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -94,6 +97,9 @@ DAI_destroyer_screen = {
 
 	BASIC_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -151,6 +157,9 @@ DAI_destroyer_screen = {
 
 	IMPROVED_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -216,6 +225,9 @@ DAI_destroyer_screen = {
 
 	ADVANCED_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -445,6 +457,9 @@ DAI_ASW_destroyer = {
 
 	EARLY_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = {
@@ -503,6 +518,9 @@ DAI_ASW_destroyer = {
 
 	BASIC_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -561,6 +579,9 @@ DAI_ASW_destroyer = {
 
 	IMPROVED_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -620,6 +641,9 @@ DAI_ASW_destroyer = {
 
 	ADVANCED_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = {

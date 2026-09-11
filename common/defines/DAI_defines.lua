@@ -37,6 +37,9 @@ NDefines.NAI.RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0                       
 NDefines.NAI.RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0                         -- Multiplies value based on relative number of air base / country size.
 NDefines.NAI.RESEARCH_NEW_DOCTRINE_RANDOM_FACTOR = 0
 
+-- Disable native category-need pressure for the research-scoring trial.
+NDefines.NAI.RESEARCH_NEEDS_FACTOR = 0
+
 NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 1
 NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 25.0
 NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 1.5

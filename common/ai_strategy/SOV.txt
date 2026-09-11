@@ -231,12 +231,24 @@ SOV_air_unit_ratios = {
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
-		value = 80
+		value = 65
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = cas
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 5
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
 		value = 10
 	}
 
@@ -1991,6 +2003,22 @@ SOV_build_mils = {
 		type = building_target
 		id = arms_factory
 		value = 200
+	}
+}
+
+SOV_build_land_facility_in_kazan = {
+	allowed = {
+		original_tag = SOV
+	}
+
+	enable = { always = no } # Replaced by DAI construction decisions.
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = land_facility
+		target = 6338 # Kazan supply hub, state 249
+		value = 9999
 	}
 }
 

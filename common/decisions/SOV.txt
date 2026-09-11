@@ -263,17 +263,19 @@ SOV_paranoia_system = {
 		complete_effect = {
 			SOV_paranoia_medium_decrease_effect = yes
 
+			custom_effect_tooltip = SOV_paranoia_calm_down_stalin_cd_tt
+		}
+
+		remove_effect = {
 			hidden_effect = {
 				if = {
 					limit = {
-						is_ai = yes
 						DAI_SOV_is_historical_ai = yes
 					}
-					set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = 180 }
+					set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = var:SOV_paranoia_calm_down_stalin_re_enable_days }
+					clr_country_flag = DAI_SOV_forge_production_reports_legacy_cooldown_pending
 				}
 			}
-
-			custom_effect_tooltip = SOV_paranoia_calm_down_stalin_cd_tt
 		}
 	}
 
@@ -463,19 +465,19 @@ SOV_paranoia_system = {
 		days_re_enable = SOV_paranoia_inspection_re_enable_days
 
 		complete_effect = {
-			hidden_effect = {
-				if = {
-					limit = {
-						is_ai = yes
-						DAI_SOV_is_historical_ai = yes
-					}
-					set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = 180 }
-				}
-			}
 			set_country_flag = SOV_paranoia_conducting_inspection_flag #Used to prevent random purges from popping up while this is active
 		}
 
 		remove_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						DAI_SOV_is_historical_ai = yes
+					}
+					set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = var:SOV_paranoia_inspection_re_enable_days }
+					clr_country_flag = DAI_SOV_inspection_in_the_navy_legacy_cooldown_pending
+				}
+			}
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
@@ -531,19 +533,19 @@ SOV_paranoia_system = {
 		days_re_enable = SOV_paranoia_inspection_re_enable_days
 
 		complete_effect = {
-			hidden_effect = {
-				if = {
-					limit = {
-						is_ai = yes
-						DAI_SOV_is_historical_ai = yes
-					}
-					set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = 180 }
-				}
-			}
 			set_country_flag = SOV_paranoia_conducting_inspection_flag #Used to prevent random purges from popping up while this is active
 		}
 
 		remove_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						DAI_SOV_is_historical_ai = yes
+					}
+					set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = var:SOV_paranoia_inspection_re_enable_days }
+					clr_country_flag = DAI_SOV_inspection_in_the_airforce_legacy_cooldown_pending
+				}
+			}
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 

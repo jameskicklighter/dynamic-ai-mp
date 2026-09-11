@@ -1,0 +1,9 @@
+﻿l_english:
+ DAI_construction_decisions: "AI Construction Planning"
+ DAI_construction_decisions_desc: "AI construction requests use the normal civilian-factory construction queue."
+ DAI_JAP_queue_niigata_land_facility: "Build the Niigata Land Warfare Facility"
+ DAI_JAP_queue_niigata_land_facility_desc: "Queue a land warfare facility at Niigata's supply hub."
+ DAI_SOV_queue_kazan_land_facility: "Build the Kazan Land Warfare Facility"
+ DAI_SOV_queue_kazan_land_facility_desc: "Queue a land warfare facility at Kazan's supply hub."
+ DAI_JAP_queue_east_hebei_air_base: "Expand the East Hebei Air Base"
+ DAI_JAP_queue_east_hebei_air_base_desc: "Queue air base construction in East Hebei up to level three."

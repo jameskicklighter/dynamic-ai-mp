@@ -1,0 +1,7 @@
+DAI_construction_decisions = {
+	priority = 0
+	allowed = {
+		OR = { original_tag = JAP original_tag = SOV }
+	}
+	visible = { is_ai = yes }
+}

@@ -1,20 +1,15 @@
 DAI_SOV_historical_paranoia_daily_update = {
-	# Seed conservative cooldowns when adopting a pre-controller bank save. Saves from the
-	# first controller version only need mirrors for decisions that are still active.
+	# New games need no cooldown. Pre-controller saves lack usable timing history.
 	if = {
 		limit = {
 			is_ai = yes
 			DAI_SOV_is_historical_ai = yes
-			NOT = { has_country_flag = DAI_SOV_paranoia_controller_v2_initialized }
+			NOT = { has_country_flag = DAI_SOV_paranoia_controller_v3_initialized }
 		}
 		if = {
-			limit = {
-				NOT = { has_country_flag = DAI_SOV_paranoia_controller_initialized }
-			}
+			limit = { NOT = { has_country_flag = DAI_SOV_paranoia_controller_initialized } }
 			if = {
-				limit = {
-					has_country_flag = SOV_paranoia_system_active_flag
-				}
+				limit = { has_country_flag = SOV_paranoia_system_active_flag }
 				set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = 180 }
 				set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = 180 }
 				set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = 180 }
@@ -22,29 +17,39 @@ DAI_SOV_historical_paranoia_daily_update = {
 			set_country_flag = DAI_SOV_paranoia_controller_initialized
 		}
 		else = {
-			if = {
-				limit = {
-					has_decision = SOV_forge_production_reports
-					NOT = { has_country_flag = DAI_SOV_forge_production_reports_cooldown }
-				}
-				set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = 180 }
-			}
-			if = {
-				limit = {
-					has_decision = SOV_inspection_in_the_navy
-					NOT = { has_country_flag = DAI_SOV_inspection_in_the_navy_cooldown }
-				}
-				set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = 180 }
-			}
-			if = {
-				limit = {
-					has_decision = SOV_inspection_in_the_airforce
-					NOT = { has_country_flag = DAI_SOV_inspection_in_the_airforce_cooldown }
-				}
-				set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = 180 }
-			}
+			# Old mirrors began at launch. Append the missing active period once they expire.
+			set_country_flag = DAI_SOV_forge_production_reports_legacy_cooldown_pending
+			set_country_flag = DAI_SOV_inspection_in_the_navy_legacy_cooldown_pending
+			set_country_flag = DAI_SOV_inspection_in_the_airforce_legacy_cooldown_pending
 		}
-		set_country_flag = DAI_SOV_paranoia_controller_v2_initialized
+		set_country_flag = DAI_SOV_paranoia_controller_v3_initialized
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_SOV_forge_production_reports_legacy_cooldown_pending
+			NOT = { has_country_flag = DAI_SOV_forge_production_reports_cooldown }
+		}
+		set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = 90 }
+		clr_country_flag = DAI_SOV_forge_production_reports_legacy_cooldown_pending
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_SOV_inspection_in_the_navy_legacy_cooldown_pending
+			NOT = { has_country_flag = DAI_SOV_inspection_in_the_navy_cooldown }
+		}
+		set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = 7 }
+		clr_country_flag = DAI_SOV_inspection_in_the_navy_legacy_cooldown_pending
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_SOV_inspection_in_the_airforce_legacy_cooldown_pending
+			NOT = { has_country_flag = DAI_SOV_inspection_in_the_airforce_cooldown }
+		}
+		set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = 7 }
+		clr_country_flag = DAI_SOV_inspection_in_the_airforce_legacy_cooldown_pending
 	}
 
 	if = {
@@ -56,8 +61,6 @@ DAI_SOV_historical_paranoia_daily_update = {
 			DAI_SOV_should_wait_for_paranoia_reducing_focus = no
 		}
 
-		set_temp_variable = { DAI_SOV_paranoia_decision_taken = 0 }
-
 		if = {
 			limit = {
 				check_variable = { SOV_paranoia > 19 }
@@ -66,12 +69,9 @@ DAI_SOV_historical_paranoia_daily_update = {
 			}
 			activate_decision = SOV_forge_production_reports
 			subtract_from_variable = { DAI_SOV_paranoia_pp_bank = 25 }
-			set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = 180 }
-			set_temp_variable = { DAI_SOV_paranoia_decision_taken = 1 }
 		}
-		if = {
+		else_if = {
 			limit = {
-				check_variable = { DAI_SOV_paranoia_decision_taken < 1 }
 				check_variable = { SOV_paranoia > 20 }
 				check_variable = { DAI_SOV_paranoia_pp_bank > 49 }
 				NOT = { has_country_flag = SOV_paranoia_conducting_inspection_flag }
@@ -89,13 +89,10 @@ DAI_SOV_historical_paranoia_daily_update = {
 			}
 			activate_decision = SOV_inspection_in_the_navy
 			subtract_from_variable = { DAI_SOV_paranoia_pp_bank = 50 }
-			set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = 180 }
-			set_temp_variable = { DAI_SOV_paranoia_decision_taken = 1 }
 		}
-		if = {
+		else_if = {
 			limit = {
-				check_variable = { DAI_SOV_paranoia_decision_taken < 1 }
-				check_variable = { SOV_paranoia > 39 }
+				check_variable = { SOV_paranoia > 20 }
 				check_variable = { DAI_SOV_paranoia_pp_bank > 49 }
 				NOT = { has_country_flag = SOV_paranoia_conducting_inspection_flag }
 				NOT = { has_decision = SOV_inspection_in_the_navy }
@@ -109,7 +106,6 @@ DAI_SOV_historical_paranoia_daily_update = {
 			}
 			activate_decision = SOV_inspection_in_the_airforce
 			subtract_from_variable = { DAI_SOV_paranoia_pp_bank = 50 }
-			set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = 180 }
 		}
 	}
 }

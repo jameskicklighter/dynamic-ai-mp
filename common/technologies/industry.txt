@@ -310,21 +310,30 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			base = 1
-			
+			base = 0.3
 			modifier = {
-				factor = 10
-			
-				has_resources_in_country = {
-					resource = coal
-					amount > 0
-					only_imported = yes
+				add = 20
+				is_major = no
+				OR = {
+					check_variable = { resource@coal < 0 }
+					check_variable = { resource_imported@coal > 8 }
 				}
 			}
-
 			modifier = {
-				factor = 5
-				energy_ratio < 0.9
+				add = 30
+				is_major = yes
+				OR = {
+					check_variable = { resource@coal < 0 }
+					check_variable = { resource_imported@coal > 8 }
+				}
+			}
+			modifier = {
+				factor = 2
+				num_of_factories > 50
+				OR = {
+					check_variable = { resource@coal < 0 }
+					check_variable = { resource_imported@coal > 8 }
+				}
 			}
 			# -- DAI
 		}
@@ -352,21 +361,30 @@ technologies = {
 		
 		ai_will_do = {
 			# DAI --
-			base = 1
-			
+			base = 0.3
 			modifier = {
-				factor = 5
-			
-				has_resources_in_country = {
-					resource = coal
-					amount > 0
-					only_imported = yes
+				add = 20
+				is_major = no
+				OR = {
+					check_variable = { resource@coal < 0 }
+					check_variable = { resource_imported@coal > 8 }
 				}
 			}
-			
 			modifier = {
-				factor = 5
-				energy_ratio < 0.9
+				add = 30
+				is_major = yes
+				OR = {
+					check_variable = { resource@coal < 0 }
+					check_variable = { resource_imported@coal > 8 }
+				}
+			}
+			modifier = {
+				factor = 2
+				num_of_factories > 50
+				OR = {
+					check_variable = { resource@coal < 0 }
+					check_variable = { resource_imported@coal > 8 }
+				}
 			}
 			# -- DAI
 		}
@@ -1846,6 +1864,7 @@ technologies = {
 					check_variable = { resource_produced@tungsten > 20 }
 					check_variable = { resource_produced@steel > 20 }
 					check_variable = { resource_produced@chromium > 20 }
+					check_variable = { resource_produced@coal > 20 }
 				}
 			}
 			modifier = {
@@ -1875,6 +1894,10 @@ technologies = {
 					AND = {
 						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
+					}
+					AND = {
+						check_variable = { resource_produced@coal > 20 }
+						check_variable = { resource_imported@coal > 8 }
 					}
 				}
 			}
@@ -1980,6 +2003,7 @@ technologies = {
 					check_variable = { resource_produced@tungsten > 20 }
 					check_variable = { resource_produced@steel > 20 }
 					check_variable = { resource_produced@chromium > 20 }
+					check_variable = { resource_produced@coal > 20 }
 				}
 			}
 			modifier = {
@@ -2009,6 +2033,10 @@ technologies = {
 					AND = {
 						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
+					}
+					AND = {
+						check_variable = { resource_produced@coal > 20 }
+						check_variable = { resource_imported@coal > 8 }
 					}
 				}
 			}
@@ -2115,6 +2143,7 @@ technologies = {
 					check_variable = { resource_produced@tungsten > 20 }
 					check_variable = { resource_produced@steel > 20 }
 					check_variable = { resource_produced@chromium > 20 }
+					check_variable = { resource_produced@coal > 20 }
 				}
 			}
 			modifier = {
@@ -2144,6 +2173,10 @@ technologies = {
 					AND = {
 						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
+					}
+					AND = {
+						check_variable = { resource_produced@coal > 20 }
+						check_variable = { resource_imported@coal > 8 }
 					}
 				}
 			}
@@ -2260,6 +2293,7 @@ technologies = {
 					check_variable = { resource_produced@tungsten > 20 }
 					check_variable = { resource_produced@steel > 20 }
 					check_variable = { resource_produced@chromium > 20 }
+					check_variable = { resource_produced@coal > 20 }
 				}
 			}
 			modifier = {
@@ -2289,6 +2323,10 @@ technologies = {
 					AND = {
 						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
+					}
+					AND = {
+						check_variable = { resource_produced@coal > 20 }
+						check_variable = { resource_imported@coal > 8 }
 					}
 				}
 			}
@@ -2392,6 +2430,7 @@ technologies = {
 					check_variable = { resource_produced@tungsten > 20 }
 					check_variable = { resource_produced@steel > 20 }
 					check_variable = { resource_produced@chromium > 20 }
+					check_variable = { resource_produced@coal > 20 }
 				}
 			}
 			modifier = {
@@ -2421,6 +2460,10 @@ technologies = {
 					AND = {
 						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
+					}
+					AND = {
+						check_variable = { resource_produced@coal > 20 }
+						check_variable = { resource_imported@coal > 8 }
 					}
 				}
 			}

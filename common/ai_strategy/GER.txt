@@ -195,6 +195,18 @@ DAI_GER_northern_state_development_factory_score = {
 	ai_strategy = { type = factory_build_score_factor target = 61 value = 500 }
 	ai_strategy = { type = factory_build_score_factor target = 62 value = 500 }
 	ai_strategy = { type = factory_build_score_factor target = 63 value = 500 }
+}
+
+DAI_GER_rebuild_sonderjylland_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_northern_state_development_active
+		912 = {
+			has_dynamic_modifier = { modifier = GER_public_works_modifier scope = GER }
+		}
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = { type = factory_build_score_factor target = 912 value = 500 }
 }
 
@@ -4567,7 +4579,7 @@ GER_air_unit_ratios = {
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
-		value = 50
+		value = 45
 	}
 
 	ai_strategy = {
@@ -4580,6 +4592,12 @@ GER_air_unit_ratios = {
 		type = unit_ratio
 		id = tactical_bomber
 		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 5
 	}
 
 	ai_strategy = {

@@ -1,0 +1,43 @@
+# Instant decisions use their eligibility and durable completion state, not has_decision.
+DAI_JAP_should_protect_korekiyo = {
+	has_active_mission = JAP_aizawa_trial_ongoing
+	has_country_flag = JAP_can_now_save_advisors_flag
+	has_character = JAP_takahashi_korekiyo
+	NOT = { has_country_flag = JAP_korekiyo_protected_flag }
+	NOT = { has_country_flag = JAP_takahashi_korekiyo_was_killed }
+}
+
+DAI_JAP_can_abandon_naval_treaty = {
+	has_naval_treaty_trigger = yes
+	has_government = neutrality
+	OR = {
+		threat > 0.2
+		has_global_flag = MTG_second_london_conference
+	}
+}
+
+DAI_JAP_should_incite_diet_tensions = {
+	has_completed_focus = JAP_promulgate_the_military_ministers_system
+	OR = {
+		has_government = neutrality
+		has_government = fascism
+	}
+	NOT = {
+		has_completed_focus = JAP_the_harakiri_debate
+		has_completed_focus = JAP_reprimand_hamada_kunimatsu
+	}
+	has_active_mission = JAP_conflict_between_faction_reaching_boiling_point_mission
+	NOT = { has_country_flag = DAI_JAP_diet_tensions_increased }
+}
+
+DAI_JAP_china_blocks_border_skirmish = {
+	OR = {
+		has_war_with = CHI
+		has_wargoal_against = CHI
+		AND = {
+			has_active_mission = JAP_kwantung_army_impatience
+			check_variable = { days_mission_timeout@JAP_kwantung_army_impatience < 71 }
+		}
+		focus_progress = { focus = JAP_reinforce_the_beijing_garrison progress > 0 }
+	}
+}

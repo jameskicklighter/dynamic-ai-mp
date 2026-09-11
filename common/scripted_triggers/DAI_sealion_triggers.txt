@@ -117,6 +117,5 @@ DAI_axis_sealion_focus = {
 }
 
 DAI_axis_sealion_go_time = {
-	DAI_axis_sealion_focus = yes
 	DAI_axis_sealion_can_go = yes
 }

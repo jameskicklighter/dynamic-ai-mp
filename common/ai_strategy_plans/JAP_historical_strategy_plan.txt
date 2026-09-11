@@ -1,0 +1,188 @@
+JAP_historical_plan = {
+	name = "Japan historical plan"
+	desc = "Historical behavior for Japan"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = JAP_ai_behavior
+						option = DEFAULT
+					}
+				}
+				MAN = {
+					is_ai = yes
+				}
+			}
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = JAP_AI_RANDOM_FASCIST
+		}
+	}
+	abort = {
+		#MAN = {
+		#	has_completed_focus = MAN_assertiveness
+		#}
+	}
+
+	ai_national_focuses = {
+
+		# Do ASAP
+		JAP_the_koiso_cabinet # 70 
+		JAP_found_the_boeitai # 35 
+		JAP_advance_one_hundred_million_fireballs # 70 
+		JAP_the_war_has_not_necessarily_developed_focus # 35 
+		JAP_the_surrender_broadcast # 70
+
+		# 1936
+				#-----1936-----
+		JAP_ministry_of_commerce_and_industry # 35 -> February 5, 1936
+		JAP_continue_takahashi_korekiyos_policies # 35 -> March 11, 1936
+		JAP_promulgate_the_military_ministers_system # 35 -> April 15, 1936
+		JAP_approach_yasuda # 70 -> June 24, 1936
+		JAP_the_imperial_defense_plan # 21 -> July 15, 1936
+		JAP_establish_showa_aircraft_idnsutry # 35 -> August 19, 1936
+		JAP_expand_kawagoe_army_arsenal # 35 -> September 23, 1936
+		JAP_expand_hiratsuka_navy_arsenal # 35 -> October 28, 1936
+		JAP_the_harakiri_debate # 14 -> November 11, 1936
+		JAP_konoes_first_cabinet # 35 -> December 16, 1936
+
+		#-----1937-----
+		JAP_sea_national_spiritual_mobliization_movement # 35 -> January 20, 1937
+		JAP_form_the_central_economic_council # 35 -> February 24, 1937
+		JAP_revisit_the_thirteen_demands # 21 -> March 17, 1937
+		JAP_establish_mongol_military_government # 35 -> April 21, 1937
+		JAP_reinforce_the_beijing_garrison # 70 -> June 30, 1937
+		JAP_expand_the_showa_research_association # 70 -> September 8, 1937
+		JAP_fund_the_riken_institute # 70 -> November 17, 1937
+		JAP_imperial_headquarters_liasion_conference # 35 -> December 22, 1937
+
+		#-----1938-----
+		JAP_sea_guide_the_zaibatsus # 35 -> January 26, 1938
+		JAP_develop_new_fighters # 70 -> April 6, 1938
+		JAP_build_the_nishotaki_and_miyanaka_dams # 35 -> May 11, 1938
+		JAP_approach_mitsui # 35 -> June 15, 1938
+		JAP_approach_mitsubishi # 35 -> July 20, 1938
+		JAP_approach_sumitomo # 35 -> August 24, 1938
+		JAP_ministry_of_colonial_affairs # 35 -> September 28, 1938
+		JAP_rely_on_supremacy_of_the_will # 35 -> November 2, 1938
+		JAP_hokushin_ron # 35 -> December 7, 1938
+
+		#-----1939-----
+		JAP_enact_the_national_conscription_law # 35 -> January 11, 1939
+		JAP_new_order_in_east_asia # 35 -> February 15, 1939
+		JAP_sea_state_general_mobilization_law # 35 -> March 22, 1939
+		JAP_enact_religious_organizations_law # 35 -> April 26, 1939
+		JAP_new_order_movement # 70 -> July 5, 1939
+		JAP_strategic_offensives # 35 -> August 9, 1939
+		JAP_prepare_the_southern_front # 35 -> September 13, 1939
+		JAP_balanced_naval_approach # 70 -> November 22, 1939
+		JAP_form_cabinet_intelligence_bureau # 35 -> December 27, 1939
+
+		#-----1940-----
+		JAP_form_the_kido_butai # 35 -> January 31, 1940
+		JAP_naval_armaments_program # 35 -> March 6, 1940
+		JAP_reorganize_the_united_autonomous_government # 35 -> April 10, 1940
+		JAP_invest_in_senbu # 35 -> May 15, 1940
+		JAP_imperial_rule_assistance_association # 35 -> June 19, 1940
+		JAP_sea_greater_east_asian_co_properity_sphere # 70 -> August 28, 1940
+		JAP_sea_tripartite_pact # 35 -> October 2, 1940
+		JAP_intensify_anti_guerilla_operations # 35 -> November 6, 1940
+		JAP_reorganized_national_government # 35 -> December 11, 1940
+
+		#-----1941-----
+		JAP_nanshin_ron # 35 -> January 15, 1941
+		JAP_issue_the_senjinkun_military_code # 35 -> February 19, 1941
+		JAP_mengjiang_united_autonomous_government # 35 -> March 26, 1941
+		JAP_soviet_japanese_neutrality_pact # 35 -> April 30, 1941
+		JAP_demand_tonkinese_bases # 35 -> June 4, 1941
+		JAP_unsinkable_aircraft_carriers # 35 -> July 9, 1941
+		JAP_issue_the_shinmin_no_michi_manifesto # 35 -> August 13, 1941
+		JAP_occupy_indochina # 35 -> September 17, 1941
+		JAP_sea_pressure_siam # 35 -> October 22, 1941
+		JAP_strike_the_southern_road # 70 -> December 31, 1941
+
+		#-----1942-----
+		JAP_occupy_siam # 35 -> February 4, 1942
+		JAP_expand_navy_technical_department # 70 -> April 15, 1942
+		JAP_isolate_oceania # 70 -> June 24, 1942
+		JAP_sea_national_defense_state # 70 -> September 2, 1942
+		JAP_7075_aluminium_alloy # 35 -> October 7, 1942
+		JAP_escort_efficiency # 35 -> November 11, 1942
+
+		#-----1943-----
+		JAP_sea_long_operational_range # 70 -> January 20, 1943
+		JAP_formalize_the_tonarigumi # 35 -> February 24, 1943
+		JAP_ichioku_isshin # 35 -> March 31, 1943
+		JAP_tojos_premiership # 35 -> May 5, 1943
+		JAP_modern_bombers # 70 -> July 14, 1943
+		JAP_develop_the_chinese_resources # 70 -> September 22, 1943
+		JAP_manchuria_five_year_plan # 35 -> October 27, 1943
+		JAP_establish_manchuria_airplane_manufacturing_company # 35 -> December 1, 1943
+
+		#-----1944-----
+		JAP_instill_the_spirit_of_bushido # 70 -> February 9, 1944
+		JAP_fix_flawed_naval_designs # 35 -> March 15, 1944
+		JAP_crackdown_on_foreign_agents # 35 -> April 19, 1944
+		JAP_build_up_korean_industries # 35 -> May 24, 1944
+		JAP_army_weapons_administration_headquarters # 70 -> August 2, 1944
+		JAP_adopt_new_assault_doctrine # 70 -> October 11, 1944
+		JAP_develop_lethal_infantry_equipment # 70 -> December 20, 1944
+
+		#-----1945-----
+		JAP_prepare_the_northern_front # 35 -> January 24, 1945
+		JAP_utilize_ainu_expertise # 35 -> February 28, 1945
+		JAP_kantokuen # 70 -> May 9, 1945
+		JAP_establish_synthetic_fuel_joint_venture # 35 -> June 13, 1945
+		JAP_strenghten_manchukuo_imperial_army # 70 -> August 22, 1945
+		JAP_the_persimmon_has_ripened # 35 -> September 26, 1945
+
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+		#Spirits of the Army, Airforce and Navy 
+		bold_attack_spirit = 5
+		tenacious_defense_spirit = 0
+		meticulous_preparation_spirit = 0
+		best_of_the_best_spirit = 0
+		academy_scholarships_spirit = 0
+		political_loyalty_spirit = 0.1
+		inventive_leadership_spirit = 1
+		
+		professional_officer_corps_spirit = 1
+		elevated_engineering_corps_spirit = 0
+		proper_heritage_spirit = 0
+		quick_improvisation_spirit = 0
+		state_serves_the_military_spirit = 1
+
+		static_warfare_spirit = 0
+		flexible_organization_spirit = 1
+		aggressive_reconnaisance_spirit = 0
+		reserve_officers_spirit = 0
+		victory_or_death_spirit = 1
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

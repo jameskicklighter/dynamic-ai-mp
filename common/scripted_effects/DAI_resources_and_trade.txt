@@ -61,9 +61,6 @@ DAI_set_desired_trade_law = {
 		# 	set_temp_variable = { factories_received_from_trade = 0 }
 		# }
 
-		set_variable = { DAI_currently_wants = GER_ludwig_erhard }
-		set_variable = { DAI_currently_wants2 = captain_of_industry }
-		set_variable = { DAI_currently_wants3 = ITA_rodolfo_graziani }
 
 		set_temp_variable = { oil_produced = resource_produced@oil }
 		set_temp_variable = { aluminium_produced = resource_produced@aluminium }
