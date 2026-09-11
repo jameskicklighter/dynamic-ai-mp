@@ -49,7 +49,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
 				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -103,7 +103,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
 				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -168,7 +168,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -220,8 +220,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1939.1.1
 			}
 			# -- DAI
@@ -285,8 +285,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1942.1.1
 			}
 			# -- DAI
@@ -328,8 +328,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1944.1.1
 			}
 			# -- DAI
@@ -624,7 +624,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
 			}
 			# -- DAI
 		}
@@ -669,8 +669,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1939.1.1
 			}
 			# -- DAI
@@ -711,8 +711,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1944.1.1
 			}
 			# -- DAI
@@ -762,7 +762,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -809,8 +809,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1942.1.1
 			}
 			# -- DAI
@@ -856,8 +856,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1940.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -906,8 +906,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1940.1.1
 			}
 			# -- DAI
@@ -952,8 +952,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1944.1.1
 			}
 			# -- DAI
@@ -1047,7 +1047,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				DAI_Should_Research_Navy_EARLY_TORPEDO = yes
 				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -1113,7 +1113,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				DAI_Should_Research_Navy_EARLY_TORPEDO = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -1166,8 +1166,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_TORPEDO = yes
 				date > 1942.1.1
 			}
 			# -- DAI
@@ -1256,7 +1256,7 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				DAI_Should_Research_Navy_EARLY_TORPEDO = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -1307,8 +1307,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_TORPEDO = yes
 				date > 1940.1.1
 			}
 			# -- DAI
@@ -1352,8 +1352,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 100
-				DAI_Should_Research_Navy_DESTROYER = yes
+				add = 10
+				DAI_Should_Research_Navy_TORPEDO = yes
 				date > 1944.1.1
 			}
 			# -- DAI
@@ -1534,8 +1534,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 1
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -1584,8 +1584,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 1
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
@@ -1638,8 +1638,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 1
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
 				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI

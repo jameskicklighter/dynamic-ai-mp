@@ -1,7 +1,7 @@
-version="1.19.0.0"
+version="1.19.2.3"
 tags={
 	"Gameplay"
 }
 name="Dynamic AI MP"
-supported_version="1.19.1.*"
+supported_version="1.19.2.*"
 remote_file_id="3195265157"

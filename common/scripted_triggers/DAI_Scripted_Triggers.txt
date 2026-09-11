@@ -622,6 +622,14 @@ DAI_Should_Research_Navy_GENERAL = {
 }
 
 DAI_Should_Research_Navy_DESTROYER = {
+	num_of_naval_factories > 0
+	OR = {
+		DAI_Should_Research_Navy_LATE_UPGRADES = yes
+		date > 1943.1.1
+	}
+}
+
+DAI_Should_Research_Navy_BASIC_DESTROYER = {
 	DAI_Should_Research_Navy_EARLY_DESTROYER = yes
 	DAI_block_early_naval_research = no
 }
@@ -673,6 +681,42 @@ DAI_Should_Build_Navy_SUBMARINE = {
 DAI_Should_Research_Navy_SUBMARINE = {
 	DAI_Should_Build_Navy_SUBMARINE = yes
 	DAI_block_early_naval_research = no
+}
+
+DAI_Should_Research_Navy_LATE_UPGRADES = {
+	OR = {
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_EARLY_UPGRADES = {
+	OR = {
+		DAI_Should_Research_Navy_LATE_UPGRADES = yes
+		AND = {
+			num_of_naval_factories > 0
+			OR = {
+				num_of_naval_factories > 15
+				date > 1943.1.1
+			}
+		}
+	}
+}
+
+DAI_Should_Research_Navy_EARLY_TORPEDO = {
+	OR = {
+		DAI_Should_Research_Navy_EARLY_UPGRADES = yes
+		DAI_Should_Research_Navy_EARLY_SUBMARINE = yes
+	}
+}
+
+DAI_Should_Research_Navy_TORPEDO = {
+	OR = {
+		DAI_Should_Research_Navy_LATE_UPGRADES = yes
+		DAI_Should_Research_Navy_EARLY_SUBMARINE = yes
+	}
 }
 
 ##############################################################################
