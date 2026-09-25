@@ -12,18 +12,7 @@ air_subdoctrine_night_bombing = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-            	original_tag = ENG  
-            	original_tag = AST 
-            	original_tag = CAN 
-            	original_tag = NZL 
-            	original_tag = SAF 
-        	}
-    	}
+        base = 0
     }
 
     # EFFECTS
@@ -63,19 +52,7 @@ air_subdoctrine_carpet_bombing = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-            	original_tag = JAP 
-            	original_tag = FRA 
-            }
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 10
     }
 
     # EFFECTS
@@ -120,19 +97,7 @@ air_subdoctrine_deep_air_raids = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            OR = {
-            	original_tag = SOV 
-            	original_tag = GER 
-            }
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -174,16 +139,7 @@ air_subdoctrine_flying_fortresses = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            original_tag = USA  
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -326,16 +282,7 @@ air_subdoctrine_heavy_aircraft_focus = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 25
-            original_tag = ITA  
-        }
-        modifier = {
-            factor = 2
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS

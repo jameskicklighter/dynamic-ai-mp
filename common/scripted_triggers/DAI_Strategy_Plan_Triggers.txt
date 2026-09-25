@@ -100,6 +100,28 @@ DAI_GER_is_historical_ai = {
 	}
 }
 
+DAI_GER_is_no_mefo_economic_path = {
+	original_tag = GER
+	OR = {
+		has_completed_focus = GER_prioritize_economic_growth
+		focus_progress = {
+			focus = GER_prioritize_economic_growth
+			progress > 0
+		}
+	}
+}
+
+DAI_GER_is_mefo_economic_path = {
+	original_tag = GER
+	OR = {
+		has_completed_focus = GER_the_four_year_plan
+		focus_progress = {
+			focus = GER_the_four_year_plan
+			progress > 0
+		}
+	}
+}
+
 DAI_GER_is_kaiser_ai = {
 	GER = {
 		OR = {
@@ -185,5 +207,32 @@ DAI_SOV_is_historical_ai = {
 				option = HISTORICAL
 			}
 		}
+	}
+}
+
+# ========== JAP ==========
+
+DAI_JAP_is_historical_ai = {
+	tag = JAP
+	is_ai = yes
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				not = { has_dlc = "Waking the Tiger" }
+				has_game_rule = {
+					rule = JAP_ai_behavior
+					option = DEFAULT
+				}
+			}
+			MAN = {
+				is_ai = yes
+			}
+		}
+		has_game_rule = {
+			rule = JAP_ai_behavior
+			option = FASCIST
+		}
+		has_country_flag = JAP_AI_RANDOM_FASCIST
 	}
 }

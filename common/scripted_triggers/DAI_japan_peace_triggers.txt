@@ -1,0 +1,43 @@
+# Peace-action scope: ROOT negotiates, FROM receives, FROM.FROM gives, FROM.FROM.FROM is the state.
+DAI_JAP_chinese_settlement_action = {
+	original_tag = JAP
+	is_ai = yes
+	FROM.FROM = {
+		OR = {
+			original_tag = CHI
+			original_tag = PRC
+			WTT_is_chinese_warlord = yes
+		}
+	}
+	FROM.FROM.FROM = {
+		OR = {
+			is_core_of = CHI
+			is_core_of = ROOT.FROM.FROM
+		}
+		NOT = {
+			AND = {
+				is_core_of = MEN
+				MEN = { exists = yes is_subject_of = ROOT }
+			}
+		}
+	}
+	OR = {
+		AND = {
+			FROM = { tag = ROOT }
+			OR = {
+				NOT = {
+					AND = {
+						has_completed_focus = JAP_reorganized_national_government
+						RNG = { exists = yes is_subject_of = ROOT }
+					}
+				}
+				FROM.FROM.FROM = { is_state_japan_wants = yes }
+			}
+		}
+		AND = {
+			has_completed_focus = JAP_reorganized_national_government
+			FROM = { original_tag = RNG is_subject_of = ROOT }
+			FROM.FROM.FROM = { NOT = { is_state_japan_wants = yes } }
+		}
+	}
+}

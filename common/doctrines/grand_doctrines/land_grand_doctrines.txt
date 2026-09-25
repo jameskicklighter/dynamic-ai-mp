@@ -12,12 +12,7 @@ new_mobile_warfare = {
     xp_type = army
 
     ai_will_do = {
-        base = 1
-
-        modifier = {
-            factor = 0
-            is_major = no
-        }
+        base = 0
     }
 
     tracks = {
@@ -132,11 +127,6 @@ superior_firepower = {
 
     ai_will_do = {
         base = 1
-
-        modifier = {
-            factor = 0
-            is_major = no
-        }
     }
 
     tracks = {
@@ -265,7 +255,7 @@ grand_battleplan = {
     xp_type = army
 
     ai_will_do = {
-        base = 2
+        base = 0
     }
 
     tracks = {
@@ -380,7 +370,7 @@ mass_assault = {
     xp_type = army
 
     ai_will_do = {
-        base = 1
+        base = 0
     }
 
     tracks = {

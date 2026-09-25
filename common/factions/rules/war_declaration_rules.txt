@@ -17,10 +17,6 @@ war_declaration_rule_independent_countries_only = {
 	type = war_declaration_rules
 	ai_will_do = {
 		base = 0
-		modifier = {
-			original_tag = SOV
-			add = 9999
-		}
 	}
 	trigger = {
 		is_subject = no

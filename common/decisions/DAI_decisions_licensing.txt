@@ -6,7 +6,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = mechanised_infantry
 			has_country_flag = DAI_mechanized_cost_upgrade_done
 			any_other_country = {
@@ -53,7 +52,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = amphibious_mechanized_infantry
 			has_country_flag = DAI_amtrac_cost_upgrade_done
 			any_other_country = {
@@ -100,7 +98,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = amphibious_mechanized_infantry_2
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -145,7 +142,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = infantry_weapons1
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -186,7 +182,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = improved_infantry_weapons
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -227,7 +222,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = advanced_infantry_weapons
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -268,7 +262,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = gw_artillery
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -309,7 +302,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = artillery1
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -350,7 +342,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = artillery4
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -391,7 +382,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = interwar_antiair
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -432,7 +422,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = antiair2
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -473,7 +462,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = antiair5
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -514,7 +502,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = interwar_antitank
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -555,7 +542,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = antitank2
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -596,7 +582,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			has_tech = antitank5
 			any_other_country = {
 				DAI_is_ai_license_partner_of_root = yes
@@ -649,11 +634,17 @@ DAI_production_license_decisions = {
 		days_re_enable = 30
 		ai_will_do = { base = 999 }
 		complete_effect = {
-			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=basic action=begin need_trigger=passed"
-			DAI_log_basic_fighter_design_diagnostics = yes
+			if = {
+				limit = { has_global_flag = DAI_detailed_diagnostics }
+				log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=basic action=begin need_trigger=passed"
+				DAI_log_basic_fighter_design_diagnostics = yes
+			}
 			DAI_create_basic_small_airframe_role_designs = yes
-			DAI_log_basic_fighter_creation_result = yes
-			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=basic action=end"
+			if = {
+				limit = { has_global_flag = DAI_detailed_diagnostics }
+				DAI_log_basic_fighter_creation_result = yes
+				log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=basic action=end"
+			}
 		}
 	}
 
@@ -675,11 +666,17 @@ DAI_production_license_decisions = {
 		days_re_enable = 30
 		ai_will_do = { base = 999 }
 		complete_effect = {
-			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=improved action=begin need_trigger=passed"
-			DAI_log_improved_fighter_design_diagnostics = yes
+			if = {
+				limit = { has_global_flag = DAI_detailed_diagnostics }
+				log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=improved action=begin need_trigger=passed"
+				DAI_log_improved_fighter_design_diagnostics = yes
+			}
 			DAI_create_improved_small_airframe_role_designs = yes
-			DAI_log_improved_fighter_creation_result = yes
-			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=improved action=end"
+			if = {
+				limit = { has_global_flag = DAI_detailed_diagnostics }
+				DAI_log_improved_fighter_creation_result = yes
+				log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=improved action=end"
+			}
 		}
 	}
 
@@ -701,9 +698,15 @@ DAI_production_license_decisions = {
 		days_re_enable = 30
 		ai_will_do = { base = 999 }
 		complete_effect = {
-			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=advanced action=begin need_trigger=passed"
+			if = {
+				limit = { has_global_flag = DAI_detailed_diagnostics }
+				log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=advanced action=begin need_trigger=passed"
+			}
 			DAI_create_advanced_small_airframe_role_designs = yes
-			log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=advanced action=end"
+			if = {
+				limit = { has_global_flag = DAI_detailed_diagnostics }
+				log = "[GetYear] [GetMonth] | DAI_PLANE_LOCAL_CREATE_DECISION | country=[THIS.GetName] tier=advanced action=end"
+			}
 		}
 	}
 
@@ -713,7 +716,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			hidden_trigger = {
 				DAI_can_share_basic_small_airframe_role_design = yes
 				any_other_country = {
@@ -748,7 +750,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			hidden_trigger = {
 				DAI_can_share_improved_small_airframe_role_design = yes
 				any_other_country = {
@@ -783,7 +784,6 @@ DAI_production_license_decisions = {
 			always = yes
 		}
 		visible = {
-			DAI_has_ai_license_partner = yes
 			hidden_trigger = {
 				DAI_can_share_advanced_small_airframe_role_design = yes
 				any_other_country = {

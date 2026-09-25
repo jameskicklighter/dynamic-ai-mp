@@ -221,14 +221,52 @@ SOV_build_preferred_heavy_tank_chassis = {
 }
 
 # DAI --
+SOV_air_unit_ratios = {
+	allowed = { original_tag = SOV }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 65
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 5
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 10
+	}
+}
+
 SOV_wait_on_air_production = {
 	allowed = { original_tag = SOV }
-	enable = { NOT = { has_completed_focus = SOV_foster_flying_clubs } }
+	enable = { NOT = { DAI_should_build_planes = yes } }
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = air_factory_balance
-		value = -75
+		value = -200
 	}
 }
 # -- DAI
@@ -1909,23 +1947,30 @@ SOV_defend_blitzkrieg  = { # Only perform careful attacks, we want to defend whi
 # 	}
 # }
 
-# SOV_convert_to_civs = {
-# 	allowed = {
-# 		original_tag = SOV
-# 	}
-# 	enable = {
-# 		date < 1937.1.1
-# 		has_war = no
-# 		num_of_military_factories > 20
-# 	}
-# 	abort_when_not_enabled = yes
+# Experimental mil-to-civ conversion strategy. The reverse-looking
+# arms_factory id is the tested conversion direction.
+SOV_convert_to_civs = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		date < 1937.1.1
+		has_war = no
+		num_of_military_factories > 26
+	}
+	abort_when_not_enabled = yes
 
-# 	ai_strategy = {
-# 		type = build_building
-# 		id = arms_factory
-# 		value = 99999
-# 	}
-# }
+	ai_strategy = {
+		type = build_building
+		id = arms_factory
+		value = 99999
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = -10000
+	}
+}
 
 SOV_build_civs = {
 	allowed = {
@@ -1961,6 +2006,1633 @@ SOV_build_mils = {
 	}
 }
 
+SOV_build_land_facility_in_kazan = {
+	allowed = {
+		original_tag = SOV
+	}
+
+	enable = { always = no } # Replaced by DAI construction decisions.
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = land_facility
+		target = 6338 # Kazan supply hub, state 249
+		value = 9999
+	}
+}
+
+SOV_opening_is_important = {
+	allowed = { original_tag = SOV }
+	enable = {
+		always = yes
+	}
+
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 221
+		value = 9999
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 217
+		value = 9999
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 219
+		value = 9999
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 195
+		value = 9999
+	}
+}
+
+# SOV_lets_play_safe_with_factories = {
+# 	allowed = { original_tag = SOV }
+# 	enable = {
+# 		always = yes
+# 	}
+
+# 	abort = {
+# 		OR = {
+# 			GER = { surrender_progress > 0.01 } #they are doing bad
+# 			date > 1943.6.1
+# 		}
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 398
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 653
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 582
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 651
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 572
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 405
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 249
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 251
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 829
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 217
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 234
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 137
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 252
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 253
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 254
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 247
+# 		value = 300
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 248
+# 		value = 300
+# 	}
+# }
+
+SOV_lets_play_safe_with_factories_war_time = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_war = yes
+		surrender_progress > 0
+	}
+
+	abort = {
+		OR = {
+			has_war = no
+			AND = {
+				has_war = yes
+				surrender_progress < 0.01
+			}
+		}
+	}
+
+	# Replaced by level-4 infrastructure factory scoring.
+	# ai_strategy = {
+	# 	type = factory_build_score_factor
+	# 	target = 652
+	# 	value = 200
+	# }
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 255
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 250
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 256
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 833
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 400
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 571
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 570
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 569
+		value = 200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 568
+		value = 200
+	}
+
+	# ai_strategy = {
+	# 	type = factory_build_score_factor
+	# 	target = 586
+	# 	value = 200
+	# }
+
+}
+
+
+SOV_lets_play_safe_with_factories_war_time_dont_build = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_war = yes
+		surrender_progress > 0
+	}
+
+	abort = {
+		OR = {
+			has_war = no
+			AND = {
+				has_war = yes
+				surrender_progress < 0.01
+			}
+			has_country_flag = era_of_transition
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 91
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 89
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 199
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 201
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 198
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 202
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 203
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 834
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 192
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 197
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 226
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 196
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 194
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 193
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 259
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 225
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 93
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 94
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 95
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 96
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 97
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 784
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 204
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 206
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 241
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 243
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 242
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 210
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 11
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 814
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 189
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 190
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 809
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 808
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 191
+		value = -200
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 12
+		value = -200
+	}
+
+}
+
+SOV_factory_super_charge_infra_572 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		572 = { infrastructure > 3 }
+	}
+
+	abort = {
+		572 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 572
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_571 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		571 = { infrastructure > 3 }
+	}
+
+	abort = {
+		571 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 571
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_569 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		569 = { infrastructure > 3 }
+	}
+
+	abort = {
+		569 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 569
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_582 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		582 = { infrastructure > 3 }
+	}
+
+	abort = {
+		582 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 582
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_652 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		652 = { infrastructure > 3 }
+	}
+
+	abort = {
+		652 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 652
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_351 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		351 = { infrastructure > 3 }
+	}
+
+	abort = {
+		351 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 351
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_400 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		400 = { infrastructure > 3 }
+	}
+
+	abort = {
+		400 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 400
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_402 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		402 = { infrastructure > 3 }
+	}
+
+	abort = {
+		402 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 402
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_407 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		407 = { infrastructure > 3 }
+	}
+
+	abort = {
+		407 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 407
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_231 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		231 = { infrastructure > 3 }
+	}
+
+	abort = {
+		231 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 231
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_230 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		230 = { infrastructure > 3 }
+	}
+
+	abort = {
+		230 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 230
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_229 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		229 = { infrastructure > 3 }
+	}
+
+	abort = {
+		229 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 229
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_255 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		255 = { infrastructure > 3 }
+	}
+
+	abort = {
+		255 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 255
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_256 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		256 = { infrastructure > 3 }
+	}
+
+	abort = {
+		256 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 256
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_833 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		833 = { infrastructure > 3 }
+	}
+
+	abort = {
+		833 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 833
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_586 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		586 = { infrastructure > 3 }
+	}
+
+	abort = {
+		586 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 586
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_403 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		403 = { infrastructure > 3 }
+	}
+
+	abort = {
+		403 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 403
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_882 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		882 = { infrastructure > 3 }
+	}
+
+	abort = {
+		882 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 882
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_570 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		570 = { infrastructure > 3 }
+	}
+
+	abort = {
+		570 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 570
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_578 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		578 = { infrastructure > 3 }
+	}
+
+	abort = {
+		578 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 578
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_567 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		567 = { infrastructure > 3 }
+	}
+
+	abort = {
+		567 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 567
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_568 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		568 = { infrastructure > 3 }
+	}
+
+	abort = {
+		568 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 568
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_566 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		566 = { infrastructure > 3 }
+	}
+
+	abort = {
+		566 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 566
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_564 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		564 = { infrastructure > 3 }
+	}
+
+	abort = {
+		564 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 564
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_563 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		563 = { infrastructure > 3 }
+	}
+
+	abort = {
+		563 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 563
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_561 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		561 = { infrastructure > 3 }
+	}
+
+	abort = {
+		561 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 561
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_560 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		560 = { infrastructure > 3 }
+	}
+
+	abort = {
+		560 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 560
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_409 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		409 = { infrastructure > 3 }
+	}
+
+	abort = {
+		409 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 409
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_408 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		408 = { infrastructure > 3 }
+	}
+
+	abort = {
+		408 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 408
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_250 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		250 = { infrastructure > 3 }
+	}
+
+	abort = {
+		250 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 250
+		value = 500
+	}
+}
+
+# States 195, 217, and 219 receive the same score from SOV_opening_is_important.
+# SOV_factory_super_charge_infra_195 = {
+# 	allowed = { original_tag = SOV }
+# 	enable = {
+# 		195 = { infrastructure > 3 }
+# 	}
+
+# 	abort = {
+# 		195 = {
+# 			OR = {
+# 				NOT = { is_fully_controlled_by = SOV }
+# 				any_neighbor_state = {
+# 					owner = { tag = SOV }
+# 					NOT = { is_fully_controlled_by = SOV }
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 195
+# 		value = 500
+# 	}
+# }
+
+# SOV_factory_super_charge_infra_217 = {
+# 	allowed = { original_tag = SOV }
+# 	enable = {
+# 		217 = { infrastructure > 3 }
+# 	}
+
+# 	abort = {
+# 		217 = {
+# 			OR = {
+# 				NOT = { is_fully_controlled_by = SOV }
+# 				any_neighbor_state = {
+# 					owner = { tag = SOV }
+# 					NOT = { is_fully_controlled_by = SOV }
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 217
+# 		value = 500
+# 	}
+# }
+
+# SOV_factory_super_charge_infra_219 = {
+# 	allowed = { original_tag = SOV }
+# 	enable = {
+# 		219 = { infrastructure > 3 }
+# 	}
+
+# 	abort = {
+# 		219 = {
+# 			OR = {
+# 				NOT = { is_fully_controlled_by = SOV }
+# 				any_neighbor_state = {
+# 					owner = { tag = SOV }
+# 					NOT = { is_fully_controlled_by = SOV }
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_strategy = {
+# 		type = factory_build_score_factor
+# 		target = 219
+# 		value = 500
+# 	}
+# }
+
+SOV_factory_super_charge_infra_227 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		227 = { infrastructure > 3 }
+	}
+
+	abort = {
+		227 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 227
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_218 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		218 = { infrastructure > 3 }
+	}
+
+	abort = {
+		218 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 218
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_234 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		234 = { infrastructure > 3 }
+	}
+
+	abort = {
+		234 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 234
+		value = 500
+	}
+}
+
+SOV_factory_super_charge_infra_137 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		137 = { infrastructure > 3 }
+	}
+
+	abort = {
+		137 = {
+			OR = {
+				NOT = { is_fully_controlled_by = SOV }
+				any_neighbor_state = {
+					owner = { tag = SOV }
+					NOT = { is_fully_controlled_by = SOV }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 137
+		value = 500
+	}
+}
+
+SOV_early_game_build_infra_instead = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		date < 1937.7.1
+		has_war = no
+		is_historical_focus_on = yes
+		OR = {
+			195 = { infrastructure < 4 }
+			217 = { infrastructure < 4 }
+			219 = { infrastructure < 4 }
+			652 = { infrastructure < 4 }
+			582 = { infrastructure < 4 }
+			586 = { infrastructure < 4 }
+			227 = { infrastructure < 4 }
+			218 = { infrastructure < 4 }
+			234 = { infrastructure < 4 }
+			137 = { infrastructure < 4 }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = -10000
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = -200
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = -200
+	}
+}
+
+SOV_early_game_build_infra_195 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		195 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 195
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_217 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		217 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 217
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_219 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		219 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 219
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_652 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		652 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 652
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_582 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		582 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 582
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_586 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		586 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 586
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_227 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		227 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 227
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_218 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		218 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 218
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_234 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		234 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 234
+		value = 2000
+	}
+}
+
+SOV_early_game_build_infra_137 = {
+	allowed = { original_tag = SOV }
+	enable = {
+		date < 1937.7.1
+		is_historical_focus_on = yes
+		137 = { infrastructure < 4 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_building
+		id = infrastructure
+		target = 137
+		value = 2000
+	}
+}
 
 ###########################
 ### avoid attacking the baltics until we have sent ultimatums
@@ -2481,13 +4153,25 @@ SOV_ready_for_finland = {
 SOV_large_standing_army = {
 	allowed = { original_tag = SOV }
 	enable = {
-		has_army_manpower = { size < 3000000 }
+		has_army_manpower = { size < 2000000 }
 		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
 	
 	ai_strategy = { type = build_army id = infantry value = 500 }
-	# ai_strategy = { type = force_build_armies value = 300 }
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
+DAI_SOV_force_build_more_infantry_1940_plus = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_army_manpower = { size < 3500000 }
+		date > 1939.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
 }
 
 SOV_historical_dont_attack_poland_too_early = {

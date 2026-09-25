@@ -12,31 +12,14 @@ fire_concentration = {
     }
 
     ai_will_do = {
-
-        base = 1
-        # modifier = {
-        #     factor = 75
-        #     original_tag = SOV
-        # }
-        modifier = {
-            factor = 75
-            original_tag = ENG
-        }
-        modifier = {
-            factor = 75
-            original_tag = FRA
-        }   
-        modifier = {
-            factor = 75
-            original_tag = JAP
-        }
+        base = 0
     }
 
      # EFFECTS
      enable_tactic = tactic_overwhelming_fire
 
     category_line_artillery = {
-        defense = 0.05
+        breakthrough = 0.1
         max_organisation = 5
     }
 
@@ -46,7 +29,7 @@ fire_concentration = {
         predicted_fire = {
         #1
             category_line_artillery = {
-                defense = 0.05
+                breakthrough = 0.1
             }
         }
 
@@ -62,18 +45,10 @@ fire_concentration = {
 		
         artillery_groups = {
         #3
-           category_regimental_support_artillery = {
-                soft_attack = 0.05			   
-                breakthrough = 0.1			   
-		   }
-		   category_support_artillery = {
-                soft_attack = 0.05			   
-                breakthrough = 0.1	
-		   }
-		   category_line_artillery  = {
-                soft_attack = 0.05			   
-                breakthrough = 0.1	
-		   }
+           category_artillery = {
+                soft_attack = 0.1
+                defense = 0.1
+           }
         }
 		
         dedicated_air_support = {
@@ -89,11 +64,9 @@ fire_concentration = {
                 ap_attack = 0.1
                 hard_attack = 0.1
             }
-            artillery_brigade = {
-                soft_attack = 0.05
-            }
-            rocket_artillery_brigade = {
-                soft_attack = 0.05
+            category_regimental_support_artillery = {
+                defense = 0.1
+                breakthrough = 0.1
             }
         }
     }
@@ -112,7 +85,13 @@ anti_tank_frontline = {
         always = yes
     }
 
-    ai_will_do = { base = 0 }
+    ai_will_do = {
+        base = 0
+        modifier = {
+            add = 10
+            original_tag = SOV
+        }
+    }
 
      # EFFECTS
      
@@ -131,9 +110,11 @@ anti_tank_frontline = {
 			anti_tank_brigade = {
                 ap_attack = 0.1
 			}
+            anti_tank = {
+                ap_attack = 0.1
+            }
             anti_tank_battery = {
-                ap_attack = 0.2
-                hard_attack = 0.2				
+                ap_attack = 0.1
 			}
         }
         emplacement_rotation = {
@@ -186,12 +167,7 @@ flying_batteries = {
 
     
     ai_will_do = {
-        base = 1
-
-        modifier = {
-            factor = 0 
-            NOT = { has_tech = rocket_artillery } 
-        }
+        base = 0
     }
 
      # EFFECTS
@@ -212,17 +188,19 @@ flying_batteries = {
         deployment_drills = {
             mot_rocket_artillery_brigade = {
                 max_organisation = 10
+                soft_attack = 0.05
+                breakthrough = 0.1
             }
             motorized_rocket_brigade = {
                 max_organisation = 10
+                soft_attack = 0.05
+                breakthrough = 0.1
             }
             mot_artillery_brigade = {
                 max_organisation = 10
+                soft_attack = 0.05
+                breakthrough = 0.1
             }
-			mot_fire_support = {
-                max_organisation = 10		
-                soft_attack = 0.1		
-			}
         }
         counter_battery_tasks = {
             
@@ -248,6 +226,7 @@ flying_batteries = {
                 battalion_mult = {
                     category = category_line_artillery
                     supply_consumption = -0.01
+                    max_strength = 0.2
 					add = yes
                 }
 				 battalion_mult = {
@@ -267,12 +246,18 @@ flying_batteries = {
         wide_dispersal_positions = {
             mot_rocket_artillery_brigade = {
                 max_organisation = 10
+                soft_attack = 0.05
+                defense = 0.1
             }
             motorized_rocket_brigade = {
                 max_organisation = 10
+                soft_attack = 0.05
+                defense = 0.1
             }
             mot_artillery_brigade = {
                 max_organisation = 10
+                soft_attack = 0.05
+                defense = 0.1
             }
         }
     }
@@ -317,8 +302,12 @@ air_cavalry = {
             }
         }
         service_and_support = {
-            category_helicopter_support_companies = {
-                max_strength = 0.03
+            maintenance_company = {
+                battalion_mult = {
+                    category = category_helicopter_support_companies
+                    max_strength = 0.5
+                    add = yes
+                }
             }
         }
         rescue_liasions = {
@@ -377,19 +366,13 @@ mobile_recon_and_assault = {
     }
     
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 75
-            original_tag = GER
-        }
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
-        modifier = {
-            factor = 0
-            is_major = no
+            add = 10
+            OR = {
+                original_tag = GER
+                original_tag = USA
+            }
         }
     }
     
@@ -456,10 +439,10 @@ mobile_recon_and_assault = {
                 breakthrough = 0.1
             }
 			category_tank_destroyer_regimental_support = {
-                breakthrough = 0.2				
+                hard_attack = 0.05
 			}
 			category_self_propelled_anti_air_regimental_support = {
-                breakthrough = 0.2		
+                air_attack = 0.05
 			}
         }
     }
@@ -485,19 +468,13 @@ mobile_recon_and_assault_no_lar = {
 
     
     ai_will_do = {
-
-        base = 1
+        base = 0
         modifier = {
-            factor = 75
-            original_tag = GER
-        }
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
-        modifier = {
-            factor = 0
-            is_major = no
+            add = 10
+            OR = {
+                original_tag = GER
+                original_tag = USA
+            }
         }
     }
     
@@ -555,10 +532,10 @@ mobile_recon_and_assault_no_lar = {
             }
 			
 			category_tank_destroyer_regimental_support = {
-                breakthrough = 0.2				
+                hard_attack = 0.05
 			}
 			category_self_propelled_anti_air_regimental_support = {
-                breakthrough = 0.2		
+                air_attack = 0.05
 			}
         }
     }
@@ -585,17 +562,21 @@ self_propelled_support = {
     ai_will_do = {
         base = 0
         modifier = {
-            add = 99
-            original_tag = SOV
+            add = 10
+            OR = {
+                original_tag = ENG
+                original_tag = FRA
+                original_tag = HUN
+            }
         }
     }
 
 
     category_self_propelled_artillery = {
-        soft_attack = 0.1
+        soft_attack = 0.05
     }
-    category_self_propelled_anti_air= {
-        air_attack = 0.1
+    category_self_propelled_anti_air = {
+        air_attack = 0.05
     }
     category_tank_destroyers = {
         hard_attack = 0.05
@@ -608,7 +589,7 @@ self_propelled_support = {
             category_self_propelled_artillery = {
                 max_organisation = 10
             }
-            category_self_propelled_anti_air= {
+            category_self_propelled_anti_air = {
                 max_organisation = 10
             }
             category_tank_destroyers = {
@@ -620,46 +601,44 @@ self_propelled_support = {
             recon = {
                 battalion_mult = {
                     category = category_self_propelled_artillery
-                    soft_attack = 0.1
+                    soft_attack = 0.05
                     default_morale = 0.1
                 }
             }
             mot_recon = {
                 battalion_mult = {
                     category = category_self_propelled_artillery
-                    soft_attack = 0.1
+                    soft_attack = 0.05
                     default_morale = 0.1
                 }
             }
             light_tank_recon = {
                 battalion_mult = {
                     category = category_self_propelled_artillery
-                    soft_attack = 0.1
+                    soft_attack = 0.05
                     default_morale = 0.1
                 }
             }
         }
         all_terrain_mobility = {
             category_self_propelled_artillery = {
-                maximum_speed = 0.3
+                maximum_speed = 0.1
             }
             category_self_propelled_anti_air = {
-                maximum_speed = 0.3
+                maximum_speed = 0.1
             }
             category_tank_destroyers = {
-                maximum_speed = 0.3
+                maximum_speed = 0.1
             }
         }
         multirole_support_vehicles = {			
 			category_tank_destroyer_regimental_support = {
-                max_organisation = 10
-                hard_attack = 0.1
-                breakthrough = 0.2				
+                max_organisation = 5
+                hard_attack = 0.05
 			}
 			category_self_propelled_anti_air_regimental_support = {
-                max_organisation = 10
-				air_attack = 0.1
-                breakthrough = 0.2		
+                max_organisation = 5
+				air_attack = 0.05
 			}
         }
         shoot_and_scoot = {
@@ -743,14 +722,10 @@ siege_artillery = {
                 default_morale = 0.1
             }
             super_heavy_artillery = {
-                plains = {
-                    movement = 0.1
-                }
+                default_morale = 0.1
             }
             self_propelled_super_heavy_artillery = {
-                plains = {
-                    movement = 0.1
-                }
+                default_morale = 0.1
             }
 
             equipment_bonus = {
@@ -783,19 +758,21 @@ siege_artillery = {
             }
             super_heavy_artillery = {
                 urban = {
-                    attack = 0.2
+                    attack = 0.1
+                    defence = 0.1
                 }
             }
             self_propelled_super_heavy_artillery = {
                 urban = {
-                    attack = 0.2
+                    attack = 0.1
+                    defence = 0.1
                 }
             }
 			fire_support = {
                 soft_attack = 0.1
 			}
 			category_regimental_support_artillery = {
-                soft_attack = 0.1				
+                soft_attack = 0.05
 			}
         }
         mobile_artillery_command = {
@@ -832,14 +809,7 @@ field_engineering = {
     xp_type = army
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 75
-            OR = {
-                original_tag = ITA
-                original_tag = FIN
-            }
-        }
+        base = 2
     }
 
     engineer = {

@@ -1,15 +1,24 @@
 
 DAI_daily_update = {
 
+	# Temporary diagnostics for the Japan debug run, including loaded saves.
+	if = {
+		limit = { tag = JAP NOT = { has_global_flag = DAI_detailed_diagnostics } }
+		set_global_flag = DAI_detailed_diagnostics
+		log = "DAI_DIAGNOSTICS | enabled by Japan daily update"
+	}
+
 	if = { limit = { is_ai = yes }
 
 		# If we are a dynamic tag, we going with the flow instead.
 		# So just use the normal tag.
 		if = { limit = { tag = ENG } DAI_set_build_order_ENG = yes }
 		if = { limit = { tag = GER } DAI_set_build_order_GER = yes }
+		if = { limit = { tag = SOV } DAI_set_build_order_SOV = yes }
 		if = { limit = { tag = FRA } DAI_set_build_order_FRA = yes }
 		if = { limit = { tag = ROM } DAI_set_build_order_ROM = yes }
 		if = { limit = { tag = ITA } DAI_set_build_order_ITA = yes }
+		if = { limit = { tag = JAP } DAI_set_build_order_JAP = yes }
 
 	}
 }
@@ -29,9 +38,15 @@ DAI_monthly_update = {
 		DAI_set_wants_air_flag = yes
 		DAI_set_wants_armor_flag = yes
 		DAI_set_wants_mech_flag = yes
-		DAI_update_historical_axis_debug = yes
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			DAI_update_historical_axis_debug = yes
+		}
 		DAI_update_improved_small_airframe_engines_3_profile_access = yes
-		DAI_log_small_aircraft_target_transitions = yes
+		if = {
+			limit = { has_global_flag = DAI_detailed_diagnostics }
+			DAI_log_small_aircraft_target_transitions = yes
+		}
 
 	}
 }
@@ -75,15 +90,6 @@ DAI_update_allied_d_day_flags = {
 			NOT = { has_global_flag = DAI_allies_d_day_release_cycle_started }
 		}
 		set_global_flag = DAI_allies_d_day_initial_release_done
-		set_global_flag = DAI_allies_d_day_release_cycle_started
-	}
-
-	if = {
-		limit = {
-			DAI_allies_focus_normandy = yes
-			has_global_flag = DAI_allies_d_day_initial_release_done
-			NOT = { has_global_flag = DAI_allies_d_day_release_cycle_started }
-		}
 		set_global_flag = DAI_allies_d_day_release_cycle_started
 	}
 
@@ -139,16 +145,6 @@ DAI_update_axis_sealion_flags = {
 			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
 		}
 		set_global_flag = DAI_axis_sealion_initial_release_done
-		set_global_flag = DAI_axis_sealion_release_cycle_started
-	}
-
-	if = {
-		limit = {
-			tag = GER
-			DAI_axis_sealion_focus = yes
-			has_global_flag = DAI_axis_sealion_initial_release_done
-			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
-		}
 		set_global_flag = DAI_axis_sealion_release_cycle_started
 	}
 

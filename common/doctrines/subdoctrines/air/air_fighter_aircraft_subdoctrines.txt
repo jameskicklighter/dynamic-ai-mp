@@ -12,12 +12,7 @@ air_subdoctrine_fighter_homeland_defense = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 95
-			is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -56,16 +51,7 @@ air_subdoctrine_escort_fighter = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 95
-            original_tag = USA 
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -150,16 +136,7 @@ track = fighter_aircraft
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 95
-            original_tag = GER  
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 100
     }
 
     # EFFECTS
@@ -203,17 +180,7 @@ track = fighter_aircraft
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 95
-            OR = {
-            	original_tag = ENG 
-            	original_tag = FRA 
-            	original_tag = SOV 
-            	original_tag = ITA 
-            }
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -256,16 +223,7 @@ track = fighter_aircraft
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 95
-            original_tag = JAP 
-        }
-        modifier = {
-            factor = 0
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS

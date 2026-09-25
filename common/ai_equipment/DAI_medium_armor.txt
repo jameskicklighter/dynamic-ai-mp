@@ -483,7 +483,14 @@ DAI_medium_tank_destroyer = {
 DAI_medium_SP_artillery = {
 	category = land
 	roles = { land_medium_tank_artillery }
-	priority = { base = 0 }
+	priority = {
+		base = 0
+		modifier = {
+			add = 100
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_tech = basic_medium_tank_chassis
+		}
+	}
 
 	BASIC_MEDIUM_SP_ARTILLERY = {
 		enable = {

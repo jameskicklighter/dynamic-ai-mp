@@ -511,9 +511,24 @@ technologies = {
 			# DAI --
 			base = 0.5
 			modifier = {
-				add = 30
+				add = 50
 				date > 1937.1.1
 				DAI_should_build_planes = yes
+			}
+			modifier = {
+				add = 150
+				date > 1937.1.1
+				DAI_should_build_planes = yes
+				OR = {
+					has_tech = basic_small_airframe
+					is_researching_technology = basic_small_airframe 
+				}
+			}
+			# Research interwar small frame/fighter 0 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
 			}
 			# -- DAI
 		}
@@ -553,7 +568,7 @@ technologies = {
 			# DAI --
 			base = 0.5
 			modifier = {
-				add = 30
+				add = 50
 				date > 1937.1.1
 				DAI_should_build_planes = yes
 			}
@@ -600,7 +615,7 @@ technologies = {
 			# DAI --
 			base = 0.5
 			modifier = {
-				add = 30
+				add = 20
 				date > 1940.1.1
 				DAI_should_build_planes = yes
 			}
@@ -647,7 +662,7 @@ technologies = {
 			# DAI --
 			base = 0.5
 			modifier = {
-				add = 30
+				add = 20
 				date > 1944.1.1
 				DAI_should_build_planes = yes
 			}
@@ -693,7 +708,7 @@ technologies = {
 			# DAI --
 			base = 0.5
 			modifier = {
-				add = 30
+				add = 20
 				date > 1945.1.1
 				DAI_should_build_planes = yes
 			}
@@ -732,6 +747,26 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 25
+				DAI_should_build_planes = yes
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 150
+				date > 1937.1.1
+				DAI_should_build_planes = yes
+				OR = {
+					has_tech = basic_small_airframe
+					is_researching_technology = basic_small_airframe 
+				}
+			}
+			# Research interwar small frame/fighter 0 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
+			}
 			# -- DAI
 		}
 	}
@@ -767,6 +802,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 25
+				DAI_should_build_planes = yes
+				date > 1937.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -821,6 +861,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 10
+				DAI_should_build_planes = yes
+				date > 1940.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -856,6 +901,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 10
+				DAI_should_build_planes = yes
+				date > 1944.1.1
+			}
 			# -- DAI
 		}
 	}
@@ -896,6 +946,11 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0.1
+			modifier = {
+				add = 10
+				DAI_should_build_planes = yes
+				date > 1945.1.1
+			}
 			# -- DAI
 		}
 	}

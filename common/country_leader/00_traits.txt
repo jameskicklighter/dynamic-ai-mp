@@ -14845,7 +14845,14 @@ leader_traits = {
 		command_power = @tier1_cp_cost
 
 		ai_will_do = {
-			factor = @army_chief_factor_1
+			base = 1
+			modifier = {
+				factor = @army_chief_factor_1
+				OR = {
+					NOT = { tag = JAP }
+					NOT = { check_variable = { DAI_build_order_wants = token:JAP_kanin_kotohito } }
+				}
+			}
 			modifier = {
 				factor = 0
 				command_power < @tier1_cp_cost
@@ -16077,7 +16084,14 @@ leader_traits = {
 		command_power = @tier1_cp_cost
 
 		ai_will_do = {
-			factor = @air_chief_factor_1
+			base = 1
+			modifier = {
+				factor = @air_chief_factor_1
+				OR = {
+					NOT = { tag = JAP }
+					NOT = { check_variable = { DAI_build_order_wants = token:JAP_korechika_anami } }
+				}
+			}
 			modifier = {
 				factor = 0
 				command_power < @tier1_cp_cost
@@ -16741,7 +16755,14 @@ leader_traits = {
 		command_power = @tier2_cp_cost
 
 		ai_will_do = {
-			factor = @navy_chief_factor_2
+			base = 1
+			modifier = {
+				factor = @navy_chief_factor_2
+				OR = {
+					NOT = { tag = JAP }
+					NOT = { check_variable = { DAI_build_order_wants = token:JAP_shigetaro_shimada } }
+				}
+			}
 			modifier = {
 				factor = 0
 				command_power < @tier2_cp_cost

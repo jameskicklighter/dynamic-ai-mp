@@ -1,0 +1,62 @@
+DAI_construction_decisions = {
+	DAI_JAP_queue_niigata_land_facility = {
+		allowed = { original_tag = JAP }
+		visible = {
+			is_ai = yes
+			NOT = { date < 1937.7.1 }
+		}
+		available = {
+			land_facility < 1
+			NOT = { any_controlled_state = { land_facility > 0 } }
+			534 = {
+				is_owned_and_controlled_by = ROOT
+				can_construct_building = land_facility
+				free_building_slots = { building = land_facility province = 1117 size > 0 }
+			}
+		}
+		cost = 0
+		days_re_enable = 7
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			534 = {
+				add_building_construction = { type = land_facility province = 1117 level = 1 instant_build = no }
+			}
+		}
+	}
+
+	DAI_SOV_queue_kazan_land_facility = {
+		allowed = { original_tag = SOV }
+		visible = {
+			is_ai = yes
+			NOT = { date < 1938.1.1 }
+		}
+		available = {
+			land_facility < 1
+			NOT = { any_controlled_state = { land_facility > 0 } }
+			249 = {
+				is_owned_and_controlled_by = ROOT
+				can_construct_building = land_facility
+				free_building_slots = { building = land_facility province = 6338 size > 0 }
+			}
+		}
+		cost = 0
+		days_re_enable = 7
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			249 = {
+				add_building_construction = { type = land_facility province = 6338 level = 1 instant_build = no }
+			}
+		}
+	}
+
+	DAI_JAP_queue_east_hebei_air_base = {
+		# Retired: JAP_reinforce_the_beijing_garrison supplies this airfield.
+		allowed = { always = no }
+		visible = { always = no }
+		available = { always = no }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 0 }
+		complete_effect = { }
+	}
+}

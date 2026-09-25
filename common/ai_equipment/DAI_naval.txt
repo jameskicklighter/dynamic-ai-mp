@@ -37,6 +37,9 @@ DAI_destroyer_screen = {
 
 	EARLY_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -69,7 +72,7 @@ DAI_destroyer_screen = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				mid_1_custom_slot = ship_depth_charge
@@ -94,6 +97,9 @@ DAI_destroyer_screen = {
 
 	BASIC_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -126,7 +132,7 @@ DAI_destroyer_screen = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty 
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				mid_1_custom_slot = ship_depth_charge
@@ -151,6 +157,9 @@ DAI_destroyer_screen = {
 
 	IMPROVED_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -190,7 +199,7 @@ DAI_destroyer_screen = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				front_1_custom_slot = ship_depth_charge
@@ -216,6 +225,9 @@ DAI_destroyer_screen = {
 
 	ADVANCED_DESTROYER_SCREEN = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -260,13 +272,159 @@ DAI_destroyer_screen = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				front_1_custom_slot = ship_depth_charge
 				mid_1_custom_slot = ship_depth_charge
 				mid_2_custom_slot = ship_depth_charge
-				rear_1_custom_slot = empty
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	##############################################################################
+	### 	RADAR DESTROYERS - AVAILABLE AFTER THE AIR RADAR SPECIAL PROJECT
+	##############################################################################
+
+	EARLY_DESTROYER_SCREEN_RADAR = {
+		role_icon_index = 2
+		enable = {
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 1001 }
+
+		target_variant = {
+			type = ship_hull_light_1
+			match_value = 1001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				mid_1_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	BASIC_DESTROYER_SCREEN_RADAR = {
+		role_icon_index = 2
+		enable = {
+			has_tech = basic_ship_hull_light
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 2001 }
+
+		target_variant = {
+			type = ship_hull_light_2
+			match_value = 2001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				mid_1_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	IMPROVED_DESTROYER_SCREEN_RADAR = {
+		role_icon_index = 2
+		enable = {
+			has_tech = improved_ship_hull_light
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 3001 }
+
+		target_variant = {
+			type = ship_hull_light_3
+			match_value = 3001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				front_1_custom_slot = ship_depth_charge
+				mid_1_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	ADVANCED_DESTROYER_SCREEN_RADAR = {
+		role_icon_index = 2
+		enable = {
+			has_tech = advanced_ship_hull_light
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 4001 }
+
+		target_variant = {
+			type = ship_hull_light_4
+			match_value = 4001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				front_1_custom_slot = ship_depth_charge
+				mid_1_custom_slot = ship_depth_charge
+				mid_2_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
 			}
 		}
 
@@ -299,6 +457,9 @@ DAI_ASW_destroyer = {
 
 	EARLY_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = {
@@ -332,7 +493,7 @@ DAI_ASW_destroyer = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				mid_1_custom_slot = ship_depth_charge
@@ -357,6 +518,9 @@ DAI_ASW_destroyer = {
 
 	BASIC_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -390,7 +554,7 @@ DAI_ASW_destroyer = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty 
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				mid_1_custom_slot = ship_depth_charge
@@ -415,6 +579,9 @@ DAI_ASW_destroyer = {
 
 	IMPROVED_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = { 
@@ -448,7 +615,7 @@ DAI_ASW_destroyer = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				front_1_custom_slot = ship_depth_charge
@@ -474,6 +641,9 @@ DAI_ASW_destroyer = {
 
 	ADVANCED_DESTROYER_ASW = {
 		role_icon_index = 2
+		enable = {
+			NOT = { is_special_project_completed = sp:sp_air_radar }
+		}
 		priority = {
 			base = 0
 			modifier = {
@@ -507,13 +677,159 @@ DAI_ASW_destroyer = {
 
 				# MAIN
 				fixed_ship_battery_slot = ship_light_battery
-				fixed_ship_torpedo_slot = empty
+				fixed_ship_torpedo_slot = ship_torpedo
 
 				# CUSTOM
 				front_1_custom_slot = ship_depth_charge
 				mid_1_custom_slot = ship_depth_charge
 				mid_2_custom_slot = ship_depth_charge
-				rear_1_custom_slot = empty
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	##############################################################################
+	### 	RADAR DESTROYERS - AVAILABLE AFTER THE AIR RADAR SPECIAL PROJECT
+	##############################################################################
+
+	EARLY_DESTROYER_ASW_RADAR = {
+		role_icon_index = 2
+		enable = {
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 1001 }
+
+		target_variant = {
+			type = ship_hull_light_1
+			match_value = 1001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				mid_1_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	BASIC_DESTROYER_ASW_RADAR = {
+		role_icon_index = 2
+		enable = {
+			has_tech = basic_ship_hull_light
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 2001 }
+
+		target_variant = {
+			type = ship_hull_light_2
+			match_value = 2001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				mid_1_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	IMPROVED_DESTROYER_ASW_RADAR = {
+		role_icon_index = 2
+		enable = {
+			has_tech = improved_ship_hull_light
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 3001 }
+
+		target_variant = {
+			type = ship_hull_light_3
+			match_value = 3001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				front_1_custom_slot = ship_depth_charge
+				mid_1_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
+			}
+		}
+
+		allowed_modules = {
+			ship_light_battery
+			ship_torpedo
+			ship_anti_air
+			ship_depth_charge
+			light_ship_engine
+			ship_radar
+			ship_sonar
+		}
+	}
+
+	ADVANCED_DESTROYER_ASW_RADAR = {
+		role_icon_index = 2
+		enable = {
+			has_tech = advanced_ship_hull_light
+			is_special_project_completed = sp:sp_air_radar
+		}
+		priority = { base = 4001 }
+
+		target_variant = {
+			type = ship_hull_light_4
+			match_value = 4001
+
+			modules = {
+				fixed_ship_fire_control_system_slot = ship_sonar
+				fixed_ship_radar_slot = ship_radar
+				fixed_ship_engine_slot = light_ship_engine
+				fixed_ship_anti_air_slot = ship_anti_air
+				fixed_ship_battery_slot = ship_light_battery
+				fixed_ship_torpedo_slot = ship_torpedo
+				front_1_custom_slot = ship_depth_charge
+				mid_1_custom_slot = ship_depth_charge
+				mid_2_custom_slot = ship_depth_charge
+				rear_1_custom_slot = ship_depth_charge
 			}
 		}
 

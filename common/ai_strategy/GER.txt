@@ -18,6 +18,198 @@
 #   Industry
 # ==================================================
 
+# DAI_GER_opening_infrastructure_56 = {
+# 	allowed = { original_tag = GER }
+# 	enable = {
+# 		DAI_GER_is_historical_ai = yes
+# 		DAI_GER_is_no_mefo_economic_path = yes
+# 		date < 1937.1.1
+# 		56 = {
+# 			is_fully_controlled_by = ROOT
+# 			infrastructure < 5
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+#
+# 	ai_strategy = {
+# 		type = build_building
+# 		id = infrastructure
+# 		target = 56
+# 		value = 2000
+# 	}
+# }
+#
+# DAI_GER_opening_infrastructure_57 = {
+# 	allowed = { original_tag = GER }
+# 	enable = {
+# 		DAI_GER_is_historical_ai = yes
+# 		DAI_GER_is_no_mefo_economic_path = yes
+# 		date < 1937.1.1
+# 		57 = {
+# 			is_fully_controlled_by = ROOT
+# 			infrastructure < 5
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+#
+# 	ai_strategy = {
+# 		type = build_building
+# 		id = infrastructure
+# 		target = 57
+# 		value = 2000
+# 	}
+# }
+#
+# DAI_GER_opening_infrastructure_55 = {
+# 	allowed = { original_tag = GER }
+# 	enable = {
+# 		DAI_GER_is_historical_ai = yes
+# 		DAI_GER_is_no_mefo_economic_path = yes
+# 		date < 1937.1.1
+# 		55 = {
+# 			is_fully_controlled_by = ROOT
+# 			infrastructure < 5
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+#
+# 	ai_strategy = {
+# 		type = build_building
+# 		id = infrastructure
+# 		target = 55
+# 		value = 2000
+# 	}
+# }
+#
+# DAI_GER_opening_infrastructure_51 = {
+# 	allowed = { original_tag = GER }
+# 	enable = {
+# 		DAI_GER_is_historical_ai = yes
+# 		DAI_GER_is_no_mefo_economic_path = yes
+# 		date < 1937.1.1
+# 		51 = {
+# 			is_fully_controlled_by = ROOT
+# 			infrastructure < 5
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+#
+# 	ai_strategy = {
+# 		type = build_building
+# 		id = infrastructure
+# 		target = 51
+# 		value = 2000
+# 	}
+# }
+#
+# DAI_GER_opening_infrastructure_42 = {
+# 	allowed = { original_tag = GER }
+# 	enable = {
+# 		DAI_GER_is_historical_ai = yes
+# 		DAI_GER_is_no_mefo_economic_path = yes
+# 		date < 1937.1.1
+# 		42 = {
+# 			is_fully_controlled_by = ROOT
+# 			infrastructure < 5
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
+#
+# 	ai_strategy = {
+# 		type = build_building
+# 		id = infrastructure
+# 		target = 42
+# 		value = 2000
+# 	}
+# }
+
+DAI_GER_western_state_development_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_western_state_development_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = factory_build_score_factor target = 56 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 59 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 57 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 55 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 51 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 42 value = 500 }
+}
+
+DAI_GER_southern_state_development_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_southern_state_development_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = factory_build_score_factor target = 52 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 978 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 50 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 53 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 54 value = 500 }
+}
+
+DAI_GER_eastern_state_development_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_eastern_state_development_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = factory_build_score_factor target = 763 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 5 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 66 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 67 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 85 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 807 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 86 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 762 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 188 value = 500 }
+}
+
+DAI_GER_central_state_development_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_central_state_development_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = factory_build_score_factor target = 64 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 65 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 60 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 68 value = 500 }
+}
+
+DAI_GER_northern_state_development_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_northern_state_development_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = factory_build_score_factor target = 909 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 58 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 61 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 62 value = 500 }
+	ai_strategy = { type = factory_build_score_factor target = 63 value = 500 }
+}
+
+DAI_GER_rebuild_sonderjylland_factory_score = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_country_flag = DAI_GER_northern_state_development_active
+		912 = {
+			has_dynamic_modifier = { modifier = GER_public_works_modifier scope = GER }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = factory_build_score_factor target = 912 value = 500 }
+}
+
 GER_industry_we_are_the_baddies_but_not_yet = {
 	allowed = {
 		original_tag = GER
@@ -394,14 +586,55 @@ GER_armor_role_ratios = {
 GER_force_build_more_infantry = {
 	allowed = { original_tag = GER }
 	enable = {
-		has_army_manpower = { size < 3000000 }
-		date < 1938.1.1
+		has_army_manpower = { size < 1500000 }
+		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = build_army id = infantry value = 500 }
-	# ai_strategy = { type = force_build_armies value = 300 }
-	# ai_strategy = { type = build_army id = garrison value = 100 } 
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
+DAI_GER_pre_danzig_army_throughput = {
+	allowed = { original_tag = GER }
+	enable = {
+		DAI_GER_is_historical_ai = yes
+		has_completed_focus = GER_anschluss
+		NOT = { has_completed_focus = GER_danzig_or_war }
+		has_army_manpower = { size < 950000 }
+		date < 1940.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = infantry_equipment
+		value = 4
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = support_equipment
+		value = 3
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = artillery_equipment
+		value = 2
+	}
+}
+
+DAI_GER_force_build_more_infantry_1940_plus = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_army_manpower = { size < 2500000 }
+		date > 1939.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
 }
 
 #GER_anti_armor = {
@@ -4336,6 +4569,44 @@ GER_avoid_war_with_SWI = {
 	}
 }
 
+GER_air_unit_ratios = {
+	allowed = { original_tag = GER }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 45
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 30
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 5
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 10
+	}
+}
+
 GER_bba_air_prod_1 = {
 	# TODO BFW:
 	allowed = { original_tag = GER }
@@ -4344,13 +4615,6 @@ GER_bba_air_prod_1 = {
 	}
 
 	abort_when_not_enabled = yes
-
-	# Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 200
-	}
 
 	# ai_strategy = {
 	# 	type = equipment_production_factor
@@ -4364,12 +4628,6 @@ GER_bba_air_prod_1 = {
 		value = 6  # Germany needs a minimum production of fighters
 	}
 
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 75 #because doctrine this = 15
-	}
-
  	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = cas
@@ -4380,18 +4638,6 @@ GER_bba_air_prod_1 = {
 		type = equipment_production_min_factories
 		id = cas
 		value = 3  # Germany needs a minimum production of CAS planes
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 50
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 50
 	}
 
 	# ai_strategy = {
@@ -4440,13 +4686,6 @@ GER_bba_air_prod_2 = {
 	}
 	abort_when_not_enabled = yes
 
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 300
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = fighter
@@ -4457,12 +4696,6 @@ GER_bba_air_prod_2 = {
 		type = equipment_production_min_factories
 		id = fighter
 		value = 8
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 100 #because doctrine this = 15
 	}
 
 	# ai_strategy = {
@@ -4477,18 +4710,6 @@ GER_bba_air_prod_2 = {
 		value = 5
 	}
  
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 75
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 75
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = tactical_bomber

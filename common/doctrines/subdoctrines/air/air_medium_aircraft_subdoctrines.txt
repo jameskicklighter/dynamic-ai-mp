@@ -12,12 +12,7 @@ air_subdoctrine_bomber_interception = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 0
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -61,16 +56,7 @@ air_subdoctrine_long_range_escort = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 50
-            original_tag = USA  
-        }
-        modifier = {
-            factor = 0
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -113,19 +99,7 @@ air_subdoctrine_operational_air_support = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 50
-            OR = {
-            	original_tag = ENG  
-            	original_tag = FRA
-            }
-        }
-        modifier = {
-            factor = 2
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -171,20 +145,7 @@ air_subdoctrine_tactical_battlefield_support = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 50
-            OR = {
-            	original_tag = GER  
-            	original_tag = JAP
-            	original_tag = ITA
-            }
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -228,16 +189,7 @@ air_subdoctrine_theater_interdiction = {
     }
 
     ai_will_do = {
-
-        base = 1
-        modifier = {
-            factor = 50
-            original_tag = SOV 
-        }
-        modifier = {
-            factor = 0.5
-            is_major = no 
-        }
+        base = 25
     }
 
     # EFFECTS

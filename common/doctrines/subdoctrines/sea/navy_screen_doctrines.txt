@@ -12,11 +12,7 @@ convoy_escort = {
     }
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 95
-            original_tag = ENG
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -65,15 +61,7 @@ support_integrated_operations = {
     }
 
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 95
-            original_tag = USA
-        }
-        modifier = {
-            factor = 95
-            original_tag = ITA
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -130,14 +118,7 @@ hunter_killers = {
     	has_dlc = "No Compromise, No Surrender"
     }
     ai_will_do = { 
-        base = 1
-        modifier = {
-            factor = 95
-            OR = {
-            	original_tag = FRA
-            	original_tag = SOV
-            }
-        }
+        base = 0
     }
 
     # EFFECTS
@@ -146,7 +127,7 @@ hunter_killers = {
     rewards = {
 		search_and_destroy = {
 			destroyer = {
-				sub_detection = 0.15
+				sub_detection = 0.2
 			}
 		}
 		flotilla_leader = {
@@ -156,7 +137,7 @@ hunter_killers = {
 		}
 		group_operations = {
 			destroyer = {
-				sub_attack = 0.10
+				sub_attack = 0.2
 			}
 		}
 		combat_readiness = {
@@ -186,10 +167,6 @@ torpedo_primacy = {
 
     ai_will_do = { 
         base = 0
-        modifier = {
-            factor = 95
-            original_tag = JAP
-        }
     }
     available = {
    		always = yes
@@ -203,7 +180,7 @@ torpedo_primacy = {
 
     	modern_broadsides = {
     		destroyer = {
-    			torpedo_attack = 0.2
+			torpedo_attack = 0.1
     		}
     	}
     	coordinated_fire_patterns = {
@@ -217,13 +194,13 @@ torpedo_primacy = {
     			torpedo_attack = 0.2
     		}
     		destroyer = {
-    			sub_attack = 0.2
+			sub_attack = 0.1
     		}
 
     	}
     	improved_escort_role = {
     		destroyer = {
-    			sub_detection = 0.2
+			sub_detection = 0.15
     		}
     	}
 
@@ -233,7 +210,7 @@ torpedo_primacy = {
     		}
     		heavy_cruiser = {
     			max_organisation = 20
-    			sub_detection = 0.2
+			sub_detection = 0.1
     		}
     	}
     }
@@ -255,7 +232,14 @@ anti_aircraft_cruisers = {
     visible = {
     	has_dlc = "No Compromise, No Surrender"
     }
-    navy_anti_air_attack_factor = 0.2
+
+    ai_will_do = {
+        base = 0
+    }
+    navy_anti_air_attack_factor = 0.1
+    heavy_cruiser = {
+        armor_value = 0.1
+    }
 
     rewards = {
     	calibrated_deck_guns = {
@@ -281,8 +265,8 @@ anti_aircraft_cruisers = {
 
     	air_interdiction_screening = {
     		destroyer = {
-    			anti_air_attack = 0.2
-    			lg_attack = 0.2
+			anti_air_attack = 0.1
+			lg_attack = 0.05
     		}
     	}
     	sustained_engagements = {
@@ -313,6 +297,10 @@ screen_support_focus = {
     }
     visible = {
     	has_dlc = "No Compromise, No Surrender"
+    }
+
+    ai_will_do = {
+        base = 0
     }
 
     navy_max_range_factor = 0.1
@@ -370,6 +358,10 @@ jeune_ecole = {
     available = {
     	#TODO: special project
    		always = yes
+    }
+
+    ai_will_do = {
+        base = 0
     }
 
     convoy_raiding_efficiency_factor = 0.3
@@ -437,6 +429,10 @@ patrol_boats = {
     	has_dlc = "No Compromise, No Surrender"
     }
 
+    ai_will_do = {
+        base = 100
+    }
+
     naval_retreat_chance_after_initial_combat = 0.25
     navy_max_range_factor = -0.10
 	destroyer = {
@@ -453,7 +449,7 @@ patrol_boats = {
     	small_craft_harassment = {
     		amphibious_invasion_defence = 0.10
     		destroyer = {
-    		    torpedo_attack = 0.20
+		    torpedo_attack = 0.1
     		}
     	}	
     	lie_in_wait = {		

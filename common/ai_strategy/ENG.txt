@@ -1,3 +1,27 @@
+DAI_ENG_force_build_more_infantry_pre_1940 = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_army_manpower = { size < 1000000 }
+		date < 1940.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
+DAI_ENG_force_build_more_infantry_1940_plus = {
+	allowed = { original_tag = ENG }
+	enable = {
+		has_army_manpower = { size < 2000000 }
+		date > 1939.12.31
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = build_army id = infantry value = 500 }
+	ai_strategy = { type = force_build_armies value = 500 }
+}
+
 # befriend
 # conquer
 # antagonize
@@ -172,6 +196,44 @@ ENG_bomber_production = {
 	}
 }
 
+ENG_air_unit_ratios = {
+	allowed = { original_tag = ENG }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 65
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 5
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 10
+	}
+}
+
 ENG_bba_air_prod_1 = {
 	# TODO BFW:
 	allowed = { original_tag = ENG }
@@ -179,13 +241,6 @@ ENG_bba_air_prod_1 = {
 		date < 1940.1.1
 	}
 	abort_when_not_enabled = yes
-
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 200
-	}
 
 	# ai_strategy = {
 	# 	type = equipment_production_factor
@@ -199,12 +254,6 @@ ENG_bba_air_prod_1 = {
 		value = 3
 	}
 
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 50 #because doctrine this = 15
-	}
-
  	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = cas
@@ -215,18 +264,6 @@ ENG_bba_air_prod_1 = {
 		type = equipment_production_min_factories
 		id = cas
 		value = 2
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 50
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 50
 	}
 
 	# ai_strategy = {
@@ -292,13 +329,6 @@ ENG_bba_air_prod_2 = {
 	}
 	abort_when_not_enabled = yes
 
-	#Air unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 300
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = fighter
@@ -309,12 +339,6 @@ ENG_bba_air_prod_2 = {
 		type = equipment_production_min_factories
 		id = fighter
 		value = 6
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 100
 	}
 
 	# ai_strategy = {
@@ -329,18 +353,6 @@ ENG_bba_air_prod_2 = {
 		value = 3
 	}
  
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 75
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 75
-	}
-
 	# ai_strategy = {
 	# 	type = equipment_production_factor
 	# 	id = tactical_bomber
@@ -3094,30 +3106,30 @@ ENG_develop_mediterranean_supremacy = {
 	}
 	
 	enable = {
-		OR = {
-			has_war_with = ITA
-			has_war_with = SOU
-		}
-		OR = {
-			DAI_allies_focus_africa = yes
-			DAI_allies_focus_italy = yes
-		}
-		NOT = { DAI_allies_focus_normandy = yes }
-		NOT = { DAI_allies_focus_europe = yes }
+		has_war = yes
 	}
 	
 	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = naval_dominance
-		id = western_med_control_zone
-		value = 80
+		id = DAI_mediterranean_waters
+		value = 100
 	}
-	
-	# Med convoy and landing route for the Africa/Italy phases before the Normandy pivot.
+}
+
+ENG_contest_home_waters = {
+	allowed = {
+		original_tag = ENG
+	}
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = naval_dominance
-		id = italy_med_control_zone
-		value = 150
+		id = DAI_england_home_waters
+		value = 100
 	}
 }

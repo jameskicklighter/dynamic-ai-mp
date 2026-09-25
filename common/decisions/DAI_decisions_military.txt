@@ -384,6 +384,66 @@ DAI_division_template_decisions = {
 		}
 	}
 
+	AI_Medium_SP_Artillery_Template_Motorized = {
+		icon = GFX_decision_generic_tank
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_army_experience > 0
+			has_tech = interwar_artillery
+			OR = {
+				has_tech = basic_medium_tank
+				has_tech = basic_medium_tank_chassis
+			}
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 999
+		}
+
+		complete_effect = {
+			army_experience = -1
+			division_template = {
+				name = "Medium SP Artillery 1936 A"
+				regiments = {
+					medium_sp_artillery_brigade = { x = 0 y = 0 }
+					medium_sp_artillery_brigade = { x = 0 y = 1 }
+					medium_sp_artillery_brigade = { x = 0 y = 2 }
+					medium_sp_artillery_brigade = { x = 0 y = 3 }
+					medium_sp_artillery_brigade = { x = 1 y = 0 }
+					medium_sp_artillery_brigade = { x = 1 y = 1 }
+					medium_sp_artillery_brigade = { x = 1 y = 2 }
+					medium_sp_artillery_brigade = { x = 2 y = 0 }
+					medium_sp_artillery_brigade = { x = 2 y = 1 }
+					medium_sp_artillery_brigade = { x = 2 y = 2 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					motorized = { x = 3 y = 3 }
+					motorized = { x = 4 y = 0 }
+					motorized = { x = 4 y = 1 }
+					motorized = { x = 4 y = 2 }
+					motorized = { x = 4 y = 3 }
+				}
+				support = {
+				}
+				regimental_support = {
+					medium_tank_destroyer_support = { x = 0 y = 0 }
+					medium_tank_destroyer_support = { x = 1 y = 0 }
+					medium_tank_destroyer_support = { x = 2 y = 0 }
+					mot_fire_support = { x = 3 y = 0 }
+					mot_fire_support = { x = 4 y = 0 }
+				}
+			}
+		}
+	}
+
 	AI_Modern_Armor_Template_Mechanized = {
 		icon = GFX_decision_generic_tank
 		visible = {
@@ -1178,6 +1238,117 @@ DAI_equipment_variant_decisions = {
 
 DAI_attache_decisions = {
 
+	DAI_SOV_store_attache_pp = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+		}
+
+		available = {
+			has_political_power > 49
+			NOT = { has_global_flag = spanish_civil_war }
+			date < 1936.9.1
+		}
+
+		cost = 50
+
+		days_remove = 1
+
+		fire_only_once = no
+
+		remove_effect = {
+			add_to_variable = { DAI_SOV_attache_pp_bank = 50 }
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
+	DAI_SOV_release_first_attache_pp = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+		}
+
+		available = {
+			check_variable = { DAI_SOV_attache_pp_bank > 0 }
+			OR = {
+				has_global_flag = spanish_civil_war
+				date > 1936.8.31
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_temp_variable = { DAI_SOV_attache_pp_release = DAI_SOV_attache_pp_bank }
+			clamp_temp_variable = {
+				var = DAI_SOV_attache_pp_release
+				min = 0
+				max = 100
+			}
+			subtract_from_variable = { DAI_SOV_attache_pp_bank = DAI_SOV_attache_pp_release }
+			add_political_power = DAI_SOV_attache_pp_release
+			set_country_flag = DAI_SOV_first_attache_pp_released
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
+	DAI_SOV_release_remaining_attache_pp = {
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+		}
+
+		available = {
+			has_country_flag = {
+				flag = DAI_SOV_first_attache_pp_released
+				days > 6 # Seven elapsed days
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_political_power = DAI_SOV_attache_pp_bank
+			set_variable = { DAI_SOV_attache_pp_bank = 0 }
+			set_country_flag = DAI_SOV_attache_pp_escrow_emptied
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
 	DAI_military_attache_to_world_war = {
 	
 		icon = GFX_decision_hol_draw_up_staff_plans
@@ -1330,6 +1501,7 @@ DAI_attache_decisions = {
 			OR = {
 				original_tag = ENG
 				original_tag = FRA
+				original_tag = SOV
 				original_tag = GRE
 				original_tag = HOL
 				original_tag = BEL
@@ -1422,7 +1594,7 @@ DAI_attache_decisions = {
 
 		cost = 99
 
-		days_remove = 7
+		days_remove = 1
 
 		visible = {
 			is_historical_focus_on = yes
@@ -1529,10 +1701,13 @@ DAI_spawn_divisions_decisions = {
 
 	DAI_JAP_spawn_units = {
 		icon = rifles
+		# Disabled until the spawned template and equipment cost are checked in game.
 		allowed = {
+			always = no
 			original_tag = JAP
 		}
 		visible = {
+			always = no
 			is_ai = yes
 		}
 		available = {
@@ -1569,9 +1744,7 @@ DAI_spawn_divisions_decisions = {
 					}
 				}
 			}
-		}
 
-		complete_effect = {
 			hidden_effect = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
@@ -1583,9 +1756,7 @@ DAI_spawn_divisions_decisions = {
 				}
 				add_manpower = -9300
 			}
-		}
 
-		complete_effect = {
 			capital_scope = {
 				create_unit = {
 					division = "division_template = \"Infantry 1936 A\" start_experience_factor = 0.0 start_equipment_factor = 1.0"

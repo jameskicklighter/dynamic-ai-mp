@@ -26,12 +26,19 @@ NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0
 -- AI Specific --
 -- =========== --
 
+-- Field exercises: continue until nearly the entire deployed army has reached
+-- the normal exercise-training cap.
+NDefines.NAI.STOP_TRAINING_FULLY_TRAINED_FACTOR = 0.99
+
 -- Research --
 -- I believe this is deprecated and does nothing.
 NDefines.NAI.RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0                      	-- Multiplies value based on relative military industry size / country size.
 NDefines.NAI.RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0                       -- Multiplies value based on relative naval industry size / country size.
 NDefines.NAI.RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0                         -- Multiplies value based on relative number of air base / country size.
 NDefines.NAI.RESEARCH_NEW_DOCTRINE_RANDOM_FACTOR = 0
+
+-- Disable native category-need pressure for the research-scoring trial.
+NDefines.NAI.RESEARCH_NEEDS_FACTOR = 0
 
 NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 1
 NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 25.0
@@ -72,6 +79,70 @@ NDefines.NAI.REFIT_SHIP_PERCENTAGE_OF_FORCES = 0.0
 -- Naval invasions: allow AI planning against countries with much stronger navies.
 -- Naval supremacy and execution requirements still apply after an invasion plan is drawn.
 NDefines.NAI.ENEMY_NAVY_STRENGTH_DONT_BOTHER = 1000
+
+-- Naval mission allocation: reduce the generic home-coast patrol bias so scripted
+-- invasion-route dominance can compete for scarce patrol task forces.
+NDefines.NAI.NAVAL_MISSION_PATROL_NEAR_OWNED = 100
+NDefines.NAI.NAVAL_MISSION_PATROL_NEAR_CONTROLLED = 25
+
+-- Naval strike-force assignment experiment: lower only the strike-force regional
+-- assignment thresholds. This does not guarantee that an objective requests the role.
+NDefines.NAI.MIN_NAVAL_MISSION_PRIO_TO_ASSIGN = {
+	0,   -- HOLD
+	200, -- PATROL
+	0, -- STRIKE FORCE (vanilla 200)
+	200, -- CONVOY RAIDING
+	100, -- CONVOY ESCORT
+	200, -- MINES PLANTING
+	100, -- MINES SWEEPING
+	0,   -- TRAIN
+	0,   -- RESERVE FLEET
+	100, -- NAVAL INVASION SUPPORT
+}
+
+NDefines.NAI.HIGH_PRIO_NAVAL_MISSION_SCORES = {
+	0,      -- HOLD
+	100000, -- PATROL
+	500,    -- STRIKE FORCE (vanilla 1000)
+	1500,   -- CONVOY RAIDING
+	1000,   -- CONVOY ESCORT
+	-1,     -- MINES PLANTING
+	300,    -- MINES SWEEPING
+	0,      -- TRAIN
+	0,      -- RESERVE FLEET
+	1000,   -- NAVAL INVASION SUPPORT
+}
+
+-- Allow a patrol task force to cover slightly more than one mission region.
+-- All other mission capacities retain their vanilla values.
+NDefines.NAI.MAX_MISSION_PER_TASKFORCE = {
+	0,   -- HOLD
+	1.5, -- PATROL
+	4,   -- STRIKE FORCE
+	1.5, -- CONVOY RAIDING
+	4,   -- CONVOY ESCORT
+	2,   -- MINES PLANTING
+	2,   -- MINES SWEEPING
+	0,   -- TRAIN
+	0,   -- RESERVE FLEET
+	10,  -- NAVAL INVASION SUPPORT
+}
+
+-- Favor explicit naval-dominance operations when allocating strike forces.
+-- Values follow the proven Vanilla Navy Rework distribution.
+NDefines.NAI.NAVAL_STRIKE_FORCE_OBJECTIVE_IMPORTANCE = {
+	0.1875, -- NAVAL INVASION SUPPORT
+	0.20,   -- NAVAL INVASION DEFENSE
+	0,      -- MINES SWEEPING
+	0,      -- MINES PLANTING
+	1.0, -- COAST DEFENSE
+	100.0,      -- CONVOY RAIDING
+	100.0,      -- CONVOY PROTECTION
+	100.0,    -- NAVAL DOMINANCE
+	0,      -- TRAINING
+	0,      -- NAVAL BLOCKADE
+	0,      -- STRIKE FORCE
+}
 
 -- Buildings
 NDefines.NAI.BUILDING_TARGETS_BUILDING_PRIORITIES = { -- Buildings in priority order when considering building_target strategies. First has the greatest priority; omitted has the lowest.

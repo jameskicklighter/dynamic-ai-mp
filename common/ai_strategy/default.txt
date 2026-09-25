@@ -8,14 +8,10 @@ DAI_default_land_ratios = {
 				original_tag = GER
 				original_tag = FRA
 				original_tag = CHI
-				original_tag = BUL
 				original_tag = ENG
-				original_tag = CZE
 				tag = SOV
 				original_tag = ITA
-				original_tag = HUN
 				original_tag = JAP
-				original_tag = SIA
 				original_tag = USA
 			}
 		}
@@ -67,14 +63,10 @@ DAI_default_garrison_role_ratio_1937 = {
 				original_tag = GER
 				original_tag = FRA
 				original_tag = CHI
-				original_tag = BUL
 				original_tag = ENG
-				original_tag = CZE
 				tag = SOV
 				original_tag = ITA
-				original_tag = HUN
 				original_tag = JAP
-				original_tag = SIA
 				original_tag = USA
 			}
 		}
@@ -88,143 +80,45 @@ DAI_default_garrison_role_ratio_1937 = {
 	}
 }
 
-DAI_default_air_ratios_early = {
+DAI_default_air_ratios = {
 	enable = {
-		always = yes
-		NOT = { original_tag = GER } 
-		NOT = { original_tag = ENG }
-		date < 1940.1.1
+		NOT = {
+			OR = {
+				original_tag = ENG
+				original_tag = GER
+				original_tag = SOV
+				original_tag = USA
+				AND = {
+					original_tag = JAP
+					is_historical_focus_on = yes
+				}
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
-		value = 200
+		value = 55
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = cas
-		value = 100
+		value = 20
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = naval_bomber
-		value = -999
+		value = 10
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = tactical_bomber
-		value = -999
-	}
-
-	# ai_strategy = {
-	# 	type = equipment_production_factor
-	# 	id = tactical_bomber
-	# 	value = 5
-	# }
-
-	# ai_strategy = {
-	# 	type = unit_ratio
-	# 	id = strategic_bomber
-	# 	value = 5
-	# }
-
-	# ai_strategy = {
-	# 	type = equipment_production_factor
-	# 	id = cas
-	# 	value = 10
-	# }
-
-	# ai_strategy = {
-	# 	type = equipment_production_min_factories
-	# 	id = fighter
-	# 	value = 1
-	# }
-
-	# ai_strategy = {
-	# 	type = equipment_production_min_factories
-	# 	id = cas
-	# 	value = 1
-	# }
-
-	# ai_strategy = {
-	# 	type = equipment_production_factor
-	# 	id = strategic_bomber
-	# 	value = 1
-	# }
-
-	# ai_strategy = {
-	# 	type = equipment_variant_production_factor
-	# 	id = large_plane_airframe
-	# 	value = 0
-	# }
-
-	# ai_strategy = {
-	# 	type = equipment_production_factor
-	# 	id = heavy_fighter
-	# 	value = 1
-	# }
-
-	# ai_strategy = {
-	# 	type = unit_ratio
-	# 	id = heavy_fighter
-	# 	value = 1
-	# }
-
-	# ai_strategy = {
-	# 	type = unit_ratio
-	# 	id = cv_fighter
-	# 	value = 10
-	# }
-
-	# ai_strategy = {
-	# 	type = unit_ratio
-	# 	id = cv_naval_bomber
-	# 	value = 10
-	# }
-}
-
-DAI_default_air_ratios_late = {
-	enable = {
-		always = yes
-		NOT = { original_tag = GER } 
-		NOT = { original_tag = ENG }
-		date > 1940.1.1
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = 200
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 100
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 25
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 50
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = heavy_fighter
-		value = 1
+		value = 10
 	}
 
 	ai_strategy = {
@@ -232,7 +126,24 @@ DAI_default_air_ratios_late = {
 		id = strategic_bomber
 		value = 5
 	}
+}
 
+DAI_default_no_air_production = {
+	enable = {
+		NOT = { DAI_should_build_planes = yes }
+		NOT = {
+			OR = {
+				original_tag = FRA
+				original_tag = SOV
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = -200
+	}
 }
 
 # DAI_block_armor_production = {
@@ -273,6 +184,12 @@ DAI_wait_for_armored_production = {
 
 	ai_strategy = {
 		type = role_ratio
+		id = armor_medium_sp_artillery
+		value = -100
+	}
+
+	ai_strategy = {
+		type = role_ratio
 		id = armor_heavy_tank_destroyer
 		value = -100
 	}
@@ -286,6 +203,12 @@ DAI_wait_for_armored_production = {
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = medium_tank_chassis
+		value = -100
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_artillery_chassis
 		value = -100
 	}
 
@@ -316,6 +239,20 @@ DAI_armor_role_ratio_default_medium = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
+		value = 10
+	}
+}
+
+DAI_armor_role_ratio_default_medium_sp_artillery = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_medium_sp_artillery
 		value = 10
 	}
 }
@@ -427,6 +364,46 @@ DAI_medium_tank_chassis_production_preference = {
 		type = equipment_variant_production_factor
 		id = medium_tank_chassis
 		value = 100
+	}
+}
+
+DAI_medium_sp_artillery_chassis_production_preference = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_artillery_chassis
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_artillery_chassis
+		value = 2
+	}
+}
+
+DAI_medium_sp_artillery_support_destroyer_chassis_production = {
+	enable = {
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_destroyer_chassis
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_destroyer_chassis
+		value = 1
 	}
 }
 
@@ -691,6 +668,23 @@ DAI_increase_armored_production_medium = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
+		value = 20
+	}
+}
+
+DAI_increase_armored_production_medium_sp_artillery = {
+	enable = {
+		num_of_military_factories > 100
+		DAI_should_start_tank_production = yes
+		has_country_flag = DAI_prefer_medium_sp_artillery
+	}
+	abort = {
+		num_of_military_factories < 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor_medium_sp_artillery
 		value = 20
 	}
 }
@@ -1973,6 +1967,14 @@ default_build_a_gun_emplacement = {
 }
 
 default_build_a_lw_facility = {
+	allowed = {
+		NOT = {
+			OR = {
+				original_tag = JAP
+				original_tag = SOV
+			}
+		}
+	}
 	enable = {
 		OR = {
 			original_tag = GER

@@ -132,31 +132,111 @@ debug_decisions = {
 
 SOV_paranoia_system = {
 
+	DAI_SOV_store_paranoia_pp = {
+		priority = 312
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+			has_country_flag = SOV_paranoia_system_active_flag
+			NOT = { has_country_flag = DAI_SOV_paranoia_pp_escrow_finished }
+		}
+
+		available = {
+			has_political_power > 24
+			OR = {
+				AND = {
+					NOT = { has_country_flag = DAI_SOV_attache_pp_escrow_emptied }
+					check_variable = { DAI_SOV_paranoia_pp_bank < 25 }
+				}
+				AND = {
+					has_country_flag = DAI_SOV_attache_pp_escrow_emptied
+					check_variable = { DAI_SOV_paranoia_pp_bank < 75 }
+				}
+			}
+		}
+
+		cost = 25
+
+		days_remove = 1
+
+		fire_only_once = no
+
+		remove_effect = {
+			add_to_variable = { DAI_SOV_paranoia_pp_bank = 25 }
+		}
+
+		ai_will_do = {
+			base = 9999
+		}
+	}
+
+	DAI_SOV_release_paranoia_pp = {
+		priority = 311
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			is_ai = yes
+			DAI_SOV_is_historical_ai = yes
+			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
+			NOT = { has_country_flag = DAI_SOV_paranoia_pp_escrow_finished }
+			NOT = { has_decision = DAI_SOV_store_paranoia_pp }
+			check_variable = { DAI_SOV_paranoia_pp_bank > 0 }
+		}
+
+		available = {
+			always = yes
+		}
+
+		cost = 0
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_political_power = DAI_SOV_paranoia_pp_bank
+			set_variable = { DAI_SOV_paranoia_pp_bank = 0 }
+			set_country_flag = DAI_SOV_paranoia_pp_escrow_finished
+		}
+
+		ai_will_do = {
+			base = 10000
+		}
+	}
+
 	SOV_forge_production_reports = { #Repeatable decision to reduce Paranoia
 		priority = 310
 
 		icon = GFX_decision_eng_trade_unions_support
 
-		# DAI --
 		ai_will_do = {
-			base = 0
+			factor = 1.0
 			modifier = {
-				add = 99999
-				check_variable = { SOV_paranoia > 19 }
+				add = var:SOV_paranoia
 			}
 			modifier = {
-				factor = 2
+				factor = 1.2
 				SOV_is_opposition = yes
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					SOV_paranoia_is_finishing_purge_focus = yes
-					has_country_flag = SOV_paranoia_conducting_inspection_flag
-				}
+				check_variable = { SOV_paranoia < 20 }
+			}
+			modifier = {
+				factor = 0
+				DAI_SOV_is_historical_ai = yes
 			}
 		}
-		# -- DAI
 
 		allowed = {
 			original_tag = SOV
@@ -181,14 +261,21 @@ SOV_paranoia_system = {
 		}
 
 		complete_effect = {
-			set_country_flag = DAI_paranoia_conducting_forge_production_reports
 			SOV_paranoia_medium_decrease_effect = yes
 
 			custom_effect_tooltip = SOV_paranoia_calm_down_stalin_cd_tt
 		}
 
 		remove_effect = {
-			clr_country_flag = DAI_paranoia_conducting_forge_production_reports
+			hidden_effect = {
+				if = {
+					limit = {
+						DAI_SOV_is_historical_ai = yes
+					}
+					set_country_flag = { flag = DAI_SOV_forge_production_reports_cooldown value = 1 days = var:SOV_paranoia_calm_down_stalin_re_enable_days }
+					clr_country_flag = DAI_SOV_forge_production_reports_legacy_cooldown_pending
+				}
+			}
 		}
 	}
 
@@ -325,23 +412,20 @@ SOV_paranoia_system = {
 
 		icon = GFX_decision_generic_political_discourse
 
-		# DAI --
 		ai_will_do = {
-			base = 0
+			factor = 0.9
 			modifier = {
-				add = 9999
-				check_variable = { SOV_paranoia > 20 }
+				add = var:SOV_paranoia
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					SOV_paranoia_is_finishing_purge_focus = yes
-					has_country_flag = SOV_paranoia_conducting_inspection_flag
-					has_country_flag = DAI_paranoia_conducting_forge_production_reports
-				}
+				check_variable = { SOV_paranoia < 20 }
+			}
+			modifier = {
+				factor = 0
+				DAI_SOV_is_historical_ai = yes
 			}
 		}
-		# -- DAI
 
 		allowed = {
 			original_tag = SOV
@@ -385,6 +469,15 @@ SOV_paranoia_system = {
 		}
 
 		remove_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						DAI_SOV_is_historical_ai = yes
+					}
+					set_country_flag = { flag = DAI_SOV_inspection_in_the_navy_cooldown value = 1 days = var:SOV_paranoia_inspection_re_enable_days }
+					clr_country_flag = DAI_SOV_inspection_in_the_navy_legacy_cooldown_pending
+				}
+			}
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
@@ -404,23 +497,9 @@ SOV_paranoia_system = {
 
 		icon = GFX_decision_generic_political_discourse
 
-		# DAI --
 		ai_will_do = {
 			base = 0
-			modifier = {
-				add = 9999
-				check_variable = { SOV_paranoia > 39 }
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					SOV_paranoia_is_finishing_purge_focus = yes
-					has_country_flag = SOV_paranoia_conducting_inspection_flag
-					has_country_flag = DAI_paranoia_conducting_forge_production_reports
-				}
-			}
 		}
-		# -- DAI
 
 		allowed = {
 			original_tag = SOV
@@ -458,6 +537,15 @@ SOV_paranoia_system = {
 		}
 
 		remove_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						DAI_SOV_is_historical_ai = yes
+					}
+					set_country_flag = { flag = DAI_SOV_inspection_in_the_airforce_cooldown value = 1 days = var:SOV_paranoia_inspection_re_enable_days }
+					clr_country_flag = DAI_SOV_inspection_in_the_airforce_legacy_cooldown_pending
+				}
+			}
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
@@ -4306,6 +4394,20 @@ SOV_gosproyektstroy_decision_category = {
 
 		ai_will_do = {
 			base = 10
+			modifier = {
+				factor = 100
+				DAI_SOV_is_historical_ai = yes
+				FROM = {
+					tag = USA
+				}
+			}
+			modifier = {
+				factor = 0
+				DAI_SOV_is_historical_ai = yes
+				FROM = {
+					NOT = { tag = USA }
+				}
+			}
 		}
 
 		targets = { USA ENG GER JAP }
@@ -4321,11 +4423,16 @@ SOV_gosproyektstroy_decision_category = {
 		available = {
 			has_idea = SOV_gosproyektstroy_1
 			NOT = { has_country_flag = SOV_gosproyektstroy_upgrade_in_progress_flag }
-			FROM = {
-				has_opinion = {
-					target = ROOT
-					value > 29
+			OR = {
+				is_ai = yes
+				FROM = {
+					has_opinion = {
+						target = ROOT
+						value > 29
+					}
 				}
+			}
+			FROM = {
 				SOV_is_valid_subject = yes
 				NOT = { has_war_with = ROOT }
 			}
@@ -4408,7 +4515,18 @@ SOV_gosproyektstroy_decision_category = {
 		ai_will_do = {
 			base = 0.75
 			modifier = {
+				factor = 1000
+				DAI_SOV_is_historical_ai = yes
+				has_idea = SOV_gosproyektstroy_2_usa
+			}
+			modifier = {
 				factor = 0
+				NOT = {
+					AND = {
+						DAI_SOV_is_historical_ai = yes
+						has_idea = SOV_gosproyektstroy_2_usa
+					}
+				}
 				OR = {
 					has_war = yes
 					any_other_country = {
@@ -4513,6 +4631,11 @@ SOV_gosproyektstroy_decision_category = {
 
 		ai_will_do = {
 			base = 1
+			modifier = {
+				factor = 0
+				DAI_SOV_is_historical_ai = yes
+				has_idea = SOV_gosproyektstroy_2_usa
+			}
 			modifier = {
 				factor = 5
 				OR = {
@@ -4619,6 +4742,11 @@ SOV_gosproyektstroy_decision_category = {
 
 		ai_will_do = {
 			base = 0.5
+			modifier = {
+				factor = 0
+				DAI_SOV_is_historical_ai = yes
+				has_idea = SOV_gosproyektstroy_2_usa
+			}
 			modifier = {
 				factor = 2
 				has_completed_focus = SOV_pc_of_the_ussr_navy

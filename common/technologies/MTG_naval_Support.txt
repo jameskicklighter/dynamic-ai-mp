@@ -47,14 +47,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
-			# Need the basics.
 			modifier = {
 				add = 100
-				OR = {
-					DAI_Should_Research_Navy_GENERAL = yes
-					DAI_Should_Research_Navy_ANTI_SUB = yes
-				}
-				date > 1937.1.1 # Soft limit to focus industry first.
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -106,9 +102,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1937.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -171,9 +167,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -225,11 +221,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				OR = {
-					has_tech = improved_ship_hull_light
-					is_researching_technology = improved_ship_hull_light
-				}
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1939.1.1
 			}
 			# -- DAI
 		}
@@ -293,7 +286,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1942.1.1
 			}
 			# -- DAI
 		}
@@ -335,11 +329,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				OR = {
-					has_tech = advanced_ship_hull_light
-					is_researching_technology = advanced_ship_hull_light
-				}
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1944.1.1
 			}
 			# -- DAI
 		}
@@ -390,7 +381,7 @@ technologies = {
 	# 		modifier = {
 	# 			add = 10
 	# 			DAI_Should_Research_Navy_GENERAL = yes
-	# 			date > 1937.1.1 # Soft limit to focus industry first.
+	# 			date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 	# 		}
 	# 		# -- DAI
 	# 	}
@@ -439,7 +430,7 @@ technologies = {
 	# 		modifier = {
 	# 			add = 10
 	# 			DAI_Should_Research_Navy_GENERAL = yes
-	# 			date > 1939.1.1 # Soft limit to focus industry first.
+	# 			date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 	# 		}
 	# 		# -- DAI
 	# 	}
@@ -632,8 +623,8 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				add = 100
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
 			}
 			# -- DAI
 		}
@@ -679,11 +670,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				OR = {
-					has_tech = improved_ship_hull_heavy
-					is_researching_technology = improved_ship_hull_heavy
-				}
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1939.1.1
 			}
 			# -- DAI
 		}
@@ -724,11 +712,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				OR = {
-					has_tech = advanced_ship_hull_heavy
-					is_researching_technology = advanced_ship_hull_heavy
-				}
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1944.1.1
 			}
 			# -- DAI
 		}
@@ -776,9 +761,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_EARLY_UPGRADES = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -825,7 +810,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1942.1.1
 			}
 			# -- DAI
 		}
@@ -871,8 +857,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1940.1.1 # Soft limit to focus industry first.
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1940.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -921,8 +907,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1940.1.1 # Soft limit to focus industry first.
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1940.1.1
 			}
 			# -- DAI
 		}
@@ -967,7 +953,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1944.1.1
 			}
 			# -- DAI
 		}
@@ -1058,11 +1045,10 @@ technologies = {
 		ai_will_do = {
 			# DAI --
 			base = 0
-			# Need the basics.
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1937.1.1 # Soft limit to focus industry first.
+				DAI_Should_Research_Navy_EARLY_TORPEDO = yes
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1126,9 +1112,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_EARLY_TORPEDO = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1181,7 +1167,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_TORPEDO = yes
+				date > 1942.1.1
 			}
 			# -- DAI
 		}
@@ -1268,9 +1255,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 100
+				DAI_Should_Research_Navy_EARLY_TORPEDO = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1321,7 +1308,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_TORPEDO = yes
+				date > 1940.1.1
 			}
 			# -- DAI
 		}
@@ -1365,7 +1353,8 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
+				DAI_Should_Research_Navy_TORPEDO = yes
+				date > 1944.1.1
 			}
 			# -- DAI
 		}
@@ -1545,9 +1534,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 1
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1595,9 +1584,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 1
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -1649,9 +1638,9 @@ technologies = {
 			# DAI --
 			base = 0
 			modifier = {
-				add = 10
-				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1939.1.1 # Soft limit to focus industry first.
+				add = 1
+				DAI_Should_Research_Navy_LATE_UPGRADES = yes
+				date > 1939.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			# -- DAI
 		}
@@ -2184,15 +2173,11 @@ technologies = {
 			modifier = {
 				add = 100
 				DAI_Should_Research_Navy_GENERAL = yes
-				date > 1937.1.1 # Soft limit to focus industry first.
+				date > 1937.1.1 # Per-tech schedule; country-level block is separate.
 			}
 			modifier = {
-				add = 10
+				add = 100
 				date > 1940.1.1
-			}
-			modifier = {
-				add = 10
-				date > 1941.1.1
 			}
 			# -- DAI
 		}
@@ -2240,19 +2225,21 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			base = 1
+			base = 0
+			# Preserve the 1939 landing-craft pre-research window.
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				amount_research_slots > 3
+				OR = {
+					is_major = yes
+					is_in_faction = yes
+				}
+				date > 1939.1.1
+				date < 1940.1.1
+			}
+			modifier = {
+				add = 100
 				date > 1940.1.1
-			}
-			modifier = {
-				add = 5
-				date > 1941.1.1
-			}
-			modifier = {
-				add = 5
-				date > 1942.1.1
 			}
 			# -- DAI
 		}
@@ -2283,19 +2270,20 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			base = 1
+			base = 0
 			modifier = {
 				add = 100
-				DAI_Should_Research_Navy_GENERAL = yes
+				amount_research_slots > 3
+				OR = {
+					is_major = yes
+					is_in_faction = yes
+				}
 				date > 1943.1.1
+				date < 1944.1.1
 			}
 			modifier = {
-				add = 5
+				add = 100
 				date > 1944.1.1
-			}
-			modifier = {
-				add = 5
-				date > 1945.1.1
 			}
 			# -- DAI
 		}
@@ -2350,6 +2338,17 @@ technologies = {
 			tp_tech
 		}
 		special_project_specialization = { specialization_naval }
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1938.1.1
+			}
+			# -- DAI
+		}
 	}
 
 
@@ -2386,6 +2385,17 @@ technologies = {
 			tp_tech
 		}
 		special_project_specialization = { specialization_naval }	
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1943.1.1
+			}
+			# -- DAI
+		}
 	}
 
 	#### SUPPORT & REPAIR SHIPS ####
@@ -2422,6 +2432,17 @@ technologies = {
 			tp_tech
 		}
 		special_project_specialization = { specialization_naval }
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1942.1.1
+			}
+			# -- DAI
+		}
 	}
 
 	sp_improved_repair_ship = {
@@ -2456,6 +2477,17 @@ technologies = {
 			tp_tech
 		}
 		special_project_specialization = { specialization_naval }
+
+		ai_will_do = {
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1942.1.1
+			}
+			# -- DAI
+		}
 	}
 
 }

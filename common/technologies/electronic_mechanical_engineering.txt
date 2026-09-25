@@ -995,7 +995,7 @@ technologies = {
 		
 		ai_will_do = {
 			# DAI --
-			base = 0.1
+			base = 0.1 # Keep the 1939 fire-control option available to all AI.
 			modifier = {
 				add = 50
 				DAI_Should_Research_Navy_GENERAL = yes
@@ -1035,7 +1035,11 @@ technologies = {
 		
 		ai_will_do = {
 			# DAI --
-			base = 0.1
+			base = 0
+			modifier = {
+				add = 0.1
+				DAI_block_early_naval_research = no
+			}
 			modifier = {
 				add = 20
 				DAI_Should_Research_Navy_GENERAL = yes
@@ -1361,21 +1365,23 @@ technologies = {
 			air_range = 0.25
 		}
 
-		rocket_artillery = {
+		#rocket_artillery = {
+		#	soft_attack = 0.1
+		#}
+		#rocket_artillery_brigade = {
+		#	soft_attack = 0.1
+		#}
+		#mot_rocket_artillery_brigade = {
+		#	soft_attack = 0.1
+		#}
+		#motorized_rocket_brigade = {
+		#	soft_attack = 0.1
+		#}
+		category_rocket_artillery = {
 			soft_attack = 0.1
 		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.1
-		}
-		
 		rocket_battery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
 		}
 
 		research_cost = 1
