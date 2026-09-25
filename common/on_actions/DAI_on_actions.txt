@@ -4,15 +4,7 @@ on_actions = {
 		effect = {
 			random_country = {
 				DAI_initialize_constants = yes
-			}
-			every_country = {
-				limit = {
-					OR = {
-						capital_scope = { is_on_continent = europe }
-						original_tag = FRA
-					}
-				}
-				set_country_flag = DAI_original_capital_in_europe
+				DAI_mark_original_european_capitals = yes
 			}
 			GER = {
 				set_country_flag = DAI_original_europe_bootstrap_complete

@@ -1,0 +1,95 @@
+# National-focus branch triggers.
+
+# ========== GER ==========
+
+# Realpolitik sub-branch choice. Democratic: at least one independent Polish or Baltic
+# nation outside the Soviet faction is neither fascist nor communist. Non-aligned: at
+# least two independent ones outside the Soviet faction share our government.
+DAI_GER_realpolitik_has_eastern_front_partners = {
+	IF = { limit = { has_government = democratic }
+		OR = {
+			EST = {
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+			LAT = {
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+			LIT = {
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+			POL = {
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+		}
+	}
+	# Can only be non-aligned.
+	ELSE = {
+		count_triggers = {
+			amount = 2
+			EST = {
+				has_government = ROOT
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+			}
+			LAT = {
+				has_government = ROOT
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+			}
+			LIT = {
+				has_government = ROOT
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+			}
+			POL = {
+				has_government = ROOT
+				exists = yes
+				is_subject = no
+				NOT = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+			}
+		}
+	}
+}

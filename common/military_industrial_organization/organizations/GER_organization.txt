@@ -2051,10 +2051,6 @@ GER_junkers_organization = {
 				is_ai = no
 			}
 		}
-	}
-
-	
-	visible = {
 		IF = {
 			limit = { FROM = { original_tag = ETH } }
 			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }

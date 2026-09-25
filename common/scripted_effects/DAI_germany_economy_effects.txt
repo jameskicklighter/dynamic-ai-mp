@@ -1,20 +1,25 @@
 # DAI-owned safeguards and diagnostics for vanilla Economy of Conquest behavior.
 
+# Marks countries whose capital is in Europe, plus France, as gold-seizure candidates.
+DAI_mark_original_european_capitals = {
+	every_country = {
+		limit = {
+			OR = {
+				capital_scope = { is_on_continent = europe }
+				original_tag = FRA
+			}
+		}
+		set_country_flag = DAI_original_capital_in_europe
+	}
+}
+
 DAI_reconcile_german_gold_targets = {
 	# One-time current-capital bootstrap for saves created before this safeguard.
 	if = {
 		limit = {
 			NOT = { has_country_flag = DAI_original_europe_bootstrap_complete }
 		}
-		every_country = {
-			limit = {
-				OR = {
-					capital_scope = { is_on_continent = europe }
-					original_tag = FRA
-				}
-			}
-			set_country_flag = DAI_original_capital_in_europe
-		}
+		DAI_mark_original_european_capitals = yes
 		set_country_flag = DAI_original_europe_bootstrap_complete
 	}
 

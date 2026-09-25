@@ -49,36 +49,46 @@ DAI_axis_sealion_naval_participant = {
 	}
 }
 
+# State scope.
+DAI_axis_state_is_controlled_by_GER_faction = {
+	controller = {
+		OR = {
+			original_tag = GER
+			is_in_faction_with = GER
+		}
+	}
+}
+
 DAI_axis_has_english_foothold = {
 	OR = {
-		127 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Sussex
-		126 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Greater London Area
-		125 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Anglia
-		129 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Midlands
-		130 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Yorkshire
-		131 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Northumberland
-		123 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # South-West England
-		338 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Gloucestershire
-		122 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Wales
-		132 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Lancashire
-		121 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Lothian
-		136 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Aberdeenshire
-		120 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Scottish Highlands
-		133 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Lanark
+		127 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Sussex
+		126 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Greater London Area
+		125 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # East Anglia
+		129 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # East Midlands
+		130 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Yorkshire
+		131 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Northumberland
+		123 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # South-West England
+		338 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Gloucestershire
+		122 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Wales
+		132 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Lancashire
+		121 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Lothian
+		136 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Aberdeenshire
+		120 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Scottish Highlands
+		133 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Lanark
 	}
 }
 
 DAI_axis_sealion_front_is_secured = {
 	count_triggers = {
 		amount = 5
-		125 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Anglia
-		126 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Greater London Area
-		127 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Sussex
-		128 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # West Midlands
-		129 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # East Midlands
-		338 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Gloucestershire
-		123 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # South-West England
-		122 = { controller = { OR = { original_tag = GER is_in_faction_with = GER } } } # Wales
+		125 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # East Anglia
+		126 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Greater London Area
+		127 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Sussex
+		128 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # West Midlands
+		129 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # East Midlands
+		338 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Gloucestershire
+		123 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # South-West England
+		122 = { DAI_axis_state_is_controlled_by_GER_faction = yes } # Wales
 	}
 }
 

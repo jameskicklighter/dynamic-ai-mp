@@ -97,15 +97,6 @@ DAI_update_allied_d_day_flags = {
 		limit = {
 			DAI_allies_focus_normandy = yes
 			has_global_flag = DAI_allies_d_day_initial_release_done
-			NOT = { has_global_flag = DAI_allies_d_day_release_cycle_started }
-		}
-		set_global_flag = DAI_allies_d_day_release_cycle_started
-	}
-
-	if = {
-		limit = {
-			DAI_allies_focus_normandy = yes
-			has_global_flag = DAI_allies_d_day_initial_release_done
 			has_global_flag = {
 				flag = DAI_allies_d_day_release_cycle_started
 				days > 180
@@ -154,16 +145,6 @@ DAI_update_axis_sealion_flags = {
 			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
 		}
 		set_global_flag = DAI_axis_sealion_initial_release_done
-		set_global_flag = DAI_axis_sealion_release_cycle_started
-	}
-
-	if = {
-		limit = {
-			tag = GER
-			DAI_axis_sealion_focus = yes
-			has_global_flag = DAI_axis_sealion_initial_release_done
-			NOT = { has_global_flag = DAI_axis_sealion_release_cycle_started }
-		}
 		set_global_flag = DAI_axis_sealion_release_cycle_started
 	}
 

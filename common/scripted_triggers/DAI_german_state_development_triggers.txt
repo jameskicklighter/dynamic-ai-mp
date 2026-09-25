@@ -1,150 +1,77 @@
 # A development region is nearly full once at least four of its states have
 # fewer than two currently usable shared building slots remaining.
 
+# State scope.
+DAI_GER_state_development_slots_nearly_full = {
+	is_fully_controlled_by = ROOT
+	free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+}
+
 DAI_GER_western_state_development_area_nearly_full = {
 	count_triggers = {
 		amount > 3
-		56 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		59 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		57 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		55 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		51 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		42 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
+		56 = { DAI_GER_state_development_slots_nearly_full = yes }
+		59 = { DAI_GER_state_development_slots_nearly_full = yes }
+		57 = { DAI_GER_state_development_slots_nearly_full = yes }
+		55 = { DAI_GER_state_development_slots_nearly_full = yes }
+		51 = { DAI_GER_state_development_slots_nearly_full = yes }
+		42 = { DAI_GER_state_development_slots_nearly_full = yes }
 	}
 }
 
 DAI_GER_southern_state_development_area_nearly_full = {
 	count_triggers = {
 		amount > 3
-		52 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		978 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		50 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		53 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		54 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
+		52 = { DAI_GER_state_development_slots_nearly_full = yes }
+		978 = { DAI_GER_state_development_slots_nearly_full = yes }
+		50 = { DAI_GER_state_development_slots_nearly_full = yes }
+		53 = { DAI_GER_state_development_slots_nearly_full = yes }
+		54 = { DAI_GER_state_development_slots_nearly_full = yes }
 	}
 }
 
 DAI_GER_central_state_development_area_nearly_full = {
 	count_triggers = {
 		amount > 3
-		64 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		65 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		60 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		68 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
+		64 = { DAI_GER_state_development_slots_nearly_full = yes }
+		65 = { DAI_GER_state_development_slots_nearly_full = yes }
+		60 = { DAI_GER_state_development_slots_nearly_full = yes }
+		68 = { DAI_GER_state_development_slots_nearly_full = yes }
 	}
 }
 
 DAI_GER_northern_state_development_area_nearly_full = {
 	count_triggers = {
 		amount > 3
-		909 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		58 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		61 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		62 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		63 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
+		909 = { DAI_GER_state_development_slots_nearly_full = yes }
+		58 = { DAI_GER_state_development_slots_nearly_full = yes }
+		61 = { DAI_GER_state_development_slots_nearly_full = yes }
+		62 = { DAI_GER_state_development_slots_nearly_full = yes }
+		63 = { DAI_GER_state_development_slots_nearly_full = yes }
 	}
 }
 
 DAI_GER_rebuild_northern_state_development_area_nearly_full = {
 	count_triggers = {
 		amount > 3
-		909 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		58 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		61 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		62 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
-		63 = {
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
-		}
+		909 = { DAI_GER_state_development_slots_nearly_full = yes }
+		58 = { DAI_GER_state_development_slots_nearly_full = yes }
+		61 = { DAI_GER_state_development_slots_nearly_full = yes }
+		62 = { DAI_GER_state_development_slots_nearly_full = yes }
+		63 = { DAI_GER_state_development_slots_nearly_full = yes }
 		912 = {
 			is_core_of = ROOT
-			is_fully_controlled_by = ROOT
-			free_building_slots = { building = industrial_complex size < 2 include_locked = no }
+			DAI_GER_state_development_slots_nearly_full = yes
 		}
 	}
 }
 
 # Active decisions hold the sequence until the removal effect starts the bonus.
 # Each active bonus then blocks until its region is nearly full or it expires.
-DAI_GER_reich_labor_state_development_sequence_blocked = {
+# Callers add their own decisions and northern-region check.
+DAI_GER_state_development_active_bonus_blocks_sequence = {
 	OR = {
 		has_country_flag = DAI_GER_state_development_sequence_lock
-		has_decision = GER_western_state_development
-		has_decision = GER_southern_state_development
-		has_decision = GER_central_state_development
-		has_decision = GER_northern_state_development
 		AND = {
 			has_country_flag = DAI_GER_western_state_development_active
 			NOT = { DAI_GER_western_state_development_area_nearly_full = yes }
@@ -158,6 +85,16 @@ DAI_GER_reich_labor_state_development_sequence_blocked = {
 			has_country_flag = DAI_GER_central_state_development_active
 			NOT = { DAI_GER_central_state_development_area_nearly_full = yes }
 		}
+	}
+}
+
+DAI_GER_reich_labor_state_development_sequence_blocked = {
+	OR = {
+		DAI_GER_state_development_active_bonus_blocks_sequence = yes
+		has_decision = GER_western_state_development
+		has_decision = GER_southern_state_development
+		has_decision = GER_central_state_development
+		has_decision = GER_northern_state_development
 		AND = {
 			has_country_flag = DAI_GER_northern_state_development_active
 			NOT = { DAI_GER_northern_state_development_area_nearly_full = yes }
@@ -167,24 +104,11 @@ DAI_GER_reich_labor_state_development_sequence_blocked = {
 
 DAI_GER_rebuild_state_development_sequence_blocked = {
 	OR = {
-		has_country_flag = DAI_GER_state_development_sequence_lock
+		DAI_GER_state_development_active_bonus_blocks_sequence = yes
 		has_decision = GER_state_development_west
 		has_decision = GER_state_development_south
 		has_decision = GER_state_development_central
 		has_decision = GER_state_development_north
-		AND = {
-			has_country_flag = DAI_GER_western_state_development_active
-			NOT = { DAI_GER_western_state_development_area_nearly_full = yes }
-		}
-		AND = {
-			has_country_flag = DAI_GER_southern_state_development_active
-			NOT = { DAI_GER_southern_state_development_area_nearly_full = yes }
-		}
-		has_country_flag = DAI_GER_eastern_state_development_active
-		AND = {
-			has_country_flag = DAI_GER_central_state_development_active
-			NOT = { DAI_GER_central_state_development_area_nearly_full = yes }
-		}
 		AND = {
 			has_country_flag = DAI_GER_northern_state_development_active
 			NOT = { DAI_GER_rebuild_northern_state_development_area_nearly_full = yes }
