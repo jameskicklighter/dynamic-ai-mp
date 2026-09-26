@@ -1,6 +1,6 @@
 # Dynamic AI MP Patch Notes
 
-## 1.19.2.4
+## 1.19.3.4
 
 ### Compatibility
 
