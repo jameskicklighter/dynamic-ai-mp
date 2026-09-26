@@ -1599,27 +1599,138 @@ JAP_unit_buffer_for_home_islands_invasion_force = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
+	# Light baseline until enemy ships approach; one order per region keeps the engine from filling only the southern states.
+	ai_strategy = { # Northern Japan
 		type = put_unit_buffers
+		order_id = 101
+		ratio = 0.02
+		states = {
+			536 # Hokkaido
+			533 # Akita
+			1019 # South Tohoku
+		}
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+
+	ai_strategy = { # Central Japan
+		type = put_unit_buffers
+		order_id = 102
+		ratio = 0.02
+		states = {
+			282 # Kanto
+			531 # Osaka
+			532 # Nagoya
+			534 # Niigata
+			535 # Nagano
+		}
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+
+	ai_strategy = { # Southern Japan
+		type = put_unit_buffers
+		order_id = 103
+		ratio = 0.02
+		states = {
+			528 # Nagasaki
+			1018 # South Kyushu
+			529 # Hiroshima
+			1020 # Sanin
+			530 # Tokushima
+		}
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+# Enemy surface ships were near the home islands within the last 60 days.
+DAI_JAP_guard_home_islands_from_naval_threat = {
+	allowed = { original_tag = JAP }
+	enable = {
+		has_war = yes
+		has_country_flag = DAI_JAP_home_waters_threatened
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { # Northern Japan
+		type = put_unit_buffers
+		order_id = 104
+		ratio = 0.08
+		states = {
+			536 # Hokkaido
+			533 # Akita
+			1019 # South Tohoku
+		}
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+
+	ai_strategy = { # Central Japan
+		type = put_unit_buffers
+		order_id = 105
+		ratio = 0.08
+		states = {
+			282 # Kanto
+			531 # Osaka
+			532 # Nagoya
+			534 # Niigata
+			535 # Nagano
+		}
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+
+	ai_strategy = { # Southern Japan
+		type = put_unit_buffers
+		order_id = 106
+		ratio = 0.08
+		states = {
+			528 # Nagasaki
+			1018 # South Kyushu
+			529 # Hiroshima
+			1020 # Sanin
+			530 # Tokushima
+		}
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
+
+# Manchukuo and Mengjiang help hold northern Japan while enemy surface ships threaten the home islands.
+DAI_JAP_subjects_guard_home_islands = {
+	allowed = {
+		OR = {
+			original_tag = MAN
+			original_tag = MEN
+		}
+	}
+	enable = {
+		country_exists = JAP
+		is_subject_of = JAP
+		has_war_together_with = JAP
+		JAP = { has_country_flag = DAI_JAP_home_waters_threatened }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { # Northern Japan
+		type = put_unit_buffers
+		order_id = 101
 		ratio = 0.15
 		states = {
-			528
-			529
-			530
-			531
-			532
-			535
-			534
-			282
-			533
-			536
-			1018
-			1020
-			1019
+			536 # Hokkaido
+			533 # Akita
+			1019 # South Tohoku
 		}
-		area = asia
-		subtract_invasions_from_need = yes
-		subtract_fronts_from_need = yes
+		area = home_islands
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
 	}
 }
 
@@ -2864,39 +2975,34 @@ JAP_avoid_macau_invasion_if_no_need = {
 # 	}
 # }
 
-# MAN_protect_MEN = {
-# 	allowed = { original_tag = MAN }
-# 	enable = {
-# 		MEN = { is_in_faction_with = ROOT }
-# 	}
-# 	abort_when_not_enabled = yes
+# Manchukuo covers Mengjiang's border until Mengjiang loses a state; Japan then defends it again.
+DAI_MAN_guard_MEN = {
+	allowed = { original_tag = MAN }
+	enable = {
+		DAI_MAN_should_guard_MEN = yes
+	}
+	abort_when_not_enabled = yes
 
-# 	ai_strategy = {
-# 		type = force_defend_ally_borders
-# 		id = MEN
-# 		value = 100
-# 	}
-# }
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = MEN
+		value = 100
+	}
+}
 
-# JAP_ignore_MEN = {
-# 	allowed = { original_tag = JAP }
-# 	enable = {
-# 		date > 1937.12.25
-# 		MEN = {
-# 			is_puppet_of = ROOT
-# 			surrender_progress < 0.1
-# 		}
-# 	}
-# 	abort = {
-# 		MEN = { surrender_progress > 0.2 }
-# 	}
+DAI_JAP_leave_MEN_to_MAN = {
+	allowed = { original_tag = JAP }
+	enable = {
+		DAI_MAN_should_guard_MEN = yes
+	}
+	abort_when_not_enabled = yes
 
-# 	ai_strategy = {
-# 		type = dont_defend_ally_borders
-# 		id = MEN
-# 		value = 30
-# 	}
-# }
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = MEN
+		value = 100
+	}
+}
 
 # JAP_TEST_guard_regions = {
 # 	allowed = { original_tag = JAP }

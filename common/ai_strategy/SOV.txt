@@ -1425,11 +1425,6 @@ SOV_dont_do_so_many_naval_invasions_please = {
 		tag = GER
 		value = -50
 	}
-	ai_strategy = {
-		type = invasion_unit_request
-		tag = FIN
-		value = -50
-	}
 }
 
 ###########################
@@ -1985,7 +1980,7 @@ SOV_build_civs = {
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
-		value = 200
+		value = 135
 	}
 }
 
@@ -4124,28 +4119,43 @@ SOV_ready_for_finland = {
 		original_tag = SOV
 	}
 	enable = {
-		FIN = {
-			focus_progress = {
-				focus = FIN_cooperation_with_germany
-				progress > 0.01
-			}
-		}
-		NOT = {
-			FIN = {
-				OR = {
-					is_puppet_of = ROOT
-					is_in_faction_with	= ROOT
-					has_country_flag = FIN_already_attempted_an_armistice
-					has_country_flag = FIN_negotiating_switching_sides_flag
-				}
-			}
-		}
+		DAI_SOV_should_prepare_war_with_FIN = yes
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = prepare_for_war
 		id = FIN
+		value = 100
+	}
+}
+
+# Keep naval missions in the Baltic approaches to Finland for Finland operations and Leningrad's flank.
+DAI_SOV_baltic_naval_priority = {
+	allowed = { original_tag = SOV }
+	enable = {
+		controls_state = 195 # Leningrad
+		OR = {
+			has_war = yes
+			has_wargoal_against = FIN
+			DAI_SOV_should_prepare_war_with_FIN = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_dominance
+		id = 9 # Gulf of Finland
+		value = 100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 279 # Gulf of Bothnia
+		value = 100
+	}
+	ai_strategy = {
+		type = naval_dominance
+		id = 206 # Lower Baltic Sea
 		value = 100
 	}
 }

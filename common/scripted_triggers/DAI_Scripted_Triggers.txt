@@ -771,7 +771,74 @@ DAI_should_upgrade_manpower_law = {
 ##############################################################################
 
 
+# ========== SOV ==========
+
+# AI countries whose infantry templates include a signal company (templates_SOV.txt).
+DAI_wants_signal_company = {
+	is_ai = yes
+	original_tag = SOV
+}
+
+# Finland has started leaning toward Germany and is not already aligned with or negotiating with us.
+DAI_SOV_should_prepare_war_with_FIN = {
+	FIN = {
+		focus_progress = {
+			focus = FIN_cooperation_with_germany
+			progress > 0.01
+		}
+	}
+	NOT = {
+		FIN = {
+			OR = {
+				is_puppet_of = ROOT
+				is_in_faction_with	= ROOT
+				has_country_flag = FIN_already_attempted_an_armistice
+				has_country_flag = FIN_negotiating_switching_sides_flag
+			}
+		}
+	}
+}
+
 # ========== JAP ==========
+
+# An enemy controls at least one state Mengjiang owns.
+DAI_MEN_has_lost_state = {
+	MEN = {
+		any_owned_state = {
+			controller = { has_war_with = MEN }
+		}
+	}
+}
+
+# AI Manchukuo is fighting alongside an intact Mengjiang and can guard its border.
+DAI_MAN_should_guard_MEN = {
+	country_exists = MAN
+	country_exists = MEN
+	MAN = {
+		is_ai = yes
+		has_capitulated = no
+		has_war_together_with = MEN
+	}
+	DAI_MEN_has_lost_state = no
+}
+
+# A non-Chinese enemy surface fleet is in the seas bordering the home islands; submarines are ignored.
+DAI_JAP_home_waters_have_enemy_surface_ships = {
+	any_enemy_country = {
+		NOT = { original_tag = CHI }
+		OR = {
+			ships_in_area = { type = screen_ship area = 79 size > 4 } # Sea of Japan
+			ships_in_area = { type = capital_ship area = 79 size > 0 }
+			ships_in_area = { type = carrier area = 79 size > 0 }
+			ships_in_area = { type = screen_ship area = 90 size > 4 } # Coast of Japan
+			ships_in_area = { type = capital_ship area = 90 size > 0 }
+			ships_in_area = { type = carrier area = 90 size > 0 }
+			ships_in_area = { type = screen_ship area = 76 size > 4 } # East China Sea
+			ships_in_area = { type = capital_ship area = 76 size > 0 }
+			ships_in_area = { type = carrier area = 76 size > 0 }
+		}
+	}
+}
 
 DAI_JAP_okay_to_invade_CHI = {
 
