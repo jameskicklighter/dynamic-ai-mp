@@ -940,6 +940,26 @@ SOV_have_some_train_production = {
 	}
 }
 
+# Industry relocation borrows 80 trains per move
+SOV_more_train_production = {
+	allowed = {
+		original_tag = SOV
+	}
+
+	enable = {
+		date > 1941.1.1
+		NOT = { has_equipment = { train_equipment > 399 } }
+		num_of_military_factories > 50
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 4 # DAI: vanilla 6
+	}
+}
+
 # Make people skeptic about sending support to the Whites - again
 SOV_dont_support_whites = {
 

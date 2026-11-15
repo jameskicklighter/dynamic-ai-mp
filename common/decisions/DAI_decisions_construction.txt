@@ -49,6 +49,58 @@ DAI_construction_decisions = {
 		}
 	}
 
+	DAI_USA_queue_los_alamos_nuclear_facility = {
+		allowed = { original_tag = USA }
+		visible = {
+			is_ai = yes
+			OR = {
+				has_tech = atomic_research
+				NOT = { date < 1940.1.1 }
+			}
+		}
+		available = {
+			nuclear_facility < 1
+			NOT = { any_controlled_state = { nuclear_facility > 0 } }
+			376 = {
+				is_owned_and_controlled_by = ROOT
+				can_construct_building = nuclear_facility
+				free_building_slots = { building = nuclear_facility province = 12684 size > 0 }
+			}
+		}
+		cost = 0
+		days_re_enable = 7
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			376 = {
+				add_building_construction = { type = nuclear_facility province = 12684 level = 1 instant_build = no }
+			}
+		}
+	}
+
+	DAI_USA_queue_hanford_nuclear_facility = {
+		allowed = { original_tag = USA }
+		visible = {
+			is_ai = yes
+			has_country_flag = { flag = USA_nuclear_reactor_done_flag days > 180 }
+		}
+		available = {
+			nuclear_facility < 2
+			386 = {
+				is_owned_and_controlled_by = ROOT
+				can_construct_building = nuclear_facility
+				free_building_slots = { building = nuclear_facility province = 4747 size > 0 }
+			}
+		}
+		cost = 0
+		days_re_enable = 7
+		ai_will_do = { base = 999 }
+		complete_effect = {
+			386 = {
+				add_building_construction = { type = nuclear_facility province = 4747 level = 1 instant_build = no }
+			}
+		}
+	}
+
 	DAI_JAP_queue_east_hebei_air_base = {
 		# Retired: JAP_reinforce_the_beijing_garrison supplies this airfield.
 		allowed = { always = no }

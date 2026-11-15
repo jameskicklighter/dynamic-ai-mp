@@ -97,17 +97,16 @@ DAI_set_armor_preference_flags = {
 			set_country_flag = DAI_prefer_medium_sp_artillery
 		}
 		ELSE_IF = { limit = { original_tag = ENG }
-			set_country_flag = DAI_prefer_medium_tank_destroyers
+			set_country_flag = DAI_prefer_medium_tanks
 		}
 		ELSE_IF = { limit = { original_tag = USA }
 			set_country_flag = DAI_prefer_medium_tanks
-			set_country_flag = DAI_prefer_medium_tank_destroyers
 		}
 		ELSE_IF = { limit = { original_tag = SOV }
 			set_country_flag = DAI_prefer_medium_tanks
 		}
 		ELSE_IF = { limit = { original_tag = FRA }
-			set_country_flag = DAI_prefer_heavy_tank_destroyers
+			set_country_flag = DAI_prefer_heavy_tanks
 		}
 		ELSE_IF = { limit = { original_tag = ITA }
 			set_country_flag = DAI_prefer_medium_tanks
