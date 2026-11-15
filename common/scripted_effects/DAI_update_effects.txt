@@ -163,3 +163,15 @@ DAI_update_axis_sealion_flags = {
 	}
 
 }
+
+# Keeps the home-island guard active for 60 days after enemy surface ships were last seen near Japan.
+DAI_JAP_update_home_waters_threat = {
+	if = {
+		limit = {
+			is_ai = yes
+			has_war = yes
+			DAI_JAP_home_waters_have_enemy_surface_ships = yes
+		}
+		set_country_flag = { flag = DAI_JAP_home_waters_threatened days = 60 }
+	}
+}

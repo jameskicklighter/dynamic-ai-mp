@@ -51,6 +51,12 @@ on_actions = {
 		}
 	}
 
+	on_daily_JAP = {
+		effect = {
+			DAI_JAP_update_home_waters_threat = yes
+		}
+	}
+
 	on_daily = {
 		effect = {
 			DAI_daily_update = yes

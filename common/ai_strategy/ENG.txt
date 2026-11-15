@@ -163,13 +163,13 @@ ENG_armor_role_ratios = {
 	allowed = { original_tag = ENG }
 	enable = {
 		DAI_should_start_tank_production = yes
-		has_country_flag = DAI_prefer_medium_tank_destroyers
+		has_country_flag = DAI_prefer_medium_tanks
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor_medium_tank_destroyer
+		id = armor
 		value = 20
 	}
 }
@@ -1237,30 +1237,25 @@ ENG_the_channel_is_dangerous = {
 	}
 }
 
+### Approaches are mutually exclusive so only one raid target is ever live - convoy_raiding_target values sum per naval base and the objective asserts past 150.
 ENG_raid_the_channel = {
 	allowed = { original_tag = ENG }
 	enable = {
 		has_war = yes
-		OR = {
-			127 = { NOT = { is_fully_controlled_by = ENG } }
-			123 = { NOT = { is_fully_controlled_by = ENG } }
-			126 = { NOT = { is_fully_controlled_by = ENG } }
-			125 = { NOT = { is_fully_controlled_by = ENG } }
-		}
-		
+		ENG_channel_approach_breached = yes
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = naval_convoy_raid_region
-		id = 18 #english channel
-		value = 250
+		type = convoy_raiding_target
+		id = 18 # english channel
+		value = 150
 	}
 
 	ai_strategy = {
-		type = strike_force_home_base
+		type = naval_dominance
 		id = 18
-		value = 120
+		value = 100
 	}
 }
 
@@ -1268,58 +1263,48 @@ ENG_raid_the_north_sea = {
 	allowed = { original_tag = ENG }
 	enable = {
 		has_war = yes
-		OR = {
-			130 = { NOT = { is_fully_controlled_by = ENG } }
-			131 = { NOT = { is_fully_controlled_by = ENG } }
-			121 = { NOT = { is_fully_controlled_by = ENG } }
-			136 = { NOT = { is_fully_controlled_by = ENG } }
-			120 = { NOT = { is_fully_controlled_by = ENG } }
+		ENG_north_sea_approach_breached = yes
+		NOT = {
+			ENG_channel_approach_breached = yes
 		}
-		
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = naval_convoy_raid_region
-		id = 16 #english channel
-		value = 250
+		type = convoy_raiding_target
+		id = 16 # north sea
+		value = 150
 	}
 
 	ai_strategy = {
-		type = strike_force_home_base
+		type = naval_dominance
 		id = 16
-		value = 120
+		value = 100
 	}
 }
 
-ENG_raid_the_western_appproaches = {
+ENG_raid_the_western_approaches = {
 	allowed = { original_tag = ENG }
 	enable = {
 		has_war = yes
-
-		OR = {
-			120 = { NOT = { is_fully_controlled_by = ENG } }
-			133 = { NOT = { is_fully_controlled_by = ENG } }
-			131 = { NOT = { is_fully_controlled_by = ENG } }
-			132 = { NOT = { is_fully_controlled_by = ENG } }
-			122 = { NOT = { is_fully_controlled_by = ENG } }
-			338 = { NOT = { is_fully_controlled_by = ENG } }
-			131 = { NOT = { is_fully_controlled_by = ENG } }
+		ENG_western_approach_breached = yes
+		NOT = {
+			ENG_channel_approach_breached = yes
+			ENG_north_sea_approach_breached = yes
 		}
-		
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = naval_convoy_raid_region
-		id = 16 #english channel
-		value = 250
+		type = convoy_raiding_target
+		id = 43 # western approaches
+		value = 150
 	}
 
 	ai_strategy = {
-		type = strike_force_home_base
-		id = 16
-		value = 120
+		type = naval_dominance
+		id = 43
+		value = 100
 	}
 }
 

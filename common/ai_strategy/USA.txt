@@ -162,20 +162,13 @@ USA_armor_role_ratios = {
 	enable = {
 		DAI_should_start_tank_production = yes
 		has_country_flag = DAI_prefer_medium_tanks
-		has_country_flag = DAI_prefer_medium_tank_destroyers
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 20
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor_medium_tank_destroyer
-		value = 20
+		value = 40
 	}
 }
 
@@ -1247,6 +1240,24 @@ USA_home_guard_invaded = {
 		}
 		area = north_america
 		value = 250
+	}
+}
+
+# Push atomic research, otherwise the AI leaves it until 1942-43
+USA_manhattan_research_push = {
+	allowed = { original_tag = USA }
+	enable = {
+		date > 1939.8.1
+		NOT = {
+			has_tech = atomic_research
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = atomic_research
+		value = 2000
 	}
 }
 

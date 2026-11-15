@@ -50,6 +50,26 @@ INFANTRY_GENERIC = {
 				anti_air = 1
 			}
 			regimental_support = {
+				field_guns = 3
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+	}
+
+	INFANTRY_GENERIC_1A_HW = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = { OR = { is_major = yes date > 1939.12.31 } }
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regimental_support = {
 				fire_support = 3
 			}
 			regiments = {
@@ -81,6 +101,34 @@ ARMOR_LIGHT = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				light_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				light_tank_destroyer_support = 3
+			}
+			regiments = {
+				light_armor = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_LIGHT_1_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_light_tanks
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -105,6 +153,34 @@ ARMOR_LIGHT = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_light_tanks
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				light_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				light_tank_destroyer_support = 3
+			}
+			regiments = {
+				light_armor = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_LIGHT_2_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_light_tanks
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -148,6 +224,34 @@ ARMOR_MEDIUM = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 3
+			}
+			regiments = {
+				medium_armor = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_1_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tanks
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -176,6 +280,38 @@ ARMOR_MEDIUM = {
 		enable = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tanks
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 3
+			}
+			regiments = {
+				medium_armor = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_2_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tanks
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -223,6 +359,51 @@ ARMOR_MEDIUM = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_armor = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_MODERN_1_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tanks
+			DAI_can_use_mechanized = yes
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -263,6 +444,35 @@ ARMOR_MEDIUM_SP_ARTILLERY = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 3
+			}
+			regiments = {
+				medium_sp_artillery_brigade = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_SP_ARTILLERY_1_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_tech = interwar_artillery
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -292,6 +502,39 @@ ARMOR_MEDIUM_SP_ARTILLERY = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_sp_artillery
 			has_tech = interwar_artillery
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 3
+			}
+			regiments = {
+				medium_sp_artillery_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_SP_ARTILLERY_2_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_sp_artillery
+			has_tech = interwar_artillery
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -338,6 +581,38 @@ ARMOR_HEAVY = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 3
+			}
+			regiments = {
+				heavy_armor = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_1_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tanks
+			OR = {
+				has_tech = basic_heavy_tank
+				has_tech = basic_heavy_tank_chassis
+			}
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -370,6 +645,42 @@ ARMOR_HEAVY = {
 				has_tech = basic_heavy_tank
 				has_tech = basic_heavy_tank_chassis
 			}
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 3
+			}
+			regiments = {
+				heavy_armor = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_2_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tanks
+			OR = {
+				has_tech = basic_heavy_tank
+				has_tech = basic_heavy_tank_chassis
+			}
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -417,6 +728,51 @@ ARMOR_HEAVY = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_armor = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_MODERN_1_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tanks
+			DAI_can_use_mechanized = yes
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -457,6 +813,34 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 3
+			}
+			regiments = {
+				medium_tank_destroyer_brigade = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_TANK_DESTROYER_1_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tank_destroyers
+			has_tech = interwar_antitank
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -485,6 +869,38 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 			DAI_should_start_tank_production = yes
 			has_country_flag = DAI_prefer_medium_tank_destroyers
 			has_tech = interwar_antitank
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 3
+			}
+			regiments = {
+				medium_tank_destroyer_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_TANK_DESTROYER_2_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tank_destroyers
+			has_tech = interwar_antitank
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -528,6 +944,51 @@ ARMOR_MEDIUM_TANK_DESTROYER = {
 				has_tech = main_battle_tank
 				has_tech = main_battle_tank_chassis
 			}
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_tank_destroyer_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_MEDIUM_TANK_DESTROYER_MODERN_1_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_medium_tank_destroyers
+			DAI_can_use_mechanized = yes
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -575,6 +1036,38 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 		}
 		target_template = {
 			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 3
+			}
+			regiments = {
+				heavy_tank_destroyer_brigade = 10
+				motorized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_TANK_DESTROYER_1_SP = {
+		upgrade_prio = {
+			base = 15
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tank_destroyers
+			OR = {
+				has_tech = basic_heavy_tank
+				has_tech = basic_heavy_tank_chassis
+			}
+			has_tech = interwar_antitank
+			has_tech = sp_armored_engineer_tech
+		}
+		target_template = {
+			support = {
 				armored_engineer = 1
 				anti_air = 1
 				logistics_company = 1
@@ -607,6 +1100,42 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				has_tech = basic_heavy_tank_chassis
 			}
 			has_tech = interwar_antitank
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 3
+			}
+			regiments = {
+				heavy_tank_destroyer_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_TANK_DESTROYER_2_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tank_destroyers
+			OR = {
+				has_tech = basic_heavy_tank
+				has_tech = basic_heavy_tank_chassis
+			}
+			has_tech = interwar_antitank
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -650,6 +1179,51 @@ ARMOR_HEAVY_TANK_DESTROYER = {
 				has_tech = main_battle_tank
 				has_tech = main_battle_tank_chassis
 			}
+		}
+		target_template = {
+			support = {
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				light_tank_recon = 1
+				heavy_flame_tank = 1
+			}
+			regimental_support = {
+				mot_fire_support = 2
+				modern_tank_destroyer_support = 3
+			}
+			regiments = {
+				modern_tank_destroyer_brigade = 10
+				mechanized = 8
+			}
+		}
+	}
+
+	ARMOR_HEAVY_TANK_DESTROYER_MODERN_1_SP = {
+		upgrade_prio = {
+			base = 15
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+			}
+			modifier = {
+				add = 10
+				DAI_can_use_mechanized = yes
+				OR = {
+					has_tech = main_battle_tank
+					has_tech = main_battle_tank_chassis
+				}
+			}
+		}
+		enable = {
+			DAI_should_start_tank_production = yes
+			has_country_flag = DAI_prefer_heavy_tank_destroyers
+			DAI_can_use_mechanized = yes
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+			has_tech = sp_armored_engineer_tech
 		}
 		target_template = {
 			support = {
@@ -979,15 +1553,34 @@ SUPPRESSION_GENERIC = {
 		upgrade_prio = {
 			base = 30
 		}
-		enable = { date > 1940.1.1 num_of_military_factories > 50 }
+		enable = { date > 1940.1.1 is_major = yes num_of_military_factories > 50 NOT = { AND = { DAI_should_start_tank_production = yes has_tech = basic_light_tank_chassis } } }
 		can_upgrade_in_field = { always = no }
-		
+
 		target_template = {
-			support = { 
+			support = {
 				military_police = 1
 			}
 			regiments = {
 				cavalry = 25
+			}
+		}
+	}
+
+	SUPPRESSION_GENERIC_4 = {
+		reinforce_prio = 0
+		custom_icon = 13
+		upgrade_prio = {
+			base = 40
+		}
+		enable = { is_major = yes date > 1940.1.1 num_of_military_factories > 50 DAI_should_start_tank_production = yes has_tech = basic_light_tank_chassis }
+		can_upgrade_in_field = { always = no }
+
+		target_template = {
+			support = {
+				military_police = 1
+			}
+			regiments = {
+				light_armor = 25
 			}
 		}
 	}

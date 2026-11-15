@@ -1906,6 +1906,19 @@ put_garrisons_on_high_prio = {
 ### SPECIAL PROJECT STRATEGIES
 default_build_a_nl_facility = {
 	enable = {
+		NOT = { # The USA queues Los Alamos through DAI_USA_queue_los_alamos_nuclear_facility while it can host a facility
+			AND = {
+				original_tag = USA
+				376 = {
+					is_owned_and_controlled_by = ROOT
+					NOT = {
+						air_facility > 0
+						land_facility > 0
+						naval_facility > 0
+					}
+				}
+			}
+		}
 		has_tech = atomic_research
 		num_of_civilian_factories > 25
 		num_of_military_factories > 25 # Even if we have the base tech, let's wait until we have some kind of capacity

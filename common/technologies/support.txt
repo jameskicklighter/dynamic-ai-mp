@@ -1435,6 +1435,10 @@ technologies = {
 			# 	date > 1939.1.1
 			# 	has_country_flag = DAI_wants_armor
 			# }
+			modifier = {
+				add = 50
+				DAI_wants_signal_company = yes
+			}
 			# -- DAI
 		}
 	}

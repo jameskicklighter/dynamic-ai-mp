@@ -595,14 +595,12 @@ GER_force_build_more_infantry = {
 	ai_strategy = { type = force_build_armies value = 500 }
 }
 
-DAI_GER_pre_danzig_army_throughput = {
+# Pre-war infantry equipment throughput so the army clears the Sudetenland, Molotov-Ribbentrop, and Danzig manpower gates on time.
+DAI_GER_prewar_army_throughput = {
 	allowed = { original_tag = GER }
 	enable = {
 		DAI_GER_is_historical_ai = yes
-		has_completed_focus = GER_anschluss
-		NOT = { has_completed_focus = GER_danzig_or_war }
-		has_army_manpower = { size < 950000 }
-		date < 1940.1.1
+		has_war = no
 	}
 	abort_when_not_enabled = yes
 

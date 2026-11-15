@@ -152,13 +152,13 @@ FRA_armor_role_ratios = {
 	allowed = { original_tag = FRA }
 	enable = {
 		DAI_should_start_tank_production = yes
-		has_country_flag = DAI_prefer_heavy_tank_destroyers
+		has_country_flag = DAI_prefer_heavy_tanks
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor_heavy_tank_destroyer
+		id = armor_heavy
 		value = 20
 	}
 }

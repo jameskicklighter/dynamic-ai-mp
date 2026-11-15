@@ -21,7 +21,7 @@ INFANTRY_JAP = {
 				artillery = 1
 			}
 			regimental_support = {
-				fire_support = 3
+				field_guns = 3
 			}
 			regiments = {
 				infantry = 9
@@ -33,7 +33,7 @@ INFANTRY_JAP = {
 		upgrade_prio = {
 			base = 20
 		}
-		enable = { date > 1939.1.1 }
+		enable = { date > 1939.12.31 }
 		target_template = {
 			support = {
 				engineer = 1
